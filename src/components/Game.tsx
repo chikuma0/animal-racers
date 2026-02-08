@@ -387,7 +387,7 @@ export default function Game() {
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const w = Math.min(window.innerWidth, 430);
+    const w = window.innerWidth;
     const h = window.innerHeight;
     if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
       canvas.width = w * dpr;

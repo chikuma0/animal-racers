@@ -19,49 +19,38 @@ export function renderGame(
 ) {
   const W = canvas.width;
   const H = canvas.height;
-  const scale = H / TRACK.VISIBLE_HEIGHT;  // scale to fit height
-  const scaledTrackW = TRACK.WIDTH * scale;
-  const offsetX = (W - scaledTrackW) / 2;  // center horizontally
+  const scale = W / TRACK.WIDTH;  // scale to fit width (track fills screen)
 
   // Screen shake offset
   const shakeX = engine.screenShake * (Math.random() - 0.5) * 2;
   const shakeY = engine.screenShake * (Math.random() - 0.5) * 2;
 
-  // Clear full canvas with jungle dark color
-  ctx.fillStyle = '#1a5c1a';
-  ctx.fillRect(0, 0, W, H);
-
   ctx.save();
-  ctx.translate(shakeX + offsetX, shakeY);
+  ctx.translate(shakeX, shakeY);
 
   const cameraY = localPlayer.progress;
 
-  drawJungleBackground(ctx, scaledTrackW, H, cameraY, scale);
-  drawSpeedLines(ctx, scaledTrackW, H, localPlayer.speed, scale);
-  drawTrack(ctx, scaledTrackW, H, cameraY, scale);
-  drawObstacles(ctx, engine.obstacles, scaledTrackW, H, cameraY, scale);
+  drawJungleBackground(ctx, W, H, cameraY, scale);
+  drawSpeedLines(ctx, W, H, localPlayer.speed, scale);
+  drawTrack(ctx, W, H, cameraY, scale);
+  drawObstacles(ctx, engine.obstacles, W, H, cameraY, scale);
 
   for (const p of otherPlayers) {
     if (p.character) {
-      drawPlayer(ctx, p, scaledTrackW, H, cameraY, scale, false);
+      drawPlayer(ctx, p, W, H, cameraY, scale, false);
     }
   }
 
   if (localPlayer.character) {
-    drawPlayer(ctx, localPlayer, scaledTrackW, H, cameraY, scale, true);
+    drawPlayer(ctx, localPlayer, W, H, cameraY, scale, true);
   }
 
   drawParticles(ctx, engine.particles, scale, false);
 
   if (localPlayer.boosting) {
     ctx.fillStyle = 'rgba(255, 200, 50, 0.06)';
-    ctx.fillRect(0, 0, scaledTrackW, H);
+    ctx.fillRect(0, 0, W, H);
   }
-
-  // Restore to draw HUD in full canvas space
-  ctx.restore();
-  ctx.save();
-  ctx.translate(shakeX, shakeY);
 
   drawHUD(ctx, W, H, localPlayer, false);
 

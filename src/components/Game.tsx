@@ -1104,7 +1104,7 @@ export default function Game() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <canvas ref={canvasRef} className="block mx-auto" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Control buttons overlay */}
       {phase === 'racing' && (

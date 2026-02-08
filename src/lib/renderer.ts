@@ -19,6 +19,10 @@ export function renderGame(
 ) {
   const W = canvas.width;
   const H = canvas.height;
+
+  // Clear canvas
+  ctx.clearRect(0, 0, W, H);
+
   const scale = W / TRACK.WIDTH;  // scale to fit width (track fills screen)
 
   // Screen shake offset
@@ -74,39 +78,48 @@ export function renderFightGame(
 ) {
   const W = canvas.width;
   const H = canvas.height;
-  const scale = W / ARENA.WIDTH;
+
+  // Clear entire canvas first
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(0, 0, W, H);
+
+  // Scale to fit arena in viewport while maintaining aspect ratio
+  const scaleX = W / ARENA.WIDTH;
+  const scaleY = H / ARENA.HEIGHT;
+  const scale = Math.min(scaleX, scaleY);
+
+  // Center the arena
+  const offsetX = (W - ARENA.WIDTH * scale) / 2;
+  const offsetY = (H - ARENA.HEIGHT * scale) / 2;
 
   // Screen shake
   const shakeX = engine.screenShake * (Math.random() - 0.5) * 2;
   const shakeY = engine.screenShake * (Math.random() - 0.5) * 2;
 
   ctx.save();
-  ctx.translate(shakeX, shakeY);
+  ctx.translate(offsetX + shakeX, offsetY + shakeY);
+  ctx.scale(scale, scale);
 
-  // Draw arena background
-  drawArenaBackground(ctx, W, H, scale);
+  // Now draw everything in ARENA coordinates (0..ARENA.WIDTH, 0..ARENA.HEIGHT)
+  drawArenaBackground(ctx, ARENA.WIDTH, ARENA.HEIGHT, 1);
+  drawArenaGround(ctx, ARENA.WIDTH, ARENA.HEIGHT, 1);
 
-  // Draw arena ground
-  drawArenaGround(ctx, W, H, scale);
-
-  // Draw all fighters
   const allFighters = [localPlayer, ...otherPlayers].filter(p => p.character);
-
   for (const player of allFighters) {
-    drawFighter(ctx, player, W, H, scale);
+    drawFighter(ctx, player, ARENA.WIDTH, ARENA.HEIGHT, 1);
   }
 
-  // Draw particles (fight mode)
-  drawParticles(ctx, engine.particles, scale, true);
+  drawParticles(ctx, engine.particles, 1, true);
 
-  // Draw health bars at top
-  drawFightHUD(ctx, W, H, localPlayer, otherPlayers, fightTimer, scale);
+  ctx.restore();
+
+  // Draw HUD and countdown in screen coordinates (on top of arena)
+  drawFightHUD(ctx, W, H, localPlayer, otherPlayers, fightTimer, Math.min(scaleX, 1.5));
 
   if (countdownText) {
     drawCountdown(ctx, W, H, countdownText);
   }
-
-  ctx.restore();
 }
 
 function drawArenaBackground(ctx: CanvasRenderingContext2D, W: number, H: number, _scale: number) {
@@ -297,10 +310,11 @@ function drawFighter(ctx: CanvasRenderingContext2D, player: PlayerState, W: numb
   ctx.fillStyle = '#000000aa';
   ctx.font = `bold ${11 * scale}px sans-serif`;
   ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
   const nameW = ctx.measureText(player.name).width;
   ctx.fillRect(x - nameW / 2 - 4, y - ph - 18 * scale, nameW + 8, 14 * scale);
   ctx.fillStyle = '#ffffffee';
-  ctx.fillText(player.name, x, y - ph - 8 * scale);
+  ctx.fillText(player.name, x, y - ph - 11 * scale);
 }
 
 function drawFighterBody(
@@ -621,6 +635,8 @@ function drawFightHUD(
   fightTimer: number,
   scale: number
 ) {
+  ctx.save();
+
   const allPlayers = [localPlayer, ...otherPlayers].filter(p => p.character);
   const barHeight = 16 * scale;
   const barPadding = 8;
@@ -638,13 +654,15 @@ function drawFightHUD(
   ctx.fillStyle = seconds <= 10 ? '#FF4444' : '#ffffff';
   ctx.font = `bold ${20 * scale}px sans-serif`;
   ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(`${seconds}`, W / 2, 20);
+  ctx.textBaseline = 'top';
+  ctx.fillText(`${seconds}`, W / 2, 10);
 
   // "FIGHT!" label
   ctx.fillStyle = '#FF4444';
   ctx.font = `bold ${10 * scale}px sans-serif`;
-  ctx.fillText('⚔️ FIGHT', W / 2, 38);
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  ctx.fillText('⚔️ FIGHT', W / 2, 32);
 
   // Health bars
   const maxBarWidth = (W - 80) / 2;
@@ -663,6 +681,7 @@ function drawFightHUD(
     // Player emoji
     ctx.font = `${16 * scale}px sans-serif`;
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText(charDef.emoji, isLeft ? barPadding + 14 : W - barPadding - 14, barY + barHeight / 2 + 2);
 
     // HP bar background
@@ -691,13 +710,15 @@ function drawFightHUD(
     ctx.fillStyle = '#ffffffcc';
     ctx.font = `bold ${10 * scale}px sans-serif`;
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText(`${hp} HP`, barX + maxBarWidth / 2, barY + barHeight / 2 + 1);
 
     // Name
     ctx.fillStyle = '#ffffffaa';
     ctx.font = `bold ${9 * scale}px sans-serif`;
     ctx.textAlign = isLeft ? 'left' : 'right';
-    ctx.fillText(player.name, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 12);
+    ctx.textBaseline = 'top';
+    ctx.fillText(player.name, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 4);
 
     // Special cooldown indicator
     const specCd = fight?.specialCooldown ?? 0;
@@ -706,14 +727,18 @@ function drawFightHUD(
       ctx.fillStyle = '#ffffff44';
       ctx.font = `${8 * scale}px sans-serif`;
       ctx.textAlign = isLeft ? 'left' : 'right';
-      ctx.fillText(`${charSpec.specialName}: ${Math.ceil(specCd / 1000)}s`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 24);
+      ctx.textBaseline = 'top';
+      ctx.fillText(`${charSpec.specialName}: ${Math.ceil(specCd / 1000)}s`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 16);
     } else {
       ctx.fillStyle = '#FFD700aa';
       ctx.font = `bold ${8 * scale}px sans-serif`;
       ctx.textAlign = isLeft ? 'left' : 'right';
-      ctx.fillText(`${charSpec.specialName}: READY!`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 24);
+      ctx.textBaseline = 'top';
+      ctx.fillText(`${charSpec.specialName}: READY!`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 16);
     }
   });
+
+  ctx.restore();
 }
 
 // ===================== SHARED RENDERING FUNCTIONS =====================
@@ -1185,11 +1210,11 @@ function drawPlayer(
   if (!isLocal) {
     ctx.fillStyle = '#000000aa';
     ctx.font = `bold ${12 * scale}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     const tw = ctx.measureText(player.name).width;
     ctx.fillRect(-tw / 2 - 4, -size / 2 - 22 * scale, tw + 8, 16 * scale);
     ctx.fillStyle = '#ffffffee';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
     ctx.fillText(player.name, 0, -size / 2 - 14 * scale);
   }
 
@@ -1205,7 +1230,8 @@ function drawPlayer(
     ctx.fillStyle = '#ffffffaa';
     ctx.font = `bold ${9 * scale}px sans-serif`;
     ctx.textAlign = 'center';
-    ctx.fillText('YOU', 0, -size / 2 - 22);
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('YOU', 0, -size / 2 - 20);
   }
 
   ctx.restore();
@@ -1544,6 +1570,8 @@ function drawParticles(
 }
 
 function drawHUD(ctx: CanvasRenderingContext2D, W: number, H: number, player: PlayerState, _isBattle: boolean) {
+  ctx.save();
+
   const padding = 12;
   const fontSize = 18;
 
@@ -1563,7 +1591,6 @@ function drawHUD(ctx: CanvasRenderingContext2D, W: number, H: number, player: Pl
   ctx.fillText(lapText, padding, 28);
 
   const speedPct = Math.round((player.speed / TRACK.BOOST_SPEED) * 100);
-  ctx.textAlign = 'right';
 
   const barW = 70;
   const barH = 8;
@@ -1583,31 +1610,38 @@ function drawHUD(ctx: CanvasRenderingContext2D, W: number, H: number, player: Pl
 
   ctx.fillStyle = '#ffffffcc';
   ctx.font = `bold 13px sans-serif`;
-  ctx.fillText(`${speedPct}%`, W - padding, 36);
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'top';
+  ctx.fillText(`${speedPct}%`, W - padding, 26);
 
   if (!player.boosting) {
     ctx.fillStyle = '#ffffff55';
     ctx.font = '10px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('🔥 W/↑', W / 2 - 30, 48);
-    ctx.fillText('⬆️ SPACE', W / 2 + 30, 48);
+    ctx.textBaseline = 'top';
+    ctx.fillText('🔥 W/↑', W / 2 - 30, 42);
+    ctx.fillText('⬆️ SPACE', W / 2 + 30, 42);
   }
+
+  ctx.restore();
 }
 
 function drawCountdown(ctx: CanvasRenderingContext2D, W: number, H: number, text: string) {
+  ctx.save();
+
   ctx.fillStyle = '#00000077';
   ctx.fillRect(0, 0, W, H);
 
   const pulse = 1 + Math.sin(Date.now() * 0.012) * 0.12;
 
-  ctx.save();
   ctx.translate(W / 2, H / 2);
   ctx.scale(pulse, pulse);
 
-  ctx.fillStyle = '#000000';
   ctx.font = `bold 80px sans-serif`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
+
+  ctx.fillStyle = '#000000';
   ctx.fillText(text, 3, 3);
 
   const isGo = text.includes('GO');

@@ -387,7 +387,7 @@ export default function Game() {
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const w = Math.min(window.innerWidth, 420);
+    const w = window.innerWidth;
     const h = window.innerHeight;
     if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
       canvas.width = w * dpr;
@@ -787,7 +787,7 @@ export default function Game() {
   // HOME SCREEN
   if (phase === 'home') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-6 text-white"
+      <div className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-4 text-white overflow-y-auto"
         style={{ minHeight: '100dvh' }}>
         <div className="text-7xl mb-3 animate-bounce">🏎️</div>
         <h1 className="text-5xl font-extrabold mb-1 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
@@ -873,7 +873,7 @@ export default function Game() {
   if (phase === 'character-select') {
     const allChars: CharacterId[] = ['lion', 'wolf', 'unicorn'];
     return (
-      <div className="min-h-screen bg-gradient-to-b from-purple-900 via-purple-700 to-indigo-600 flex flex-col items-center p-6 text-white"
+      <div className="min-h-screen bg-gradient-to-b from-purple-900 via-purple-700 to-indigo-600 flex flex-col items-center p-4 text-white overflow-y-auto"
         style={{ minHeight: '100dvh' }}>
         <div className="text-sm font-mono bg-black/30 px-3 py-1 rounded-full mb-3">
           Room: <span className="font-bold text-yellow-300 text-lg">{roomCode}</span>
@@ -950,7 +950,7 @@ export default function Game() {
     const canStart = isHost && allReady && allPlayers.length >= 1;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-6 text-white"
+      <div className="min-h-screen bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-4 text-white overflow-y-auto"
         style={{ minHeight: '100dvh' }}>
         <div className="bg-black/30 px-6 py-3 rounded-2xl mb-4 text-center">
           <div className="text-xs opacity-70 mb-1">Room Code</div>
@@ -1015,7 +1015,7 @@ export default function Game() {
     const sortedBattle = [...battleResults].sort((a, b) => b.hp - a.hp);
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-6 text-white"
+      <div className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-4 text-white overflow-y-auto"
         style={{ minHeight: '100dvh' }}>
         <div className="text-7xl mb-2 animate-bounce">🏆</div>
         <h1 className="text-4xl font-extrabold mb-4" style={{ textShadow: '2px 2px 0 #000' }}>

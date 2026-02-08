@@ -3,14 +3,17 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { MultiplayerManager } from '@/lib/multiplayer';
 import { GameEngine } from '@/lib/engine';
-import { renderGame } from '@/lib/renderer';
+import { renderGame, renderFightGame } from '@/lib/renderer';
 import {
   GamePhase,
   PlayerState,
   CharacterId,
   CHARACTERS,
   TRACK,
+  ARENA,
   BroadcastPayload,
+  FightState,
+  createDefaultFightState,
 } from '@/lib/types';
 
 function createPlayer(id: string, name: string): PlayerState {
@@ -33,6 +36,7 @@ function createPlayer(id: string, name: string): PlayerState {
     battleFinished: false,
     battleFinishTime: 0,
     attackCooldown: 0,
+    fight: createDefaultFightState(),
   };
 }
 
@@ -48,10 +52,12 @@ export default function Game() {
   const [takenCharacters, setTakenCharacters] = useState<Set<CharacterId>>(new Set());
   const [remoteReady, setRemoteReady] = useState<Set<string>>(new Set());
   const [raceResults, setRaceResults] = useState<{ name: string; character: CharacterId; time: number }[]>([]);
-  const [battleResults, setBattleResults] = useState<{ name: string; character: CharacterId; time: number }[]>([]);
+  const [battleResults, setBattleResults] = useState<{ name: string; character: CharacterId; hp: number }[]>([]);
   const [battleTransition, setBattleTransition] = useState(false);
   const [tiltPermission, setTiltPermission] = useState(false);
   const [showFinished, setShowFinished] = useState(false);
+  const [_fightTimer, setFightTimer] = useState(ARENA.FIGHT_DURATION);
+  const [fightWinner, setFightWinner] = useState<string | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mpRef = useRef<MultiplayerManager | null>(null);
@@ -69,10 +75,20 @@ export default function Game() {
   const broadcastIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartXRef = useRef<number | null>(null);
   const touchCurrentXRef = useRef<number | null>(null);
-  const attackCooldownRef = useRef(0);
+  const _attackCooldownRef = useRef(0);
   const countdownTextRef = useRef<string | null>(null);
   const keysDownRef = useRef<Set<string>>(new Set());
   const attackActiveRef = useRef(false);
+  const fightTimerRef = useRef(ARENA.FIGHT_DURATION);
+  const fightStartTimeRef = useRef(0);
+  const fightOverRef = useRef(false);
+  // Fighting game inputs
+  const fightMoveXRef = useRef(0);
+  const fightJumpRef = useRef(false);
+  const fightPunchRef = useRef(false);
+  const fightSpecialRef = useRef(false);
+  // Track which hits we've already applied (to avoid double-hit)
+  const hitTrackRef = useRef<Set<string>>(new Set());
 
   // Keep refs in sync
   useEffect(() => { localPlayerRef.current = localPlayer; }, [localPlayer]);
@@ -129,6 +145,57 @@ export default function Game() {
       });
     });
 
+    mp.on('fight_update', (payload: BroadcastPayload) => {
+      const data = payload.data;
+      setRemotePlayers(prev => {
+        const existing = prev[payload.senderId] || createPlayer(payload.senderId, data.name as string || 'Player');
+        const fight: FightState = {
+          ...existing.fight,
+          fx: data.fx as number,
+          fy: data.fy as number,
+          fvx: data.fvx as number,
+          fvy: data.fvy as number,
+          hp: data.hp as number,
+          facing: data.facing as 1 | -1,
+          grounded: data.grounded as boolean,
+          punching: data.punching as boolean,
+          punchTimer: data.punchTimer as number,
+          specialActive: data.specialActive as boolean,
+          specialTimer: data.specialTimer as number,
+          blockTimer: data.blockTimer as number,
+          freezeTimer: data.freezeTimer as number,
+          hitStunTimer: data.hitStunTimer as number,
+          dashActive: data.dashActive as boolean,
+          dashTimer: data.dashTimer as number,
+          dead: data.dead as boolean,
+          invulnTimer: data.invulnTimer as number,
+        };
+        return {
+          ...prev,
+          [payload.senderId]: { ...existing, character: data.character as CharacterId, name: data.name as string || existing.name, fight },
+        };
+      });
+    });
+
+    mp.on('fight_hit', (payload: BroadcastPayload) => {
+      const targetId = payload.data.targetId as string;
+      const damage = payload.data.damage as number;
+      const freeze = payload.data.freeze as boolean;
+
+      // If we are the target, apply damage
+      const mp2 = mpRef.current;
+      if (mp2 && targetId === mp2.getPlayerId()) {
+        setLocalPlayer(prev => {
+          if (!prev) return prev;
+          const engine = engineRef.current;
+          const newFight = engine.applyFightDamage(prev.fight, damage, 0, freeze);
+          // Add hit particles
+          engine.addFightParticles(prev.fight.fx, prev.fight.fy - 30, '#FF4444', 10);
+          return { ...prev, fight: newFight };
+        });
+      }
+    });
+
     mp.on('attack', (payload: BroadcastPayload) => {
       handleIncomingAttack(payload);
     });
@@ -153,15 +220,8 @@ export default function Game() {
       }
     });
 
-    mp.on('battle_finish', (payload: BroadcastPayload) => {
-      const time = payload.data.battleFinishTime as number;
-      const rp = remotePlayersRef.current[payload.senderId];
-      if (rp && rp.character) {
-        setBattleResults(prev => {
-          if (prev.find(r => r.name === rp.name)) return prev;
-          return [...prev, { name: rp.name, character: rp.character!, time }];
-        });
-      }
+    mp.on('battle_finish', (_payload: BroadcastPayload) => {
+      // Not used in fighting mode, kept for compat
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -194,7 +254,6 @@ export default function Game() {
     }
   };
 
-  // Request accelerometer permission (iOS requires user gesture)
   const requestTiltPermission = async () => {
     const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> };
     if (typeof DOE.requestPermission === 'function') {
@@ -208,7 +267,6 @@ export default function Game() {
         return false;
       }
     } else {
-      // Non-iOS or no permission needed
       setTiltPermission(true);
       return true;
     }
@@ -221,7 +279,6 @@ export default function Game() {
 
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.gamma !== null) {
-        // gamma: -90 to 90, we normalize to -1..1 with dead zone
         const raw = e.gamma / 25;
         const deadZone = 0.05;
         const val = Math.abs(raw) < deadZone ? 0 : raw;
@@ -233,26 +290,42 @@ export default function Game() {
     return () => window.removeEventListener('deviceorientation', handleOrientation);
   }, [tiltPermission]);
 
-  // Keyboard controls for desktop
+  // Keyboard controls
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const key = e.key.toLowerCase();
       keysDownRef.current.add(key);
 
-      // Boost: W or ArrowUp
       if (key === 'w' || key === 'arrowup') {
         e.preventDefault();
-        boostActiveRef.current = true;
+        if (phaseRef.current === 'battle') {
+          fightJumpRef.current = true;
+        } else {
+          boostActiveRef.current = true;
+        }
       }
-      // Jump: Space
       if (key === ' ' || key === 'space') {
         e.preventDefault();
-        jumpActiveRef.current = true;
+        if (phaseRef.current === 'battle') {
+          fightJumpRef.current = true;
+        } else {
+          jumpActiveRef.current = true;
+        }
       }
-      // Attack: F (battle phase)
+      // Fight controls
       if (key === 'f') {
         e.preventDefault();
-        attackActiveRef.current = true;
+        if (phaseRef.current === 'battle') {
+          fightPunchRef.current = true;
+        } else {
+          attackActiveRef.current = true;
+        }
+      }
+      if (key === 'g') {
+        e.preventDefault();
+        if (phaseRef.current === 'battle') {
+          fightSpecialRef.current = true;
+        }
       }
     };
 
@@ -269,7 +342,7 @@ export default function Game() {
     };
   }, []);
 
-  // Touch controls for steering (drag left/right on the track area)
+  // Touch controls
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     const touch = e.touches[0];
     if (touch) {
@@ -284,7 +357,6 @@ export default function Game() {
     if (touch) {
       touchCurrentXRef.current = touch.clientX;
       const dx = touch.clientX - touchStartXRef.current;
-      // If no tilt permission, use touch for steering
       if (!tiltPermission) {
         tiltXRef.current = Math.max(-1, Math.min(1, dx / 60));
       }
@@ -314,7 +386,6 @@ export default function Game() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Handle canvas sizing
     const dpr = window.devicePixelRatio || 1;
     const w = Math.min(window.innerWidth, 420);
     const h = window.innerHeight;
@@ -330,120 +401,215 @@ export default function Game() {
     let player = localPlayerRef.current;
     const currentPhase = phaseRef.current;
     const isBattle = currentPhase === 'battle';
-    const isRacing = currentPhase === 'racing' || isBattle;
+    const isRacing = currentPhase === 'racing';
 
     // Keyboard steering (A/D or ArrowLeft/ArrowRight)
     const keys = keysDownRef.current;
-    if (keys.has('a') || keys.has('arrowleft')) {
-      tiltXRef.current = -1;
-    } else if (keys.has('d') || keys.has('arrowright')) {
-      tiltXRef.current = 1;
-    } else if (!tiltPermission && touchStartXRef.current === null) {
-      // Only reset if no touch/tilt active
-      tiltXRef.current = 0;
-    }
 
-    if (isRacing && !player.finished && !(isBattle && player.battleFinished)) {
-      // Handle boost
-      if (boostActiveRef.current && boostCooldownRef.current <= 0) {
-        player = { ...player, boosting: true };
-        boostCooldownRef.current = TRACK.BOOST_COOLDOWN;
-        setTimeout(() => {
-          setLocalPlayer(prev => prev ? { ...prev, boosting: false } : prev);
-        }, TRACK.BOOST_DURATION);
-        const charDef = player.character ? CHARACTERS[player.character] : null;
-        if (charDef) {
-          engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 12);
-        }
-        engine.addShake(6);
-        engine.soundFX.boost();
-        boostActiveRef.current = false;
-      }
-      boostCooldownRef.current = Math.max(0, boostCooldownRef.current - dt);
+    if (isBattle) {
+      // === FIGHTING GAME LOGIC ===
 
-      // Handle jump
-      if (jumpActiveRef.current && jumpCooldownRef.current <= 0) {
-        player = { ...player, jumping: true };
-        jumpCooldownRef.current = TRACK.JUMP_COOLDOWN;
-        setTimeout(() => {
-          setLocalPlayer(prev => prev ? { ...prev, jumping: false } : prev);
-        }, TRACK.JUMP_DURATION);
-        engine.soundFX.jump();
-        engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, '#ffffff', 6);
-        jumpActiveRef.current = false;
-      }
-      jumpCooldownRef.current = Math.max(0, jumpCooldownRef.current - dt);
-
-      // Continuous boost trail particles
-      if (player.boosting && player.character) {
-        const charDef = CHARACTERS[player.character];
-        engine.addTrailParticle(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color);
+      // Movement input
+      if (keys.has('a') || keys.has('arrowleft')) {
+        fightMoveXRef.current = -1;
+      } else if (keys.has('d') || keys.has('arrowright')) {
+        fightMoveXRef.current = 1;
+      } else {
+        fightMoveXRef.current = 0;
       }
 
-      // Battle attack (manual via F key or touch button, with cooldown)
-      if (isBattle && player.character) {
-        attackCooldownRef.current -= dt;
-        const shouldAttack = attackActiveRef.current && attackCooldownRef.current <= 0;
-        attackActiveRef.current = false;
+      // Mobile tilt for movement in fight mode
+      if (tiltPermission && Math.abs(tiltXRef.current) > 0.2) {
+        fightMoveXRef.current = tiltXRef.current > 0 ? 1 : -1;
+      }
 
-        if (shouldAttack) {
-          attackCooldownRef.current = 2500;
-          mpRef.current?.broadcastAttack(player.character);
-          engine.soundFX.attack();
+      if (!fightOverRef.current && countdownTextRef.current === null) {
+        // Update fight timer
+        if (fightStartTimeRef.current > 0) {
+          const elapsed = now - fightStartTimeRef.current;
+          const remaining = Math.max(0, ARENA.FIGHT_DURATION - elapsed);
+          fightTimerRef.current = remaining;
+          setFightTimer(remaining);
 
-          if (player.character === 'unicorn') {
-            player = { ...player, shielded: true };
-          }
-          if (player.character === 'lion') {
-            player = { ...player, boosting: true };
-            setTimeout(() => {
-              setLocalPlayer(prev => prev ? { ...prev, boosting: false } : prev);
-            }, 300);
-            engine.addShake(8);
-          }
-
-          if (player.character) {
-            const charDef = CHARACTERS[player.character];
-            engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 15);
+          if (remaining <= 0) {
+            // Time's up! Most HP wins
+            fightOverRef.current = true;
+            endFight();
           }
         }
+
+        // Update local fighter
+        if (player.character && !player.fight.dead) {
+          const newFight = engine.updateFighter(
+            player.fight,
+            dt,
+            fightMoveXRef.current,
+            fightJumpRef.current,
+            fightPunchRef.current,
+            fightSpecialRef.current,
+            player.character
+          );
+
+          // Clear one-shot inputs
+          fightJumpRef.current = false;
+          fightPunchRef.current = false;
+          fightSpecialRef.current = false;
+
+          // Check hits against remote players
+          const remotes = Object.entries(remotePlayersRef.current);
+          for (const [remoteId, remote] of remotes) {
+            if (!remote.character || remote.fight.dead) continue;
+
+            const hitResult = engine.checkFightHit(newFight, player.character, remote.fight);
+            const hitKey = `${player.id}-${remoteId}-${newFight.punching ? 'p' : 's'}-${Math.floor(now / 300)}`;
+
+            if (hitResult && !hitTrackRef.current.has(hitKey)) {
+              hitTrackRef.current.add(hitKey);
+              // Broadcast the hit
+              mpRef.current?.broadcastFightHit(remoteId, hitResult.damage, hitResult.freeze || false);
+              // Add hit particles
+              engine.addFightParticles(remote.fight.fx, remote.fight.fy - 30, CHARACTERS[player.character].color, 12);
+
+              // Clean up old hit tracking
+              if (hitTrackRef.current.size > 100) {
+                const arr = Array.from(hitTrackRef.current);
+                hitTrackRef.current = new Set(arr.slice(-50));
+              }
+            }
+          }
+
+          // Also check single-player mode: if we have the remote fight state locally, apply damage ourselves
+          // (for the case where we're host and there's an AI or local sim)
+
+          // Check if player died
+          if (newFight.dead) {
+            fightOverRef.current = true;
+            endFight();
+          }
+
+          player = { ...player, fight: newFight };
+          setLocalPlayer(player);
+        }
+
+        // Check if any remote player died
+        const anyRemoteDead = Object.values(remotePlayersRef.current).some(p => p.fight?.dead);
+        if (anyRemoteDead && !fightOverRef.current) {
+          fightOverRef.current = true;
+          setTimeout(() => endFight(), 1000);
+        }
       }
 
-      // Update physics
-      player = engine.updatePlayer(player, dt, tiltXRef.current, player.boosting, player.jumping, isBattle, now);
+      // Update particles
+      engine.updateParticles(dt);
 
-      // Check if race finished
-      if (player.finished && !isBattle) {
-        mpRef.current?.broadcastRaceFinish(player.finishTime);
-        setRaceResults(prev => {
-          if (prev.find(r => r.name === player.name)) return prev;
-          return [...prev, { name: player.name, character: player.character!, time: player.finishTime }];
-        });
-        setShowFinished(true);
-        setTimeout(() => setShowFinished(false), 2000);
-      }
-      if (player.battleFinished && isBattle) {
-        mpRef.current?.broadcastBattleFinish(player.battleFinishTime);
-        setBattleResults(prev => {
-          if (prev.find(r => r.name === player.name)) return prev;
-          return [...prev, { name: player.name, character: player.character!, time: player.battleFinishTime }];
-        });
-        setShowFinished(true);
+      // Render fight
+      const otherPlayers = Object.values(remotePlayersRef.current);
+      renderFightGame(ctx, canvas, engine, player, otherPlayers, fightTimerRef.current, countdownTextRef.current);
+
+    } else if (isRacing) {
+      // === RACING LOGIC (unchanged) ===
+
+      if (keys.has('a') || keys.has('arrowleft')) {
+        tiltXRef.current = -1;
+      } else if (keys.has('d') || keys.has('arrowright')) {
+        tiltXRef.current = 1;
+      } else if (!tiltPermission && touchStartXRef.current === null) {
+        tiltXRef.current = 0;
       }
 
-      setLocalPlayer(player);
+      if (!player.finished) {
+        // Handle boost
+        if (boostActiveRef.current && boostCooldownRef.current <= 0) {
+          player = { ...player, boosting: true };
+          boostCooldownRef.current = TRACK.BOOST_COOLDOWN;
+          setTimeout(() => {
+            setLocalPlayer(prev => prev ? { ...prev, boosting: false } : prev);
+          }, TRACK.BOOST_DURATION);
+          const charDef = player.character ? CHARACTERS[player.character] : null;
+          if (charDef) {
+            engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 12);
+          }
+          engine.addShake(6);
+          engine.soundFX.boost();
+          boostActiveRef.current = false;
+        }
+        boostCooldownRef.current = Math.max(0, boostCooldownRef.current - dt);
+
+        // Handle jump
+        if (jumpActiveRef.current && jumpCooldownRef.current <= 0) {
+          player = { ...player, jumping: true };
+          jumpCooldownRef.current = TRACK.JUMP_COOLDOWN;
+          setTimeout(() => {
+            setLocalPlayer(prev => prev ? { ...prev, jumping: false } : prev);
+          }, TRACK.JUMP_DURATION);
+          engine.soundFX.jump();
+          engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, '#ffffff', 6);
+          jumpActiveRef.current = false;
+        }
+        jumpCooldownRef.current = Math.max(0, jumpCooldownRef.current - dt);
+
+        // Boost trail
+        if (player.boosting && player.character) {
+          const charDef = CHARACTERS[player.character];
+          engine.addTrailParticle(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color);
+        }
+
+        // Update physics
+        player = engine.updatePlayer(player, dt, tiltXRef.current, player.boosting, player.jumping, false, now);
+
+        // Check finish
+        if (player.finished) {
+          mpRef.current?.broadcastRaceFinish(player.finishTime);
+          setRaceResults(prev => {
+            if (prev.find(r => r.name === player.name)) return prev;
+            return [...prev, { name: player.name, character: player.character!, time: player.finishTime }];
+          });
+          setShowFinished(true);
+          setTimeout(() => setShowFinished(false), 2000);
+        }
+
+        setLocalPlayer(player);
+      }
+
+      engine.updateParticles(dt);
+
+      const otherPlayers = Object.values(remotePlayersRef.current);
+      renderGame(ctx, canvas, engine, player, otherPlayers, false, countdownTextRef.current);
+
+    } else {
+      // Countdown phase - just render
+      engine.updateParticles(dt);
+      const otherPlayers = Object.values(remotePlayersRef.current);
+      renderGame(ctx, canvas, engine, player, otherPlayers, false, countdownTextRef.current);
     }
-
-    // Update particles
-    engine.updateParticles(dt);
-
-    // Render
-    const otherPlayers = Object.values(remotePlayersRef.current);
-    renderGame(ctx, canvas, engine, player, otherPlayers, isBattle, countdownTextRef.current);
 
     animFrameRef.current = requestAnimationFrame(gameLoop);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const endFight = () => {
+    const lp = localPlayerRef.current;
+    if (!lp) return;
+
+    const allPlayers = [lp, ...Object.values(remotePlayersRef.current)].filter(p => p.character);
+    const results = allPlayers
+      .map(p => ({
+        name: p.name,
+        character: p.character!,
+        hp: p.fight?.hp ?? 0,
+      }))
+      .sort((a, b) => b.hp - a.hp);
+
+    setBattleResults(results);
+
+    if (results.length > 0) {
+      setFightWinner(results[0].name);
+    }
+
+    setTimeout(() => {
+      setPhase('results');
+    }, 2000);
+  };
 
   // Start/stop game loop
   useEffect(() => {
@@ -456,7 +622,7 @@ export default function Game() {
 
   // Broadcast position at 10Hz during racing
   useEffect(() => {
-    if (phase === 'racing' || phase === 'battle') {
+    if (phase === 'racing') {
       broadcastIntervalRef.current = setInterval(() => {
         if (localPlayerRef.current) {
           mpRef.current?.broadcastPosition(localPlayerRef.current);
@@ -465,10 +631,19 @@ export default function Game() {
       return () => {
         if (broadcastIntervalRef.current) clearInterval(broadcastIntervalRef.current);
       };
+    } else if (phase === 'battle') {
+      broadcastIntervalRef.current = setInterval(() => {
+        if (localPlayerRef.current) {
+          mpRef.current?.broadcastFightState(localPlayerRef.current);
+        }
+      }, 100);
+      return () => {
+        if (broadcastIntervalRef.current) clearInterval(broadcastIntervalRef.current);
+      };
     }
   }, [phase]);
 
-  // Auto-transition from race to battle when all finished
+  // Auto-transition from race to battle (fighting game) when all finished
   useEffect(() => {
     if (phase !== 'racing' || !localPlayer?.finished) return;
 
@@ -487,51 +662,80 @@ export default function Game() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, localPlayer, remotePlayers, raceResults, isHost, battleTransition]);
 
-  // Auto-transition from battle to results
-  useEffect(() => {
-    if (phase !== 'battle' || !localPlayer?.battleFinished) return;
-
-    const totalPlayers = 1 + Object.keys(remotePlayers).length;
-    const allFinished = Object.values(remotePlayers).every(p => p.battleFinished) || battleResults.length >= totalPlayers;
-
-    if (allFinished) {
-      setTimeout(() => {
-        if (isHost) {
-          mpRef.current?.broadcastPhaseChange('results');
-        }
-        setPhase('results');
-      }, 2500);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, localPlayer, remotePlayers, battleResults, isHost]);
-
   const startBattlePhase = () => {
     setBattleTransition(false);
     setShowFinished(false);
-    setLocalPlayer(prev => prev ? {
-      ...prev,
-      progress: 0,
-      lap: 0,
-      speed: 0,
-      finished: false,
-      battleFinished: false,
-      battleFinishTime: 0,
-      hitStun: 0,
-      frozen: false,
-      boosting: false,
-      jumping: false,
-      shielded: false,
-    } : prev);
-    attackCooldownRef.current = 2000;
-    engineRef.current.resetTrack(99);
+    fightOverRef.current = false;
+    hitTrackRef.current.clear();
+    setFightWinner(null);
+    setBattleResults([]);
 
-    setCountdownText('⚔️ BATTLE!');
+    const engine = engineRef.current;
+
+    // Initialize fight states
+    const allPlayerIds = [mpRef.current?.getPlayerId() || '', ...Object.keys(remotePlayersRef.current)];
+    const totalPlayers = allPlayerIds.length;
+    const localIdx = 0;
+
+    setLocalPlayer(prev => {
+      if (!prev) return prev;
+      const fightState = engine.initFightState(localIdx, totalPlayers);
+      return {
+        ...prev,
+        progress: 0,
+        lap: 0,
+        speed: 0,
+        finished: false,
+        battleFinished: false,
+        battleFinishTime: 0,
+        hitStun: 0,
+        frozen: false,
+        boosting: false,
+        jumping: false,
+        shielded: false,
+        fight: fightState,
+      };
+    });
+
+    // Initialize remote players fight states
+    setRemotePlayers(prev => {
+      const updated = { ...prev };
+      let idx = 1;
+      for (const id of Object.keys(updated)) {
+        const fightState = engine.initFightState(idx, totalPlayers);
+        updated[id] = {
+          ...updated[id],
+          fight: fightState,
+        };
+        idx++;
+      }
+      return updated;
+    });
+
+    fightTimerRef.current = ARENA.FIGHT_DURATION;
+    setFightTimer(ARENA.FIGHT_DURATION);
+    engine.particles = [];
+    engine.screenShake = 0;
+
+    setCountdownText('⚔️ FIGHT!');
     setPhase('battle');
-    setTimeout(() => setCountdownText('3'), 1000);
-    setTimeout(() => setCountdownText('2'), 2000);
-    setTimeout(() => setCountdownText('1'), 3000);
+
     setTimeout(() => {
+      engineRef.current.soundFX.countdown();
+      setCountdownText('3');
+    }, 1000);
+    setTimeout(() => {
+      engineRef.current.soundFX.countdown();
+      setCountdownText('2');
+    }, 2000);
+    setTimeout(() => {
+      engineRef.current.soundFX.countdown();
+      setCountdownText('1');
+    }, 3000);
+    setTimeout(() => {
+      engineRef.current.soundFX.go();
       setCountdownText('GO!');
+      fightStartTimeRef.current = Date.now();
       setTimeout(() => setCountdownText(null), 500);
     }, 4000);
   };
@@ -554,6 +758,7 @@ export default function Game() {
       finishTime: 0,
       battleFinished: false,
       battleFinishTime: 0,
+      fight: createDefaultFightState(),
     } : prev);
 
     engineRef.current.resetTrack(42);
@@ -561,6 +766,8 @@ export default function Game() {
     setBattleResults([]);
     setShowFinished(false);
     setBattleTransition(false);
+    fightOverRef.current = false;
+    setFightWinner(null);
 
     setCountdownText('GET READY!');
     setPhase('countdown');
@@ -684,7 +891,6 @@ export default function Game() {
                 key={charId}
                 onClick={() => {
                   if (taken || selected) return;
-                  // Deselect previous
                   if (localPlayer?.character) {
                     setTakenCharacters(prev => {
                       const next = new Set(prev);
@@ -708,7 +914,8 @@ export default function Game() {
                 <span className="text-5xl">{char.emoji}</span>
                 <div className="text-left flex-1">
                   <div className="text-xl font-bold">{char.name}</div>
-                  <div className="text-sm opacity-80">{char.attackName}: {char.attackDesc}</div>
+                  <div className="text-sm opacity-80">🥊 {char.punchName} ({char.punchDamage} dmg)</div>
+                  <div className="text-sm opacity-80">⚡ {char.specialName}: {char.attackDesc}</div>
                 </div>
                 {selected && <span className="text-2xl">✅</span>}
                 {taken && <span className="text-xl">🔒</span>}
@@ -805,7 +1012,7 @@ export default function Game() {
   // RESULTS
   if (phase === 'results') {
     const sortedRace = [...raceResults].sort((a, b) => a.time - b.time);
-    const sortedBattle = [...battleResults].sort((a, b) => a.time - b.time);
+    const sortedBattle = [...battleResults].sort((a, b) => b.hp - a.hp);
 
     return (
       <div className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-6 text-white"
@@ -836,10 +1043,10 @@ export default function Game() {
           </div>
         )}
 
-        {/* Battle Results */}
+        {/* Battle (Fighting) Results */}
         {sortedBattle.length > 0 && (
           <div className="w-full max-w-sm mb-4">
-            <h3 className="text-xl font-bold mb-2 text-center">⚔️ Battle</h3>
+            <h3 className="text-xl font-bold mb-2 text-center">⚔️ Fight</h3>
             <div className="space-y-2">
               {sortedBattle.map((r, i) => {
                 const charDef = CHARACTERS[r.character];
@@ -848,12 +1055,21 @@ export default function Game() {
                   <div key={i} className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-purple-300/40 ring-2 ring-purple-200' : 'bg-white/15'}`}>
                     <span className="text-3xl">{medals[i] || ''}</span>
                     <span className="text-3xl">{charDef.emoji}</span>
-                    <div className="flex-1 font-bold text-lg">{r.name}</div>
+                    <div className="flex-1">
+                      <div className="font-bold text-lg">{r.name}</div>
+                      <div className="text-sm opacity-80">{r.hp} HP remaining</div>
+                    </div>
                     {i === 0 && <span className="text-3xl">🏆✨</span>}
                   </div>
                 );
               })}
             </div>
+          </div>
+        )}
+
+        {fightWinner && (
+          <div className="text-2xl font-bold text-yellow-200 mb-3 animate-pulse">
+            🎉 {fightWinner} wins the fight!
           </div>
         )}
 
@@ -868,6 +1084,8 @@ export default function Game() {
             setBattleResults([]);
             setBattleTransition(false);
             setShowFinished(false);
+            setFightWinner(null);
+            fightOverRef.current = false;
             mpRef.current?.disconnect();
           }}
           className="mt-2 w-72 p-4 rounded-2xl text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 active:scale-95 transition-transform"
@@ -890,7 +1108,7 @@ export default function Game() {
       <canvas ref={canvasRef} className="block mx-auto" />
 
       {/* Control buttons overlay */}
-      {(phase === 'racing' || phase === 'battle') && (
+      {phase === 'racing' && (
         <>
           {/* Boost button - left */}
           <button
@@ -926,44 +1144,17 @@ export default function Game() {
             ⬆️
           </button>
 
-          {/* Attack button - center (battle only) */}
-          {phase === 'battle' && (
-            <button
-              onTouchStart={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                attackActiveRef.current = true;
-              }}
-              onMouseDown={(e) => {
-                e.preventDefault();
-                attackActiveRef.current = true;
-              }}
-              className="fixed bottom-6 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-red-600/90 text-white border-4 border-red-400"
-              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
-            >
-              ⚔️
-            </button>
-          )}
-
-          {/* Label hints */}
           <div className="fixed bottom-1 left-4 w-24 text-center text-xs text-white/60 font-bold">
             BOOST (W)
           </div>
           <div className="fixed bottom-1 right-4 w-24 text-center text-xs text-white/60 font-bold">
             JUMP (SPACE)
           </div>
-          {phase === 'battle' && (
-            <div className="fixed bottom-1 left-1/2 -translate-x-1/2 w-20 text-center text-xs text-white/60 font-bold">
-              ATK (F)
-            </div>
-          )}
 
-          {/* Battle indicator */}
-          {phase === 'battle' && (
-            <div className="fixed top-14 left-1/2 -translate-x-1/2 bg-red-600/90 backdrop-blur px-5 py-2 rounded-full text-white font-bold text-lg animate-pulse shadow-lg">
-              ⚔️ BATTLE MODE ⚔️
-            </div>
-          )}
+          {/* Steer hint */}
+          <div className="fixed top-16 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
+            {tiltPermission ? '📱 Tilt to steer' : '← A/D or Arrow Keys to steer →'}
+          </div>
 
           {/* Finished overlay */}
           {showFinished && (
@@ -971,11 +1162,132 @@ export default function Game() {
               🏁 FINISHED! 🏁
             </div>
           )}
+        </>
+      )}
 
-          {/* Steer hint - show keyboard hint on desktop */}
-          <div className="fixed top-16 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
-            {tiltPermission ? '📱 Tilt to steer' : '← A/D or Arrow Keys to steer →'}
+      {/* BATTLE (Fighting Game) Controls */}
+      {phase === 'battle' && (
+        <>
+          {/* D-pad: Left */}
+          <button
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              fightMoveXRef.current = -1;
+            }}
+            onTouchEnd={(e) => {
+              e.stopPropagation();
+              fightMoveXRef.current = 0;
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              fightMoveXRef.current = -1;
+            }}
+            onMouseUp={() => fightMoveXRef.current = 0}
+            className="fixed bottom-28 left-4 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-gray-700/90 text-white border-2 border-gray-500"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+          >
+            ◀
+          </button>
+
+          {/* D-pad: Right */}
+          <button
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              fightMoveXRef.current = 1;
+            }}
+            onTouchEnd={(e) => {
+              e.stopPropagation();
+              fightMoveXRef.current = 0;
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              fightMoveXRef.current = 1;
+            }}
+            onMouseUp={() => fightMoveXRef.current = 0}
+            className="fixed bottom-28 left-24 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-gray-700/90 text-white border-2 border-gray-500"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+          >
+            ▶
+          </button>
+
+          {/* Jump button */}
+          <button
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              fightJumpRef.current = true;
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              fightJumpRef.current = true;
+            }}
+            className="fixed bottom-48 left-12 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-blue-600/90 text-white border-2 border-blue-400"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+          >
+            ▲
+          </button>
+
+          {/* Punch button */}
+          <button
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              fightPunchRef.current = true;
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              fightPunchRef.current = true;
+            }}
+            className="fixed bottom-28 right-4 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-red-600/90 text-white border-4 border-red-400"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+          >
+            👊
+          </button>
+
+          {/* Special button */}
+          <button
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              fightSpecialRef.current = true;
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              fightSpecialRef.current = true;
+            }}
+            className="fixed bottom-6 right-4 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-yellow-500/90 text-white border-4 border-yellow-300"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+          >
+            ⚡
+          </button>
+
+          {/* Labels */}
+          <div className="fixed bottom-24 left-12 w-20 text-center text-xs text-white/50 font-bold">
+            MOVE
           </div>
+          <div className="fixed bottom-44 left-8 w-24 text-center text-xs text-white/50 font-bold">
+            JUMP (W)
+          </div>
+          <div className="fixed bottom-24 right-0 w-28 text-center text-xs text-white/50 font-bold">
+            PUNCH (F)
+          </div>
+          <div className="fixed bottom-2 right-0 w-28 text-center text-xs text-white/50 font-bold">
+            SPECIAL (G)
+          </div>
+
+          {/* Fight mode indicator */}
+          <div className="fixed top-[74px] left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
+            A/D: Move • W: Jump • F: Punch • G: Special
+          </div>
+
+          {/* KO overlay */}
+          {fightWinner && (
+            <div className="fixed top-1/3 left-1/2 -translate-x-1/2 bg-red-600/90 backdrop-blur px-8 py-4 rounded-2xl text-white font-bold text-3xl shadow-xl animate-bounce">
+              💥 K.O.! 💥
+            </div>
+          )}
         </>
       )}
     </div>

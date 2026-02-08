@@ -31,7 +31,6 @@ export class MultiplayerManager {
   async joinRoom(code: string): Promise<void> {
     this.roomCode = code;
 
-    // Clean up existing channel
     if (this.channel) {
       await supabase.removeChannel(this.channel);
     }
@@ -51,7 +50,6 @@ export class MultiplayerManager {
         listener(data);
       }
 
-      // Also notify 'all' listeners
       const allListeners = this.listeners.get('all') || [];
       for (const listener of allListeners) {
         listener(data);
@@ -94,7 +92,6 @@ export class MultiplayerManager {
     this.listeners.clear();
   }
 
-  // Broadcast player position (called frequently during race)
   broadcastPosition(player: PlayerState) {
     this.broadcast('player_update', {
       x: player.x,
@@ -113,6 +110,36 @@ export class MultiplayerManager {
       character: player.character,
       name: player.name,
     });
+  }
+
+  broadcastFightState(player: PlayerState) {
+    const f = player.fight;
+    this.broadcast('fight_update', {
+      character: player.character,
+      name: player.name,
+      fx: f.fx,
+      fy: f.fy,
+      fvx: f.fvx,
+      fvy: f.fvy,
+      hp: f.hp,
+      facing: f.facing,
+      grounded: f.grounded,
+      punching: f.punching,
+      punchTimer: f.punchTimer,
+      specialActive: f.specialActive,
+      specialTimer: f.specialTimer,
+      blockTimer: f.blockTimer,
+      freezeTimer: f.freezeTimer,
+      hitStunTimer: f.hitStunTimer,
+      dashActive: f.dashActive,
+      dashTimer: f.dashTimer,
+      dead: f.dead,
+      invulnTimer: f.invulnTimer,
+    });
+  }
+
+  broadcastFightHit(targetId: string, damage: number, freeze: boolean) {
+    this.broadcast('fight_hit', { targetId, damage, freeze });
   }
 
   broadcastJoin(name: string) {

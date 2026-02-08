@@ -49,8 +49,9 @@ export default function Game() {
   const [remoteReady, setRemoteReady] = useState<Set<string>>(new Set());
   const [raceResults, setRaceResults] = useState<{ name: string; character: CharacterId; time: number }[]>([]);
   const [battleResults, setBattleResults] = useState<{ name: string; character: CharacterId; time: number }[]>([]);
-  const [, setGameStartTime] = useState(0);
   const [battleTransition, setBattleTransition] = useState(false);
+  const [tiltPermission, setTiltPermission] = useState(false);
+  const [showFinished, setShowFinished] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mpRef = useRef<MultiplayerManager | null>(null);
@@ -58,8 +59,8 @@ export default function Game() {
   const animFrameRef = useRef<number>(0);
   const lastTimeRef = useRef<number>(0);
   const tiltXRef = useRef<number>(0);
-  const boostPressedRef = useRef(false);
-  const jumpPressedRef = useRef(false);
+  const boostActiveRef = useRef(false);
+  const jumpActiveRef = useRef(false);
   const boostCooldownRef = useRef(0);
   const jumpCooldownRef = useRef(0);
   const localPlayerRef = useRef<PlayerState | null>(null);
@@ -67,12 +68,17 @@ export default function Game() {
   const phaseRef = useRef<GamePhase>('home');
   const broadcastIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartXRef = useRef<number | null>(null);
+  const touchCurrentXRef = useRef<number | null>(null);
   const attackCooldownRef = useRef(0);
+  const countdownTextRef = useRef<string | null>(null);
+  const keysDownRef = useRef<Set<string>>(new Set());
+  const attackActiveRef = useRef(false);
 
   // Keep refs in sync
   useEffect(() => { localPlayerRef.current = localPlayer; }, [localPlayer]);
   useEffect(() => { remotePlayersRef.current = remotePlayers; }, [remotePlayers]);
   useEffect(() => { phaseRef.current = phase; }, [phase]);
+  useEffect(() => { countdownTextRef.current = countdownText; }, [countdownText]);
 
   // Initialize multiplayer
   useEffect(() => {
@@ -83,7 +89,7 @@ export default function Game() {
     };
   }, []);
 
-  // Setup multiplayer listeners
+  // Multiplayer listeners setup
   const setupListeners = useCallback(() => {
     const mp = mpRef.current;
     if (!mp) return;
@@ -98,7 +104,7 @@ export default function Game() {
       const char = payload.data.character as CharacterId;
       setRemotePlayers(prev => ({
         ...prev,
-        [payload.senderId]: { ...prev[payload.senderId], character: char },
+        [payload.senderId]: { ...(prev[payload.senderId] || createPlayer(payload.senderId, 'Player')), character: char },
       }));
       setTakenCharacters(prev => new Set([...prev, char]));
     });
@@ -109,19 +115,18 @@ export default function Game() {
 
     mp.on('start_game', (payload: BroadcastPayload) => {
       const startTime = payload.data.startTime as number;
-      setGameStartTime(startTime);
       startCountdown(startTime);
     });
 
     mp.on('player_update', (payload: BroadcastPayload) => {
-      setRemotePlayers(prev => ({
-        ...prev,
-        [payload.senderId]: {
-          ...prev[payload.senderId],
-          ...(payload.data as Partial<PlayerState>),
-          id: payload.senderId,
-        } as PlayerState,
-      }));
+      const data = payload.data as Partial<PlayerState>;
+      setRemotePlayers(prev => {
+        const existing = prev[payload.senderId] || createPlayer(payload.senderId, data.name as string || 'Player');
+        return {
+          ...prev,
+          [payload.senderId]: { ...existing, ...data, id: payload.senderId } as PlayerState,
+        };
+      });
     });
 
     mp.on('attack', (payload: BroadcastPayload) => {
@@ -140,18 +145,25 @@ export default function Game() {
     mp.on('race_finish', (payload: BroadcastPayload) => {
       const time = payload.data.finishTime as number;
       const rp = remotePlayersRef.current[payload.senderId];
-      if (rp) {
-        setRaceResults(prev => [...prev, { name: rp.name, character: rp.character!, time }]);
+      if (rp && rp.character) {
+        setRaceResults(prev => {
+          if (prev.find(r => r.name === rp.name)) return prev;
+          return [...prev, { name: rp.name, character: rp.character!, time }];
+        });
       }
     });
 
     mp.on('battle_finish', (payload: BroadcastPayload) => {
       const time = payload.data.battleFinishTime as number;
       const rp = remotePlayersRef.current[payload.senderId];
-      if (rp) {
-        setBattleResults(prev => [...prev, { name: rp.name, character: rp.character!, time }]);
+      if (rp && rp.character) {
+        setBattleResults(prev => {
+          if (prev.find(r => r.name === rp.name)) return prev;
+          return [...prev, { name: rp.name, character: rp.character!, time }];
+        });
       }
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleIncomingAttack = (payload: BroadcastPayload) => {
@@ -160,15 +172,17 @@ export default function Game() {
     if (!lp) return;
 
     if (attackChar === 'lion') {
-      // Fire Dash - knock aside
       if (lp.shielded) {
         setLocalPlayer(prev => prev ? { ...prev, shielded: false } : prev);
       } else {
-        setLocalPlayer(prev => prev ? { ...prev, hitStun: TRACK.HIT_STUN_DURATION, x: Math.max(0.1, Math.min(0.9, prev.x + (Math.random() > 0.5 ? 0.15 : -0.15))) } : prev);
+        setLocalPlayer(prev => prev ? {
+          ...prev,
+          hitStun: TRACK.HIT_STUN_DURATION,
+          x: Math.max(0.1, Math.min(0.9, prev.x + (Math.random() > 0.5 ? 0.15 : -0.15)))
+        } : prev);
         engineRef.current.addShake(10);
       }
     } else if (attackChar === 'wolf') {
-      // Ice Howl - freeze
       if (lp.shielded) {
         setLocalPlayer(prev => prev ? { ...prev, shielded: false } : prev);
       } else {
@@ -178,45 +192,89 @@ export default function Game() {
         }, TRACK.FREEZE_DURATION);
       }
     }
-    // Unicorn's Rainbow Shield is self-buff, not an attack on others
   };
 
-  // Accelerometer
+  // Request accelerometer permission (iOS requires user gesture)
+  const requestTiltPermission = async () => {
+    const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> };
+    if (typeof DOE.requestPermission === 'function') {
+      try {
+        const perm = await DOE.requestPermission();
+        if (perm === 'granted') {
+          setTiltPermission(true);
+          return true;
+        }
+      } catch {
+        return false;
+      }
+    } else {
+      // Non-iOS or no permission needed
+      setTiltPermission(true);
+      return true;
+    }
+    return false;
+  };
+
+  // Accelerometer listener
   useEffect(() => {
+    if (!tiltPermission) return;
+
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.gamma !== null) {
-        tiltXRef.current = Math.max(-1, Math.min(1, e.gamma / 30));
+        // gamma: -90 to 90, we normalize to -1..1 with dead zone
+        const raw = e.gamma / 25;
+        const deadZone = 0.05;
+        const val = Math.abs(raw) < deadZone ? 0 : raw;
+        tiltXRef.current = Math.max(-1, Math.min(1, val));
       }
     };
 
-    // Request permission on iOS
-    const requestPermission = async () => {
-      if (typeof (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission === 'function') {
-        try {
-          const perm = await (DeviceOrientationEvent as unknown as { requestPermission: () => Promise<string> }).requestPermission();
-          if (perm === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation);
-          }
-        } catch {
-          // Fall back to touch
-        }
-      } else {
-        window.addEventListener('deviceorientation', handleOrientation);
+    window.addEventListener('deviceorientation', handleOrientation);
+    return () => window.removeEventListener('deviceorientation', handleOrientation);
+  }, [tiltPermission]);
+
+  // Keyboard controls for desktop
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const key = e.key.toLowerCase();
+      keysDownRef.current.add(key);
+
+      // Boost: W or ArrowUp
+      if (key === 'w' || key === 'arrowup') {
+        e.preventDefault();
+        boostActiveRef.current = true;
+      }
+      // Jump: Space
+      if (key === ' ' || key === 'space') {
+        e.preventDefault();
+        jumpActiveRef.current = true;
+      }
+      // Attack: F (battle phase)
+      if (key === 'f') {
+        e.preventDefault();
+        attackActiveRef.current = true;
       }
     };
 
-    requestPermission();
+    const handleKeyUp = (e: KeyboardEvent) => {
+      const key = e.key.toLowerCase();
+      keysDownRef.current.delete(key);
+    };
 
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
     return () => {
-      window.removeEventListener('deviceorientation', handleOrientation);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
     };
   }, []);
 
-  // Touch controls for steering
+  // Touch controls for steering (drag left/right on the track area)
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     const touch = e.touches[0];
     if (touch) {
       touchStartXRef.current = touch.clientX;
+      touchCurrentXRef.current = touch.clientX;
     }
   }, []);
 
@@ -224,15 +282,22 @@ export default function Game() {
     if (touchStartXRef.current === null) return;
     const touch = e.touches[0];
     if (touch) {
+      touchCurrentXRef.current = touch.clientX;
       const dx = touch.clientX - touchStartXRef.current;
-      tiltXRef.current = Math.max(-1, Math.min(1, dx / 50));
+      // If no tilt permission, use touch for steering
+      if (!tiltPermission) {
+        tiltXRef.current = Math.max(-1, Math.min(1, dx / 60));
+      }
     }
-  }, []);
+  }, [tiltPermission]);
 
   const handleTouchEnd = useCallback(() => {
     touchStartXRef.current = null;
-    tiltXRef.current = 0;
-  }, []);
+    touchCurrentXRef.current = null;
+    if (!tiltPermission) {
+      tiltXRef.current = 0;
+    }
+  }, [tiltPermission]);
 
   // Game loop
   const gameLoop = useCallback((timestamp: number) => {
@@ -245,8 +310,21 @@ export default function Game() {
     lastTimeRef.current = timestamp;
     const now = Date.now();
 
-    const ctx = canvasRef.current.getContext('2d');
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    // Handle canvas sizing
+    const dpr = window.devicePixelRatio || 1;
+    const w = Math.min(window.innerWidth, 420);
+    const h = window.innerHeight;
+    if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const engine = engineRef.current;
     let player = localPlayerRef.current;
@@ -254,9 +332,20 @@ export default function Game() {
     const isBattle = currentPhase === 'battle';
     const isRacing = currentPhase === 'racing' || isBattle;
 
+    // Keyboard steering (A/D or ArrowLeft/ArrowRight)
+    const keys = keysDownRef.current;
+    if (keys.has('a') || keys.has('arrowleft')) {
+      tiltXRef.current = -1;
+    } else if (keys.has('d') || keys.has('arrowright')) {
+      tiltXRef.current = 1;
+    } else if (!tiltPermission && touchStartXRef.current === null) {
+      // Only reset if no touch/tilt active
+      tiltXRef.current = 0;
+    }
+
     if (isRacing && !player.finished && !(isBattle && player.battleFinished)) {
       // Handle boost
-      if (boostPressedRef.current && boostCooldownRef.current <= 0) {
+      if (boostActiveRef.current && boostCooldownRef.current <= 0) {
         player = { ...player, boosting: true };
         boostCooldownRef.current = TRACK.BOOST_COOLDOWN;
         setTimeout(() => {
@@ -264,47 +353,58 @@ export default function Game() {
         }, TRACK.BOOST_DURATION);
         const charDef = player.character ? CHARACTERS[player.character] : null;
         if (charDef) {
-          engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 8);
+          engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 12);
         }
-        engine.addShake(3);
-        boostPressedRef.current = false;
+        engine.addShake(6);
+        engine.soundFX.boost();
+        boostActiveRef.current = false;
       }
       boostCooldownRef.current = Math.max(0, boostCooldownRef.current - dt);
 
       // Handle jump
-      if (jumpPressedRef.current && jumpCooldownRef.current <= 0) {
+      if (jumpActiveRef.current && jumpCooldownRef.current <= 0) {
         player = { ...player, jumping: true };
         jumpCooldownRef.current = TRACK.JUMP_COOLDOWN;
         setTimeout(() => {
           setLocalPlayer(prev => prev ? { ...prev, jumping: false } : prev);
         }, TRACK.JUMP_DURATION);
-        jumpPressedRef.current = false;
+        engine.soundFX.jump();
+        engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, '#ffffff', 6);
+        jumpActiveRef.current = false;
       }
       jumpCooldownRef.current = Math.max(0, jumpCooldownRef.current - dt);
 
-      // Battle auto-attack
+      // Continuous boost trail particles
+      if (player.boosting && player.character) {
+        const charDef = CHARACTERS[player.character];
+        engine.addTrailParticle(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color);
+      }
+
+      // Battle attack (manual via F key or touch button, with cooldown)
       if (isBattle && player.character) {
         attackCooldownRef.current -= dt;
-        if (attackCooldownRef.current <= 0) {
-          attackCooldownRef.current = 4000; // Attack every 4 seconds
-          mpRef.current?.broadcastAttack(player.character);
+        const shouldAttack = attackActiveRef.current && attackCooldownRef.current <= 0;
+        attackActiveRef.current = false;
 
-          // Unicorn self-buff
+        if (shouldAttack) {
+          attackCooldownRef.current = 2500;
+          mpRef.current?.broadcastAttack(player.character);
+          engine.soundFX.attack();
+
           if (player.character === 'unicorn') {
             player = { ...player, shielded: true };
           }
-          // Lion boost on attack
           if (player.character === 'lion') {
             player = { ...player, boosting: true };
             setTimeout(() => {
               setLocalPlayer(prev => prev ? { ...prev, boosting: false } : prev);
             }, 300);
-            engine.addShake(5);
+            engine.addShake(8);
           }
 
           if (player.character) {
             const charDef = CHARACTERS[player.character];
-            engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 12);
+            engine.addParticles(player.x * TRACK.WIDTH, TRACK.VISIBLE_HEIGHT * 0.65, charDef.color, 15);
           }
         }
       }
@@ -312,13 +412,15 @@ export default function Game() {
       // Update physics
       player = engine.updatePlayer(player, dt, tiltXRef.current, player.boosting, player.jumping, isBattle, now);
 
-      // Check if finished
+      // Check if race finished
       if (player.finished && !isBattle) {
         mpRef.current?.broadcastRaceFinish(player.finishTime);
         setRaceResults(prev => {
           if (prev.find(r => r.name === player.name)) return prev;
           return [...prev, { name: player.name, character: player.character!, time: player.finishTime }];
         });
+        setShowFinished(true);
+        setTimeout(() => setShowFinished(false), 2000);
       }
       if (player.battleFinished && isBattle) {
         mpRef.current?.broadcastBattleFinish(player.battleFinishTime);
@@ -326,6 +428,7 @@ export default function Game() {
           if (prev.find(r => r.name === player.name)) return prev;
           return [...prev, { name: player.name, character: player.character!, time: player.battleFinishTime }];
         });
+        setShowFinished(true);
       }
 
       setLocalPlayer(player);
@@ -336,18 +439,18 @@ export default function Game() {
 
     // Render
     const otherPlayers = Object.values(remotePlayersRef.current);
-    renderGame(ctx, canvasRef.current, engine, player, otherPlayers, isBattle, countdownText);
+    renderGame(ctx, canvas, engine, player, otherPlayers, isBattle, countdownTextRef.current);
 
     animFrameRef.current = requestAnimationFrame(gameLoop);
-  }, [countdownText]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // Start/stop game loop based on phase
+  // Start/stop game loop
   useEffect(() => {
     if (phase === 'racing' || phase === 'battle' || phase === 'countdown') {
+      lastTimeRef.current = 0;
       animFrameRef.current = requestAnimationFrame(gameLoop);
-      return () => {
-        cancelAnimationFrame(animFrameRef.current);
-      };
+      return () => cancelAnimationFrame(animFrameRef.current);
     }
   }, [phase, gameLoop]);
 
@@ -365,65 +468,46 @@ export default function Game() {
     }
   }, [phase]);
 
-  // Resize canvas
+  // Auto-transition from race to battle when all finished
   useEffect(() => {
-    const resize = () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const dpr = window.devicePixelRatio || 1;
-      const w = Math.min(window.innerWidth, 420);
-      const h = window.innerHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = `${w}px`;
-      canvas.style.height = `${h}px`;
-      const ctx = canvas.getContext('2d');
-      if (ctx) ctx.scale(dpr, dpr);
-    };
-    resize();
-    window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
-  }, []);
+    if (phase !== 'racing' || !localPlayer?.finished) return;
 
-  // Auto-check for battle transition and results
-  useEffect(() => {
-    if (phase === 'racing' && localPlayer?.finished) {
-      // Check if all players finished
-      const allRemoteFinished = Object.values(remotePlayers).every(p => p.finished);
-      const totalPlayers = 1 + Object.keys(remotePlayers).length;
-      if (allRemoteFinished || raceResults.length >= totalPlayers) {
-        // Wait a moment then transition to battle
-        if (!battleTransition) {
-          setBattleTransition(true);
-          setTimeout(() => {
-            if (isHost) {
-              mpRef.current?.broadcastPhaseChange('battle');
-            }
-            startBattlePhase();
-          }, 2000);
+    const totalPlayers = 1 + Object.keys(remotePlayers).length;
+    const allFinished = Object.values(remotePlayers).every(p => p.finished) || raceResults.length >= totalPlayers;
+
+    if (allFinished && !battleTransition) {
+      setBattleTransition(true);
+      setTimeout(() => {
+        if (isHost) {
+          mpRef.current?.broadcastPhaseChange('battle');
         }
-      }
+        startBattlePhase();
+      }, 2500);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, localPlayer, remotePlayers, raceResults, isHost, battleTransition]);
 
-  // Check battle completion
+  // Auto-transition from battle to results
   useEffect(() => {
-    if (phase === 'battle' && localPlayer?.battleFinished) {
-      const allRemoteFinished = Object.values(remotePlayers).every(p => p.battleFinished);
-      const totalPlayers = 1 + Object.keys(remotePlayers).length;
-      if (allRemoteFinished || battleResults.length >= totalPlayers) {
-        setTimeout(() => {
-          if (isHost) {
-            mpRef.current?.broadcastPhaseChange('results');
-          }
-          setPhase('results');
-        }, 2000);
-      }
+    if (phase !== 'battle' || !localPlayer?.battleFinished) return;
+
+    const totalPlayers = 1 + Object.keys(remotePlayers).length;
+    const allFinished = Object.values(remotePlayers).every(p => p.battleFinished) || battleResults.length >= totalPlayers;
+
+    if (allFinished) {
+      setTimeout(() => {
+        if (isHost) {
+          mpRef.current?.broadcastPhaseChange('results');
+        }
+        setPhase('results');
+      }, 2500);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, localPlayer, remotePlayers, battleResults, isHost]);
 
   const startBattlePhase = () => {
     setBattleTransition(false);
+    setShowFinished(false);
     setLocalPlayer(prev => prev ? {
       ...prev,
       progress: 0,
@@ -453,10 +537,8 @@ export default function Game() {
   };
 
   const startCountdown = (startTime: number) => {
-    const delay = startTime - Date.now();
-    setPhase('countdown');
+    const delay = Math.max(startTime - Date.now(), 100);
 
-    // Reset player for racing
     setLocalPlayer(prev => prev ? {
       ...prev,
       x: 0.5,
@@ -477,8 +559,12 @@ export default function Game() {
     engineRef.current.resetTrack(42);
     setRaceResults([]);
     setBattleResults([]);
+    setShowFinished(false);
+    setBattleTransition(false);
 
     setCountdownText('GET READY!');
+    setPhase('countdown');
+
     setTimeout(() => setCountdownText('3'), Math.max(0, delay - 3000));
     setTimeout(() => setCountdownText('2'), Math.max(0, delay - 2000));
     setTimeout(() => setCountdownText('1'), Math.max(0, delay - 1000));
@@ -494,15 +580,16 @@ export default function Game() {
   // HOME SCREEN
   if (phase === 'home') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-6 text-white">
-        <div className="text-6xl mb-2 animate-bounce">🏎️</div>
-        <h1 className="text-5xl font-extrabold mb-2 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
+      <div className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-6 text-white"
+        style={{ minHeight: '100dvh' }}>
+        <div className="text-7xl mb-3 animate-bounce">🏎️</div>
+        <h1 className="text-5xl font-extrabold mb-1 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
           ANIMAL
         </h1>
-        <h1 className="text-5xl font-extrabold mb-6 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
+        <h1 className="text-5xl font-extrabold mb-4 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
           RACERS
         </h1>
-        <div className="flex gap-4 text-4xl mb-8">
+        <div className="flex gap-6 text-5xl mb-6">
           <span className="animate-pulse">🦁</span>
           <span className="animate-pulse" style={{ animationDelay: '0.2s' }}>🐺</span>
           <span className="animate-pulse" style={{ animationDelay: '0.4s' }}>🦄</span>
@@ -513,13 +600,16 @@ export default function Game() {
           placeholder="Your Name"
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value.slice(0, 10))}
-          className="w-64 p-3 mb-4 rounded-xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/60 outline-none focus:border-yellow-300"
+          className="w-72 p-4 mb-4 rounded-2xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/50 outline-none focus:border-yellow-300"
+          style={{ fontSize: '20px' }}
           maxLength={10}
+          autoComplete="off"
         />
 
         <button
           onClick={async () => {
             if (!playerName.trim()) return;
+            await requestTiltPermission();
             const mp = mpRef.current!;
             const code = mp.generateRoomCode();
             setRoomCode(code);
@@ -531,24 +621,27 @@ export default function Game() {
             setPhase('character-select');
           }}
           disabled={!playerName.trim()}
-          className="w-64 p-4 mb-3 rounded-2xl text-xl font-bold bg-yellow-400 text-yellow-900 shadow-lg active:scale-95 transition-transform disabled:opacity-50 disabled:active:scale-100"
+          className="w-72 p-4 mb-3 rounded-2xl text-xl font-bold bg-yellow-400 text-yellow-900 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
         >
           🏠 Create Room
         </button>
 
-        <div className="flex items-center gap-2 w-64">
+        <div className="flex items-center gap-2 w-72">
           <input
             type="text"
             placeholder="Code"
             value={inputCode}
             onChange={(e) => setInputCode(e.target.value.replace(/\D/g, '').slice(0, 4))}
-            className="flex-1 p-3 rounded-xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/60 outline-none focus:border-yellow-300"
+            className="flex-1 p-4 rounded-2xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/50 outline-none focus:border-yellow-300"
+            style={{ fontSize: '20px' }}
             maxLength={4}
             inputMode="numeric"
+            autoComplete="off"
           />
           <button
             onClick={async () => {
               if (!playerName.trim() || inputCode.length !== 4) return;
+              await requestTiltPermission();
               const mp = mpRef.current!;
               setRoomCode(inputCode);
               setIsHost(false);
@@ -573,33 +666,42 @@ export default function Game() {
   if (phase === 'character-select') {
     const allChars: CharacterId[] = ['lion', 'wolf', 'unicorn'];
     return (
-      <div className="min-h-screen bg-gradient-to-b from-purple-900 via-purple-700 to-indigo-600 flex flex-col items-center p-6 text-white">
-        <div className="text-sm font-mono bg-black/30 px-3 py-1 rounded-full mb-4">
+      <div className="min-h-screen bg-gradient-to-b from-purple-900 via-purple-700 to-indigo-600 flex flex-col items-center p-6 text-white"
+        style={{ minHeight: '100dvh' }}>
+        <div className="text-sm font-mono bg-black/30 px-3 py-1 rounded-full mb-3">
           Room: <span className="font-bold text-yellow-300 text-lg">{roomCode}</span>
         </div>
-        <h2 className="text-3xl font-extrabold mb-6" style={{ textShadow: '2px 2px 0 #000' }}>
+        <h2 className="text-3xl font-extrabold mb-4" style={{ textShadow: '2px 2px 0 #000' }}>
           Choose Your Racer!
         </h2>
-        <div className="space-y-4 w-full max-w-sm">
+        <div className="space-y-3 w-full max-w-sm">
           {allChars.map(charId => {
             const char = CHARACTERS[charId];
-            const taken = takenCharacters.has(charId);
+            const taken = takenCharacters.has(charId) && localPlayer?.character !== charId;
             const selected = localPlayer?.character === charId;
             return (
               <button
                 key={charId}
                 onClick={() => {
                   if (taken || selected) return;
+                  // Deselect previous
+                  if (localPlayer?.character) {
+                    setTakenCharacters(prev => {
+                      const next = new Set(prev);
+                      next.delete(localPlayer.character!);
+                      return next;
+                    });
+                  }
                   setLocalPlayer(prev => prev ? { ...prev, character: charId } : prev);
                   setTakenCharacters(prev => new Set([...prev, charId]));
                   mpRef.current?.broadcastCharacterPick(charId);
                 }}
-                disabled={taken && !selected}
+                disabled={taken}
                 className={`w-full p-4 rounded-2xl flex items-center gap-4 transition-all ${
                   selected
-                    ? 'bg-yellow-400 text-yellow-900 scale-105 shadow-xl border-4 border-yellow-200'
+                    ? 'bg-yellow-400 text-yellow-900 scale-105 shadow-xl ring-4 ring-yellow-200'
                     : taken
-                    ? 'bg-gray-600/50 text-gray-400'
+                    ? 'bg-gray-600/50 text-gray-400 opacity-60'
                     : 'bg-white/15 backdrop-blur active:scale-95 border-2 border-white/20'
                 }`}
               >
@@ -609,7 +711,7 @@ export default function Game() {
                   <div className="text-sm opacity-80">{char.attackName}: {char.attackDesc}</div>
                 </div>
                 {selected && <span className="text-2xl">✅</span>}
-                {taken && !selected && <span className="text-lg">🔒</span>}
+                {taken && <span className="text-xl">🔒</span>}
               </button>
             );
           })}
@@ -617,7 +719,7 @@ export default function Game() {
         {localPlayer?.character && (
           <button
             onClick={() => setPhase('waiting')}
-            className="mt-6 w-64 p-4 rounded-2xl text-xl font-bold bg-green-400 text-green-900 shadow-lg active:scale-95 transition-transform animate-pulse"
+            className="mt-4 w-72 p-4 rounded-2xl text-xl font-bold bg-green-400 text-green-900 shadow-lg active:scale-95 transition-transform animate-pulse"
           >
             Continue →
           </button>
@@ -629,34 +731,40 @@ export default function Game() {
   // WAITING ROOM
   if (phase === 'waiting') {
     const allPlayers = [
-      { id: localPlayer?.id, name: localPlayer?.name, character: localPlayer?.character, ready: localPlayer?.ready },
-      ...Object.values(remotePlayers).map(p => ({ id: p.id, name: p.name, character: p.character, ready: remoteReady.has(p.id) })),
+      { id: localPlayer?.id || '', name: localPlayer?.name || '', character: localPlayer?.character || null, ready: localPlayer?.ready || false },
+      ...Object.values(remotePlayers).map(p => ({
+        id: p.id,
+        name: p.name,
+        character: p.character,
+        ready: remoteReady.has(p.id),
+      })),
     ];
-    const totalReady = allPlayers.filter(p => p.ready || (p.id === localPlayer?.id && localPlayer?.ready)).length;
-    const canStart = isHost && totalReady === allPlayers.length && allPlayers.length >= 1;
+    const allReady = allPlayers.every(p => p.ready || (p.id === localPlayer?.id && localPlayer?.ready));
+    const canStart = isHost && allReady && allPlayers.length >= 1;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-500 flex flex-col items-center p-6 text-white">
-        <div className="text-sm font-mono bg-black/30 px-4 py-2 rounded-full mb-4">
-          Room Code: <span className="font-bold text-3xl text-yellow-200">{roomCode}</span>
+      <div className="min-h-screen bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-6 text-white"
+        style={{ minHeight: '100dvh' }}>
+        <div className="bg-black/30 px-6 py-3 rounded-2xl mb-4 text-center">
+          <div className="text-xs opacity-70 mb-1">Room Code</div>
+          <div className="text-4xl font-mono font-bold tracking-widest text-yellow-200">{roomCode}</div>
         </div>
-        <p className="text-sm mb-4 opacity-80">Share this code with other players!</p>
+        <p className="text-sm mb-4 opacity-80">Share this code!</p>
 
-        <h2 className="text-2xl font-bold mb-4">Players ({allPlayers.length}/3)</h2>
+        <h2 className="text-2xl font-bold mb-3">Players ({allPlayers.length}/3)</h2>
 
         <div className="space-y-3 w-full max-w-sm mb-6">
           {allPlayers.map((p, i) => {
             const charDef = p.character ? CHARACTERS[p.character] : null;
+            const isReady = p.ready || (p.id === localPlayer?.id && localPlayer?.ready);
             return (
-              <div key={i} className="flex items-center gap-3 bg-white/20 backdrop-blur rounded-xl p-3">
-                <span className="text-3xl">{charDef?.emoji || '❓'}</span>
+              <div key={i} className={`flex items-center gap-3 rounded-2xl p-4 ${isReady ? 'bg-green-500/30 border-2 border-green-300/50' : 'bg-white/20'}`}>
+                <span className="text-4xl">{charDef?.emoji || '❓'}</span>
                 <div className="flex-1">
-                  <div className="font-bold">{p.name} {p.id === localPlayer?.id ? '(You)' : ''}</div>
+                  <div className="font-bold text-lg">{p.name} {p.id === localPlayer?.id ? '(You)' : ''}</div>
                   <div className="text-sm opacity-80">{charDef?.name || 'No character'}</div>
                 </div>
-                {(p.ready || (p.id === localPlayer?.id && localPlayer?.ready)) && (
-                  <span className="text-2xl">✅</span>
-                )}
+                {isReady && <span className="text-3xl">✅</span>}
               </div>
             );
           })}
@@ -668,25 +776,24 @@ export default function Game() {
               setLocalPlayer(prev => prev ? { ...prev, ready: true } : prev);
               mpRef.current?.broadcastReady();
             }}
-            className="w-64 p-4 rounded-2xl text-xl font-bold bg-green-400 text-green-900 shadow-lg active:scale-95 transition-transform"
+            className="w-72 p-4 rounded-2xl text-xl font-bold bg-green-400 text-green-900 shadow-lg active:scale-95 transition-transform"
           >
             ✋ Ready!
           </button>
-        ) : (
+        ) : !canStart ? (
           <div className="text-lg font-bold text-green-200 animate-pulse">
             Waiting for others...
           </div>
-        )}
+        ) : null}
 
         {canStart && (
           <button
             onClick={() => {
               const startTime = Date.now() + 4000;
               mpRef.current?.broadcastStartGame();
-              setGameStartTime(startTime);
               startCountdown(startTime);
             }}
-            className="mt-4 w-64 p-4 rounded-2xl text-xl font-bold bg-red-500 text-white shadow-lg active:scale-95 transition-transform animate-bounce"
+            className="mt-3 w-72 p-5 rounded-2xl text-2xl font-bold bg-red-500 text-white shadow-lg active:scale-95 transition-transform animate-bounce"
           >
             🏁 START RACE!
           </button>
@@ -701,47 +808,48 @@ export default function Game() {
     const sortedBattle = [...battleResults].sort((a, b) => a.time - b.time);
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-6 text-white">
-        <div className="text-6xl mb-2">🏆</div>
-        <h1 className="text-4xl font-extrabold mb-6" style={{ textShadow: '2px 2px 0 #000' }}>
+      <div className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-6 text-white"
+        style={{ minHeight: '100dvh' }}>
+        <div className="text-7xl mb-2 animate-bounce">🏆</div>
+        <h1 className="text-4xl font-extrabold mb-4" style={{ textShadow: '2px 2px 0 #000' }}>
           RESULTS!
         </h1>
 
         {/* Race Results */}
-        <div className="w-full max-w-sm mb-6">
-          <h3 className="text-xl font-bold mb-2 text-center">🏁 Race</h3>
-          <div className="space-y-2">
-            {sortedRace.map((r, i) => {
-              const charDef = CHARACTERS[r.character];
-              return (
-                <div key={i} className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-yellow-300/40 border-2 border-yellow-200' : 'bg-white/15'}`}>
-                  <span className="text-2xl font-bold">{i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}</span>
-                  <span className="text-3xl">{charDef.emoji}</span>
-                  <div className="flex-1">
-                    <div className="font-bold">{r.name}</div>
+        {sortedRace.length > 0 && (
+          <div className="w-full max-w-sm mb-4">
+            <h3 className="text-xl font-bold mb-2 text-center">🏁 Race</h3>
+            <div className="space-y-2">
+              {sortedRace.map((r, i) => {
+                const charDef = CHARACTERS[r.character];
+                const medals = ['🥇', '🥈', '🥉'];
+                return (
+                  <div key={i} className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-yellow-300/40 ring-2 ring-yellow-200' : 'bg-white/15'}`}>
+                    <span className="text-3xl">{medals[i] || ''}</span>
+                    <span className="text-3xl">{charDef.emoji}</span>
+                    <div className="flex-1 font-bold text-lg">{r.name}</div>
+                    {i === 0 && <span className="text-3xl">🏆</span>}
                   </div>
-                  {i === 0 && <span className="text-2xl">🏆</span>}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Battle Results */}
         {sortedBattle.length > 0 && (
-          <div className="w-full max-w-sm mb-6">
+          <div className="w-full max-w-sm mb-4">
             <h3 className="text-xl font-bold mb-2 text-center">⚔️ Battle</h3>
             <div className="space-y-2">
               {sortedBattle.map((r, i) => {
                 const charDef = CHARACTERS[r.character];
+                const medals = ['🥇', '🥈', '🥉'];
                 return (
-                  <div key={i} className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-purple-300/40 border-2 border-purple-200' : 'bg-white/15'}`}>
-                    <span className="text-2xl font-bold">{i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}</span>
+                  <div key={i} className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-purple-300/40 ring-2 ring-purple-200' : 'bg-white/15'}`}>
+                    <span className="text-3xl">{medals[i] || ''}</span>
                     <span className="text-3xl">{charDef.emoji}</span>
-                    <div className="flex-1">
-                      <div className="font-bold">{r.name}</div>
-                    </div>
-                    {i === 0 && <span className="text-2xl">🏆✨</span>}
+                    <div className="flex-1 font-bold text-lg">{r.name}</div>
+                    {i === 0 && <span className="text-3xl">🏆✨</span>}
                   </div>
                 );
               })}
@@ -759,9 +867,10 @@ export default function Game() {
             setRaceResults([]);
             setBattleResults([]);
             setBattleTransition(false);
+            setShowFinished(false);
             mpRef.current?.disconnect();
           }}
-          className="w-64 p-4 rounded-2xl text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 active:scale-95 transition-transform"
+          className="mt-2 w-72 p-4 rounded-2xl text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 active:scale-95 transition-transform"
         >
           🏠 Play Again
         </button>
@@ -772,28 +881,30 @@ export default function Game() {
   // RACING / BATTLE / COUNTDOWN — Canvas view with controls
   return (
     <div
-      className="fixed inset-0 bg-black touch-none select-none"
+      className="fixed inset-0 bg-black select-none"
+      style={{ touchAction: 'none' }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <canvas ref={canvasRef} className="block" />
+      <canvas ref={canvasRef} className="block mx-auto" />
 
-      {/* Control buttons */}
+      {/* Control buttons overlay */}
       {(phase === 'racing' || phase === 'battle') && (
         <>
           {/* Boost button - left */}
           <button
             onTouchStart={(e) => {
               e.stopPropagation();
-              boostPressedRef.current = true;
+              e.preventDefault();
+              boostActiveRef.current = true;
             }}
-            className={`fixed bottom-8 left-6 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold shadow-2xl active:scale-90 transition-transform ${
-              boostCooldownRef.current > 0
-                ? 'bg-gray-600/80 text-gray-400'
-                : 'bg-orange-500/90 text-white border-4 border-orange-300'
-            }`}
-            style={{ WebkitTapHighlightColor: 'transparent' }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              boostActiveRef.current = true;
+            }}
+            className="fixed bottom-6 left-4 w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-2xl active:scale-90 transition-transform bg-orange-500/90 text-white border-4 border-orange-300"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             🔥
           </button>
@@ -802,24 +913,69 @@ export default function Game() {
           <button
             onTouchStart={(e) => {
               e.stopPropagation();
-              jumpPressedRef.current = true;
+              e.preventDefault();
+              jumpActiveRef.current = true;
             }}
-            className={`fixed bottom-8 right-6 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold shadow-2xl active:scale-90 transition-transform ${
-              jumpCooldownRef.current > 0
-                ? 'bg-gray-600/80 text-gray-400'
-                : 'bg-blue-500/90 text-white border-4 border-blue-300'
-            }`}
-            style={{ WebkitTapHighlightColor: 'transparent' }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              jumpActiveRef.current = true;
+            }}
+            className="fixed bottom-6 right-4 w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-2xl active:scale-90 transition-transform bg-blue-500/90 text-white border-4 border-blue-300"
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ⬆️
           </button>
 
+          {/* Attack button - center (battle only) */}
+          {phase === 'battle' && (
+            <button
+              onTouchStart={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                attackActiveRef.current = true;
+              }}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                attackActiveRef.current = true;
+              }}
+              className="fixed bottom-6 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-red-600/90 text-white border-4 border-red-400"
+              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
+            >
+              ⚔️
+            </button>
+          )}
+
+          {/* Label hints */}
+          <div className="fixed bottom-1 left-4 w-24 text-center text-xs text-white/60 font-bold">
+            BOOST (W)
+          </div>
+          <div className="fixed bottom-1 right-4 w-24 text-center text-xs text-white/60 font-bold">
+            JUMP (SPACE)
+          </div>
+          {phase === 'battle' && (
+            <div className="fixed bottom-1 left-1/2 -translate-x-1/2 w-20 text-center text-xs text-white/60 font-bold">
+              ATK (F)
+            </div>
+          )}
+
           {/* Battle indicator */}
           {phase === 'battle' && (
-            <div className="fixed top-14 left-1/2 -translate-x-1/2 bg-red-600/80 backdrop-blur px-4 py-1 rounded-full text-white font-bold text-lg animate-pulse">
+            <div className="fixed top-14 left-1/2 -translate-x-1/2 bg-red-600/90 backdrop-blur px-5 py-2 rounded-full text-white font-bold text-lg animate-pulse shadow-lg">
               ⚔️ BATTLE MODE ⚔️
             </div>
           )}
+
+          {/* Finished overlay */}
+          {showFinished && (
+            <div className="fixed top-1/3 left-1/2 -translate-x-1/2 bg-green-500/90 backdrop-blur px-8 py-4 rounded-2xl text-white font-bold text-2xl shadow-xl animate-bounce">
+              🏁 FINISHED! 🏁
+            </div>
+          )}
+
+          {/* Steer hint - show keyboard hint on desktop */}
+          <div className="fixed top-16 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
+            {tiltPermission ? '📱 Tilt to steer' : '← A/D or Arrow Keys to steer →'}
+          </div>
         </>
       )}
     </div>

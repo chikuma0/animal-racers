@@ -1,0 +1,36 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wolfBoostBody" x1="50" y1="54" x2="144" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8FBFF"/>
+      <stop offset="0.55" stop-color="#7DCBFF"/>
+      <stop offset="1" stop-color="#2A57B9"/>
+    </linearGradient>
+    <linearGradient id="wolfBoostFur" x1="66" y1="42" x2="148" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FFFF"/>
+      <stop offset="1" stop-color="#8EE1FF"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="98" cy="151" rx="48" ry="12" fill="#08142C" fill-opacity="0.32"/>
+  <path d="M24 118L42 103L46 123L61 109" stroke="#A0E9FF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"/>
+  <path d="M14 132L34 119L39 136L54 126" stroke="#D8FBFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+  <path d="M50 126C59 117 66 108 74 94" stroke="#3A6CC4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M60 100L54 139" stroke="#1D3A82" stroke-width="11" stroke-linecap="round"/>
+  <path d="M89 103L84 139" stroke="#1D3A82" stroke-width="11" stroke-linecap="round"/>
+  <path d="M116 97L118 140" stroke="#1D3A82" stroke-width="11" stroke-linecap="round"/>
+  <path d="M144 89L154 127" stroke="#1D3A82" stroke-width="11" stroke-linecap="round"/>
+  <path d="M54 140H68" stroke="#0E214F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M80 143H94" stroke="#0E214F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M111 142H125" stroke="#0E214F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M142 131H154" stroke="#0E214F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M57 87C57 62 82 49 113 53C139 57 154 77 151 98C149 121 125 135 96 132C70 128 57 110 57 87Z" fill="url(#wolfBoostBody)"/>
+  <path d="M67 72L86 45L99 74" fill="#A7EBFF"/>
+  <path d="M109 66L129 39L137 73" fill="#D7FCFF"/>
+  <path d="M70 79C77 70 91 64 108 63C125 62 139 69 148 80C154 89 155 101 150 113C144 126 128 135 109 137C90 139 72 133 62 122C54 112 56 95 70 79Z" fill="url(#wolfBoostFur)"/>
+  <path d="M86 85C96 78 110 76 123 79C134 82 144 91 146 101C147 111 141 122 132 128C122 133 109 135 95 131C84 128 76 122 72 113C69 104 72 95 79 89C81 87 83 86 86 85Z" fill="#D8F8FF"/>
+  <path d="M136 86L160 74" stroke="#6ACDFF" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="102" cy="96" rx="7" ry="6" fill="#FFE35B"/>
+  <ellipse cx="126" cy="91" rx="7" ry="6" fill="#FFE35B"/>
+  <circle cx="103" cy="96" r="2" fill="#08142C"/>
+  <circle cx="127" cy="91" r="2" fill="#08142C"/>
+  <path d="M93 111C99 116 112 119 124 116" stroke="#17377D" stroke-width="5" stroke-linecap="round"/>
+</svg>

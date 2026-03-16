@@ -1225,7 +1225,14 @@ function drawPlayer(
     drawBoostTrail(ctx, player.character!, size, t);
   }
 
-  const usedSprite = drawRaceCharacterSprite(ctx, player.character!, size, player.boosting, player.hitStun > 0);
+  const usedSprite = drawRaceCharacterSprite(
+    ctx,
+    player.character!,
+    size,
+    player.boosting,
+    player.speed,
+    player.hitStun > 0
+  );
   if (!usedSprite) {
     drawCharacterBody(ctx, player.character!, size, t, player.speed, player.boosting, player.hitStun > 0);
     drawTail(ctx, player.character!, size, t, charDef.color);

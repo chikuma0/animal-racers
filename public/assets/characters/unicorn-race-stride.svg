@@ -1,0 +1,40 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="uniStrideBody" x1="58" y1="54" x2="138" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6FF"/>
+      <stop offset="0.5" stop-color="#F0D3FF"/>
+      <stop offset="1" stop-color="#C86CFF"/>
+    </linearGradient>
+    <linearGradient id="uniStrideMane" x1="80" y1="44" x2="142" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CFFF3"/>
+      <stop offset="0.35" stop-color="#6AB6FF"/>
+      <stop offset="0.68" stop-color="#FF7AD8"/>
+      <stop offset="1" stop-color="#FFD970"/>
+    </linearGradient>
+    <linearGradient id="uniStrideHorn" x1="0" y1="44" x2="0" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5B8"/>
+      <stop offset="1" stop-color="#FFB41D"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="96" cy="151" rx="46" ry="12" fill="#220A34" fill-opacity="0.24"/>
+  <path d="M43 123C53 117 60 108 67 98" stroke="#BB72FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M58 101L50 139" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M90 103L84 140" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M116 98L117 141" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M142 92L152 130" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M52 140H68" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M81 143H95" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M112 143H126" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M143 134H154" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M56 88C56 63 80 49 109 53C134 56 149 74 148 95C146 120 123 136 95 133C70 129 56 112 56 88Z" fill="url(#uniStrideBody)"/>
+  <path d="M72 78C80 70 93 64 108 63C123 62 136 67 145 77C152 86 153 101 149 113C143 126 127 135 109 137C90 139 73 133 64 123C56 114 57 95 72 78Z" fill="#FCEEFF"/>
+  <path d="M84 69C97 53 120 45 140 49C151 52 160 57 166 65C159 68 154 73 148 80C139 89 133 98 124 105C117 98 111 91 102 84C96 78 90 72 84 69Z" fill="url(#uniStrideMane)"/>
+  <path d="M117 46L111 80H123L129 50L123 44L117 46Z" fill="url(#uniStrideHorn)"/>
+  <path d="M121 48L117 68" stroke="#FFF0A2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M136 85L157 75" stroke="#FF8ED9" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="101" cy="95" r="7" fill="#7E31B0"/>
+  <circle cx="124" cy="90" r="7" fill="#7E31B0"/>
+  <circle cx="103" cy="93" r="2" fill="#FAF6FF"/>
+  <circle cx="126" cy="88" r="2" fill="#FAF6FF"/>
+  <path d="M92 111C99 117 111 120 123 117" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+</svg>

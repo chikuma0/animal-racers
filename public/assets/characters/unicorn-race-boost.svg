@@ -1,0 +1,42 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="uniBoostBody" x1="56" y1="54" x2="142" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9FF"/>
+      <stop offset="0.5" stop-color="#F4DDFF"/>
+      <stop offset="1" stop-color="#D178FF"/>
+    </linearGradient>
+    <linearGradient id="uniBoostMane" x1="78" y1="42" x2="146" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CFFF3"/>
+      <stop offset="0.32" stop-color="#6AB6FF"/>
+      <stop offset="0.66" stop-color="#FF7AD8"/>
+      <stop offset="1" stop-color="#FFD970"/>
+    </linearGradient>
+    <linearGradient id="uniBoostHorn" x1="0" y1="42" x2="0" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5B8"/>
+      <stop offset="1" stop-color="#FFB41D"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="98" cy="151" rx="48" ry="12" fill="#220A34" fill-opacity="0.24"/>
+  <path d="M22 116L26 120L31 116L28 122L33 126L27 126L25 132L23 126L17 125L22 121L22 116Z" fill="#7CFFF3" fill-opacity="0.85"/>
+  <path d="M31 128L35 132L40 128L37 134L42 138L36 138L34 144L32 138L26 137L31 133L31 128Z" fill="#FFD970" fill-opacity="0.8"/>
+  <path d="M44 123C55 116 63 107 72 95" stroke="#BB72FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M58 100L53 139" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M89 103L85 140" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M116 97L119 141" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M144 91L154 129" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M53 140H69" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M82 143H95" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M113 143H126" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M144 133H155" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M58 88C58 63 81 49 111 53C136 56 151 75 150 95C148 120 124 136 95 133C70 129 58 111 58 88Z" fill="url(#uniBoostBody)"/>
+  <path d="M72 78C80 69 94 63 109 62C124 61 138 67 147 77C154 86 154 101 150 113C144 126 128 135 109 137C89 139 72 133 63 122C55 112 57 95 72 78Z" fill="#FDF2FF"/>
+  <path d="M84 69C98 52 121 45 142 49C152 51 161 57 167 64C160 68 154 73 148 81C140 90 133 99 124 106C117 99 110 92 102 85C96 79 89 72 84 69Z" fill="url(#uniBoostMane)"/>
+  <path d="M117 45L112 80H124L130 49L124 43L117 45Z" fill="url(#uniBoostHorn)"/>
+  <path d="M121 47L117 68" stroke="#FFF0A2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M138 85L160 72" stroke="#FF8ED9" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="103" cy="95" r="7" fill="#7E31B0"/>
+  <circle cx="126" cy="90" r="7" fill="#7E31B0"/>
+  <circle cx="105" cy="93" r="2" fill="#FAF6FF"/>
+  <circle cx="128" cy="88" r="2" fill="#FAF6FF"/>
+  <path d="M94 110C100 116 112 119 124 116" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+</svg>

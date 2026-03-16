@@ -1,6 +1,7 @@
 import { CHARACTER_ART, ENV_ART, getAssetImage } from '../assets';
-import { CharacterId, FightState } from '../types';
+import { CharacterId, FightState, TRACK } from '../types';
 
+type RaceArtState = 'idle' | 'stride' | 'boost';
 type FightArtState = 'idle' | 'punch' | 'special' | 'hit';
 
 function drawRepeatedStrip(
@@ -34,6 +35,18 @@ function getFightArtState(fight: FightState): FightArtState {
 
   if (fight.punching) {
     return 'punch';
+  }
+
+  return 'idle';
+}
+
+function getRaceArtState(boosting: boolean, speed: number): RaceArtState {
+  if (boosting) {
+    return 'boost';
+  }
+
+  if (speed > TRACK.BASE_SPEED * 0.86) {
+    return Math.floor(Date.now() / 110) % 2 === 0 ? 'stride' : 'idle';
   }
 
   return 'idle';
@@ -111,15 +124,17 @@ export function drawRaceCharacterSprite(
   charId: CharacterId,
   size: number,
   boosting: boolean,
+  speed: number,
   isHit: boolean
 ): boolean {
   const art = CHARACTER_ART[charId];
-  const sprite = getAssetImage(art.racer);
+  const spriteState = getRaceArtState(boosting, speed);
+  const sprite = getAssetImage(art.race[spriteState]);
   if (!sprite) {
     return false;
   }
 
-  const emphasis = boosting ? 1 : 0;
+  const emphasis = spriteState === 'boost' ? 1 : spriteState === 'stride' ? 0.35 : 0;
   const width = size * 1.52;
   const height = size * 1.34;
 

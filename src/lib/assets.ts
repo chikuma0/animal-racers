@@ -5,6 +5,11 @@ interface CharacterArtDef {
   portrait?: string;
   accent: string;
   glow: string;
+  race: {
+    idle: string;
+    stride: string;
+    boost: string;
+  };
   fight: {
     idle: string;
     punch: string;
@@ -19,6 +24,11 @@ export const CHARACTER_ART: Record<CharacterId, CharacterArtDef> = {
     portrait: '/assets/characters/lion-racer.svg',
     accent: '#FF9C33',
     glow: '#FFD16B',
+    race: {
+      idle: '/assets/characters/lion-racer.svg',
+      stride: '/assets/characters/lion-race-stride.svg',
+      boost: '/assets/characters/lion-race-boost.svg',
+    },
     fight: {
       idle: '/assets/characters/lion-fight-idle.svg',
       punch: '/assets/characters/lion-fight-punch.svg',
@@ -31,6 +41,11 @@ export const CHARACTER_ART: Record<CharacterId, CharacterArtDef> = {
     portrait: '/assets/characters/wolf-racer.svg',
     accent: '#63B5FF',
     glow: '#D6F3FF',
+    race: {
+      idle: '/assets/characters/wolf-racer.svg',
+      stride: '/assets/characters/wolf-race-stride.svg',
+      boost: '/assets/characters/wolf-race-boost.svg',
+    },
     fight: {
       idle: '/assets/characters/wolf-fight-idle.svg',
       punch: '/assets/characters/wolf-fight-punch.svg',
@@ -43,6 +58,11 @@ export const CHARACTER_ART: Record<CharacterId, CharacterArtDef> = {
     portrait: '/assets/characters/unicorn-racer.svg',
     accent: '#FF7AD8',
     glow: '#FFF6FF',
+    race: {
+      idle: '/assets/characters/unicorn-racer.svg',
+      stride: '/assets/characters/unicorn-race-stride.svg',
+      boost: '/assets/characters/unicorn-race-boost.svg',
+    },
     fight: {
       idle: '/assets/characters/unicorn-fight-idle.svg',
       punch: '/assets/characters/unicorn-fight-punch.svg',
@@ -112,6 +132,7 @@ export function getAllGameAssetUrls(): string[] {
     ...Object.values(CHARACTER_ART).flatMap(entry => [
       entry.racer,
       ...(entry.portrait ? [entry.portrait] : []),
+      ...Object.values(entry.race),
       ...Object.values(entry.fight),
     ]),
     ...Object.values(ENV_ART),

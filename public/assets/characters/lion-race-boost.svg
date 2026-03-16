@@ -1,0 +1,36 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lionBoostBody" x1="48" y1="54" x2="140" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE089"/>
+      <stop offset="1" stop-color="#FF6230"/>
+    </linearGradient>
+    <linearGradient id="lionBoostMane" x1="34" y1="38" x2="126" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3B8"/>
+      <stop offset="0.36" stop-color="#FFAA35"/>
+      <stop offset="1" stop-color="#A92D10"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="97" cy="151" rx="48" ry="12" fill="#2A0F05" fill-opacity="0.3"/>
+  <path d="M30 118C47 106 60 95 76 77" stroke="#FFB347" stroke-width="10" stroke-linecap="round" stroke-opacity="0.72"/>
+  <path d="M20 132C40 122 56 109 73 91" stroke="#FFD16B" stroke-width="7" stroke-linecap="round" stroke-opacity="0.6"/>
+  <path d="M48 128C60 117 65 110 74 94" stroke="#B34B1C" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="45" cy="132" r="8" fill="#DB631C"/>
+  <path d="M62 98L54 136" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M90 102L84 139" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M115 94L116 139" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M143 88L153 125" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M55 138H72" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M80 142H95" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M112 141H126" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M143 129H155" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M57 88C57 64 80 49 110 53C136 56 152 75 150 95C148 120 125 136 95 132C70 128 57 111 57 88Z" fill="url(#lionBoostBody)"/>
+  <path d="M48 86C48 59 70 34 98 29C120 25 148 36 163 55C173 67 176 92 168 108C159 126 140 139 118 142C88 146 60 135 48 114C41 103 48 98 48 86Z" fill="url(#lionBoostMane)"/>
+  <path d="M66 74C75 67 88 62 102 62C119 60 136 67 145 79C152 88 152 102 148 113C142 126 126 135 109 137C90 139 72 133 61 122C51 111 52 89 66 74Z" fill="url(#lionBoostBody)"/>
+  <path d="M108 79C121 75 136 80 142 89C146 97 146 110 139 118C131 128 114 133 98 129C86 126 77 120 72 110C68 101 70 90 76 83C83 75 96 72 108 79Z" fill="#FFD07A"/>
+  <path d="M138 84L161 71" stroke="#A33C18" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="105" cy="95" r="7" fill="#2D1207"/>
+  <circle cx="128" cy="90" r="7" fill="#2D1207"/>
+  <circle cx="107" cy="93" r="2" fill="#F9F3E6"/>
+  <circle cx="130" cy="88" r="2" fill="#F9F3E6"/>
+  <path d="M95 110C100 116 112 119 125 116" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+</svg>

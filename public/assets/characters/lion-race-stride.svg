@@ -1,0 +1,35 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lionStrideBody" x1="54" y1="52" x2="134" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD16B"/>
+      <stop offset="1" stop-color="#FF6A3D"/>
+    </linearGradient>
+    <linearGradient id="lionStrideMane" x1="42" y1="40" x2="122" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1A7"/>
+      <stop offset="0.4" stop-color="#FF9C33"/>
+      <stop offset="1" stop-color="#B73813"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="95" cy="151" rx="45" ry="12" fill="#2A0F05" fill-opacity="0.28"/>
+  <path d="M45 126C56 118 60 113 67 98" stroke="#B34B1C" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="42" cy="130" r="8" fill="#DB631C"/>
+  <path d="M60 98L50 137" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M92 101L84 139" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M116 94L115 139" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M141 89L149 127" stroke="#7C3013" stroke-width="12" stroke-linecap="round"/>
+  <path d="M51 139H70" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M80 142H95" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M110 141H124" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M139 131H153" stroke="#431A0B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M55 88C55 64 78 48 108 52C133 55 149 74 148 94C146 119 124 135 95 132C70 129 55 112 55 88Z" fill="url(#lionStrideBody)"/>
+  <path d="M48 87C48 60 69 36 96 30C118 25 145 36 159 55C168 67 171 92 163 108C154 126 136 138 116 141C88 145 62 135 50 116C44 107 48 101 48 87Z" fill="url(#lionStrideMane)"/>
+  <path d="M64 75C73 68 85 63 99 63C116 61 133 68 142 79C149 88 150 101 146 112C140 126 125 135 108 137C90 139 72 133 62 123C51 112 51 90 64 75Z" fill="url(#lionStrideBody)"/>
+  <path d="M104 80C117 76 132 81 138 90C142 97 143 109 137 117C129 128 112 132 97 129C86 127 77 120 72 111C68 102 69 91 74 84C81 76 93 73 104 80Z" fill="#FFCB74"/>
+  <path d="M133 86L155 75" stroke="#A33C18" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="102" cy="95" r="7" fill="#2D1207"/>
+  <circle cx="124" cy="90" r="7" fill="#2D1207"/>
+  <circle cx="104" cy="93" r="2" fill="#F9F3E6"/>
+  <circle cx="126" cy="88" r="2" fill="#F9F3E6"/>
+  <path d="M91 110C96 116 108 120 121 118" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <path d="M33 110C48 100 58 94 68 82" stroke="#FFB347" stroke-width="8" stroke-linecap="round" stroke-opacity="0.6"/>
+</svg>

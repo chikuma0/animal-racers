@@ -61,8 +61,15 @@ function drawCenteredSprite(
   emphasis: number
 ) {
   ctx.save();
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.42)';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetY = 8;
+  ctx.drawImage(image, -width / 2, -height / 2, width, height);
+  ctx.restore();
+
+  ctx.save();
   ctx.shadowColor = glowColor;
-  ctx.shadowBlur = 18 + emphasis * 18;
+  ctx.shadowBlur = 10 + emphasis * 18;
   ctx.drawImage(image, -width / 2, -height / 2, width, height);
   ctx.restore();
 }
@@ -148,6 +155,14 @@ export function drawRaceCharacterSprite(
     ctx.restore();
   }
 
+  ctx.save();
+  ctx.globalAlpha = 0.22;
+  ctx.fillStyle = '#050A10';
+  ctx.beginPath();
+  ctx.ellipse(0, size * 0.02, size * 0.78, size * 0.52, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
   drawCenteredSprite(ctx, sprite, width, height, art.glow, emphasis);
 
   if (isHit) {
@@ -195,6 +210,13 @@ export function drawFighterSprite(
   if (spriteState === 'special') {
     ctx.translate(fight.facing * pw * 0.04, -ph * 0.04);
   }
+  ctx.save();
+  ctx.globalAlpha = 0.18;
+  ctx.fillStyle = '#050A10';
+  ctx.beginPath();
+  ctx.ellipse(0, ph * 0.06, pw * 0.62, ph * 0.42, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
   drawCenteredSprite(ctx, sprite, width, height, art.glow, emphasis);
   ctx.restore();
 

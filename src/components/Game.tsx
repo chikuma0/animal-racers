@@ -6,10 +6,11 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { CHARACTER_ART, primeGameAssets } from '@/lib/assets';
 import {
   chooseCpuCharacter,
+  createCpuFightState,
   CPU_PLAYER_ID,
   CPU_PLAYER_NAME,
   createCpuRaceState,
-  getCpuFightInputs,
+  stepCpuFightState,
   stepCpuRaceState,
 } from '@/lib/cpu';
 import { GameEngine } from '@/lib/engine';
@@ -234,6 +235,7 @@ export default function Game() {
   const raceStartPerfRef = useRef(0);
   const fightStartPerfRef = useRef(0);
   const cpuRaceBrainRef = useRef(createCpuRaceState());
+  const cpuFightBrainRef = useRef(createCpuFightState());
   const transitionQueuedRef = useRef(false);
   const battleResolvedRef = useRef(false);
   const reportedRaceFinishRef = useRef(false);
@@ -358,6 +360,7 @@ export default function Game() {
       raceStartPerfRef.current = 0;
       fightStartPerfRef.current = 0;
       cpuRaceBrainRef.current = createCpuRaceState();
+      cpuFightBrainRef.current = createCpuFightState();
 
       if (broadcastIntervalRef.current) {
         clearInterval(broadcastIntervalRef.current);
@@ -425,6 +428,7 @@ export default function Game() {
     setShowFinished(false);
     raceStartPerfRef.current = 0;
     cpuRaceBrainRef.current = createCpuRaceState();
+    cpuFightBrainRef.current = createCpuFightState();
 
     const roomLocalPlayer = room.players[localId];
     if (roomLocalPlayer) {
@@ -461,13 +465,19 @@ export default function Game() {
     transitionQueuedRef.current = false;
     fightStartPerfRef.current = 0;
     fightTimerRef.current = ARENA.FIGHT_DURATION;
+    cpuFightBrainRef.current = createCpuFightState();
     setShowFinished(false);
 
     const roomLocalPlayer = room.players[localId];
     if (roomLocalPlayer) {
       setLocalPlayer(prev => {
         const base = syncStablePlayerState(prev ?? createPlayer(localId, roomLocalPlayer.name), roomLocalPlayer);
-        return resetFightPlayer(base, engine.initFightState(localIndex, totalPlayers));
+        const fight = engine.initFightState(localIndex, totalPlayers);
+        if (soloModeRef.current) {
+          fight.hp = 108;
+          fight.maxHp = 108;
+        }
+        return resetFightPlayer(base, fight);
       });
     }
 
@@ -478,7 +488,12 @@ export default function Game() {
         if (roomPlayer.id === localId) continue;
         fighterIndex += 1;
         const base = syncStablePlayerState(prev[roomPlayer.id] ?? createPlayer(roomPlayer.id, roomPlayer.name), roomPlayer);
-        next[roomPlayer.id] = resetFightPlayer(base, engine.initFightState(fighterIndex, totalPlayers));
+        const fight = engine.initFightState(fighterIndex, totalPlayers);
+        if (soloModeRef.current && roomPlayer.id === CPU_PLAYER_ID) {
+          fight.hp = 92;
+          fight.maxHp = 92;
+        }
+        next[roomPlayer.id] = resetFightPlayer(base, fight);
       }
       return next;
     });
@@ -1145,7 +1160,16 @@ export default function Game() {
               emittedFightHitIdsRef.current.add(attackId);
 
               if (isHostRef.current) {
-                const nextFight = engine.applyFightDamage(remotePlayer.fight, hit.damage, updatedFight.fx, Boolean(hit.freeze));
+                const adjustedDamage =
+                  soloModeRef.current && remoteId === CPU_PLAYER_ID && hit.damage > 0
+                    ? Math.max(1, Math.round(hit.damage * 1.1))
+                    : hit.damage;
+                const nextFight = engine.applyFightDamage(
+                  remotePlayer.fight,
+                  adjustedDamage,
+                  updatedFight.fx,
+                  Boolean(hit.freeze)
+                );
                 engine.addFightParticles(remotePlayer.fight.fx, remotePlayer.fight.fy - 30, CHARACTERS[nextLocalPlayer.character].color, 12);
                 appliedFightHitIdsRef.current.add(attackId);
                 nextRemotePlayers = {
@@ -1165,7 +1189,7 @@ export default function Game() {
                   attackId,
                   attackerId: nextLocalPlayer.id,
                   attackerX: updatedFight.fx,
-                  damage: hit.damage,
+                  damage: adjustedDamage,
                   freeze: Boolean(hit.freeze),
                   fighter: toFightSyncState(nextFight),
                 } as FightDamageAppliedMessage);
@@ -1203,14 +1227,15 @@ export default function Game() {
         if (soloModeRef.current && countdownTextRef.current === null && !battleResolvedRef.current) {
           const cpuPlayer = nextRemotePlayers[CPU_PLAYER_ID];
           if (cpuPlayer?.character && !cpuPlayer.fight.dead) {
-            const cpuInputs = getCpuFightInputs(cpuPlayer, nextLocalPlayer);
+            const cpuDecision = stepCpuFightState(cpuFightBrainRef.current, cpuPlayer, nextLocalPlayer, dt);
+            cpuFightBrainRef.current = cpuDecision.brain;
             const updatedCpuFight = engine.updateFighter(
               cpuPlayer.fight,
               dt,
-              cpuInputs.moveX,
-              cpuInputs.jump,
-              cpuInputs.punch,
-              cpuInputs.special,
+              cpuDecision.inputs.moveX,
+              cpuDecision.inputs.jump,
+              cpuDecision.inputs.punch,
+              cpuDecision.inputs.special,
               cpuPlayer.character
             );
 
@@ -1221,9 +1246,10 @@ export default function Game() {
               if (!emittedFightHitIdsRef.current.has(cpuAttackId)) {
                 emittedFightHitIdsRef.current.add(cpuAttackId);
                 appliedFightHitIdsRef.current.add(cpuAttackId);
+                const cpuDamage = cpuHit.damage > 0 ? Math.max(1, Math.round(cpuHit.damage * 0.82)) : 0;
                 const nextLocalFight = engine.applyFightDamage(
                   nextLocalPlayer.fight,
-                  cpuHit.damage,
+                  cpuDamage,
                   updatedCpuFight.fx,
                   Boolean(cpuHit.freeze)
                 );

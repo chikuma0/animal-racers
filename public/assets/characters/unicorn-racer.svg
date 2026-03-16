@@ -1,0 +1,48 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="uni-body" x1="60" y1="54" x2="138" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6FF"/>
+      <stop offset="0.5" stop-color="#F0D3FF"/>
+      <stop offset="1" stop-color="#C86CFF"/>
+    </linearGradient>
+    <linearGradient id="uni-mane" x1="80" y1="44" x2="142" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CFFF3"/>
+      <stop offset="0.35" stop-color="#6AB6FF"/>
+      <stop offset="0.68" stop-color="#FF7AD8"/>
+      <stop offset="1" stop-color="#FFD970"/>
+    </linearGradient>
+    <linearGradient id="uni-horn" x1="0" y1="44" x2="0" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5B8"/>
+      <stop offset="1" stop-color="#FFB41D"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="96" cy="150" rx="46" ry="12" fill="#220A34" fill-opacity="0.24"/>
+  <path d="M44 122C53 117 59 110 65 101" stroke="#BB72FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M60 100L52 137" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M88 100L79 139" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M112 100L108 140" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M138 95L145 133" stroke="#9A47D8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M54 137H70" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M75 141H92" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M104 141H120" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+  <path d="M135 135H149" stroke="#542174" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M56 88C56 63 79 49 108 53C133 56 149 74 148 95C147 120 124 136 96 133C72 130 56 113 56 88Z" fill="url(#uni-body)"/>
+  <path d="M72 78C79 70 92 64 107 63C122 62 136 67 145 77C153 87 154 101 149 113C143 126 127 135 110 137C93 139 76 134 66 124C57 115 57 95 72 78Z" fill="#FCEEFF"/>
+  <path d="M84 69C97 53 120 45 140 49C151 52 160 57 166 65C160 68 154 73 148 80C140 89 133 98 124 105C117 98 111 91 103 84C96 77 90 72 84 69Z" fill="url(#uni-mane)"/>
+  <path d="M117 46L111 80H123L129 50L123 44L117 46Z" fill="url(#uni-horn)"/>
+  <path d="M121 48L117 68" stroke="#FFF0A2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M135 86L156 76" stroke="#FF8ED9" stroke-width="7" stroke-linecap="round"/>
+
+  <circle cx="102" cy="96" r="7" fill="#7E31B0"/>
+  <circle cx="124" cy="91" r="7" fill="#7E31B0"/>
+  <circle cx="104" cy="94" r="2" fill="#FAF6FF"/>
+  <circle cx="126" cy="89" r="2" fill="#FAF6FF"/>
+  <path d="M112 106L117 112" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+  <path d="M92 112C99 117 111 120 122 118" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M148 53L152 57L157 53L154 59L159 63L153 63L151 69L149 63L143 62L148 58L148 53Z" fill="#FFF6C4"/>
+  <path d="M33 114L37 118L42 114L39 120L44 124L38 124L36 130L34 124L28 123L33 119L33 114Z" fill="#7CFFF3" fill-opacity="0.9"/>
+  <path d="M24 129L28 133L33 129L30 135L35 139L29 139L27 145L25 139L19 138L24 134L24 129Z" fill="#FFD970" fill-opacity="0.8"/>
+</svg>

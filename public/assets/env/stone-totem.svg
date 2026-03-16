@@ -1,0 +1,17 @@
+<svg width="160" height="220" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stone-face" x1="80" y1="18" x2="80" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8F8A84"/>
+      <stop offset="1" stop-color="#4D463F"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="80" cy="204" rx="44" ry="12" fill="#120E0B" fill-opacity="0.25"/>
+  <path d="M52 28L78 16L108 26L116 60L109 177L81 192L54 178L46 64L52 28Z" fill="url(#stone-face)"/>
+  <path d="M66 52C72 46 89 46 94 52" stroke="#302A25" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="68" cy="80" r="9" fill="#2A2621"/>
+  <circle cx="94" cy="80" r="9" fill="#2A2621"/>
+  <path d="M82 91L75 113H89L82 91Z" fill="#2A2621"/>
+  <path d="M66 136C73 145 90 145 98 136" stroke="#2A2621" stroke-width="7" stroke-linecap="round"/>
+  <path d="M60 35L83 28L104 36" stroke="#CEC1A2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M56 162L105 162" stroke="#CEC1A2" stroke-width="4" stroke-linecap="round" stroke-opacity="0.55"/>
+</svg>

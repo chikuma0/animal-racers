@@ -1,0 +1,35 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wolfPunchBody" x1="54" y1="52" x2="142" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6F3FF"/>
+      <stop offset="0.55" stop-color="#63B5FF"/>
+      <stop offset="1" stop-color="#284EAD"/>
+    </linearGradient>
+    <linearGradient id="wolfPunchFur" x1="60" y1="46" x2="144" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2FCFF"/>
+      <stop offset="1" stop-color="#7CC8FF"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="96" cy="157" rx="44" ry="12" fill="#08142C" fill-opacity="0.32"/>
+  <path d="M50 131C58 120 64 109 68 97" stroke="#3A6CC4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M64 102L59 143" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M92 106L91 146" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M117 101L122 145" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M142 97L150 140" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="99" cy="96" rx="41" ry="35" fill="url(#wolfPunchBody)"/>
+  <path d="M75 78L86 47L101 75" fill="#91D8FF"/>
+  <path d="M109 71L129 42L136 76" fill="#B0EEFF"/>
+  <ellipse cx="97" cy="88" rx="36" ry="30" fill="url(#wolfPunchFur)"/>
+  <ellipse cx="95" cy="96" rx="23" ry="20" fill="#C7ECFF"/>
+  <path d="M74 101L60 114" stroke="#4F93F0" stroke-width="8" stroke-linecap="round"/>
+  <path d="M103 98L146 89" stroke="#73D7FF" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="154" cy="87" r="9" fill="#AEEFFF"/>
+  <path d="M130 77L156 68" stroke="#D8FBFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M133 108L162 104" stroke="#D8FBFF" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="83" cy="89" rx="7" ry="6" fill="#FFE35B"/>
+  <ellipse cx="104" cy="87" rx="7" ry="6" fill="#FFE35B"/>
+  <circle cx="84" cy="89" r="2" fill="#07122A"/>
+  <circle cx="105" cy="87" r="2" fill="#07122A"/>
+  <path d="M93 101L97 108" stroke="#17377D" stroke-width="5" stroke-linecap="round"/>
+  <path d="M80 111C86 115 98 114 107 107" stroke="#17377D" stroke-width="5" stroke-linecap="round"/>
+</svg>

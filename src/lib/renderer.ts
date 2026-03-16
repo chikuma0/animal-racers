@@ -1,5 +1,12 @@
 import { TRACK, ARENA, PlayerState, CHARACTERS, CharacterId, FightState } from './types';
 import { GameEngine } from './engine';
+import {
+  drawArenaBackdropArt,
+  drawFighterSprite,
+  drawPortraitChip,
+  drawRaceBackdropArt,
+  drawRaceCharacterSprite,
+} from './render/art';
 
 const JUNGLE_GREEN_DARK = '#0f3f0f';
 const TRACK_COLOR = '#c4a060';
@@ -132,6 +139,8 @@ function drawArenaBackground(ctx: CanvasRenderingContext2D, W: number, H: number
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, H);
 
+  drawArenaBackdropArt(ctx, W, H);
+
   // Stars
   const t = Date.now() * 0.001;
   ctx.fillStyle = '#ffffff';
@@ -263,7 +272,10 @@ function drawFighter(ctx: CanvasRenderingContext2D, player: PlayerState, W: numb
   ctx.scale(fight.facing, 1);
 
   // Draw the fighter body
-  drawFighterBody(ctx, player.character, pw, ph, t, fight, isHit);
+  const usedSprite = drawFighterSprite(ctx, player.character, pw, ph, fight, isHit);
+  if (!usedSprite) {
+    drawFighterBody(ctx, player.character, pw, ph, t, fight, isHit);
+  }
 
   ctx.restore();
 
@@ -638,34 +650,46 @@ function drawFightHUD(
   ctx.save();
 
   const allPlayers = [localPlayer, ...otherPlayers].filter(p => p.character);
-  const barHeight = 16 * scale;
-  const barPadding = 8;
-  const barY = 12;
+  const barHeight = 17 * scale;
+  const barPadding = 12;
+  const barY = 18;
+  const topBarHeight = 92;
+  const maxBarWidth = Math.max(140, (W - 220) / 2);
 
-  // Top bar background
-  const hudGrad = ctx.createLinearGradient(0, 0, 0, 70);
-  hudGrad.addColorStop(0, '#000000dd');
-  hudGrad.addColorStop(1, '#00000044');
+  const hudGrad = ctx.createLinearGradient(0, 0, 0, topBarHeight);
+  hudGrad.addColorStop(0, '#05070DE8');
+  hudGrad.addColorStop(0.55, '#0E1324D8');
+  hudGrad.addColorStop(1, '#0A0D1630');
   ctx.fillStyle = hudGrad;
-  ctx.fillRect(0, 0, W, 70);
+  ctx.fillRect(0, 0, W, topBarHeight);
+  ctx.strokeStyle = '#FFB56755';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(24, topBarHeight - 10);
+  ctx.lineTo(W - 24, topBarHeight - 10);
+  ctx.stroke();
 
-  // Timer
   const seconds = Math.max(0, Math.ceil(fightTimer / 1000));
-  ctx.fillStyle = seconds <= 10 ? '#FF4444' : '#ffffff';
-  ctx.font = `bold ${20 * scale}px sans-serif`;
+  ctx.fillStyle = '#0D1017';
+  ctx.beginPath();
+  ctx.roundRect(W / 2 - 52, 10, 104, 54, 18);
+  ctx.fill();
+  ctx.strokeStyle = seconds <= 10 ? '#FF6868' : '#FDB14D';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  ctx.fillStyle = '#7D93B4';
+  ctx.font = `700 ${10 * scale}px sans-serif`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
-  ctx.fillText(`${seconds}`, W / 2, 10);
-
-  // "FIGHT!" label
-  ctx.fillStyle = '#FF4444';
-  ctx.font = `bold ${10 * scale}px sans-serif`;
+  ctx.fillText('ARENA CLOCK', W / 2, 17);
+  ctx.fillStyle = seconds <= 10 ? '#FF6868' : '#FFFFFF';
+  ctx.font = `900 ${22 * scale}px sans-serif`;
   ctx.textAlign = 'center';
-  ctx.textBaseline = 'top';
-  ctx.fillText('⚔️ FIGHT', W / 2, 32);
-
-  // Health bars
-  const maxBarWidth = (W - 80) / 2;
+  ctx.textBaseline = 'middle';
+  ctx.fillText(`${seconds}`, W / 2, 43);
+  ctx.fillStyle = '#FFB567';
+  ctx.font = `700 ${10 * scale}px sans-serif`;
+  ctx.fillText('LAST BEAST STANDING', W / 2, 69);
 
   allPlayers.forEach((player, i) => {
     if (!player.character) return;
@@ -676,66 +700,73 @@ function drawFightHUD(
     const hpPct = hp / maxHp;
 
     const isLeft = i === 0;
-    const barX = isLeft ? barPadding + 30 : W - barPadding - maxBarWidth - 30;
+    const portraitX = isLeft ? 34 : W - 34;
+    const barX = isLeft ? barPadding + 56 : W - barPadding - maxBarWidth - 56;
 
-    // Player emoji
-    ctx.font = `${16 * scale}px sans-serif`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(charDef.emoji, isLeft ? barPadding + 14 : W - barPadding - 14, barY + barHeight / 2 + 2);
+    if (!drawPortraitChip(ctx, player.character, portraitX, 39, 40)) {
+      ctx.font = `${18 * scale}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillText(charDef.emoji, portraitX, 39);
+    }
 
-    // HP bar background
-    ctx.fillStyle = '#333333';
+    ctx.fillStyle = '#0C111B';
     ctx.beginPath();
-    ctx.roundRect(barX, barY, maxBarWidth, barHeight, 4);
+    ctx.roundRect(barX, barY, maxBarWidth, barHeight, 6);
     ctx.fill();
+    ctx.strokeStyle = '#FFFFFF22';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
 
-    // HP bar fill
     const hpColor = hpPct > 0.5 ? '#44FF44' : hpPct > 0.25 ? '#FFAA00' : '#FF4444';
     const fillWidth = maxBarWidth * hpPct;
 
     if (isLeft) {
       ctx.fillStyle = hpColor;
       ctx.beginPath();
-      ctx.roundRect(barX, barY, fillWidth, barHeight, 4);
+      ctx.roundRect(barX, barY, fillWidth, barHeight, 6);
       ctx.fill();
     } else {
       ctx.fillStyle = hpColor;
       ctx.beginPath();
-      ctx.roundRect(barX + maxBarWidth - fillWidth, barY, fillWidth, barHeight, 4);
+      ctx.roundRect(barX + maxBarWidth - fillWidth, barY, fillWidth, barHeight, 6);
       ctx.fill();
     }
 
-    // HP text
-    ctx.fillStyle = '#ffffffcc';
-    ctx.font = `bold ${10 * scale}px sans-serif`;
+    ctx.fillStyle = '#F5F8FF';
+    ctx.font = `800 ${10 * scale}px sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(`${hp} HP`, barX + maxBarWidth / 2, barY + barHeight / 2 + 1);
 
-    // Name
-    ctx.fillStyle = '#ffffffaa';
-    ctx.font = `bold ${9 * scale}px sans-serif`;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = `800 ${10 * scale}px sans-serif`;
     ctx.textAlign = isLeft ? 'left' : 'right';
     ctx.textBaseline = 'top';
-    ctx.fillText(player.name, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 4);
+    ctx.fillText(player.name.toUpperCase(), isLeft ? barX : barX + maxBarWidth, barY + barHeight + 6);
+    ctx.fillStyle = '#9FB2D0';
+    ctx.font = `700 ${8 * scale}px sans-serif`;
+    ctx.fillText(charDef.name.toUpperCase(), isLeft ? barX : barX + maxBarWidth, barY + barHeight + 21);
 
-    // Special cooldown indicator
     const specCd = fight?.specialCooldown ?? 0;
-    const charSpec = CHARACTERS[player.character];
-    if (specCd > 0) {
-      ctx.fillStyle = '#ffffff44';
-      ctx.font = `${8 * scale}px sans-serif`;
-      ctx.textAlign = isLeft ? 'left' : 'right';
-      ctx.textBaseline = 'top';
-      ctx.fillText(`${charSpec.specialName}: ${Math.ceil(specCd / 1000)}s`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 16);
-    } else {
-      ctx.fillStyle = '#FFD700aa';
-      ctx.font = `bold ${8 * scale}px sans-serif`;
-      ctx.textAlign = isLeft ? 'left' : 'right';
-      ctx.textBaseline = 'top';
-      ctx.fillText(`${charSpec.specialName}: READY!`, isLeft ? barX : barX + maxBarWidth, barY + barHeight + 16);
-    }
+    const label = specCd > 0 ? `${Math.ceil(specCd / 1000)}S` : 'READY';
+    const pillWidth = 74;
+    const pillHeight = 20;
+    const pillX = isLeft ? barX : barX + maxBarWidth - pillWidth;
+    const pillY = barY + barHeight + 34;
+    ctx.fillStyle = specCd > 0 ? '#2A3346' : '#5B3A11';
+    ctx.beginPath();
+    ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 10);
+    ctx.fill();
+    ctx.strokeStyle = specCd > 0 ? '#64748B' : '#FDB14D';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = specCd > 0 ? '#D6E0F2' : '#FFF0C8';
+    ctx.font = `800 ${8 * scale}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(label, pillX + pillWidth / 2, pillY + pillHeight / 2 + 1);
   });
 
   ctx.restore();
@@ -778,6 +809,8 @@ function drawJungleBackground(ctx: CanvasRenderingContext2D, W: number, H: numbe
   grad.addColorStop(1, '#1a4f1a');
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, H);
+
+  drawRaceBackdropArt(ctx, W, H, cameraY);
 
   const treeSpacing = 100;
   const startY = Math.floor(cameraY / treeSpacing) * treeSpacing - treeSpacing;
@@ -1192,11 +1225,11 @@ function drawPlayer(
     drawBoostTrail(ctx, player.character!, size, t);
   }
 
-  // Draw character body with animation
-  drawCharacterBody(ctx, player.character!, size, t, player.speed, player.boosting, player.hitStun > 0);
-
-  // Tail wagging
-  drawTail(ctx, player.character!, size, t, charDef.color);
+  const usedSprite = drawRaceCharacterSprite(ctx, player.character!, size, player.boosting, player.hitStun > 0);
+  if (!usedSprite) {
+    drawCharacterBody(ctx, player.character!, size, t, player.speed, player.boosting, player.hitStun > 0);
+    drawTail(ctx, player.character!, size, t, charDef.color);
+  }
 
   // Hit stun flash
   if (player.hitStun > 0) {
@@ -1572,56 +1605,94 @@ function drawParticles(
 function drawHUD(ctx: CanvasRenderingContext2D, W: number, H: number, player: PlayerState, _isBattle: boolean) {
   ctx.save();
 
-  const padding = 12;
-  const fontSize = 18;
-
-  const hudGrad = ctx.createLinearGradient(0, 0, 0, 55);
-  hudGrad.addColorStop(0, '#000000cc');
-  hudGrad.addColorStop(1, '#00000044');
+  const padding = 16;
+  const hudHeight = 86;
+  const hudGrad = ctx.createLinearGradient(0, 0, 0, hudHeight);
+  hudGrad.addColorStop(0, '#07120DE8');
+  hudGrad.addColorStop(0.55, '#0A1710D8');
+  hudGrad.addColorStop(1, '#06100C30');
   ctx.fillStyle = hudGrad;
-  ctx.fillRect(0, 0, W, 55);
+  ctx.fillRect(0, 0, W, hudHeight);
+  ctx.strokeStyle = '#B8FFCF33';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(18, hudHeight - 10);
+  ctx.lineTo(W - 18, hudHeight - 10);
+  ctx.stroke();
 
   const totalLaps = TRACK.RACE_LAPS;
-  const lapText = `🏁 Lap ${Math.min(player.lap + 1, totalLaps)}/${totalLaps}`;
+  const lapNumber = Math.min(player.lap + 1, totalLaps);
+  const lapText = `LAP ${lapNumber}/${totalLaps}`;
+  const charDef = player.character ? CHARACTERS[player.character] : null;
 
-  ctx.fillStyle = '#ffffff';
-  ctx.font = `bold ${fontSize}px sans-serif`;
+  if (player.character && !drawPortraitChip(ctx, player.character, 42, 42, 46) && charDef) {
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '26px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(charDef.emoji, 42, 42);
+  }
+
+  ctx.fillStyle = '#7ED9A8';
+  ctx.font = '700 10px sans-serif';
   ctx.textAlign = 'left';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(lapText, padding, 28);
+  ctx.textBaseline = 'top';
+  ctx.fillText('JUNGLE GRAND PRIX', 76, 16);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '900 18px sans-serif';
+  ctx.fillText((player.name || 'RACER').toUpperCase(), 76, 30);
+  ctx.fillStyle = '#D8F5E4';
+  ctx.font = '800 12px sans-serif';
+  ctx.fillText(charDef ? `${charDef.name.toUpperCase()}  |  ${lapText}` : lapText, 76, 54);
 
   const speedPct = Math.round((player.speed / TRACK.BOOST_SPEED) * 100);
-
-  const barW = 70;
-  const barH = 8;
+  const barW = 146;
+  const barH = 12;
   const barX = W - padding - barW;
-  const barY = 14;
+  const barY = 24;
 
-  ctx.fillStyle = '#333333';
+  ctx.fillStyle = '#08130F';
   ctx.beginPath();
-  ctx.roundRect(barX, barY, barW, barH, 4);
+  ctx.roundRect(barX, barY, barW, barH, 6);
   ctx.fill();
+  ctx.strokeStyle = '#FFFFFF20';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
 
   const speedColor = player.boosting ? '#FFaa00' : speedPct > 70 ? '#44FF44' : '#88CC88';
   ctx.fillStyle = speedColor;
   ctx.beginPath();
-  ctx.roundRect(barX, barY, barW * Math.min(1, speedPct / 100), barH, 4);
+  ctx.roundRect(barX, barY, barW * Math.min(1, speedPct / 100), barH, 6);
   ctx.fill();
 
-  ctx.fillStyle = '#ffffffcc';
-  ctx.font = `bold 13px sans-serif`;
+  ctx.fillStyle = '#7ED9A8';
+  ctx.font = '700 10px sans-serif';
   ctx.textAlign = 'right';
   ctx.textBaseline = 'top';
-  ctx.fillText(`${speedPct}%`, W - padding, 26);
+  ctx.fillText('VELOCITY', W - padding, 11);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '900 18px sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText(`${speedPct}%`, W - padding, 40);
 
-  if (!player.boosting) {
-    ctx.fillStyle = '#ffffff55';
-    ctx.font = '10px sans-serif';
+  const pills = [
+    { label: player.boosting ? 'BOOSTING' : 'BOOST', active: player.boosting, x: W - padding - 150 },
+    { label: player.jumping ? 'AIRBORNE' : 'JUMP', active: player.jumping, x: W - padding - 76 },
+  ];
+  pills.forEach(pill => {
+    ctx.fillStyle = pill.active ? '#5B3A11' : '#12201A';
+    ctx.beginPath();
+    ctx.roundRect(pill.x, 53, 66, 20, 10);
+    ctx.fill();
+    ctx.strokeStyle = pill.active ? '#FDB14D' : '#2F5A45';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = pill.active ? '#FFF0C8' : '#BCE8CD';
+    ctx.font = '800 8px sans-serif';
     ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-    ctx.fillText('🔥 W/↑', W / 2 - 30, 42);
-    ctx.fillText('⬆️ SPACE', W / 2 + 30, 42);
-  }
+    ctx.textBaseline = 'middle';
+    ctx.fillText(pill.label, pill.x + 33, 63);
+  });
 
   ctx.restore();
 }
@@ -1637,17 +1708,22 @@ function drawCountdown(ctx: CanvasRenderingContext2D, W: number, H: number, text
   ctx.translate(W / 2, H / 2);
   ctx.scale(pulse, pulse);
 
-  ctx.font = `bold 80px sans-serif`;
+  ctx.font = `900 80px sans-serif`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
 
+  ctx.shadowColor = '#000000';
+  ctx.shadowBlur = 30;
   ctx.fillStyle = '#000000';
-  ctx.fillText(text, 3, 3);
+  ctx.fillText(text, 4, 4);
 
   const isGo = text.includes('GO');
   const isFight = text.includes('FIGHT');
   ctx.fillStyle = isGo ? '#FFD700' : isFight ? '#FF4444' : '#ffffff';
   ctx.fillText(text, 0, 0);
+  ctx.strokeStyle = isGo ? '#FFF7C2' : isFight ? '#FFB2B2' : '#B8FFCF';
+  ctx.lineWidth = 2;
+  ctx.strokeText(text, 0, 0);
 
   ctx.restore();
 }

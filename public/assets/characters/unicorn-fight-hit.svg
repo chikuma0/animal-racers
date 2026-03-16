@@ -1,0 +1,38 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="uniHitBody" x1="56" y1="56" x2="134" y2="144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6FF"/>
+      <stop offset="0.48" stop-color="#F0D3FF"/>
+      <stop offset="1" stop-color="#C86CFF"/>
+    </linearGradient>
+    <linearGradient id="uniHitMane" x1="72" y1="42" x2="146" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CFFF3"/>
+      <stop offset="0.35" stop-color="#6AB6FF"/>
+      <stop offset="0.68" stop-color="#FF7AD8"/>
+      <stop offset="1" stop-color="#FFD970"/>
+    </linearGradient>
+    <linearGradient id="uniHitHorn" x1="0" y1="42" x2="0" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5B8"/>
+      <stop offset="1" stop-color="#FFB41D"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="95" cy="158" rx="43" ry="12" fill="#220A34" fill-opacity="0.25"/>
+  <path d="M44 95L68 98" stroke="#FF9AB7" stroke-width="8" stroke-linecap="round" stroke-opacity="0.78"/>
+  <path d="M37 109L63 113" stroke="#FFD3E1" stroke-width="6" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M62 102L58 144" stroke="#8B37C8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M89 105L89 146" stroke="#8B37C8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M114 100L121 145" stroke="#8B37C8" stroke-width="11" stroke-linecap="round"/>
+  <path d="M140 96L149 140" stroke="#8B37C8" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="99" cy="98" rx="40" ry="35" transform="rotate(-8 99 98)" fill="url(#uniHitBody)"/>
+  <ellipse cx="98" cy="90" rx="35" ry="30" fill="#FCEEFF"/>
+  <path d="M87 73C98 57 121 48 142 50C151 52 160 57 165 63C158 69 151 74 145 81C137 90 131 97 123 104C116 98 109 92 101 85C95 79 90 75 87 73Z" fill="url(#uniHitMane)"/>
+  <path d="M117 45L112 80H124L130 48L124 42L117 45Z" fill="url(#uniHitHorn)"/>
+  <path d="M121 47L117 67" stroke="#FFF0A2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M77 102L61 115" stroke="#C47EFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M124 99L138 113" stroke="#C47EFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M82 91L88 86" stroke="#7E31B0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M101 86L108 91" stroke="#7E31B0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M95 103L100 110" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+  <path d="M82 114C89 109 101 109 110 115" stroke="#8D4DBB" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="71" cy="88" r="18" fill="#FF5D67" fill-opacity="0.12"/>
+</svg>

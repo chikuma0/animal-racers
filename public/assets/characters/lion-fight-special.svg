@@ -1,0 +1,35 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lionSpecBody" x1="50" y1="60" x2="144" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD16B"/>
+      <stop offset="1" stop-color="#FF5E2B"/>
+    </linearGradient>
+    <linearGradient id="lionSpecMane" x1="34" y1="38" x2="128" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3B8"/>
+      <stop offset="0.35" stop-color="#FFAA35"/>
+      <stop offset="1" stop-color="#A92D10"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="94" cy="157" rx="46" ry="12" fill="#1D0A03" fill-opacity="0.32"/>
+  <path d="M38 126C54 115 63 106 76 90" stroke="#FFAD3B" stroke-width="11" stroke-linecap="round" stroke-opacity="0.72"/>
+  <path d="M26 136C44 126 58 114 73 97" stroke="#FFD16B" stroke-width="7" stroke-linecap="round" stroke-opacity="0.55"/>
+  <path d="M63 102L60 142" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M86 108L86 146" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M116 101L123 144" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M141 96L150 138" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="97" cy="95" rx="43" ry="34" fill="url(#lionSpecBody)"/>
+  <circle cx="88" cy="82" r="50" fill="url(#lionSpecMane)"/>
+  <ellipse cx="92" cy="86" rx="35" ry="29" fill="url(#lionSpecBody)"/>
+  <ellipse cx="88" cy="94" rx="23" ry="19" fill="#FFCB74"/>
+  <path d="M74 102L58 116" stroke="#C24A17" stroke-width="9" stroke-linecap="round"/>
+  <path d="M107 96L150 82" stroke="#D96820" stroke-width="14" stroke-linecap="round"/>
+  <path d="M126 70L152 57" stroke="#FFB347" stroke-width="8" stroke-linecap="round"/>
+  <path d="M131 112L160 103" stroke="#FFB347" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="78" cy="88" r="7" fill="#291006"/>
+  <circle cx="100" cy="84" r="7" fill="#291006"/>
+  <circle cx="80" cy="86" r="2" fill="#FAF4E8"/>
+  <circle cx="102" cy="82" r="2" fill="#FAF4E8"/>
+  <path d="M85 98L90 105" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <path d="M72 107C78 111 92 110 101 102" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <path d="M142 87C147 80 156 78 162 84" stroke="#FFF3B8" stroke-width="4" stroke-linecap="round"/>
+</svg>

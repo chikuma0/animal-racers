@@ -1,7 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import { CHARACTER_ART, primeGameAssets } from '@/lib/assets';
 import {
   chooseCpuCharacter,
   CPU_PLAYER_ID,
@@ -148,6 +150,42 @@ function makeEventId(prefix: string): string {
   return `${prefix}-${Math.random().toString(36).slice(2, 10)}-${Math.floor(performance.now())}`;
 }
 
+function CharacterArtwork({
+  characterId,
+  size,
+  priority = false,
+}: {
+  characterId: CharacterId;
+  size: number;
+  priority?: boolean;
+}) {
+  const art = CHARACTER_ART[characterId];
+  const character = CHARACTERS[characterId];
+
+  return (
+    <div
+      className="relative overflow-hidden rounded-[22px] border"
+      style={{
+        width: size,
+        height: size,
+        borderColor: `${art.accent}66`,
+        backgroundImage: `radial-gradient(circle at 30% 30%, ${art.glow}55, transparent 68%), linear-gradient(180deg, rgba(19, 35, 29, 0.96), rgba(9, 18, 15, 0.96))`,
+        boxShadow: `0 18px 42px ${art.accent}18`,
+      }}
+    >
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-white/5" />
+      <Image
+        src={art.racer}
+        alt={character.name}
+        width={size}
+        height={size}
+        priority={priority}
+        className="absolute inset-0 h-full w-full object-contain p-2"
+      />
+    </div>
+  );
+}
+
 export default function Game() {
   const [phase, setPhase] = useState<GamePhase>('home');
   const [roomCode, setRoomCode] = useState('');
@@ -163,6 +201,7 @@ export default function Game() {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [soloMode, setSoloMode] = useState(false);
+  const [artReady, setArtReady] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mpRef = useRef<MultiplayerManager | null>(null);
@@ -230,6 +269,20 @@ export default function Game() {
   useEffect(() => {
     soloModeRef.current = soloMode;
   }, [soloMode]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    void primeGameAssets().finally(() => {
+      if (!cancelled) {
+        setArtReady(true);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const clearScheduledTimeouts = useCallback(() => {
     for (const timeoutId of scheduledTimeoutsRef.current) {
@@ -1593,78 +1646,116 @@ export default function Game() {
   const raceResults: CanonicalRaceResult[] = roomState?.raceResults ?? [];
   const fightResults: CanonicalFightResult[] = roomState?.fightResults ?? [];
   const fightWinnerId = roomState?.fightWinnerId ?? null;
+  const shellStyle: React.CSSProperties = {
+    minHeight: '100dvh',
+    WebkitOverflowScrolling: 'touch',
+    touchAction: 'pan-y',
+  };
 
   if (phase === 'home') {
     return (
-      <div
-        className="fixed inset-0 bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
-      >
-        <div className="text-7xl mb-3 animate-bounce">🏎️</div>
-        <h1 className="text-5xl font-extrabold mb-1 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
-          ANIMAL
-        </h1>
-        <h1 className="text-5xl font-extrabold mb-4 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
-          RACERS
-        </h1>
-        <div className="flex gap-6 text-5xl mb-6">
-          <span className="animate-pulse">🦁</span>
-          <span className="animate-pulse" style={{ animationDelay: '0.2s' }}>
-            🐺
-          </span>
-          <span className="animate-pulse" style={{ animationDelay: '0.4s' }}>
-            🦄
-          </span>
-        </div>
+      <div className="game-shell" style={shellStyle}>
+        <div className="game-shell-inner space-y-4">
+          <div className="game-panel px-5 py-6 sm:px-6">
+            <div className="hero-badge">
+              <span className="loader-dot" style={{ animationDelay: artReady ? '-0.2s' : '0s' }} />
+              {artReady ? 'Art Pack Ready' : 'Syncing Art Pack'}
+            </div>
 
-        {errorMessage && <div className="mb-4 bg-red-600/80 px-4 py-2 rounded-2xl font-bold">{errorMessage}</div>}
+            <div className="hero-mark mt-5">
+              <div className="relative h-[92px] w-[92px]">
+                <div className="absolute left-0 top-5">
+                  <CharacterArtwork characterId="lion" size={52} priority />
+                </div>
+                <div className="absolute right-0 top-0">
+                  <CharacterArtwork characterId="wolf" size={52} priority />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                  <CharacterArtwork characterId="unicorn" size={58} priority />
+                </div>
+              </div>
+            </div>
 
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={playerName}
-          onChange={event => setPlayerName(event.target.value.slice(0, 10))}
-          className="w-72 p-4 mb-4 rounded-2xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/50 outline-none focus:border-yellow-300"
-          style={{ fontSize: '20px' }}
-          maxLength={10}
-          autoComplete="off"
-        />
+            <h1 className="hero-title text-center">
+              Animal
+              <br />
+              Racers
+            </h1>
+            <p className="hero-subtitle text-center">
+              Race feral champions through a jungle sprint, then settle it in the arena.
+            </p>
 
-        <button
-          onClick={handleStartSolo}
-          disabled={!playerName.trim()}
-          className="w-72 p-4 mb-3 rounded-2xl text-xl font-bold bg-emerald-300 text-emerald-950 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
-        >
-          🤖 Solo vs CPU
-        </button>
+            {errorMessage && (
+              <div className="mt-4 rounded-[18px] border border-red-400/35 bg-red-500/14 px-4 py-3 text-sm font-semibold text-red-100">
+                {errorMessage}
+              </div>
+            )}
 
-        <button
-          onClick={handleCreateRoom}
-          disabled={!playerName.trim()}
-          className="w-72 p-4 mb-3 rounded-2xl text-xl font-bold bg-yellow-400 text-yellow-900 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
-        >
-          🏠 Create Room
-        </button>
+            <div className="mt-6 space-y-3">
+              <input
+                type="text"
+                placeholder="Pilot Name"
+                value={playerName}
+                onChange={event => setPlayerName(event.target.value.slice(0, 10))}
+                className="hero-input text-center text-lg font-semibold"
+                maxLength={10}
+                autoComplete="off"
+              />
 
-        <div className="flex items-center gap-2 w-72">
-          <input
-            type="text"
-            placeholder="Code"
-            value={inputCode}
-            onChange={event => setInputCode(event.target.value.replace(/\D/g, '').slice(0, 4))}
-            className="flex-1 p-4 rounded-2xl text-center text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 text-white placeholder-white/50 outline-none focus:border-yellow-300"
-            style={{ fontSize: '20px' }}
-            maxLength={4}
-            inputMode="numeric"
-            autoComplete="off"
-          />
-          <button
-            onClick={handleJoinRoom}
-            disabled={!playerName.trim() || inputCode.length !== 4}
-            className="p-4 rounded-2xl text-xl font-bold bg-blue-400 text-blue-900 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
-          >
-            Join
-          </button>
+              <button
+                onClick={handleStartSolo}
+                disabled={!playerName.trim()}
+                className="hero-button hero-button-secondary"
+              >
+                Solo vs CPU
+              </button>
+
+              <button
+                onClick={handleCreateRoom}
+                disabled={!playerName.trim()}
+                className="hero-button hero-button-primary"
+              >
+                Create Room
+              </button>
+
+              <div className="grid grid-cols-[1fr_auto] gap-2">
+                <input
+                  type="text"
+                  placeholder="Room Code"
+                  value={inputCode}
+                  onChange={event => setInputCode(event.target.value.replace(/\D/g, '').slice(0, 4))}
+                  className="hero-input telemetry text-center text-lg font-semibold"
+                  maxLength={4}
+                  inputMode="numeric"
+                  autoComplete="off"
+                />
+                <button
+                  onClick={handleJoinRoom}
+                  disabled={!playerName.trim() || inputCode.length !== 4}
+                  className="hero-button hero-button-ghost !w-auto px-5"
+                >
+                  Join
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-3">
+            {(['lion', 'wolf', 'unicorn'] as CharacterId[]).map(characterId => {
+              const character = CHARACTERS[characterId];
+              return (
+                <div key={characterId} className="character-card px-3 py-3 text-center">
+                  <div className="mx-auto w-fit">
+                    <CharacterArtwork characterId={characterId} size={78} />
+                  </div>
+                  <div className="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-100/60">
+                    {character.specialName}
+                  </div>
+                  <div className="mt-1 text-sm font-black leading-tight">{character.name}</div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
@@ -1674,189 +1765,274 @@ export default function Game() {
     const canLaunchRace = Boolean(roomState && isHost && canStartRace(roomState));
 
     return (
-      <div
-        className="fixed inset-0 bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
-      >
-        <div className="bg-black/30 px-6 py-3 rounded-2xl mb-3 text-center">
-          <div className="text-xs opacity-70 mb-1">{soloMode ? 'Mode' : 'Room Code'}</div>
-          <div className="text-4xl font-mono font-bold tracking-widest text-yellow-200">
-            {soloMode ? 'SOLO' : roomCode}
-          </div>
-        </div>
-
-        {statusMessage && <div className="mb-3 text-sm font-bold bg-black/20 px-4 py-2 rounded-full">{statusMessage}</div>}
-
-        <h2 className="text-2xl font-bold mb-3">Players ({waitingPlayers.length}/2)</h2>
-
-        <div className="space-y-3 w-full max-w-sm mb-5">
-          {waitingPlayers.map(player => {
-            const character = player.character ? CHARACTERS[player.character] : null;
-            return (
-              <div
-                key={player.id}
-                className={`flex items-center gap-3 rounded-2xl p-4 ${
-                  player.ready ? 'bg-green-500/30 border-2 border-green-300/50' : 'bg-white/20'
-                }`}
-              >
-                <span className="text-4xl">{character?.emoji ?? '❓'}</span>
-                <div className="flex-1">
-                  <div className="font-bold text-lg">
-                    {player.name} {player.id === localId ? '(You)' : ''}
-                  </div>
-                  <div className="text-sm opacity-80">{character?.name ?? 'Pick a character'}</div>
-                </div>
-                {player.ready && <span className="text-3xl">✅</span>}
+      <div className="game-shell" style={shellStyle}>
+        <div className="game-shell-inner space-y-4">
+          <div className="game-panel px-5 py-5 sm:px-6">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="hero-badge">{soloMode ? 'Solo Exhibition' : 'Lobby Broadcast'}</div>
+                <h2 className="mt-4 text-3xl font-black uppercase tracking-[-0.04em]">
+                  {soloMode ? 'CPU Ready' : 'Assemble The Pack'}
+                </h2>
+                <p className="mt-2 text-sm text-emerald-50/68">
+                  Lock one champion, ready up, and launch straight into the jungle circuit.
+                </p>
               </div>
-            );
-          })}
-        </div>
-
-        <h3 className="text-2xl font-bold mb-3">Choose Your Racer</h3>
-        <div className="space-y-3 w-full max-w-sm mb-5">
-          {(['lion', 'wolf', 'unicorn'] as CharacterId[]).map(characterId => {
-            const character = CHARACTERS[characterId];
-            const claimedByOther = waitingPlayers.some(
-              player => player.id !== localId && player.character === characterId
-            );
-            const selected = localRoomPlayer?.character === characterId;
-            return (
-              <button
-                key={characterId}
-                onClick={() => handleCharacterPick(characterId)}
-                disabled={!roomState || claimedByOther}
-                className={`w-full p-4 rounded-2xl flex items-center gap-4 transition-all ${
-                  selected
-                    ? 'bg-yellow-400 text-yellow-900 scale-105 shadow-xl ring-4 ring-yellow-200'
-                    : claimedByOther
-                    ? 'bg-gray-600/50 text-gray-400 opacity-60'
-                    : 'bg-white/15 backdrop-blur active:scale-95 border-2 border-white/20'
-                }`}
-              >
-                <span className="text-5xl">{character.emoji}</span>
-                <div className="text-left flex-1">
-                  <div className="text-xl font-bold">{character.name}</div>
-                  <div className="text-sm opacity-80">🥊 {character.punchName} ({character.punchDamage} dmg)</div>
-                  <div className="text-sm opacity-80">⚡ {character.specialName}: {character.attackDesc}</div>
+              <div className="rounded-[22px] border border-white/10 bg-black/25 px-4 py-3 text-right">
+                <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/45">
+                  {soloMode ? 'Mode' : 'Room Code'}
                 </div>
-                {selected && <span className="text-2xl">✅</span>}
-                {claimedByOther && <span className="text-xl">🔒</span>}
-              </button>
-            );
-          })}
+                <div className="telemetry mt-1 text-3xl font-black tracking-[0.24em] text-amber-200">
+                  {soloMode ? 'SOLO' : roomCode}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              <div className="status-chip">Players {waitingPlayers.length}/2</div>
+              <div className="status-chip">{artReady ? 'Assets Live' : 'Loading Art'}</div>
+              {statusMessage && <div className="status-chip !text-amber-100 !border-amber-200/20">{statusMessage}</div>}
+            </div>
+          </div>
+
+          <div className="game-panel px-4 py-4 sm:px-5">
+            <div className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-emerald-50/45">Lineup</div>
+            <div className="space-y-3">
+              {waitingPlayers.map(player => {
+                const character = player.character ? CHARACTERS[player.character] : null;
+                return (
+                  <div
+                    key={player.id}
+                    className={`rounded-[22px] border px-3 py-3 ${
+                      player.ready
+                        ? 'border-emerald-300/30 bg-emerald-400/10'
+                        : 'border-white/10 bg-white/5'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {player.character ? (
+                        <CharacterArtwork characterId={player.character} size={72} />
+                      ) : (
+                        <div className="flex h-[72px] w-[72px] items-center justify-center rounded-[22px] border border-dashed border-white/15 bg-black/20 text-2xl text-white/35">
+                          ?
+                        </div>
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <div className="truncate text-lg font-black uppercase tracking-[-0.03em]">
+                            {player.name}
+                          </div>
+                          {player.id === localId && <div className="status-chip">You</div>}
+                          {player.id === roomState?.hostId && <div className="status-chip">Host</div>}
+                        </div>
+                        <div className="mt-1 text-sm text-white/62">
+                          {character?.name ?? 'No champion selected'}
+                        </div>
+                        <div className="mt-3 flex gap-2">
+                          <div className="status-chip">{player.connected ? 'Connected' : 'Dropped'}</div>
+                          <div className="status-chip">{player.ready ? 'Ready' : 'Waiting'}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="game-panel px-4 py-4 sm:px-5">
+            <div className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-emerald-50/45">Choose Your Racer</div>
+            <div className="space-y-3">
+              {(['lion', 'wolf', 'unicorn'] as CharacterId[]).map(characterId => {
+                const character = CHARACTERS[characterId];
+                const claimedByOther = waitingPlayers.some(
+                  player => player.id !== localId && player.character === characterId
+                );
+                const selected = localRoomPlayer?.character === characterId;
+                return (
+                  <button
+                    key={characterId}
+                    onClick={() => handleCharacterPick(characterId)}
+                    disabled={!roomState || claimedByOther}
+                    className={`character-card w-full p-3 text-left transition-transform active:scale-[0.99] ${
+                      selected ? 'character-card-selected' : ''
+                    } ${claimedByOther ? 'character-card-claimed' : ''}`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <CharacterArtwork characterId={characterId} size={92} />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <div className="truncate text-xl font-black tracking-[-0.04em]">{character.name}</div>
+                          {selected && <div className="status-chip !text-amber-100 !border-amber-200/25">Selected</div>}
+                          {claimedByOther && <div className="status-chip">Locked</div>}
+                        </div>
+                        <div className="mt-2 text-sm text-white/68">
+                          {character.attackDesc}
+                        </div>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          <div className="status-chip">{character.punchName}</div>
+                          <div className="status-chip">{character.punchDamage} Damage</div>
+                          <div className="status-chip">{character.specialName}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {!localRoomPlayer?.character ? (
+            <div className="status-chip !w-full !justify-center !py-3">Pick a champion to continue</div>
+          ) : soloMode ? (
+            <div className="status-chip !w-full !justify-center !py-3">CPU locked in. Race launch is automatic.</div>
+          ) : (
+            <button
+              onClick={handleReadyToggle}
+              className={`hero-button ${
+                localRoomPlayer.ready ? 'hero-button-ghost' : 'hero-button-secondary'
+              }`}
+            >
+              {localRoomPlayer.ready ? 'Unready' : 'Ready Up'}
+            </button>
+          )}
+
+          {isHost && !soloMode && (
+            <button
+              onClick={handleStartRace}
+              disabled={!canLaunchRace}
+              className="hero-button hero-button-primary"
+            >
+              Start Race
+            </button>
+          )}
         </div>
-
-        {!localRoomPlayer?.character ? (
-          <div className="text-sm font-bold text-white/80">Pick a character to continue.</div>
-        ) : soloMode ? (
-          <div className="text-sm font-bold text-white/80">CPU locked in. Starting race...</div>
-        ) : (
-          <button
-            onClick={handleReadyToggle}
-            className={`w-72 p-4 rounded-2xl text-xl font-bold shadow-lg active:scale-95 transition-transform ${
-              localRoomPlayer.ready ? 'bg-white/20 border-2 border-white/40' : 'bg-green-400 text-green-900'
-            }`}
-          >
-            {localRoomPlayer.ready ? '✅ Ready! Tap to Unready' : '✋ Ready!'}
-          </button>
-        )}
-
-        {isHost && !soloMode && (
-          <button
-            onClick={handleStartRace}
-            disabled={!canLaunchRace}
-            className="mt-3 w-72 p-5 rounded-2xl text-2xl font-bold bg-red-500 text-white shadow-lg active:scale-95 transition-transform disabled:opacity-50"
-          >
-            🏁 START RACE!
-          </button>
-        )}
       </div>
     );
   }
 
   if (phase === 'results') {
     return (
-      <div
-        className="fixed inset-0 bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
-      >
-        <div className="text-7xl mb-2 animate-bounce">🏆</div>
-        <h1 className="text-4xl font-extrabold mb-4" style={{ textShadow: '2px 2px 0 #000' }}>
-          RESULTS!
-        </h1>
-
-        {raceResults.length > 0 && (
-          <div className="w-full max-w-sm mb-4">
-            <h3 className="text-xl font-bold mb-2 text-center">🏁 Race</h3>
-            <div className="space-y-2">
-              {raceResults.map(result => {
-                const player = roomState?.players[result.playerId];
-                const character = player?.character ? CHARACTERS[player.character] : null;
-                const medals = ['🥇', '🥈'];
-                return (
-                  <div
-                    key={result.playerId}
-                    className={`flex items-center gap-3 p-3 rounded-xl ${
-                      result.rank === 1 ? 'bg-yellow-300/40 ring-2 ring-yellow-200' : 'bg-white/15'
-                    }`}
-                  >
-                    <span className="text-3xl">{medals[result.rank - 1] ?? ''}</span>
-                    <span className="text-3xl">{character?.emoji ?? '❓'}</span>
-                    <div className="flex-1">
-                      <div className="font-bold text-lg">{player?.name ?? 'Unknown'}</div>
-                      <div className="text-sm opacity-80">{formatElapsed(result.elapsedMs)}</div>
-                    </div>
-                    {result.rank === 1 && <span className="text-3xl">🏆</span>}
-                  </div>
-                );
-              })}
+      <div className="game-shell" style={shellStyle}>
+        <div className="game-shell-inner space-y-4">
+          <div className="game-panel px-5 py-6 text-center sm:px-6">
+            <div className="hero-badge mx-auto">Final Broadcast</div>
+            <div className="mx-auto mt-5 flex h-[120px] w-[120px] items-center justify-center rounded-[36px] border border-amber-200/18 bg-[radial-gradient(circle_at_30%_25%,rgba(255,211,107,0.38),transparent_42%),linear-gradient(180deg,rgba(19,35,29,0.95),rgba(9,18,15,0.95))] text-6xl shadow-[0_24px_70px_rgba(0,0,0,0.34)]">
+              🏆
             </div>
+            <h1 className="hero-title text-center">Race Complete</h1>
+            <p className="hero-subtitle text-center">
+              Championship standings are locked. Review the sprint and the arena finish below.
+            </p>
           </div>
-        )}
 
-        {fightResults.length > 0 && (
-          <div className="w-full max-w-sm mb-4">
-            <h3 className="text-xl font-bold mb-2 text-center">⚔️ Fight</h3>
-            <div className="space-y-2">
-              {fightResults.map(result => {
-                const player = roomState?.players[result.playerId];
-                const character = player?.character ? CHARACTERS[player.character] : null;
-                const medals = ['🥇', '🥈'];
-                return (
-                  <div
-                    key={result.playerId}
-                    className={`flex items-center gap-3 p-3 rounded-xl ${
-                      result.rank === 1 ? 'bg-purple-300/40 ring-2 ring-purple-200' : 'bg-white/15'
-                    }`}
-                  >
-                    <span className="text-3xl">{medals[result.rank - 1] ?? ''}</span>
-                    <span className="text-3xl">{character?.emoji ?? '❓'}</span>
-                    <div className="flex-1">
-                      <div className="font-bold text-lg">{player?.name ?? 'Unknown'}</div>
-                      <div className="text-sm opacity-80">{result.hp} HP remaining</div>
+          {raceResults.length > 0 && (
+            <div className="game-panel px-4 py-4 sm:px-5">
+              <div className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-amber-100/55">Race Results</div>
+              <div className="space-y-3">
+                {raceResults.map(result => {
+                  const player = roomState?.players[result.playerId];
+                  const characterId = player?.character;
+                  const isWinner = result.rank === 1;
+                  return (
+                    <div
+                      key={result.playerId}
+                      className={`rounded-[24px] border px-3 py-3 ${
+                        isWinner ? 'border-amber-200/30 bg-amber-300/10' : 'border-white/10 bg-white/5'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-[16px] border border-white/10 bg-black/20 text-xl font-black">
+                          {result.rank === 1 ? '01' : '02'}
+                        </div>
+                        {characterId ? (
+                          <CharacterArtwork characterId={characterId} size={74} />
+                        ) : (
+                          <div className="flex h-[74px] w-[74px] items-center justify-center rounded-[22px] border border-dashed border-white/15 bg-black/20 text-2xl text-white/35">
+                            ?
+                          </div>
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="text-lg font-black uppercase tracking-[-0.03em]">
+                            {player?.name ?? 'Unknown'}
+                          </div>
+                          <div className="mt-1 text-sm text-white/62">
+                            {characterId ? CHARACTERS[characterId].name : 'Unassigned'}
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="status-chip">{formatElapsed(result.elapsedMs)}</div>
+                          {isWinner && <div className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-200">Winner</div>}
+                        </div>
+                      </div>
                     </div>
-                    {result.rank === 1 && <span className="text-3xl">🏆✨</span>}
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {fightWinnerId && roomState?.players[fightWinnerId] && (
-          <div className="text-2xl font-bold text-yellow-200 mb-3 animate-pulse">
-            🎉 {roomState.players[fightWinnerId].name} wins the fight!
-          </div>
-        )}
+          {fightResults.length > 0 && (
+            <div className="game-panel px-4 py-4 sm:px-5">
+              <div className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-amber-100/55">Arena Results</div>
+              <div className="space-y-3">
+                {fightResults.map(result => {
+                  const player = roomState?.players[result.playerId];
+                  const characterId = player?.character;
+                  const isWinner = result.rank === 1;
+                  return (
+                    <div
+                      key={result.playerId}
+                      className={`rounded-[24px] border px-3 py-3 ${
+                        isWinner ? 'border-fuchsia-200/30 bg-fuchsia-300/10' : 'border-white/10 bg-white/5'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-[16px] border border-white/10 bg-black/20 text-xl font-black">
+                          {result.rank === 1 ? '01' : '02'}
+                        </div>
+                        {characterId ? (
+                          <CharacterArtwork characterId={characterId} size={74} />
+                        ) : (
+                          <div className="flex h-[74px] w-[74px] items-center justify-center rounded-[22px] border border-dashed border-white/15 bg-black/20 text-2xl text-white/35">
+                            ?
+                          </div>
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="text-lg font-black uppercase tracking-[-0.03em]">
+                            {player?.name ?? 'Unknown'}
+                          </div>
+                          <div className="mt-1 text-sm text-white/62">
+                            {characterId ? CHARACTERS[characterId].specialName : 'No special'}
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="status-chip">{result.hp} HP</div>
+                          {isWinner && <div className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-fuchsia-200">Winner</div>}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
-        <button
-          onClick={() => {
-            void resetToHome();
-          }}
-          className="mt-2 w-72 p-4 rounded-2xl text-xl font-bold bg-white/20 backdrop-blur border-2 border-white/40 active:scale-95 transition-transform"
-        >
-          🏠 Play Again
-        </button>
+          {fightWinnerId && roomState?.players[fightWinnerId] && (
+            <div className="status-chip !w-full !justify-center !py-3 !text-amber-100 !border-amber-200/25">
+              {roomState.players[fightWinnerId].name} wins the arena clash
+            </div>
+          )}
+
+          <button
+            onClick={() => {
+              void resetToHome();
+            }}
+            className="hero-button hero-button-primary"
+          >
+            Play Again
+          </button>
+        </div>
       </div>
     );
   }
@@ -1883,7 +2059,7 @@ export default function Game() {
               event.preventDefault();
               boostActiveRef.current = true;
             }}
-            className="fixed bottom-6 left-4 w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-2xl active:scale-90 transition-transform bg-orange-500/90 text-white border-4 border-orange-300"
+            className="fixed bottom-6 left-4 flex h-24 w-24 items-center justify-center rounded-[28px] border border-amber-200/30 bg-[linear-gradient(180deg,rgba(255,187,86,0.96),rgba(198,97,18,0.96))] text-4xl text-white shadow-[0_20px_44px_rgba(0,0,0,0.34)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             🔥
@@ -1899,22 +2075,26 @@ export default function Game() {
               event.preventDefault();
               jumpActiveRef.current = true;
             }}
-            className="fixed bottom-6 right-4 w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-2xl active:scale-90 transition-transform bg-blue-500/90 text-white border-4 border-blue-300"
+            className="fixed bottom-6 right-4 flex h-24 w-24 items-center justify-center rounded-[28px] border border-cyan-200/30 bg-[linear-gradient(180deg,rgba(90,180,255,0.96),rgba(24,96,188,0.96))] text-4xl text-white shadow-[0_20px_44px_rgba(0,0,0,0.34)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ⬆️
           </button>
 
-          <div className="fixed bottom-1 left-4 w-24 text-center text-xs text-white/60 font-bold">BOOST (W)</div>
-          <div className="fixed bottom-1 right-4 w-24 text-center text-xs text-white/60 font-bold">JUMP (SPACE)</div>
+          <div className="fixed bottom-1 left-4 w-24 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/58">
+            Boost
+          </div>
+          <div className="fixed bottom-1 right-4 w-24 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/58">
+            Jump
+          </div>
 
-          <div className="fixed top-16 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
-            {tiltPermission ? '📱 Tilt to steer' : '← A/D or Arrow Keys to steer →'}
+          <div className="fixed top-16 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/72 backdrop-blur-md">
+            {tiltPermission ? 'Tilt To Steer' : 'A/D Or Arrow Keys To Steer'}
           </div>
 
           {showFinished && (
-            <div className="fixed top-1/3 left-1/2 -translate-x-1/2 bg-green-500/90 backdrop-blur px-8 py-4 rounded-2xl text-white font-bold text-2xl shadow-xl animate-bounce">
-              🏁 FINISHED! 🏁
+            <div className="fixed left-1/2 top-1/3 -translate-x-1/2 rounded-[24px] border border-emerald-200/30 bg-[linear-gradient(180deg,rgba(31,145,99,0.96),rgba(12,79,54,0.94))] px-8 py-4 text-2xl font-black uppercase tracking-[0.12em] text-white shadow-[0_24px_54px_rgba(0,0,0,0.36)] animate-bounce">
+              Finish Locked
             </div>
           )}
         </>
@@ -1939,7 +2119,7 @@ export default function Game() {
             onMouseUp={() => {
               fightMoveXRef.current = 0;
             }}
-            className="fixed bottom-28 left-4 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-gray-700/90 text-white border-2 border-gray-500"
+            className="fixed bottom-28 left-4 flex h-16 w-16 items-center justify-center rounded-[18px] border border-white/12 bg-[linear-gradient(180deg,rgba(55,64,86,0.94),rgba(22,27,39,0.94))] text-2xl text-white shadow-[0_18px_36px_rgba(0,0,0,0.32)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ◀
@@ -1962,7 +2142,7 @@ export default function Game() {
             onMouseUp={() => {
               fightMoveXRef.current = 0;
             }}
-            className="fixed bottom-28 left-24 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-gray-700/90 text-white border-2 border-gray-500"
+            className="fixed bottom-28 left-24 flex h-16 w-16 items-center justify-center rounded-[18px] border border-white/12 bg-[linear-gradient(180deg,rgba(55,64,86,0.94),rgba(22,27,39,0.94))] text-2xl text-white shadow-[0_18px_36px_rgba(0,0,0,0.32)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ▶
@@ -1978,7 +2158,7 @@ export default function Game() {
               event.preventDefault();
               fightJumpRef.current = true;
             }}
-            className="fixed bottom-48 left-12 w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl active:scale-90 transition-transform bg-blue-600/90 text-white border-2 border-blue-400"
+            className="fixed bottom-48 left-12 flex h-16 w-16 items-center justify-center rounded-[18px] border border-cyan-200/24 bg-[linear-gradient(180deg,rgba(82,148,255,0.94),rgba(25,82,176,0.94))] text-2xl text-white shadow-[0_18px_36px_rgba(0,0,0,0.32)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ▲
@@ -1994,7 +2174,7 @@ export default function Game() {
               event.preventDefault();
               fightPunchRef.current = true;
             }}
-            className="fixed bottom-28 right-4 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-red-600/90 text-white border-4 border-red-400"
+            className="fixed bottom-28 right-4 flex h-20 w-20 items-center justify-center rounded-[24px] border border-red-200/28 bg-[linear-gradient(180deg,rgba(255,92,102,0.96),rgba(157,28,38,0.94))] text-3xl text-white shadow-[0_20px_44px_rgba(0,0,0,0.34)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             👊
@@ -2010,18 +2190,26 @@ export default function Game() {
               event.preventDefault();
               fightSpecialRef.current = true;
             }}
-            className="fixed bottom-6 right-4 w-20 h-20 rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-90 transition-transform bg-yellow-500/90 text-white border-4 border-yellow-300"
+            className="fixed bottom-6 right-4 flex h-20 w-20 items-center justify-center rounded-[24px] border border-amber-100/28 bg-[linear-gradient(180deg,rgba(255,205,95,0.96),rgba(186,108,18,0.94))] text-3xl text-white shadow-[0_20px_44px_rgba(0,0,0,0.34)] active:scale-90 transition-transform"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'none' }}
           >
             ⚡
           </button>
 
-          <div className="fixed bottom-24 left-12 w-20 text-center text-xs text-white/50 font-bold">MOVE</div>
-          <div className="fixed bottom-44 left-8 w-24 text-center text-xs text-white/50 font-bold">JUMP (W)</div>
-          <div className="fixed bottom-24 right-0 w-28 text-center text-xs text-white/50 font-bold">PUNCH (F)</div>
-          <div className="fixed bottom-2 right-0 w-28 text-center text-xs text-white/50 font-bold">SPECIAL (G)</div>
-          <div className="fixed top-[74px] left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-white text-xs">
-            A/D: Move • W: Jump • F: Punch • G: Special
+          <div className="fixed bottom-24 left-12 w-20 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">
+            Move
+          </div>
+          <div className="fixed bottom-44 left-8 w-24 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">
+            Jump
+          </div>
+          <div className="fixed bottom-24 right-0 w-28 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">
+            Punch
+          </div>
+          <div className="fixed bottom-2 right-0 w-28 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">
+            Special
+          </div>
+          <div className="fixed top-[74px] left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/72 backdrop-blur-md">
+            A/D Move • W Jump • F Punch • G Special
           </div>
         </>
       )}

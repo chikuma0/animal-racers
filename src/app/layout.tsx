@@ -1,17 +1,30 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import localFont from 'next/font/local';
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+
+const displayFont = localFont({
+  src: './fonts/GeistVF.woff',
+  variable: '--font-display',
+  weight: '100 900',
+});
+
+const monoFont = localFont({
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-mono',
+  weight: '100 900',
+});
 
 export const metadata: Metadata = {
-  title: "Animal Racers 🏎️",
-  description: "Multiplayer racing game! Race as Lion, Wolf, or Unicorn!",
+  title: 'Animal Racers',
+  description: 'Race feral champions through jungle tracks and arena brawls.',
 };
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  viewportFit: "cover",
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -26,7 +39,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className="overscroll-none overflow-hidden">
+      <body className={`${displayFont.variable} ${monoFont.variable} overscroll-none overflow-hidden`}>
         {children}
       </body>
     </html>

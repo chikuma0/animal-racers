@@ -1,0 +1,14 @@
+<svg width="800" height="260" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-glow" x1="400" y1="0" x2="400" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72DCA7" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#07210F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="260" fill="url(#sky-glow)"/>
+  <path d="M0 148C43 110 88 116 132 140C157 96 219 88 253 124C291 90 350 88 387 132C420 102 471 96 505 129C546 86 615 86 655 128C694 102 756 106 800 149V260H0V148Z" fill="#123B24"/>
+  <path d="M0 168C44 138 92 148 126 170C146 132 195 132 222 162C258 132 317 129 352 165C392 134 453 136 487 167C523 135 586 138 620 170C665 141 727 145 800 180V260H0V168Z" fill="#0E2E1C"/>
+  <path d="M54 90C94 70 126 72 164 90" stroke="#6EF0AF" stroke-width="7" stroke-linecap="round" stroke-opacity="0.35"/>
+  <path d="M430 65C462 52 499 56 538 80" stroke="#B3FFD9" stroke-width="6" stroke-linecap="round" stroke-opacity="0.28"/>
+  <path d="M612 88C651 66 696 70 730 92" stroke="#8AF6C7" stroke-width="6" stroke-linecap="round" stroke-opacity="0.25"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wolfHitBody" x1="54" y1="54" x2="132" y2="144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6F3FF"/>
+      <stop offset="0.55" stop-color="#63B5FF"/>
+      <stop offset="1" stop-color="#284EAD"/>
+    </linearGradient>
+    <linearGradient id="wolfHitFur" x1="60" y1="44" x2="142" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2FCFF"/>
+      <stop offset="1" stop-color="#7CC8FF"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="94" cy="158" rx="43" ry="12" fill="#08142C" fill-opacity="0.3"/>
+  <path d="M42 95L66 98" stroke="#FF9AA1" stroke-width="8" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M35 109L62 113" stroke="#FFCDD1" stroke-width="6" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M60 103L56 144" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M88 105L88 146" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M114 100L121 145" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <path d="M139 96L148 140" stroke="#15346F" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="98" cy="98" rx="39" ry="35" transform="rotate(-8 98 98)" fill="url(#wolfHitBody)"/>
+  <path d="M74 82L85 48L99 76" fill="#91D8FF"/>
+  <path d="M105 75L126 43L133 78" fill="#B0EEFF"/>
+  <ellipse cx="97" cy="90" rx="35" ry="30" fill="url(#wolfHitFur)"/>
+  <ellipse cx="95" cy="97" rx="22" ry="20" fill="#C7ECFF"/>
+  <path d="M74 102L59 116" stroke="#4F93F0" stroke-width="8" stroke-linecap="round"/>
+  <path d="M121 98L135 112" stroke="#4F93F0" stroke-width="8" stroke-linecap="round"/>
+  <path d="M79 90L85 85" stroke="#07122A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M98 86L105 91" stroke="#07122A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M92 103L96 110" stroke="#17377D" stroke-width="5" stroke-linecap="round"/>
+  <path d="M80 114C87 109 99 109 108 115" stroke="#17377D" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="69" cy="88" r="18" fill="#FF5D67" fill-opacity="0.12"/>
+</svg>

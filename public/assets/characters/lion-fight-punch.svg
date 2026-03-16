@@ -1,0 +1,38 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lionPunchBody" x1="56" y1="58" x2="142" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD16B"/>
+      <stop offset="1" stop-color="#FF6A3D"/>
+    </linearGradient>
+    <linearGradient id="lionPunchMane" x1="40" y1="36" x2="126" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1A7"/>
+      <stop offset="0.45" stop-color="#FF9C33"/>
+      <stop offset="1" stop-color="#B73813"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="96" cy="157" rx="44" ry="12" fill="#1D0A03" fill-opacity="0.28"/>
+  <path d="M54 132C61 121 66 111 70 98" stroke="#B34B1C" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="51" cy="136" r="7" fill="#D9651D"/>
+  <path d="M69 101L63 143" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M93 107L92 146" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M119 102L124 145" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M144 98L151 140" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="96" cy="95" rx="40" ry="35" fill="url(#lionPunchBody)"/>
+  <circle cx="92" cy="85" r="48" fill="url(#lionPunchMane)"/>
+  <ellipse cx="94" cy="87" rx="35" ry="30" fill="url(#lionPunchBody)"/>
+  <ellipse cx="90" cy="95" rx="24" ry="20" fill="#FFCB74"/>
+  <path d="M71 100L57 114" stroke="#C24A17" stroke-width="9" stroke-linecap="round"/>
+  <path d="M105 99L148 92" stroke="#D96820" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="156" cy="90" r="10" fill="#FF9C33"/>
+  <circle cx="160" cy="88" r="5" fill="#FFF0C4"/>
+  <path d="M128 79L154 67" stroke="#FFB347" stroke-width="7" stroke-linecap="round"/>
+  <path d="M132 110L162 108" stroke="#FFB347" stroke-width="6" stroke-linecap="round"/>
+  <path d="M96 60L88 49" stroke="#B54A14" stroke-width="6" stroke-linecap="round"/>
+  <path d="M117 61L122 48" stroke="#B54A14" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="81" cy="88" r="7" fill="#291006"/>
+  <circle cx="102" cy="86" r="7" fill="#291006"/>
+  <circle cx="83" cy="86" r="2" fill="#FAF4E8"/>
+  <circle cx="104" cy="84" r="2" fill="#FAF4E8"/>
+  <path d="M90 99L95 106" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <path d="M76 109C83 114 97 113 106 106" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lionHitBody" x1="54" y1="60" x2="132" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD16B"/>
+      <stop offset="1" stop-color="#FF6A3D"/>
+    </linearGradient>
+    <linearGradient id="lionHitMane" x1="42" y1="36" x2="122" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1A7"/>
+      <stop offset="0.4" stop-color="#FF9C33"/>
+      <stop offset="1" stop-color="#B73813"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="92" cy="158" rx="42" ry="12" fill="#1D0A03" fill-opacity="0.28"/>
+  <path d="M45 99L66 96" stroke="#FF7B6B" stroke-width="8" stroke-linecap="round" stroke-opacity="0.8"/>
+  <path d="M38 111L63 111" stroke="#FFB0A8" stroke-width="6" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M60 106L55 145" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M89 107L90 146" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M112 98L118 144" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <path d="M138 94L147 139" stroke="#712A0E" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="97" cy="97" rx="40" ry="35" transform="rotate(-7 97 97)" fill="url(#lionHitBody)"/>
+  <circle cx="98" cy="84" r="49" fill="url(#lionHitMane)"/>
+  <ellipse cx="98" cy="88" rx="35" ry="30" fill="url(#lionHitBody)"/>
+  <ellipse cx="97" cy="96" rx="24" ry="20" fill="#FFCB74"/>
+  <path d="M73 100L60 117" stroke="#C24A17" stroke-width="9" stroke-linecap="round"/>
+  <path d="M122 98L136 111" stroke="#C24A17" stroke-width="9" stroke-linecap="round"/>
+  <path d="M96 63L89 51" stroke="#B54A14" stroke-width="6" stroke-linecap="round"/>
+  <path d="M117 65L121 51" stroke="#B54A14" stroke-width="6" stroke-linecap="round"/>
+  <path d="M84 92L90 87" stroke="#291006" stroke-width="5" stroke-linecap="round"/>
+  <path d="M101 87L108 92" stroke="#291006" stroke-width="5" stroke-linecap="round"/>
+  <path d="M94 102L99 109" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <path d="M81 113C87 109 99 108 109 113" stroke="#7C3013" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="69" cy="86" r="20" fill="#FF5D67" fill-opacity="0.14"/>
+</svg>

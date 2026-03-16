@@ -3,9 +3,15 @@ import dynamic from 'next/dynamic';
 const Game = dynamic(() => import('@/components/Game'), { 
   ssr: false,
   loading: () => (
-    <div className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center text-white">
-      <div className="text-6xl animate-spin">🏎️</div>
-      <p className="mt-4 text-xl font-bold animate-pulse">Loading...</p>
+    <div className="game-shell !overflow-hidden">
+      <div className="game-shell-inner flex min-h-screen items-center justify-center">
+        <div className="game-panel w-full max-w-sm px-6 py-10 text-center">
+          <div className="hero-badge mx-auto">Boot Sequence</div>
+          <div className="hero-mark mt-5 text-5xl">🏁</div>
+          <h1 className="hero-title text-center">Animal Racers</h1>
+          <p className="hero-subtitle text-center">Loading arena, champions, and track telemetry.</p>
+        </div>
+      </div>
     </div>
   ),
 });

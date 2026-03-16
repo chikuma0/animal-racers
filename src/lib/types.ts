@@ -70,6 +70,7 @@ export const CHARACTERS: Record<CharacterId, CharacterDef> = {
 };
 
 export type GamePhase = 'home' | 'character-select' | 'waiting' | 'countdown' | 'racing' | 'battle' | 'results';
+export type NetworkPhase = 'racing' | 'battle';
 
 export interface PlayerState {
   id: string;
@@ -149,18 +150,237 @@ export function createDefaultFightState(): FightState {
 }
 
 export interface RoomState {
-  code: string;
+  roomCode: string;
   hostId: string;
-  players: Record<string, PlayerState>;
-  phase: GamePhase;
-  raceStartTime: number;
-  battleStartTime: number;
+  phase: Extract<GamePhase, 'waiting' | 'racing' | 'battle' | 'results'>;
+  phaseSeq: number;
+  maxPlayers: 2;
+  players: Record<string, RoomPlayer>;
+  raceResults: CanonicalRaceResult[];
+  fightResults: CanonicalFightResult[];
+  fightWinnerId: string | null;
 }
 
-export interface BroadcastPayload {
-  type: 'player_update' | 'phase_change' | 'player_join' | 'player_ready' | 'character_pick' | 'attack' | 'start_game' | 'lap_complete' | 'race_finish' | 'battle_finish' | 'fight_update' | 'fight_hit' | 'fight_special';
+export interface RoomPlayer {
+  id: string;
+  name: string;
+  connected: boolean;
+  character: CharacterId | null;
+  ready: boolean;
+}
+
+export interface CanonicalRaceResult {
+  playerId: string;
+  elapsedMs: number;
+  rank: number;
+}
+
+export interface CanonicalFightResult {
+  playerId: string;
+  hp: number;
+  rank: number;
+}
+
+export interface RaceSyncState {
+  x: number;
+  progress: number;
+  lap: number;
+  speed: number;
+  boosting: boolean;
+  jumping: boolean;
+  finished: boolean;
+}
+
+export interface FightSyncState {
+  fx: number;
+  fy: number;
+  fvx: number;
+  fvy: number;
+  hp: number;
+  facing: 1 | -1;
+  grounded: boolean;
+  punching: boolean;
+  punchTimer: number;
+  punchCooldown: number;
+  specialActive: boolean;
+  specialTimer: number;
+  specialCooldown: number;
+  blockTimer: number;
+  freezeTimer: number;
+  hitStunTimer: number;
+  knockbackVx: number;
+  dashActive: boolean;
+  dashTimer: number;
+  invulnTimer: number;
+  dead: boolean;
+}
+
+interface ProtocolBase {
+  type: string;
   senderId: string;
-  data: Record<string, unknown>;
+  recipientId?: string;
+}
+
+export interface JoinRequestMessage extends ProtocolBase {
+  type: 'join_request';
+  name: string;
+}
+
+export interface PickCharacterMessage extends ProtocolBase {
+  type: 'pick_character';
+  character: CharacterId;
+}
+
+export interface SetReadyMessage extends ProtocolBase {
+  type: 'set_ready';
+  ready: boolean;
+}
+
+export interface PhaseAckMessage extends ProtocolBase {
+  type: 'phase_ack';
+  phaseSeq: number;
+  phase: NetworkPhase;
+}
+
+export interface RaceFinishMessage extends ProtocolBase {
+  type: 'race_finish';
+  phaseSeq: number;
+  elapsedMs: number;
+}
+
+export interface FightHitReportMessage extends ProtocolBase {
+  type: 'fight_hit_report';
+  phaseSeq: number;
+  attackId: string;
+  attackerId: string;
+  attackerX: number;
+  targetId: string;
+  attackType: 'punch' | 'special';
+  damage: number;
+  freeze: boolean;
+}
+
+export interface RaceStateMessage extends ProtocolBase {
+  type: 'race_state';
+  phaseSeq: number;
+  state: RaceSyncState;
+}
+
+export interface FightStateMessage extends ProtocolBase {
+  type: 'fight_state';
+  phaseSeq: number;
+  state: FightSyncState;
+}
+
+export interface FightDamageAppliedMessage extends ProtocolBase {
+  type: 'fight_damage_applied';
+  phaseSeq: number;
+  attackId: string;
+  attackerId: string;
+  attackerX: number;
+  damage: number;
+  freeze: boolean;
+  fighter: FightSyncState;
+}
+
+export interface RoomSnapshotMessage extends ProtocolBase {
+  type: 'room_snapshot';
+  room: RoomState;
+}
+
+export interface JoinRejectedMessage extends ProtocolBase {
+  type: 'join_rejected';
+  reason: string;
+}
+
+export interface PhasePrepareMessage extends ProtocolBase {
+  type: 'phase_prepare';
+  phaseSeq: number;
+  phase: NetworkPhase;
+  countdownMs: number;
+}
+
+export interface PhaseStartMessage extends ProtocolBase {
+  type: 'phase_start';
+  phaseSeq: number;
+  phase: NetworkPhase;
+  countdownMs: number;
+  startInMs: number;
+}
+
+export interface PhaseEndMessage extends ProtocolBase {
+  type: 'phase_end';
+  phaseSeq: number;
+  phase: NetworkPhase;
+}
+
+export interface ResultsMessage extends ProtocolBase {
+  type: 'results';
+  phaseSeq: number;
+  room: RoomState;
+}
+
+export interface PlayerLeftMessage extends ProtocolBase {
+  type: 'player_left';
+  playerId: string;
+}
+
+export type ProtocolMessage =
+  | JoinRequestMessage
+  | PickCharacterMessage
+  | SetReadyMessage
+  | PhaseAckMessage
+  | RaceFinishMessage
+  | FightHitReportMessage
+  | RaceStateMessage
+  | FightStateMessage
+  | FightDamageAppliedMessage
+  | RoomSnapshotMessage
+  | JoinRejectedMessage
+  | PhasePrepareMessage
+  | PhaseStartMessage
+  | PhaseEndMessage
+  | ResultsMessage
+  | PlayerLeftMessage;
+
+export const MAX_ROOM_PLAYERS = 2;
+
+export function toRaceSyncState(player: PlayerState): RaceSyncState {
+  return {
+    x: player.x,
+    progress: player.progress,
+    lap: player.lap,
+    speed: player.speed,
+    boosting: player.boosting,
+    jumping: player.jumping,
+    finished: player.finished,
+  };
+}
+
+export function toFightSyncState(fight: FightState): FightSyncState {
+  return {
+    fx: fight.fx,
+    fy: fight.fy,
+    fvx: fight.fvx,
+    fvy: fight.fvy,
+    hp: fight.hp,
+    facing: fight.facing,
+    grounded: fight.grounded,
+    punching: fight.punching,
+    punchTimer: fight.punchTimer,
+    punchCooldown: fight.punchCooldown,
+    specialActive: fight.specialActive,
+    specialTimer: fight.specialTimer,
+    specialCooldown: fight.specialCooldown,
+    blockTimer: fight.blockTimer,
+    freezeTimer: fight.freezeTimer,
+    hitStunTimer: fight.hitStunTimer,
+    knockbackVx: fight.knockbackVx,
+    dashActive: fight.dashActive,
+    dashTimer: fight.dashTimer,
+    invulnTimer: fight.invulnTimer,
+    dead: fight.dead,
+  };
 }
 
 export const TRACK = {

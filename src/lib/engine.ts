@@ -447,7 +447,7 @@ export class GameEngine {
     const d = { ...defender };
 
     // Unicorn shield blocks
-    if (d.blockTimer > 0 && damage > 0) {
+    if (d.blockTimer > 0 && (damage > 0 || freeze)) {
       d.blockTimer = 0; // shield consumed
       this.soundFX.block();
       this.addShake(3);

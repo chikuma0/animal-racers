@@ -321,7 +321,9 @@ export default function Game() {
       setRoomCode('');
       setInputCode('');
       setIsHost(false);
+      isHostRef.current = false;
       setSoloMode(false);
+      soloModeRef.current = false;
       setRoomState(null);
       roomStateRef.current = null;
       setLocalPlayer(null);
@@ -1447,10 +1449,12 @@ export default function Game() {
     };
 
     setSoloMode(true);
+    soloModeRef.current = true;
     setRoomCode('SOLO');
     setErrorMessage(null);
     setPhase('waiting');
     setIsHost(true);
+    isHostRef.current = true;
     setLocalPlayer(createPlayer(localId, name));
     commitRoomState(room, false);
     setStatusMessage('Pick your racer. The CPU will lock in after you do.');
@@ -1468,10 +1472,12 @@ export default function Game() {
       await manager.joinRoom(code);
       const nextRoom = createRoomState(code, manager.getPlayerId(), name);
       setSoloMode(false);
+      soloModeRef.current = false;
       setRoomCode(code);
       setErrorMessage(null);
       setPhase('waiting');
       setIsHost(true);
+      isHostRef.current = true;
       setLocalPlayer(createPlayer(manager.getPlayerId(), name));
       commitRoomState(nextRoom, false);
       setStatusMessage('Share this code with one other player.');
@@ -1490,10 +1496,12 @@ export default function Game() {
     try {
       await manager.joinRoom(inputCode);
       setSoloMode(false);
+      soloModeRef.current = false;
       setRoomCode(inputCode);
       setErrorMessage(null);
       setPhase('waiting');
       setIsHost(false);
+      isHostRef.current = false;
       setRoomState(null);
       roomStateRef.current = null;
       setLocalPlayer(createPlayer(manager.getPlayerId(), name));
@@ -1529,11 +1537,20 @@ export default function Game() {
       let nextRoom = applyCharacterPick(room, localId, character);
       if (soloModeRef.current) {
         nextRoom = cloneRoomState(nextRoom);
+        nextRoom.players[localId].ready = true;
         const cpuPlayer = nextRoom.players[CPU_PLAYER_ID];
         if (cpuPlayer) {
           cpuPlayer.character = chooseCpuCharacter(character);
           cpuPlayer.ready = true;
         }
+        setStatusMessage('CPU locked in. Starting race...');
+        commitRoomState(nextRoom, true);
+        scheduleTimeout(() => {
+          if (roomStateRef.current && canStartRace(roomStateRef.current)) {
+            prepareAuthoritativePhase('racing');
+          }
+        }, 250);
+        return;
       }
       commitRoomState(nextRoom, true);
     } else {
@@ -1580,8 +1597,8 @@ export default function Game() {
   if (phase === 'home') {
     return (
       <div
-        className="min-h-screen bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh' }}
+        className="fixed inset-0 bg-gradient-to-b from-green-800 via-green-600 to-emerald-500 flex flex-col items-center justify-center p-4 text-white overflow-y-auto"
+        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
       >
         <div className="text-7xl mb-3 animate-bounce">🏎️</div>
         <h1 className="text-5xl font-extrabold mb-1 tracking-tight" style={{ textShadow: '3px 3px 0 #000' }}>
@@ -1658,8 +1675,8 @@ export default function Game() {
 
     return (
       <div
-        className="min-h-screen bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh' }}
+        className="fixed inset-0 bg-gradient-to-b from-orange-700 via-orange-500 to-yellow-400 flex flex-col items-center p-4 text-white overflow-y-auto"
+        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
       >
         <div className="bg-black/30 px-6 py-3 rounded-2xl mb-3 text-center">
           <div className="text-xs opacity-70 mb-1">{soloMode ? 'Mode' : 'Room Code'}</div>
@@ -1731,6 +1748,8 @@ export default function Game() {
 
         {!localRoomPlayer?.character ? (
           <div className="text-sm font-bold text-white/80">Pick a character to continue.</div>
+        ) : soloMode ? (
+          <div className="text-sm font-bold text-white/80">CPU locked in. Starting race...</div>
         ) : (
           <button
             onClick={handleReadyToggle}
@@ -1742,7 +1761,7 @@ export default function Game() {
           </button>
         )}
 
-        {isHost && (
+        {isHost && !soloMode && (
           <button
             onClick={handleStartRace}
             disabled={!canLaunchRace}
@@ -1758,8 +1777,8 @@ export default function Game() {
   if (phase === 'results') {
     return (
       <div
-        className="min-h-screen bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-4 text-white overflow-y-auto"
-        style={{ minHeight: '100dvh' }}
+        className="fixed inset-0 bg-gradient-to-b from-yellow-600 via-amber-500 to-orange-500 flex flex-col items-center p-4 text-white overflow-y-auto"
+        style={{ minHeight: '100dvh', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
       >
         <div className="text-7xl mb-2 animate-bounce">🏆</div>
         <h1 className="text-4xl font-extrabold mb-4" style={{ textShadow: '2px 2px 0 #000' }}>

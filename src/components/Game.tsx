@@ -2,6 +2,14 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import {
+  chooseCpuCharacter,
+  CPU_PLAYER_ID,
+  CPU_PLAYER_NAME,
+  createCpuRaceState,
+  getCpuFightInputs,
+  stepCpuRaceState,
+} from '@/lib/cpu';
 import { GameEngine } from '@/lib/engine';
 import { MultiplayerManager } from '@/lib/multiplayer';
 import { renderFightGame, renderGame } from '@/lib/renderer';
@@ -154,6 +162,7 @@ export default function Game() {
   const [showFinished, setShowFinished] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [soloMode, setSoloMode] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mpRef = useRef<MultiplayerManager | null>(null);
@@ -170,6 +179,7 @@ export default function Game() {
   const roomStateRef = useRef<RoomState | null>(null);
   const phaseRef = useRef<GamePhase>('home');
   const isHostRef = useRef(false);
+  const soloModeRef = useRef(false);
   const countdownTextRef = useRef<string | null>(null);
   const broadcastIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartXRef = useRef<number | null>(null);
@@ -184,6 +194,7 @@ export default function Game() {
   const currentPhaseSeqRef = useRef(0);
   const raceStartPerfRef = useRef(0);
   const fightStartPerfRef = useRef(0);
+  const cpuRaceBrainRef = useRef(createCpuRaceState());
   const transitionQueuedRef = useRef(false);
   const battleResolvedRef = useRef(false);
   const reportedRaceFinishRef = useRef(false);
@@ -215,6 +226,10 @@ export default function Game() {
   useEffect(() => {
     isHostRef.current = isHost;
   }, [isHost]);
+
+  useEffect(() => {
+    soloModeRef.current = soloMode;
+  }, [soloMode]);
 
   const clearScheduledTimeouts = useCallback(() => {
     for (const timeoutId of scheduledTimeoutsRef.current) {
@@ -289,6 +304,7 @@ export default function Game() {
       currentPhaseSeqRef.current = 0;
       raceStartPerfRef.current = 0;
       fightStartPerfRef.current = 0;
+      cpuRaceBrainRef.current = createCpuRaceState();
 
       if (broadcastIntervalRef.current) {
         clearInterval(broadcastIntervalRef.current);
@@ -305,6 +321,7 @@ export default function Game() {
       setRoomCode('');
       setInputCode('');
       setIsHost(false);
+      setSoloMode(false);
       setRoomState(null);
       roomStateRef.current = null;
       setLocalPlayer(null);
@@ -352,6 +369,7 @@ export default function Game() {
     transitionQueuedRef.current = false;
     setShowFinished(false);
     raceStartPerfRef.current = 0;
+    cpuRaceBrainRef.current = createCpuRaceState();
 
     const roomLocalPlayer = room.players[localId];
     if (roomLocalPlayer) {
@@ -505,7 +523,7 @@ export default function Game() {
 
       const phaseSeq = room.phaseSeq + 1;
       const countdownMs = nextPhase === 'racing' ? RACE_COUNTDOWN_MS : BATTLE_COUNTDOWN_MS;
-      const awaitingIds = new Set(getGuestPlayerIds(room));
+      const awaitingIds = soloModeRef.current ? new Set<string>() : new Set(getGuestPlayerIds(room));
 
       pendingPhaseRef.current = {
         phase: nextPhase,
@@ -1016,6 +1034,8 @@ export default function Game() {
 
       const engine = engineRef.current;
       let nextLocalPlayer = player;
+      let nextRemotePlayers = remotePlayersRef.current;
+      let remotePlayersChanged = false;
       const currentPhase = phaseRef.current;
       const isBattlePhase = currentPhase === 'battle';
       const isRacePhase = currentPhase === 'racing';
@@ -1073,13 +1093,15 @@ export default function Game() {
                 const nextFight = engine.applyFightDamage(remotePlayer.fight, hit.damage, updatedFight.fx, Boolean(hit.freeze));
                 engine.addFightParticles(remotePlayer.fight.fx, remotePlayer.fight.fy - 30, CHARACTERS[nextLocalPlayer.character].color, 12);
                 appliedFightHitIdsRef.current.add(attackId);
-                setRemotePlayers(prev => ({
-                  ...prev,
+                nextRemotePlayers = {
+                  ...nextRemotePlayers,
                   [remoteId]: {
-                    ...prev[remoteId],
+                    ...remotePlayer,
                     fight: nextFight,
                   },
-                }));
+                };
+                remotePlayersChanged = true;
+                remotePlayersRef.current = nextRemotePlayers;
                 void mpRef.current?.send({
                   type: 'fight_damage_applied',
                   senderId: nextLocalPlayer.id,
@@ -1123,13 +1145,76 @@ export default function Game() {
           }
         }
 
+        if (soloModeRef.current && countdownTextRef.current === null && !battleResolvedRef.current) {
+          const cpuPlayer = nextRemotePlayers[CPU_PLAYER_ID];
+          if (cpuPlayer?.character && !cpuPlayer.fight.dead) {
+            const cpuInputs = getCpuFightInputs(cpuPlayer, nextLocalPlayer);
+            const updatedCpuFight = engine.updateFighter(
+              cpuPlayer.fight,
+              dt,
+              cpuInputs.moveX,
+              cpuInputs.jump,
+              cpuInputs.punch,
+              cpuInputs.special,
+              cpuPlayer.character
+            );
+
+            const cpuHit = engine.checkFightHit(updatedCpuFight, cpuPlayer.character, nextLocalPlayer.fight);
+            if (cpuHit) {
+              const cpuAttackKind = cpuHit.type === 'punch' ? 'punch' : 'special';
+              const cpuAttackId = makeEventId(`${currentPhaseSeqRef.current}-${cpuPlayer.id}-${cpuAttackKind}`);
+              if (!emittedFightHitIdsRef.current.has(cpuAttackId)) {
+                emittedFightHitIdsRef.current.add(cpuAttackId);
+                appliedFightHitIdsRef.current.add(cpuAttackId);
+                const nextLocalFight = engine.applyFightDamage(
+                  nextLocalPlayer.fight,
+                  cpuHit.damage,
+                  updatedCpuFight.fx,
+                  Boolean(cpuHit.freeze)
+                );
+                engine.addFightParticles(
+                  nextLocalPlayer.fight.fx,
+                  nextLocalPlayer.fight.fy - 30,
+                  CHARACTERS[cpuPlayer.character].color,
+                  12
+                );
+                nextLocalPlayer = {
+                  ...nextLocalPlayer,
+                  fight: nextLocalFight,
+                };
+                setLocalPlayer(nextLocalPlayer);
+                if (nextLocalFight.dead) {
+                  finishBattleOnHost();
+                }
+              }
+            }
+
+            nextRemotePlayers = {
+              ...nextRemotePlayers,
+              [CPU_PLAYER_ID]: {
+                ...cpuPlayer,
+                fight: updatedCpuFight,
+              },
+            };
+            remotePlayersChanged = true;
+            remotePlayersRef.current = nextRemotePlayers;
+
+            if (updatedCpuFight.dead) {
+              finishBattleOnHost();
+            }
+          }
+        }
+
         engine.updateParticles(dt);
+        if (remotePlayersChanged) {
+          setRemotePlayers(nextRemotePlayers);
+        }
         renderFightGame(
           ctx,
           canvas,
           engine,
           nextLocalPlayer,
-          Object.values(remotePlayersRef.current),
+          Object.values(nextRemotePlayers),
           fightTimerRef.current,
           countdownTextRef.current
         );
@@ -1196,24 +1281,89 @@ export default function Game() {
           setLocalPlayer(nextLocalPlayer);
         }
 
+        if (soloModeRef.current) {
+          const cpuPlayer = nextRemotePlayers[CPU_PLAYER_ID];
+          if (cpuPlayer && raceStartPerfRef.current > 0 && !cpuPlayer.finished) {
+            const cpuControls = stepCpuRaceState(
+              cpuRaceBrainRef.current,
+              cpuPlayer,
+              nextLocalPlayer,
+              engine.obstacles,
+              dt
+            );
+            cpuRaceBrainRef.current = cpuControls.brain;
+
+            let updatedCpuPlayer: PlayerState = {
+              ...cpuPlayer,
+              boosting: cpuControls.boosting,
+              jumping: cpuControls.jumping,
+            };
+
+            updatedCpuPlayer = engine.updatePlayer(
+              updatedCpuPlayer,
+              dt,
+              cpuControls.tiltX,
+              updatedCpuPlayer.boosting,
+              updatedCpuPlayer.jumping,
+              false,
+              now
+            );
+
+            nextRemotePlayers = {
+              ...nextRemotePlayers,
+              [CPU_PLAYER_ID]: updatedCpuPlayer,
+            };
+            remotePlayersChanged = true;
+            remotePlayersRef.current = nextRemotePlayers;
+
+            if (
+              updatedCpuPlayer.finished &&
+              isHostRef.current &&
+              roomStateRef.current &&
+              !roomStateRef.current.raceResults.some(result => result.playerId === CPU_PLAYER_ID)
+            ) {
+              const cpuElapsedMs = Math.max(0, performance.now() - raceStartPerfRef.current);
+              const nextRoom = applyRaceFinish(roomStateRef.current, CPU_PLAYER_ID, cpuElapsedMs);
+              commitRoomState(nextRoom, true);
+
+              if (haveAllPlayersFinishedRace(nextRoom) && !transitionQueuedRef.current) {
+                transitionQueuedRef.current = true;
+                void mpRef.current?.send({
+                  type: 'phase_end',
+                  senderId: nextLocalPlayer.id,
+                  phaseSeq: nextRoom.phaseSeq,
+                  phase: 'racing',
+                });
+                scheduleTimeout(() => prepareAuthoritativePhase('battle'), BETWEEN_PHASE_DELAY_MS);
+              }
+            }
+          }
+        }
+
         engine.updateParticles(dt);
+        if (remotePlayersChanged) {
+          setRemotePlayers(nextRemotePlayers);
+        }
         renderGame(
           ctx,
           canvas,
           engine,
           nextLocalPlayer,
-          Object.values(remotePlayersRef.current),
+          Object.values(nextRemotePlayers),
           false,
           countdownTextRef.current
         );
       } else {
         engine.updateParticles(dt);
+        if (remotePlayersChanged) {
+          setRemotePlayers(nextRemotePlayers);
+        }
         renderGame(
           ctx,
           canvas,
           engine,
           nextLocalPlayer,
-          Object.values(remotePlayersRef.current),
+          Object.values(nextRemotePlayers),
           false,
           countdownTextRef.current
         );
@@ -1221,7 +1371,7 @@ export default function Game() {
 
       animFrameRef.current = requestAnimationFrame(gameLoop);
     },
-    [finishBattleOnHost, handleLocalRaceFinish, scheduleTimeout, tiltPermission]
+    [commitRoomState, finishBattleOnHost, handleLocalRaceFinish, prepareAuthoritativePhase, scheduleTimeout, tiltPermission]
   );
 
   useEffect(() => {
@@ -1235,6 +1385,10 @@ export default function Game() {
   useEffect(() => {
     const mp = mpRef.current;
     if (!mp) return;
+
+    if (soloModeRef.current) {
+      return;
+    }
 
     if (phase === 'racing') {
       broadcastIntervalRef.current = setInterval(() => {
@@ -1275,6 +1429,33 @@ export default function Game() {
     }
   }, [phase]);
 
+  const handleStartSolo = async () => {
+    if (!playerName.trim() || !mpRef.current) return;
+    await requestTiltPermission();
+
+    const manager = mpRef.current;
+    const name = playerName.trim();
+    const localId = manager.getPlayerId();
+    const room = createRoomState('SOLO', localId, name);
+
+    room.players[CPU_PLAYER_ID] = {
+      id: CPU_PLAYER_ID,
+      name: CPU_PLAYER_NAME,
+      connected: true,
+      character: null,
+      ready: false,
+    };
+
+    setSoloMode(true);
+    setRoomCode('SOLO');
+    setErrorMessage(null);
+    setPhase('waiting');
+    setIsHost(true);
+    setLocalPlayer(createPlayer(localId, name));
+    commitRoomState(room, false);
+    setStatusMessage('Pick your racer. The CPU will lock in after you do.');
+  };
+
   const handleCreateRoom = async () => {
     if (!playerName.trim() || !mpRef.current) return;
     await requestTiltPermission();
@@ -1286,6 +1467,7 @@ export default function Game() {
     try {
       await manager.joinRoom(code);
       const nextRoom = createRoomState(code, manager.getPlayerId(), name);
+      setSoloMode(false);
       setRoomCode(code);
       setErrorMessage(null);
       setPhase('waiting');
@@ -1307,6 +1489,7 @@ export default function Game() {
 
     try {
       await manager.joinRoom(inputCode);
+      setSoloMode(false);
       setRoomCode(inputCode);
       setErrorMessage(null);
       setPhase('waiting');
@@ -1343,7 +1526,16 @@ export default function Game() {
     }
 
     if (isHostRef.current) {
-      commitRoomState(applyCharacterPick(room, localId, character), true);
+      let nextRoom = applyCharacterPick(room, localId, character);
+      if (soloModeRef.current) {
+        nextRoom = cloneRoomState(nextRoom);
+        const cpuPlayer = nextRoom.players[CPU_PLAYER_ID];
+        if (cpuPlayer) {
+          cpuPlayer.character = chooseCpuCharacter(character);
+          cpuPlayer.ready = true;
+        }
+      }
+      commitRoomState(nextRoom, true);
     } else {
       void mp.send({
         type: 'pick_character',
@@ -1422,6 +1614,14 @@ export default function Game() {
         />
 
         <button
+          onClick={handleStartSolo}
+          disabled={!playerName.trim()}
+          className="w-72 p-4 mb-3 rounded-2xl text-xl font-bold bg-emerald-300 text-emerald-950 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
+        >
+          🤖 Solo vs CPU
+        </button>
+
+        <button
           onClick={handleCreateRoom}
           disabled={!playerName.trim()}
           className="w-72 p-4 mb-3 rounded-2xl text-xl font-bold bg-yellow-400 text-yellow-900 shadow-lg active:scale-95 transition-transform disabled:opacity-50"
@@ -1462,8 +1662,10 @@ export default function Game() {
         style={{ minHeight: '100dvh' }}
       >
         <div className="bg-black/30 px-6 py-3 rounded-2xl mb-3 text-center">
-          <div className="text-xs opacity-70 mb-1">Room Code</div>
-          <div className="text-4xl font-mono font-bold tracking-widest text-yellow-200">{roomCode}</div>
+          <div className="text-xs opacity-70 mb-1">{soloMode ? 'Mode' : 'Room Code'}</div>
+          <div className="text-4xl font-mono font-bold tracking-widest text-yellow-200">
+            {soloMode ? 'SOLO' : roomCode}
+          </div>
         </div>
 
         {statusMessage && <div className="mb-3 text-sm font-bold bg-black/20 px-4 py-2 rounded-full">{statusMessage}</div>}

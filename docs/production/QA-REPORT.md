@@ -7,6 +7,7 @@
 - Draft PR: https://github.com/chikuma0/animal-racers/pull/1
 - First snapshot: `474fd4b19b6a10d938c87ee4c97f4313ff1cd526`.
 - First preview: https://animal-racers-pwaqlj3qt-dera-ai.vercel.app (Vercel sign-in required; superseded by the upcoming guard/CPU repair for testing).
+- Phone-test revision: `4ed5042179707330058784675f3a7f1caf2cbfbe`, deployed and inspected at https://animal-racers-4ohkror23-dera-ai.vercel.app. The branch alias has a seven-day scoped sharing link delivered privately to the owner; a fresh anonymous cookie session reached the game through that link. Do not put its access token in the repository.
 - Production https://animal-racers.vercel.app remains the prior version.
 - Build: Node24 on Vercel, Next16.3.5. Local checks: Node22.22.2, MacBook Air M3/24GB. Blender4.5.9 authored editable sources and GLB exports.
 
@@ -15,10 +16,10 @@
 | Area | Verified | Remaining |
 |---|---|---|
 | Rules | 35 simulation cases covering bounded scoring, edge cases, depleted guard, CPU pacing and all9 ordered pairings across3 seeds | Unit fixtures do not establish fun |
-| App | 85 tests across7 files, lint and production build passed after the guard repair;3 GLB structure checks passed for unchanged assets | Physical/rendered acceptance remains open |
+| App | Published4ed5042:85 tests. Local Cycle5:88 tests across7 files, lint and production build passed; six GLBs loaded in actual play | Physical/rendered acceptance remains open |
 | Solo | Full Lion/Wolf and Unicorn/Lion loops observed through normal controls; race/fight/combined cup and return | All three active touch playthroughs, sustained rematches and balanced difficulty |
 | Local network | Recorded Lion-host/Wolf-guest match: matching53.4–46.6; both landed attacks; rematch restarted; departure interrupted active match | Physical internet, both roles, all9 pairings, loss/jitter/fallback profiles |
-| Art/motion | Three skinned animals,14 clips each, source comparisons and local gameplay recordings | Cinematic quality fails; shoulder/defeat deformation and cup silhouette remain major gaps |
+| Art/motion | Three racing GLBs and three dedicated upright GLBs;14 original/11 upright clips, source comparisons and local gameplay recordings | Cinematic quality fails; upright shoulder/knee volume improved, close-contact spacing and camera transition remain major gaps |
 | Performance | Raw per-phase intervals and load conditions retained; large first-stage hitches reduced after shader preparation | Frame spikes remain; physical iPhone13Pro sustained60fps is unverified |
 | Audio | 15s actual canvas soundtrack extracted to `evidence/cycle-3-audio.wav`;48kHz stereo, nonzero audio, peak−19.6dBFS | Human listening, phone unlock/mute/special-contact cues |
 | UI | Desktop and844×390 layout inspected; small landscape panel overlap repaired | Physical safe areas, touch accuracy, interruption/background behavior and visual onboarding |
@@ -35,8 +36,8 @@ All9 physical ordered pairings (Lion/Lion, Lion/Wolf, Lion/Unicorn, Wolf/Lion, W
 
 ## Required next repairs
 
-1. Publish and physically play the verified depleted-guard recovery and non-resonant CPU pacing changes.
-2. Replace the failing upright deformation approach with a dedicated upright Unicorn mesh/rig experiment; inspect extreme poses before extending the pipeline.
+1. Physically play the published depleted-guard recovery and non-resonant CPU pacing changes. Owner test request is pending; the shared preview is held on `4ed5042` during the initial feedback window.
+2. Repair the Cycle5 camera fly-through and close-fighter muzzle overlap, then repeat actual play. Dedicated upright meshes are integrated for all three animals and a105.028s active local rematch is retained; cinematic art remains below target. These local changes are not part of the phone-test revision.
 3. Collect physical input/performance/internet evidence and repair observed failures. Owner visual and enjoyment acceptance remains mandatory.
 
 Root gate count at the first snapshot:2 met,11 open,0 abandoned. Automated success cannot close the open presentation, phone or internet gates.
@@ -46,3 +47,7 @@ Root gate count at the first snapshot:2 met,11 open,0 abandoned. Automated succe
 An observed idle Unicorn/Lion fight ended in6.6s, and an adversarial fixture found repeated full blocks on fractional regenerated guard. Broken guard now stays unavailable until25 meter is restored (about1.98s without pressure), then automatically accepts a still-held input. The UI explains recovery and encourages movement. Holding guard under continued pressure now takes full hits. The CPU waits1.5s before attacks, then leaves at least1.2s between attempts; a blocked opportunity retries on the next200ms decision. Identical stats and human-versus-human timing remain unchanged. The seeded idle KO becomes10.2s, while ordinary repeated strikes can win with67HP and CPU retaliation. These are tuning evidence, not enjoyment acceptance.
 
 Original diagrams now illustrate race movement/jump, guard/counterplay and equal event contributions. The short soundtrack recording proves capture includes game audio without microphone access; human audio review remains open.
+
+## Local Cycle5 evidence
+
+[Cycle5](evidence/CYCLE-5.md) records two actual CPU loops, source/runtime fingerprint, active rematch video, both result images and both raw per-phase measurements. The active Unicorn/Lion result is41.9–58.1, fight0–3HP. Frame-time p95 was70ms racing and50ms fighting under recording and substantial host contention; no sustained performance pass is claimed. Source rendering and automated geometry verification do not substitute for the physical touch, separate-device internet or owner visual gates.

@@ -9,7 +9,7 @@
     "lint": "eslint src/championship src/components/Championship.tsx src/app",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "verify:assets": "node scripts/assets/verify-assets.mjs"
+    "verify:assets": "node scripts/assets/verify-assets.mjs && node scripts/assets/verify-upright.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",

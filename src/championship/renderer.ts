@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { FrameMeasurements } from "./measurements";
+import { ContactEffects } from "./impacts";
 import {
   trailMaterial,
   cliffGeometry,
@@ -49,6 +50,19 @@ function box(
   z = 0,
 ) {
   return mesh(new THREE.BoxGeometry(w, h, d), m, x, y, z);
+}
+function timberBox(w: number, h: number, d: number, m: THREE.Material, x = 0, y = 0, z = 0) {
+  const object = box(w, h, d, m, x, y, z);
+  const { position, normal, uv } = object.geometry.attributes;
+  // World-sized boards keep the floor and building walls from stretching the
+  // same four planks over an entire room. Vertical faces retain vertical grain.
+  for (let i = 0; i < position.count; i++) {
+    const horizontal = Math.abs(normal.getY(i)) > 0.5;
+    const side = Math.abs(normal.getX(i)) > 0.5;
+    uv.setXY(i, (side ? position.getZ(i) : position.getX(i)) / 1.6,
+      (horizontal ? position.getZ(i) : position.getY(i)) / 1.6);
+  }
+  return object;
 }
 function cylinder(
   r1: number,
@@ -128,7 +142,6 @@ function woodTexture() {
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   t.wrapS = t.wrapT = THREE.RepeatWrapping;
-  t.repeat.set(2, 3);
   return t;
 }
 function dustTexture() {
@@ -229,6 +242,7 @@ export type FrameReport = {
   pixelRatio: number;
   loaded: boolean;
 };
+type CharacterForm = "race" | "upright";
 type Avatar = {
   group: THREE.Group;
   model: THREE.Object3D;
@@ -236,6 +250,7 @@ type Avatar = {
   clips: Map<string, THREE.AnimationAction>;
   active: string;
   character: CharacterId;
+  form: CharacterForm;
 };
 export class ChampionshipRenderer {
   readonly renderer: THREE.WebGLRenderer;
@@ -247,15 +262,19 @@ export class ChampionshipRenderer {
   private actors = new THREE.Group();
   private avatars: Avatar[] = [];
   private loader = new GLTFLoader();
-  private cache = new Map<CharacterId, GLTF>();
+  private cache = new Map<string, GLTF>();
+  private timberMap: THREE.Texture = woodTexture();
+  private timberMaterials = new Set<THREE.MeshStandardMaterial>();
   private selection: CharacterId = "lion";
   private disposed = false;
+  private preparing = true;
   private assetRequest = 0;
   private sun = new THREE.DirectionalLight(0xffe2ae, 3.2);
   private target = new THREE.Vector3();
   private cameraTarget = new THREE.Vector3();
   private trophy = createTrophy();
   private sparks: THREE.Points;
+  private contacts = new ContactEffects(dustTexture());
   private particlePositions = new Float32Array(90 * 3);
   private frameTimes: number[] = [];
   private measurements = new FrameMeasurements();
@@ -339,7 +358,7 @@ export class ChampionshipRenderer {
         depthWrite: false,
       }),
     );
-    this.scene.add(this.sparks);
+    this.scene.add(this.sparks, this.contacts.points);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(canvas);
     this.resize();
@@ -351,46 +370,84 @@ export class ChampionshipRenderer {
     this.camera.updateProjectionMatrix();
   }
   async load() {
-    await Promise.all(
-      (["lion", "wolf", "unicorn"] as CharacterId[]).map(async (id) => {
-        const gltf = await this.loader.loadAsync(`/assets/western/${id}.glb`);
-        if (!this.disposed) this.cache.set(id, gltf);
-      }),
-    );
+    const timber = new THREE.TextureLoader().loadAsync("/assets/environment/weathered-timber-v1.webp").then((texture) => {
+      if (this.disposed) { texture.dispose(); return; }
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+      texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
+      this.timberMap.dispose();
+      this.timberMap = texture;
+      this.timberMaterials.forEach((material) => { material.map = texture; });
+    });
+    await Promise.all([
+      timber,
+      ...(["lion", "wolf", "unicorn"] as CharacterId[]).flatMap((id) =>
+        (["race", "upright"] as CharacterForm[]).map(async (form) => {
+          const suffix = form === "upright" ? "-upright" : "";
+          const gltf = await this.loader.loadAsync(`/assets/western/${id}${suffix}.glb`);
+          if (!this.disposed) this.cache.set(`${id}:${form}`, gltf);
+        }),
+      ),
+    ]);
     if (this.disposed) return;
-    // Prepare every stage and skin before enabling play. Otherwise the first
-    // canyon/saloon frame pays the driver compilation cost during a live match.
-    await this.renderer.compileAsync(this.scene, this.camera);
+    // Freeze the loading canvas while preparing both lighting configurations.
+    // The saloon's two extra lights require different programs from the canyon;
+    // preparing only the visible menu still left a first-fight compilation stall.
     for (const gltf of this.cache.values()) {
-      if (this.disposed) return;
       gltf.scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           object.castShadow = true;
           object.receiveShadow = true;
         }
       });
-      await this.renderer.compileAsync(gltf.scene, this.camera, this.scene);
+    }
+    for (const indoors of [false, true]) {
+      this.saloon.visible = indoors;
+      await this.renderer.compileAsync(this.scene, this.camera);
+      for (const [key, gltf] of this.cache) {
+        if (this.disposed) return;
+        if (indoors && key.endsWith(":race")) continue;
+        await this.renderer.compileAsync(gltf.scene, this.camera, this.scene);
+      }
     }
     if (this.disposed) return;
     await this.setCharacters([this.selection, "wolf"]);
+    this.preparing = false;
   }
-  async setCharacters(ids: [CharacterId, CharacterId]) {
+  private releaseAvatar(avatar: Avatar) {
+    avatar.mixer.stopAllAction();
+    avatar.mixer.uncacheRoot(avatar.model);
+    // Models share cached mesh/material resources, while cloned skeletons and
+    // the marker/element geometry belong to this competitor instance.
+    const skeletons = new Set<THREE.Skeleton>();
+    avatar.model.traverse((object) => {
+      if (object instanceof THREE.SkinnedMesh) skeletons.add(object.skeleton);
+    });
+    skeletons.forEach((skeleton) => skeleton.dispose());
+    for (const child of avatar.group.children) {
+      if (child === avatar.model) continue;
+      child.traverse((object) => {
+        if (!(object instanceof THREE.Mesh)) return;
+        object.geometry.dispose();
+        const materials = Array.isArray(object.material) ? object.material : [object.material];
+        materials.forEach((material) => material.dispose());
+      });
+    }
+    this.actors.remove(avatar.group);
+  }
+  async setCharacters(ids: [CharacterId, CharacterId], form: CharacterForm = "upright") {
     const request = ++this.assetRequest;
-    if (!ids.every((id) => this.cache.has(id))) return;
+    if (!ids.every((id) => this.cache.has(`${id}:${form}`))) return;
     if (
       this.avatars.length === 2 &&
-      this.avatars.every((a, i) => a.character === ids[i])
+      this.avatars.every((a, i) => a.character === ids[i] && a.form === form)
     )
       return;
-    for (const a of this.avatars) {
-      a.mixer.stopAllAction();
-      a.mixer.uncacheRoot(a.model);
-      this.actors.remove(a.group);
-    }
+    for (const a of this.avatars) this.releaseAvatar(a);
     this.avatars = [];
     if (request !== this.assetRequest || this.disposed) return;
     ids.forEach((id, i) => {
-      const gltf = this.cache.get(id)!;
+      const gltf = this.cache.get(`${id}:${form}`)!;
       const model = clone(gltf.scene);
       model.traverse((o) => {
         if (o instanceof THREE.Mesh) {
@@ -424,6 +481,7 @@ export class ChampionshipRenderer {
         clips,
         active: "",
         character: id,
+        form,
       });
     });
   }
@@ -740,14 +798,15 @@ export class ChampionshipRenderer {
   private buildBuilding(label: string, saloon = false) {
     const group = new THREE.Group(),
       wood = new THREE.MeshStandardMaterial({
-        map: woodTexture(),
-        color: saloon ? 0xe8c291 : 0xbab2a2,
+        map: this.timberMap,
+        color: saloon ? 0xf1dfc7 : 0xc9c4b8,
         roughness: 0.96,
       });
+    this.timberMaterials.add(wood);
     group.add(
-      box(8, 5.4, 6, wood, 0, 2.7),
+      timberBox(8, 5.4, 6, wood, 0, 2.7),
       box(8.5, 0.25, 7, mat(0x68472f), 0, 5.45),
-      box(8, 1.3, 0.25, wood, 0, 5.55, 3.05),
+      timberBox(8, 1.3, 0.25, wood, 0, 5.55, 3.05),
       box(9, 0.2, 3, mat(0x9d754a), 0, 2.95, 4),
     );
     for (const x of [-3.8, 3.8])
@@ -768,16 +827,17 @@ export class ChampionshipRenderer {
   }
   private buildSaloon() {
     const wood = new THREE.MeshStandardMaterial({
-      map: woodTexture(),
+      map: this.timberMap,
       roughness: 0.92,
-      color: 0xc29c76,
+      color: 0xd9c3a9,
     });
-    const floor = box(24, 0.2, 18, wood, 0, -0.12);
+    this.timberMaterials.add(wood);
+    const floor = timberBox(24, 0.2, 18, wood, 0, -0.12);
     this.saloon.add(
       floor,
-      box(24, 8, 0.3, wood, 0, 4, -6),
-      box(0.3, 8, 18, wood, -12, 4),
-      box(0.3, 8, 18, wood, 12, 4),
+      timberBox(24, 8, 0.3, wood, 0, 4, -6),
+      timberBox(0.3, 8, 18, wood, -12, 4),
+      timberBox(0.3, 8, 18, wood, 12, 4),
     );
     for (const x of [-10, -5, 0, 5, 10])
       this.saloon.add(
@@ -902,13 +962,15 @@ export class ChampionshipRenderer {
     time: number,
     frameMs = delta * 1000,
   ) {
-    if (this.disposed) return;
+    if (this.disposed || this.preparing) return;
     const phase = match?.phase ?? "select";
     if (!match || match.tick < this.previousTick) this.lastEvent = 0;
     this.previousTick = match?.tick ?? -1;
     if (phase !== this.previousPhase) {
       this.previousPhase = phase;
       this.phaseAge = 0;
+      this.contacts.clear();
+      this.impact = 0;
     } else this.phaseAge += delta;
     const isRace = phase === "race" || phase === "countdown";
     const isFight = phase === "fight" || phase === "transition";
@@ -925,10 +987,10 @@ export class ChampionshipRenderer {
     this.sun.intensity = isFight ? 1.5 : 3.2;
     this.renderer.toneMappingExposure = isFight ? 1.2 : 1.05;
     if (match)
-      void this.setCharacters([
-        match.players[0].character,
-        match.players[1].character,
-      ]);
+      void this.setCharacters(
+        [match.players[0].character, match.players[1].character],
+        isFight || phase === "results" ? "upright" : "race",
+      );
     this.avatars.forEach((a, i) => {
       a.group.visible = true;
       const p = match?.players[i];
@@ -990,7 +1052,7 @@ export class ChampionshipRenderer {
               : win
                 ? -0.5
                 : 3.5,
-          phase === "results" && win ? 0.27 : 0,
+          phase === "select" || (phase === "results" && win) ? 0.27 : 0,
           phase === "select" ? (i === 0 ? 0 : -1.2) : win ? 0 : -1,
         );
         a.group.rotation.set(
@@ -1034,10 +1096,13 @@ export class ChampionshipRenderer {
             a.character === "unicorn" ? Math.sin(time * 2) * 0.1 : 0;
           element.children.forEach((part, j) => {
             if (part.name === "wave") {
-              part.position.z =
-                0.6 +
-                (((p!.actionTime - timing.windup + 0.2) * 5 + j * 0.6) % 2);
-              part.scale.setScalar(0.5 + part.position.z * 0.4);
+              // The howl occupies its full adjudicated reach on the active
+              // frame. The small muzzle rings beforehand read as anticipation.
+              const active = isRace || p!.actionTime >= timing.windup;
+              part.position.z = active
+                ? 0.7 + (timing.reach - 0.7) * (j / 2)
+                : 0.45 + j * 0.12;
+              part.scale.setScalar(active ? 0.7 + j * 0.22 : 0.35 + power * 0.25);
             } else if (part.name === "flame") {
               part.scale.y = 0.7 + Math.sin(time * 35 + j) * 0.3;
             }
@@ -1095,11 +1160,16 @@ export class ChampionshipRenderer {
     const events = match?.events ?? [];
     for (const e of events) {
       if (e.id > this.lastEvent) {
-        if (e.type === "hit" || e.type === "special") this.impact = 0.22;
+        if (phase === "fight" && ["hit", "block", "guard-break", "ward"].includes(e.type)) {
+          const defender = match!.players[e.slot === 1 ? 1 : 0];
+          this.contacts.emit(e.type, e.x + defender.facing * 0.35, 1.45 + defender.y, defender.facing, e.id);
+          if (e.type === "hit" || e.type === "guard-break") this.impact = 0.18;
+        }
         this.lastEvent = e.id;
       }
     }
     this.impact = Math.max(0, this.impact - delta);
+    this.contacts.update(delta);
     if (this.impact > 0 && !this.reduced)
       this.camera.position.x += Math.sin(time * 90) * this.impact * 0.11;
     const anchor =
@@ -1158,27 +1228,34 @@ export class ChampionshipRenderer {
       drawCalls: this.renderer.info.render.calls,
       triangles: this.renderer.info.render.triangles,
       pixelRatio: this.renderer.getPixelRatio(),
-      loaded: this.cache.size === 3,
+      loaded: this.cache.size === 6 && !this.preparing,
     };
   }
   dispose() {
     this.disposed = true;
     this.resizeObserver.disconnect();
-    for (const a of this.avatars) {
-      a.mixer.stopAllAction();
-      a.mixer.uncacheRoot(a.model);
-    }
-    this.scene.traverse((o) => {
+    for (const a of this.avatars) this.releaseAvatar(a);
+    const geometries = new Set<THREE.BufferGeometry>();
+    const usedMaterials = new Set<THREE.Material>();
+    const textures = new Set<THREE.Texture>();
+    const collect = (o: THREE.Object3D) => {
       if (o instanceof THREE.Mesh || o instanceof THREE.Points) {
-        o.geometry.dispose();
+        geometries.add(o.geometry);
         const list = Array.isArray(o.material) ? o.material : [o.material];
         for (const m of list) {
-          if ("map" in m && (m as THREE.MeshStandardMaterial).map)
-            (m as THREE.MeshStandardMaterial).map?.dispose();
-          m.dispose();
+          usedMaterials.add(m);
+          for (const value of Object.values(m)) {
+            if (value instanceof THREE.Texture) textures.add(value);
+          }
         }
       }
-    });
+    };
+    this.scene.traverse(collect);
+    for (const gltf of this.cache.values()) gltf.scene.traverse(collect);
+    geometries.forEach((g) => g.dispose());
+    textures.forEach((t) => t.dispose());
+    usedMaterials.forEach((m) => m.dispose());
+    this.cache.clear();
     materials.clear();
     this.environmentTarget.dispose();
     this.renderer.dispose();

@@ -182,7 +182,7 @@ export default function Championship() {
         .catch((e) => {
           if (alive)
             setError(
-              `The animal models could not load. Please reload to retry. ${e instanceof Error ? e.message : ""}`,
+              `The 3D assets could not load. Please reload to retry. ${e instanceof Error ? e.message : ""}`,
             );
         });
     } catch {

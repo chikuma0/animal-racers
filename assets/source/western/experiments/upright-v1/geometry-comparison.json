@@ -1,0 +1,129 @@
+{
+  "method": "Actual evaluated body-surface edges and signed volume, relative to each model fight_idle pose; matching action frames. Different topology/proportions limit cross-model interpretation. No visual acceptance implied.",
+  "records": {
+    "control": {
+      "sourceSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+      "bodyReferenceVolume": 0.7453695620038553,
+      "referenceEdgeCount": 4999,
+      "poses": {
+        "fight_idle": {
+          "frame": 1,
+          "signedVolumeRatioToFightIdle": 1.0,
+          "edgeLengthRatioP01": 1.0,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 1.0,
+          "minimumEdgeLengthRatio": 1.0,
+          "maximumEdgeLengthRatio": 1.0,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0,
+          "fractionEdgesOver200PercentReferenceLength": 0.0
+        },
+        "attack": {
+          "frame": 7,
+          "signedVolumeRatioToFightIdle": 1.0632780423208168,
+          "edgeLengthRatioP01": 0.6640613216584118,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 1.7795719970766688,
+          "minimumEdgeLengthRatio": 0.13816408745457567,
+          "maximumEdgeLengthRatio": 3.074037296313443,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0008001600320064013,
+          "fractionEdgesOver200PercentReferenceLength": 0.005601120224044809
+        },
+        "guard": {
+          "frame": 7,
+          "signedVolumeRatioToFightIdle": 1.0233847055194991,
+          "edgeLengthRatioP01": 0.6387502860947138,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 1.9292354220900743,
+          "minimumEdgeLengthRatio": 0.19140386781196891,
+          "maximumEdgeLengthRatio": 4.186883099118639,
+          "fractionEdgesUnder20PercentReferenceLength": 0.00020004000800160032,
+          "fractionEdgesOver200PercentReferenceLength": 0.008201640328065612
+        },
+        "defeat": {
+          "frame": 40,
+          "signedVolumeRatioToFightIdle": 0.9214954407694513,
+          "edgeLengthRatioP01": 0.4260700141199014,
+          "edgeLengthRatioP50": 1.00000238625776,
+          "edgeLengthRatioP99": 3.0513962835693507,
+          "minimumEdgeLengthRatio": 0.04957852894241483,
+          "maximumEdgeLengthRatio": 10.045952898212375,
+          "fractionEdgesUnder20PercentReferenceLength": 0.00040008001600320064,
+          "fractionEdgesOver200PercentReferenceLength": 0.04600920184036807
+        },
+        "celebrate": {
+          "frame": 16,
+          "signedVolumeRatioToFightIdle": 0.9250756841630945,
+          "edgeLengthRatioP01": 0.42129208032947335,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 3.0058131687912097,
+          "minimumEdgeLengthRatio": 0.08658862629239704,
+          "maximumEdgeLengthRatio": 11.464168620700358,
+          "fractionEdgesUnder20PercentReferenceLength": 0.001200240048009602,
+          "fractionEdgesOver200PercentReferenceLength": 0.03180636127225445
+        }
+      }
+    },
+    "experiment": {
+      "sourceSha256": "5a9aa193bcc3b34643b7a877edfb7edd87ac58de7296888b94ebac7730cb029c",
+      "bodyReferenceVolume": 0.43367961396482485,
+      "referenceEdgeCount": 6968,
+      "poses": {
+        "fight_idle": {
+          "frame": 1,
+          "signedVolumeRatioToFightIdle": 1.0,
+          "edgeLengthRatioP01": 1.0,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 1.0,
+          "minimumEdgeLengthRatio": 1.0,
+          "maximumEdgeLengthRatio": 1.0,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0,
+          "fractionEdgesOver200PercentReferenceLength": 0.0
+        },
+        "attack": {
+          "frame": 7,
+          "signedVolumeRatioToFightIdle": 1.0020800062251791,
+          "edgeLengthRatioP01": 0.6900833965424837,
+          "edgeLengthRatioP50": 0.9999999964382272,
+          "edgeLengthRatioP99": 1.4372600932682007,
+          "minimumEdgeLengthRatio": 0.239981046144798,
+          "maximumEdgeLengthRatio": 5.515797100406377,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0,
+          "fractionEdgesOver200PercentReferenceLength": 0.0018656716417910447
+        },
+        "guard": {
+          "frame": 7,
+          "signedVolumeRatioToFightIdle": 0.9914987983999317,
+          "edgeLengthRatioP01": 0.7215118491981506,
+          "edgeLengthRatioP50": 0.9999999978606927,
+          "edgeLengthRatioP99": 1.6216686310255297,
+          "minimumEdgeLengthRatio": 0.3052009133123369,
+          "maximumEdgeLengthRatio": 5.459599580288616,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0,
+          "fractionEdgesOver200PercentReferenceLength": 0.006027554535017222
+        },
+        "defeat": {
+          "frame": 40,
+          "signedVolumeRatioToFightIdle": 0.9809426749813087,
+          "edgeLengthRatioP01": 0.5084502969170513,
+          "edgeLengthRatioP50": 0.9999998666782008,
+          "edgeLengthRatioP99": 2.589462498449997,
+          "minimumEdgeLengthRatio": 0.09483761981165864,
+          "maximumEdgeLengthRatio": 7.974790731968802,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0031572904707233064,
+          "fractionEdgesOver200PercentReferenceLength": 0.014351320321469576
+        },
+        "celebrate": {
+          "frame": 16,
+          "signedVolumeRatioToFightIdle": 0.9902016190570027,
+          "edgeLengthRatioP01": 0.550513189436399,
+          "edgeLengthRatioP50": 1.0,
+          "edgeLengthRatioP99": 2.2773043284065126,
+          "minimumEdgeLengthRatio": 0.30479712599416026,
+          "maximumEdgeLengthRatio": 8.729095890989056,
+          "fractionEdgesUnder20PercentReferenceLength": 0.0,
+          "fractionEdgesOver200PercentReferenceLength": 0.0169345579793341
+        }
+      }
+    }
+  }
+}

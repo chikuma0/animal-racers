@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Retain portable compressed evidence; local raw canvas recordings are redundant.
 /docs/production/evidence/*.webm
+
+# Blender authoring Python caches
+__pycache__/

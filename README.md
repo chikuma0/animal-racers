@@ -38,10 +38,11 @@ For online play, both players open the same deployed version. One selects **Invi
 - `src/championship/simulation.ts`:60Hz rules, CPU, hits, progression and scoring.
 - `src/championship/network.ts`:bounded session transport. Host adjudicates; guest sends inputs.
 - `input-buffer.ts`, `presentation.ts`:tap delivery and read-only interpolation; guest rendering never computes a new score.
-- `renderer.ts`, `environment.ts`:Three.js world, material/terrain authoring, rigged GLB animation and cup.
+- `renderer.ts`, `environment.ts`, `impacts.ts`:Three.js world, material/terrain authoring, rigged GLB animation, confirmed-contact accents and cup.
 - `Championship.tsx`:touch/keyboard UI, lifecycle, capture and measurements.
 - Editable `.blend` files and reproducible export scripts: [asset production](docs/production/ASSETS.md).
-- Generated images under source/reference and docs/visuals are concept targets, not screenshots or runtime assets.
+- Separate racing and upright GLBs preserve each animal's face and palette while giving fighting poses a dedicated joint topology. Loading prepares outdoor and saloon lighting variants before play.
+- Generated character/scene boards under source/reference and docs/visuals are concept targets, not screenshots. The [timber material](docs/production/visuals/environment/PROVENANCE.md) is an original generated runtime texture with its source and exact prompt retained.
 
 The legacy Canvas implementation is retained in source history and unused components. The home page loads the new championship only.
 
@@ -51,4 +52,4 @@ The legacy Canvas implementation is retained in source history and unused compon
 
 The existing Vercel project can build this Next app. Supply only the two public backend variables for the target environment and set `NEXT_PUBLIC_BUILD_REVISION` to the delivered Git commit. A preview deploy is `npx vercel deploy`; production promotion is a separate delivery decision. Do not set `NEXT_PUBLIC_QA_CAPTURE_ORIGIN` on deployed builds. Optional local capture instructions: [capture notes](scripts/capture-notes.md).
 
-Runtime assets are original authored work; concepts and source provenance are documented in ASSETS.md. The environment geometry and generated canvas materials are original source in environment.ts/renderer.ts. Third-party code retains its npm package licenses, including Three.js and its RoomEnvironment helper (MIT).
+Runtime character assets are original authored work; concepts and source provenance are documented in ASSETS.md. The environment geometry and canvas materials are original source in environment.ts/renderer.ts; the generated timber texture has separate provenance above. Third-party code retains its npm package licenses, including Three.js and its RoomEnvironment helper (MIT).

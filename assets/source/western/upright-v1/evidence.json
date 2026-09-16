@@ -1,0 +1,115 @@
+{
+  "status": "Structural/source coverage verified; cinematic A2 remains open",
+  "species": {
+    "lion": {
+      "sourceSha256": "2f68aa90c03c0f0369260d4caa2fc74b4f5b9e99096586042e044de6ecf473a9",
+      "runtimeSha256": "9f6781941bb2ec7ef63c2822af44a298bbd2dc4dc8c6357819f0f802dfa3c69a",
+      "reviewFramesPerView": [
+        170,
+        170
+      ],
+      "clips": [
+        "transform",
+        "fight_idle",
+        "fight_move",
+        "attack",
+        "special",
+        "guard",
+        "hit",
+        "defeat",
+        "celebrate",
+        "jump",
+        "land"
+      ],
+      "bodyTopology": {
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "surfaceVertices": 4318,
+        "surfaceFaces": 4316,
+        "controlVertices": 1095,
+        "controlFaces": 1065
+      }
+    },
+    "wolf": {
+      "sourceSha256": "a527a10e14d8d041d407b2ee5e7bdd2d9b32527a0575940d743e3c401a7da30a",
+      "runtimeSha256": "994aa94bd104a1c4f13581daa754d129c4d83e85e25432c8dd81000a9e611fd4",
+      "reviewFramesPerView": [
+        173,
+        173
+      ],
+      "clips": [
+        "transform",
+        "fight_idle",
+        "fight_move",
+        "attack",
+        "special",
+        "guard",
+        "hit",
+        "defeat",
+        "celebrate",
+        "jump",
+        "land"
+      ],
+      "bodyTopology": {
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "surfaceVertices": 4318,
+        "surfaceFaces": 4316,
+        "controlVertices": 1095,
+        "controlFaces": 1065
+      }
+    },
+    "unicorn": {
+      "sourceSha256": "d297897ba90607469b218e62983da49d0307f0ade34d1a77c41887f1ca818ac1",
+      "runtimeSha256": "3c8764d1160df011d8e4fab363b1ed067b0d9932e03da8c60b68f4afdfa212cb",
+      "reviewFramesPerView": [
+        170,
+        170
+      ],
+      "clips": [
+        "transform",
+        "fight_idle",
+        "fight_move",
+        "attack",
+        "special",
+        "guard",
+        "hit",
+        "defeat",
+        "celebrate",
+        "jump",
+        "land"
+      ],
+      "bodyTopology": {
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "surfaceVertices": 3486,
+        "surfaceFaces": 3484,
+        "controlVertices": 887,
+        "controlFaces": 857
+      }
+    }
+  },
+  "originalRaceUnchanged": {
+    "lion": {
+      "sourceSha256": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+      "runtimeSha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf"
+    },
+    "wolf": {
+      "sourceSha256": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+      "runtimeSha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c"
+    },
+    "unicorn": {
+      "sourceSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+      "runtimeSha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3"
+    }
+  },
+  "experimentSourceAndRuntimeUnchanged": true,
+  "scriptHashes": {
+    "scripts/assets/build_upright.py": "9f0fbd933a5798d211eff00dfca4b114a1da7fcd7781ae0a112a69cbf51f3958",
+    "scripts/assets/review_upright.py": "8a6ddd1c64c782aef58498658512c63e06b37eeed75646237d4f33f6a5a9f1e3",
+    "scripts/assets/verify-upright.mjs": "4125ad6bab88020f55331c55b73e6458c545afaa0e51974e60bd7201ae7c498e"
+  }
+}

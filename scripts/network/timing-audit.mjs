@@ -11,7 +11,7 @@ import ts from 'typescript';
 const rootUrl = new URL('../../', import.meta.url);
 const root = fileURLToPath(rootUrl);
 assert.ok(process.argv.slice(2).every(arg => arg === '--expect-rematch-recovery'), 'unknown audit option');
-const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'simulation', 'measurements', 'work-measurements'].map(name => `src/championship/${name}.ts`)];
+const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'simulation', 'measurements', 'work-measurements', 'controls'].map(name => `src/championship/${name}.ts`)];
 const sources = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, await readFile(new URL(path, rootUrl), 'utf8')])));
 const sha = value => createHash('sha256').update(value).digest('hex');
 const component = sources[sourcePaths[0]];
@@ -147,7 +147,7 @@ function makeEndpoint(api, clock, wire, role, options) {
   for (const [name, value] of Object.entries({ match: null, input: api.neutralInput(), remoteInput: api.neutralInput(), modeRef: role, screenRef: 'lobby', selectedRef: role === 'host' ? 'lion' : 'wolf', readyRef: true,
     peerRef: { character: role === 'host' ? 'wolf' : 'lion', ready: true }, epoch: '', lastSnapshot: clock.now, lastInput: clock.now, localSeq: 0, remoteSeq: -1, latestTick: -1, connected: true,
     rematchPending: false, peerRematch: false, presentation: new api.PresentationBuffer(), inputSender: new api.InputSender(), localReceiver: new api.InputReceiver(), remoteReceiver: new api.InputReceiver(),
-    workMeasurements: new api.WorkMeasurements(), audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
+    controls: new api.InputControls(), workMeasurements: new api.WorkMeasurements(), audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
   })) s[name] = ref(value);
   for (const name of ['setRematchWaiting', 'setInterrupted', 'setStatus', 'setReady', 'setPeer', 'setRival', 'setView', 'setReport']) s[name] = value => { s.ui[name] = value; };
   s.setPage = page => { s.screenRef.current = page; };
@@ -193,8 +193,15 @@ async function scenario(profile, options = {}) {
     { fightAt: 7, slot: 0, key: 'attack' }, { fightAt: 9, slot: 1, key: 'attack' }, { fightAt: 11, slot: 1, key: 'jump' },
   ];
   let previousView = null, previousEvent = 0, rematchAt = null, secondBeginAt = null, finalAt = null, approached = false;
+  const rematchInputResets = [];
   const collect = (s, slot) => {
     const m = host.match.current, v = s.captured;
+    if (s.epoch.current === 'epoch-2' && !rematchInputResets.includes(slot)) {
+      assert.deepEqual(s.controls.current.value(), api.neutralInput(), 'new epoch releases physical owners');
+      assert.deepEqual(s.input.current, api.neutralInput(), 'new epoch clears the published held input');
+      assert.deepEqual(s.inputSender.current.packet(s.match.current.tick).held, api.neutralInput(), 'new epoch clears transmitted held input');
+      rematchInputResets.push(slot);
+    }
     metrics.peakPresentationFrames = Math.max(metrics.peakPresentationFrames, s.presentation.current.frames.length);
     const connection = s.net.connection;
     if (connection) {
@@ -256,7 +263,15 @@ async function scenario(profile, options = {}) {
         assert.deepEqual(host.match.current.result, guest.match.current.result, 'canonical result agreement');
         metrics.resultConvergences.push({ epoch, at: clock.now, result: host.match.current.result, finalHealth: host.match.current.players.map(player => player.hp), guestDelayMs: clock.now - metrics.resultReceivedTimes[`${epoch}-0`] });
       }
-      if (!rematchAt) { rematchAt = clock.now; host.rematch(); guest.rematch(); previousEvent = 0; }
+      if (!rematchAt) {
+        // A press may still be held when a result becomes a new championship.
+        for (const endpoint of endpoints) {
+          endpoint.controls.current.pointerDown(17, 'guard', true);
+          endpoint.controls.current.keyDown('j');
+          endpoint.setInput(endpoint.controls.current.value());
+        }
+        rematchAt = clock.now; host.rematch(); guest.rematch(); previousEvent = 0;
+      }
       else if (epoch === 'epoch-2') finalAt ??= clock.now;
     }
   };
@@ -292,13 +307,14 @@ async function scenario(profile, options = {}) {
     responseMs: { guestToAuthority: distribution(response.filter(r => r.slot === 1).map(r => r.inputToAuthorityMs)), guestToGuestVisible: distribution(response.filter(r => r.slot === 1).map(r => r.inputToGuestVisibleMs)), hostToHostVisible: distribution(response.filter(r => r.slot === 0).map(r => r.inputToHostVisibleMs)) },
     freshness: { hostTickLagMs: distribution(metrics.hostTickLagMs), snapshotAgeMs: distribution(metrics.snapshotAgeMs), actionClockLagMs: distribution(metrics.actionClockLagMs), phaseMismatchFrames: metrics.phaseMismatches, raceBacktrackFrames: metrics.backtracks, maxBackwardZM: rounded(metrics.maxBackwardZM), actionRewindFrames: metrics.actionRewinds, maxActionRewindMs: rounded(metrics.maxActionRewindMs), actionRewindExamples: metrics.actionRewindExamples },
     bounds: { peakPresentationFrames: metrics.peakPresentationFrames, peakPendingEdgesPerButton: metrics.peakPendingEdges, peakRoundTripSamples: metrics.peakRoundTripSamples, peakRateWindow: metrics.peakRateWindow, peakScheduledEvents: clock.peakQueue, peakEnvelopeBytes: wire.peakBytes, canonicalMutations: metrics.canonicalMutations },
-    convergence: { results: metrics.resultConvergences, sameFinalResult: sameResult, rematchAt, secondBeginAt, hostEpoch: host.epoch.current, guestEpoch: guest.epoch.current, hostPhase: host.match.current?.phase, guestPhase: guest.match.current?.phase, hostInterrupted: Boolean(host.ui.setInterrupted), guestInterrupted: Boolean(guest.ui.setInterrupted), guestIgnoredNewEpochSnapshots: guest.ignoredNewEpoch },
+    convergence: { results: metrics.resultConvergences, sameFinalResult: sameResult, rematchInputResets, rematchAt, secondBeginAt, hostEpoch: host.epoch.current, guestEpoch: guest.epoch.current, hostPhase: host.match.current?.phase, guestPhase: guest.match.current?.phase, hostInterrupted: Boolean(host.ui.setInterrupted), guestInterrupted: Boolean(guest.ui.setInterrupted), guestIgnoredNewEpochSnapshots: guest.ignoredNewEpoch },
   };
   assert.ok(metrics.peakPresentationFrames <= 8 && metrics.peakPendingEdges <= 2 && wire.peakBytes <= api.NETWORK_LIMITS.maxBytes && metrics.canonicalMutations === 0, 'production memory/envelope/authority bounds');
   assert.ok(metrics.peakRoundTripSamples <= api.NETWORK_LIMITS.roundTripSamples && metrics.peakRateWindow <= api.NETWORK_LIMITS.directMessagesPerSecond, 'transport history bounds');
   assert.ok(metrics.resultConvergences.length >= 1, 'initial canonical result arrives');
   assert.ok(metrics.resultConvergences[0].finalHealth.some(hp => hp < 100), 'actual input produced consequential combat damage');
   assert.ok(sameResult && host.epoch.current === 'epoch-2', 'both complete rematch');
+  assert.equal(rematchInputResets.length, 2, 'both roles release old championship inputs');
   assert.equal(response.length, 6);
   if (profile.inputBlackoutMs) {
     assert.equal(response[0].authorityAt, null, 'expired press must never replay after input loss');

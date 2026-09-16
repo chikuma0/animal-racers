@@ -1,6 +1,7 @@
 "use client";
 import { PresentationBuffer } from "@/championship/presentation";
 import { WorkMeasurements } from "@/championship/work-measurements";
+import { InputControls } from "@/championship/controls";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   ChampionshipRenderer,
@@ -71,6 +72,7 @@ const formatTime = (s: number | null) =>
 export default function Championship() {
   const presentation = useRef(new PresentationBuffer());
   const workMeasurements = useRef(new WorkMeasurements());
+  const controls = useRef(new InputControls());
   const inputSender = useRef(new InputSender()),
     localReceiver = useRef(new InputReceiver()),
     remoteReceiver = useRef(new InputReceiver()),
@@ -127,6 +129,10 @@ export default function Championship() {
     setScreen(s);
   }, []);
   const localSlot = mode === "guest" ? 1 : 0;
+  const publishControls = useCallback(() => {
+    input.current = controls.current.value();
+    inputSender.current.update(input.current, match.current?.tick ?? 0);
+  }, []);
   useEffect(() => {
     const panel = resultsPanel.current, surface = canvas.current;
     if (screen !== "play" || view?.phase !== "results" || !panel || !surface) {
@@ -157,6 +163,7 @@ export default function Championship() {
       presentation.current.clear();
       remoteSeq.current = -1;
       inputSender.current.reset();
+      controls.current.clear();
       localReceiver.current.reset();
       remoteReceiver.current.reset();
       rematchPending.current = false;
@@ -185,6 +192,7 @@ export default function Championship() {
     peerRef.current = null;
     setPeer(null);
     input.current = neutralInput();
+    controls.current.clear();
     setPage("select");
     setStatus("");
     setError("");
@@ -353,33 +361,24 @@ export default function Championship() {
       previousCallbackEnd = performance.now();
     };
     frame = requestAnimationFrame(animate);
-    const keys = new Set<string>();
-    const update = () => {
-      input.current.move =
-        (keys.has("ArrowRight") || keys.has("d") ? 1 : 0) -
-        (keys.has("ArrowLeft") || keys.has("a") ? 1 : 0);
-      input.current.jump =
-        keys.has(" ") || keys.has("w") || keys.has("ArrowUp");
-      input.current.attack = keys.has("j");
-      input.current.special = keys.has("k");
-      input.current.guard = keys.has("l") || keys.has("Shift");
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
-    };
     const keydown = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement).matches("input,textarea")) return;
+      if (e.isComposing || (e.target as HTMLElement).matches("input,textarea,select,[contenteditable=true]")) return;
       if (["ArrowRight", "ArrowLeft", "ArrowUp", " "].includes(e.key))
         e.preventDefault();
-      keys.add(e.key);
-      update();
+      controls.current.keyDown(e.key);
+      publishControls();
     };
     const keyup = (e: KeyboardEvent) => {
-      keys.delete(e.key);
-      update();
+      controls.current.keyUp(e.key);
+      publishControls();
     };
     const clear = () => {
-      keys.clear();
-      input.current = neutralInput();
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
+      controls.current.clear();
+      publishControls();
+    };
+    const releasePointer = (e: PointerEvent) => {
+      controls.current.pointerUp(e.pointerId);
+      publishControls();
     };
     const visibility = () => {
       clear();
@@ -400,6 +399,9 @@ export default function Championship() {
     window.addEventListener("keydown", keydown);
     window.addEventListener("keyup", keyup);
     window.addEventListener("blur", clear);
+    window.addEventListener("pointerup", releasePointer);
+    window.addEventListener("pointercancel", releasePointer);
+    window.addEventListener("lostpointercapture", releasePointer);
     document.addEventListener("visibilitychange", visibility);
     const orient = () => setRotate(innerHeight > innerWidth);
     orient();
@@ -410,13 +412,16 @@ export default function Championship() {
       window.removeEventListener("keydown", keydown);
       window.removeEventListener("keyup", keyup);
       window.removeEventListener("blur", clear);
+      window.removeEventListener("pointerup", releasePointer);
+      window.removeEventListener("pointercancel", releasePointer);
+      window.removeEventListener("lostpointercapture", releasePointer);
       window.removeEventListener("resize", orient);
       document.removeEventListener("visibilitychange", visibility);
       renderer.current?.dispose();
       audio.current?.dispose();
       void network.current?.disconnect();
     };
-  }, [begin]);
+  }, [begin, publishControls]);
   useEffect(() => {
     selectedRef.current = selected;
     renderer.current?.setSelection(selected);
@@ -522,6 +527,8 @@ export default function Championship() {
           latestTick.current = -1;
           presentation.current.clear();
           inputSender.current.reset();
+          controls.current.clear();
+          input.current = neutralInput();
           remoteReceiver.current.reset();
           localReceiver.current.reset();
           rematchPending.current = false;
@@ -599,20 +606,20 @@ export default function Championship() {
     onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {
       e.preventDefault();
       e.currentTarget.setPointerCapture(e.pointerId);
-      (input.current[key] as number | boolean) = value;
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
+      controls.current.pointerDown(e.pointerId, key, value);
+      publishControls();
     },
-    onPointerUp: () => {
-      (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
+    onPointerUp: (e: React.PointerEvent<HTMLButtonElement>) => {
+      controls.current.pointerUp(e.pointerId);
+      publishControls();
     },
-    onPointerCancel: () => {
-      (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
+    onPointerCancel: (e: React.PointerEvent<HTMLButtonElement>) => {
+      controls.current.pointerUp(e.pointerId);
+      publishControls();
     },
-    onLostPointerCapture: () => {
-      (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current, match.current?.tick ?? 0);
+    onLostPointerCapture: (e: React.PointerEvent<HTMLButtonElement>) => {
+      controls.current.pointerUp(e.pointerId);
+      publishControls();
     },
   });
   const isRace = view?.phase === "race" || view?.phase === "countdown";
@@ -635,8 +642,9 @@ export default function Championship() {
     if (invite) setJoinCode(invite.toUpperCase());
   }, []);
   const downloadReport = () => {
+    const capturedAt = new Date();
     const result = {
-      capturedAt: new Date().toISOString(),
+      capturedAt: capturedAt.toISOString(),
       revision: process.env.NEXT_PUBLIC_BUILD_REVISION || "local-working-tree",
       userAgent: navigator.userAgent,
       viewport: {
@@ -671,7 +679,7 @@ export default function Championship() {
     };
     saveBlob(
       new Blob([JSON.stringify(result, null, 2)], { type: "application/json" }),
-      `animal-racers-performance-${Date.now()}.json`,
+      `animal-racers-performance-${capturedAt.getTime()}.json`,
     );
   };
   const saveBlob = (blob: Blob, name: string) => {

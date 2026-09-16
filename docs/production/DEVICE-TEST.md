@@ -1,6 +1,6 @@
 # Physical-device and internet acceptance session
 
-Status: waiting for a published internal test build. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
+Status: internal alpha4ed5042 is published for the owner; the first physical-device response is pending. Later Cycle5–10 changes are local and require a newly identified review build. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
 
 ## Setup
 
@@ -32,3 +32,7 @@ Review actual phone gameplay and captures against the cinematic-western target. 
 The download also separates simulation, network send, presentation, renderer, audio/UI and complete callback wall times. Renderer details split scene update from draw submission. Zero-duration samples are retained, and visible/hidden samples have separate keys. These durations include scheduling pauses and synchronous driver work; they are not CPU utilization or completed GPU execution times. The gap between callbacks includes refresh pacing, browser work and other unmeasured work. Do not add stage percentiles or infer a GPU bottleneck from a single maximum.
 
 The loading preparation section records the elapsed time and bounded representative draws before play is enabled. Starting a fresh measurement clears gameplay histograms but preserves the loading record. All raw frame intervals remain available: moving first-use work into loading does not make long loading acceptable or certify sustained play. Record loading duration separately in the physical-device session. The shared owner preview is still4ed5042 and does not yet contain these local additions.
+
+## Touch regression pass for Cycle10 or later
+
+Hold both steering buttons, then lift only one finger: the remaining direction must stay active. Hold Guard with one finger while tapping Strike with another; the guard must resume after attack recovery. Hold Jump across the race-to-fight boundary and release it after the button changes; the previous press must not remain latched. Cancel a press by backgrounding Safari, return, and verify that movement/defense is neutral until a new press. Repeat after rematch. These are physical event-delivery checks; callback fixtures and desktop clicks do not replace them. The4ed5042 shared build predates this repair.

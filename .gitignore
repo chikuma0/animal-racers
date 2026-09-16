@@ -35,3 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env.local
+
+# Retain portable compressed evidence; local raw canvas recordings are redundant.
+/docs/production/evidence/*.webm

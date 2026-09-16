@@ -1,0 +1,804 @@
+{
+  "generated": "2026-09-16T09:41:20.297Z",
+  "tool": "Three.js GLTFLoader + skinned vertices; 25 evaluations per clip",
+  "results": [
+    {
+      "species": "lion",
+      "raisedPawPivot": [
+        0.37,
+        2.5,
+        0.43
+      ],
+      "fightStanceVelocity": [
+        0,
+        0,
+        -3.6
+      ],
+      "stanceVelocity": [
+        0,
+        0,
+        -8
+      ],
+      "contactPivot": [
+        -0.23,
+        1.55,
+        0.96
+      ],
+      "bytes": 1968344,
+      "triangles": 24276,
+      "primitives": 12,
+      "bones": 22,
+      "sha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf",
+      "restBounds": {
+        "min": [
+          -0.659,
+          0.004,
+          -1.92
+        ],
+        "max": [
+          0.654,
+          2.085,
+          1.432
+        ]
+      },
+      "motions": {
+        "race_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.659,
+              0.004,
+              -1.92
+            ],
+            "max": [
+              0.654,
+              2.085,
+              1.432
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "run": {
+          "duration": 0.5,
+          "bounds": {
+            "min": [
+              -0.659,
+              -0.003,
+              -1.92
+            ],
+            "max": [
+              0.654,
+              2.076,
+              1.432
+            ]
+          },
+          "boneMovement": 3.442
+        },
+        "jump": {
+          "duration": 0.8,
+          "bounds": {
+            "min": [
+              -0.659,
+              0.004,
+              -1.92
+            ],
+            "max": [
+              0.654,
+              2.16,
+              1.432
+            ]
+          },
+          "boneMovement": 1.636
+        },
+        "land": {
+          "duration": 0.3,
+          "bounds": {
+            "min": [
+              -0.659,
+              0.004,
+              -1.92
+            ],
+            "max": [
+              0.654,
+              2.07,
+              1.432
+            ]
+          },
+          "boneMovement": 0.473
+        },
+        "stumble": {
+          "duration": 0.667,
+          "bounds": {
+            "min": [
+              -0.659,
+              0.004,
+              -1.92
+            ],
+            "max": [
+              0.654,
+              2.086,
+              1.446
+            ]
+          },
+          "boneMovement": 0.604
+        },
+        "transform": {
+          "duration": 1.2,
+          "bounds": {
+            "min": [
+              -0.668,
+              0.004,
+              -1.92
+            ],
+            "max": [
+              0.667,
+              2.63,
+              1.432
+            ]
+          },
+          "boneMovement": 5.552
+        },
+        "fight_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.668,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.667,
+              2.645,
+              0.862
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "fight_move": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.668,
+              0.005,
+              -1.372
+            ],
+            "max": [
+              0.667,
+              2.642,
+              0.862
+            ]
+          },
+          "boneMovement": 2.399
+        },
+        "attack": {
+          "duration": 0.567,
+          "bounds": {
+            "min": [
+              -0.682,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.66,
+              2.63,
+              1.226
+            ]
+          },
+          "boneMovement": 1.449
+        },
+        "special": {
+          "duration": 0.933,
+          "bounds": {
+            "min": [
+              -0.682,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.678,
+              2.63,
+              1.166
+            ]
+          },
+          "boneMovement": 1.578
+        },
+        "guard": {
+          "duration": 0.6,
+          "bounds": {
+            "min": [
+              -0.659,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.654,
+              2.645,
+              0.896
+            ]
+          },
+          "boneMovement": 0.373
+        },
+        "hit": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.668,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.667,
+              2.63,
+              0.862
+            ]
+          },
+          "boneMovement": 0.549
+        },
+        "defeat": {
+          "duration": 1.3,
+          "bounds": {
+            "min": [
+              -0.669,
+              -0.001,
+              -1.372
+            ],
+            "max": [
+              0.667,
+              2.63,
+              1.022
+            ]
+          },
+          "boneMovement": 3.766
+        },
+        "celebrate": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.747,
+              0.02,
+              -1.372
+            ],
+            "max": [
+              0.755,
+              2.655,
+              0.862
+            ]
+          },
+          "boneMovement": 4.162
+        }
+      }
+    },
+    {
+      "species": "wolf",
+      "raisedPawPivot": [
+        0.37,
+        2.5,
+        0.43
+      ],
+      "fightStanceVelocity": [
+        0,
+        0,
+        -3.6
+      ],
+      "stanceVelocity": [
+        0,
+        0,
+        -8
+      ],
+      "contactPivot": [
+        -0.35,
+        1.55,
+        1.01
+      ],
+      "bytes": 1521352,
+      "triangles": 17804,
+      "primitives": 12,
+      "bones": 22,
+      "sha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c",
+      "restBounds": {
+        "min": [
+          -0.57,
+          0.004,
+          -1.641
+        ],
+        "max": [
+          0.571,
+          2.035,
+          1.54
+        ]
+      },
+      "motions": {
+        "race_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.57,
+              0.004,
+              -1.641
+            ],
+            "max": [
+              0.571,
+              2.035,
+              1.54
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "run": {
+          "duration": 0.5,
+          "bounds": {
+            "min": [
+              -0.57,
+              -0.003,
+              -1.641
+            ],
+            "max": [
+              0.571,
+              2.026,
+              1.54
+            ]
+          },
+          "boneMovement": 3.442
+        },
+        "jump": {
+          "duration": 0.8,
+          "bounds": {
+            "min": [
+              -0.57,
+              0.004,
+              -1.641
+            ],
+            "max": [
+              0.571,
+              2.11,
+              1.54
+            ]
+          },
+          "boneMovement": 1.636
+        },
+        "land": {
+          "duration": 0.3,
+          "bounds": {
+            "min": [
+              -0.57,
+              0.004,
+              -1.641
+            ],
+            "max": [
+              0.571,
+              2.02,
+              1.54
+            ]
+          },
+          "boneMovement": 0.473
+        },
+        "stumble": {
+          "duration": 0.667,
+          "bounds": {
+            "min": [
+              -0.57,
+              0.004,
+              -1.641
+            ],
+            "max": [
+              0.571,
+              2.035,
+              1.554
+            ]
+          },
+          "boneMovement": 0.604
+        },
+        "transform": {
+          "duration": 1.2,
+          "bounds": {
+            "min": [
+              -0.622,
+              0.004,
+              -1.641
+            ],
+            "max": [
+              0.622,
+              2.58,
+              1.54
+            ]
+          },
+          "boneMovement": 5.552
+        },
+        "fight_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.622,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.622,
+              2.595,
+              0.97
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "fight_move": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.622,
+              0.005,
+              -1.11
+            ],
+            "max": [
+              0.622,
+              2.592,
+              0.97
+            ]
+          },
+          "boneMovement": 2.399
+        },
+        "attack": {
+          "duration": 0.567,
+          "bounds": {
+            "min": [
+              -0.653,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.626,
+              2.58,
+              1.276
+            ]
+          },
+          "boneMovement": 1.503
+        },
+        "special": {
+          "duration": 1.133,
+          "bounds": {
+            "min": [
+              -0.686,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.686,
+              2.593,
+              0.97
+            ]
+          },
+          "boneMovement": 2.029
+        },
+        "guard": {
+          "duration": 0.6,
+          "bounds": {
+            "min": [
+              -0.616,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.616,
+              2.595,
+              0.97
+            ]
+          },
+          "boneMovement": 0.373
+        },
+        "hit": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.622,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.622,
+              2.58,
+              0.97
+            ]
+          },
+          "boneMovement": 0.549
+        },
+        "defeat": {
+          "duration": 1.3,
+          "bounds": {
+            "min": [
+              -0.624,
+              -0.001,
+              -1.11
+            ],
+            "max": [
+              0.624,
+              2.58,
+              1.13
+            ]
+          },
+          "boneMovement": 3.766
+        },
+        "celebrate": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.724,
+              0.02,
+              -1.11
+            ],
+            "max": [
+              0.724,
+              2.641,
+              0.97
+            ]
+          },
+          "boneMovement": 4.162
+        }
+      }
+    },
+    {
+      "species": "unicorn",
+      "raisedPawPivot": [
+        0.37,
+        2.5,
+        0.43
+      ],
+      "fightStanceVelocity": [
+        0,
+        0,
+        -3.6
+      ],
+      "stanceVelocity": [
+        0,
+        0,
+        -8
+      ],
+      "contactPivot": [
+        -0.35,
+        1.38,
+        0.96
+      ],
+      "bytes": 1560636,
+      "triangles": 17118,
+      "primitives": 19,
+      "bones": 22,
+      "sha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3",
+      "restBounds": {
+        "min": [
+          -0.589,
+          0.004,
+          -1.9
+        ],
+        "max": [
+          0.589,
+          2.335,
+          1.6
+        ]
+      },
+      "motions": {
+        "race_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.589,
+              0.004,
+              -1.9
+            ],
+            "max": [
+              0.589,
+              2.335,
+              1.6
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "run": {
+          "duration": 0.5,
+          "bounds": {
+            "min": [
+              -0.589,
+              -0.003,
+              -1.9
+            ],
+            "max": [
+              0.589,
+              2.326,
+              1.6
+            ]
+          },
+          "boneMovement": 3.442
+        },
+        "jump": {
+          "duration": 0.8,
+          "bounds": {
+            "min": [
+              -0.589,
+              0.004,
+              -1.9
+            ],
+            "max": [
+              0.589,
+              2.41,
+              1.6
+            ]
+          },
+          "boneMovement": 1.636
+        },
+        "land": {
+          "duration": 0.3,
+          "bounds": {
+            "min": [
+              -0.589,
+              0.004,
+              -1.9
+            ],
+            "max": [
+              0.589,
+              2.32,
+              1.6
+            ]
+          },
+          "boneMovement": 0.473
+        },
+        "stumble": {
+          "duration": 0.667,
+          "bounds": {
+            "min": [
+              -0.589,
+              0.004,
+              -1.9
+            ],
+            "max": [
+              0.589,
+              2.335,
+              1.614
+            ]
+          },
+          "boneMovement": 0.604
+        },
+        "transform": {
+          "duration": 1.2,
+          "bounds": {
+            "min": [
+              -0.619,
+              0.004,
+              -1.9
+            ],
+            "max": [
+              0.617,
+              2.88,
+              1.6
+            ]
+          },
+          "boneMovement": 5.552
+        },
+        "fight_idle": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.619,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.617,
+              2.895,
+              1.03
+            ]
+          },
+          "boneMovement": 0.376
+        },
+        "fight_move": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.619,
+              0.005,
+              -1.135
+            ],
+            "max": [
+              0.617,
+              2.892,
+              1.03
+            ]
+          },
+          "boneMovement": 2.399
+        },
+        "attack": {
+          "duration": 0.567,
+          "bounds": {
+            "min": [
+              -0.634,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.619,
+              2.88,
+              1.201
+            ]
+          },
+          "boneMovement": 1.397
+        },
+        "special": {
+          "duration": 0.933,
+          "bounds": {
+            "min": [
+              -0.619,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.62,
+              2.88,
+              1.03
+            ]
+          },
+          "boneMovement": 1.782
+        },
+        "guard": {
+          "duration": 0.6,
+          "bounds": {
+            "min": [
+              -0.597,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.595,
+              2.895,
+              1.03
+            ]
+          },
+          "boneMovement": 0.373
+        },
+        "hit": {
+          "duration": 0.4,
+          "bounds": {
+            "min": [
+              -0.619,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.617,
+              2.88,
+              1.03
+            ]
+          },
+          "boneMovement": 0.549
+        },
+        "defeat": {
+          "duration": 1.3,
+          "bounds": {
+            "min": [
+              -0.63,
+              -0.001,
+              -1.135
+            ],
+            "max": [
+              0.636,
+              2.88,
+              1.19
+            ]
+          },
+          "boneMovement": 3.766
+        },
+        "celebrate": {
+          "duration": 2,
+          "bounds": {
+            "min": [
+              -0.729,
+              0.02,
+              -1.135
+            ],
+            "max": [
+              0.734,
+              2.905,
+              1.03
+            ]
+          },
+          "boneMovement": 4.162
+        }
+      }
+    }
+  ]
+}

@@ -6,25 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "vitest run"
+    "lint": "eslint src/championship src/components/Championship.tsx src/app",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "verify:assets": "node scripts/assets/verify-assets.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",
-    "next": "14.2.35",
+    "next": "^16.3.5",
     "react": "^18",
     "react-dom": "^18",
-    "vercel": "^50.13.2"
+    "three": "^0.180.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35",
+    "@types/three": "^0.180.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
+    "vercel": "^59.19.0",
     "vitest": "^4.1.0"
   }
 }

@@ -1,0 +1,210 @@
+[
+  {
+    "species": "lion",
+    "sourceSha256": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+    "runtimeSha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf",
+    "bones": 22,
+    "rigTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "anatomy": [
+      {
+        "mesh": "Body \u2022 continuous sculpted skin",
+        "vertices": 2087,
+        "faces": 2914,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 1.1353705257477988
+      },
+      {
+        "mesh": "Head \u2022 species sculpt",
+        "vertices": 1418,
+        "faces": 2070,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 0.19130565555884735
+      }
+    ],
+    "correctiveShapes": [
+      "Upright anatomical correction",
+      "Raised arms anatomical correction"
+    ],
+    "correctiveTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "packedImages": [
+      "Authored short-fur normal"
+    ],
+    "visualRepairStructure": {
+      "rearManeCapVertices": 168,
+      "rearManeCapBoundaryEdges": 0,
+      "rearManeCapNonManifoldEdges": 0,
+      "rearLockCount": 23
+    }
+  },
+  {
+    "species": "wolf",
+    "sourceSha256": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+    "runtimeSha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c",
+    "bones": 22,
+    "rigTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "anatomy": [
+      {
+        "mesh": "Body \u2022 continuous sculpted skin",
+        "vertices": 2087,
+        "faces": 2914,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 1.0008333074273676
+      },
+      {
+        "mesh": "Head \u2022 species sculpt",
+        "vertices": 1363,
+        "faces": 1962,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 0.17815333626461854
+      }
+    ],
+    "correctiveShapes": [
+      "Upright anatomical correction",
+      "Raised arms anatomical correction"
+    ],
+    "correctiveTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "packedImages": [
+      "Authored short-fur normal"
+    ],
+    "visualRepairStructure": {
+      "gradedHeadJawBridges": 3,
+      "bridgeVertices": 104,
+      "hasUpperPalate": true,
+      "hasMandibleFloor": true
+    }
+  },
+  {
+    "species": "unicorn",
+    "sourceSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+    "runtimeSha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3",
+    "bones": 22,
+    "rigTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "anatomy": [
+      {
+        "mesh": "Body \u2022 continuous sculpted skin",
+        "vertices": 2087,
+        "faces": 2914,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 1.060517278658667
+      },
+      {
+        "mesh": "Head \u2022 species sculpt",
+        "vertices": 1546,
+        "faces": 2265,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "volume": 0.20261429075421641
+      }
+    ],
+    "correctiveShapes": [
+      "Upright anatomical correction",
+      "Raised arms anatomical correction"
+    ],
+    "correctiveTracks": [
+      "race_idle",
+      "run",
+      "jump",
+      "land",
+      "stumble",
+      "transform",
+      "fight_idle",
+      "fight_move",
+      "attack",
+      "special",
+      "guard",
+      "hit",
+      "defeat",
+      "celebrate"
+    ],
+    "packedImages": [
+      "Authored short-fur normal"
+    ],
+    "visualRepairStructure": {}
+  }
+]

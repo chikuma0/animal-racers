@@ -1,0 +1,10 @@
+# Build only the application and its public runtime assets.
+/.*/
+/node_modules/
+/.next/
+/.vercel/
+.env*.local
+/assets/
+/scripts/
+/docs/
+*.tsbuildinfo

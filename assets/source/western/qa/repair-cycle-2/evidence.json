@@ -1,0 +1,24 @@
+{
+  "status": "Bounded mouth and rear-mane repairs visually inspected; followed by form-cycle-3, not character acceptance.",
+  "before": {
+    "wolf": {
+      "runtimeSha256": "136744eca4231800734c303c11208cee349cc75c8678d333847798b28226bcef",
+      "sourceSha256": "7f759f7d615cb08e78bf494853e0c40223b9b3be36780a0387c06513dea7d025"
+    },
+    "lion": {
+      "runtimeSha256": "ab35dd403caa95c48a5c63b7036c2282dc04464d63f697f93f4ff214f07e94fb",
+      "sourceSha256": "f55dc9c136c97e6ecd2a2ccde45fee5c8bfb2b4bf87457ebfffb6323dfd9378a"
+    }
+  },
+  "after": {
+    "lion": {
+      "sourceSha256": "6377d37219eda98a67cc581f1ce8210fa11cd750438fbdfd67565bdba391a750",
+      "runtimeSha256": "f8d211455d69c5b9903f5c9fef2d58d49418103d30d13d5e22fb39199e0e252a"
+    },
+    "wolf": {
+      "sourceSha256": "a60cf4bdde77aa7443c31c5390603fd69f4b5073832c478f2592ede00934da2c",
+      "runtimeSha256": "d8a676d06dee683c5455f294bdc50b282a3e7c3a232a350d0b522a664ae77517"
+    }
+  },
+  "scope": "After Wolf maximum howl and Lion front/rear/profile/transform stills; intermediate source version before form-cycle-3."
+}

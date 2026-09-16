@@ -1,0 +1,21 @@
+{
+  "form": "race",
+  "sourceSha256": "c94dc22144edef33f52f86d2f809011ffa6ee208d34fe5a1c3d44557bb973c0c",
+  "scriptSha256": "dc54c17f8fd90999373d6f9e581153218ee1032413286cf4841979792714377e",
+  "unchanged": {
+    "actions": "9f13d1021f4131c0fa30eb926ee20d53405f1968f272ef889469e9b19c7e0dba",
+    "body": "990f60901c41074289496cffea6f0db11dad3344926c86d16d9c65c72c098d38"
+  },
+  "skullConnectedComponents": [
+    2080
+  ],
+  "skullBoundaryLoops": [
+    64,
+    64
+  ],
+  "heroMeshCount": 67,
+  "heroSourceVertices": 9118,
+  "heroSourcePolygons": 8793,
+  "rigBones": 22,
+  "caveat": "Topological skull continuity does not certify fur style, mouth fit, or cinematic quality."
+}

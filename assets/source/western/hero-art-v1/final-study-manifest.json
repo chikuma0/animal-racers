@@ -1,0 +1,103 @@
+{
+  "status": "FAIL \u2014 rejected art study; no integration",
+  "canonicalInputsUnchanged": true,
+  "sourceRecipeSha256": "dc54c17f8fd90999373d6f9e581153218ee1032413286cf4841979792714377e",
+  "forms": {
+    "race": {
+      "sourceSha256": "c94dc22144edef33f52f86d2f809011ffa6ee208d34fe5a1c3d44557bb973c0c",
+      "runtimeSha256": "28b763c94c05b8a5cdd29da9993979f3f9aeab7b396ecb666ac6726b26a88544",
+      "bytes": 1753592,
+      "triangles": 26394,
+      "primitives": 10,
+      "matchedViews": {
+        "control-front": {
+          "path": "assets/source/western/hero-art-v1/qa/race/control-front.png",
+          "sha256": "d19698b88b5b39e7047e232d2808149a61a48b56b54d58684f35b5fde600f893"
+        },
+        "control-side": {
+          "path": "assets/source/western/hero-art-v1/qa/race/control-side.png",
+          "sha256": "46c5e2358feaf331bfb2bac1c7e234978d66de6fdfcec379f880139610442222"
+        },
+        "control-three-quarter": {
+          "path": "assets/source/western/hero-art-v1/qa/race/control-three-quarter.png",
+          "sha256": "0131c88c8edeeca29b425158f7d66bac0e4de5bcac7d225d232d00416f323a36"
+        },
+        "candidate-front": {
+          "path": "assets/source/western/hero-art-v1/qa/race/candidate-front.png",
+          "sha256": "54e8cc59dd46ce4e90da18e6a3eb98e380fa51fdab8aae4a8ae557ddfc669fdc"
+        },
+        "candidate-side": {
+          "path": "assets/source/western/hero-art-v1/qa/race/candidate-side.png",
+          "sha256": "312d876cc4e5765f1f4bf9c307e16d82a4180e47281cc935cf4d27cfe0deab07"
+        },
+        "candidate-three-quarter": {
+          "path": "assets/source/western/hero-art-v1/qa/race/candidate-three-quarter.png",
+          "sha256": "d1320c0eac48d8326b7643657dce0d12b943be18108816f79582ef2f26a6d402"
+        }
+      }
+    },
+    "upright": {
+      "sourceSha256": "a9aa7eeea3354877dbef1f9c65a539d6ec9a51f0c5451ef0e3c4ead1da6c34a5",
+      "runtimeSha256": "9e06d5638743d89b0821f5c7b9003ae4ad87e7d3190fe93265eee79cc1edb515",
+      "bytes": 1818148,
+      "triangles": 31116,
+      "primitives": 10,
+      "matchedViews": {
+        "control-front": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/control-front.png",
+          "sha256": "cbf90a130caa17770447178431c00f935b5f71b0e66ce3150816cebac7233ab0"
+        },
+        "control-side": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/control-side.png",
+          "sha256": "aa7d83d6a1738f493c1a2f70b89ee6d45227aadd223732968cbf0e9b57e09250"
+        },
+        "control-three-quarter": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/control-three-quarter.png",
+          "sha256": "e530a1f0fe464fc695b4e1bec878ce9057ee505ae93ac392932681e2d5550463"
+        },
+        "candidate-front": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/candidate-front.png",
+          "sha256": "145d9c2de16507398388de7db7b7534e167ccd625a45a363aeaa16ddd962bc89"
+        },
+        "candidate-side": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/candidate-side.png",
+          "sha256": "71e466448b0a9381afcbe166b5e57057d8448af0b3a55a5aea8342b4dc32236a"
+        },
+        "candidate-three-quarter": {
+          "path": "assets/source/western/hero-art-v1/qa/upright/candidate-three-quarter.png",
+          "sha256": "04b9d575f170e52afc661dac6287ec304ab890970f8bcfa6191319592b570413"
+        }
+      }
+    }
+  },
+  "motion": "Not rendered. Parent withheld full cycles after repeated static visual failures.",
+  "verificationLimit": "Current source inspection and exported-GLB positive/negative checks pass after the final collar fit. These are structural/provenance checks only; visual H3 remains failed/abandoned and full motion was withheld.",
+  "diagnosis": "RECONSTRUCTION-DIAGNOSIS.md",
+  "sourceInspectionPrevious": {
+    "race": "c94dc22144edef33f52f86d2f809011ffa6ee208d34fe5a1c3d44557bb973c0c",
+    "upright": "022e00b6acec95757d9f64eef4515d05054aee35542421f952e3685fd6a23bab"
+  },
+  "runtimeInspectionSha256": "60b708e09e4304dd638f233eee4cc2a2cb21417c6d6ae1241307335531ecd009",
+  "negativeInspectionSha256": "edd0341a52b9fa5f476b21715f7390933c2a489bacf7474da6241960732067f4",
+  "activeHeadForward": 0.5183378170557666,
+  "sourceInspectionComplete": true,
+  "sourceInspectionCurrent": {
+    "race": {
+      "sourceSha256": "c94dc22144edef33f52f86d2f809011ffa6ee208d34fe5a1c3d44557bb973c0c",
+      "reportSha256": "c5b8cb58e672ff801ecd38654df3a6e396a77c4c2ff5e36a5ac2c65e9fd327f1",
+      "unchanged": {
+        "actions": "9f13d1021f4131c0fa30eb926ee20d53405f1968f272ef889469e9b19c7e0dba",
+        "body": "990f60901c41074289496cffea6f0db11dad3344926c86d16d9c65c72c098d38"
+      }
+    },
+    "upright": {
+      "sourceSha256": "a9aa7eeea3354877dbef1f9c65a539d6ec9a51f0c5451ef0e3c4ead1da6c34a5",
+      "reportSha256": "43bc3e4a9416600772e7a7443c884dc0c916d492c1f6acfb91b6c95995484e84",
+      "unchanged": {
+        "actions": "0bca1bb219e3fec48123109d354781d14989e2f216ce3bb0220131fb30fd8d6b",
+        "body": "dd3638062e7ce5dcf48f523f9a9d77937f14419c13e2f6c212c16550725637f1"
+      }
+    }
+  },
+  "sourceInspectionOutputSha256": "caeb5c7a708e21e717c14babb3422a45e23851c6e01ffb8e379c239f6000c5eb"
+}

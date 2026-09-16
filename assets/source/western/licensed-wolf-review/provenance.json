@@ -1,0 +1,66 @@
+{
+  "asset": "3d wolf",
+  "author": "NewDLC",
+  "primaryUrl": "https://opengameart.org/content/3d-wolf",
+  "published": "2016-09-02",
+  "licenseAsListed": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "archiveName": "3dwolf_blend.zip",
+  "originalDownloadLocation": "/tmp/animal-racers-licensed-research/wolf",
+  "observedOn": "2026-09-16",
+  "primaryPageFacts": "Primary publisher page lists CC0, rigged, 2923 vertices and 5358 faces. Existing animations are not promised by the page and will be inspected.",
+  "sourceFiles": {
+    "3dwolf_blend.zip": "6bd5e25ce8d9f9661f74199a755e7827927545973fa4081eecb4598a9d5e49dc",
+    "source/dog2Color.png": "a04c1da566be5c50a42f62b66199f97c13ad3f5ce2dde0f84ed75a61b0e292cb",
+    "source/dog2Roughness.png": "600a8c9f99c14b70cc744ced86c85bd50f025c18d6d885ab9fd007ac1e6d1630",
+    "source/dog2.blend": "6f8b59c31c8dd39725b5c533c9d08b8f9216e592177b39218c486d914fe9af65",
+    "source/dog2specular.png": "bd375199e6732cda8e7deb3e799962c4f5e3f1461a83963b2916c4fa11c18c12",
+    "source/dog2Normal.png": "6d536f2279b816aca1556e9eee72f472e2d091c14127f988991d87e78d083347"
+  },
+  "archiveEntries": [
+    {
+      "name": "dog2.blend",
+      "bytes": 1468540
+    },
+    {
+      "name": "dog2Color.png",
+      "bytes": 289490
+    },
+    {
+      "name": "dog2Normal.png",
+      "bytes": 675541
+    },
+    {
+      "name": "dog2Roughness.png",
+      "bytes": 235872
+    },
+    {
+      "name": "dog2specular.png",
+      "bytes": 142491
+    }
+  ],
+  "canonicalFreeze": {
+    "assets/source/western/lion.blend": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+    "public/assets/western/lion.glb": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf",
+    "assets/source/western/lion-upright.blend": "43616c2625780ca6702c780f88b5e28992f5323ef7455ee986cf891014070405",
+    "public/assets/western/lion-upright.glb": "9d56a26125fdae942bfe471633ed2afc9c6d0a85c0b9142d0098c8594dff25f3",
+    "assets/source/western/wolf.blend": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+    "public/assets/western/wolf.glb": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c",
+    "assets/source/western/wolf-upright.blend": "e2f1d75067e419b75286eb010e20cd5eeb62d86f07f79dfcb8e115cefc493c73",
+    "public/assets/western/wolf-upright.glb": "01bb159631ade33f6eaec07f37cd2c0fc7d021bb2095f31d8acbfedf9ccb1f01",
+    "assets/source/western/unicorn.blend": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+    "public/assets/western/unicorn.glb": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3",
+    "assets/source/western/unicorn-upright.blend": "f904600d339c9167654a20708cfcaf49eebb1a01fb79419d5191e325856df342",
+    "public/assets/western/unicorn-upright.glb": "fe97d0c5db45e58debaa8e7cb4fb16e985a8995a7f405f3cfc44490e70654ceb"
+  },
+  "safety": "Load using Blender --disable-autoexec and use_scripts=False; do not run embedded texts or enable untrusted drivers. Preserve source bytes; review material bindings only in memory.",
+  "primaryPageHtmlSha256": "c112f9fcd7ab536e98cfa6714112fb15eeda2f178389a03353afbc9cfd063f04",
+  "downloadUrl": "https://opengameart.org/sites/default/files/3dwolf_blend.zip",
+  "sourceArchiveMembers": {
+    "dog2Color.png": "dog2Color.png",
+    "dog2Roughness.png": "dog2Roughness.png",
+    "dog2.blend": "dog2.blend",
+    "dog2specular.png": "dog2specular.png",
+    "dog2Normal.png": "dog2Normal.png"
+  }
+}

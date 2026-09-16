@@ -1,0 +1,24 @@
+Info: Saved as "lion-race.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+21:35:10 | INFO: Starting glTF 2.0 export
+21:35:10 | INFO: Extracting primitive: ribcage
+21:35:10 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+21:35:10 | INFO: Primitives created: 10
+21:35:11 | INFO: Finished glTF 2.0 export in 0.6474349498748779 s
+
+HERO_EXPORTED race
+Info: Saved as "lion-upright.blend"
+21:35:12 | INFO: Starting glTF 2.0 export
+21:35:12 | INFO: Extracting primitive: Designed upright joint-loop topology
+21:35:12 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+21:35:12 | INFO: Primitives created: 10
+21:35:12 | INFO: Finished glTF 2.0 export in 0.5651540756225586 s
+
+HERO_EXPORTED upright
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/hero-art-v1/inputs/lion-race.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/hero-art-v1/inputs/lion-race.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/hero-art-v1/inputs/lion-race.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/hero-art-v1/inputs/lion-upright.blend"
+
+Blender quit

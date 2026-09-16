@@ -1,0 +1,35 @@
+{
+  "sourceSha256": "6f8b59c31c8dd39725b5c533c9d08b8f9216e592177b39218c486d914fe9af65",
+  "recipeSha256": "bf73bddd7d5177daa04aa2061ae3e21524596a282b4687beb55a53ad32841d98",
+  "decision": "REWORK_ONLY_REFERENCE_REJECT_DIRECT_ADOPTION",
+  "all37SamplesVisuallyReviewed": true,
+  "reviewScope": "Three rest views, all 37 frame contact sheet and five full-size checkpoints; no game motion or phone certification.",
+  "renderCompletion": {
+    "initialMetalExit": 143,
+    "resumedCpuWorkbenchExit": 0,
+    "stills512": 3,
+    "probeFrames": 37,
+    "probeSampleTimelineSeconds": 2.4,
+    "encodedSeconds": 2.466666666666667
+  },
+  "files": {
+    "qa/rest-front.png": "1da879e07418223739c9e2cfab3b0287ed706dfdc249631c6aeac32e6fafcc9d",
+    "qa/rest-side.png": "829443f7728c22beccdd2a03f6f711ee221652113cbb134ada887ca17c78ee64",
+    "qa/rest-three-quarter.png": "eed4a0b6328ca4333cee186bc93384caf21d694a58b7dde008a58309a72dea77",
+    "qa/deliberate-fk-probe.mp4": "2ed344f04d34309c9067376c65dcd5f5f561178eeec378516d7cdbe87ac84a00",
+    "qa/every-probe-frame.jpg": "d18109210bcc1f2f9ad0b260b0c8f6652651a4f7e0bbeac4982d7934735382ff",
+    "qa/source-frame-hashes.json": "b56cd5a309258cc0c2e5db5752681cb48e6b566910ef73e9ad9700b5dbc5eda4",
+    "probe-report.json": "6954606d2763c6995b07cb4bf20a12e57e8f14e3777c6778921918fe71b0354d",
+    "inspection.json": "70048c687ab6af8df02193b7f421c695252175779779f8e2d13a25d00af352f8",
+    "inspection-recipe.py": "8f3e50ee892ec7474b221f4ca81c574d170a5937b42c0e7f85c9217f4b234933",
+    "render-interruption.json": "2c646c8068d172c3a3bd542b0573144f343cd531b580be90279ac300d2b25f96",
+    "interrupted-cycles-render.log": "c8f643e4b1066381b9a4d65cc7e3a9fe5df47109e4d7d1caae41af37e1b0db8a",
+    "render-resume.log": "442f5fbc09bb017595af0f609c5abfd4b2d39b6e41567d5222b1e924b2b2c77f",
+    "ASSESSMENT.md": "5f5a98dc44d6a7d897bf86d20302af53548273086ecdeb3c5c2cd832b913fdc5",
+    "qa/probe-keyframes/0000.png": "26e997ae418fa5a6dd55de4f853422bb47b63169a9c3b81b9228f01e04a54d6c",
+    "qa/probe-keyframes/0006.png": "e723075013da5dffb4cc20d4db415ea4045ff9aa792cbb13e81f43b219e250a5",
+    "qa/probe-keyframes/0018.png": "3c8004a0ae32e3979ff48ef758d5113b12d8cdc7e3286afa16520f77938d5930",
+    "qa/probe-keyframes/0030.png": "090317dc686c4cb282854a178e40856faed6d2d9965a6bc18a552d12c9a5846e",
+    "qa/probe-keyframes/0036.png": "14757126d96344d1ea28c4d53fb0953ebf4730a1e7b6d380580bcd1a149e1f0e"
+  }
+}

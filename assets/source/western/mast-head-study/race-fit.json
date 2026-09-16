@@ -1,0 +1,4641 @@
+{
+  "form": "race",
+  "neckFit": {
+    "uprightHeadOffset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "capTarget": [
+      0.0,
+      -0.6100000143051147,
+      1.274999976158142
+    ],
+    "capRadialScale": 0.55,
+    "neckBlendNativeHeight": 0.06,
+    "anchorBone": "StudyNeckAnchor",
+    "topologyAdded": false
+  },
+  "inputSha256": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+  "bodySignatureBefore": "990f60901c41074289496cffea6f0db11dad3344926c86d16d9c65c72c098d38",
+  "bodySignatureAfter": "990f60901c41074289496cffea6f0db11dad3344926c86d16d9c65c72c098d38",
+  "actionSignatureBefore": "9f13d1021f4131c0fa30eb926ee20d53405f1968f272ef889469e9b19c7e0dba",
+  "actionSignatureAfter": "9f13d1021f4131c0fa30eb926ee20d53405f1968f272ef889469e9b19c7e0dba",
+  "removedHeadObjects": [
+    "Head \u2022 species sculpt",
+    "Cream muzzle pad",
+    "Cream muzzle pad.001",
+    "Heart shaped nose",
+    "Eye socket",
+    "Ivory eye",
+    "Iris",
+    "Pupil",
+    "Eye glint",
+    "Expressive brow",
+    "Smiling mouth",
+    "Whisker pore",
+    "Whisker pore.001",
+    "Whisker pore.002",
+    "Eye socket.001",
+    "Ivory eye.001",
+    "Iris.001",
+    "Pupil.001",
+    "Eye glint.001",
+    "Expressive brow.001",
+    "Smiling mouth.001",
+    "Whisker pore.003",
+    "Whisker pore.004",
+    "Whisker pore.005",
+    "Lower jaw",
+    "Mouth cavity",
+    "Lower canine",
+    "Lower canine.001",
+    "Rounded lion ear",
+    "Inner lion ear",
+    "Rounded lion ear.001",
+    "Inner lion ear.001"
+  ],
+  "fitMatrix": [
+    [
+      2.8499999046325684,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      2.8499999046325684,
+      0.0,
+      -0.9355124831199646
+    ],
+    [
+      0.0,
+      0.0,
+      2.8499999046325684,
+      -3.105811834335327
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "facialBones": 40,
+  "extractedHeadVertices": 2059,
+  "evaluatedMeshCosts": {
+    "Body \u2022 continuous sculpted skin": {
+      "vertices": 2087,
+      "polygons": 2914,
+      "triangles": 4170,
+      "components": [
+        2087
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.651146650314331,
+          -0.877086877822876,
+          0.00418440718203783
+        ],
+        "max": [
+          0.6515547037124634,
+          0.8840092420578003,
+          1.7456614971160889
+        ]
+      }
+    },
+    "Paw toe": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.164000004529953,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          0.3059999942779541,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.21299999952316284,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          0.25699999928474426,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.001": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2590000033378601,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          0.4009999930858612,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw.001": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.30800002813339233,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          0.35199999809265137,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.002": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3540000021457672,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          0.4959999918937683,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw.002": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.40299999713897705,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          0.44700002670288086,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.003": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.17399993538856506,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          0.31599995493888855,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.003": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2229999452829361,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          0.2669999599456787,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Paw toe.004": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.26899993419647217,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          0.41099995374679565,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.004": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3179999589920044,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          0.3619999289512634,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Paw toe.005": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3639999330043793,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          0.5059999227523804,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.005": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.4129999279975891,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          0.4569999575614929,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Paw toe.006": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4959999918937683,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          -0.3540000021457672,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw.006": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.44700002670288086,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          -0.40299999713897705,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.007": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4009999930858612,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          -0.2590000033378601,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw.007": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.35199999809265137,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          -0.30800002813339233,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.008": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3059999942779541,
+          -0.8100000619888306,
+          0.029999999329447746
+        ],
+        "max": [
+          -0.164000004529953,
+          -0.5800000429153442,
+          0.18000000715255737
+        ]
+      }
+    },
+    "Ivory claw.008": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.25699999928474426,
+          -0.8200000524520874,
+          0.054999999701976776
+        ],
+        "max": [
+          -0.21299999952316284,
+          -0.7384889125823975,
+          0.11790546774864197
+        ]
+      }
+    },
+    "Paw toe.009": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5059999227523804,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          -0.3639999330043793,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.009": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4569999575614929,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          -0.4129999279975891,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Paw toe.010": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.41099995374679565,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          -0.26899993419647217,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.010": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3619999289512634,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          -0.3179999589920044,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Paw toe.011": {
+      "vertices": 108,
+      "polygons": 96,
+      "triangles": 192,
+      "components": [
+        108
+      ],
+      "boundaryEdges": 24,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.31599995493888855,
+          0.34000006318092346,
+          0.03000001236796379
+        ],
+        "max": [
+          -0.17399993538856506,
+          0.5700000524520874,
+          0.18000002205371857
+        ]
+      }
+    },
+    "Ivory claw.011": {
+      "vertices": 18,
+      "polygons": 14,
+      "triangles": 32,
+      "components": [
+        18
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.2669999599456787,
+          0.3300000727176666,
+          0.05500001087784767
+        ],
+        "max": [
+          -0.2229999452829361,
+          0.4115111529827118,
+          0.11790548264980316
+        ]
+      }
+    },
+    "Closed sculpted rear mane cap": {
+      "vertices": 168,
+      "polygons": 146,
+      "triangles": 332,
+      "components": [
+        168
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.42231789231300354,
+          -0.6800000071525574,
+          0.940000057220459
+        ],
+        "max": [
+          0.4376820921897888,
+          -0.1899999976158142,
+          2.015000104904175
+        ]
+      }
+    },
+    "Layered rear mane lock": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.33799999952316284,
+          -0.3916941285133362,
+          1.6547520160675049
+        ],
+        "max": [
+          -0.15799999237060547,
+          -0.218984916806221,
+          1.9822684526443481
+        ]
+      }
+    },
+    "Layered rear mane lock.001": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.1933683454990387,
+          -0.3397863507270813,
+          1.6546528339385986
+        ],
+        "max": [
+          -0.012922048568725586,
+          -0.16680139303207397,
+          1.9842185974121094
+        ]
+      }
+    },
+    "Layered rear mane lock.002": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.09557228535413742,
+          -0.3254660964012146,
+          1.6547521352767944
+        ],
+        "max": [
+          0.08432848006486893,
+          -0.15273793041706085,
+          1.9821938276290894
+        ]
+      }
+    },
+    "Layered rear mane lock.003": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.01427692174911499,
+          -0.33975207805633545,
+          1.654664158821106
+        ],
+        "max": [
+          0.1935715675354004,
+          -0.16680139303207397,
+          1.98363196849823
+        ]
+      }
+    },
+    "Layered rear mane lock.004": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.16905558109283447,
+          -0.3917645215988159,
+          1.6547385454177856
+        ],
+        "max": [
+          0.3486853837966919,
+          -0.218984916806221,
+          1.9819917678833008
+        ]
+      }
+    },
+    "Layered rear mane lock.005": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.39645394682884216,
+          -0.36029669642448425,
+          1.4546787738800049
+        ],
+        "max": [
+          -0.21752133965492249,
+          -0.18738685548305511,
+          1.782863974571228
+        ]
+      }
+    },
+    "Layered rear mane lock.006": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.24320906400680542,
+          -0.2934699058532715,
+          1.4547501802444458
+        ],
+        "max": [
+          -0.06348622590303421,
+          -0.12070789933204651,
+          1.7820608615875244
+        ]
+      }
+    },
+    "Layered rear mane lock.007": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.11025438457727432,
+          -0.2757018208503723,
+          1.4546597003936768
+        ],
+        "max": [
+          0.06949344277381897,
+          -0.10273793339729309,
+          1.7838630676269531
+        ]
+      }
+    },
+    "Layered rear mane lock.008": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.06876764446496964,
+          -0.2934267520904541,
+          1.4547522068023682
+        ],
+        "max": [
+          0.24871721863746643,
+          -0.12070789933204651,
+          1.7822304964065552
+        ]
+      }
+    },
+    "Layered rear mane lock.009": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.25615358352661133,
+          -0.3603755235671997,
+          1.4546517133712769
+        ],
+        "max": [
+          0.4367191195487976,
+          -0.18738685548305511,
+          1.784279227256775
+        ]
+      }
+    },
+    "Layered rear mane lock.010": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.39512065052986145,
+          -0.3540096580982208,
+          1.2346670627593994
+        ],
+        "max": [
+          -0.2161177396774292,
+          -0.18106724321842194,
+          1.5634829998016357
+        ]
+      }
+    },
+    "Layered rear mane lock.011": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.26419365406036377,
+          -0.2842792570590973,
+          1.2347323894500732
+        ],
+        "max": [
+          -0.08461913466453552,
+          -0.1114892065525055,
+          1.56195068359375
+        ]
+      }
+    },
+    "Layered rear mane lock.012": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.10655008256435394,
+          -0.2656170427799225,
+          1.2346904277801514
+        ],
+        "max": [
+          0.07254844903945923,
+          -0.09273792803287506,
+          1.5622246265411377
+        ]
+      }
+    },
+    "Layered rear mane lock.013": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.08918874710798264,
+          -0.2843499779701233,
+          1.2346980571746826
+        ],
+        "max": [
+          0.2683858871459961,
+          -0.1114892065525055,
+          1.5618107318878174
+        ]
+      }
+    },
+    "Layered rear mane lock.014": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.24862724542617798,
+          -0.35387474298477173,
+          1.2347228527069092
+        ],
+        "max": [
+          0.4281091094017029,
+          -0.18106724321842194,
+          1.5618822574615479
+        ]
+      }
+    },
+    "Layered rear mane lock.015": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.35038021206855774,
+          -0.37274107336997986,
+          1.0147520303726196
+        ],
+        "max": [
+          -0.17041048407554626,
+          -0.20002608001232147,
+          1.3422456979751587
+        ]
+      }
+    },
+    "Layered rear mane lock.016": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.2429974377155304,
+          -0.312134712934494,
+          1.0146514177322388
+        ],
+        "max": [
+          -0.06240799278020859,
+          -0.13914529979228973,
+          1.3442914485931396
+        ]
+      }
+    },
+    "Layered rear mane lock.017": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.0874255895614624,
+          -0.2954510748386383,
+          1.0147520303726196
+        ],
+        "max": [
+          0.0925537496805191,
+          -0.12273792922496796,
+          1.3422528505325317
+        ]
+      }
+    },
+    "Layered rear mane lock.018": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.062313102185726166,
+          -0.3121187090873718,
+          1.014656662940979
+        ],
+        "max": [
+          0.24238060414791107,
+          -0.13914529979228973,
+          1.34402596950531
+        ]
+      }
+    },
+    "Layered rear mane lock.019": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.1655394285917282,
+          -0.3727741837501526,
+          1.0147522687911987
+        ],
+        "max": [
+          0.3453354835510254,
+          -0.20002608001232147,
+          1.3421155214309692
+        ]
+      }
+    },
+    "Layered rear mane lock.020": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.2922172248363495,
+          -0.4044964611530304,
+          0.8596931099891663
+        ],
+        "max": [
+          -0.11308208853006363,
+          -0.23162414133548737,
+          1.1870743036270142
+        ]
+      }
+    },
+    "Layered rear mane lock.021": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.1018853411078453,
+          -0.34553438425064087,
+          0.8597287535667419
+        ],
+        "max": [
+          0.07765517383813858,
+          -0.17273792624473572,
+          1.1869255304336548
+        ]
+      }
+    },
+    "Layered rear mane lock.022": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.11634834855794907,
+          -0.4045613408088684,
+          0.8596687316894531
+        ],
+        "max": [
+          0.2951635718345642,
+          -0.23162414133548737,
+          1.188387155532837
+        ]
+      }
+    },
+    "Sculpted mane lock": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.11500000208616257,
+          -0.8119912147521973,
+          1.7244070768356323
+        ],
+        "max": [
+          0.11500000208616257,
+          -0.468456506729126,
+          1.964163899421692
+        ]
+      }
+    },
+    "Sculpted mane lock.001": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.03422708809375763,
+          -0.8115875124931335,
+          1.7026337385177612
+        ],
+        "max": [
+          0.251084566116333,
+          -0.4684167802333832,
+          1.9465774297714233
+        ]
+      }
+    },
+    "Sculpted mane lock.002": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.14289556443691254,
+          -0.8105219006538391,
+          1.6266683340072632
+        ],
+        "max": [
+          0.3901502788066864,
+          -0.46831029653549194,
+          1.8749388456344604
+        ]
+      }
+    },
+    "Sculpted mane lock.003": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.22198529541492462,
+          -0.8092607259750366,
+          1.5278340578079224
+        ],
+        "max": [
+          0.4971024692058563,
+          -0.4681674838066101,
+          1.7654144763946533
+        ]
+      }
+    },
+    "Sculpted mane lock.004": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2592395544052124,
+          -0.8085125088691711,
+          1.3657398223876953
+        ],
+        "max": [
+          0.5460938811302185,
+          -0.4680206775665283,
+          1.611961841583252
+        ]
+      }
+    },
+    "Sculpted mane lock.005": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.25121286511421204,
+          -0.808778703212738,
+          1.1755702495574951
+        ],
+        "max": [
+          0.53289794921875,
+          -0.4678928256034851,
+          1.4555052518844604
+        ]
+      }
+    },
+    "Sculpted mane lock.006": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.18552112579345703,
+          -0.8098739385604858,
+          1.0046011209487915
+        ],
+        "max": [
+          0.45562857389450073,
+          -0.4677952229976654,
+          1.3408594131469727
+        ]
+      }
+    },
+    "Sculpted mane lock.007": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.09510528296232224,
+          -0.8111162185668945,
+          0.8759267330169678
+        ],
+        "max": [
+          0.3258639872074127,
+          -0.46773090958595276,
+          1.2515884637832642
+        ]
+      }
+    },
+    "Sculpted mane lock.008": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.03668556362390518,
+          -0.8118881583213806,
+          0.8069289922714233
+        ],
+        "max": [
+          0.19103515148162842,
+          -0.467699259519577,
+          1.200429916381836
+        ]
+      }
+    },
+    "Sculpted mane lock.009": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.19103515148162842,
+          -0.8118881583213806,
+          0.8069289922714233
+        ],
+        "max": [
+          0.03668556362390518,
+          -0.467699259519577,
+          1.200429916381836
+        ]
+      }
+    },
+    "Sculpted mane lock.010": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3258639872074127,
+          -0.8111162185668945,
+          0.8759267330169678
+        ],
+        "max": [
+          -0.09510528296232224,
+          -0.46773090958595276,
+          1.2515884637832642
+        ]
+      }
+    },
+    "Sculpted mane lock.011": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.45562857389450073,
+          -0.8098739385604858,
+          1.0046011209487915
+        ],
+        "max": [
+          -0.18552112579345703,
+          -0.4677952229976654,
+          1.3408594131469727
+        ]
+      }
+    },
+    "Sculpted mane lock.012": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.53289794921875,
+          -0.808778703212738,
+          1.1755702495574951
+        ],
+        "max": [
+          -0.25121286511421204,
+          -0.4678928256034851,
+          1.4555052518844604
+        ]
+      }
+    },
+    "Sculpted mane lock.013": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5460938811302185,
+          -0.8085125088691711,
+          1.3657398223876953
+        ],
+        "max": [
+          -0.2592395544052124,
+          -0.4680206775665283,
+          1.611961841583252
+        ]
+      }
+    },
+    "Sculpted mane lock.014": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4971024692058563,
+          -0.8092607259750366,
+          1.5278340578079224
+        ],
+        "max": [
+          -0.22198529541492462,
+          -0.4681674838066101,
+          1.7654144763946533
+        ]
+      }
+    },
+    "Sculpted mane lock.015": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3901502788066864,
+          -0.8105219006538391,
+          1.6266683340072632
+        ],
+        "max": [
+          -0.14289556443691254,
+          -0.46831029653549194,
+          1.8749388456344604
+        ]
+      }
+    },
+    "Sculpted mane lock.016": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.251084566116333,
+          -0.8115875124931335,
+          1.7026337385177612
+        ],
+        "max": [
+          -0.03422708809375763,
+          -0.4684167802333832,
+          1.9465774297714233
+        ]
+      }
+    },
+    "Sculpted mane lock.017": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.05726110190153122,
+          -0.7139599323272705,
+          1.7796146869659424
+        ],
+        "max": [
+          0.16935747861862183,
+          -0.3683316707611084,
+          2.015960931777954
+        ]
+      }
+    },
+    "Sculpted mane lock.018": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.09925404191017151,
+          -0.713348925113678,
+          1.7319103479385376
+        ],
+        "max": [
+          0.3186596930027008,
+          -0.36826735734939575,
+          1.9804047346115112
+        ]
+      }
+    },
+    "Sculpted mane lock.019": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.21373453736305237,
+          -0.7122155427932739,
+          1.6340426206588745
+        ],
+        "max": [
+          0.4718080759048462,
+          -0.36814555525779724,
+          1.882150650024414
+        ]
+      }
+    },
+    "Sculpted mane lock.020": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2951379120349884,
+          -0.7110955715179443,
+          1.5061156749725342
+        ],
+        "max": [
+          0.5712810158729553,
+          -0.3680007755756378,
+          1.7384055852890015
+        ]
+      }
+    },
+    "Sculpted mane lock.021": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.317682683467865,
+          -0.7106658220291138,
+          1.3030322790145874
+        ],
+        "max": [
+          0.6041001081466675,
+          -0.3678632378578186,
+          1.5563827753067017
+        ]
+      }
+    },
+    "Sculpted mane lock.022": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.28582292795181274,
+          -0.711225152015686,
+          1.096508502960205
+        ],
+        "max": [
+          0.5655696392059326,
+          -0.36775073409080505,
+          1.393325924873352
+        ]
+      }
+    },
+    "Sculpted mane lock.023": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.19980506598949432,
+          -0.712388813495636,
+          0.9198768734931946
+        ],
+        "max": [
+          0.4585192799568176,
+          -0.36766964197158813,
+          1.2704572677612305
+        ]
+      }
+    },
+    "Sculpted mane lock.024": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.07964175939559937,
+          -0.7134743332862854,
+          0.7969978451728821
+        ],
+        "max": [
+          0.30931469798088074,
+          -0.3676201105117798,
+          1.1771875619888306
+        ]
+      }
+    },
+    "Sculpted mane lock.025": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.08327485620975494,
+          -0.7139872908592224,
+          0.7444714307785034
+        ],
+        "max": [
+          0.14642970263957977,
+          -0.3676004707813263,
+          1.1387557983398438
+        ]
+      }
+    },
+    "Sculpted mane lock.026": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.2537011504173279,
+          -0.713740885257721,
+          0.769393801689148
+        ],
+        "max": [
+          -0.028269939124584198,
+          -0.3676096796989441,
+          1.1535218954086304
+        ]
+      }
+    },
+    "Sculpted mane lock.027": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.405745267868042,
+          -0.7128211855888367,
+          0.8683979511260986
+        ],
+        "max": [
+          -0.16157226264476776,
+          -0.36764824390411377,
+          1.2330396175384521
+        ]
+      }
+    },
+    "Sculpted mane lock.028": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5343546271324158,
+          -0.7116100788116455,
+          1.0281089544296265
+        ],
+        "max": [
+          -0.25863853096961975,
+          -0.36771783232688904,
+          1.3446736335754395
+        ]
+      }
+    },
+    "Sculpted mane lock.029": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5986563563346863,
+          -0.7107599377632141,
+          1.2269517183303833
+        ],
+        "max": [
+          -0.31408438086509705,
+          -0.36781930923461914,
+          1.4876761436462402
+        ]
+      }
+    },
+    "Sculpted mane lock.030": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.59058678150177,
+          -0.7108315825462341,
+          1.4380674362182617
+        ],
+        "max": [
+          -0.3112863302230835,
+          -0.3679492175579071,
+          1.6757842302322388
+        ]
+      }
+    },
+    "Sculpted mane lock.031": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5149202346801758,
+          -0.7117744088172913,
+          1.5922162532806396
+        ],
+        "max": [
+          -0.24686773121356964,
+          -0.3680942952632904,
+          1.8365877866744995
+        ]
+      }
+    },
+    "Sculpted mane lock.032": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.37761589884757996,
+          -0.7129796743392944,
+          1.7004350423812866
+        ],
+        "max": [
+          -0.14585289359092712,
+          -0.36822840571403503,
+          1.949751377105713
+        ]
+      }
+    },
+    "Sculpted mane lock.033": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.22566160559654236,
+          -0.7138208150863647,
+          1.7712900638580322
+        ],
+        "max": [
+          -0.008056387305259705,
+          -0.36831697821617126,
+          2.0082428455352783
+        ]
+      }
+    },
+    "Sculpted mane lock.034": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.015157327055931091,
+          -0.6158705949783325,
+          1.8286960124969482
+        ],
+        "max": [
+          0.2325672209262848,
+          -0.26818323135375977,
+          2.0630998611450195
+        ]
+      }
+    },
+    "Sculpted mane lock.035": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.17365698516368866,
+          -0.615104615688324,
+          1.7510342597961426
+        ],
+        "max": [
+          0.4024848937988281,
+          -0.2680979073047638,
+          1.9995085000991821
+        ]
+      }
+    },
+    "Sculpted mane lock.036": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.29049888253211975,
+          -0.6139755249023438,
+          1.6289931535720825
+        ],
+        "max": [
+          0.5562048554420471,
+          -0.267968088388443,
+          1.8728631734848022
+        ]
+      }
+    },
+    "Sculpted mane lock.037": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.36662429571151733,
+          -0.6130635738372803,
+          1.4587801694869995
+        ],
+        "max": [
+          0.642680823802948,
+          -0.2678292989730835,
+          1.6952414512634277
+        ]
+      }
+    },
+    "Sculpted mane lock.038": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3718912601470947,
+          -0.6129572987556458,
+          1.2275798320770264
+        ],
+        "max": [
+          0.6541650891304016,
+          -0.2677070200443268,
+          1.4868714809417725
+        ]
+      }
+    },
+    "Sculpted mane lock.039": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3114396333694458,
+          -0.6137323379516602,
+          1.0085818767547607
+        ],
+        "max": [
+          0.5861502885818481,
+          -0.26761284470558167,
+          1.3214820623397827
+        ]
+      }
+    },
+    "Sculpted mane lock.040": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2020503431558609,
+          -0.6148709654808044,
+          0.8313687443733215
+        ],
+        "max": [
+          0.44683149456977844,
+          -0.26754888892173767,
+          1.1929181814193726
+        ]
+      }
+    },
+    "Sculpted mane lock.041": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.051216982305049896,
+          -0.6157531142234802,
+          0.7198804616928101
+        ],
+        "max": [
+          0.2772709131240845,
+          -0.26751333475112915,
+          1.1011912822723389
+        ]
+      }
+    },
+    "Sculpted mane lock.042": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.14232265949249268,
+          -0.6160121560096741,
+          0.6891788244247437
+        ],
+        "max": [
+          0.08749861270189285,
+          -0.26750409603118896,
+          1.0807474851608276
+        ]
+      }
+    },
+    "Sculpted mane lock.043": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.32584425806999207,
+          -0.6155588030815125,
+          0.743411660194397
+        ],
+        "max": [
+          -0.0964883342385292,
+          -0.26752057671546936,
+          1.122202754020691
+        ]
+      }
+    },
+    "Sculpted mane lock.044": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4920944571495056,
+          -0.6145547032356262,
+          0.8752521872520447
+        ],
+        "max": [
+          -0.23615187406539917,
+          -0.2675638198852539,
+          1.2259925603866577
+        ]
+      }
+    },
+    "Sculpted mane lock.045": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.6129716634750366,
+          -0.6134496331214905,
+          1.0668891668319702
+        ],
+        "max": [
+          -0.3352252244949341,
+          -0.26763615012168884,
+          1.3655427694320679
+        ]
+      }
+    },
+    "Sculpted mane lock.046": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.6589251160621643,
+          -0.6128880381584167,
+          1.2924342155456543
+        ],
+        "max": [
+          -0.37524619698524475,
+          -0.2677386999130249,
+          1.5464789867401123
+        ]
+      }
+    },
+    "Sculpted mane lock.047": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.6260994076728821,
+          -0.6132577061653137,
+          1.5179882049560547
+        ],
+        "max": [
+          -0.35154205560684204,
+          -0.2678673267364502,
+          1.7494362592697144
+        ]
+      }
+    },
+    "Sculpted mane lock.048": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5192214846611023,
+          -0.6142988204956055,
+          1.6662371158599854
+        ],
+        "max": [
+          -0.26116302609443665,
+          -0.2680067718029022,
+          1.9128563404083252
+        ]
+      }
+    },
+    "Sculpted mane lock.049": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.35166850686073303,
+          -0.6153742074966431,
+          1.7786136865615845
+        ],
+        "max": [
+          -0.13130542635917664,
+          -0.26812782883644104,
+          2.026426315307617
+        ]
+      }
+    },
+    "Sculpted mane lock.050": {
+      "vertices": 32,
+      "polygons": 26,
+      "triangles": 60,
+      "components": [
+        32
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.1831754744052887,
+          -0.6159719228744507,
+          1.8362624645233154
+        ],
+        "max": [
+          0.04255223274230957,
+          -0.26819464564323425,
+          2.0704762935638428
+        ]
+      }
+    },
+    "Layered shoulder fur": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.32663366198539734,
+          -0.4563576579093933,
+          0.8000001311302185
+        ],
+        "max": [
+          0.5074759721755981,
+          -0.2900000512599945,
+          1.0283641815185547
+        ]
+      }
+    },
+    "Layered shoulder fur.001": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.34363365173339844,
+          -0.40135762095451355,
+          0.7400000691413879
+        ],
+        "max": [
+          0.5244759321212769,
+          -0.23500004410743713,
+          0.9683642387390137
+        ]
+      }
+    },
+    "Layered shoulder fur.002": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3606336712837219,
+          -0.34635764360427856,
+          0.6800000667572021
+        ],
+        "max": [
+          0.5414758920669556,
+          -0.18000003695487976,
+          0.9083642363548279
+        ]
+      }
+    },
+    "Wrist fur": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.1958044022321701,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          0.3018283545970917,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Wrist fur.001": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.28580442070961,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          0.391828328371048,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Wrist fur.002": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3758043944835663,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          0.48182833194732666,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Layered shoulder fur.003": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3066336512565613,
+          0.5536425113677979,
+          0.7100001573562622
+        ],
+        "max": [
+          0.4874759316444397,
+          0.7200000882148743,
+          0.9383642673492432
+        ]
+      }
+    },
+    "Layered shoulder fur.004": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.32363367080688477,
+          0.6086425185203552,
+          0.6500001549720764
+        ],
+        "max": [
+          0.5044758915901184,
+          0.7750000357627869,
+          0.8783642053604126
+        ]
+      }
+    },
+    "Layered shoulder fur.005": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.34063366055488586,
+          0.6636425256729126,
+          0.5900001525878906
+        ],
+        "max": [
+          0.5214759111404419,
+          0.8300000429153442,
+          0.8183642029762268
+        ]
+      }
+    },
+    "Wrist fur.003": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2058044672012329,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          0.3118284046649933,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Wrist fur.004": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.2958044707775116,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          0.401828408241272,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Wrist fur.005": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.3858044743537903,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          0.49182841181755066,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Layered shoulder fur.006": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5074759721755981,
+          -0.4563576579093933,
+          0.8000001311302185
+        ],
+        "max": [
+          -0.32663366198539734,
+          -0.2900000512599945,
+          1.0283641815185547
+        ]
+      }
+    },
+    "Layered shoulder fur.007": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5244759321212769,
+          -0.40135762095451355,
+          0.7400000691413879
+        ],
+        "max": [
+          -0.34363365173339844,
+          -0.23500004410743713,
+          0.9683642387390137
+        ]
+      }
+    },
+    "Layered shoulder fur.008": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5414758920669556,
+          -0.34635764360427856,
+          0.6800000667572021
+        ],
+        "max": [
+          -0.3606336712837219,
+          -0.18000003695487976,
+          0.9083642363548279
+        ]
+      }
+    },
+    "Wrist fur.006": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.48182833194732666,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          -0.3758043944835663,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Wrist fur.007": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.391828328371048,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          -0.28580442070961,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Wrist fur.008": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3018283545970917,
+          -0.48776668310165405,
+          0.20000000298023224
+        ],
+        "max": [
+          -0.1958044022321701,
+          -0.34500008821487427,
+          0.38571277260780334
+        ]
+      }
+    },
+    "Layered shoulder fur.009": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.4874759316444397,
+          0.5536425113677979,
+          0.7100001573562622
+        ],
+        "max": [
+          -0.3066336512565613,
+          0.7200000882148743,
+          0.9383642673492432
+        ]
+      }
+    },
+    "Layered shoulder fur.010": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5044758915901184,
+          0.6086425185203552,
+          0.6500001549720764
+        ],
+        "max": [
+          -0.32363367080688477,
+          0.7750000357627869,
+          0.8783642053604126
+        ]
+      }
+    },
+    "Layered shoulder fur.011": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.5214759111404419,
+          0.6636425256729126,
+          0.5900001525878906
+        ],
+        "max": [
+          -0.34063366055488586,
+          0.8300000429153442,
+          0.8183642029762268
+        ]
+      }
+    },
+    "Wrist fur.009": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.49182841181755066,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          -0.3858044743537903,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Wrist fur.010": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.401828408241272,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          -0.2958044707775116,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Wrist fur.011": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.3118284046649933,
+          0.6622334122657776,
+          0.19999998807907104
+        ],
+        "max": [
+          -0.2058044672012329,
+          0.8050000071525574,
+          0.38571274280548096
+        ]
+      }
+    },
+    "Articulated tail": {
+      "vertices": 136,
+      "polygons": 130,
+      "triangles": 268,
+      "components": [
+        136
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.07027525454759598,
+          0.7228654026985168,
+          0.8844853043556213
+        ],
+        "max": [
+          0.24952857196331024,
+          1.6570684909820557,
+          1.3357235193252563
+        ]
+      }
+    },
+    "Flame tail tuft": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.13238412141799927,
+          1.469395399093628,
+          1.1970027685165405
+        ],
+        "max": [
+          0.3353424668312073,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.001": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.11774545907974243,
+          1.4724498987197876,
+          1.1981472969055176
+        ],
+        "max": [
+          0.2977152168750763,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.002": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.033131182193756104,
+          1.4745498895645142,
+          1.1984750032424927
+        ],
+        "max": [
+          0.21312734484672546,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.003": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.034683942794799805,
+          1.4702582359313965,
+          1.1970000267028809
+        ],
+        "max": [
+          0.16253331303596497,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.004": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.034683942794799805,
+          1.4702582359313965,
+          1.1970000267028809
+        ],
+        "max": [
+          0.16253331303596497,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.005": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.033131182193756104,
+          1.4745498895645142,
+          1.1984750032424927
+        ],
+        "max": [
+          0.21312734484672546,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Flame tail tuft.006": {
+      "vertices": 24,
+      "polygons": 18,
+      "triangles": 44,
+      "components": [
+        24
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          0.11774545907974243,
+          1.4724498987197876,
+          1.1981472969055176
+        ],
+        "max": [
+          0.2977152168750763,
+          1.9200001955032349,
+          1.4199999570846558
+        ]
+      }
+    },
+    "Leather neckerchief roll": {
+      "vertices": 40,
+      "polygons": 34,
+      "triangles": 76,
+      "components": [
+        40
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.34490206837654114,
+          -0.9699999094009399,
+          1.0799999237060547
+        ],
+        "max": [
+          0.34490206837654114,
+          -0.6442834734916687,
+          1.2782831192016602
+        ]
+      }
+    },
+    "Neckerchief folded point": {
+      "vertices": 5,
+      "polygons": 4,
+      "triangles": 4,
+      "components": [
+        5
+      ],
+      "boundaryEdges": 4,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.20000000298023224,
+          -0.9899999499320984,
+          0.85999995470047
+        ],
+        "max": [
+          0.20000000298023224,
+          -0.8499999642372131,
+          1.190000057220459
+        ]
+      }
+    },
+    "Brass crest clasp": {
+      "vertices": 176,
+      "polygons": 160,
+      "triangles": 320,
+      "components": [
+        176
+      ],
+      "boundaryEdges": 32,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.07100000232458115,
+          -1.0109999179840088,
+          1.0299999713897705
+        ],
+        "max": [
+          0.07100000232458115,
+          -0.9629999399185181,
+          1.1699998378753662
+        ]
+      }
+    },
+    "Raised elemental crest": {
+      "vertices": 20,
+      "polygons": 17,
+      "triangles": 36,
+      "components": [
+        20
+      ],
+      "boundaryEdges": 0,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.032384615391492844,
+          -1.0236084461212158,
+          1.0824439525604248
+        ],
+        "max": [
+          0.032999999821186066,
+          -1.0073914527893066,
+          1.1529998779296875
+        ]
+      }
+    },
+    "Mast authored head and oral anatomy": {
+      "vertices": 4513,
+      "polygons": 4464,
+      "triangles": 8928,
+      "components": [
+        4513
+      ],
+      "boundaryEdges": 104,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -1.347423791885376,
+          1.1912423372268677
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.48777061700820923,
+          1.7864339351654053
+        ]
+      }
+    },
+    "Mast oral and eye details": {
+      "vertices": 916,
+      "polygons": 804,
+      "triangles": 1576,
+      "components": [
+        74,
+        74,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        28,
+        28,
+        28,
+        28,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "boundaryEdges": 200,
+      "nonmanifoldEdgesOverTwoFaces": 16,
+      "bounds": {
+        "min": [
+          -0.14939172565937042,
+          -1.2114869356155396,
+          1.260556697845459
+        ],
+        "max": [
+          0.14939172565937042,
+          -0.8831411600112915,
+          1.6294488906860352
+        ]
+      }
+    }
+  },
+  "completeAnimalCosts": {
+    "0": {
+      "triangles": 17514,
+      "vertices": 9315,
+      "meshObjects": 138,
+      "materialPrimitivesUpperBound": 138
+    },
+    "1": {
+      "triangles": 24202,
+      "vertices": 12685,
+      "meshObjects": 138,
+      "materialPrimitivesUpperBound": 138
+    }
+  },
+  "contactHeadForwardSamples": [
+    {
+      "time": 0.18,
+      "forwardMax": 0.8727895617485046,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8727895617485046,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.013136452995240688,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.1825,
+      "forwardMax": 0.8743191361427307,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8743191361427307,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.014666027389466763,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.185,
+      "forwardMax": 0.8754686713218689,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8754686713218689,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.01581556349992752,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.1875,
+      "forwardMax": 0.8762922286987305,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8762922286987305,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.016639120876789093,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.19,
+      "forwardMax": 0.8768443465232849,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8768443465232849,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017191238701343536,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.1925,
+      "forwardMax": 0.8771792054176331,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8771792054176331,
+          1.7512420415878296
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.01752609759569168,
+          2.3464338779449463
+        ]
+      }
+    },
+    {
+      "time": 0.195,
+      "forwardMax": 0.8773512244224548,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8773512244224548,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017698116600513458,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.1975,
+      "forwardMax": 0.8774145245552063,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774145245552063,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017761416733264923,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.19999999999999998,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.20249999999999999,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.205,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2075,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.21,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2125,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.215,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2175,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.22,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2225,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.22499999999999998,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.22749999999999998,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.22999999999999998,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.23249999999999998,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.235,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2375,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.24,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2425,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.245,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2475,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.25,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2525,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.255,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2575,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.26,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.2625,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.265,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.26749999999999996,
+      "forwardMax": 0.8774235844612122,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774235844612122,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017770476639270782,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.27,
+      "forwardMax": 0.8774220943450928,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774220943450928,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017768986523151398,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.27249999999999996,
+      "forwardMax": 0.8774158358573914,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774158358573914,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.01776272803544998,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.275,
+      "forwardMax": 0.8774014115333557,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8774014115333557,
+          1.7512422800064087
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017748303711414337,
+          2.3464341163635254
+        ]
+      }
+    },
+    {
+      "time": 0.27749999999999997,
+      "forwardMax": 0.8773756623268127,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8773756623268127,
+          1.7512420415878296
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017722520977258682,
+          2.3464338779449463
+        ]
+      }
+    },
+    {
+      "time": 0.28,
+      "forwardMax": 0.8773347735404968,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -0.8773347735404968,
+          1.7512420415878296
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.017681632190942764,
+          2.3464338779449463
+        ]
+      }
+    }
+  ],
+  "selectedHeadSubdivision": 1,
+  "subdivisionScope": "Connected skin only; separate source eyes/teeth/oral details remain level 0",
+  "visualCorrection": 2,
+  "palette": "Authored gold/cream anatomy regions, dark nose/oral tissue, amber eyes",
+  "maneDecision": "Reject imported rolled curtain mane; retain unchanged canonical ruff as provisional control.",
+  "recipeSha256": "df2a886c9802ac7b8cc3159aedf96b33f5ee8934e35dfa438c7281b89ddf2b3b",
+  "sourceSha256": "8023c83c71947bde46ffccab5c14814e47e85d8a5f956353be9a179ead744a96",
+  "probeSamples": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -1.347423791885376,
+          1.1912423372268677
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.48777061700820923,
+          1.7864339351654053
+        ]
+      },
+      "edgeRatioMin": 1.0,
+      "edgeRatioMax": 1.0,
+      "edgeRatioP99": 1.0,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3206019438803196,
+        "signedNearestSurfaceMax": 0.021454207955224902,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 1,
+      "time": 0.06666666666666667,
+      "bounds": {
+        "min": [
+          -0.34580761194229126,
+          -1.3496490716934204,
+          1.1648201942443848
+        ],
+        "max": [
+          0.30873245000839233,
+          -0.48777058720588684,
+          1.7931411266326904
+        ]
+      },
+      "edgeRatioMin": 0.8423978645196326,
+      "edgeRatioMax": 1.4733855860848954,
+      "edgeRatioP99": 1.123409391285918,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3203636147081852,
+        "signedNearestSurfaceMax": 0.01677744333650999,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 2,
+      "time": 0.13333333333333333,
+      "bounds": {
+        "min": [
+          -0.3603968918323517,
+          -1.3515721559524536,
+          1.1401358842849731
+        ],
+        "max": [
+          0.2928769290447235,
+          -0.48777055740356445,
+          1.7975249290466309
+        ]
+      },
+      "edgeRatioMin": 0.691630260085138,
+      "edgeRatioMax": 2.350277397313301,
+      "edgeRatioP99": 1.2467907515498085,
+      "edgesOver2x": 2,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3201470449566841,
+        "signedNearestSurfaceMax": 0.012184301587121027,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 3,
+      "time": 0.2,
+      "bounds": {
+        "min": [
+          -0.36912843585014343,
+          -1.3532477617263794,
+          1.1186201572418213
+        ],
+        "max": [
+          0.28299298882484436,
+          -0.48777052760124207,
+          1.798971176147461
+        ]
+      },
+      "edgeRatioMin": 0.5544921687562505,
+      "edgeRatioMax": 3.2362012376013944,
+      "edgeRatioP99": 1.3610531863297206,
+      "edgesOver2x": 10,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31996388733386993,
+        "signedNearestSurfaceMax": 0.00790765828293738,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 4,
+      "time": 0.26666666666666666,
+      "bounds": {
+        "min": [
+          -0.37084418535232544,
+          -1.3546059131622314,
+          1.1012643575668335
+        ],
+        "max": [
+          0.28100070357322693,
+          -0.48777052760124207,
+          1.797364592552185
+        ]
+      },
+      "edgeRatioMin": 0.4370999338547814,
+      "edgeRatioMax": 4.0194859592498,
+      "edgeRatioP99": 1.4574003855232749,
+      "edgesOver2x": 17,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31982097402215004,
+        "signedNearestSurfaceMax": 0.004168820499794945,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 5,
+      "time": 0.3333333333333333,
+      "bounds": {
+        "min": [
+          -0.3653680384159088,
+          -1.355643630027771,
+          1.0877851247787476
+        ],
+        "max": [
+          0.2872588336467743,
+          -0.48777052760124207,
+          1.7928144931793213
+        ]
+      },
+      "edgeRatioMin": 0.34471621234752303,
+      "edgeRatioMax": 4.646433374138983,
+      "edgeRatioP99": 1.553279973614614,
+      "edgesOver2x": 19,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3197217062115669,
+        "signedNearestSurfaceMax": 0.0011674033361376845,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 6,
+      "time": 0.4,
+      "bounds": {
+        "min": [
+          -0.3534616529941559,
+          -1.3563638925552368,
+          1.0788054466247559
+        ],
+        "max": [
+          0.3004889488220215,
+          -0.48777055740356445,
+          1.7855746746063232
+        ]
+      },
+      "edgeRatioMin": 0.2812923656943412,
+      "edgeRatioMax": 5.08251298038779,
+      "edgeRatioP99": 1.6081899466557645,
+      "edgesOver2x": 20,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31966661661863327,
+        "signedNearestSurfaceMax": -0.0009311333655022958,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 7,
+      "time": 0.4666666666666667,
+      "bounds": {
+        "min": [
+          -0.33683648705482483,
+          -1.3567625284194946,
+          1.0746169090270996
+        ],
+        "max": [
+          0.3181038200855255,
+          -0.48777055740356445,
+          1.7762291431427002
+        ]
+      },
+      "edgeRatioMin": 0.2491242373848833,
+      "edgeRatioMax": 5.305978610564332,
+      "edgeRatioP99": 1.6360447131002782,
+      "edgesOver2x": 26,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31965528056025505,
+        "signedNearestSurfaceMax": -0.0020055540940487893,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 8,
+      "time": 0.5333333333333333,
+      "bounds": {
+        "min": [
+          -0.3181037902832031,
+          -1.3567625284194946,
+          1.07461678981781
+        ],
+        "max": [
+          0.33683642745018005,
+          -0.48777058720588684,
+          1.7762291431427002
+        ]
+      },
+      "edgeRatioMin": 0.24912187072688974,
+      "edgeRatioMax": 5.305908537440362,
+      "edgeRatioP99": 1.6360436460922843,
+      "edgesOver2x": 26,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31968583166599274,
+        "signedNearestSurfaceMax": -0.0019935140393115836,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 9,
+      "time": 0.6,
+      "bounds": {
+        "min": [
+          -0.3004889190196991,
+          -1.3563638925552368,
+          1.0788054466247559
+        ],
+        "max": [
+          0.35346168279647827,
+          -0.48777055740356445,
+          1.7855746746063232
+        ]
+      },
+      "edgeRatioMin": 0.28128837202487106,
+      "edgeRatioMax": 5.082498384684982,
+      "edgeRatioP99": 1.6081766569332812,
+      "edgesOver2x": 20,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31975550949573517,
+        "signedNearestSurfaceMax": -0.0008976952045022801,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 10,
+      "time": 0.6666666666666666,
+      "bounds": {
+        "min": [
+          -0.2872588336467743,
+          -1.355643630027771,
+          1.0877851247787476
+        ],
+        "max": [
+          0.3653680384159088,
+          -0.48777052760124207,
+          1.7928144931793213
+        ]
+      },
+      "edgeRatioMin": 0.3447162109656922,
+      "edgeRatioMax": 4.646523188632948,
+      "edgeRatioP99": 1.553272895301068,
+      "edgesOver2x": 19,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3198593556880951,
+        "signedNearestSurfaceMax": 0.0012147285521424411,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 11,
+      "time": 0.7333333333333333,
+      "bounds": {
+        "min": [
+          -0.2810007333755493,
+          -1.3546059131622314,
+          1.1012643575668335
+        ],
+        "max": [
+          0.37084418535232544,
+          -0.48777055740356445,
+          1.797364592552185
+        ]
+      },
+      "edgeRatioMin": 0.43709993572296285,
+      "edgeRatioMax": 4.019401859899682,
+      "edgeRatioP99": 1.457390402413602,
+      "edgesOver2x": 17,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.31999001652002335,
+        "signedNearestSurfaceMax": 0.004220020065203611,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 12,
+      "time": 0.8,
+      "bounds": {
+        "min": [
+          -0.28299298882484436,
+          -1.3532477617263794,
+          1.1186201572418213
+        ],
+        "max": [
+          0.3691284656524658,
+          -0.48777055740356445,
+          1.798971176147461
+        ]
+      },
+      "edgeRatioMin": 0.5544921707198057,
+      "edgeRatioMax": 3.2361860618782265,
+      "edgeRatioP99": 1.3610427319732115,
+      "edgesOver2x": 10,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32013871148228645,
+        "signedNearestSurfaceMax": 0.007952658233518317,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 13,
+      "time": 0.8666666666666667,
+      "bounds": {
+        "min": [
+          -0.2928769290447235,
+          -1.3515721559524536,
+          1.1401358842849731
+        ],
+        "max": [
+          0.3603968918323517,
+          -0.48777055740356445,
+          1.7975249290466309
+        ]
+      },
+      "edgeRatioMin": 0.6916294453290787,
+      "edgeRatioMax": 2.3502550827387134,
+      "edgeRatioP99": 1.246787283441586,
+      "edgesOver2x": 2,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.320295799523592,
+        "signedNearestSurfaceMax": 0.012215653411788097,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 14,
+      "time": 0.9333333333333333,
+      "bounds": {
+        "min": [
+          -0.30873245000839233,
+          -1.3496490716934204,
+          1.1648201942443848
+        ],
+        "max": [
+          0.34580761194229126,
+          -0.48777058720588684,
+          1.7931411266326904
+        ]
+      },
+      "edgeRatioMin": 0.8423896753748462,
+      "edgeRatioMax": 1.4732900007130114,
+      "edgeRatioP99": 1.1234113629492186,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3204520717263222,
+        "signedNearestSurfaceMax": 0.016792225186167187,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 15,
+      "time": 1.0,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -1.347423791885376,
+          1.1912423372268677
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.48777061700820923,
+          1.7864339351654053
+        ]
+      },
+      "edgeRatioMin": 0.9999998440853707,
+      "edgeRatioMax": 1.000000156382105,
+      "edgeRatioP99": 1.0,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3206019438803196,
+        "signedNearestSurfaceMax": 0.021454207955224902,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 16,
+      "time": 1.0666666666666667,
+      "bounds": {
+        "min": [
+          -0.34589314460754395,
+          -1.3449420928955078,
+          1.1979469060897827
+        ],
+        "max": [
+          0.3086468577384949,
+          -0.48777058720588684,
+          1.7988463640213013
+        ]
+      },
+      "edgeRatioMin": 0.8455938157423882,
+      "edgeRatioMax": 1.3054487884778718,
+      "edgeRatioP99": 1.041495904641721,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32073670625686646,
+        "signedNearestSurfaceMax": 0.022247953398804476,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 17,
+      "time": 1.1333333333333333,
+      "bounds": {
+        "min": [
+          -0.3607024848461151,
+          -1.3423484563827515,
+          1.20404052734375
+        ],
+        "max": [
+          0.2925712764263153,
+          -0.48777055740356445,
+          1.808677077293396
+        ]
+      },
+      "edgeRatioMin": 0.6988292097086619,
+      "edgeRatioMax": 1.6007889151721053,
+      "edgeRatioP99": 1.0812557557029214,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3208649940788746,
+        "signedNearestSurfaceMax": 0.0229843015321185,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 18,
+      "time": 1.2,
+      "bounds": {
+        "min": [
+          -0.3696933388710022,
+          -1.3399015665054321,
+          1.2094100713729858
+        ],
+        "max": [
+          0.2824280858039856,
+          -0.48777055740356445,
+          1.8150739669799805
+        ]
+      },
+      "edgeRatioMin": 0.5664844499009766,
+      "edgeRatioMax": 1.8711422180102428,
+      "edgeRatioP99": 1.11764102066848,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3209908567368984,
+        "signedNearestSurfaceMax": 0.023632554927152327,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 19,
+      "time": 1.2666666666666666,
+      "bounds": {
+        "min": [
+          -0.37159085273742676,
+          -1.337730050086975,
+          1.2142081260681152
+        ],
+        "max": [
+          0.2802541255950928,
+          -0.48777052760124207,
+          1.817716360092163
+        ]
+      },
+      "edgeRatioMin": 0.45473928965219346,
+      "edgeRatioMax": 2.103451141038911,
+      "edgeRatioP99": 1.1489272283142826,
+      "edgesOver2x": 8,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3211178369820118,
+        "signedNearestSurfaceMax": 0.02417030022109845,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 20,
+      "time": 1.3333333333333333,
+      "bounds": {
+        "min": [
+          -0.3661257028579712,
+          -1.3360008001327515,
+          1.2169451713562012
+        ],
+        "max": [
+          0.28650107979774475,
+          -0.48777055740356445,
+          1.816536545753479
+        ]
+      },
+      "edgeRatioMin": 0.3686401912338281,
+      "edgeRatioMax": 2.2871169284716593,
+      "edgeRatioP99": 1.1736901304114398,
+      "edgesOver2x": 16,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3212451934814453,
+        "signedNearestSurfaceMax": 0.024583178392180827,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 21,
+      "time": 1.4,
+      "bounds": {
+        "min": [
+          -0.3540268540382385,
+          -1.3348370790481567,
+          1.2192996740341187
+        ],
+        "max": [
+          0.2999238967895508,
+          -0.48777058720588684,
+          1.8116402626037598
+        ]
+      },
+      "edgeRatioMin": 0.31120385226688113,
+      "edgeRatioMax": 2.4141766926208597,
+      "edgeRatioP99": 1.1908336710256597,
+      "edgesOver2x": 18,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32136640325188637,
+        "signedNearestSurfaceMax": 0.024862779956738024,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 22,
+      "time": 1.4666666666666666,
+      "bounds": {
+        "min": [
+          -0.3370456099510193,
+          -1.3342816829681396,
+          1.2208874225616455
+        ],
+        "max": [
+          0.31789475679397583,
+          -0.48777061700820923,
+          1.8034977912902832
+        ]
+      },
+      "edgeRatioMin": 0.28290963982585354,
+      "edgeRatioMax": 2.4789908218402283,
+      "edgeRatioP99": 1.1995935402260631,
+      "edgesOver2x": 22,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3214689642190933,
+        "signedNearestSurfaceMax": 0.02500529365996229,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 23,
+      "time": 1.5333333333333334,
+      "bounds": {
+        "min": [
+          -0.31789472699165344,
+          -1.3342816829681396,
+          1.2208874225616455
+        ],
+        "max": [
+          0.3370455801486969,
+          -0.48777061700820923,
+          1.8034977912902832
+        ]
+      },
+      "edgeRatioMin": 0.28292216367518797,
+      "edgeRatioMax": 2.4789870477692255,
+      "edgeRatioP99": 1.1995896753482693,
+      "edgesOver2x": 22,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32153765484690666,
+        "signedNearestSurfaceMax": 0.025008631188338626,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 24,
+      "time": 1.6,
+      "bounds": {
+        "min": [
+          -0.2999238967895508,
+          -1.3348370790481567,
+          1.2192996740341187
+        ],
+        "max": [
+          0.35402682423591614,
+          -0.48777058720588684,
+          1.8116402626037598
+        ]
+      },
+      "edgeRatioMin": 0.31123760584160626,
+      "edgeRatioMax": 2.41414968063471,
+      "edgeRatioP99": 1.1908333778999667,
+      "edgesOver2x": 18,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32155826687812805,
+        "signedNearestSurfaceMax": 0.02487261434754018,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 25,
+      "time": 1.6666666666666667,
+      "bounds": {
+        "min": [
+          -0.28650107979774475,
+          -1.3360008001327515,
+          1.2169451713562012
+        ],
+        "max": [
+          0.3661257028579712,
+          -0.48777058720588684,
+          1.816536545753479
+        ]
+      },
+      "edgeRatioMin": 0.368611757857315,
+      "edgeRatioMax": 2.2871872621343754,
+      "edgeRatioP99": 1.1736819495499013,
+      "edgesOver2x": 16,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3212321139872074,
+        "signedNearestSurfaceMax": 0.02459885430461739,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 26,
+      "time": 1.7333333333333334,
+      "bounds": {
+        "min": [
+          -0.28025415539741516,
+          -1.337730050086975,
+          1.2142081260681152
+        ],
+        "max": [
+          0.37159085273742676,
+          -0.48777055740356445,
+          1.817716360092163
+        ]
+      },
+      "edgeRatioMin": 0.45471087424796,
+      "edgeRatioMax": 2.1034244787188543,
+      "edgeRatioP99": 1.1488867862174719,
+      "edgesOver2x": 8,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3184798136353493,
+        "signedNearestSurfaceMax": 0.024189910014880134,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 27,
+      "time": 1.8,
+      "bounds": {
+        "min": [
+          -0.2824280858039856,
+          -1.3399015665054321,
+          1.2094100713729858
+        ],
+        "max": [
+          0.3696933388710022,
+          -0.48777055740356445,
+          1.8150742053985596
+        ]
+      },
+      "edgeRatioMin": 0.5664610697589584,
+      "edgeRatioMax": 1.8711095353637477,
+      "edgeRatioP99": 1.117608229891458,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3168063759803772,
+        "signedNearestSurfaceMax": 0.02365341640862617,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 28,
+      "time": 1.8666666666666667,
+      "bounds": {
+        "min": [
+          -0.2925712764263153,
+          -1.3423484563827515,
+          1.20404052734375
+        ],
+        "max": [
+          0.3607024550437927,
+          -0.48777055740356445,
+          1.808677077293396
+        ]
+      },
+      "edgeRatioMin": 0.698847142137424,
+      "edgeRatioMax": 1.6007771179762424,
+      "edgeRatioP99": 1.08124921185662,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.321069099009037,
+        "signedNearestSurfaceMax": 0.02300248082268208,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 29,
+      "time": 1.9333333333333333,
+      "bounds": {
+        "min": [
+          -0.30864688754081726,
+          -1.3449420928955078,
+          1.1979470252990723
+        ],
+        "max": [
+          0.34589311480522156,
+          -0.48777058720588684,
+          1.7988463640213013
+        ]
+      },
+      "edgeRatioMin": 0.8456232237241005,
+      "edgeRatioMax": 1.3054542107670064,
+      "edgeRatioP99": 1.041493065503057,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.32084064558148384,
+        "signedNearestSurfaceMax": 0.02225897987316472,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    },
+    {
+      "frame": 30,
+      "time": 2.0,
+      "bounds": {
+        "min": [
+          -0.32754093408584595,
+          -1.347423791885376,
+          1.1912423372268677
+        ],
+        "max": [
+          0.32754096388816833,
+          -0.48777061700820923,
+          1.7864339351654053
+        ]
+      },
+      "edgeRatioMin": 0.9999998440853707,
+      "edgeRatioMax": 1.000000156382105,
+      "edgeRatioP99": 1.0,
+      "edgesOver2x": 0,
+      "neckAttachment": {
+        "samples": 57,
+        "signedNearestSurfaceMin": -0.3206019438803196,
+        "signedNearestSurfaceMax": 0.021454207955224902,
+        "meaning": "Nearest-normal sign is a local diagnostic, not a watertight collision proof; positive may expose a junction gap."
+      }
+    }
+  ],
+  "probeIsGameAnimation": false
+}

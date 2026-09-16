@@ -1,0 +1,17 @@
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-head-study/inputs/Mast.blend"
+Traceback (most recent call last):
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/study_mast_head.py", line 94, in <module>
+    if __name__=='__main__':globals()[sys.argv[sys.argv.index('--')+1]]()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/study_mast_head.py", line 91, in source_views
+    cam.location=target+Vector(offset);cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler();scene.render.filepath=str(OUT/'qa'/f'{name}.png');bpy.ops.render.render(write_still=True)
+                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/modules/bpy/ops.py", line 109, in __call__
+    ret = _op_call(self.idname_py(), kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Error: Cannot write a single file with an animation format selected
+
+Error: Cannot write a single file with an animation format selected
+
+Blender quit

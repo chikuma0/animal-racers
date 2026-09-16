@@ -1,6 +1,6 @@
 # Physical-device and internet acceptance session
 
-Status: internal alpha f600be234ec7f52527c0a4335c611d236ad39ea3 is published as a separate protected preview at https://animal-racers-4png9iy68-dera-ai.vercel.app. The seven-day private access link was delivered directly to the owner; do not store its token here. Both players must open that full private link before exchanging an invitation code. The older4ed5042 branch link remains unchanged and must not be mixed with this protocol. The first physical-device response is pending. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
+Status: internal alpha f600be234ec7f52527c0a4335c611d236ad39ea3 is published as a separate protected preview at https://animal-racers-4png9iy68-dera-ai.vercel.app. The seven-day private access link was delivered directly to the owner; do not store its token here. Both players must open that full private link before exchanging an invitation code. The older branch link originally served4ed5042 and can advance on task-branch pushes; do not use it for this fixed-revision protocol. The first physical-device response is pending. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
 
 ## Setup
 

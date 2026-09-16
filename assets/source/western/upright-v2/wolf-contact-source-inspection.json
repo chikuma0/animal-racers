@@ -1,0 +1,326 @@
+{
+  "sourceSha256": "e2f1d75067e419b75286eb010e20cd5eeb62d86f07f79dfcb8e115cefc493c73",
+  "runtimeSha256": "01bb159631ade33f6eaec07f37cd2c0fc7d021bb2095f31d8acbfedf9ccb1f01",
+  "unchangedV2ActionsSha256": "68523faeb5fd509a59f1d3f701d75af6d7aacbf97b3a5fffa6bbe8c0f8dce56e",
+  "unchangedV2ConnectedBody": true,
+  "faceIdentity": {
+    "Head \u2022 species sculpt": {
+      "vertices": 1363,
+      "maximumDeviationFromRigidTranslationMetres": 2.6656007498500226e-07
+    },
+    "Frost muzzle": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 2.6656007498500226e-07
+    },
+    "Heart shaped nose": {
+      "vertices": 5,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Eye socket": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Ivory eye": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Iris": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Pupil": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Eye glint": {
+      "vertices": 108,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Expressive brow": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 4.470348358154297e-08
+    },
+    "Smiling mouth": {
+      "vertices": 18,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Whisker pore": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.001": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.002": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Eye socket.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Ivory eye.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Iris.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Pupil.001": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Eye glint.001": {
+      "vertices": 108,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Expressive brow.001": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 4.470348358154297e-08
+    },
+    "Smiling mouth.001": {
+      "vertices": 18,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Whisker pore.003": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.004": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.005": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Lower jaw": {
+      "vertices": 220,
+      "maximumDeviationFromRigidTranslationMetres": 2.1490760299348766e-07
+    },
+    "Connected inner mouth sleeve": {
+      "vertices": 64,
+      "maximumDeviationFromRigidTranslationMetres": 2.1490760299348766e-07
+    },
+    "Upper palate": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.4901161193847656e-07
+    },
+    "Mandible floor": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.6858739404357614e-07
+    },
+    "Connected outer cheek": {
+      "vertices": 20,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Connected outer cheek.001": {
+      "vertices": 20,
+      "maximumDeviationFromRigidTranslationMetres": 1.043081283569336e-07
+    },
+    "Howl tongue": {
+      "vertices": 144,
+      "maximumDeviationFromRigidTranslationMetres": 1.685873940435851e-07
+    },
+    "Lower canine": {
+      "vertices": 21,
+      "maximumDeviationFromRigidTranslationMetres": 2.1490760299348766e-07
+    },
+    "Lower canine.001": {
+      "vertices": 21,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Pointed species ear": {
+      "vertices": 5,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Inner ear": {
+      "vertices": 4,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Pointed species ear.001": {
+      "vertices": 5,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Inner ear.001": {
+      "vertices": 4,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Swept cheek ruff": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Swept cheek ruff.001": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Swept cheek ruff.002": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Swept cheek ruff.003": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Swept cheek ruff.004": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Swept cheek ruff.005": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Swept cheek ruff.006": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Swept cheek ruff.007": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    }
+  },
+  "attachments": {
+    "Ice swept crest": {
+      "vertices": 24,
+      "maximumRestPlacementError": 2.9802322387695312e-08,
+      "upperRootVerticesBoundToHead": 5,
+      "recipe": "control shape + continuous neck setback; upper mane head blend"
+    },
+    "Ice swept crest.001": {
+      "vertices": 24,
+      "maximumRestPlacementError": 2.9802322387695312e-08,
+      "upperRootVerticesBoundToHead": 1,
+      "recipe": "control shape + continuous neck setback; upper mane head blend"
+    },
+    "Leather neckerchief roll": {
+      "vertices": 40,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Neckerchief folded point": {
+      "vertices": 5,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Brass crest clasp": {
+      "vertices": 176,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Raised elemental crest": {
+      "vertices": 15,
+      "maximumRestPlacementError": 0.0,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    }
+  },
+  "bodyTopology": {
+    "components": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "vertices": 4318,
+    "faces": 4316
+  },
+  "headNeckRestEndpoints": {
+    "neck": {
+      "head": [
+        0.0,
+        -0.054999999701976776,
+        1.7000000476837158
+      ],
+      "tail": [
+        0.0,
+        0.11999999731779099,
+        1.9900000095367432
+      ]
+    },
+    "head": {
+      "head": [
+        0.0,
+        0.11999999731779099,
+        1.9900000095367432
+      ],
+      "tail": [
+        0.0,
+        -0.20999999344348907,
+        2.0
+      ]
+    },
+    "jaw": {
+      "head": [
+        0.0,
+        -0.07000000029802322,
+        1.8300000429153442
+      ],
+      "tail": [
+        0.0,
+        -0.3799999952316284,
+        1.809999942779541
+      ]
+    }
+  },
+  "clips": {
+    "transform": {
+      "frames": 37,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "fight_idle": {
+      "frames": 61,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "fight_move": {
+      "frames": 13,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "attack": {
+      "frames": 18,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "special": {
+      "frames": 35,
+      "maximumBoneScaleError": 1.0728836059570312e-06,
+      "finiteBodyVertices": true
+    },
+    "guard": {
+      "frames": 19,
+      "maximumBoneScaleError": 1.0728836059570312e-06,
+      "finiteBodyVertices": true
+    },
+    "hit": {
+      "frames": 13,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "defeat": {
+      "frames": 40,
+      "maximumBoneScaleError": 1.5497207641601562e-06,
+      "finiteBodyVertices": true
+    },
+    "celebrate": {
+      "frames": 61,
+      "maximumBoneScaleError": 9.5367431640625e-07,
+      "finiteBodyVertices": true
+    },
+    "jump": {
+      "frames": 25,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "land": {
+      "frames": 10,
+      "maximumBoneScaleError": 1.3113021850585938e-06,
+      "finiteBodyVertices": true
+    }
+  },
+  "limits": "Exact rigid translation is verified for every mesh wholly weighted to head/jaw, including head, eyes, brows, mouth and facial attachments. Neck accessories are reshaped/reweighted explicitly; upper mane follows head, lower mane neck. Topology/unit scales and correct root placement do not prove lack of intersection; matched visual review is required.",
+  "promotion": "Byte-identical canonical source copy; source/attachment inspection retained from reviewed v2b."
+}

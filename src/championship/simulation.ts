@@ -37,7 +37,7 @@ export const RACE_GAP_FOR_FULL_POOL = 16;
 export const CHARACTERS = {
   lion: { name: 'Fire Lion', special: 'Ember rush', description: 'A short, committed fire lunge. Guard or step out of its path.' },
   wolf: { name: 'Water Wolf', special: 'Frost howl', description: 'Longer reach with a readable windup. Close in during recovery.' },
-  unicorn: { name: 'Rainbow Unicorn', special: 'Prism ward', description: 'Brief frontal protection followed by a hoof strike. Bait it from outside its reach.' },
+  unicorn: { name: 'Rainbow Unicorn', special: 'Prism ward', description: 'Brief frontal protection followed by a short prism pulse. Bait it from outside its reach.' },
 } as const;
 
 export interface Obstacle { id: number; z: number; x: number; width: number; kind: 'hurdle' | 'barrel' | 'arch' }
@@ -64,10 +64,10 @@ export const OBSTACLES: readonly Obstacle[] = [
 
 interface Attack { windup: number; active: number; recovery: number; reach: number; damage: number; stun: number; knockback: number }
 export const ATTACKS: Readonly<Record<'attack' | CharacterId, Attack>> = {
-  attack: { windup: .18, active: .10, recovery: .29, reach: 1.5, damage: 11, stun: .20, knockback: .32 },
-  lion: { windup: .32, active: .14, recovery: .48, reach: 1.75, damage: 18, stun: .24, knockback: .70 },
+  attack: { windup: .18, active: .10, recovery: .29, reach: 1.85, damage: 11, stun: .20, knockback: .32 },
+  lion: { windup: .32, active: .14, recovery: .48, reach: 2.1, damage: 18, stun: .24, knockback: .70 },
   wolf: { windup: .43, active: .16, recovery: .55, reach: 2.75, damage: 14, stun: .27, knockback: .40 },
-  unicorn: { windup: .40, active: .12, recovery: .43, reach: 1.65, damage: 13, stun: .21, knockback: .55 },
+  unicorn: { windup: .40, active: .12, recovery: .43, reach: 1.95, damage: 13, stun: .21, knockback: .55 },
 };
 const EPSILON = 1e-8;
 const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
@@ -193,9 +193,16 @@ function isWarded(player: Racer): boolean {
 }
 function stepFight(match: Match, inputs: [Input, Input]) {
   match.fightTicks++; match.fightTime = match.fightTicks * FIXED_DT;
-  const initialOrder = match.players[0].x <= match.players[1].x ? 1 : -1;
+  // Both choices see the same beginning-of-step positions. A lunge processed
+  // first must not turn the other slot's newly committed airborne strike.
+  const initialPositions = match.players.map(player => player.x);
+  // Exact-X cross-ups retain opposing orientation. If both face the same way,
+  // use the higher fighter's orientation/side; swapping slots keeps that choice.
+  const [first, second] = match.players;
+  const priorSide = first.facing !== second.facing || first.y >= second.y ? first.facing : -first.facing;
+  const initialOrder = Math.sign(initialPositions[1] - initialPositions[0]) || priorSide;
   match.players.forEach((player, index) => {
-    const slot = index as Slot, input = inputs[slot], opponent = match.players[slot === 0 ? 1 : 0];
+    const slot = index as Slot, input = inputs[slot];
     timers(player);
     // A short press survives the end of recovery/hitstun; holding does not repeat.
     for (const key of ['jump', 'attack', 'special'] as const) {
@@ -208,7 +215,8 @@ function stepFight(match: Match, inputs: [Input, Input]) {
     }
     if (player.stun > 0) { action(player, 'hit'); return; }
     if (!attackFor(player)) {
-      player.facing = opponent.x >= player.x ? 1 : -1;
+      const rivalOffset = initialPositions[slot === 0 ? 1 : 0] - initialPositions[slot];
+      if (rivalOffset !== 0) player.facing = rivalOffset > 0 ? 1 : -1;
       if (player.buffer.jump > 0 && player.y === 0) { jump(match, player, slot, 6.8); player.buffer.jump = 0; }
       if (player.buffer.special > 0 && player.cooldown === 0 && player.energy >= 40) {
         player.buffer.special = 0;
@@ -234,9 +242,9 @@ function stepFight(match: Match, inputs: [Input, Input]) {
     }
   });
   // Resolve bodies before contact. Grounded fighters cannot pass through each other.
-  if (Math.abs(match.players[0].y - match.players[1].y) < .7 && (match.players[1].x - match.players[0].x) * initialOrder < .85) {
-    const center = clamp((match.players[0].x + match.players[1].x) / 2, -3.975, 3.975);
-    match.players[0].x = center - .425 * initialOrder; match.players[1].x = center + .425 * initialOrder;
+  if (Math.abs(match.players[0].y - match.players[1].y) < .7 && (match.players[1].x - match.players[0].x) * initialOrder < 1.75) {
+    const center = clamp((match.players[0].x + match.players[1].x) / 2, -3.525, 3.525);
+    match.players[0].x = center - .875 * initialOrder; match.players[1].x = center + .875 * initialOrder;
   }
   const impacts: { attacker: Slot; defender: Slot; attack: Attack; defended: boolean; warded: boolean; facing: 1 | -1 }[] = [];
   match.players.forEach((player, index) => {
@@ -363,13 +371,13 @@ export function cpuInput(match: Match, slot: Slot): Input {
     if (threat && roll < .67 && player.guard > 18 && !player.guardBroken && !attackFor(player)) {
       input.guard = true; input.move = -toward * .35;
     } else {
-      input.move = distance > 1.25 ? toward : distance < .95 ? -toward * .4 : 0;
+      input.move = distance > 1.8 ? toward : distance < .95 ? -toward * .4 : 0;
       // Open beginner pacing: 1.5s to orient, attacks at least 1.2s apart.
       // Retry a blocked opportunity next decision rather than phase-locking
       // every opportunity to a rival's repeated strike cadence.
       if (match.fightTime >= 1.5 && match.tick >= (player.ai.nextAttackTick ?? 0) && !attackFor(player) && player.stun === 0) {
         input.special = player.energy >= 40 && player.cooldown === 0 && distance <= ATTACKS[player.character].reach + (player.character === 'lion' ? .6 : 0) && roll > .45;
-        input.attack = !input.special && distance <= 1.45;
+        input.attack = !input.special && distance <= 1.82;
         input.jump = !input.attack && !input.special && distance > 2 && roll < .08;
         if (input.attack || input.special) player.ai.nextAttackTick = match.tick + 72;
       }

@@ -15,11 +15,11 @@
 
 | Area | Verified | Remaining |
 |---|---|---|
-| Rules | 35 simulation cases covering bounded scoring, edge cases, depleted guard, CPU pacing and all9 ordered pairings across3 seeds | Unit fixtures do not establish fun |
-| App | Published4ed5042:85 tests. Local Cycle5:88 tests across7 files, lint and production build passed; six GLBs loaded in actual play | Physical/rendered acceptance remains open |
+| Rules | 40 simulation cases covering bounded scoring, edge cases, depleted guard, CPU pacing, role symmetry and all9 ordered pairings | Unit fixtures do not establish fun |
+| App | Published4ed5042:85 tests. Local Cycle6 checks across8 test files, lint and production build passed; six GLBs loaded in actual play | Physical/rendered acceptance remains open |
 | Solo | Full Lion/Wolf and Unicorn/Lion loops observed through normal controls; race/fight/combined cup and return | All three active touch playthroughs, sustained rematches and balanced difficulty |
 | Local network | Recorded Lion-host/Wolf-guest match: matching53.4–46.6; both landed attacks; rematch restarted; departure interrupted active match | Physical internet, both roles, all9 pairings, loss/jitter/fallback profiles |
-| Art/motion | Three racing GLBs and three dedicated upright GLBs;14 original/11 upright clips, source comparisons and local gameplay recordings | Cinematic quality fails; upright shoulder/knee volume improved, close-contact spacing and camera transition remain major gaps |
+| Art/motion | Three racing GLBs and three dedicated upright GLBs;14 original/11 upright clips, reproduced source/export identity and actual Cycle6 camera/contact replay | Cinematic quality fails; simplified faces/mane and broader all-roster motion/physical review remain |
 | Performance | Raw per-phase intervals and load conditions retained; large first-stage hitches reduced after shader preparation | Frame spikes remain; physical iPhone13Pro sustained60fps is unverified |
 | Audio | 15s actual canvas soundtrack extracted to `evidence/cycle-3-audio.wav`;48kHz stereo, nonzero audio, peak−19.6dBFS | Human listening, phone unlock/mute/special-contact cues |
 | UI | Desktop and844×390 layout inspected; small landscape panel overlap repaired | Physical safe areas, touch accuracy, interruption/background behavior and visual onboarding |
@@ -37,7 +37,7 @@ All9 physical ordered pairings (Lion/Lion, Lion/Wolf, Lion/Unicorn, Wolf/Lion, W
 ## Required next repairs
 
 1. Physically play the published depleted-guard recovery and non-resonant CPU pacing changes. Owner test request is pending; the shared preview is held on `4ed5042` during the initial feedback window.
-2. Repair the Cycle5 camera fly-through and close-fighter muzzle overlap, then repeat actual play. Dedicated upright meshes are integrated for all three animals and a105.028s active local rematch is retained; cinematic art remains below target. These local changes are not part of the phone-test revision.
+2. Verify the new results-card/cup composition in actual landscape and portrait UI. Cycle6's96.090s active rematch verifies the camera/contact repair in one matchup; all9 pose comparisons are retained. An isolated Lion head/mane experiment addresses styling that still falls below the concept. These local changes are not part of the phone-test revision.
 3. Collect physical input/performance/internet evidence and repair observed failures. Owner visual and enjoyment acceptance remains mandatory.
 
 Root gate count at the first snapshot:2 met,11 open,0 abandoned. Automated success cannot close the open presentation, phone or internet gates.
@@ -51,3 +51,7 @@ Original diagrams now illustrate race movement/jump, guard/counterplay and equal
 ## Local Cycle5 evidence
 
 [Cycle5](evidence/CYCLE-5.md) records two actual CPU loops, source/runtime fingerprint, active rematch video, both result images and both raw per-phase measurements. The active Unicorn/Lion result is41.9–58.1, fight0–3HP. Frame-time p95 was70ms racing and50ms fighting under recording and substantial host contention; no sustained performance pass is claimed. Source rendering and automated geometry verification do not substitute for the physical touch, separate-device internet or owner visual gates.
+
+## Local Cycle6 evidence
+
+[Cycle6](evidence/CYCLE-6.md) links separate camera-only and integrated build manifests. The integrated active rematch (`a6a6d10b…`) ended37.0–63.0 with fight0–15HP. Forty rule tests, the current counter/boundary audit and independently reconstructed canonical assets pass. The later award-composition build is separately fingerprinted because it changes the renderer/UI; live results inspection passed at844×390,390×844 and1082×874 with the complete cup/winner clear of the score card. This is responsive desktop evidence, not physical safe-area or phone-performance acceptance. Shared preview4ed5042 and required phone/internet/owner gates remain unchanged.

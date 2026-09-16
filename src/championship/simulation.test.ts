@@ -13,7 +13,7 @@ function fight(characters: [CharacterId, CharacterId] = ['lion', 'wolf']): Match
   const match = createMatch(characters);
   match.phase = 'fight';
   match.players.forEach((player, i) => {
-    player.x = i === 0 ? -.65 : .65; player.action = 'fight_idle';
+    player.x = i === 0 ? -.875 : .875; player.action = 'fight_idle';
     player.finishTime = 70; player.raceStatus = 'finished'; player.raceProgress = COURSE_LENGTH;
   });
   return match;
@@ -221,6 +221,39 @@ describe('combat contact, defense and recovery', () => {
     Object.assign(match.players[1], { y: 1.5, vy: 0 }); ticks(match, 1);
     expect(match.players[1].hp).toBe(100);
   });
+  it('uses the approved strike and special reach boundaries in every ordered matchup and role', () => {
+    for (const first of ['lion', 'wolf', 'unicorn'] as const) {
+      for (const second of ['lion', 'wolf', 'unicorn'] as const) {
+        for (const slot of [0, 1] as const) for (const move of ['attack', 'special'] as const) for (const offset of [-.001, .001]) {
+          const match = fight([first, second]), attacker = match.players[slot], defender = match.players[slot === 0 ? 1 : 0];
+          const expectedReach = move === 'attack' ? 1.85 : attacker.character === 'lion' ? 2.10 : attacker.character === 'wolf' ? 2.75 : 1.95;
+          // Lion's existing active lunge advances before the contact check.
+          const gap = expectedReach + offset + (move === 'special' && attacker.character === 'lion' ? 7 * FIXED_DT : 0);
+          match.players[0].x = -gap / 2; match.players[1].x = gap / 2;
+          const attack = move === 'attack' ? ATTACKS.attack : ATTACKS[attacker.character];
+          attacker.action = move; attacker.actionTime = attack.windup;
+          ticks(match, 1);
+          expect(defender.hp, `${first}/${second}/${slot}/${move}/${offset}`).toBe(offset < 0 ? 100 - attack.damage : 100);
+        }
+      }
+    }
+  });
+  it('keeps widened bodies inside both arena edges under legal all-matchup pressure', () => {
+    for (const first of ['lion', 'wolf', 'unicorn'] as const) for (const second of ['lion', 'wolf', 'unicorn'] as const) {
+      for (const center of [-3.525, 0, 3.525]) for (const attacker of [0, 1] as const) {
+        const match = fight([first, second]); match.players[0].x += center; match.players[1].x += center;
+        for (let frame = 0; frame < 360 && match.phase === 'fight'; frame++) {
+          const input = idle(), defender = attacker === 0 ? 1 : 0;
+          input[attacker].move = Math.sign(match.players[defender].x - match.players[attacker].x);
+          input[attacker].attack = frame % 42 === 0; input[attacker].special = frame % 211 === 0;
+          input[defender].move = input[attacker].move; input[defender].guard = true;
+          stepMatch(match, input, FIXED_DT);
+          for (const player of match.players) expect(Math.abs(player.x)).toBeLessThanOrEqual(4.4 + 1e-9);
+          expect(Math.abs(match.players[1].x - match.players[0].x)).toBeGreaterThanOrEqual(1.75 - 1e-9);
+        }
+      }
+    }
+  });
   it('guard reduces damage, consumes a finite meter and can break', () => {
     const match = fight(); match.players[1].guard = 15;
     const input = idle(); input[0].attack = true; input[1].guard = true; ticks(match, 14, input);
@@ -235,7 +268,7 @@ describe('combat contact, defense and recovery', () => {
     ticks(match, 14, pressure);
     const defender = match.players[1];
     expect(defender.hp).toBe(99); expect(defender.guardBroken).toBe(true);
-    pressure[0].attack = false; ticks(match, 28, pressure);
+    pressure[0].attack = false; pressure[0].move = 1; ticks(match, 28, pressure);
     pressure[0].attack = true; ticks(match, 14, pressure);
     expect(defender.hp).toBe(88);
     expect(defender.guardBroken).toBe(true); expect(defender.action).not.toBe('guard');
@@ -249,7 +282,7 @@ describe('combat contact, defense and recovery', () => {
     for (let frame = 0; frame < 600 && match.phase === 'fight'; frame++) {
       const pressure = idle();
       pressure[0].move = Math.sign(match.players[1].x - match.players[0].x);
-      pressure[0].attack = frame % 36 === 0 && Math.abs(match.players[1].x - match.players[0].x) <= 1.45;
+      pressure[0].attack = frame % 36 === 0 && Math.abs(match.players[1].x - match.players[0].x) <= 1.82;
       pressure[1].guard = true;
       stepMatch(match, pressure, FIXED_DT);
       for (const event of match.events.filter(event => event.id > lastSequence)) {
@@ -300,6 +333,66 @@ describe('combat contact, defense and recovery', () => {
     Object.assign(match.players[0], { action: 'special', actionTime: .68, cooldown: 2, attackConnected: false });
     const input = idle(); input[1].attack = true; ticks(match, 14, input);
     expect(match.players[0].hp).toBe(89); expect(match.players[0].action).toBe('hit');
+  });
+  it('mirrors a legal jump/lunge cross-up without slot order changing committed attack facing', () => {
+    const left = fight(['lion', 'lion']), right = fight(['lion', 'lion']);
+    for (const match of [left, right]) {
+      match.players[0].x = -1.1; match.players[1].x = 1.1;
+    }
+    // A 100ms jump-pressure/mixed-policy trace: the lunge crosses the airborne
+    // jumper on the very tick that the jumper commits a descending strike.
+    for (let frame = 0; frame < 66; frame++) {
+      const jumper = neutralInput(), lunging = neutralInput();
+      jumper.move = frame < 30 ? 1 : 0; jumper.jump = frame < 6;
+      jumper.attack = frame >= 30 && frame < 36;
+      lunging.move = frame >= 3 && frame < 27 ? -1 : 0;
+      lunging.special = frame >= 3 && frame < 9;
+      lunging.guard = frame >= 33 && frame < 51;
+      lunging.attack = frame >= 63;
+      stepMatch(left, [jumper, lunging], FIXED_DT);
+      stepMatch(right, [{ ...lunging, move: -lunging.move }, { ...jumper, move: -jumper.move }], FIXED_DT);
+      for (const slot of [0, 1] as const) {
+        const player = left.players[slot], mirror = right.players[slot === 0 ? 1 : 0];
+        expect(player.x, `frame ${frame}, slot ${slot}`).toBeCloseTo(-mirror.x, 10);
+        expect(player.y).toBeCloseTo(mirror.y, 10);
+        expect(player.facing).toBe(-mirror.facing);
+        expect(player.action).toBe(mirror.action); expect(player.hp).toBe(mirror.hp);
+      }
+      if (frame === 30 || frame === 40) {
+        expect(left.players[0].action).toBe('attack');
+        expect(left.players[0].facing).toBe(1); // Startup direction stays committed after crossing.
+        expect(left.players[0].x).toBeGreaterThan(left.players[1].x);
+      }
+    }
+    expect(left.players[0].facing).toBe(-1); // Idle auto-facing resumes on the new side.
+  });
+  it('preserves prior facing when airborne fighters begin attacks at exactly the same X', () => {
+    const match = fight(['lion', 'lion']);
+    Object.assign(match.players[0], { x: 0, y: 1.2, facing: 1 });
+    Object.assign(match.players[1], { x: 0, facing: -1 });
+    const input = idle(); input[0].attack = true; input[1].attack = true;
+    ticks(match, 1, input);
+    expect(match.players.map(player => player.action)).toEqual(['attack', 'attack']);
+    expect(match.players.map(player => player.facing)).toEqual([1, -1]);
+  });
+  it('uses prior orientation to separate a same-X landing without slot or side priority', () => {
+    for (const facings of [[1, -1], [1, 1], [-1, -1]] as const) {
+      const original = fight(['wolf', 'lion']);
+      // Legal cross-up boundary: vertical separation initially allows shared X,
+      // then gravity brings the airborne fighter inside the exclusion band.
+      Object.assign(original.players[0], { x: 0, y: .7, vy: -1, facing: facings[0] });
+      Object.assign(original.players[1], { x: 0, facing: facings[1] });
+      const reflected = structuredClone(original), swapped = structuredClone(original);
+      reflected.players.forEach(player => { player.x = -player.x; player.facing = player.facing === 1 ? -1 : 1; });
+      swapped.players = [swapped.players[1], swapped.players[0]];
+      for (const match of [original, reflected, swapped]) ticks(match, 1);
+      expect(original.players[0].y).toBeLessThan(.7);
+      expect(Math.abs(original.players[1].x - original.players[0].x)).toBeCloseTo(1.75, 10);
+      for (const slot of [0, 1] as const) {
+        expect(reflected.players[slot].x).toBeCloseTo(-original.players[slot].x, 10);
+        expect(swapped.players[slot === 0 ? 1 : 0].x).toBeCloseTo(original.players[slot].x, 10);
+      }
+    }
   });
   it('always bounds passive combat and preserves the final result', () => {
     const match = fight(); ticks(match, FIGHT_DURATION * 60);

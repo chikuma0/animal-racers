@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { FrameMeasurements } from "./measurements";
 import { ContactEffects } from "./impacts";
+import { combatFraming, resultsFraming, sceneForPhase, type ScreenRect } from "./framing";
 import {
   trailMaterial,
   cliffGeometry,
@@ -282,6 +283,8 @@ export class ChampionshipRenderer {
   private frameIndex = 0;
   private framesSeen = 0;
   private previousPhase = "";
+  private viewport = { width: 1, height: 1 };
+  private resultsPanel: ScreenRect | null = null;
   private phaseAge = 0;
   private captures: ((blob: Blob | null) => void)[] = [];
   private lastEvent = 0;
@@ -365,9 +368,13 @@ export class ChampionshipRenderer {
   }
   private resize() {
     const { width, height } = this.canvas.getBoundingClientRect();
+    this.viewport = { width: Math.max(1, width), height: Math.max(1, height) };
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / Math.max(height, 1);
     this.camera.updateProjectionMatrix();
+  }
+  setResultsPanel(bounds: ScreenRect | null) {
+    this.resultsPanel = bounds;
   }
   async load() {
     const timber = new THREE.TextureLoader().loadAsync("/assets/environment/weathered-timber-v1.webp").then((texture) => {
@@ -526,17 +533,52 @@ export class ChampionshipRenderer {
         group.add(ring);
       }
     } else {
+      const ward = new THREE.Group();
+      ward.name = "ward";
       const shell = mesh(new THREE.CircleGeometry(0.9, 6), m, 0, 1.3, 0.65);
-      group.add(shell);
+      ward.add(shell);
       const rim = mesh(
         new THREE.TorusGeometry(0.91, 0.045, 4, 6),
-        new THREE.MeshBasicMaterial({ color: 0xffdf9e }),
+        new THREE.MeshBasicMaterial({ color: 0xffdf9e, transparent: true, depthWrite: false }),
         0,
         1.3,
         0.66,
       );
-      group.add(rim);
+      ward.add(rim);
+      group.add(ward);
+
+      // The braced hooves launch an elemental pulse; they do not pretend to
+      // physically reach the far edge of the special's contact volume.
+      const pulse = new THREE.Group();
+      pulse.name = "prism-pulse";
+      pulse.position.set(0, 1.4, 0.65);
+      const flare = new THREE.CylinderGeometry(0.72, 0.3, 1, 24, 1, true);
+      flare.rotateX(Math.PI / 2); flare.translate(0, 0, 0.5);
+      const colors = new Float32Array(flare.attributes.position.count * 3);
+      const hue = new THREE.Color();
+      for (let i = 0; i < flare.attributes.position.count; i++) {
+        const angle = Math.atan2(flare.attributes.position.getY(i), flare.attributes.position.getX(i));
+        hue.setHSL((angle / (2 * Math.PI) + 1) % 1, 0.65, 0.7);
+        hue.toArray(colors, i * 3);
+      }
+      flare.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      pulse.add(mesh(flare, new THREE.MeshBasicMaterial({
+        vertexColors: true, transparent: true, opacity: 0.3,
+        blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide,
+      })));
+      pulse.add(mesh(new THREE.TorusGeometry(0.72, 0.035, 5, 24), new THREE.MeshBasicMaterial({
+        color: 0xe6bcff, transparent: true, opacity: 0.8, depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }), 0, 0, 1));
+      pulse.visible = false;
+      group.add(pulse);
     }
+    group.traverse((object) => {
+      if (object instanceof THREE.Mesh) {
+        object.castShadow = false;
+        object.receiveShadow = false;
+      }
+    });
     group.visible = false;
     return group;
   }
@@ -558,6 +600,7 @@ export class ChampionshipRenderer {
       "transform",
       "attack",
       "special",
+      "guard",
       "hit",
       "defeat",
       "celebrate",
@@ -964,6 +1007,8 @@ export class ChampionshipRenderer {
   ) {
     if (this.disposed || this.preparing) return;
     const phase = match?.phase ?? "select";
+    if (phase !== "results" && this.camera.view?.enabled) this.camera.clearViewOffset();
+    const sceneCut = sceneForPhase(phase) !== sceneForPhase(this.previousPhase);
     if (!match || match.tick < this.previousTick) this.lastEvent = 0;
     this.previousTick = match?.tick ?? -1;
     if (phase !== this.previousPhase) {
@@ -1098,13 +1143,23 @@ export class ChampionshipRenderer {
             if (part.name === "wave") {
               // The howl occupies its full adjudicated reach on the active
               // frame. The small muzzle rings beforehand read as anticipation.
-              const active = isRace || p!.actionTime >= timing.windup;
+              const active = isRace || p!.actionTime + 1e-8 >= timing.windup;
               part.position.z = active
                 ? 0.7 + (timing.reach - 0.7) * (j / 2)
                 : 0.45 + j * 0.12;
               part.scale.setScalar(active ? 0.7 + j * 0.22 : 0.35 + power * 0.25);
             } else if (part.name === "flame") {
               part.scale.y = 0.7 + Math.sin(time * 35 + j) * 0.3;
+            } else if (part.name === "prism-pulse") {
+              part.visible = isFight && p!.actionTime + 1e-8 >= timing.windup && p!.actionTime < timing.windup + timing.active;
+              part.scale.z = timing.reach - 1;
+            } else if (part.name === "ward") {
+              const elapsed = p!.actionTime;
+              // .08–.52 s is the simulation's frontal protection window.
+              const strength = isRace ? 1 : elapsed < 0.08 ? 0.2 : elapsed <= 0.52 ? 1 : Math.max(0, 1 - (elapsed - 0.52) / 0.12);
+              part.children.forEach((piece, index) => {
+                if (piece instanceof THREE.Mesh) (piece.material as THREE.MeshBasicMaterial).opacity = strength * (index === 0 ? 0.28 : 0.85);
+              });
             }
           });
         }
@@ -1125,11 +1180,10 @@ export class ChampionshipRenderer {
       this.sun.position.set(curve(z) - 17, 28, z + 10);
       this.sun.target.position.set(curve(z), 0, z + 5);
     } else if (isFight && match) {
-      const mid = (match.players[0].x + match.players[1].x) / 2,
-        dist = Math.abs(match.players[1].x - match.players[0].x);
-      this.cameraTarget.set(mid * 0.3, 3.1, Math.max(10.2, 8 + dist * 0.5));
-      this.target.set(mid * 0.4, 1.3, 0);
-      this.camera.fov = 46;
+      const frame = combatFraming(match.players[0], match.players[1], this.camera.aspect);
+      this.cameraTarget.set(frame.x, frame.y, frame.z);
+      this.target.set(frame.x, frame.lookY, 0);
+      this.camera.fov = frame.fov;
       this.sun.position.set(-7, 10, 5);
       this.sun.target.position.set(0, 0, -2);
     } else {
@@ -1140,6 +1194,13 @@ export class ChampionshipRenderer {
       );
       this.target.set(0, 1.3, 0);
       this.camera.fov = 40;
+      if (phase === "results") {
+        const { width, height } = this.viewport;
+        const frame = resultsFraming(width, height, this.resultsPanel, match?.result?.winner === null);
+        this.cameraTarget.set(frame.position.x, frame.position.y, frame.position.z);
+        this.target.set(frame.focus.x, frame.focus.y, frame.focus.z);
+        this.camera.setViewOffset(width, height, frame.offsetX, frame.offsetY, width, height);
+      }
       this.sun.position.set(-8, 16, 8);
       this.sun.target.position.set(0, 1, 0);
       const progress = Math.min(1, Math.max(0, (this.phaseAge - 2.5) / 0.35));
@@ -1154,7 +1215,9 @@ export class ChampionshipRenderer {
       this.trophy.rotation.y = tie ? 0 : -0.12;
     }
     this.camera.position.lerp(this.cameraTarget, 1 - Math.exp(-delta * 5));
-    if (!this.framesSeen) this.camera.position.copy(this.cameraTarget);
+    // These stages occupy separate worlds. Easing from the finish line at500m
+    // showed empty space before the saloon; only movement within a stage eases.
+    if (!this.framesSeen || sceneCut) this.camera.position.copy(this.cameraTarget);
     this.camera.lookAt(this.target);
     this.camera.updateProjectionMatrix();
     const events = match?.events ?? [];

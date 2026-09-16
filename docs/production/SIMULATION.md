@@ -17,16 +17,16 @@ The host owns a fixed-step accumulator and calls `stepMatch(match, [left, right]
 
 ## Combat that the renderer must represent
 
-Both characters move at 3.6m/s, 1.45m/s while guarding and 2.6m/s in the air. The arena is ±4.4m. Grounded bodies maintain 0.85m separation; sufficiently high airborne movement can cross. Idle/moving fighters face their rival. Attack direction is committed at startup. A hit requires the defender to be in front, within the move's horizontal reach and within 0.9m vertically. A move contacts at most once. Apply the same distances to visible limbs/effects; a clip that does not reach the authoritative contact is a rendering defect.
+Both characters move at 3.6m/s, 1.45m/s while guarding and 2.6m/s in the air. The arena is ±4.4m. Grounded bodies maintain 1.75m separation; the pair center is clamped to ±3.525m to keep both roots inside the arena; sufficiently high airborne movement can cross. Idle/moving fighters face their rival using beginning-of-step positions shared by both decisions. Exact-X ties retain prior facing. Attack direction is committed at startup. An exact-X landing uses prior opposing orientation, or the higher fighter’s orientation when headings agree, to preserve the side choice under slot swaps and spatial reflection. A hit requires the defender to be in front, within the move's horizontal reach and within 0.9m vertically. A move contacts at most once. Apply the same distances to visible limbs/effects; a clip that does not reach the authoritative contact is a rendering defect.
 
 | Move | Startup | Active | Recovery | Reach | Damage | Hitstun | Counterplay |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Common strike | .18s | .10s | .29s | 1.50m | 11 | .20s | Guard, jump or force a whiff |
-| Lion: Ember rush | .32s | .14s | .48s | 1.75m | 18 | .24s | Read startup; guard or evade the committed lunge |
+| Common strike | .18s | .10s | .29s | 1.85m | 11 | .20s | Guard, jump or force a whiff |
+| Lion: Ember rush | .32s | .14s | .48s | 2.10m | 18 | .24s | Read startup; guard or evade the committed lunge |
 | Wolf: Frost howl | .43s | .16s | .55s | 2.75m | 14 | .27s | Long startup/recovery; close the gap after a miss |
-| Unicorn: Prism ward | .40s | .12s | .43s | 1.65m | 13 | .21s | Bait its short range; attack after protection ends |
+| Unicorn: Prism ward | .40s | .12s | .43s | 1.95m | 13 | .21s | Bait its short range; attack after protection ends |
 
-All specials cost 40 energy and have a 3.2-second cooldown. Lion advances at 7m/s during its active window; it does not teleport. Wolf's longer hit region requires a visible water/ice wave within that reach. Unicorn's forward ward lasts from .08 to .52 seconds of its special and absorbs incoming frontal hits. Its damaging animation is a hoof strike. The ward cannot reflect damage or generate points.
+All specials cost 40 energy and have a 3.2-second cooldown. Lion advances at 7m/s during its active window; it does not teleport. Wolf's longer hit region requires a visible water/ice wave within that reach. Unicorn's forward ward lasts from .08 to .52 seconds of its special and absorbs incoming frontal hits. The special provides frontal protection followed by a short prism pulse: its visible damage pulse spans the 1.95m reach only during the .40–.52s active window. The normal attack remains a hoof strike. The ward cannot reflect damage or generate points.
 
 Held frontal guard reduces a contact to 1 health damage and drains 2.2 times the move's base damage from guard. An intact guard does not regenerate while held; after release and a .6-second contact recovery, it regenerates at 18/second. Depletion causes .38 seconds of guard-break hitstun and latches `guardBroken` until at least 25 meter is rebuilt. Recovery takes about 1.98 seconds without further pressure; incoming hitstun may delay it. During that interval the competitor can move and use ordinary actions after hitstun, but cannot block with a fractional reserve. Holding the guard button automatically resumes guarding once the reserve returns, without requiring a repeated press. An unguarded contact gives .52 seconds of invulnerability; a guard break gives .62. These exceed the corresponding stun, guaranteeing a protected actionable escape window, while ending before the depleted guard can re-arm. No move applies a freezing lock beyond these bounded stun times. Effects must convey brief frost impact without implying an unavailable long freeze mechanic.
 
@@ -62,7 +62,7 @@ Reducing your finish time, increasing DNF progress or preserving more health can
 
 ## CPU and serializable state
 
-CPU makes decisions every 12 ticks (200 milliseconds) using deterministic seeded choice. It sees race hazards at most 14m ahead, jumps jumpable hazards in its current lane when 1–5m away, steers around arches, and sometimes boosts in clear space. In combat it approaches normal strike range, sometimes guards readable threats when its own guard is usable, and occasionally jumps. Its explicit beginner assists are a 1.5-second opening without CPU attacks and at least 1.2 seconds between subsequent CPU attack attempts. If hitstun or defense blocks a ready opportunity, it retries at the next 200ms decision rather than losing an entire interval. This avoids synchronizing every opportunity with an opponent's repeated attack rhythm. Movement and defense remain active during the opening. These are openly specified behavior limits; the CPU uses the exact same input path, move startup/recovery, damage, energy, cooldowns, health, range, gravity and speed as a person. It receives no hidden stat bonus, damage reduction, invulnerability or instant extra move. Difficulty/enjoyment still needs human playtesting.
+CPU makes decisions every 12 ticks (200 milliseconds) using deterministic seeded choice. It sees race hazards at most 14m ahead, jumps jumpable hazards in its current lane when 1–5m away, steers around arches, and sometimes boosts in clear space. In combat it pursues until 1.80m separation and attempts a normal strike within 1.82m (against the same 1.85m reach as a human), sometimes guards readable threats when its own guard is usable, and occasionally jumps. Its explicit beginner assists are a 1.5-second opening without CPU attacks and at least 1.2 seconds between subsequent CPU attack attempts. If hitstun or defense blocks a ready opportunity, it retries at the next 200ms decision rather than losing an entire interval. This avoids synchronizing every opportunity with an opponent's repeated attack rhythm. Movement and defense remain active during the opening. These are openly specified behavior limits; the CPU uses the exact same input path, move startup/recovery, damage, energy, cooldowns, health, range, gravity and speed as a person. It receives no hidden stat bonus, damage reduction, invulnerability or instant extra move. Difficulty/enjoyment still needs human playtesting.
 
 `cpuInput` mutates only the player's cached AI decision, next decision tick and next eligible attack tick. Call it once per CPU slot before each host simulation step. Complete matches resume exactly from JSON serialization because the seed, AI cache, input edge latches, buffers, phase counters, obstacle history and contact latches are all in `Match`.
 
@@ -75,7 +75,7 @@ Additional state beyond the original shared interface:
 
 ## Verification and remaining integration evidence
 
-The leaf test suite has 35 passing tests covering scoring monotonicity and symmetry, close/decisive split wins, exact ties, double knockout, timeout, DNF preservation, disconnects, race collision/clearance/recovery, an airborne early finisher settling, both outer lanes requiring steering, timing and sanitization, simultaneous contact, guard break, a protected escape window, buffered controls, special counterplay, bounded event memory and deterministic JSON replay. Added adversarial fixtures verify that sustained pressure deals full damage through depleted guard, holding can re-arm after recovery, CPU opening/attack spacing is respected, and active ordinary strikes can beat the beginner rival while still receiving counterattacks. It runs all nine ordered character matchups over three seeds through complete CPU championships; each observed race finishes under 80 seconds without a DNF and every fight produces damage.
+The leaf test suite has 40 passing tests covering scoring monotonicity and symmetry, close/decisive split wins, exact ties, double knockout, timeout, DNF preservation, disconnects, race collision/clearance/recovery, an airborne early finisher settling, both outer lanes requiring steering, timing and sanitization, simultaneous contact, guard break, a protected escape window, buffered controls, special counterplay, bounded event memory and deterministic JSON replay. Added adversarial fixtures verify that sustained pressure deals full damage through depleted guard, holding can re-arm after recovery, CPU opening/attack spacing is respected, and active ordinary strikes can beat the beginner rival while still receiving counterattacks. It runs all nine ordered character matchups over three seeds through complete CPU championships; each observed race finishes under 80 seconds without a DNF and every fight produces damage.
 
 Run `npx vitest run src/championship/simulation.test.ts`. This is functional rules evidence. It does not establish contact/animation agreement, enjoyable controls, visible telegraphs, latency tolerance, online two-device delivery, all normal-control matchups, or physical iPhone frame rate. Those belong to the root integration/playtest gates and remain open until observed.
 
@@ -130,11 +130,11 @@ The source SHA-256 for these measurements was `08460daff15c5752cb6ab8b02337f3d56
 
 ### Reproduce the decisive audit cases
 
-Run the following Node program from the repository root. It reads/transpiles the simulation in memory, does not write production files, and uses only ordinary controls after initial scenario setup. Policy names map to `repeat`, `guardCounter`, `spacing`, `jump` (the strengthened version), `whiff`, and `balanced`. Period 6 means 100ms, 12 means 200ms, and 0 selects the bounded jitter schedule. The `swap` flag moves the initial decision offset from slot 1 to slot 0; callers explicitly swap policy/species arrays for a true mirrored-role check.
+Run the following Node program from the repository root. It reads the historical `4ed5042` simulation from local Git and transpiles it in memory, does not write production files, and uses only ordinary controls after initial scenario setup. Policy names map to `repeat`, `guardCounter`, `spacing`, `jump` (the strengthened version), `whiff`, and `balanced`. Period 6 means 100ms, 12 means 200ms, and 0 selects the bounded jitter schedule. The `swap` flag moves the initial decision offset from slot 1 to slot 0; callers explicitly swap policy/species arrays for a true mirrored-role check.
 
 ```js
 const fs=require('node:fs'),ts=require('typescript'),crypto=require('node:crypto');
-const source=fs.readFileSync('src/championship/simulation.ts','utf8');
+const source=require('node:child_process').execFileSync('git',['show','4ed5042:src/championship/simulation.ts'],{encoding:'utf8'});
 const mod={exports:{}};new Function('module','exports',ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports);const s=mod.exports;
 const clamp=(v)=>Math.max(-1,Math.min(1,v));
 const attackFor=p=>p.action==='attack'?s.ATTACKS.attack:p.action==='special'?s.ATTACKS[p.character]:null;
@@ -213,4 +213,139 @@ const fixtures = [
 ];
 console.log('source-sha256', crypto.createHash('sha256').update(source).digest('hex'));
 for (const fixture of fixtures) console.log(JSON.stringify(run(...fixture)));
+```
+
+
+## Historical Cycle6 contact investigation and role-symmetry repair
+
+This investigation began at `f5cd5e6`. At the end of this investigation contact geometry was **unadopted**: the simulation still had 0.85m separation and its original move reaches/CPU spacing. The later integration below supersedes that state. The separate confirmed role-symmetry defect below was repaired with authorization. Final repaired source SHA-256: `3b016d1978db2a2e7dd6a61002ae7078d8f4413aaa5035b62a6c679329d54306`.
+
+A legal Lion jump-pressure versus Lion mixed-policy fixture exposed sequential-facing bias. Starting 2.2m apart with 100ms decisions and the mixed policy offset by three ticks, slot 0's jumper lost with the rival at 55HP after 10.15s. Reversing both roles and spatial directions instead left the rival at 45HP after 9.75s: a 2.5-point fight-pool discrepancy. On frame31, a Lion lunge crossed the airborne jumper while the jumper started a strike; the second slot saw an already-moved rival and committed the opposite facing. Taking both X coordinates before processing either fighter restores mirrored results: 55HP and 10.15s in both roles. Existing strikes retain their original committed facing, and idle auto-facing resumes after recovery, so airborne cross-up counterplay remains available.
+
+The related exact-X landing rule also assigned slot0 the left side. A descending fighter beginning at y=.7 and shared X crossed into the body exclusion band on the next gravity step, producing a .85m position error under reflection/slot swap. Its tie fallback now uses prior opposing orientation, or the higher fighter's orientation when both headings agree. Three regression tests cover the legal jump/lunge input trace, preserved facing at exact-X attack startup, and landing reflection/slot swaps with opposing and matching headings. Each regression failed against its defective predecessor. All38 simulation tests and file-level ESLint pass. This does not claim that arbitrarily injected fully identical overlapping body states have a unique physical ordering.
+
+### Temporary geometry recommendation
+
+Recommend a rendered experiment with **1.75m** separation, normal reach1.90m, Lion2.10m, Unicorn1.95m, Wolf2.75m, CPU pursuit threshold1.80m and normal-attack trigger1.85m. Collision half-spacing must be .875m and its center clamp must be ±3.525m, retaining individual arena bounds ±4.4m. Keeping the old center clamp pushes a corner fighter to4.43m on the first forward step; the audit's bounds oracle correctly rejects that negative control. Keeping the old CPU attack trigger1.45m would make normal attacks impossible at the proposed body spacing. The unused-on-ground close retreat threshold .95m can remain unchanged; it still applies to close airborne cross-ups. All move timing, damage, energy, guard, score and beginner CPU pacing remain unchanged in these copies.
+
+The isolated asset candidate's actual skinned GLB measurements in `assets/source/western/contact-v2/contact-comparison.json` put the normal-contact head maxima at Lion.647m, Wolf.769m and Unicorn.811m. The largest two-head envelope leaves about .078m at1.70 separation or .128m at1.75; this motivates the extra .05m. It does **not** establish a mesh intersection or a strike contact. Idle head maxima are .562/.670/.730m, guard .597/.710/.763m, and measured special poses .688/.653/.743m. Region bounds include vertices with at least50% influence from the named bones; normal contact was swept at120Hz over .18–.28s. Unicorn's paw is lower than the other strikes, at Y1.207–1.458m, so adding forward head/paw extrema overstates what can be concluded about actual contact. Its special paw reaches only .849m: adopting the proposed1.95m range needs the root's proposed visible short prism pulse during the active window, rather than a claim that this hoof pose reaches the opponent. At this historical checkpoint the canonical move description was unchanged pending integration.
+
+### Bounded comparison
+
+Each geometry ran1,728 legal-input policy matches across all9 ordered species pairings, both policy roles, starting gaps1.8/2.2/3.5/6m and three decision schedules (100ms,+3ticks;200ms,+7ticks;83–200ms deterministic jitter,+4ticks). Approach/strike thresholds were adjusted relative to each copy's normal reach, so widening the bodies did not disable the audit's own attacks. The same policies from the earlier audit were used; no state was changed after scenario setup. Each geometry also ran288 exact mirrored-role pairs,108 center/left-wall/right-wall policy scenarios, and27 fight-only CPU scenarios (idle player, repeat-strike player and CPU/CPU across9 matchups).
+
+| First policy / opponent | Original geometry, wins/ties/losses | 1.70m candidate | 1.75m candidate |
+|---|---:|---:|---:|
+| Repeat / guard-counter |9/0/207|9/0/207|0/0/216|
+| Repeat / whiff-punish |45/0/171|105/6/105|99/0/117|
+| Repeat / spaced special |216/0/0|216/0/0|216/0/0|
+| Jump / repeat |36/0/180|54/0/162|90/18/108|
+| Jump / guard-counter |18/0/198|27/0/189|27/0/189|
+| Jump / spaced special |216/0/0|216/0/0|216/0/0|
+| Guard-counter / mixed |99/9/108|90/0/126|144/0/72|
+| Jump / mixed |9/0/207|18/0/198|18/0/198|
+
+Both candidates retain concrete answers to repeated strike, jump pressure, spaced specials and guard-counter; these aggregate scripted outcomes are not player balance rankings. After the facing repair, all288 mirrored pairs per geometry had reversed health and identical duration. Every checked near-ground separation and arena bound held within1e-9m; maximum continuous stun remained23ticks (.383s). Idle versus CPU ended at10.35–11.40s with original geometry and10.35–11.85s with either candidate. All these fight-only fixtures kept the1.5s opening grace and at least1.2s between CPU attack starts. Active repeat strikes beat Lion/Wolf CPU while receiving retaliation, and lost narrowly to Unicorn in this particular cadence; this is evidence of ordinary counterplay, not universal ease. A separate27 full CPU championships per geometry (9 pairings×seeds1/47/2026) all finished, no DNF, with damage: maximum race59.683s and fights11.4–16.2s in all copies.
+
+The data support the stated candidate for a visual experiment. They do not certify human fun, touch usability, exact mesh contact, all possible strategies, or special-effect agreement. Source/attachment and normal-control rendered review remain required before adopting the contact geometry.
+
+## Adopted Cycle6 contact geometry
+
+Root accepted the v2b attachment/pose review and 1.75m body spacing after viewing all nine ordered runtime pairings. A subsequent boundary-pose review found a small gap at the beginning of Unicorn's common strike at1.90m, so the final common reach is **1.85m** and the CPU's strike trigger is **1.82m**. Pursuit remains1.80m, and Lion/Wolf/Unicorn special reaches are2.10/2.75/1.95m. The center clamp is±3.525m with .875m half-spacing. This supersedes the temporary1.90m recommendation above. Startup, active and recovery durations, damage, guard, energy, movement, beginner CPU pacing and scoring are unchanged. Unicorn's shared character description now specifies frontal protection followed by a short prism pulse; its normal attack remains a hoof strike.
+
+Final adopted source SHA-256: `63239026494e2e3bf2b53e6988df294f75f3afa25458978537c4bd431f6d925b`. The final current-source audit runs1,728 policy matches across all9 ordered matchups, both roles and all four starting gaps,288 mirrored pairs,108 center/wall scenarios,27 fight-only CPU scenarios and27 complete CPU championships. All bounds and symmetry checks pass; every CPU championship finishes without DNF and produces combat damage. Race maximum is59.683s; full-CPU fights span11.4–16.2s. Idle fight-only CPU KOs remain10.35–11.85s; the existing full-flow Unicorn/Lion seed6827 fixture remains10.20s. All preserve the1.5s opening grace and1.2s minimum CPU attack interval.
+
+| First policy / opponent | Final1.85m reach wins / ties / losses |
+|---|---:|
+| Repeat / guard-counter |0 / 0 / 216|
+| Repeat / whiff-punish |108 / 0 / 108|
+| Repeat / spaced special |216 / 0 / 0|
+| Jump / repeat |72 / 18 / 126|
+| Jump / guard-counter |27 / 0 / 189|
+| Jump / spaced special |216 / 0 / 0|
+| Guard-counter / mixed |138 / 0 / 78|
+| Jump / mixed |24 / 0 / 192|
+
+Maximum continuous stun remains23ticks. The conservative range therefore retains the exercised counters without altering combat timings. The audit's jump approach threshold stays inside its own strike threshold to avoid an artificial gap that could make a scripted jumper stop moving before it can strike. These results still do not establish human enjoyment or universal optimal play.
+
+All40 tests pass, including the preserved role-symmetry regressions and two new tests that check just-inside/just-outside attack/special reach for every matchup and role, plus sustained arena-edge pressure. Existing close-combat setup uses legal1.75m spacing. The broken-guard regression now uses ordinary forward input to close the small block pushback before its second strike; its damage/recovery assertions are unchanged. Both the historical4ed5042 program and this current-source reproducer remain runnable; historical results are not silently attributed to the new rules.
+
+### Current reproducer and historical geometry comparison
+
+Run this CommonJS program from the repository root (for example save it to a temporary `.cjs` file). It reuses the preceding policy functions, reads the current canonical source and defaults to the adopted geometry without source patches. Named comparison profiles change source copies in memory using move-specific numeric patterns, so they do not depend on obsolete literal reach values. `build`, `setup`, `check` and `audit` are exported for targeted follow-up fixtures. The program includes the 1,728-match matrix, mirror checks, wall scenarios, fight-only CPU fixtures and 27 full CPU championships. It rejects missing counters, mirrored outcome differences, broken bounds and incomplete championships. Geometry copies are not written to the repository.
+
+```js
+const fs=require('node:fs'), ts=require(process.cwd()+'/node_modules/typescript'),crypto=require('node:crypto');
+const canonical=fs.readFileSync('src/championship/simulation.ts','utf8');
+const doc=fs.readFileSync('docs/production/SIMULATION.md','utf8');
+const original=[...doc.matchAll(/^```js\n([\s\S]*?)^```$/gm)][0][1].split('const fixtures = [')[0];
+function build(name='current'){
+ const profiles={originalGeometry:{min:.85,normal:1.5,lion:1.75,unicorn:1.65,pursuit:1.25,trigger:1.45},spacing1_70:{min:1.7,normal:1.9,lion:2.1,unicorn:1.95,pursuit:1.8,trigger:1.85},previous1_90:{min:1.75,normal:1.9,lion:2.1,unicorn:1.95,pursuit:1.8,trigger:1.85}};
+ if(name!=='current'&&!profiles[name])throw new Error('Unknown geometry '+name);
+ const profile=profiles[name],min=profile?.min??1.75;let source=canonical;
+ const replace=(pattern,replacement)=>{if(!pattern.test(source))throw new Error('Missing pattern '+pattern);source=source.replace(pattern,replacement);};
+ if(profile){
+  for(const [move,reach]of Object.entries({attack:profile.normal,lion:profile.lion,unicorn:profile.unicorn}))replace(new RegExp('(^  '+move+': \\{[^\\n]*?reach: )[\\d.]+','m'),(_,prefix)=>prefix+reach);
+  replace(/initialOrder < [\d.]+/,'initialOrder < '+min);
+  replace(/const center = clamp\(\(match.players\[0\].x \+ match.players\[1\].x\) \/ 2, -[\d.]+, [\d.]+\);/,`const center = clamp((match.players[0].x + match.players[1].x) / 2, ${-(4.4-min/2)}, ${4.4-min/2});`);
+  replace(/center - [\d.]+ \* initialOrder; match.players\[1\].x = center \+ [\d.]+ \* initialOrder/,`center - ${min/2} * initialOrder; match.players[1].x = center + ${min/2} * initialOrder`);
+  replace(/input.move = distance > [\d.]+ \? toward/,'input.move = distance > '+profile.pursuit+' ? toward');
+  replace(/input.attack = !input.special && distance <= [\d.]+;/,'input.attack = !input.special && distance <= '+profile.trigger+';');
+ }
+ let harness=original.slice(original.indexOf('const clamp='));
+ harness=harness.replaceAll('distance<=1.45','distance<=s.ATTACKS.attack.reach-.05')
+ .replaceAll('distance>1.65','distance>s.ATTACKS.attack.reach+.15').replaceAll('distance<1.48','distance<s.ATTACKS.attack.reach-.02')
+ .replaceAll('distance>1.2','distance>s.ATTACKS.attack.reach-.3').replaceAll('distance>1.5','distance>s.ATTACKS.attack.reach')
+ .replaceAll('distance>1.08','distance>s.ATTACKS.attack.reach-.42').replaceAll('distance>1.1','distance>s.ATTACKS.attack.reach-.4')
+ .replaceAll("p.character==='lion'?1.95:1.4","p.character==='lion'?s.ATTACKS.lion.reach+.2:s.ATTACKS.unicorn.reach-.25")
+ .replaceAll('distance>.92','distance>Math.min(min+.07,s.ATTACKS.attack.reach-.06)');
+ const mod={exports:{}};new Function('module','exports',ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports);
+ const s=mod.exports;
+ const {policy,run}=new Function('s','min',harness+';return {policy,run};')(s,min);
+ return {s,policy,run,source,min,name};
+}
+function setup(s,chars,gap,center=0){const m=s.createMatch(chars,6827);m.phase='fight';m.players.forEach((p,i)=>{p.x=center+(i?1:-1)*gap/2;p.z=0;p.action='fight_idle';p.raceStatus='finished';p.finishTime=70;p.raceProgress=s.COURSE_LENGTH;});return m;}
+function check(m,min,out){
+ for(const p of m.players)if(!Number.isFinite(p.x)||Math.abs(p.x)>4.4+1e-9||!Number.isFinite(p.hp)||p.hp<0||p.hp>100)throw new Error('Bounds '+JSON.stringify(m.players));
+ if(Math.abs(m.players[0].y-m.players[1].y)<.7&&Math.abs(m.players[0].x-m.players[1].x)<min-1e-9)throw new Error('Separation '+JSON.stringify(m.players));
+ out.minGap=Math.min(out.minGap,...Math.abs(m.players[0].y-m.players[1].y)<.7?[Math.abs(m.players[0].x-m.players[1].x)]:[]);
+}
+const species=['lion','wolf','unicorn'], pairs=[['repeat','guardCounter'],['repeat','whiff'],['repeat','spacing'],['jump','repeat'],['jump','guardCounter'],['jump','spacing'],['guardCounter','balanced'],['jump','balanced']];
+function audit(v){
+ const result={name:v.name,sourceHash:crypto.createHash('sha256').update(v.source).digest('hex'),matches:0,counts:{},minGap:Infinity,maxStun:0,mirrorPairs:0,mirrorMismatches:[],cpu:{idle:[],repeat:[],full:[]},edgeCases:0};
+ const {s,run,policy,min}=v;
+ for(const a of species)for(const b of species)for(const gap of [1.8,2.2,3.5,6])for(const timing of [[6,3],[12,7],[0,4]])for(const kinds of pairs)for(const swap of [false,true]){
+  const r=run([a,b],swap?[...kinds].reverse():kinds,gap,...timing,swap); const subject=swap?1:0;
+  const key=kinds.join('/'),count=result.counts[key]??=[0,0,0];count[r.winner===null?1:r.winner===subject?0:2]++;result.matches++;
+  result.maxStun=Math.max(result.maxStun,...r.maxStun);
+ }
+ for(const a of species)for(const b of species)for(const gap of [1.8,2.2,3.5,6])for(const kinds of pairs){
+  const p=run([a,b],kinds,gap,6,3,false),q=run([b,a],[...kinds].reverse(),gap,6,3,true);
+  if(p.hp[0]!==q.hp[1]||p.hp[1]!==q.hp[0]||p.time!==q.time)result.mirrorMismatches.push({p,q});result.mirrorPairs++;
+ }
+ for(const a of species)for(const b of species)for(const side of [-1,0,1])for(const kind of ['repeat','guardCounter','jump','spacing']){
+  const m=setup(s,[a,b],min,side*(4.4-min/2));const controls=[policy(kind,0,6,0),policy('balanced',1,6,3)];
+  while(m.phase==='fight'){s.stepMatch(m,controls.map(f=>f(m)),s.FIXED_DT);check(m,min,result);}result.edgeCases++;
+ }
+ for(const a of species)for(const b of species)for(const mode of ['idle','repeat','full']){
+  const m=setup(s,[a,b],3.5),human=policy('repeat',0,6,0);let last=0,attacks=[0,0],first=null,minAttackGap=Infinity,lastAttack=[null,null];
+  while(m.phase==='fight'){
+   const inputs=[mode==='full'?s.cpuInput(m,0):mode==='repeat'?human(m):s.neutralInput(),s.cpuInput(m,1)];s.stepMatch(m,inputs,s.FIXED_DT);check(m,min,result);
+   for(const e of m.events.filter(e=>e.id>last)){if((e.type==='attack'||e.type==='special')&&e.slot>=0){attacks[e.slot]++;if(e.slot===1&&first===null)first=m.fightTime;if(lastAttack[e.slot]!==null&& (mode==='full'||e.slot===1))minAttackGap=Math.min(minAttackGap,m.fightTime-lastAttack[e.slot]);lastAttack[e.slot]=m.fightTime;}last=e.id;}
+  }
+  if(first<1.5-1e-9||minAttackGap<1.2-1e-9)throw new Error('CPU pacing changed');
+  result.cpu[mode].push({a,b,hp:m.players.map(p=>p.hp),time:+m.fightTime.toFixed(3),attacks,first:+first.toFixed(3),minAttackGap:+minAttackGap.toFixed(3)});
+ }
+ if(result.mirrorMismatches.length)throw new Error('Mirrored role outcome differs');
+ for(const [pair,index]of [['repeat/guardCounter',2],['repeat/spacing',0],['jump/guardCounter',2],['guardCounter/balanced',2]])if(result.counts[pair][index]===0)throw new Error('Missing exercised counter '+pair);
+ result.championships={count:0,maxRace:0,minFight:60,maxFight:0};
+ for(const a of species)for(const b of species)for(const seed of [1,47,2026]){
+  const m=s.createMatch([a,b],seed);for(let tick=0;tick<10000&&m.phase!=='results';tick++){s.stepMatch(m,[s.cpuInput(m,0),s.cpuInput(m,1)],s.FIXED_DT);if(m.phase==='fight')check(m,min,result);}
+  if(m.phase!=='results'||m.players.some(p=>p.raceStatus!=='finished')||m.players.every(p=>p.hp===100))throw new Error('Incomplete CPU championship');
+  const c=result.championships;c.count++;c.maxRace=Math.max(c.maxRace,m.raceTime);c.minFight=Math.min(c.minFight,m.fightTime);c.maxFight=Math.max(c.maxFight,m.fightTime);
+ }
+ return result;
+}
+if(require.main===module){for(const name of ['current','previous1_90','originalGeometry'])console.log(JSON.stringify(audit(build(name))));}
+module.exports={build,setup,check,audit};
 ```

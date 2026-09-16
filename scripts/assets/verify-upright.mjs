@@ -6,7 +6,7 @@ import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {AnimationMixer,Box3,LoopOnce,Vector3} from 'three';
 globalThis.self=globalThis;
 globalThis.createImageBitmap=async()=>({width:256,height:256,close(){}});
-const root=new URL('../../',import.meta.url), out=new URL('assets/source/western/upright-v1/',root);
+const root=new URL('../../',import.meta.url), out=new URL('assets/source/western/upright-v2/',root);
 const names=['transform','fight_idle','fight_move','attack','special','guard','hit','defeat','celebrate','jump','land'];
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const report={scope:'Geometry-only texture stub; 41 actual skinned-bound evaluations per clip. These checks do not establish visual anatomy, absence of local intersections, or cinematic acceptance.',species:{}};

@@ -82,6 +82,7 @@ export default function Championship() {
     [interrupted, setInterrupted] = useState(false),
     [rematchWaiting, setRematchWaiting] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null),
+    resultsPanel = useRef<HTMLElement>(null),
     renderer = useRef<ChampionshipRenderer | null>(null),
     audio = useRef<ChampionshipAudio | null>(null),
     network = useRef<ChampionshipNetwork | null>(null),
@@ -124,6 +125,28 @@ export default function Championship() {
     setScreen(s);
   }, []);
   const localSlot = mode === "guest" ? 1 : 0;
+  useEffect(() => {
+    const panel = resultsPanel.current, surface = canvas.current;
+    if (screen !== "play" || view?.phase !== "results" || !panel || !surface) {
+      renderer.current?.setResultsPanel(null);
+      return;
+    }
+    const measure = () => {
+      const card = panel.getBoundingClientRect(), stage = surface.getBoundingClientRect();
+      renderer.current?.setResultsPanel({
+        left: card.left - stage.left, top: card.top - stage.top,
+        width: card.width, height: card.height,
+      });
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(panel); observer.observe(surface);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect(); window.removeEventListener("resize", measure);
+      renderer.current?.setResultsPanel(null);
+    };
+  }, [screen, view?.phase]);
   const begin = useCallback(
     (characters: [CharacterId, CharacterId], newEpoch: string) => {
       match.current = createMatch(characters, 6827);
@@ -1131,7 +1154,7 @@ export default function Championship() {
             </>
           )}
           {view.phase === "results" && view.result && (
-            <section className="results-panel">
+            <section className="results-panel" ref={resultsPanel}>
               <p className="eyebrow">THE DUST HAS SETTLED</p>
               <h2>
                 {view.result.winner === null

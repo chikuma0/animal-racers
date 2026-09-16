@@ -1,5 +1,5 @@
 /** Invite-only, host-authoritative game transport. No backend is loaded for solo play. */
-export const NETWORK_NAMESPACE = 'animal-racers-western-v1';
+export const NETWORK_NAMESPACE = 'animal-racers-western-v2';
 export const NETWORK_LIMITS = {
   messagesPerSecond: 12, directMessagesPerSecond: 36, maxBytes: 12_288, connectTimeoutMs: 6_000,
   roundTripSamples: 60, roundTripWindowMs: 120_000, roundTripTimeoutMs: 10_000,

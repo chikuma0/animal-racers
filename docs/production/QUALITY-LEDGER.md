@@ -82,3 +82,9 @@ Next concrete action: verify the results layout, preserve the cycle, then evalua
 ## Cycle7 environment
 
 [Actual paired captures and full replay](evidence/CYCLE-7-ENVIRONMENT.md) show improved storefront depth and road clearance. Same menu view adds1496triangles and reduces draws26→24 through material sharing. Code/build and geometry checks pass; no phone-performance or overall cinematic acceptance follows. An isolated Lion mane study remains rejected; root is assessing alternative mesh sources while networking timing review proceeds. Sharedpreview4ed5042 remains frozen.
+
+## Cycle8 networking and asset reassessment
+
+The current-source offline audit confirms rematch recovery after total countdown loss, monotonic presentation and deliberate expiry of stale input while fresh controls recover. Test suite/lint/build pass; [Cycle8](evidence/CYCLE-8-NETWORK.md) records exact build/source hashes and separates synthetic response from actual internet measurements. Slow fallback responsiveness, physical controls and owner acceptance remain open. Current normal-browser integration passed Lion-host/Unicorn-guest68.6/31.4, rematch and interrupted departure, with matching downloaded result objects and207.205s replay. Race/fight p95 remains90/60ms host and100/70ms guest under two clients plus recording/automation; physical-phone performance is not inferred.
+
+The isolated Lion hero study is rejected: three structural/provenance gates pass parent re-verification, while its visual/motion gate is abandoned for this approach because the repeated mane volumes remain below target. This does not abandon the required character-art outcome. Sources/rejected views/diagnosis are retained. A directly downloadable licensed Wolf anatomical source is undergoing an isolated mesh/material/deformation assessment. No research asset is promoted.

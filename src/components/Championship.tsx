@@ -242,15 +242,15 @@ export default function Championship() {
           connected.current = false;
         }
         while (accumulator >= 1 / 60) {
-          localReceiver.current.accept(inputSender.current.packet());
-          const local = localReceiver.current.tick();
+          localReceiver.current.accept(inputSender.current.packet(m.tick), m.tick);
+          const local = localReceiver.current.tick(m.tick);
           if (m.phase === "race") local.move *= -1;
           if (solo) stepMatch(m, [local, cpuInput(m, 1)], 1 / 60);
           else if (host && connected.current) {
             remoteInput.current =
               now - lastInput.current > 500
                 ? neutralInput()
-                : remoteReceiver.current.tick();
+                : remoteReceiver.current.tick(m.tick);
             const remote = { ...remoteInput.current };
             if (m.phase === "race") remote.move *= -1;
             stepMatch(m, [local, remote], 1 / 60);
@@ -301,7 +301,7 @@ export default function Championship() {
             net.send("input", {
               epoch: epoch.current,
               seq: ++localSeq.current,
-              packet: inputSender.current.packet(),
+              packet: inputSender.current.packet(match.current.tick),
               rematch: rematchPending.current,
             });
         }
@@ -343,7 +343,7 @@ export default function Championship() {
       input.current.attack = keys.has("j");
       input.current.special = keys.has("k");
       input.current.guard = keys.has("l") || keys.has("Shift");
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     };
     const keydown = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).matches("input,textarea")) return;
@@ -359,7 +359,7 @@ export default function Championship() {
     const clear = () => {
       keys.clear();
       input.current = neutralInput();
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     };
     const visibility = () => {
       clear();
@@ -494,9 +494,9 @@ export default function Championship() {
       ) {
         if (
           screenRef.current === "lobby" ||
-          (data.epoch !== epoch.current &&
-            rematchPending.current &&
-            data.match.phase === "countdown")
+          // All countdown packets may be lost. The admitted host's next valid
+          // epoch can already be racing when our requested rematch arrives.
+          (data.epoch !== epoch.current && rematchPending.current)
         ) {
           epoch.current = data.epoch;
           latestTick.current = -1;
@@ -533,7 +533,7 @@ export default function Championship() {
         isInputPacket(data.packet)
       ) {
         remoteSeq.current = data.seq as number;
-        remoteReceiver.current.accept(data.packet);
+        remoteReceiver.current.accept(data.packet, match.current?.tick ?? 0);
         peerRematch.current = data.rematch === true;
         lastInput.current = performance.now();
       }
@@ -580,19 +580,19 @@ export default function Championship() {
       e.preventDefault();
       e.currentTarget.setPointerCapture(e.pointerId);
       (input.current[key] as number | boolean) = value;
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     },
     onPointerUp: () => {
       (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     },
     onPointerCancel: () => {
       (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     },
     onLostPointerCapture: () => {
       (input.current[key] as number | boolean) = key === "move" ? 0 : false;
-      inputSender.current.update(input.current);
+      inputSender.current.update(input.current, match.current?.tick ?? 0);
     },
   });
   const isRace = view?.phase === "race" || view?.phase === "countdown";

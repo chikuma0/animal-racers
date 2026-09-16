@@ -16,7 +16,7 @@ Input history retains at most two presses per button and each original authority
 
 ## Current offline evidence
 
-`node scripts/network/timing-audit.mjs` imports actual modules and actual AST-extracted component callbacks; only clock, sockets, native-peer primitives, React refs/setters and renderer sink are modeled. It makes no external requests. `timing-audit-current-result.json` binds harness and five actual source hashes and preserves extracted callbacks.
+`node scripts/network/timing-audit.mjs` imports actual modules and actual AST-extracted component callbacks; only clock, sockets, native-peer primitives, React refs/setters and renderer sink are modeled. It makes no external requests. `timing-audit-cycle-8-result.json` binds harness and five actual source hashes and preserves extracted callbacks.
 
 All six current schedules complete both full championships with matching results, including complete loss of rematch countdown. Every profile has zero measured race-backtracking frames, zero same-action clock rewinds, and zero guest canonical mutations. Histories/queues/envelopes and disconnect cleanup remain bounded. The one-second loss-burst tap is intentionally absent from authority; following fresh inputs work and both results converge.18 targeted input/presentation regressions pass, including timing boundary, future/malformed packet rejection, repeated input, phase/epoch reset and original rewind reproduction.
 

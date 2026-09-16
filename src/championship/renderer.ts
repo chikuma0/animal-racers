@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { FrameMeasurements } from "./measurements";
+import { WorkMeasurements } from "./work-measurements";
 import { ContactEffects } from "./impacts";
 import { combatFraming, resultsFraming, sceneForPhase, type ScreenRect } from "./framing";
 import {
@@ -18,6 +19,7 @@ import {
   OBSTACLES,
   RUN_SPEED,
   ATTACKS,
+  createMatch,
   type Match,
   type CharacterId,
 } from "./simulation";
@@ -280,6 +282,8 @@ export class ChampionshipRenderer {
   private particlePositions = new Float32Array(90 * 3);
   private frameTimes: number[] = [];
   private measurements = new FrameMeasurements();
+  private work = new WorkMeasurements();
+  private preparation = { elapsedMs: 0, frames: [] as { phase: string; z: number; submissionMs: number }[] };
   private environmentTarget: THREE.WebGLRenderTarget;
   private frameIndex = 0;
   private framesSeen = 0;
@@ -419,8 +423,50 @@ export class ChampionshipRenderer {
       }
     }
     if (this.disposed) return;
-    await this.setCharacters([this.selection, "wolf"]);
-    this.preparing = false;
+    // compileAsync prepares programs, but geometry/texture uploads and shadow
+    // draws still happen on first use. Pay representative first-draw costs
+    // before enabling play. Keep these timings separate from active gameplay.
+    const visibility = this.canvas.style.visibility;
+    this.canvas.style.visibility = "hidden";
+    const preparationStart = performance.now();
+    try {
+      for (const pair of [["lion", "wolf"], ["unicorn", "lion"]] as [CharacterId, CharacterId][]) {
+        const sample = createMatch(pair, 71);
+        for (const phase of ["countdown", "fight", "results"] as const) {
+          sample.phase = phase;
+          sample.players.forEach(p => { p.action = phase === "countdown" ? "race_idle" : "idle"; });
+          if (phase === "results") {
+            sample.result = { race: [25, 25], fight: [30, 20], total: [55, 45], winner: 0, reason: "Loading preview" };
+            this.previousPhase = phase;
+            this.phaseAge = 3;
+          }
+          await this.setCharacters(pair, phase === "countdown" ? "race" : "upright");
+          for (const z of phase === "countdown" && pair[0] === "lion" ? [0, 250, 480] : [0]) {
+            if (this.disposed) return;
+            sample.players.forEach(p => { p.z = z; });
+            this.framesSeen = 0;
+            const start = performance.now();
+            this.render(sample, 0, 1 / 60, 0, 0, true);
+            this.preparation.frames.push({ phase, z, submissionMs: performance.now() - start });
+            await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+          }
+        }
+      }
+      if (this.disposed) return;
+      await this.setCharacters([this.selection, this.selection === "wolf" ? "unicorn" : "wolf"]);
+      this.previousPhase = "";
+      this.previousTick = -1;
+      this.framesSeen = 0;
+      this.phaseAge = 0;
+      const menuStart = performance.now();
+      this.render(null, 0, 0, 0, 0, true);
+      this.preparation.frames.push({ phase: "select", z: 0, submissionMs: performance.now() - menuStart });
+      this.framesSeen = 0;
+      this.preparing = false;
+    } finally {
+      this.preparation.elapsedMs = performance.now() - preparationStart;
+      this.canvas.style.visibility = visibility;
+    }
   }
   private releaseAvatar(avatar: Avatar) {
     avatar.mixer.stopAllAction();
@@ -1087,8 +1133,10 @@ export class ChampionshipRenderer {
     delta: number,
     time: number,
     frameMs = delta * 1000,
+    preparation = false,
   ) {
-    if (this.disposed || this.preparing) return;
+    if (this.disposed || (this.preparing && !preparation)) return;
+    const workStart = performance.now();
     const phase = match?.phase ?? "select";
     if (phase !== "results" && this.camera.view?.enabled) this.camera.clearViewOffset();
     const sceneCut = sceneForPhase(phase) !== sceneForPhase(this.previousPhase);
@@ -1337,7 +1385,13 @@ export class ChampionshipRenderer {
     }
     this.sparks.geometry.attributes.position.needsUpdate = true;
     this.sparks.visible = !this.reduced;
+    const sceneUpdated = performance.now();
     this.renderer.render(this.scene, this.camera);
+    const drawSubmitted = performance.now();
+    if (!preparation) this.work.add(phase, document.hidden, {
+      sceneUpdate: sceneUpdated - workStart,
+      drawSubmission: drawSubmitted - sceneUpdated,
+    });
     if (this.captures.length) {
       const requests = this.captures.splice(0);
       this.canvas.toBlob(
@@ -1345,8 +1399,10 @@ export class ChampionshipRenderer {
         "image/png",
       );
     }
-    this.frameTimes[this.frameIndex++ % 1800] = frameMs;
-    this.measurements.add(phase, frameMs);
+    if (!preparation) {
+      this.frameTimes[this.frameIndex++ % 1800] = frameMs;
+      this.measurements.add(phase, frameMs);
+    }
     this.framesSeen++;
   }
   capture(): Promise<Blob | null> {
@@ -1355,8 +1411,12 @@ export class ChampionshipRenderer {
   sessionMeasurements() {
     return this.measurements.report();
   }
+  workMeasurements() {
+    return { ...this.work.report(), preparation: this.preparation };
+  }
   resetMeasurements() {
     this.measurements = new FrameMeasurements();
+    this.work = new WorkMeasurements();
     this.frameTimes = [];
     this.frameIndex = 0;
   }

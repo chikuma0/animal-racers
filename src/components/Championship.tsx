@@ -1,5 +1,6 @@
 "use client";
 import { PresentationBuffer } from "@/championship/presentation";
+import { WorkMeasurements } from "@/championship/work-measurements";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   ChampionshipRenderer,
@@ -69,6 +70,7 @@ const formatTime = (s: number | null) =>
 
 export default function Championship() {
   const presentation = useRef(new PresentationBuffer());
+  const workMeasurements = useRef(new WorkMeasurements());
   const inputSender = useRef(new InputSender()),
     localReceiver = useRef(new InputReceiver()),
     remoteReceiver = useRef(new InputReceiver()),
@@ -217,9 +219,11 @@ export default function Championship() {
       previous = performance.now(),
       accumulator = 0,
       lastUI = 0,
-      lastSend = 0;
+      lastSend = 0,
+      previousCallbackEnd = 0;
     const animate = (now: number) => {
       if (!alive) return;
+      const callbackStart = performance.now();
       const realDt = (now - previous) / 1000;
       previous = now;
       const dt = Math.min(realDt, 0.1);
@@ -258,6 +262,7 @@ export default function Championship() {
           accumulator -= 1 / 60;
         }
       } else accumulator = 0;
+      const simulationEnd = performance.now();
       if (
         net &&
         connected.current &&
@@ -306,18 +311,22 @@ export default function Championship() {
             });
         }
       }
-      renderer.current?.render(
-        modeRef.current === "guest"
+      const networkEnd = performance.now();
+      const displayedMatch = modeRef.current === "guest"
           ? (presentation.current.sample(
               now,
               network.current?.transport === "webrtc" ? 50 : 120,
             ) ?? match.current)
-          : match.current,
+          : match.current;
+      const presentationEnd = performance.now();
+      renderer.current?.render(
+        displayedMatch,
         modeRef.current === "guest" ? 1 : 0,
         dt,
         now / 1000,
         realDt * 1000,
       );
+      const renderEnd = performance.now();
       audio.current?.update(
         m?.phase ?? "select",
         m?.players[modeRef.current === "guest" ? 1 : 0].speed ?? 0,
@@ -331,6 +340,17 @@ export default function Championship() {
         setReport(renderer.current?.report() ?? null);
       }
       frame = requestAnimationFrame(animate);
+      const callbackEnd = performance.now();
+      workMeasurements.current.add(match.current?.phase ?? "select", document.hidden, {
+        simulation: simulationEnd - callbackStart,
+        networkSend: networkEnd - simulationEnd,
+        presentation: presentationEnd - networkEnd,
+        renderCall: renderEnd - presentationEnd,
+        audioAndUi: callbackEnd - renderEnd,
+        callback: callbackEnd - callbackStart,
+        ...(previousCallbackEnd > 0 ? { betweenCallbacks: callbackStart - previousCallbackEnd } : {}),
+      });
+      previousCallbackEnd = performance.now();
     };
     frame = requestAnimationFrame(animate);
     const keys = new Set<string>();
@@ -644,6 +664,8 @@ export default function Championship() {
       recording,
       frames: report,
       session: renderer.current?.sessionMeasurements(),
+      work: workMeasurements.current.report(),
+      rendererWork: renderer.current?.workMeasurements(),
       network: network.current?.stats ?? { status: lastNetworkStatus.current },
       note: "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification.",
     };
@@ -1281,7 +1303,10 @@ export default function Championship() {
           </pre>
           <button
             className="secondary-button"
-            onClick={() => renderer.current?.resetMeasurements()}
+            onClick={() => {
+              renderer.current?.resetMeasurements();
+              workMeasurements.current = new WorkMeasurements();
+            }}
           >
             Start fresh measurement
           </button>

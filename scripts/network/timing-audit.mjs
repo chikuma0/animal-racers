@@ -11,7 +11,7 @@ import ts from 'typescript';
 const rootUrl = new URL('../../', import.meta.url);
 const root = fileURLToPath(rootUrl);
 assert.ok(process.argv.slice(2).every(arg => arg === '--expect-rematch-recovery'), 'unknown audit option');
-const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'simulation'].map(name => `src/championship/${name}.ts`)];
+const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'simulation', 'measurements', 'work-measurements'].map(name => `src/championship/${name}.ts`)];
 const sources = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, await readFile(new URL(path, rootUrl), 'utf8')])));
 const sha = value => createHash('sha256').update(value).digest('hex');
 const component = sources[sourcePaths[0]];
@@ -140,14 +140,14 @@ class Wire {
 const ref = current => ({ current });
 function makeEndpoint(api, clock, wire, role, options) {
   const s = { ...api, CHARACTER_IDS: ['lion', 'wolf', 'unicorn'], mode: role, asHost: role === 'host', selected: 'lion', rival: 'wolf', alive: true,
-    performance: { now: () => clock.now }, crypto: { randomUUID: () => `epoch-${++s.epochCount}` }, epochCount: 0,
+    performance: { now: () => clock.now }, document: { hidden: false }, crypto: { randomUUID: () => `epoch-${++s.epochCount}` }, epochCount: 0,
     requestAnimationFrame: () => 0, captured: null, sourceSentAt: null, ignoredNewEpoch: 0, acceptedSnapshots: 0, lastSnapshotAt: null,
     ui: {}, statuses: [], peakPendingEdges: 0,
   };
   for (const [name, value] of Object.entries({ match: null, input: api.neutralInput(), remoteInput: api.neutralInput(), modeRef: role, screenRef: 'lobby', selectedRef: role === 'host' ? 'lion' : 'wolf', readyRef: true,
     peerRef: { character: role === 'host' ? 'wolf' : 'lion', ready: true }, epoch: '', lastSnapshot: clock.now, lastInput: clock.now, localSeq: 0, remoteSeq: -1, latestTick: -1, connected: true,
     rematchPending: false, peerRematch: false, presentation: new api.PresentationBuffer(), inputSender: new api.InputSender(), localReceiver: new api.InputReceiver(), remoteReceiver: new api.InputReceiver(),
-    audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
+    workMeasurements: new api.WorkMeasurements(), audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
   })) s[name] = ref(value);
   for (const name of ['setRematchWaiting', 'setInterrupted', 'setStatus', 'setReady', 'setPeer', 'setRival', 'setView', 'setReport']) s[name] = value => { s.ui[name] = value; };
   s.setPage = page => { s.screenRef.current = page; };

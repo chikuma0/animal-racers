@@ -26,3 +26,9 @@ Then test a deliberate mid-race departure and mid-fight departure. The remaining
 ## Owner acceptance
 
 Review actual phone gameplay and captures against the cinematic-western target. Character anatomy, animation contact, speed/readability, combat counterplay, audio, cup presentation and enjoyment require human judgment. Open major defects remain failures even if code/build tests pass. The quality ledger tracks each result; no release-complete claim before these gates close.
+
+## Additional timing evidence in local Cycle9 builds
+
+The download also separates simulation, network send, presentation, renderer, audio/UI and complete callback wall times. Renderer details split scene update from draw submission. Zero-duration samples are retained, and visible/hidden samples have separate keys. These durations include scheduling pauses and synchronous driver work; they are not CPU utilization or completed GPU execution times. The gap between callbacks includes refresh pacing, browser work and other unmeasured work. Do not add stage percentiles or infer a GPU bottleneck from a single maximum.
+
+The loading preparation section records the elapsed time and bounded representative draws before play is enabled. Starting a fresh measurement clears gameplay histograms but preserves the loading record. All raw frame intervals remain available: moving first-use work into loading does not make long loading acceptable or certify sustained play. Record loading duration separately in the physical-device session. The shared owner preview is still4ed5042 and does not yet contain these local additions.

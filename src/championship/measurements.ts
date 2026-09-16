@@ -1,5 +1,6 @@
 /** Fixed-memory frame histograms. Delays are recorded raw, never simulation-clamped. */
 export class FrameMeasurements {
+  constructor(private readonly includeZero = false) {}
   private phases = new Map<
     string,
     {
@@ -14,7 +15,7 @@ export class FrameMeasurements {
   >();
   readonly startedAt = new Date().toISOString();
   add(phase: string, ms: number) {
-    if (!Number.isFinite(ms) || ms <= 0) return;
+    if (!Number.isFinite(ms) || ms < 0 || (!this.includeZero && ms === 0)) return;
     let row = this.phases.get(phase);
     if (!row) {
       row = {

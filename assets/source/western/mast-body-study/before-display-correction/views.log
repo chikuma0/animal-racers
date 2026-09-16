@@ -1,0 +1,18 @@
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/native-body-study.blend"
+Fra:1 Mem:27.23M (Peak 32.48M) | Time:00:00.39 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-front.png'
+Time: 00:00.52 (Saving: 00:00.11)
+
+Fra:1 Mem:25.80M (Peak 25.80M) | Time:00:00.06 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-side.png'
+Time: 00:00.14 (Saving: 00:00.06)
+
+Fra:1 Mem:25.81M (Peak 25.81M) | Time:00:00.04 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-three-quarter.png'
+Time: 00:00.16 (Saving: 00:00.09)
+
+MAST_NATIVE_FULL_VIEWS_DONE
+
+Blender quit
+Error: Not freed memory blocks: 3, total unfreed memory 0.000298 MB

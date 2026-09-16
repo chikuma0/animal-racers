@@ -1,0 +1,105 @@
+{
+  "sourceSha256": "f6afeef04d7416af8187d022c70d29874d2c0e3e9385ef105de984e39e8618d1",
+  "recipeSha256": "61745247c851f1995f0ce7e23a243a27e7406719eeb694887fd3fac89b3f18a7",
+  "originalBodyGeometryWeightsSha256": "42d44cb65f948bb9a74350f158255ca646893b580f084138f441792cc3259ccf",
+  "savedAction": {
+    "name": "Native shoulder strike crouch probe",
+    "frameRange": [
+      1.0,
+      73.0
+    ],
+    "curves": 40
+  },
+  "nativeConstraints": 133,
+  "embeddedTexts": 0,
+  "linkedLibraries": 0,
+  "drivers": [],
+  "renderColorAttribute": "Native study display",
+  "savedActionSamples": [
+    {
+      "renderSample": 0,
+      "savedActionFrame": 1,
+      "bounds": {
+        "min": [
+          -0.9012207388877869,
+          -0.17708873748779297,
+          -0.008942830376327038
+        ],
+        "max": [
+          0.9012209177017212,
+          0.2436506152153015,
+          1.7297143936157227
+        ]
+      },
+      "maxBoundsDifference": 0.0
+    },
+    {
+      "renderSample": 6,
+      "savedActionFrame": 13,
+      "bounds": {
+        "min": [
+          -0.49672552943229675,
+          -0.18021464347839355,
+          -0.008942830376327038
+        ],
+        "max": [
+          0.4967254102230072,
+          0.2436506152153015,
+          1.9561172723770142
+        ]
+      },
+      "maxBoundsDifference": 0.0
+    },
+    {
+      "renderSample": 18,
+      "savedActionFrame": 37,
+      "bounds": {
+        "min": [
+          -0.9012207388877869,
+          -0.5154190063476562,
+          -0.008942830376327038
+        ],
+        "max": [
+          0.49672555923461914,
+          0.2436506152153015,
+          1.7373963594436646
+        ]
+      },
+      "maxBoundsDifference": 0.0
+    },
+    {
+      "renderSample": 30,
+      "savedActionFrame": 61,
+      "bounds": {
+        "min": [
+          -0.9012221693992615,
+          -0.2861201763153076,
+          -0.008989711292088032
+        ],
+        "max": [
+          0.901222825050354,
+          0.24588678777217865,
+          1.5211355686187744
+        ]
+      },
+      "maxBoundsDifference": 0.0
+    },
+    {
+      "renderSample": 36,
+      "savedActionFrame": 73,
+      "bounds": {
+        "min": [
+          -0.9012207388877869,
+          -0.17708873748779297,
+          -0.008942830376327038
+        ],
+        "max": [
+          0.9012209177017212,
+          0.2436506152153015,
+          1.7297143936157227
+        ]
+      },
+      "maxBoundsDifference": 0.0
+    }
+  ]
+}

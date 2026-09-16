@@ -11,6 +11,7 @@ import {
   isInputPacket,
 } from "@/championship/input-buffer";
 import { ChampionshipAudio } from "@/championship/audio";
+import { ChampionshipGuide } from "@/championship/guide";
 import { ROSTER, CHARACTER_IDS } from "@/championship/content";
 import {
   createMatch,
@@ -855,14 +856,13 @@ export default function Championship() {
           <section className="intro-panel">
             <p className="eyebrow">WELCOME TO THE FRONTIER</p>
             <h2>
-              Fast feet.
-              <br />
-              <em>Good timing.</em>
+              Fast feet. <em>Good timing.</em>
             </h2>
             <div className="lesson-grid">
               <article>
                 <span className="lesson-number">01</span>
                 <h3>Run the canyon</h3>
+                <ChampionshipGuide event="race" />
                 <p>
                   You run automatically. Steer around timber barriers. Jump
                   barrels and hurdles. Spend your burst on a clear stretch.
@@ -874,9 +874,11 @@ export default function Championship() {
               <article>
                 <span className="lesson-number">02</span>
                 <h3>Settle it in the saloon</h3>
+                <ChampionshipGuide event="fight" />
                 <p>
                   Move into reach, strike, then recover. Hold guard to defend.
-                  Read the rival’s wind-up before using your element.
+                  Read the rival’s wind-up before using your element. A broken
+                  guard needs time to recover, so move out of reach.
                 </p>
                 <div className="key-line">
                   <kbd>J</kbd> strike <kbd>K</kbd> element <kbd>L</kbd> guard
@@ -885,6 +887,7 @@ export default function Championship() {
               <article>
                 <span className="lesson-number">03</span>
                 <h3>Win the whole championship</h3>
+                <ChampionshipGuide event="cup" />
                 <p>
                   Race time and remaining fight health each split 50 points. A
                   strong second event can turn it around. Both scores decide the
@@ -905,7 +908,9 @@ export default function Championship() {
                   </option>
                 ))}
               </select>
-              <span>Same stats. No hidden boosts.</span>
+              <span>
+                Same stats. CPU gives you a moment to find your stance.
+              </span>
             </div>
             <p className="touch-note">
               On a phone, use the large controls at the bottom. Landscape gives
@@ -1066,11 +1071,13 @@ export default function Championship() {
                       : p!.boost > 0
                         ? "BURST!"
                         : "Read the road. Find your line."
-                    : p!.action === "guard"
-                      ? "GUARD"
-                      : p!.cooldown > 0
-                        ? `Element ready in ${p!.cooldown.toFixed(1)}s`
-                        : `${ROSTER[p!.character].special} ready`}
+                    : p!.guardBroken
+                      ? "Guard broken — make some space"
+                      : p!.action === "guard"
+                        ? "GUARD"
+                        : p!.cooldown > 0
+                          ? `Element ready in ${p!.cooldown.toFixed(1)}s`
+                          : `${ROSTER[p!.character].special} ready`}
               </div>
               <div className="touch-controls">
                 <div className="movement">
@@ -1084,7 +1091,7 @@ export default function Championship() {
                 <div className="action-controls">
                   {isFight && (
                     <button
-                      className="control guard"
+                      className={`control guard ${p!.guardBroken ? "cooling" : ""}`}
                       {...press("jump", true)}
                       aria-label="Jump"
                     >
@@ -1099,7 +1106,7 @@ export default function Championship() {
                       aria-label="Guard"
                     >
                       <b>◇</b>
-                      <span>GUARD</span>
+                      <span>{p!.guardBroken ? "RECOVER" : "GUARD"}</span>
                     </button>
                   )}
                   <button

@@ -229,6 +229,38 @@ describe('combat contact, defense and recovery', () => {
     expect(match.players[1].stun).toBeLessThanOrEqual(.38);
     ticks(match, 75); expect(match.players[1].guard).toBeGreaterThan(0);
   });
+  it('a broken held guard takes full pressure damage before recovering, then re-arms without another press', () => {
+    const match = fight(); match.players[1].guard = 15;
+    const pressure = idle(); pressure[0].attack = true; pressure[1].guard = true;
+    ticks(match, 14, pressure);
+    const defender = match.players[1];
+    expect(defender.hp).toBe(99); expect(defender.guardBroken).toBe(true);
+    pressure[0].attack = false; ticks(match, 28, pressure);
+    pressure[0].attack = true; ticks(match, 14, pressure);
+    expect(defender.hp).toBe(88);
+    expect(defender.guardBroken).toBe(true); expect(defender.action).not.toBe('guard');
+    pressure[0].attack = false; ticks(match, 120, pressure);
+    expect(defender.guardBroken).toBe(false); expect(defender.guard).toBeGreaterThanOrEqual(25);
+    expect(defender.action).toBe('guard');
+  });
+  it('sustained legal strikes cannot farm fractional guard into permanent one-damage blocks', () => {
+    const match = fight();
+    let breaks = 0, fullHits = 0, lastSequence = 0;
+    for (let frame = 0; frame < 600 && match.phase === 'fight'; frame++) {
+      const pressure = idle();
+      pressure[0].move = Math.sign(match.players[1].x - match.players[0].x);
+      pressure[0].attack = frame % 36 === 0 && Math.abs(match.players[1].x - match.players[0].x) <= 1.45;
+      pressure[1].guard = true;
+      stepMatch(match, pressure, FIXED_DT);
+      for (const event of match.events.filter(event => event.id > lastSequence)) {
+        if (event.type === 'guard-break' && event.slot === 1) breaks++;
+        if (event.type === 'hit' && event.slot === 1) fullHits++;
+        lastSequence = event.id;
+      }
+    }
+    expect(breaks).toBeGreaterThan(0); expect(fullHits).toBeGreaterThanOrEqual(3);
+    expect(match.players[1].hp).toBeLessThan(60);
+  });
   it('allows action after hitstun while protected against immediate repeat hits', () => {
     const match = fight(); const input = idle(); input[0].attack = true; ticks(match, 13, input);
     const defender = match.players[1]; expect(defender.hp).toBe(89);
@@ -278,6 +310,38 @@ describe('combat contact, defense and recovery', () => {
 });
 
 describe('determinism, CPU and replay', () => {
+  it('gives the first-time player an opening before ordinary CPU pressure and reproduces the idle KO fixture', () => {
+    const match = createMatch(['unicorn', 'lion'], 6827);
+    let firstCpuAttack: number | null = null;
+    const cpuStarts: number[] = []; let lastEvent = 0;
+    for (let tick = 0; tick < 10000 && match.phase !== 'results'; tick++) {
+      stepMatch(match, [neutralInput(), cpuInput(match, 1)], FIXED_DT);
+      if (match.phase === 'fight' && firstCpuAttack === null && ['attack', 'special'].includes(match.players[1].action)) firstCpuAttack = match.fightTime;
+      for (const event of match.events.filter(event => event.id > lastEvent)) {
+        if (event.slot === 1 && ['attack', 'special'].includes(event.type)) cpuStarts.push(match.fightTime);
+        lastEvent = event.id;
+      }
+    }
+    if (firstCpuAttack === null) throw new Error('The CPU never began an attack');
+    expect(firstCpuAttack).toBeGreaterThanOrEqual(1.5);
+    expect(cpuStarts.length).toBeGreaterThan(1);
+    for (let index = 1; index < cpuStarts.length; index++) expect(cpuStarts[index] - cpuStarts[index - 1]).toBeGreaterThanOrEqual(1.2 - FIXED_DT / 2);
+    expect(match.phase).toBe('results'); expect(match.fightTime).toBeCloseTo(10.2, 6);
+    expect(match.players.map(player => player.hp)).toEqual([0, 100]);
+  });
+  it('allows ordinary repeated strikes to punish the beginner CPU without any player stat assist', () => {
+    const match = createMatch(['unicorn', 'lion'], 6827);
+    for (let tick = 0; tick < 10000 && match.phase !== 'results'; tick++) {
+      const player = neutralInput();
+      if (match.phase === 'fight') player.attack = match.fightTicks % 36 === 0;
+      stepMatch(match, [player, cpuInput(match, 1)], FIXED_DT);
+    }
+    expect(match.phase).toBe('results'); expect(match.fightEnd).toBe('knockout');
+    expect(match.players[0].hp).toBeGreaterThan(0); expect(match.players[1].hp).toBe(0);
+    expect(match.players[0].hp).toBeLessThan(100);
+    expect(match.events.some(event => event.slot === 1 && ['attack', 'special'].includes(event.type))).toBe(true);
+    expect(match.fightTime).toBeLessThan(15);
+  });
   it('completes every ordered character matchup across three seeds with visible combat and no DNFs', () => {
     for (const first of ['lion', 'wolf', 'unicorn'] as const) {
       for (const second of ['lion', 'wolf', 'unicorn'] as const) {

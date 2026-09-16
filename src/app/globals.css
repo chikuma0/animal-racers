@@ -1,6 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.lesson-picture {
+  display: block;
+  width: 100%;
+  max-width: 270px;
+  height: 72px;
+  margin: 10px 0;
+  color: #e9be76;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lesson-picture text {
+  stroke: none;
+  fill: currentColor;
+  text-anchor: middle;
+  font:
+    7px system-ui,
+    sans-serif;
+  letter-spacing: 1px;
+}
+.lesson-picture .guide-score {
+  font:
+    30px Georgia,
+    serif;
+  letter-spacing: 0;
+}
+.intro-panel h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+@media (max-height: 450px) {
+  .lesson-picture {
+    height: 48px;
+    margin: 5px 0;
+  }
+}
 :root {
   color-scheme: dark;
   --cream: #f1dfbc;

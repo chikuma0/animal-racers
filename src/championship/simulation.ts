@@ -16,7 +16,7 @@ export interface Racer {
   vy: number; connected: boolean; raceStatus: 'running' | 'finished' | 'dnf'; raceProgress: number;
   hitObstacles: number[]; attackConnected: boolean; previous: Input;
   buffer: { jump: number; attack: number; special: number };
-  guardRecovery: number; ai: { nextTick: number; input: Input };
+  guardRecovery: number; guardBroken: boolean; ai: { nextTick: number; nextAttackTick: number; input: Input };
 }
 export interface Match {
   phase: Phase; phaseTime: number; tick: number; seed: number;
@@ -83,7 +83,7 @@ function newRacer(character: CharacterId, slot: Slot): Racer {
     hp: 100, facing: slot === 0 ? 1 : -1, action: 'race_idle', actionTime: 0, stun: 0,
     invulnerable: 0, cooldown: 0, guard: 100, energy: 100, boost: 0, vy: 0,
     connected: true, raceStatus: 'running', raceProgress: 0, hitObstacles: [], attackConnected: false,
-    previous: neutralInput(), buffer: { jump: 0, attack: 0, special: 0 }, guardRecovery: 0, ai: { nextTick: 0, input: neutralInput() } };
+    previous: neutralInput(), buffer: { jump: 0, attack: 0, special: 0 }, guardRecovery: 0, guardBroken: false, ai: { nextTick: 0, nextAttackTick: 0, input: neutralInput() } };
 }
 export function createMatch(characters: [CharacterId, CharacterId], seed = 1): Match {
   for (const character of characters) if (!Object.hasOwn(CHARACTERS, character)) throw new Error('Unknown character');
@@ -102,7 +102,7 @@ function action(player: Racer, name: string) {
 }
 function phase(match: Match, name: Phase) {
   match.phase = name; match.phaseTime = 0; match.phaseTick = 0;
-  for (const player of match.players) { player.previous = neutralInput(); player.ai.nextTick = 0; }
+  for (const player of match.players) { player.previous = neutralInput(); player.ai.nextTick = 0; player.ai.nextAttackTick = 0; }
   event(match, name, -1);
 }
 function timers(player: Racer) {
@@ -180,7 +180,7 @@ function startFight(match: Match) {
     player.x = index === 0 ? -1.75 : 1.75; player.z = 0; player.y = 0; player.vy = 0;
     player.facing = index === 0 ? 1 : -1; player.hp = 100; player.energy = 100; player.guard = 100;
     player.stun = 0; player.invulnerable = 0; player.cooldown = 0; player.boost = 0;
-    player.guardRecovery = 0; player.attackConnected = false; action(player, 'fight_idle');
+    player.guardRecovery = 0; player.guardBroken = false; player.attackConnected = false; action(player, 'fight_idle');
     player.buffer = { jump: 0, attack: 0, special: 0 };
   });
   phase(match, 'fight');
@@ -218,7 +218,7 @@ function stepFight(match: Match, inputs: [Input, Input]) {
         player.buffer.attack = 0;
         action(player, 'attack'); player.attackConnected = false; event(match, 'attack', slot);
       } else {
-        action(player, input.guard && player.y === 0 && player.guard > 0 ? 'guard' : player.y > 0 ? 'jump' : Math.abs(input.move) > .05 ? 'fight_move' : 'fight_idle');
+        action(player, input.guard && player.y === 0 && player.guard > 0 && !player.guardBroken ? 'guard' : player.y > 0 ? 'jump' : Math.abs(input.move) > .05 ? 'fight_move' : 'fight_idle');
         const movementSpeed = player.action === 'guard' ? 1.45 : player.y > 0 ? 2.6 : 3.6;
         player.x = clamp(player.x + input.move * movementSpeed * FIXED_DT, -4.4, 4.4);
       }
@@ -226,7 +226,12 @@ function stepFight(match: Match, inputs: [Input, Input]) {
     if (player.action === 'special' && player.character === 'lion' && player.actionTime >= ATTACKS.lion.windup && player.actionTime < ATTACKS.lion.windup + ATTACKS.lion.active) {
       player.x = clamp(player.x + player.facing * 7 * FIXED_DT, -4.4, 4.4);
     }
-    if (player.action !== 'guard' && player.guardRecovery === 0) player.guard = Math.min(100, player.guard + 18 * FIXED_DT);
+    if (player.action !== 'guard' && player.guardRecovery === 0) {
+      player.guard = Math.min(100, player.guard + 18 * FIXED_DT);
+      // A broken guard must rebuild a useful reserve. Holding can re-arm it,
+      // but a fractional regen tick cannot buy another full block/protection.
+      if (player.guardBroken && player.guard >= 25) player.guardBroken = false;
+    }
   });
   // Resolve bodies before contact. Grounded fighters cannot pass through each other.
   if (Math.abs(match.players[0].y - match.players[1].y) < .7 && (match.players[1].x - match.players[0].x) * initialOrder < .85) {
@@ -254,6 +259,7 @@ function stepFight(match: Match, inputs: [Input, Input]) {
       defender.guardRecovery = .6; defender.hp = Math.max(0, defender.hp - 1);
       defender.x = clamp(defender.x + impact.facing * .14, -4.4, 4.4);
       if (defender.guard === 0) {
+        defender.guardBroken = true;
         defender.stun = .38; defender.invulnerable = .62; action(defender, 'hit'); event(match, 'guard-break', impact.defender);
       } else event(match, 'block', impact.defender);
     } else {
@@ -354,14 +360,18 @@ export function cpuInput(match: Match, slot: Slot): Input {
     const distance = Math.abs(rival.x - player.x), toward = Math.sign(rival.x - player.x);
     const rivalAttack = attackFor(rival);
     const threat = rivalAttack && rival.actionTime < rivalAttack.windup + rivalAttack.active && distance < rivalAttack.reach + .5;
-    if (threat && roll < .67 && player.guard > 18 && !attackFor(player)) {
+    if (threat && roll < .67 && player.guard > 18 && !player.guardBroken && !attackFor(player)) {
       input.guard = true; input.move = -toward * .35;
     } else {
       input.move = distance > 1.25 ? toward : distance < .95 ? -toward * .4 : 0;
-      if (decision % 3 === 0 && !attackFor(player) && player.stun === 0) {
+      // Open beginner pacing: 1.5s to orient, attacks at least 1.2s apart.
+      // Retry a blocked opportunity next decision rather than phase-locking
+      // every opportunity to a rival's repeated strike cadence.
+      if (match.fightTime >= 1.5 && match.tick >= (player.ai.nextAttackTick ?? 0) && !attackFor(player) && player.stun === 0) {
         input.special = player.energy >= 40 && player.cooldown === 0 && distance <= ATTACKS[player.character].reach + (player.character === 'lion' ? .6 : 0) && roll > .45;
         input.attack = !input.special && distance <= 1.45;
         input.jump = !input.attack && !input.special && distance > 2 && roll < .08;
+        if (input.attack || input.special) player.ai.nextAttackTick = match.tick + 72;
       }
     }
   }

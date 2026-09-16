@@ -78,3 +78,7 @@ Dedicated upright v2b assets move the head/neck attachment .30m back and reduce 
 Live DOM inspection exposed the results card hiding the cup/winner even though canvas captures looked unobscured. The renderer now receives the actual card bounds and composes the ceremony in remaining space. A projection regression checks landscape, portrait and shared winner silhouettes; the production build passes. Live results inspection passed at844×390,390×844 and1082×874: the complete cup/winner fits beside or above the score card after resizing. Physical safe-area behavior and owner presentation acceptance remain open.
 
 Next concrete action: verify the results layout, preserve the cycle, then evaluate the isolated Lion face/mane art redesign against the actual concept. Physical controls, sustained phone performance, internet multiplayer and owner visual/play acceptance remain required. Published owner preview stays4ed5042; local work is not silently promoted.
+
+## Cycle7 environment
+
+[Actual paired captures and full replay](evidence/CYCLE-7-ENVIRONMENT.md) show improved storefront depth and road clearance. Same menu view adds1496triangles and reduces draws26→24 through material sharing. Code/build and geometry checks pass; no phone-performance or overall cinematic acceptance follows. An isolated Lion mane study remains rejected; root is assessing alternative mesh sources while networking timing review proceeds. Sharedpreview4ed5042 remains frozen.

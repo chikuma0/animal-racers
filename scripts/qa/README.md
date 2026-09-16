@@ -21,3 +21,7 @@ node scripts/qa/capture-server.mjs
 ```
 
 This separate loopback server accepts only the `http://localhost:3013` origin. Run the built app on3013, use its Performance panel and normal controls, then save canvas recording, measurements or frame. Files are created with exclusive names under `docs/production/evidence/`; existing files are not overwritten. Canvas output omits DOM controls/HUD, so inspect the actual browser UI separately. Close both servers with Ctrl-C when finished.
+
+## Storefront geometry inspection
+
+`node scripts/qa/inspect-storefront.mjs [new-report.json]` executes the current renderer's actual storefront builder without WebGL, measures geometry/cost and checks the16 inspected race placements against the road envelope. Canvas sign text is omitted while preserving its plane geometry. The placement/curve constants are explicitly tied to the current500m course; review them if `buildRace` changes. This is a geometry inspection, not phone performance or a gameplay collision test.

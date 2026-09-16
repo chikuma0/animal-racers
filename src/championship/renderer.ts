@@ -266,6 +266,7 @@ export class ChampionshipRenderer {
   private cache = new Map<string, GLTF>();
   private timberMap: THREE.Texture = woodTexture();
   private timberMaterials = new Set<THREE.MeshStandardMaterial>();
+  private buildingTimbers = new Map<number, THREE.MeshStandardMaterial>();
   private selection: CharacterId = "lion";
   private disposed = false;
   private preparing = true;
@@ -787,7 +788,7 @@ export class ChampionshipRenderer {
             : z % 2 === 0
               ? "COLD CREEK"
               : "SILVER SPUR",
-          z === 15,
+          z === (15 * COURSE_LENGTH) / 1000,
         );
         b.position.set(curve(z) + side * 13, 0, z);
         b.rotation.y = side > 0 ? -Math.PI / 2 : Math.PI / 2;
@@ -839,33 +840,115 @@ export class ChampionshipRenderer {
     }
   }
   private buildBuilding(label: string, saloon = false) {
-    const group = new THREE.Group(),
-      wood = new THREE.MeshStandardMaterial({
-        map: this.timberMap,
-        color: saloon ? 0xf1dfc7 : 0xc9c4b8,
-        roughness: 0.96,
-      });
-    this.timberMaterials.add(wood);
-    group.add(
-      timberBox(8, 5.4, 6, wood, 0, 2.7),
-      box(8.5, 0.25, 7, mat(0x68472f), 0, 5.45),
-      timberBox(8, 1.3, 0.25, wood, 0, 5.55, 3.05),
-      box(9, 0.2, 3, mat(0x9d754a), 0, 2.95, 4),
-    );
-    for (const x of [-3.8, 3.8])
-      group.add(cylinder(0.13, 0.16, 2.9, mat(0x69513b), x, 1.45, 5.3));
-    group.add(box(9, 0.2, 3.5, mat(0x5e422d), 0, 0.1, 4));
-    for (const x of [-2.5, 2.5]) {
-      group.add(
-        box(1.5, 1.6, 0.2, mat(0x2e5353, 0.24), x, 1.9, 3.13),
-        box(0.08, 1.7, 0.23, mat(0xc2965c), x, 1.9, 3.25),
-        box(1.6, 0.08, 0.23, mat(0xc2965c), x, 1.9, 3.25),
-      );
+    // Shared timber variants let the static batch combine repeated storefronts.
+    const timber = (color: number) => {
+      let material = this.buildingTimbers.get(color);
+      if (!material) {
+        material = new THREE.MeshStandardMaterial({ map: this.timberMap, color, roughness: .94 });
+        this.buildingTimbers.set(color, material);
+        this.timberMaterials.add(material);
+      }
+      return material;
+    };
+    const group = new THREE.Group();
+    const style = saloon ? 0 : label === "CANYON SUPPLY" ? 1 : label === "COLD CREEK" ? 2 : 3;
+    const wall = timber([0xd8b68a, 0x8eada5, 0xc0a497, 0xb78974][style]);
+    const trim = timber(0xe3c997), darkWood = timber(0x73604a);
+    const iron = mat(0x302e29, .62, .35), recess = mat(0x181d1b);
+    const glass = mat(0x476d70, .27, .2);
+    const board = (w: number, h: number, d: number, material: THREE.Material, x: number, y: number, z: number) => {
+      const item = timberBox(w, h, d, material, x, y, z);
+      group.add(item); return item;
+    };
+    const brace = (x1: number, y1: number, x2: number, y2: number, z: number) => {
+      const item = board(.13, Math.hypot(x2 - x1, y2 - y1), .17, darkWood, (x1 + x2) / 2, (y1 + y2) / 2, z);
+      item.rotation.z = -Math.atan2(x2 - x1, y2 - y1);
+    };
+
+    // A hollow shell and front wall segments create real reveal depth around
+    // openings, instead of placing opaque coloured rectangles over a solid box.
+    board(.22, 4.6, 6, wall, -3.9, 2.5, 0);
+    board(.22, 4.6, 6, wall, 3.9, 2.5, 0);
+    board(8, 4.6, .22, wall, 0, 2.5, -2.9);
+    board(8, 1.8, .25, wall, 0, 3.85, 3);
+    for (const [left, right] of [[-4, -3.4], [-1.7, -.85], [.85, 1.7], [3.4, 4]])
+      board(right - left, 2.8, .25, wall, (left + right) / 2, 1.6, 3);
+    for (const x of [-2.55, 2.55]) board(1.7, .8, .25, wall, x, .6, 3);
+    board(8.1, .18, .35, trim, 0, 4.65, 3.1);
+    for (const x of [-3.9, 3.9]) board(.2, 4.65, .35, trim, x, 2.5, 3.08);
+
+    // Pitched roof behind a stepped western false front.
+    for (const side of [-1, 1]) {
+      const roof = board(8.4, .17, 3.3, darkWood, 0, 5.05, side * 1.5);
+      roof.rotation.x = side * .19;
     }
-    group.add(box(1.4, 2.6, 0.22, mat(0x302820), 0, 1.3, 3.16));
-    const s = sign(saloon ? "DUST & GLORY" : label, 7.3, 0.9);
-    s.position.set(0, 5.6, 3.23);
-    group.add(s);
+    const profile = new THREE.Shape();
+    const crown = style === 2 ? 5.95 : saloon ? 6.6 : 6.2;
+    const outline = [[-4.15,4.65],[-4.15,5.65],[-3.15,5.65],[-3.15,crown-.25],[-1.8,crown-.25],[-1.8,crown],[1.8,crown],[1.8,crown-.25],[3.15,crown-.25],[3.15,5.65],[4.15,5.65],[4.15,4.65]];
+    outline.forEach(([x,y],i) => i ? profile.lineTo(x,y) : profile.moveTo(x,y));
+    profile.closePath();
+    const front = new THREE.ExtrudeGeometry(profile,{depth:.24,bevelEnabled:false});
+    const frontPositions=front.attributes.position, frontUv=front.attributes.uv;
+    for(let i=0;i<frontPositions.count;i++) frontUv.setXY(i,frontPositions.getX(i)/1.6,frontPositions.getY(i)/1.6);
+    group.add(mesh(front,wall,0,0,3.04));
+    for(let i=1;i<outline.length-1;i++) {
+      const [x1,y1]=outline[i-1], [x2,y2]=outline[i];
+      if(y1===4.65 && y2===4.65) continue;
+      const cap=board(Math.max(.13,Math.abs(x2-x1)+.13),Math.max(.13,Math.abs(y2-y1)+.13),.36,trim,(x1+x2)/2,(y1+y2)/2,3.14);
+      cap.castShadow=true;
+    }
+    const fascia = saloon ? "DUST & GLORY" : label;
+    board(7.35,1.05,.2,darkWood,0,5.3,3.34);
+    const title=sign(fascia,7,.79,"#283a36","#ead4a5");
+    title.position.set(0,5.3,3.46); group.add(title);
+
+    // Deep window frames, divided panes, sill and short slatted shutters.
+    for (const x of [-2.55,2.55]) {
+      group.add(box(1.72,1.88,.08,recess,x,1.95,2.67),box(1.42,1.62,.06,glass,x,1.96,2.78));
+      for (const side of [-1,1]) {
+        board(.13,1.88,.37,trim,x+side*.8,1.95,3.02);
+        board(.39,1.73,.1,darkWood,x+side*1.04,1.98,3.14);
+        for(let slat=0;slat<8;slat++) {
+          const blade=board(.34,.12,.09,wall,x+side*1.04,1.23+slat*.205,3.22);
+          blade.rotation.x=-.18;
+        }
+      }
+      board(1.72,.13,.36,trim,x,2.85,3.05);
+      board(1.93,.16,.54,trim,x,1.05,3.1);
+      board(.06,1.65,.12,trim,x,1.95,2.97);
+      board(1.48,.07,.12,trim,x,1.96,2.98);
+    }
+    group.add(box(1.7,2.75,.08,recess,0,1.6,2.65));
+    for(const side of [-1,1]) {
+      board(.15,2.8,.38,trim,side*.87,1.6,3.06);
+      const door=board(.76,saloon?1.35:2.42,.1,darkWood,side*.405,saloon?1.48:1.46,2.95);
+      if(saloon) door.rotation.y=side*.12;
+      board(.6,.12,.14,trim,side*.405,saloon?2.13:2.62,3.03);
+      for(let slat=0;slat<(saloon?6:10);slat++) board(.6,.07,.1,wall,side*.405,.93+slat*.19,3.04);
+      group.add(box(.065,.19,.055,iron,side*.12,1.47,3.12));
+    }
+    board(1.92,.2,.42,trim,0,3,3.1);
+    board(1.48,.17,.1,trim,0,2.76,2.95);
+
+    // Joined porch: visible boardwalk, layered steps and knee braces carrying
+    // the awning. Posts/rails stay outside the central approach.
+    board(9,.26,3.65,darkWood,0,.2,4.25);
+    board(9.1,.065,3.72,wall,0,.36,4.25);
+    for(const [depth,y,z] of [[.45,.09,6.4],[.4,.19,6.12]]) board(3.3,.14,depth,darkWood,0,y,z);
+    const awning=board(9.15,.15,3.35,darkWood,0,3.27,4.4); awning.rotation.x=.075;
+    board(9.25,.23,.19,trim,0,3.14,6.02);
+    for(const x of [-4.1,-1.55,1.55,4.1]) {
+      board(.18,2.75,.18,darkWood,x,1.71,5.93);
+      board(.28,.17,.28,trim,x,.53,5.93);
+      board(.28,.13,.28,trim,x,2.92,5.93);
+      if(x!==-4.1) brace(x,2.55,x-.44,3.09,5.93);
+      if(x!==4.1) brace(x,2.55,x+.44,3.09,5.93);
+    }
+    for(const side of [-1,1]) {
+      board(2.2,.12,.16,trim,side*2.93,1.35,5.93);
+      board(2.2,.09,.12,darkWood,side*2.93,.73,5.93);
+      for(let i=0;i<6;i++) board(.065,.58,.07,wall,side*(1.96+i*.39),1.04,5.93);
+    }
     return group;
   }
   private buildSaloon() {

@@ -2,7 +2,7 @@
 
 A two-competitor western championship: choose Fire Lion, Water Wolf or Rainbow Unicorn, race on four feet, duel upright in the saloon, then combine both events for the gold cup. Solo CPU and invited online players share the same deterministic rules.
 
-**Production status:** playable internal alpha, not an accepted release candidate. See [quality ledger](docs/production/QUALITY-LEDGER.md) and [QA evidence](docs/production/evidence/CYCLE-2.md). Character polish, physical internet play, iPhone performance and owner acceptance remain open.
+**Production status:** playable internal alpha, not an accepted release candidate. See [quality ledger](docs/production/QUALITY-LEDGER.md) and [current QA report](docs/production/QA-REPORT.md). Character polish, physical internet play, iPhone performance and owner acceptance remain open.
 
 ## Run
 
@@ -48,7 +48,9 @@ The legacy Canvas implementation is retained in source history and unused compon
 
 ## Test and publish
 
-[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. Use the in-game **⋯** panel for rolling frame intervals, fresh measurement, session JSON, canvas frames and recordings. Recording itself adds load; use a separate run for performance. Reports do not infer hardware identity or certify60fps.
+[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. The current immutable review build is [f600be2](https://animal-racers-4png9iy68-dera-ai.vercel.app); its scoped access link is shared privately. Both players must first open the full private link, then exchange an invitation code. Later task-branch previews may change; the immutable review URL remains fixed.
+
+Use the in-game **⋯** panel for rolling frame intervals, fresh measurement, session JSON, canvas frames and recordings. Recording itself adds load; use a separate run for performance. Reports do not infer hardware identity or certify60fps.
 
 The existing Vercel project can build this Next app. Supply only the two public backend variables for the target environment and set `NEXT_PUBLIC_BUILD_REVISION` to the delivered Git commit. A preview deploy is `npx vercel deploy`; production promotion is a separate delivery decision. Do not set `NEXT_PUBLIC_QA_CAPTURE_ORIGIN` on deployed builds. Optional local capture instructions: [capture notes](scripts/capture-notes.md).
 

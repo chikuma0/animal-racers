@@ -1,0 +1,70 @@
+{
+  "reports": [
+    {
+      "file": "lion-wolf-report.json",
+      "sha256": "ae202be6e65a5ac6ca43f145bc73f22ae85ce9d4f6e085abf56d8dd09ec27570",
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points \u00b7 final health"
+      }
+    },
+    {
+      "file": "unicorn-lion-report.json",
+      "sha256": "0f8e151d86e43bd900816f8435338a73b140c52657ca32e71a6cd4576bb6a06f",
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points \u00b7 final health"
+      }
+    },
+    {
+      "file": "wolf-unicorn-report.json",
+      "sha256": "cf499fb9ccb9e10fc089403f50e64409e61e93768cd2614ac414153ea16e74f1",
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points \u00b7 final health"
+      }
+    }
+  ],
+  "verifiedVideo": "lion-wolf-recording-review.mp4",
+  "excludedZeroByteExports": [
+    "wolf-unicorn-recording.webm",
+    "unicorn-lion-recording.webm"
+  ],
+  "classification": "Three complete functional reports; only one valid full recording in this run. Physical/human acceptance not implied."
+}

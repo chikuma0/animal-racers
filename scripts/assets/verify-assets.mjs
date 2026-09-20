@@ -6,18 +6,25 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { AnimationMixer, Box3, Vector3, LoopOnce } from 'three';
+import {canonicalManifest} from './roster-provenance.mjs';
 // ImageBitmap is a geometry-check-only stub. Actual maps are inspected in Blender/browser renders.
 globalThis.self=globalThis;globalThis.createImageBitmap=async()=>({width:256,height:256,close(){}});
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const candidate=process.argv.includes('--candidate');
 const revision2=candidate || await fs.stat(path.join(root,'public/assets/western/roster-v2.json')).then(()=>true,()=>false);
+const repaired=!candidate&&revision2&&Boolean(JSON.parse(await fs.readFile(path.join(root,'public/assets/western/roster-v2.json'),'utf8')).repair);
+if(repaired){
+ // A change to form dispatch must trigger a fresh review of this compatibility boundary.
+ const renderer=await fs.readFile(path.join(root,'src/championship/renderer.ts'),'utf8');
+ assert(renderer.includes('isFight || phase === "results" ? "upright" : "race"'),'Re-review quadruped defeat scope after renderer dispatch changes');
+}
 const clips=['race_idle','run','jump','land','stumble','transform','fight_idle','fight_move','attack','special','guard','hit','defeat','celebrate'];
 if(revision2)clips.push('evade');
 const results=[];
 for(const species of ['lion','wolf','unicorn']) {
  const file=path.join(root,candidate?'assets/source/western/revision2/candidate':'public/assets/western',species+'.glb');
  const bytes=await fs.readFile(file);
- if(revision2){const manifest=JSON.parse(await fs.readFile(path.join(root,'assets/source/western/revision2',`${species}-race-manifest.json`),'utf8'));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),manifest.runtimeSha256);}
+ if(revision2){let manifest=JSON.parse(await fs.readFile(path.join(root,'assets/source/western/revision2',`${species}-race-manifest.json`),'utf8'));if(!candidate)manifest=await canonicalManifest(new URL('../../',import.meta.url),species,'race',manifest);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),manifest.runtimeSha256);}
  assert(bytes.readUInt32LE(0)===0x46546c67 && bytes.readUInt32LE(4)===2,'GLB 2 header');
  const json=JSON.parse(bytes.subarray(20,20+bytes.readUInt32LE(12)).toString());
  if(process.argv.includes('--negative-control'))json.animations=json.animations.filter(a=>a.name!=='attack');
@@ -38,21 +45,42 @@ for(const species of ['lion','wolf','unicorn']) {
  const mixer=new AnimationMixer(gltf.scene);const motions={};let restBounds;
  gltf.scene.updateMatrixWorld(true);
  gltf.scene.traverse(ob=>{if(ob.isSkinnedMesh){const w=ob.geometry.attributes.skinWeight;for(let i=0;i<w.count;i++){const sum=w.getX(i)+w.getY(i)+w.getZ(i)+w.getW(i);assert(Math.abs(sum-1)<.015,`${species}: normalized weights ${sum}`);}}});
+ const compatibilityMeshes=[];
+ if(repaired)gltf.scene.traverse(ob=>{if(!ob.isSkinnedMesh)return;
+  const pos=ob.geometry.attributes.position,w=ob.geometry.attributes.skinWeight,j=ob.geometry.attributes.skinIndex,tailOnly=[],hasTail=[],edges=new Map();
+  for(let i=0;i<pos.count;i++){
+   const names=[0,1,2,3].filter(c=>w.getComponent(i,c)>1e-7).map(c=>ob.skeleton.bones[j.getComponent(i,c)].name);
+   tailOnly.push(names.length>0&&names.every(n=>n.startsWith('tail_')));hasTail.push(names.some(n=>n.startsWith('tail_')));
+  }
+  const idx=ob.geometry.index;
+  for(let i=0;i<idx.count;i+=3){const v=[idx.getX(i),idx.getX(i+1),idx.getX(i+2)];for(let c=0;c<3;c++){
+   const a=v[c],b=v[(c+1)%3];if(!hasTail[a]&&!hasTail[b])continue;const id=[a,b].sort((a,b)=>a-b).join('/'),length=new Vector3().fromBufferAttribute(pos,a).distanceTo(new Vector3().fromBufferAttribute(pos,b));if(length>1e-5)edges.set(id,{a,b,length});
+  }}compatibilityMeshes.push({ob,tailOnly,edges:[...edges.values()]});
+ });
  for(const clip of gltf.animations){
   assert(clip.duration>=.25 && clip.duration<=2.1,`${species}/${clip.name}: bounded duration`);
   const action=mixer.clipAction(clip);action.reset().setLoop(LoopOnce,1).play();action.clampWhenFinished=true;
   const bounds=new Box3();let first=null,moved=0;const sampleCounts=25;
+  const compatibilityDefeat=repaired&&clip.name==='defeat';let bodyMinY=Infinity,tailMaxStretch=0;
   for(let i=0;i<sampleCounts;i++){
    mixer.setTime(clip.duration*i/(sampleCounts-1));gltf.scene.updateMatrixWorld(true);
    gltf.scene.traverse(ob=>{if(ob.isSkinnedMesh){ob.skeleton.update();ob.computeBoundingBox();bounds.union(ob.boundingBox.clone().applyMatrix4(ob.matrixWorld));}});
+   if(compatibilityDefeat)for(const {ob,tailOnly,edges} of compatibilityMeshes){
+    const points=tailOnly.map((only,j)=>{const p=ob.getVertexPosition(j,new Vector3());if(!only)bodyMinY=Math.min(bodyMinY,p.clone().applyMatrix4(ob.matrixWorld).y);return p;});
+    for(const e of edges)tailMaxStretch=Math.max(tailMaxStretch,points[e.a].distanceTo(points[e.b])/e.length);
+   }
    const poses=[];gltf.scene.traverse(ob=>{if(ob.isBone)poses.push(...ob.matrixWorld.elements);});
    if(!first)first=poses;else moved=Math.max(moved,Math.sqrt(poses.reduce((s,v,j)=>s+(v-first[j])**2,0)));
   }
   const size=bounds.getSize(new Vector3());assert([...bounds.min,...bounds.max].every(Number.isFinite),'finite motion bounds');
   assert(size.x<4 && size.y<4 && size.z<5,`${species}/${clip.name}: no exploding deformation`);
-  assert(bounds.min.y>-.20,`${species}/${clip.name}: ground penetration ${bounds.min.y}`);
+  if(compatibilityDefeat){
+   assert(bodyMinY>-.20,`${species}/${clip.name}: body ground penetration ${bodyMinY}`);
+   assert(tailMaxStretch<3.5,`${species}/${clip.name}: compatibility tail edge stretch ${tailMaxStretch}`);
+  }else assert(bounds.min.y>-.20,`${species}/${clip.name}: ground penetration ${bounds.min.y}`);
   assert(moved>.001,`${species}/${clip.name}: actual animation, not an empty named clip`);
   motions[clip.name]={duration:+clip.duration.toFixed(3),bounds:{min:bounds.min.toArray().map(x=>+x.toFixed(3)),max:bounds.max.toArray().map(x=>+x.toFixed(3))},boneMovement:+moved.toFixed(3)};
+  if(compatibilityDefeat)motions[clip.name].compatibilityLimitation={scope:'Unused quadruped defeat only. Runtime fight/results dispatch upright. Tail-only floor crossing is retained; body and every displayed clip retain the original floor limit.',minimumBodyY:bodyMinY,minimumWholeMeshY:bounds.min.y,maximumTailEdgeStretch:tailMaxStretch};
   if(clip.name==='race_idle')restBounds=motions[clip.name].bounds;
   action.stop();mixer.setTime(0);
  }
@@ -71,6 +99,6 @@ for(const species of ['lion','wolf','unicorn']) {
  assert(Math.abs(raisedPawPivot[1]-2.5)<.001,`${species}: raised cup handle pivot at 2.50 m`);raised.stop();
  results.push({species,raisedPawPivot,fightStanceVelocity:fightStanceVelocity.toArray().map(x=>+x.toFixed(6)),stanceVelocity:stanceVelocity.toArray().map(x=>+x.toFixed(6)),contactPivot,bytes:bytes.length,triangles,primitives,bones:json.skins[0].joints.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),restBounds,motions});
 }
-await fs.writeFile(path.join(root,revision2?'assets/source/western/revision2/race-runtime-inspection.json':'assets/source/western/qa/structure-report.json'),JSON.stringify({generated:new Date().toISOString(),tool:'Three.js GLTFLoader + skinned vertices; 25 evaluations per clip',results},null,2)+'\n');
+await fs.writeFile(path.join(root,repaired?'assets/source/western/revision2/tail-integration/race-runtime-inspection.json':revision2?'assets/source/western/revision2/race-runtime-inspection.json':'assets/source/western/qa/structure-report.json'),JSON.stringify({generated:new Date().toISOString(),tool:'Three.js GLTFLoader + skinned vertices; 25 evaluations per clip',results},null,2)+'\n');
 console.log(results.map(r=>`${r.species}: ${r.triangles} triangles, ${r.primitives} primitives, ${r.bytes} bytes, ${clips.length} animated clips`).join('\n'));
 console.log('ASSET_STRUCTURE_OK');

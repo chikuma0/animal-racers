@@ -10,8 +10,14 @@ const evidenceRoot = resolve(root, 'scripts/network/browser-revision2');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const load = async path => JSON.parse(await readFile(path, 'utf8'));
 const count = (report, slot, type) => report.playTrace.events.filter(event => event.slot === slot && event.type === type).length;
-const directories = process.argv.slice(2).map(path => resolve(path));
-assert.ok(directories.length > 0 && directories.length <= 12, 'Supply one or more completed run directories; this command requires all nine pairings in aggregate.');
+const argumentsList = process.argv.slice(2);
+const selectedPairs = argumentsList[0] === '--pairs' ? argumentsList.splice(0, 2)[1].split(',') : null;
+const species = ['lion', 'wolf', 'unicorn'];
+const allPairs = species.flatMap(host => species.map(guest => `${host}:${guest}`));
+const expectedPairs = selectedPairs ?? allPairs;
+assert.ok(expectedPairs.length >= 1 && expectedPairs.length <= 9 && new Set(expectedPairs).size === expectedPairs.length && expectedPairs.every(pair => allPairs.includes(pair)), 'explicit valid ordered pair coverage');
+const directories = argumentsList.map(path => resolve(path));
+assert.ok(directories.length > 0 && directories.length <= 12, 'Supply one or more completed run directories; default requires all nine pairings; --pairs explicitly requests a bounded affected subset.');
 const runs = [], rounds = [], failures = [], media = [], reactions = [];
 const paired = new Set();
 let fingerprint = null, revision = null, buildId = null, referenceFiles = null;
@@ -83,20 +89,20 @@ for (const directory of directories) {
     assert.equal(bytes.length, item.bytes); assert.equal(sha(bytes), item.sha256);
     const sidecar = await load(resolve(directory, item.file + '.json'));
     assert.deepEqual(sidecar, item);
-    assert.ok(Number(item.outputProbe.format.duration) > 60, 'complete championship length, not a short connection clip');
-    media.push({ directory: basename(directory), file: item.file, bytes: item.bytes, duration: Number(item.outputProbe.format.duration), sha256: item.sha256 });
+    const accepted = rounds.some(round => round.directory === basename(directory) && item.file.startsWith(round.name + '-'));
+    assert.ok(Number(item.outputProbe.format.duration) > (accepted ? 60 : 1), accepted ? 'complete championship length, not a short connection clip' : 'failed-attempt recording retains playable motion');
+    media.push({ accepted, directory: basename(directory), file: item.file, bytes: item.bytes, duration: Number(item.outputProbe.format.duration), sha256: item.sha256 });
   }
 }
-const species = ['lion', 'wolf', 'unicorn'];
-assert.deepEqual([...paired].sort(), species.flatMap(host => species.map(guest => `${host}:${guest}`)).sort(), 'all nine ordered pairings required');
+assert.deepEqual([...paired].sort(), [...expectedPairs].sort(), selectedPairs ? 'all explicitly requested affected pairings required' : 'all nine ordered pairings required');
 assert.ok(rounds.some(round => round.round === 2), 'one complete agreed rematch required');
 const output = {
   verifiedAt: new Date().toISOString(), classification: 'Loaded same-machine normal-control installed Chrome integration only; not physical-phone, separate-network, human feel, controlled performance or visual-art acceptance.',
-  sourceFingerprint: fingerprint, revision, buildId, runs, pairCount: paired.size, roundCount: rounds.length, rounds, failures, reactions, media,
-  limitations: ['Shared machine/network and recording/rendering contention.', 'Canvas recordings omit DOM; screenshots and public reports supply HUD evidence.', 'Observed cue-to-click includes automation overhead and is not human reaction latency.', 'Frozen Lion tail base, Wolf distal tuft and Unicorn rainbow tail detach during combat: art acceptance remains OPEN.', 'Media hashes rechecked here; full clean raw/output decodes were performed by each run media helper.'],
+  expectedPairs, coverage: selectedPairs ? 'explicit affected subset; not full nine-pair matrix' : 'all nine ordered pairings', sourceFingerprint: fingerprint, revision, buildId, runs, pairCount: paired.size, roundCount: rounds.length, rounds, failures, reactions, media,
+  limitations: ['Shared machine/network and recording/rendering contention.', 'Canvas recordings omit DOM; screenshots and public reports supply HUD evidence.', 'Observed cue-to-click includes automation overhead and is not human reaction latency.', 'Art acceptance requires exact-revision renderer and complete motion review; this report only verifies functional observations and media integrity.', 'Media hashes rechecked here; full clean raw/output decodes were performed by each run media helper.'],
 };
 const outputPath = resolve(evidenceRoot, `aggregate-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
 await writeFile(outputPath, JSON.stringify(output, null, 2) + '\n', { flag: 'wx' });
 console.table(rounds.map(round => ({ pair: round.pair.join('/'), round: round.round, score: round.result.total.join('/'), leaps: round.actions.map(row => row.leaps).join('/'), evades: round.actions.map(row => row.successfulEvades).join('/'), damageReceived: round.actions.map(row => row.damageReceived).join('/') })));
 console.log(`Evidence: ${outputPath}`);
-console.log(`SAVED BROWSER MATRIX VERIFIED — ${paired.size} pairings, ${rounds.length} full rounds, ${media.length} verified portable recordings; loaded same-machine only`);
+console.log(`SAVED BROWSER MATRIX VERIFIED — ${paired.size} pairings, ${rounds.length} full rounds, ${media.filter(item => item.accepted).length} accepted portable recordings (${media.length} including failed attempts); loaded same-machine only`);

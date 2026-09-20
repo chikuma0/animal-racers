@@ -35,3 +35,7 @@ node scripts/qa/solo-playthrough.mjs http://127.0.0.1:3013 docs/production/evide
 Use the manifest and report label for the actual frozen production build. The optional fourth argument selects ordered pairs such as `lion:wolf,wolf:unicorn,unicorn:lion`; the default covers all nine. Do not edit runtime source/assets or rebuild while a matrix runs.
 
 The harness uses an isolated installed Chrome context, visible DOM cues, ordinary keys/buttons and the game's own downloadable measurements/recording. It verifies served files and source hashes, completed races, actual leaps, successful evades, counters and damaging replies; it waits for the score reveal and cup before capture. It has no private game-state access and cannot force a result. Recordings omit the DOM HUD, which is retained in screenshots. A script-controlled desktop pass is not physical touch, human enjoyment or performance acceptance. Failed attempts and their diagnosis remain evidence.
+
+## Tail-repair renderer inspection
+
+`node scripts/qa/capture-pose-cycles.mjs` uses the loopback contact viewer UI to record each animal’s normal strike, counter reply and moving evade, plus contact/hit/race stills. It verifies unique saved settings and every candidate asset hash. This is deliberately separate from normal-control gameplay evidence. `prepare-pose-media.mjs` creates fully decoded H264 review copies of only its owned short silent recordings. See `docs/production/evidence/revision2-tail-runtime/2026-09-20T03-50-31-404Z/README.md`.

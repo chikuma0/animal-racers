@@ -7,6 +7,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {canonicalRoster} from './roster-provenance.mjs';
 const root=new URL('../../',import.meta.url),out=new URL('assets/source/western/revision2/',root);
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const read=async u=>JSON.parse(await fs.readFile(u,'utf8'));
@@ -41,8 +42,7 @@ for(const kind of ['lion','wolf','unicorn'])for(const form of ['race','upright']
  }
 }
 if(process.argv.includes('--canonical')){
- const release=await read(new URL('public/assets/western/roster-v2.json',root));assert.equal(release.recipeSha256,recipe);assert.equal(Object.keys(release.files).length,12);
- for(const [path,expected] of Object.entries(release.files)){assert.equal(hash(await fs.readFile(new URL(path,root))),expected);assert.equal(hash(await fs.readFile(new URL('candidate/'+path.split('/').at(-1),out))),expected);}
+ const release=await canonicalRoster(root);assert.equal(release.recipeSha256,recipe);
  console.log('REVISION2_CANONICAL_ROSTER_OK');
 }else if(process.argv.includes('--source-only'))console.log('REVISION2_EDITABLE_REPRODUCED');
 else console.log(`REVISION2_REVIEW_EVIDENCE_OK ${clips} complete matched cycles, ${frames} paired frames; cinematic review remains manual`);

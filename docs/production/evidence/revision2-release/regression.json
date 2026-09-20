@@ -1,0 +1,9 @@
+{
+  "sourceFingerprint": "de401d12cd83b9736d534c3a46b3288f98fcf8ef5e28d95de7760775a1e35960",
+  "revision": "revision2-de401d12cd83",
+  "command": "npm test -- --no-file-parallelism --testTimeout=60000 && npm run lint && NEXT_PUBLIC_BUILD_REVISION=revision2-de401d12cd83 NEXT_PUBLIC_QA_CAPTURE_ORIGIN= npm run build",
+  "exit": 0,
+  "outputSha256": "2d4be7f10995fe540c9f1ed7a51f79728d3d2937561ca92e5a9d9a56ffb38fef",
+  "productionChangesFromDab6": "sixGLBs and roster provenance only; src and package/config bytes unchanged",
+  "parentAssetIntegration": "all3 independent runnable gates reexecuted and passed; exact canonical12/provenance, geometry/roster, isolated fresh reproduction"
+}

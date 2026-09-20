@@ -1,0 +1,36 @@
+{
+  "kind": "local-pose-inspection-not-gameplay",
+  "settings": {
+    "stage": "fight",
+    "left": "unicorn",
+    "right": "lion",
+    "action": "hit",
+    "rival": "fight_idle",
+    "gap": 1.85,
+    "elapsed": 0.2,
+    "rivalTime": 1,
+    "counter": false,
+    "strikeWindup": 0.6,
+    "evadeDisplacement": true,
+    "positions": [
+      -0.925,
+      0.925
+    ]
+  },
+  "hashes": {
+    "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+    "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+    "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+    "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+    "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+    "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+    "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+    "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+    "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+    "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+    "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+    "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+    "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+  },
+  "pngSha256": "d3637b3233c6efcb766409383589d215c95295df30d61087bf6e68c198d1d059"
+}

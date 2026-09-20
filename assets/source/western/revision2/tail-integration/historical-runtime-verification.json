@@ -1,0 +1,402 @@
+{
+  "recipeSha256": "8f482567da48757d8ae2aba5b443f7365448673855a2cdd285cb2062d1d5ee3f",
+  "records": {
+    "lion-race": {
+      "runtimeSha256": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+      "sourceSha256": "be6f1a3cec5c4c99d2519cf390cd5b0caa0243110e5b0056f9e852b16784d471",
+      "triangles": 24969,
+      "primitives": 7,
+      "bytes": 1647536,
+      "clips": {
+        "race_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0005614013293571
+        },
+        "run": {
+          "duration": 0.5,
+          "maxTailEdgeStretch": 1.001704428710657
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.000001508906055
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.0051938347423568
+        },
+        "stumble": {
+          "duration": 0.6666666865348816,
+          "maxTailEdgeStretch": 1.0071592150599287
+        },
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 2.315408117011883
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.315433757354008
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.315742148729702
+        },
+        "attack": {
+          "duration": 1.6333333253860474,
+          "maxTailEdgeStretch": 2.3182402454058986
+        },
+        "special": {
+          "duration": 0.9333333373069763,
+          "maxTailEdgeStretch": 2.315408117011883
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 2.315434231041604
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3260564364735092
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.3160182113899856
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.315408117011883
+        },
+        "evade": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3260564364735092
+        }
+      }
+    },
+    "lion-upright": {
+      "runtimeSha256": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+      "sourceSha256": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+      "triangles": 29617,
+      "primitives": 7,
+      "bytes": 1590332,
+      "clips": {
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 1.6805729054241851
+        },
+        "special": {
+          "duration": 0.9333333373069763,
+          "maxTailEdgeStretch": 1.2280122984184951
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 1.1308121799622604
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.228925806606435
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.1179058540955515
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.124776847453443
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.5559410571388554
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.2350249968685871
+        },
+        "attack": {
+          "duration": 1.6333333253860474,
+          "maxTailEdgeStretch": 1.1518186604295764
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0125679181022231
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.4694398587078246
+        },
+        "evade": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.4440430314673944,
+          "pawPivotHeights": [
+            0.18000018434161652,
+            0.48999997526155414,
+            0.1800001843430708
+          ]
+        }
+      }
+    },
+    "wolf-race": {
+      "runtimeSha256": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+      "sourceSha256": "12228fc5ca053e806bd5a47f5489dbdcb5317b9fcaff1da5f5cc2fa7362e7ec2",
+      "triangles": 18355,
+      "primitives": 7,
+      "bytes": 1390540,
+      "clips": {
+        "race_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0046226363618762
+        },
+        "run": {
+          "duration": 0.5,
+          "maxTailEdgeStretch": 1.0337363658479322
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.0062306389903377
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.043074231081973
+        },
+        "stumble": {
+          "duration": 0.6666666865348816,
+          "maxTailEdgeStretch": 1.0596466749434987
+        },
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 2.327464889570225
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.32780115056345
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3290789774688627
+        },
+        "attack": {
+          "duration": 1.4666666984558105,
+          "maxTailEdgeStretch": 2.3301845005859207
+        },
+        "special": {
+          "duration": 1.1333333253860474,
+          "maxTailEdgeStretch": 2.327464889570225
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 2.327795331237746
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3377726407437835
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.335262430155496
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.327464889570225
+        },
+        "evade": {
+          "duration": 0.36666667461395264,
+          "maxTailEdgeStretch": 2.3376986776708804
+        }
+      }
+    },
+    "wolf-upright": {
+      "runtimeSha256": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+      "sourceSha256": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+      "triangles": 23190,
+      "primitives": 7,
+      "bytes": 1359276,
+      "clips": {
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 1.6168080314119626
+        },
+        "special": {
+          "duration": 1.1333333253860474,
+          "maxTailEdgeStretch": 1.205612414724207
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 1.125598459564874
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.4706046711110998
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.044158303370591
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.130683898793306
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.4977362510426835
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.2065469084877438
+        },
+        "attack": {
+          "duration": 1.5,
+          "maxTailEdgeStretch": 1.1384620290134688
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0283105077667412
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.4979659765551854
+        },
+        "evade": {
+          "duration": 0.3799999952316284,
+          "maxTailEdgeStretch": 1.5191178283673314,
+          "pawPivotHeights": [
+            0.18000018434161652,
+            0.4877874293552742,
+            0.18000032183096226
+          ]
+        }
+      }
+    },
+    "unicorn-race": {
+      "runtimeSha256": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+      "sourceSha256": "c07a5dbc07974cf5d8b2f627189cda2fbec6b8d0f3d15c85ed8b43cd29377e65",
+      "triangles": 18587,
+      "primitives": 7,
+      "bytes": 1388616,
+      "clips": {
+        "race_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0046137153710182
+        },
+        "run": {
+          "duration": 0.5,
+          "maxTailEdgeStretch": 1.0336317031564362
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.006204877627824
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.0430514813572433
+        },
+        "stumble": {
+          "duration": 0.6666666865348816,
+          "maxTailEdgeStretch": 1.0596210682961495
+        },
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 2.323783962548904
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.3241174999927816
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3253956296176512
+        },
+        "attack": {
+          "duration": 1.5,
+          "maxTailEdgeStretch": 2.326526619445973
+        },
+        "special": {
+          "duration": 0.9333333373069763,
+          "maxTailEdgeStretch": 2.323783962548904
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 2.32411168945059
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.3340927180404516
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.3315506828916037
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 2.323783962548904
+        },
+        "evade": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 2.33404681088171
+        }
+      }
+    },
+    "unicorn-upright": {
+      "runtimeSha256": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+      "sourceSha256": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99",
+      "triangles": 21769,
+      "primitives": 7,
+      "bytes": 1295244,
+      "clips": {
+        "transform": {
+          "duration": 1.2000000476837158,
+          "maxTailEdgeStretch": 1.647919739402297
+        },
+        "special": {
+          "duration": 0.9333333373069763,
+          "maxTailEdgeStretch": 1.134976745992731
+        },
+        "guard": {
+          "duration": 0.6000000238418579,
+          "maxTailEdgeStretch": 1.1423160421696688
+        },
+        "hit": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.465185935083549
+        },
+        "defeat": {
+          "duration": 1.2999999523162842,
+          "maxTailEdgeStretch": 2.091312556408062
+        },
+        "celebrate": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.1430830623383346
+        },
+        "jump": {
+          "duration": 0.800000011920929,
+          "maxTailEdgeStretch": 1.5254893766027695
+        },
+        "land": {
+          "duration": 0.30000001192092896,
+          "maxTailEdgeStretch": 1.2217735561134282
+        },
+        "attack": {
+          "duration": 1.5,
+          "maxTailEdgeStretch": 1.1453738636887754
+        },
+        "fight_idle": {
+          "duration": 2,
+          "maxTailEdgeStretch": 1.0312348055253544
+        },
+        "fight_move": {
+          "duration": 0.4000000059604645,
+          "maxTailEdgeStretch": 1.5599905104721095
+        },
+        "evade": {
+          "duration": 0.41999998688697815,
+          "maxTailEdgeStretch": 1.498832844622344,
+          "pawPivotHeights": [
+            0.18000018434161652,
+            0.48813750186904464,
+            0.1800001843430708
+          ]
+        }
+      }
+    }
+  },
+  "distortedTailNegative": {
+    "rejected": true,
+    "message": "lion-upright/transform: evaluated tail edge stretch 13.947627354220966"
+  }
+}

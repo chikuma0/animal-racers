@@ -46,3 +46,5 @@ __pycache__/
 /scripts/network/browser-revision2/**/profile-*/
 /docs/production/evidence/revision2-solo/**/*.webm
 /scripts/network/browser-revision2/**/*.webm
+
+/docs/production/evidence/revision2-tail-runtime/**/*.webm

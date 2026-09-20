@@ -4,11 +4,13 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {AnimationMixer,Box3,LoopOnce,Vector3} from 'three';
+import {canonicalManifest} from './roster-provenance.mjs';
 globalThis.self=globalThis;
 globalThis.createImageBitmap=async()=>({width:256,height:256,close(){}});
 const root=new URL('../../',import.meta.url);
 const candidate=process.argv.includes('--candidate');
 const revision2=candidate || await fs.stat(new URL('public/assets/western/roster-v2.json',root)).then(()=>true,()=>false);
+const repaired=!candidate&&revision2&&Boolean(JSON.parse(await fs.readFile(new URL('public/assets/western/roster-v2.json',root),'utf8')).repair);
 const out=new URL(revision2?'assets/source/western/revision2/':'assets/source/western/upright-v2/',root);
 const names=['transform','fight_idle','fight_move','attack','special','guard','hit','defeat','celebrate','jump','land'];
 if(revision2)names.push('evade');
@@ -17,7 +19,8 @@ const report={scope:'Geometry-only texture stub; 41 actual skinned-bound evaluat
 for(const kind of ['lion','wolf','unicorn']) {
  const bytes=await fs.readFile(new URL(`${candidate?'assets/source/western/revision2/candidate':'public/assets/western'}/${kind}-upright.glb`,root));
  const source=await fs.readFile(new URL(`${candidate?'assets/source/western/revision2/candidate':'assets/source/western'}/${kind}-upright.blend`,root));
- const manifest=JSON.parse(await fs.readFile(new URL(`${kind}${revision2?'-upright':''}-manifest.json`,out),'utf8'));
+ let manifest=JSON.parse(await fs.readFile(new URL(`${kind}${revision2?'-upright':''}-manifest.json`,out),'utf8'));
+ if(revision2&&!candidate)manifest=await canonicalManifest(root,kind,'upright',manifest);
  assert.equal(hash(bytes),manifest.runtimeSha256);assert.equal(hash(source),manifest.sourceSha256);
  const doc=JSON.parse(bytes.subarray(20,20+bytes.readUInt32LE(12)).toString());
  assert.deepEqual(doc.animations.map(a=>a.name).sort(),[...names].sort());
@@ -53,7 +56,7 @@ for(const kind of ['lion','wolf','unicorn']) {
   const size=bounds.getSize(new Vector3());assert([...bounds.min,...bounds.max].every(Number.isFinite));
   assert(size.x<3 && size.y<3.5 && size.z<3 && bounds.min.y>-.12,`${kind} ${clip.name}: geometry bounds ${JSON.stringify({min:bounds.min.toArray(),max:bounds.max.toArray()})}`);
   assert(limbLengthError<.003,`${kind} ${clip.name}: fixed limb length`);
-  if(!['fight_move','jump'].includes(clip.name))assert(footDrift<.003,`${kind} ${clip.name}: planted rear paws drift=${footDrift}`);
+  if(!['fight_move','jump',...(repaired?['evade']:[])].includes(clip.name))assert(footDrift<.003,`${kind} ${clip.name}: planted rear paws drift=${footDrift}`);
   clips[clip.name]={duration:clip.duration,min:bounds.min.toArray(),max:bounds.max.toArray(),maximumLimbLengthError:limbLengthError,maximumRearPawPivotDrift:footDrift};
  }
  start(gltf.animations.find(c=>c.name==='fight_move'));
@@ -76,9 +79,16 @@ for(const kind of ['lion','wolf','unicorn']) {
   const initial=sample(0,'front_paw_R'),coiled=sample(timings[0]*.60,'front_paw_R');
   assert(initial.distanceTo(coiled)>.12,`${kind}: committed windup must visibly withdraw the strike paw`);
   assert(Object.values(contact).every(p=>p[2]>.88),`${kind}: active strike must extend toward rival ${JSON.stringify(contact)}`);
+  if(repaired){
+   const evade=gltf.animations.find(c=>c.name==='evade');assert(Math.abs(evade.duration-timings[3])<.000001,`${kind}: exact exported evade duration`);start(evade);
+   const feet={};for(const side of ['L','R']){
+    start(evade);const first=sample(0,`rear_paw_${side}`),lifted=sample(evade.duration/2,`rear_paw_${side}`),last=sample(evade.duration,`rear_paw_${side}`);
+    assert(lifted.y-first.y>.25,`${kind}/${side}: evade must lift during world travel`);assert(last.distanceTo(first)<.004,`${kind}/${side}: evade must land`);feet[side]=[first.toArray(),lifted.toArray(),last.toArray()];
+   }clips.evade.hopPivotSamples=feet;
+  }
  }
  report.species[kind]={sourceSha256:hash(source),runtimeSha256:hash(bytes),bytes:bytes.length,triangles,primitives:primitives.length,bones:25,checkedSkinVertices:weightCount,restLengths,shuffleGroundedVelocity:velocity.toArray(),cupPivot:cup.toArray(),normalStrikePawPositions:contact,clips};
  console.log(`${kind} upright: ${triangles} triangles, ${primitives.length} primitives, ${bytes.length} bytes, ${names.length} clips`);
 }
-await fs.writeFile(new URL('runtime-inspection.json',out),JSON.stringify(report,null,2)+'\n');
+await fs.writeFile(new URL(repaired?'tail-integration/upright-runtime-inspection.json':'runtime-inspection.json',out),JSON.stringify(report,null,2)+'\n');
 console.log('UPRIGHT_ROSTER_STRUCTURE_OK');

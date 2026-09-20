@@ -26,5 +26,9 @@
       "description": "The operation failed because the device was still locked.",
       "recovery": "Unlock the device and try again."
     }
-  ]
+  ],
+  "retry": {
+    "dateUTC": "2026-09-20",
+    "result": "A second bounded20second automatic developer-image mount attempt returned the same CoreDeviceError10003 locked-device error. No game session started."
+  }
 }

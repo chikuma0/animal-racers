@@ -1,0 +1,3 @@
+# Mixed repaired-roster replay
+
+Lion/Wolf plus agreed rematch and Unicorn/Lion completed with real evade/counter actions in both roles, consistent results and clean full recording decodes. Wolf/Unicorn stopped during the race because the ordinary Leap click exceeded the harness3second action timeout after the element was visible/enabled/stable. Other browser diagnostics and media work shared the host during this run. Contention is a possible explanation, not an established product root cause. The failed pair remains excluded; a separate exact-build rerun with unrelated browsers closed supplies replacement evidence. The failure movie is retained and labeled.

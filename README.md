@@ -4,6 +4,8 @@ A two-competitor western championship: choose Fire Lion, Water Wolf or Rainbow U
 
 **Production status:** playable internal alpha, not an accepted release candidate. See [quality ledger](docs/production/QUALITY-LEDGER.md) and [current QA report](docs/production/QA-REPORT.md). Character polish, physical internet play, iPhone performance and owner acceptance remain open.
 
+Current gameplay revision2 review: [immutable preview](https://animal-racers-eg9gw1za9-dera-ai.vercel.app), report label `revision2-de401d12cd83`. Open the full private access link supplied directly to the owner first. [How to play and invite a friend](docs/production/PLAY-THIS-BUILD.md).
+
 ## Run
 
 Use Node22 or newer and npm.
@@ -51,7 +53,7 @@ The legacy Canvas implementation is retained in source history and unused compon
 
 ## Test and publish
 
-[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. The earlier comparison build is [f600be2](https://animal-racers-4png9iy68-dera-ai.vercel.app); its scoped access link is shared privately. Both players must first open the full private link, then exchange an invitation code. That September17 build predates the approved gameplay redesign and rebuilt characters. The revision2 build is undergoing the recorded matchup and animation checks listed in QA-REPORT.md; its new preview has not yet been published. Later task-branch previews may change; the immutable comparison URL remains fixed.
+[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. The earlier comparison build is [f600be2](https://animal-racers-4png9iy68-dera-ai.vercel.app); its scoped access link is shared privately. Both players must first open the full private link, then exchange an invitation code. That September17 build predates the approved gameplay redesign and rebuilt characters. The current revision2 preview above includes the approved gameplay redesign, rebuilt characters and connected-tail/evade repair. QA-REPORT.md identifies its exact evidence and remaining device/owner gates. Later task-branch previews may change; the immutable comparison URL remains fixed.
 
 Use the in-game **⋯** panel for rolling frame intervals, fresh measurement, session JSON, canvas frames and recordings. Recording itself adds load; use a separate run for performance. Reports do not infer hardware identity or certify60fps.
 

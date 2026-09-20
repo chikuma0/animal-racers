@@ -1,6 +1,8 @@
 # Physical-device and internet acceptance session
 
-Status: internal alpha f600be234ec7f52527c0a4335c611d236ad39ea3 is published as a separate protected preview at https://animal-racers-4png9iy68-dera-ai.vercel.app. The seven-day private access link was delivered directly to the owner; do not store its token here. Both players must open that full private link before exchanging an invitation code. The older branch link originally served4ed5042 and can advance on task-branch pushes; do not use it for this fixed-revision protocol. The first physical-device response is pending. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
+Revision2 testing will use a new immutable URL and exact source fingerprint after integration; the previous mechanics are superseded. Physical Safari automation on the paired phone was attempted on September20 but Safari could not create a usable device session. Further CoreDevice diagnosis confirmed Developer Mode is enabled and the installed developer image is usable; mounting failed because the phone is locked (underlying error10003). Unlock is required before retrying automation. No device-performance or touch result follows. [Access evidence](evidence/revision2-integrated/phone-access.json).
+
+Previous comparison build: internal alpha f600be234ec7f52527c0a4335c611d236ad39ea3 is published as a separate protected preview at https://animal-racers-4png9iy68-dera-ai.vercel.app. The seven-day private access link was delivered directly to the owner; do not store its token here. Both players must open that full private link before exchanging an invitation code. The older branch link originally served4ed5042 and can advance on task-branch pushes; do not use it for this fixed-revision protocol. The first physical-device response is pending. A local two-tab match is recorded; separate-device internet play is not verified. This protocol does not imply the visual target is accepted.
 
 ## Setup
 
@@ -9,8 +11,8 @@ Baseline:iPhone13Pro or newer, Safari, landscape, normal display brightness. Not
 ## First pass — practical access and control
 
 1. Load the build, choose an animal and start solo. Confirm character assets load and audio unlocks after the first interaction; test mute. Read the short intro.
-2. Steer both directions, deliberately clear a hurdle with jump, recover from one collision, and use burst on a clear section. Note delayed, missed or confusing touch actions.
-3. In the saloon, approach/retreat, strike, guard, jump and use the element. Note whether contact, hit reactions and health changes agree and whether the controls obscure action.
+2. Steer both directions, deliberately clear a hurdle with leap, then miss one hurdle. Follow the rival’s visible trail to build slipstream speed and swing out to attempt a pass. Steer around the loaded wagons and keep off the rough shoulders. Note delayed, missed or confusing touch actions.
+3. In the saloon, approach and retreat. Watch a committed strike, evade it and step back in to answer during recovery. Repeat with each animal using only Strike and Evade; check that the protective Unicorn evade and stronger Lion strike are understandable. Note whether contact, hit reactions and health changes agree and whether the controls obscure action.
 4. Confirm race and duel contributions, a recognizable cup, rematch and return. Report the most frustrating or visually distracting moment, with phase and character.
 
 ## Measurement pass
@@ -33,6 +35,6 @@ The download also separates simulation, network send, presentation, renderer, au
 
 The loading preparation section records the elapsed time and bounded representative draws before play is enabled. Starting a fresh measurement clears gameplay histograms but preserves the loading record. All raw frame intervals remain available: moving first-use work into loading does not make long loading acceptable or certify sustained play. Record loading duration separately in the physical-device session. The new f600be2 immutable review preview includes these additions; the old4ed5042 branch link does not.
 
-## Touch regression pass for Cycle10 or later
+## Touch regression pass for revision2
 
-Hold both steering buttons, then lift only one finger: the remaining direction must stay active. Hold Guard with one finger while tapping Strike with another; the guard must resume after attack recovery. Hold Jump across the race-to-fight boundary and release it after the button changes; the previous press must not remain latched. Cancel a press by backgrounding Safari, return, and verify that movement/defense is neutral until a new press. Repeat after rematch. These are physical event-delivery checks; callback fixtures and desktop clicks do not replace them. Use the new f600be2 review build; the4ed5042 shared build predates this repair.
+Hold both steering buttons, then lift only one finger: the remaining direction must stay active. Hold movement with one finger while tapping Strike or Evade with another; releasing the action must preserve the held direction. Hold Leap across the race-to-fight boundary and release it after the button changes; the old press must not remain latched or repeatedly evade. Cancel a press by backgrounding Safari, return, and verify neutral input until a new press. Repeat after rematch. These are physical event-delivery checks; callback fixtures and desktop clicks do not replace them. Use the exact revision2 review build. Older builds expose superseded Guard/Element controls.

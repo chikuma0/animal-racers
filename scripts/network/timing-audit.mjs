@@ -11,7 +11,7 @@ import ts from 'typescript';
 const rootUrl = new URL('../../', import.meta.url);
 const root = fileURLToPath(rootUrl);
 assert.ok(process.argv.slice(2).every(arg => arg === '--expect-rematch-recovery'), 'unknown audit option');
-const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'simulation', 'measurements', 'work-measurements', 'controls'].map(name => `src/championship/${name}.ts`)];
+const sourcePaths = ['src/components/Championship.tsx', ...['network', 'input-buffer', 'presentation', 'prediction', 'simulation', 'course', 'measurements', 'work-measurements', 'controls'].map(name => `src/championship/${name}.ts`)];
 const sources = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, await readFile(new URL(path, rootUrl), 'utf8')])));
 const sha = value => createHash('sha256').update(value).digest('hex');
 const component = sources[sourcePaths[0]];
@@ -27,6 +27,7 @@ const callbacks = {
   animate: variable('animate').initializer,
   receive: find(node => ts.isBinaryExpression(node) && node.left.getText(tree) === 'net.onMessage').right,
   rematch: variable('rematch').initializer,
+  publishControls: variable('publishControls').initializer.arguments[0],
 };
 const callbackEvidence = Object.fromEntries(Object.entries(callbacks).map(([name, node]) => [name, { line: tree.getLineAndCharacterOfPosition(node.getStart(tree)).line + 1, sha256: sha(node.getText(tree)), source: node.getText(tree) }]));
 function compile(node) {
@@ -141,25 +142,44 @@ const ref = current => ({ current });
 function makeEndpoint(api, clock, wire, role, options) {
   const s = { ...api, CHARACTER_IDS: ['lion', 'wolf', 'unicorn'], mode: role, asHost: role === 'host', selected: 'lion', rival: 'wolf', alive: true,
     performance: { now: () => clock.now }, document: { hidden: false }, crypto: { randomUUID: () => `epoch-${++s.epochCount}` }, epochCount: 0,
-    requestAnimationFrame: () => 0, captured: null, sourceSentAt: null, ignoredNewEpoch: 0, acceptedSnapshots: 0, lastSnapshotAt: null,
-    ui: {}, statuses: [], peakPendingEdges: 0,
+    requestAnimationFrame: () => 0, captured: null, unpredicted: null, sourceSentAt: null, ignoredNewEpoch: 0, acceptedSnapshots: 0, lastSnapshotAt: null,
+    ui: {}, statuses: [], peakPendingEdges: 0, receivedPresses: [], receivedPressIds: new Set(),
   };
   for (const [name, value] of Object.entries({ match: null, input: api.neutralInput(), remoteInput: api.neutralInput(), modeRef: role, screenRef: 'lobby', selectedRef: role === 'host' ? 'lion' : 'wolf', readyRef: true,
     peerRef: { character: role === 'host' ? 'wolf' : 'lion', ready: true }, epoch: '', lastSnapshot: clock.now, lastInput: clock.now, localSeq: 0, remoteSeq: -1, latestTick: -1, connected: true,
-    rematchPending: false, peerRematch: false, presentation: new api.PresentationBuffer(), inputSender: new api.InputSender(), localReceiver: new api.InputReceiver(), remoteReceiver: new api.InputReceiver(),
-    controls: new api.InputControls(), workMeasurements: new api.WorkMeasurements(), audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
+    rematchPending: false, peerRematch: false, presentation: new api.PresentationBuffer(), prediction: new api.GuestPrediction(1), inputSender: new api.InputSender(), localReceiver: new api.InputReceiver(), remoteReceiver: new api.InputReceiver(),
+    controls: new api.InputControls(), workMeasurements: new api.WorkMeasurements(), playTrace: { lastId: 0, events: [] }, audio: { reset() {}, update() {} }, renderer: { render: state => { s.captured = state; }, report: () => null },
   })) s[name] = ref(value);
   for (const name of ['setRematchWaiting', 'setInterrupted', 'setStatus', 'setReady', 'setPeer', 'setRival', 'setView', 'setReport']) s[name] = value => { s.ui[name] = value; };
   s.setPage = page => { s.screenRef.current = page; };
+  const sample = s.presentation.current.sample.bind(s.presentation.current);
+  s.presentation.current.sample = (...args) => { s.unpredicted = sample(...args); return s.unpredicted; };
   const net = new api.ChampionshipNetwork({ createClient: wire.client, now: () => clock.now, enableWebRTC: wire.profile.direct, createPeerConnection: wire.createPeer });
   s.network = ref(net); s.net = net;
   s.begin = new Function('scope', `with(scope){return ${compiledCallbacks.begin};}`)(s);
   s.animate = new Function('scope', `with(scope){${frameDeclaration}\nreturn ${compiledCallbacks.animate};}`)(s);
+  const animate = s.animate;
+  s.animate = (...args) => {
+    const before = wire.sentTypes.snapshot ?? 0;
+    animate(...args);
+    assert.ok((wire.sentTypes.snapshot ?? 0) - before <= 1, 'urgent events send at most one snapshot per frame');
+  };
   s.rematch = new Function('scope', `with(scope){return ${compiledCallbacks.rematch};}`)(s);
+  s.publishControls = new Function('scope', `with(scope){return ${compiledCallbacks.publishControls};}`)(s);
   const receive = new Function('scope', `with(scope){${validators}\nreturn ${compiledCallbacks.receive};}`)(s);
   net.onMessage = message => {
-    const previous = s.lastSnapshot.current;
+    const previous = s.lastSnapshot.current, priorInputSeq = s.remoteSeq.current;
     receive(message);
+    if (role === 'host' && message.type === 'input' && s.remoteSeq.current > priorInputSeq) {
+      for (const [key, presses] of Object.entries(message.data.packet.presses)) for (const press of presses) {
+        const identity = `${message.data.epoch}:${key}:${press.id}`;
+        if (s.receivedPressIds.has(identity)) continue;
+        s.receivedPressIds.add(identity);
+        s.receivedPresses.push({ epoch: message.data.epoch, key, id: press.id, at: clock.now, authorityTick: s.match.current.tick, sourceTick: press.tick, ageTicks: s.match.current.tick - press.tick });
+        if (s.receivedPresses.length > 64) s.receivedPresses.shift();
+        if (s.receivedPressIds.size > 64) s.receivedPressIds.delete(s.receivedPressIds.values().next().value);
+      }
+    }
     s.peakPendingEdges = Math.max(s.peakPendingEdges, ...Object.values(s.remoteReceiver.current.pending).map(queue => queue.length));
     if (message.type === 'snapshot') {
       if (s.lastSnapshot.current !== previous) { s.sourceSentAt = clock.delivery?.sentAt ?? clock.now; s.acceptedSnapshots++; }
@@ -168,7 +188,17 @@ function makeEndpoint(api, clock, wire, role, options) {
   };
   net.onStatus = status => s.statuses.push({ at: rounded(clock.now), status });
   net.onPresence = ids => { s.connected.current = ids.length === 2; };
-  s.setInput = patch => { Object.assign(s.input.current, patch); s.inputSender.current.update(s.input.current, s.match.current?.tick ?? 0); };
+  s.setInput = patch => {
+    for (const [key, value] of Object.entries(patch)) {
+      const pointer = 20 + ['move', 'jump', 'attack', 'special', 'guard'].indexOf(key);
+      if (value === false || value === 0) s.controls.current.pointerUp(pointer);
+      else s.controls.current.pointerDown(pointer, key, value);
+    }
+    s.publishControls();
+    const sequence = s.localSeq.current;
+    s.publishControls();
+    assert.equal(s.localSeq.current, sequence, 'unchanged control publication must not flood immediate packets');
+  };
   return s;
 }
 const profiles = [
@@ -187,19 +217,21 @@ async function scenario(profile, options = {}) {
   await clock.until(() => endpoints.every(s => s.net.peerId && (!profile.direct || s.net.transport === 'webrtc')), 4_000);
   assert.ok(endpoints.every(s => s.net.peerId && (!profile.direct || s.net.transport === 'webrtc')), 'modeled path setup');
   const start = clock.now;
-  const metrics = { hostTickLagMs: [], snapshotAgeMs: [], actionClockLagMs: [], resultConvergences: [], resultReceivedTimes: {}, stimuli: [], peakPresentationFrames: 0, peakPendingEdges: 0, peakRoundTripSamples: 0, peakRateWindow: 0, phaseMismatches: 0, backtracks: 0, maxBackwardZM: 0, actionRewinds: 0, maxActionRewindMs: 0, actionRewindExamples: [], canonicalMutations: 0 };
+  const metrics = { hostTickLagMs: [], snapshotAgeMs: [], actionClockLagMs: [], resultConvergences: [], resultReceivedTimes: {}, stimuli: [], peakPresentationFrames: 0, peakPendingEdges: 0, peakRoundTripSamples: 0, peakRateWindow: 0, phaseMismatches: 0, backtracks: 0, maxBackwardZM: 0, actionRewinds: 0, maxActionRewindMs: 0, actionRewindExamples: [], canonicalMutations: 0, predictionGameplayMutations: 0, predictionActionClockCorrections: 0, maxPredictionActionClockCorrectionMs: 0, maxPredictionXOffset: 0, maxPredictionYOffset: 0, peakPredictorStateBytes: 0 };
   const specifications = [
-    { fightAt: 1, slot: 1, key: 'attack' }, { fightAt: 3, slot: 1, key: 'special' }, { fightAt: 5, slot: 1, key: 'jump' },
-    { fightAt: 7, slot: 0, key: 'attack' }, { fightAt: 9, slot: 1, key: 'attack' }, { fightAt: 11, slot: 1, key: 'jump' },
+    { fightAt: 1, slot: 1, key: 'attack', action: 'attack' }, { fightAt: 3, slot: 1, key: 'special', action: 'attack' }, { fightAt: 5, slot: 1, key: 'jump', action: 'evade' },
+    { fightAt: 7, slot: 0, key: 'attack', action: 'attack' }, { fightAt: 9, slot: 1, key: 'attack', action: 'attack' }, { fightAt: 11, slot: 1, key: 'jump', action: 'evade' },
   ];
   let previousView = null, previousEvent = 0, rematchAt = null, secondBeginAt = null, finalAt = null, approached = false;
   const rematchInputResets = [];
   const collect = (s, slot) => {
-    const m = host.match.current, v = s.captured;
+    const m = host.match.current, rendered = s.captured, v = slot === 1 ? s.unpredicted : rendered;
     if (s.epoch.current === 'epoch-2' && !rematchInputResets.includes(slot)) {
       assert.deepEqual(s.controls.current.value(), api.neutralInput(), 'new epoch releases physical owners');
       assert.deepEqual(s.input.current, api.neutralInput(), 'new epoch clears the published held input');
       assert.deepEqual(s.inputSender.current.packet(s.match.current.tick).held, api.neutralInput(), 'new epoch clears transmitted held input');
+      assert.equal(s.prediction.current.pose, null, 'new epoch clears speculative pose');
+      assert.equal(s.prediction.current.motion, null, 'new epoch clears speculative movement');
       rematchInputResets.push(slot);
     }
     metrics.peakPresentationFrames = Math.max(metrics.peakPresentationFrames, s.presentation.current.frames.length);
@@ -213,7 +245,7 @@ async function scenario(profile, options = {}) {
     if (slot === 0 && m) {
       if (host.epoch.current === 'epoch-2' && secondBeginAt === null) secondBeginAt = clock.now;
       for (const event of m.events.filter(event => event.id > previousEvent)) {
-        const stimulus = metrics.stimuli.find(item => item.epoch === host.epoch.current && item.slot === event.slot && item.key === event.type && item.authorityAt === null && clock.now - item.pressedAt <= api.INPUT_MAX_AGE_TICKS * 1000 / 60);
+        const stimulus = metrics.stimuli.find(item => item.epoch === host.epoch.current && item.slot === event.slot && (item.action === event.type || (item.action === 'attack' && event.type === 'counter')) && item.authorityAt === null && clock.now - item.pressedAt <= api.INPUT_MAX_AGE_TICKS * 1000 / 60);
         if (stimulus) { stimulus.authorityAt = clock.now; stimulus.eventId = event.id; }
       }
       previousEvent = m.eventSequence;
@@ -225,6 +257,17 @@ async function scenario(profile, options = {}) {
       assert.equal(v.phase, guest.match.current.phase, 'presentation retains canonical phase');
       assert.deepEqual(v.result, guest.match.current.result, 'presentation retains canonical score');
       assert.deepEqual(v.players.map(p => p.hp), guest.match.current.players.map(p => p.hp), 'presentation retains canonical health');
+      const stripped = { ...rendered, players: [...rendered.players] };
+      stripped.players[1] = { ...rendered.players[1] };
+      for (const key of ['x', 'y', 'action', 'actionTime']) stripped.players[1][key] = v.players[1][key];
+      if (JSON.stringify(stripped) !== JSON.stringify(v)) metrics.predictionGameplayMutations++;
+      metrics.maxPredictionXOffset = Math.max(metrics.maxPredictionXOffset, Math.abs(rendered.players[1].x - guest.match.current.players[1].x));
+      metrics.maxPredictionYOffset = Math.max(metrics.maxPredictionYOffset, Math.abs(rendered.players[1].y - guest.match.current.players[1].y));
+      metrics.peakPredictorStateBytes = Math.max(metrics.peakPredictorStateBytes, JSON.stringify(s.prediction.current).length);
+      if (previousView?.epoch === guest.epoch.current && previousView.rendered.phase === rendered.phase && previousView.rendered.players[1].action === rendered.players[1].action && ['attack', 'evade', 'jump'].includes(rendered.players[1].action)) {
+        const correction = previousView.rendered.players[1].actionTime - rendered.players[1].actionTime;
+        if (correction > 1e-7) { metrics.predictionActionClockCorrections++; metrics.maxPredictionActionClockCorrectionMs = Math.max(metrics.maxPredictionActionClockCorrectionMs, correction * 1000); }
+      }
       if (previousView?.epoch === guest.epoch.current && previousView.state.phase === 'race' && v.phase === 'race') {
         const backwards = previousView.state.players[1].z - v.players[1].z;
         if (backwards > 1e-7) { metrics.backtracks++; metrics.maxBackwardZM = Math.max(metrics.maxBackwardZM, backwards); }
@@ -232,7 +275,7 @@ async function scenario(profile, options = {}) {
       for (const playerSlot of [0, 1]) {
         const a = m.players[playerSlot], b = v.players[playerSlot];
         const received = guest.match.current.players[playerSlot];
-        if (['attack', 'special', 'jump', 'hit'].includes(a.action) && a.action === b.action && Math.abs((m.tick - guest.match.current.tick) / 60 - (a.actionTime - received.actionTime)) < 1 / 120) metrics.actionClockLagMs.push(Math.max(0, a.actionTime - b.actionTime) * 1000);
+        if (['attack', 'evade', 'jump', 'hit'].includes(a.action) && a.action === b.action && Math.abs((m.tick - guest.match.current.tick) / 60 - (a.actionTime - received.actionTime)) < 1 / 120) metrics.actionClockLagMs.push(Math.max(0, a.actionTime - b.actionTime) * 1000);
         const prior = previousView?.state.players[playerSlot];
         if (prior && previousView.epoch === guest.epoch.current && prior.action === b.action && ['attack', 'special'].includes(b.action)) {
           const live = guest.match.current.players[playerSlot], priorLive = previousView.canonical.players[playerSlot];
@@ -246,12 +289,15 @@ async function scenario(profile, options = {}) {
       }
       // Both objects are replaced (not advanced) by guest receive/sample; retain
       // their immutable references instead of cloning the full match every frame.
-      previousView = { epoch: guest.epoch.current, state: v, canonical: guest.match.current };
+      previousView = { epoch: guest.epoch.current, state: v, rendered, canonical: guest.match.current };
     }
     if (v) for (const stimulus of metrics.stimuli) {
       if (s.epoch.current !== stimulus.epoch || stimulus.eventId === null || !v.events.some(event => event.id === stimulus.eventId)) continue;
       const which = slot === 0 ? 'hostVisibleAt' : 'guestVisibleAt';
-      if (stimulus[which] === null && v.players[stimulus.slot].action === stimulus.key) stimulus[which] = clock.now;
+      if (stimulus[which] === null && v.players[stimulus.slot].action === stimulus.action) stimulus[which] = clock.now;
+    }
+    if (slot === 1 && rendered) for (const stimulus of metrics.stimuli) {
+      if (stimulus.slot === 1 && s.epoch.current === stimulus.epoch && stimulus.guestFeedbackAt === null && clock.now >= stimulus.pressedAt && clock.now - stimulus.pressedAt <= api.PREDICTION_LIMITS.horizonMs && rendered.players[1].action === stimulus.action) stimulus.guestFeedbackAt = clock.now;
     }
     if (s.match.current?.phase === 'results') {
       const key = `${s.epoch.current}-${slot}`;
@@ -284,8 +330,9 @@ async function scenario(profile, options = {}) {
       }
       for (const specification of specifications) if (m.fightTime >= specification.fightAt && !specification.fired) {
         specification.fired = true;
-        const stimulus = { ...specification, epoch: host.epoch.current, pressedAt: clock.now, authorityAt: null, eventId: null, hostVisibleAt: null, guestVisibleAt: null };
+        const stimulus = { ...specification, epoch: host.epoch.current, pressedAt: clock.now, authorityAt: null, eventId: null, hostVisibleAt: null, guestVisibleAt: null, guestFeedbackAt: null };
         metrics.stimuli.push(stimulus); endpoints[specification.slot].setInput({ [specification.key]: true });
+        stimulus.pressId = endpoints[specification.slot].inputSender.current.packet().edges[specification.key];
         clock.timer(() => endpoints[specification.slot].setInput({ [specification.key]: false }), 20);
       }
     }
@@ -298,15 +345,16 @@ async function scenario(profile, options = {}) {
   clock.timer(() => frame(0), 0); clock.timer(() => frame(1), 1000 / 120);
   await clock.until(() => finalAt !== null, start + 340_000);
   const sameResult = endpoints.every(s => s.match.current?.phase === 'results') && host.epoch.current === guest.epoch.current && JSON.stringify(host.match.current.result) === JSON.stringify(guest.match.current.result);
-  const response = metrics.stimuli.map(({ fired, ...stimulus }) => ({ ...stimulus, inputToAuthorityMs: stimulus.authorityAt === null ? null : rounded(stimulus.authorityAt - stimulus.pressedAt), inputToHostVisibleMs: stimulus.hostVisibleAt === null ? null : rounded(stimulus.hostVisibleAt - stimulus.pressedAt), inputToGuestVisibleMs: stimulus.guestVisibleAt === null ? null : rounded(stimulus.guestVisibleAt - stimulus.pressedAt) }));
+  const response = metrics.stimuli.map(({ fired, ...stimulus }) => ({ ...stimulus, firstReceived: host.receivedPresses.find(press => press.epoch === stimulus.epoch && press.key === stimulus.key && press.id === stimulus.pressId) ?? null, inputToAuthorityMs: stimulus.authorityAt === null ? null : rounded(stimulus.authorityAt - stimulus.pressedAt), inputToHostVisibleMs: stimulus.hostVisibleAt === null ? null : rounded(stimulus.hostVisibleAt - stimulus.pressedAt), inputToGuestVisibleMs: stimulus.guestVisibleAt === null ? null : rounded(stimulus.guestVisibleAt - stimulus.pressedAt), inputToGuestFeedbackMs: stimulus.guestFeedbackAt === null ? null : rounded(stimulus.guestFeedbackAt - stimulus.pressedAt) }));
   const result = {
     profile: profile.id, injected: profile, counterfactual: false, blackoutAllRematchCountdownSnapshots: Boolean(options.blackoutCountdown),
     virtualDurationMs: rounded(clock.now - start), eventOperations: clock.operations,
-    packetCounts: { total: wire.packetCount, dropped: wire.dropped, deliveredOutOfOrder: wire.reordered, droppedTypes: wire.droppedTypes },
+    packetCounts: { total: wire.packetCount, dropped: wire.dropped, deliveredOutOfOrder: wire.reordered, droppedTypes: wire.droppedTypes, sentTypes: wire.sentTypes },
     cadenceHz: endpoints.map(s => s.net.sendHz), response,
-    responseMs: { guestToAuthority: distribution(response.filter(r => r.slot === 1).map(r => r.inputToAuthorityMs)), guestToGuestVisible: distribution(response.filter(r => r.slot === 1).map(r => r.inputToGuestVisibleMs)), hostToHostVisible: distribution(response.filter(r => r.slot === 0).map(r => r.inputToHostVisibleMs)) },
+    responseMs: { guestToAuthority: distribution(response.filter(r => r.slot === 1).map(r => r.inputToAuthorityMs)), guestToGuestVisible: distribution(response.filter(r => r.slot === 1).map(r => r.inputToGuestVisibleMs)), guestToLocalFeedback: distribution(response.filter(r => r.slot === 1).map(r => r.inputToGuestFeedbackMs)), hostToHostVisible: distribution(response.filter(r => r.slot === 0).map(r => r.inputToHostVisibleMs)) },
     freshness: { hostTickLagMs: distribution(metrics.hostTickLagMs), snapshotAgeMs: distribution(metrics.snapshotAgeMs), actionClockLagMs: distribution(metrics.actionClockLagMs), phaseMismatchFrames: metrics.phaseMismatches, raceBacktrackFrames: metrics.backtracks, maxBackwardZM: rounded(metrics.maxBackwardZM), actionRewindFrames: metrics.actionRewinds, maxActionRewindMs: rounded(metrics.maxActionRewindMs), actionRewindExamples: metrics.actionRewindExamples },
     bounds: { peakPresentationFrames: metrics.peakPresentationFrames, peakPendingEdgesPerButton: metrics.peakPendingEdges, peakRoundTripSamples: metrics.peakRoundTripSamples, peakRateWindow: metrics.peakRateWindow, peakScheduledEvents: clock.peakQueue, peakEnvelopeBytes: wire.peakBytes, canonicalMutations: metrics.canonicalMutations },
+    prediction: { gameplayMutations: metrics.predictionGameplayMutations, localActionClockCorrections: metrics.predictionActionClockCorrections, maxLocalActionClockCorrectionMs: rounded(metrics.maxPredictionActionClockCorrectionMs), maxXOffsetM: rounded(metrics.maxPredictionXOffset), maxYOffsetM: rounded(metrics.maxPredictionYOffset), peakStateBytes: metrics.peakPredictorStateBytes },
     convergence: { results: metrics.resultConvergences, sameFinalResult: sameResult, rematchInputResets, rematchAt, secondBeginAt, hostEpoch: host.epoch.current, guestEpoch: guest.epoch.current, hostPhase: host.match.current?.phase, guestPhase: guest.match.current?.phase, hostInterrupted: Boolean(host.ui.setInterrupted), guestInterrupted: Boolean(guest.ui.setInterrupted), guestIgnoredNewEpochSnapshots: guest.ignoredNewEpoch },
   };
   assert.ok(metrics.peakPresentationFrames <= 8 && metrics.peakPendingEdges <= 2 && wire.peakBytes <= api.NETWORK_LIMITS.maxBytes && metrics.canonicalMutations === 0, 'production memory/envelope/authority bounds');
@@ -316,12 +364,18 @@ async function scenario(profile, options = {}) {
   assert.ok(sameResult && host.epoch.current === 'epoch-2', 'both complete rematch');
   assert.equal(rematchInputResets.length, 2, 'both roles release old championship inputs');
   assert.equal(response.length, 6);
-  if (profile.inputBlackoutMs) {
-    assert.equal(response[0].authorityAt, null, 'expired press must never replay after input loss');
-    assert.ok(response.slice(1).every(row => row.authorityAt !== null), 'fresh inputs still work after loss recovery');
-  } else assert.ok(response.every(row => row.authorityAt !== null), 'all fresh scripted short presses reached authority');
+  for (const row of response) {
+    if (row.slot === 1) assert.ok(row.firstReceived, 'every scripted guest counter eventually arrives');
+    const expired = row.slot === 1 && row.firstReceived.ageTicks > api.INPUT_MAX_AGE_TICKS;
+    row.intentOutcome = expired ? 'expired-before-receiver' : 'executed';
+    if (expired) assert.equal(row.authorityAt, null, 'expired press must never replay, even when locally previewed');
+    else assert.ok(row.authorityAt !== null, `fresh scripted intent must execute: ${profile.id} ${JSON.stringify(row)}`);
+  }
+  if (profile.inputBlackoutMs) assert.equal(response[0].intentOutcome, 'expired-before-receiver', 'controlled loss proves stale-input rejection');
   assert.equal(metrics.actionRewinds, 0, 'same action must not rewind');
   assert.equal(metrics.backtracks, 0, 'forward race must not play backward');
+  assert.equal(metrics.predictionGameplayMutations, 0, 'local visual prediction must not alter gameplay');
+  assert.ok(metrics.peakPredictorStateBytes < 2000 && metrics.maxPredictionXOffset <= api.PREDICTION_LIMITS.maxLateralOffset + 1e-7, 'bounded local prediction state and position');
   await Promise.all(endpoints.map(s => s.net.disconnect()));
   assert.ok(wire.channels.length === 0 && endpoints.every(s => s.net.connection === null) && wire.peers.every(peer => peer.connectionState === 'closed'), 'transport cleanup');
   return result;
@@ -348,17 +402,17 @@ for (const profile of profiles) {
 results.push(await scenario(structuredClone(profiles[0]), { blackoutCountdown: true }));
 const report = {
   auditedCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
-  expectedBehavior: 'Real current-source rematch recovery, monotonic presentation, and stale-input expiry required; no counterfactual callbacks.',
+  expectedBehavior: 'Revision2 event-driven input/combat snapshots through actual callbacks: gameplay/rematch convergence, canonical presentation monotonicity, stale-input expiry, bounded cosmetic feedback; visual prediction corrections measured separately. No counterfactual callbacks.',
   harnessSha256: sha(await readFile(fileURLToPath(import.meta.url))),
   classification: 'OFFLINE SYNTHETIC SCHEDULES. Injected delay/jitter/loss are not internet measurements. Fixed 60Hz app callbacks; model-to-render timings exclude browser input dispatch, rendering, GPU, display and CPU stalls.',
   sources: Object.fromEntries(Object.entries(sources).map(([path, source]) => [path, sha(source)])), extractedCallbacks: callbackEvidence,
   extractedSupportingSource: { frameDeclaration, validators },
-  boundaries: ['Actual exported network, input-buffer, presentation and simulation code.', 'Actual AST-extracted app begin, animate, message-handler and rematch callbacks; only sockets, WebRTC primitive, clock, React refs/setters and renderer sink are modeled.', 'Current audit uses only actual callbacks; historical baseline/counterfactual findings are in the separate baseline report. Canonical files remain unchanged during each audit.', 'Near-zero values are synthetic. Slow fallback values are inspired by the historical small smoke sample, not a reconstruction or forecast.'],
+  boundaries: ['Actual exported network, input-buffer, presentation, prediction, controls, course and simulation code.', 'Actual AST-extracted app begin, animate, message-handler, control publisher and rematch callbacks; only sockets, WebRTC primitive, clock, React refs/setters and renderer sink are modeled.', 'Canonical presentation metrics are captured before prediction; immediate local feedback is separately measured without requiring a host event. Cosmetic clock corrections do not imply canonical replay.', 'Current audit uses only actual callbacks; historical baseline/counterfactual findings are in separate immutable reports. Canonical files remain unchanged during each audit.', 'Near-zero values are synthetic. Slow fallback values are inspired by the historical small smoke sample, not a reconstruction or forecast.'],
   edgeBurst, results,
   wallRuntimeMs: rounded(performance.now() - started),
 };
 for (const [path, original] of Object.entries(sources)) assert.equal(sha(await readFile(new URL(path, rootUrl), 'utf8')), sha(original), `canonical source changed during audit: ${path}`);
-const artifactName = './timing-audit-current-result.json';
+const artifactName = './timing-audit-event-driven-result.json';
 await writeFile(new URL(artifactName, import.meta.url), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(results.map(result => ({ profile: result.profile, blackout: result.blackoutAllRematchCountdownSnapshots, counterfactual: result.counterfactual, response: result.responseMs, freshness: result.freshness, convergence: result.convergence.sameFinalResult, bounds: result.bounds })), null, 2));
 console.log('LOCAL TIMING AUDIT VERIFIED');

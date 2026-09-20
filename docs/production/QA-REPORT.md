@@ -1,4 +1,21 @@
-# Internal alpha QA — 2026-09-17
+# Revision2 QA checkpoint — 2026-09-20
+
+**Integration candidate; not accepted for release.** This revision replaces the inherited race and combat design and rebuilds all six animal assets. The earlier September17 evidence below remains historical. It does not certify the current build.
+
+- Current frozen application: commit `54ecd6e`, source fingerprint `dab6cd037a2abcb0cb3758f7b66c2643ea0bcebbcb7bb6982a92e1b37aac967e`, report label `revision2-dab6cd037a2a`. [Exact file manifest](evidence/revision2-integrated/build-manifest.json) was recorded before the commit and therefore names its prior Git base. Its file hashes identify the tested working tree.
+- Automated regression:126 tests in11 files, lint and a production build passed.35 simulation tests include recoverable race mistakes, genuine overtaking, attack commitments, protected evades, counter replies and bounded50/50 event pools. The216 pressure fixtures produced no permanent stun trap. These are correctness evidence, not human enjoyment acceptance.
+- Normal controls: all9 ordered solo pairings and all9 ordered two-client pairings plus one full rematch passed on the frozen build. The harnesses use visible UI, normal key/button input, actual report downloads and full game-canvas recordings. Parent independently re-read the9 solo reports and reran the saved online oracle: both roles in all10 accepted online rounds performed4 leaps, at least1 successful evade, an actual counter and consequential damage, with identical final state/results. [Solo evidence](evidence/revision2-solo/2026-09-20T03-02-36-830Z/README.md) and [online aggregate](../../scripts/network/browser-revision2/aggregate-2026-09-20T03-34-30-929Z.json) retain19 portable recordings. Solo Unicorn/Lion ends49.7/50.3 despite a48–0 duel win. Lion/Wolf shows a collision at235m, drafting at237m and a genuine pass at256m,2.65seconds after the collision. An earlier rematch reply missed its counter bonus and was retained as a negative; the accepted rerun verifies the bonus in both roles. These are functional findings, not human enjoyment or physical-device acceptance.
+- Characters: all six replacement GLBs and editable Blender sources are integrated. Complete clip comparisons and geometry/source/export checks are retained. However, the online close-up revealed detached upright tails. **Animation acceptance is reopened**; a connected-tail repair and a lifted evade step are being authored separately. The frozen functional runs retain the defective art and cannot certify the repair.
+- Networking: bounded guest presentation prediction, host authority, immediate changed-input delivery and combat-event snapshots are verified. Synthetic reaction fixtures avoid attacks in all9 pairings at100ms one-way latency; all9 fail at200ms. This is a known responsiveness boundary under that fixture, not a claim about arbitrary internet conditions or human reaction. The Broadcast fallback is still unaccepted for responsive combat.
+- Environment: Node22.22.2, installed Chrome on MacBook Air M3/24GB, Next16.3.5, Blender4.5.9. Simultaneous browsers, recording and asset work load the host. Their frame reports must not be treated as controlled performance or iPhone evidence.
+- Physical iPhone13Pro, separate-device internet play and owner judgment of the actual visuals and enjoyment remain unverified. The paired phone was found, but Safari could not create a usable device-automation session. Further device diagnostics isolated a locked-phone mount failure (CoreDeviceError10003); Developer Mode is enabled and the installed image is usable. Unlock is required before retrying. No physical60fps claim is made.
+- Distribution: the private immutable f600be2 comparison preview is unchanged. A new preview and Japanese draft PR update follow the tail repair and affected replays. Production is unchanged.
+
+Next action: finish the connected-tail/evade repair, review full side-on cycles and the actual renderer, integrate it, then record affected real-gameplay scenarios and publish the exact review candidate for the physical session. The complete functional matrices remain pinned to their original art hashes.
+
+---
+
+# Historical alpha QA — 2026-09-17
 
 **Not a release candidate.** No owner visual/play approval or physical-phone acceptance has been recorded. This report separates automated evidence, actual local play and outstanding device work.
 

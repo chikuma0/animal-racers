@@ -1,0 +1,1763 @@
+{
+  "capturedAt": "2026-09-20T03:06:10.481Z",
+  "revision": "revision2-dab6cd037a2a",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1100,
+    "height": 740,
+    "dpr": 1
+  },
+  "mode": "guest",
+  "phase": "results",
+  "match": {
+    "tick": 5889,
+    "phaseTime": 0,
+    "raceTime": 61.31666666666666,
+    "fightTime": 29.833333333333332,
+    "result": {
+      "race": [
+        25.4,
+        24.6
+      ],
+      "fight": [
+        36.5,
+        13.5
+      ],
+      "total": [
+        61.9,
+        38.1
+      ],
+      "winner": 0,
+      "reason": "Combined race + fight points · final health"
+    },
+    "players": [
+      {
+        "character": "lion",
+        "hp": 46,
+        "finishTime": 61.24482368055652,
+        "raceStatus": "finished"
+      },
+      {
+        "character": "wolf",
+        "hp": 0,
+        "finishTime": 61.305588118894484,
+        "raceStatus": "finished"
+      }
+    ]
+  },
+  "recording": true,
+  "playTrace": {
+    "note": "Bounded observed authoritative events; tick is observation time, not a claim of exact event timestamp. No predicted contacts.",
+    "events": [
+      {
+        "tick": 180,
+        "phase": "race",
+        "phaseTime": 0,
+        "type": "race",
+        "slot": -1,
+        "x": -1.25,
+        "z": 0
+      },
+      {
+        "tick": 708,
+        "phase": "race",
+        "phaseTime": 8.8,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 4.263261066070451,
+        "z": 63.06780555555559
+      },
+      {
+        "tick": 761,
+        "phase": "race",
+        "phaseTime": 9.683333333333334,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 4.3,
+        "z": 70.11660555555557
+      },
+      {
+        "tick": 831,
+        "phase": "race",
+        "phaseTime": 10.85,
+        "type": "jump",
+        "slot": 0,
+        "x": 2.8095222360537893,
+        "z": 81.61013888888958
+      },
+      {
+        "tick": 839,
+        "phase": "race",
+        "phaseTime": 10.983333333333333,
+        "type": "jump",
+        "slot": 1,
+        "x": 4.3,
+        "z": 81.47153888888863
+      },
+      {
+        "tick": 876,
+        "phase": "race",
+        "phaseTime": 11.6,
+        "type": "land",
+        "slot": 0,
+        "x": 2.807312704355647,
+        "z": 87.61013888888988
+      },
+      {
+        "tick": 884,
+        "phase": "race",
+        "phaseTime": 11.733333333333333,
+        "type": "land",
+        "slot": 1,
+        "x": 4.3,
+        "z": 87.93953888888848
+      },
+      {
+        "tick": 982,
+        "phase": "race",
+        "phaseTime": 13.366666666666667,
+        "type": "pass",
+        "slot": 1,
+        "x": 3.711486209837814,
+        "z": 101.88026501508254
+      },
+      {
+        "tick": 1006,
+        "phase": "race",
+        "phaseTime": 13.766666666666666,
+        "type": "draft-start",
+        "slot": 0,
+        "x": 1.7027664372054008,
+        "z": 105.07680555555741
+      },
+      {
+        "tick": 1062,
+        "phase": "race",
+        "phaseTime": 14.7,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": 1.743555553007165,
+        "z": 113.0868055555574
+      },
+      {
+        "tick": 1091,
+        "phase": "race",
+        "phaseTime": 15.183333333333334,
+        "type": "pass",
+        "slot": 0,
+        "x": 1.7092465326466633,
+        "z": 118.12911769925508
+      },
+      {
+        "tick": 1115,
+        "phase": "race",
+        "phaseTime": 15.583333333333334,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 3.1801656595950956,
+        "z": 121.51937138888832
+      },
+      {
+        "tick": 1156,
+        "phase": "race",
+        "phaseTime": 16.266666666666666,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 3.0746883460132803,
+        "z": 127.73485749999944
+      },
+      {
+        "tick": 1200,
+        "phase": "race",
+        "phaseTime": 17,
+        "type": "pass",
+        "slot": 1,
+        "x": 2.9197840666124972,
+        "z": 134.90148947335229
+      },
+      {
+        "tick": 1232,
+        "phase": "race",
+        "phaseTime": 17.53333333333333,
+        "type": "draft-start",
+        "slot": 0,
+        "x": 1.3212727807725897,
+        "z": 139.49913888889068
+      },
+      {
+        "tick": 1268,
+        "phase": "race",
+        "phaseTime": 18.133333333333333,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": 1.223015123105396,
+        "z": 145.0011388888907
+      },
+      {
+        "tick": 1302,
+        "phase": "race",
+        "phaseTime": 18.7,
+        "type": "pass",
+        "slot": 0,
+        "x": 1.1513144391624937,
+        "z": 150.30796700079594
+      },
+      {
+        "tick": 1334,
+        "phase": "race",
+        "phaseTime": 19.233333333333334,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 2.637663351957836,
+        "z": 154.96368388888826
+      },
+      {
+        "tick": 1342,
+        "phase": "race",
+        "phaseTime": 19.366666666666667,
+        "type": "obstacle",
+        "slot": 1,
+        "x": 2.6347183886503065,
+        "z": 156.12412833333272
+      },
+      {
+        "tick": 1360,
+        "phase": "race",
+        "phaseTime": 19.666666666666668,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 2.634200762869799,
+        "z": 157.89746166666606
+      },
+      {
+        "tick": 1406,
+        "phase": "race",
+        "phaseTime": 20.433333333333334,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 2.669967076224327,
+        "z": 163.87113527777717
+      },
+      {
+        "tick": 1508,
+        "phase": "race",
+        "phaseTime": 22.133333333333333,
+        "type": "pass",
+        "slot": 1,
+        "x": 3.712631991666386,
+        "z": 180.57522122821982
+      },
+      {
+        "tick": 1561,
+        "phase": "race",
+        "phaseTime": 23.016666666666666,
+        "type": "draft-start",
+        "slot": 0,
+        "x": 2.8,
+        "z": 187.727555555557
+      },
+      {
+        "tick": 1661,
+        "phase": "race",
+        "phaseTime": 24.683333333333334,
+        "type": "pass",
+        "slot": 0,
+        "x": 2.8,
+        "z": 201.07571718603765
+      },
+      {
+        "tick": 1672,
+        "phase": "race",
+        "phaseTime": 24.866666666666667,
+        "type": "jump",
+        "slot": 0,
+        "x": 2.8042460201702823,
+        "z": 202.67880555555655
+      },
+      {
+        "tick": 1675,
+        "phase": "race",
+        "phaseTime": 24.916666666666668,
+        "type": "jump",
+        "slot": 1,
+        "x": 4.3,
+        "z": 202.6990505555544
+      },
+      {
+        "tick": 1700,
+        "phase": "race",
+        "phaseTime": 25.333333333333332,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 4.3,
+        "z": 206.0051555555544
+      },
+      {
+        "tick": 1719,
+        "phase": "race",
+        "phaseTime": 25.65,
+        "type": "land",
+        "slot": 0,
+        "x": 2.8035018816256874,
+        "z": 208.6788055555562
+      },
+      {
+        "tick": 1719,
+        "phase": "race",
+        "phaseTime": 25.65,
+        "type": "land",
+        "slot": 1,
+        "x": 4.3,
+        "z": 208.2616955555544
+      },
+      {
+        "tick": 1747,
+        "phase": "race",
+        "phaseTime": 26.116666666666667,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 4.3,
+        "z": 212.0867133333322
+      },
+      {
+        "tick": 1804,
+        "phase": "race",
+        "phaseTime": 27.066666666666666,
+        "type": "pass",
+        "slot": 1,
+        "x": 4.3,
+        "z": 220.40621296299622
+      },
+      {
+        "tick": 1888,
+        "phase": "race",
+        "phaseTime": 28.466666666666665,
+        "type": "pass",
+        "slot": 0,
+        "x": 2.757704434698002,
+        "z": 231.49673421008814
+      },
+      {
+        "tick": 1942,
+        "phase": "race",
+        "phaseTime": 29.366666666666667,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 4.109395901900914,
+        "z": 238.27280611110996
+      },
+      {
+        "tick": 1984,
+        "phase": "race",
+        "phaseTime": 30.066666666666666,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 3.8818846588479707,
+        "z": 243.86300611110994
+      },
+      {
+        "tick": 2026,
+        "phase": "race",
+        "phaseTime": 30.766666666666666,
+        "type": "pass",
+        "slot": 1,
+        "x": 3.5198285974007693,
+        "z": 249.81674339390403
+      },
+      {
+        "tick": 2043,
+        "phase": "race",
+        "phaseTime": 31.05,
+        "type": "draft-start",
+        "slot": 0,
+        "x": 1.823388248826289,
+        "z": 252.1454722222204
+      },
+      {
+        "tick": 2099,
+        "phase": "race",
+        "phaseTime": 31.983333333333334,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": 1.0904102769883557,
+        "z": 260.1554722222204
+      },
+      {
+        "tick": 2139,
+        "phase": "race",
+        "phaseTime": 32.65,
+        "type": "pass",
+        "slot": 0,
+        "x": 0.4932536734854195,
+        "z": 267.00387038508563
+      },
+      {
+        "tick": 2166,
+        "phase": "race",
+        "phaseTime": 33.1,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 1.6412436103216894,
+        "z": 270.5480727777766
+      },
+      {
+        "tick": 2204,
+        "phase": "race",
+        "phaseTime": 33.733333333333334,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 1.074576943655023,
+        "z": 276.6358505555544
+      },
+      {
+        "tick": 2246,
+        "phase": "race",
+        "phaseTime": 34.43333333333333,
+        "type": "pass",
+        "slot": 1,
+        "x": 0.4890573669358816,
+        "z": 283.3211891137507
+      },
+      {
+        "tick": 2278,
+        "phase": "race",
+        "phaseTime": 34.96666666666667,
+        "type": "draft-start",
+        "slot": 0,
+        "x": -1.4737563896783101,
+        "z": 288.05824305555416
+      },
+      {
+        "tick": 2385,
+        "phase": "race",
+        "phaseTime": 36.75,
+        "type": "draft-start",
+        "slot": 0,
+        "x": -4.3,
+        "z": 303.6190855555541
+      },
+      {
+        "tick": 2406,
+        "phase": "race",
+        "phaseTime": 37.1,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": -4.3,
+        "z": 306.39499666666524
+      },
+      {
+        "tick": 2419,
+        "phase": "race",
+        "phaseTime": 37.31666666666666,
+        "type": "obstacle",
+        "slot": 1,
+        "x": -2.8,
+        "z": 309.1002533333324
+      },
+      {
+        "tick": 2422,
+        "phase": "race",
+        "phaseTime": 37.36666666666667,
+        "type": "obstacle",
+        "slot": 0,
+        "x": -4.3,
+        "z": 309.1258505555541
+      },
+      {
+        "tick": 2448,
+        "phase": "race",
+        "phaseTime": 37.8,
+        "type": "draft-start",
+        "slot": 0,
+        "x": -4.3,
+        "z": 311.49168388888694
+      },
+      {
+        "tick": 2456,
+        "phase": "race",
+        "phaseTime": 37.93333333333333,
+        "type": "jump",
+        "slot": 0,
+        "x": -4.3,
+        "z": 312.14918388888697
+      },
+      {
+        "tick": 2481,
+        "phase": "race",
+        "phaseTime": 38.35,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": -4.3,
+        "z": 315.6184224999981
+      },
+      {
+        "tick": 2500,
+        "phase": "race",
+        "phaseTime": 38.666666666666664,
+        "type": "land",
+        "slot": 0,
+        "x": -4.3,
+        "z": 318.33328055555364
+      },
+      {
+        "tick": 2535,
+        "phase": "race",
+        "phaseTime": 39.25,
+        "type": "pass",
+        "slot": 0,
+        "x": -4.3,
+        "z": 323.20983608001256
+      },
+      {
+        "tick": 2619,
+        "phase": "race",
+        "phaseTime": 40.65,
+        "type": "pass",
+        "slot": 1,
+        "x": -2.8,
+        "z": 334.596318148169
+      },
+      {
+        "tick": 2673,
+        "phase": "race",
+        "phaseTime": 41.55,
+        "type": "draft-start",
+        "slot": 0,
+        "x": -4.274582988092899,
+        "z": 341.22954222222035
+      },
+      {
+        "tick": 2714,
+        "phase": "race",
+        "phaseTime": 42.233333333333334,
+        "type": "draft-ready",
+        "slot": 0,
+        "x": -4.168900207800353,
+        "z": 346.8197422222203
+      },
+      {
+        "tick": 2767,
+        "phase": "race",
+        "phaseTime": 43.11666666666667,
+        "type": "pass",
+        "slot": 0,
+        "x": -3.895196870151139,
+        "z": 354.37275993306355
+      },
+      {
+        "tick": 2875,
+        "phase": "race",
+        "phaseTime": 44.916666666666664,
+        "type": "pass",
+        "slot": 1,
+        "x": -2.52989926271268,
+        "z": 368.7659493329144
+      },
+      {
+        "tick": 2919,
+        "phase": "race",
+        "phaseTime": 45.65,
+        "type": "draft-start",
+        "slot": 0,
+        "x": -3.6483752958472015,
+        "z": 374.027518888887
+      },
+      {
+        "tick": 2967,
+        "phase": "race",
+        "phaseTime": 46.45,
+        "type": "pass",
+        "slot": 0,
+        "x": -3.011019356791001,
+        "z": 380.84651973761856
+      },
+      {
+        "tick": 3013,
+        "phase": "race",
+        "phaseTime": 47.21666666666667,
+        "type": "draft-start",
+        "slot": 1,
+        "x": -0.8651593448099133,
+        "z": 386.9637255555499
+      },
+      {
+        "tick": 3111,
+        "phase": "race",
+        "phaseTime": 48.85,
+        "type": "pass",
+        "slot": 1,
+        "x": 0.4834877044028557,
+        "z": 400.6281371480624
+      },
+      {
+        "tick": 3328,
+        "phase": "race",
+        "phaseTime": 52.46666666666667,
+        "type": "pass",
+        "slot": 0,
+        "x": 2.161949078120998,
+        "z": 429.4100806408564
+      },
+      {
+        "tick": 3355,
+        "phase": "race",
+        "phaseTime": 52.916666666666664,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 3.9778360361433784,
+        "z": 432.8340311111034
+      },
+      {
+        "tick": 3411,
+        "phase": "race",
+        "phaseTime": 53.85,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 4.085479146089903,
+        "z": 439.88283111110337
+      },
+      {
+        "tick": 3429,
+        "phase": "race",
+        "phaseTime": 54.15,
+        "type": "jump",
+        "slot": 0,
+        "x": 2.5363855768904413,
+        "z": 443.1080772222177
+      },
+      {
+        "tick": 3431,
+        "phase": "race",
+        "phaseTime": 54.18333333333333,
+        "type": "jump",
+        "slot": 1,
+        "x": 4.111592723477918,
+        "z": 442.89985611110336
+      },
+      {
+        "tick": 3475,
+        "phase": "race",
+        "phaseTime": 54.916666666666664,
+        "type": "land",
+        "slot": 0,
+        "x": 2.5471384189321826,
+        "z": 449.10807722221733
+      },
+      {
+        "tick": 3475,
+        "phase": "race",
+        "phaseTime": 54.916666666666664,
+        "type": "land",
+        "slot": 1,
+        "x": 4.124053150233818,
+        "z": 449.2317311111034
+      },
+      {
+        "tick": 3478,
+        "phase": "race",
+        "phaseTime": 54.96666666666667,
+        "type": "pass",
+        "slot": 1,
+        "x": 4.123853914000844,
+        "z": 449.5109440891665
+      },
+      {
+        "tick": 3563,
+        "phase": "race",
+        "phaseTime": 56.38333333333333,
+        "type": "pass",
+        "slot": 0,
+        "x": 2.4969206551479592,
+        "z": 460.8505973083793
+      },
+      {
+        "tick": 3616,
+        "phase": "race",
+        "phaseTime": 57.266666666666666,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 4.043825642809757,
+        "z": 467.50639777777
+      },
+      {
+        "tick": 3658,
+        "phase": "race",
+        "phaseTime": 57.96666666666667,
+        "type": "draft-ready",
+        "slot": 1,
+        "x": 4.036040284068547,
+        "z": 473.09659777777
+      },
+      {
+        "tick": 3712,
+        "phase": "race",
+        "phaseTime": 58.86666666666667,
+        "type": "pass",
+        "slot": 1,
+        "x": 4.075972123670336,
+        "z": 480.6738013412958
+      },
+      {
+        "tick": 3798,
+        "phase": "race",
+        "phaseTime": 60.3,
+        "type": "pass",
+        "slot": 0,
+        "x": 2.6986738800625765,
+        "z": 492.0877519233604
+      },
+      {
+        "tick": 3851,
+        "phase": "race",
+        "phaseTime": 61.18333333333333,
+        "type": "draft-start",
+        "slot": 1,
+        "x": 4.3,
+        "z": 498.7077144444367
+      },
+      {
+        "tick": 3856,
+        "phase": "race",
+        "phaseTime": 61.266666666666666,
+        "type": "finish",
+        "slot": 0,
+        "x": 2.8,
+        "z": 500
+      },
+      {
+        "tick": 3859,
+        "phase": "transition",
+        "phaseTime": 0,
+        "type": "finish",
+        "slot": 1,
+        "x": 4.3,
+        "z": 500
+      },
+      {
+        "tick": 3859,
+        "phase": "transition",
+        "phaseTime": 0,
+        "type": "transition",
+        "slot": -1,
+        "x": 2.8,
+        "z": 500
+      },
+      {
+        "tick": 4099,
+        "phase": "fight",
+        "phaseTime": 0,
+        "type": "fight",
+        "slot": -1,
+        "x": -1.75,
+        "z": 0
+      },
+      {
+        "tick": 4166,
+        "phase": "fight",
+        "phaseTime": 1.1166666666666667,
+        "type": "attack",
+        "slot": 0,
+        "x": -1.1650000000000007,
+        "z": 0
+      },
+      {
+        "tick": 4201,
+        "phase": "fight",
+        "phaseTime": 1.7,
+        "type": "evade",
+        "slot": 1,
+        "x": 0.5849999999999993,
+        "z": 0
+      },
+      {
+        "tick": 4209,
+        "phase": "fight",
+        "phaseTime": 1.8333333333333333,
+        "type": "evade-success",
+        "slot": 1,
+        "x": 1.0049999999999997,
+        "z": 0
+      },
+      {
+        "tick": 4261,
+        "phase": "fight",
+        "phaseTime": 2.7,
+        "type": "counter",
+        "slot": 1,
+        "x": 0.5049999999999992,
+        "z": 0
+      },
+      {
+        "tick": 4276,
+        "phase": "fight",
+        "phaseTime": 2.95,
+        "type": "hit",
+        "slot": 0,
+        "x": -1.9950000000000008,
+        "z": 0
+      },
+      {
+        "tick": 4450,
+        "phase": "fight",
+        "phaseTime": 5.85,
+        "type": "attack",
+        "slot": 1,
+        "x": -0.09666666666666768,
+        "z": 0
+      },
+      {
+        "tick": 4475,
+        "phase": "fight",
+        "phaseTime": 6.266666666666667,
+        "type": "evade",
+        "slot": 0,
+        "x": -1.8466666666666676,
+        "z": 0
+      },
+      {
+        "tick": 4485,
+        "phase": "fight",
+        "phaseTime": 6.433333333333334,
+        "type": "evade-success",
+        "slot": 0,
+        "x": -2.2666666666666684,
+        "z": 0
+      },
+      {
+        "tick": 4529,
+        "phase": "fight",
+        "phaseTime": 7.166666666666667,
+        "type": "counter",
+        "slot": 0,
+        "x": -1.7833333333333363,
+        "z": 0
+      },
+      {
+        "tick": 4544,
+        "phase": "fight",
+        "phaseTime": 7.416666666666667,
+        "type": "hit",
+        "slot": 1,
+        "x": 1.0666666666666638,
+        "z": 0
+      },
+      {
+        "tick": 4791,
+        "phase": "fight",
+        "phaseTime": 11.533333333333333,
+        "type": "attack",
+        "slot": 0,
+        "x": -1.5200000000000036,
+        "z": 0
+      },
+      {
+        "tick": 4832,
+        "phase": "fight",
+        "phaseTime": 12.216666666666667,
+        "type": "hit",
+        "slot": 1,
+        "x": 1.3299999999999965,
+        "z": 0
+      },
+      {
+        "tick": 5106,
+        "phase": "fight",
+        "phaseTime": 16.78333333333333,
+        "type": "attack",
+        "slot": 1,
+        "x": 0.2566666666666626,
+        "z": 0
+      },
+      {
+        "tick": 5139,
+        "phase": "fight",
+        "phaseTime": 17.333333333333332,
+        "type": "hit",
+        "slot": 0,
+        "x": -2.2433333333333376,
+        "z": 0
+      },
+      {
+        "tick": 5363,
+        "phase": "fight",
+        "phaseTime": 21.066666666666666,
+        "type": "attack",
+        "slot": 0,
+        "x": -2.181666666666673,
+        "z": 0
+      },
+      {
+        "tick": 5404,
+        "phase": "fight",
+        "phaseTime": 21.75,
+        "type": "hit",
+        "slot": 1,
+        "x": 0.6683333333333275,
+        "z": 0
+      },
+      {
+        "tick": 5602,
+        "phase": "fight",
+        "phaseTime": 25.05,
+        "type": "attack",
+        "slot": 1,
+        "x": -0.14000000000000634,
+        "z": 0
+      },
+      {
+        "tick": 5635,
+        "phase": "fight",
+        "phaseTime": 25.6,
+        "type": "hit",
+        "slot": 0,
+        "x": -2.6400000000000063,
+        "z": 0
+      },
+      {
+        "tick": 5848,
+        "phase": "fight",
+        "phaseTime": 29.15,
+        "type": "attack",
+        "slot": 0,
+        "x": -2.6750000000000136,
+        "z": 0
+      },
+      {
+        "tick": 5889,
+        "phase": "results",
+        "phaseTime": 0,
+        "type": "hit",
+        "slot": 1,
+        "x": 0.1749999999999865,
+        "z": 0
+      },
+      {
+        "tick": 5889,
+        "phase": "results",
+        "phaseTime": 0,
+        "type": "results",
+        "slot": -1,
+        "x": -2.6750000000000136,
+        "z": 0
+      }
+    ]
+  },
+  "frames": {
+    "samples": 1800,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8,
+    "over33": 6,
+    "drawCalls": 35,
+    "triangles": 55197,
+    "pixelRatio": 1,
+    "loaded": true
+  },
+  "session": {
+    "startedAt": "2026-09-20T03:04:25.677Z",
+    "quantileResolutionMs": 0.25,
+    "overflowAtMs": 1000,
+    "phases": {
+      "select": {
+        "samples": 31,
+        "elapsedMs": 517,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 17,
+        "maxMs": 16.8,
+        "over16_67": 19,
+        "over33_34": 0,
+        "over50": 0
+      },
+      "countdown": {
+        "samples": 172,
+        "elapsedMs": 2900,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 17,
+        "maxMs": 50,
+        "over16_67": 108,
+        "over33_34": 1,
+        "over50": 0
+      },
+      "race": {
+        "samples": 3662,
+        "elapsedMs": 61314,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 17,
+        "maxMs": 50,
+        "over16_67": 2277,
+        "over33_34": 7,
+        "over50": 0
+      },
+      "transition": {
+        "samples": 239,
+        "elapsedMs": 4000,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 17,
+        "maxMs": 33.4,
+        "over16_67": 148,
+        "over33_34": 1,
+        "over50": 0
+      },
+      "fight": {
+        "samples": 1765,
+        "elapsedMs": 29832,
+        "p50Ms": 16.75,
+        "p95Ms": 17,
+        "p99Ms": 17,
+        "maxMs": 166.7,
+        "over16_67": 1089,
+        "over33_34": 6,
+        "over50": 4
+      },
+      "results": {
+        "samples": 372,
+        "elapsedMs": 6233,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 17,
+        "maxMs": 50,
+        "over16_67": 230,
+        "over33_34": 1,
+        "over50": 0
+      }
+    }
+  },
+  "work": {
+    "clock": "performance.now wall-clock milliseconds",
+    "note": "Zero-duration calls are retained. Render and draw submission include synchronous driver work but exclude asynchronous GPU completion. Between-callback time includes refresh pacing and other unmeasured browser/OS work; it does not identify a cause. React work scheduled after the callback is outside audioAndUi. Hidden samples are separate. Stage quantiles cannot be added.",
+    "stages": {
+      "simulation": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 0,
+            "p50Ms": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maxMs": 0,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 9,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 316,
+            "p50Ms": 0.25,
+            "p95Ms": 0.25,
+            "p99Ms": 0.75,
+            "maxMs": 3.9,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 22,
+            "p50Ms": 0.25,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.7,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 188,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.75,
+            "maxMs": 12.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 3,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.2,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "networkSend": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 1,
+            "p50Ms": 0,
+            "p95Ms": 0.5,
+            "p99Ms": 0.5,
+            "maxMs": 0.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 7,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.4,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 190,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 3.6,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 12,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 95,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 2.9,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 23,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.4,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "presentation": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 0,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 15,
+            "p50Ms": 0.25,
+            "p95Ms": 0.25,
+            "p99Ms": 0.5,
+            "maxMs": 0.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 641,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 1,
+            "maxMs": 5.9,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 46,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.75,
+            "maxMs": 1.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 373,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 1,
+            "maxMs": 7.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 68,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.75,
+            "maxMs": 1.2,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "renderCall": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 34,
+            "p50Ms": 1.25,
+            "p95Ms": 2,
+            "p99Ms": 2.25,
+            "maxMs": 2.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 299,
+            "p50Ms": 1.5,
+            "p95Ms": 2.75,
+            "p99Ms": 6,
+            "maxMs": 10,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 12419,
+            "p50Ms": 2.75,
+            "p95Ms": 7.5,
+            "p99Ms": 11,
+            "maxMs": 32.7,
+            "over16_67": 12,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 622,
+            "p50Ms": 2.5,
+            "p95Ms": 3.75,
+            "p99Ms": 7.5,
+            "maxMs": 31.1,
+            "over16_67": 1,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 5575,
+            "p50Ms": 2.75,
+            "p95Ms": 6.25,
+            "p99Ms": 11.5,
+            "maxMs": 148.1,
+            "over16_67": 6,
+            "over33_34": 4,
+            "over50": 3
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 687,
+            "p50Ms": 2,
+            "p95Ms": 3,
+            "p99Ms": 4,
+            "maxMs": 5.7,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "audioAndUi": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 1,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 8,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 1151,
+            "p50Ms": 0.25,
+            "p95Ms": 1.5,
+            "p99Ms": 3.75,
+            "maxMs": 8.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 62,
+            "p50Ms": 0.25,
+            "p95Ms": 1,
+            "p99Ms": 1.5,
+            "maxMs": 2.6,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 573,
+            "p50Ms": 0.25,
+            "p95Ms": 1.25,
+            "p99Ms": 3.75,
+            "maxMs": 8.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 72,
+            "p50Ms": 0,
+            "p95Ms": 1,
+            "p99Ms": 1,
+            "maxMs": 2,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "callback": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 37,
+            "p50Ms": 1.25,
+            "p95Ms": 2,
+            "p99Ms": 2.25,
+            "maxMs": 2.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 337,
+            "p50Ms": 2,
+            "p95Ms": 3,
+            "p99Ms": 6.75,
+            "maxMs": 10.8,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 14717,
+            "p50Ms": 3.25,
+            "p95Ms": 8.5,
+            "p99Ms": 12,
+            "maxMs": 33.9,
+            "over16_67": 14,
+            "over33_34": 1,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 764,
+            "p50Ms": 3,
+            "p95Ms": 4.5,
+            "p99Ms": 7.5,
+            "maxMs": 32.9,
+            "over16_67": 1,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 6804,
+            "p50Ms": 3.25,
+            "p95Ms": 7.5,
+            "p99Ms": 12.25,
+            "maxMs": 152.6,
+            "over16_67": 7,
+            "over33_34": 5,
+            "over50": 3
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 852,
+            "p50Ms": 2.5,
+            "p95Ms": 3.75,
+            "p99Ms": 5.5,
+            "maxMs": 6.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "betweenCallbacks": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 479,
+            "p50Ms": 15.75,
+            "p95Ms": 17.25,
+            "p99Ms": 18,
+            "maxMs": 18,
+            "over16_67": 3,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 2560,
+            "p50Ms": 15,
+            "p95Ms": 16.75,
+            "p99Ms": 22,
+            "maxMs": 58.5,
+            "over16_67": 8,
+            "over33_34": 1,
+            "over50": 1
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 46537,
+            "p50Ms": 13.5,
+            "p95Ms": 16.25,
+            "p99Ms": 19.5,
+            "maxMs": 72.5,
+            "over16_67": 112,
+            "over33_34": 6,
+            "over50": 3
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 3233,
+            "p50Ms": 13.75,
+            "p95Ms": 15.75,
+            "p99Ms": 17,
+            "maxMs": 28.2,
+            "over16_67": 3,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 23005,
+            "p50Ms": 13.5,
+            "p95Ms": 16.5,
+            "p99Ms": 23,
+            "maxMs": 65.9,
+            "over16_67": 77,
+            "over33_34": 5,
+            "over50": 2
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 5372,
+            "p50Ms": 14.5,
+            "p95Ms": 16,
+            "p99Ms": 17,
+            "maxMs": 63.9,
+            "over16_67": 5,
+            "over33_34": 1,
+            "over50": 1
+          }
+        }
+      }
+    }
+  },
+  "rendererWork": {
+    "clock": "performance.now wall-clock milliseconds",
+    "note": "Zero-duration calls are retained. Render and draw submission include synchronous driver work but exclude asynchronous GPU completion. Between-callback time includes refresh pacing and other unmeasured browser/OS work; it does not identify a cause. React work scheduled after the callback is outside audioAndUi. Hidden samples are separate. Stage quantiles cannot be added.",
+    "stages": {
+      "sceneUpdate": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 5,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.5,
+            "maxMs": 0.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 25,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.5,
+            "maxMs": 1.7,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 734,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 1,
+            "maxMs": 7,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 76,
+            "p50Ms": 0.5,
+            "p95Ms": 0.75,
+            "p99Ms": 1,
+            "maxMs": 5.9,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 509,
+            "p50Ms": 0.25,
+            "p95Ms": 0.75,
+            "p99Ms": 1.5,
+            "maxMs": 7.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 107,
+            "p50Ms": 0.5,
+            "p95Ms": 0.5,
+            "p99Ms": 1,
+            "maxMs": 1.4,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "drawSubmission": {
+        "startedAt": "2026-09-20T03:04:25.688Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 31,
+            "elapsedMs": 29,
+            "p50Ms": 1,
+            "p95Ms": 2,
+            "p99Ms": 2,
+            "maxMs": 2,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "countdown/visible": {
+            "samples": 172,
+            "elapsedMs": 271,
+            "p50Ms": 1.5,
+            "p95Ms": 2.5,
+            "p99Ms": 6,
+            "maxMs": 8.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "race/visible": {
+            "samples": 3662,
+            "elapsedMs": 11611,
+            "p50Ms": 2.5,
+            "p95Ms": 7,
+            "p99Ms": 10.25,
+            "maxMs": 32.5,
+            "over16_67": 10,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "transition/visible": {
+            "samples": 239,
+            "elapsedMs": 541,
+            "p50Ms": 2,
+            "p95Ms": 3.25,
+            "p99Ms": 6.75,
+            "maxMs": 25.1,
+            "over16_67": 1,
+            "over33_34": 0,
+            "over50": 0
+          },
+          "fight/visible": {
+            "samples": 1765,
+            "elapsedMs": 5033,
+            "p50Ms": 2.5,
+            "p95Ms": 5.75,
+            "p99Ms": 10.5,
+            "maxMs": 146.5,
+            "over16_67": 6,
+            "over33_34": 4,
+            "over50": 3
+          },
+          "results/visible": {
+            "samples": 372,
+            "elapsedMs": 572,
+            "p50Ms": 1.5,
+            "p95Ms": 2.5,
+            "p99Ms": 3.75,
+            "maxMs": 5.5,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      }
+    },
+    "preparation": {
+      "elapsedMs": 201.70000004768372,
+      "frames": [
+        {
+          "phase": "countdown",
+          "z": 0,
+          "submissionMs": 92.30000007152557
+        },
+        {
+          "phase": "countdown",
+          "z": 250,
+          "submissionMs": 12.300000071525574
+        },
+        {
+          "phase": "countdown",
+          "z": 480,
+          "submissionMs": 1.5
+        },
+        {
+          "phase": "fight",
+          "z": 0,
+          "submissionMs": 18.699999928474426
+        },
+        {
+          "phase": "results",
+          "z": 0,
+          "submissionMs": 13.199999928474426
+        },
+        {
+          "phase": "countdown",
+          "z": 0,
+          "submissionMs": 15
+        },
+        {
+          "phase": "fight",
+          "z": 0,
+          "submissionMs": 8.600000023841858
+        },
+        {
+          "phase": "results",
+          "z": 0,
+          "submissionMs": 1.899999976158142
+        },
+        {
+          "phase": "select",
+          "z": 0,
+          "submissionMs": 2.5
+        }
+      ]
+    }
+  },
+  "network": {
+    "transport": "webrtc",
+    "roundTripMs": 1.2000000476837158,
+    "sent": 2460,
+    "received": 2406,
+    "roundTrip": {
+      "sampleCount": 52,
+      "p50Ms": 5.900000095367432,
+      "p95Ms": 16.5,
+      "maxMs": 34.39999997615814,
+      "timeoutCount": 0,
+      "windowMs": 120000
+    }
+  },
+  "note": "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification."
+}

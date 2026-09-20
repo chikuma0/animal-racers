@@ -1,12 +1,14 @@
 // Local pose inspection only; bundled by contact-preview.mjs, never by the app.
 import { ChampionshipRenderer } from '../../src/championship/renderer';
-import { ATTACKS, CHARACTERS, createMatch, type CharacterId } from '../../src/championship/simulation';
+import { ATTACKS, CHARACTERS, COUNTER_WINDUP, DODGE, createMatch, strikeTiming, type CharacterId } from '../../src/championship/simulation';
 
 document.body.innerHTML = `<main><canvas aria-label="Runtime contact inspection"></canvas><form>
 <strong>Local pose inspection · not gameplay evidence</strong>
+<label>Stage<select id="stage"><option value="fight">Saloon duel</option><option value="race">Canyon race</option></select></label>
 <label>Left animal<select id="left"></select></label><label>Right animal<select id="right"></select></label>
-<label>Left action<select id="action"><option value="fight_idle">Idle</option><option value="attack">Strike</option><option value="special">Special</option><option value="guard">Guard</option><option value="hit">Hit reaction</option></select></label>
-<label>Right action<select id="rival"><option value="fight_idle">Idle</option><option value="guard">Guard</option><option value="attack">Strike</option></select></label>
+<label>Left action<select id="action"><option value="fight_idle">Idle</option><option value="run">Run</option><option value="jump">Leap</option><option value="attack">Strike</option><option value="evade">Evade</option><option value="hit">Hit reaction</option></select></label>
+<label>Right action<select id="rival"><option value="fight_idle">Idle</option><option value="evade">Evade</option><option value="attack">Strike</option></select></label>
+<label>Counter reply<input id="counter" type="checkbox"></label><label>Evade displacement<input id="displace" type="checkbox" checked></label>
 <label>Separation (m)<input id="gap" type="number" min="0.85" max="8" step="0.05" value="1.75"></label>
 <label>Action time (s)<input id="elapsed" type="number" min="0" max="5" step="0.01" value="0.20"></label>
 <label>Rival time (s)<input id="rival-time" type="number" min="0" max="5" step="0.01" value="1.00"></label>
@@ -22,30 +24,38 @@ const action = element<HTMLSelectElement>('action'), rival = element<HTMLSelectE
 const gap = element<HTMLInputElement>('gap'), elapsed = element<HTMLInputElement>('elapsed');
 const rivalTime = element<HTMLInputElement>('rival-time');
 const status = element<HTMLOutputElement>('status');
+const stage = element<HTMLSelectElement>('stage');
+const counter = element<HTMLInputElement>('counter'), displace = element<HTMLInputElement>('displace');
 const renderer = new ChampionshipRenderer(document.querySelector('canvas')!);
 void renderer.load().catch(error => { status.value = `Asset load failed: ${String(error)}`; });
 let match = createMatch(['lion', 'wolf']), playing = false, playTime = 0, frame = 0, previous = performance.now();
 const settings = () => ({
-  left: match.players[0].character, right: match.players[1].character,
+  stage: match.phase, left: match.players[0].character, right: match.players[1].character,
   action: match.players[0].action, rival: match.players[1].action,
   gap: match.players[1].x - match.players[0].x, elapsed: match.players[0].actionTime,
   rivalTime: match.players[1].actionTime,
+  counter: match.players[0].strikeCounter, strikeWindup: match.players[0].strikeWindup,
+  evadeDisplacement: displace.checked, positions: match.players.map(player => player.x),
 });
 function apply() {
   playing = false;
   match = createMatch([left.value as CharacterId, right.value as CharacterId]);
-  match.phase = 'fight';
+  match.phase = stage.value === 'race' ? 'race' : 'fight';
   match.players.forEach((player, slot) => {
     player.x = (slot ? 1 : -1) * Math.max(.85, Math.min(8, Number(gap.value) || 1.75)) / 2;
-    player.z = 0;
+    player.z = match.phase === 'race' ? 120 : 0;
     player.action = slot ? rival.value : action.value;
     player.actionTime = Math.max(0, Math.min(5, Number(slot ? rivalTime.value : elapsed.value) || 0));
     player.stun = player.action === 'hit' ? .1 : 0;
+    player.strikeCounter = slot === 0 && player.action === 'attack' && counter.checked;
+    player.strikeWindup = player.strikeCounter ? COUNTER_WINDUP : ATTACKS[player.character].windup;
+    player.speed = match.phase === 'race' && player.action === 'run' ? 8 : 0;
+    player.y = match.phase === 'race' && player.action === 'jump' ? 1 : 0;
   });
 }
 element('apply').onclick = apply;
 element('active').onclick = () => {
-  elapsed.value = String(action.value === 'special' ? ATTACKS[left.value as CharacterId].windup + .03 : .21);
+  elapsed.value = String((counter.checked ? COUNTER_WINDUP : ATTACKS[left.value as CharacterId].windup) + .03);
   apply();
 };
 element('play').onclick = () => { apply(); playing = true; playTime = 0; };
@@ -66,8 +76,17 @@ function render(now: number) {
     playTime += dt;
     match.players[0].actionTime = playTime;
     elapsed.value = playTime.toFixed(2);
-    if (playTime >= (action.value === 'guard' ? 2.4 : 1.4)) playing = false;
+    const player = match.players[0], timing = strikeTiming(player);
+    const duration = player.action === 'evade' ? DODGE[player.character].duration
+      : player.action === 'attack' ? timing.windup + timing.active + timing.recovery : 2;
+    if (playTime >= duration) { player.actionTime = duration; elapsed.value = duration.toFixed(2); playing = false; }
   }
+  match.players.forEach((player, slot) => {
+    const start = (slot ? 1 : -1) * Math.max(.85, Math.min(8, Number(gap.value) || 1.75)) / 2;
+    const dodge = DODGE[player.character];
+    player.x = start + (displace.checked && match.phase === 'fight' && player.action === 'evade'
+      ? player.dodgeDirection * dodge.speed * Math.min(player.actionTime, dodge.duration) : 0);
+  });
   match.tick = ++frame;
   renderer.render(match, 0, dt, now / 1000);
   if (status.value === 'Loading runtime assets…' && renderer.report().loaded) status.value = 'Ready · authored poses only; simulation is not stepping';

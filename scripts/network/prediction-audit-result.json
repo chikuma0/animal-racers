@@ -1,0 +1,544 @@
+{
+  "classification": "OFFLINE SYNTHETIC MODEL-TO-RENDER TIMINGS; not internet, touch, GPU, display or browser measurements.",
+  "sourceHashes": {
+    "src/championship/prediction.ts": "3662ed065497032431282b094ecd3c8a7c1451608cf7e3960e2909aed242f2e0",
+    "src/championship/presentation.ts": "024b97cba26ddeab858cc64e8b655e0e0521efc81b3f1ea30419cba6f5655346",
+    "src/championship/input-buffer.ts": "f398210a6e70200863bc0ae401c9f57a63d7594558678a1198fa886efe310292",
+    "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+    "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7"
+  },
+  "limits": {
+    "horizonMs": 250,
+    "correctionMs": 100,
+    "maxStepMs": 50,
+    "maxLateralOffset": 0.65,
+    "maxStrikePreviewSeconds": 0.18
+  },
+  "boundary": "Actual simulation/input buffers/presentation/prediction; modeled sequence filtering, 60Hz callbacks and packet schedules. No service, rollback, hit prediction or production integration claim.",
+  "results": [
+    {
+      "profile": "near-zero-direct-injected",
+      "phase": "race",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "near-zero-direct-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "jump",
+          "pressedAtMs": 401,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 40.67,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.12,
+      "maxYOffsetM": 0.18,
+      "maxFramePositionStepM": 0.09,
+      "correctionObservedAtMs": null,
+      "operations": 509,
+      "peakQueue": 7,
+      "packets": 169,
+      "drops": 0,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 611,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "near-zero-direct-injected",
+      "phase": "fight",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "near-zero-direct-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "attack",
+          "pressedAtMs": 101,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 40.67,
+          "predictedVisibleDelayMs": 7.33
+        },
+        {
+          "action": "evade",
+          "pressedAtMs": 1901,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 40.67,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.16,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0.14,
+      "correctionObservedAtMs": null,
+      "operations": 509,
+      "peakQueue": 7,
+      "packets": 169,
+      "drops": 0,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 621,
+      "finalCanonicalHealth": [
+        82,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "direct-jitter-loss-reorder-injected",
+      "phase": "race",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "direct-jitter-loss-reorder-injected",
+        "hz": 30,
+        "delays": [
+          2,
+          70,
+          4,
+          120,
+          3,
+          8
+        ],
+        "presentationDelay": 50,
+        "lossEvery": 13
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "jump",
+          "pressedAtMs": 401,
+          "authorityDelayMs": 49,
+          "baselineVisibleDelayMs": 74,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.44,
+      "maxYOffsetM": 0.71,
+      "maxFramePositionStepM": 0.09,
+      "correctionObservedAtMs": null,
+      "operations": 496,
+      "peakQueue": 9,
+      "packets": 169,
+      "drops": 13,
+      "reordered": 23,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 596,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "direct-jitter-loss-reorder-injected",
+      "phase": "fight",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "direct-jitter-loss-reorder-injected",
+        "hz": 30,
+        "delays": [
+          2,
+          70,
+          4,
+          120,
+          3,
+          8
+        ],
+        "presentationDelay": 50,
+        "lossEvery": 13
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "attack",
+          "pressedAtMs": 101,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 74,
+          "predictedVisibleDelayMs": 7.33
+        },
+        {
+          "action": "evade",
+          "pressedAtMs": 1901,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 74,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.3,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0.36,
+      "correctionObservedAtMs": null,
+      "operations": 496,
+      "peakQueue": 9,
+      "packets": 169,
+      "drops": 13,
+      "reordered": 23,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 621,
+      "finalCanonicalHealth": [
+        82,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "slow-broadcast-injected",
+      "phase": "race",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "slow-broadcast-injected",
+        "hz": 10,
+        "delays": [
+          82,
+          88,
+          120,
+          250,
+          90,
+          150
+        ],
+        "presentationDelay": 120,
+        "lossEvery": 17
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "jump",
+          "pressedAtMs": 401,
+          "authorityDelayMs": 99,
+          "baselineVisibleDelayMs": 257.33,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.65,
+      "maxYOffsetM": 1.2,
+      "maxFramePositionStepM": 0.62,
+      "correctionObservedAtMs": null,
+      "operations": 393,
+      "peakQueue": 8,
+      "packets": 57,
+      "drops": 3,
+      "reordered": 1,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 610,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "slow-broadcast-injected",
+      "phase": "fight",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "slow-broadcast-injected",
+        "hz": 10,
+        "delays": [
+          82,
+          88,
+          120,
+          250,
+          90,
+          150
+        ],
+        "presentationDelay": 120,
+        "lossEvery": 17
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "attack",
+          "pressedAtMs": 101,
+          "authorityDelayMs": 99,
+          "baselineVisibleDelayMs": 257.33,
+          "predictedVisibleDelayMs": 7.33
+        },
+        {
+          "action": "evade",
+          "pressedAtMs": 1901,
+          "authorityDelayMs": 99,
+          "baselineVisibleDelayMs": 257.33,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.65,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0.72,
+      "correctionObservedAtMs": null,
+      "operations": 393,
+      "peakQueue": 8,
+      "packets": 57,
+      "drops": 3,
+      "reordered": 1,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 625,
+      "finalCanonicalHealth": [
+        82,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "input-loss-until-900ms-injected",
+      "phase": "race",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "input-loss-until-900ms-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50,
+        "dropInputUntil": 900
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "jump",
+          "pressedAtMs": 401,
+          "authorityDelayMs": null,
+          "baselineVisibleDelayMs": null,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.47,
+      "maxYOffsetM": 1.25,
+      "maxFramePositionStepM": 0.09,
+      "correctionObservedAtMs": 758.33,
+      "operations": 482,
+      "peakQueue": 7,
+      "packets": 169,
+      "drops": 27,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 611,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "input-loss-until-900ms-injected",
+      "phase": "fight",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "input-loss-until-900ms-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50,
+        "dropInputUntil": 900
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "attack",
+          "pressedAtMs": 101,
+          "authorityDelayMs": null,
+          "baselineVisibleDelayMs": null,
+          "predictedVisibleDelayMs": 7.33
+        },
+        {
+          "action": "evade",
+          "pressedAtMs": 1901,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": 40.67,
+          "predictedVisibleDelayMs": 7.33
+        }
+      ],
+      "maxXOffsetM": 0.16,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0.14,
+      "correctionObservedAtMs": null,
+      "operations": 482,
+      "peakQueue": 7,
+      "packets": 169,
+      "drops": 27,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 621,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": false
+    },
+    {
+      "profile": "snapshot-loss-and-disconnect-injected",
+      "phase": "race",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "snapshot-loss-and-disconnect-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50,
+        "blackout": [
+          100,
+          1800
+        ],
+        "disconnectAt": 800
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "jump",
+          "pressedAtMs": 401,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": null,
+          "predictedVisibleDelayMs": null
+        }
+      ],
+      "maxXOffsetM": 0.65,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0.14,
+      "correctionObservedAtMs": null,
+      "operations": 399,
+      "peakQueue": 8,
+      "packets": 109,
+      "drops": 51,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 292,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": true
+    },
+    {
+      "profile": "snapshot-loss-and-disconnect-injected",
+      "phase": "fight",
+      "predictionEnabled": true,
+      "injected": {
+        "name": "snapshot-loss-and-disconnect-injected",
+        "hz": 30,
+        "delays": [
+          1
+        ],
+        "presentationDelay": 50,
+        "blackout": [
+          100,
+          1800
+        ],
+        "disconnectAt": 800
+      },
+      "durationMs": 2800,
+      "responses": [
+        {
+          "action": "attack",
+          "pressedAtMs": 101,
+          "authorityDelayMs": 15.67,
+          "baselineVisibleDelayMs": null,
+          "predictedVisibleDelayMs": 7.33
+        },
+        {
+          "action": "evade",
+          "pressedAtMs": 1901,
+          "authorityDelayMs": null,
+          "baselineVisibleDelayMs": null,
+          "predictedVisibleDelayMs": null
+        }
+      ],
+      "maxXOffsetM": 0,
+      "maxYOffsetM": 0,
+      "maxFramePositionStepM": 0,
+      "correctionObservedAtMs": null,
+      "operations": 399,
+      "peakQueue": 8,
+      "packets": 109,
+      "drops": 51,
+      "reordered": 0,
+      "stalePreviewFrames": 0,
+      "unchangedFailures": 0,
+      "predictorStateBytes": 292,
+      "finalCanonicalHealth": [
+        100,
+        100
+      ],
+      "disconnected": true
+    }
+  ],
+  "unpredictedControl": {
+    "profile": "slow-broadcast-injected",
+    "phase": "fight",
+    "predictionEnabled": false,
+    "injected": {
+      "name": "slow-broadcast-injected",
+      "hz": 10,
+      "delays": [
+        82,
+        88,
+        120,
+        250,
+        90,
+        150
+      ],
+      "presentationDelay": 120,
+      "lossEvery": 17
+    },
+    "durationMs": 2800,
+    "responses": [
+      {
+        "action": "attack",
+        "pressedAtMs": 101,
+        "authorityDelayMs": 99,
+        "baselineVisibleDelayMs": 257.33,
+        "predictedVisibleDelayMs": 257.33
+      },
+      {
+        "action": "evade",
+        "pressedAtMs": 1901,
+        "authorityDelayMs": 99,
+        "baselineVisibleDelayMs": 257.33,
+        "predictedVisibleDelayMs": 257.33
+      }
+    ],
+    "maxXOffsetM": 0.37,
+    "maxYOffsetM": 0,
+    "maxFramePositionStepM": 0.36,
+    "correctionObservedAtMs": null,
+    "operations": 393,
+    "peakQueue": 8,
+    "packets": 57,
+    "drops": 3,
+    "reordered": 1,
+    "stalePreviewFrames": 0,
+    "unchangedFailures": 0,
+    "predictorStateBytes": 625,
+    "finalCanonicalHealth": [
+      82,
+      100
+    ],
+    "disconnected": false
+  }
+}

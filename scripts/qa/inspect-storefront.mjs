@@ -20,7 +20,11 @@ return new (class {
 })();`;
 const transpiled = ts.transpile(local, {target:ts.ScriptTarget.ES2022});
 const builder = new Function('THREE',transpiled)(THREE);
-const curve = z => Math.sin(z*.01)*9 + Math.sin(z*.022)*2;
+const courseSource = readFileSync('src/championship/course.ts', 'utf8');
+const courseExports = {};
+new Function('exports', ts.transpile(courseSource, { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS }))(courseExports);
+const { courseCenter: curve, COURSE_MAX_SECOND_DERIVATIVE } = courseExports;
+if (typeof curve !== 'function' || !Number.isFinite(COURSE_MAX_SECOND_DERIVATIVE)) throw new Error('Shared course/bound unavailable');
 const placements = [15,48,82,350,384,700,735,980].map(z=>z/2);
 let minimum = Infinity, nearest;
 const variants=[];
@@ -32,7 +36,7 @@ for(const [label,saloon] of [['DUST & GLORY',true],['CANYON SUPPLY',false],['COL
 for(const z of placements) for(const side of [-1,1]) {
  const label=z%3===0?'CANYON SUPPLY':z%2===0?'COLD CREEK':'SILVER SPUR';
  const group=builder.buildBuilding(label,z===7.5);
- group.position.set(curve(z)+side*13,0,z);group.rotation.y=side>0?-Math.PI/2:Math.PI/2;group.updateMatrixWorld(true);
+ group.position.set(curve(z)+side*16,0,z);group.rotation.y=side>0?-Math.PI/2:Math.PI/2;group.updateMatrixWorld(true);
  group.traverse(o=>{if(!o.isMesh)return; const p=o.geometry.attributes.position;
   for(let i=0;i<p.count;i++) { const v=new THREE.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld);
    const clearance=Math.abs(v.x-curve(v.z))-5.5;
@@ -41,12 +45,12 @@ for(const z of placements) for(const side of [-1,1]) {
  });
 }
 // Geometry is piecewise linear. Between vertices, the track curve's maximum
-// second derivative is0.001868. A building spans at most9.25m longitudinally;
+// second derivative uses the shared authored bound. A building spans at most9.25m longitudinally;
 // subtract its interpolation error bound rather than trusting vertex tests alone.
-const betweenVertexBound = .001868*9.25**2/8;
+const betweenVertexBound = COURSE_MAX_SECOND_DERIVATIVE*9.25**2/8;
 const conservativeClearance=minimum-betweenVertexBound;
 if(conservativeClearance<=0) throw new Error(`Storefront enters5.5m road envelope: ${conservativeClearance}`);
-const report={rendererSha256:createHash('sha256').update(source).digest('hex'),method:'Actual buildBuilding method and mesh helpers extracted with TypeScript AST; sign substitutes identical PlaneGeometry dimensions and omits only canvas text. Placements/curve checked against current500m buildRace constants. Full vertex transforms plus conservative continuous-curve deviation bound.',variants,placements:placements.length*2,roadHalfWidth:5.5,minimumVertexClearance:minimum,betweenVertexBound,conservativeClearance,nearest,limits:['Decorative scenery geometry only; not a simulation collision test','No GPU or physical-device performance measurement','Static placement formula must be reviewed if buildRace changes']};
+const report={rendererSha256:createHash('sha256').update(source).digest('hex'),courseSha256:createHash('sha256').update(courseSource).digest('hex'),method:'Actual buildBuilding method and mesh helpers extracted with TypeScript AST; sign substitutes identical PlaneGeometry dimensions and omits only canvas text. Placements/curve checked against current500m buildRace constants. Full vertex transforms plus conservative continuous-curve deviation bound.',variants,placements:placements.length*2,roadHalfWidth:5.5,minimumVertexClearance:minimum,betweenVertexBound,conservativeClearance,nearest,limits:['Decorative scenery geometry only; not a simulation collision test','No GPU or physical-device performance measurement','Static placement formula must be reviewed if buildRace changes']};
 const out=process.argv[2];if(out)writeFileSync(out,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify(report,null,2));
 console.log('STOREFRONT_GEOMETRY_CLEAR');

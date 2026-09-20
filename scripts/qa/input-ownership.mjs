@@ -25,7 +25,7 @@ function harness(source){
   const code=ts.transpileModule('('+extracted[name]+')',{compilerOptions:{target:ts.ScriptTarget.ES2022}}).outputText.trim().replace(/;$/,'');
   return new Function('scope',`with(scope){return ${code};}`)(scope);
  }
- const scope={input:{current:{move:0,jump:false,attack:false,special:false,guard:false}},inputSender:{current:new InputSender()},match:{current:{tick:0}},controls:{current:new InputControls()},keys:new Set()};
+ const scope={input:{current:{move:0,jump:false,attack:false,special:false,guard:false}},inputSender:{current:new InputSender()},match:{current:{tick:0}},controls:{current:new InputControls()},modeRef:{current:"solo"},keys:new Set()};
  scope.publishControls=expression('publishControls',true);
  scope.update=expression('update',true);
  const press=expression('press'),keydown=expression('keydown'),keyup=expression('keyup'),clear=expression('clear'),releasePointer=expression('releasePointer',true);
@@ -52,5 +52,5 @@ function run(source){
 const old=run(baseline);assert.equal(old.observed.rebound.jump,true);assert.equal(old.observed.remainingDirection,0);assert.equal(old.observed.remainingGuard,false);assert.equal(old.observed.mixedGuard,false);assert.equal(old.observed.cancelledJump,true);
 const repaired=run(current);
 const evidence={classification:'Actual AST-extracted app callbacks with fake DOM events and real InputControls/InputSender; not browser dispatch or physical multitouch acceptance.',baselineCommit,baseline:old,current:repaired,sources:{[path]:sha(current),'src/championship/controls.ts':sha(await readFile('src/championship/controls.ts'))},harnessSha256:sha(await readFile(new URL(import.meta.url)))};
-await writeFile('docs/production/evidence/cycle-10-input-ownership.json',JSON.stringify(evidence,null,2)+'\n');
+await writeFile(process.argv[2] ?? 'docs/production/evidence/input-ownership-current.json',JSON.stringify(evidence,null,2)+'\n',{flag:'wx'});
 console.log('INPUT_OWNERSHIP_VERIFIED');

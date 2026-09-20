@@ -1,0 +1,29 @@
+{
+  "kind": "local-pose-inspection-not-gameplay",
+  "settings": {
+    "stage": "fight",
+    "left": "wolf",
+    "right": "wolf",
+    "action": "attack",
+    "rival": "fight_idle",
+    "gap": 1.75,
+    "elapsed": 0.5800000000000001,
+    "rivalTime": 1
+  },
+  "hashes": {
+    "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+    "src/championship/simulation.ts": "4f37731fdc4de44eea24d55b644d178d7638d6b5e9bf8c181636b135531481f6",
+    "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+    "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+    "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+    "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+    "scripts/qa/contact-preview.ts": "2f07a4ed7b04b9c11881b08f87c9b64a18b58a1cedff8940981063c7cb2c5b3f",
+    "assets/source/western/revision2/candidate/lion.glb": "3b407a4ee8d4bada0711160bc0425fa66b7214418c3b56d556ca0ff4811f0d92",
+    "assets/source/western/revision2/candidate/lion-upright.glb": "c1af4a1a02dc6047c300b9ccfaa877c43c3ae806037cc1fa3001655cf7e807f6",
+    "assets/source/western/revision2/candidate/wolf.glb": "e85c6200a526cbe1b4c41c1d43a71da59a8bd5d26f76a9bec2f3d2c2fed59e42",
+    "assets/source/western/revision2/candidate/wolf-upright.glb": "f47c09c7ff084523b80ffb76804127ab1486fc0fdffeb50345afd8b850e2dd37",
+    "assets/source/western/revision2/candidate/unicorn.glb": "35848488f8fd15208172c56c6bea464d732fe3ddedff0ffb150038915b580142",
+    "assets/source/western/revision2/candidate/unicorn-upright.glb": "478179f3ab5b03d34b0c3fc09097d9a5b627da8cf64c4c486cbd7ab8a1d27dcb"
+  },
+  "pngSha256": "45dd079eefb27cfb0b19058291fa5b6c6279b38bef18bc51fd3979b039612bd2"
+}

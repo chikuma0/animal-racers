@@ -1,0 +1,43 @@
+{
+  "recipeSha256": "6bbd90284e454861e28ea93a3e6a3387abe105e1e9c45f8643ffce6894680800",
+  "baselineCommit": "f600be2",
+  "records": {
+    "lion-race": {
+      "runtimeSha256": "3b407a4ee8d4bada0711160bc0425fa66b7214418c3b56d556ca0ff4811f0d92",
+      "sourceSemanticSha256": "d95322576b23708beb2f75ce511ab72bb9902f664418c90d1e3d252cdda92087",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "lion-upright": {
+      "runtimeSha256": "c1af4a1a02dc6047c300b9ccfaa877c43c3ae806037cc1fa3001655cf7e807f6",
+      "sourceSemanticSha256": "b43776517b1683eba36ebc3b3ed352bae5aa2d2ad7a7ecbeebaa32642155d8e2",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "wolf-race": {
+      "runtimeSha256": "e85c6200a526cbe1b4c41c1d43a71da59a8bd5d26f76a9bec2f3d2c2fed59e42",
+      "sourceSemanticSha256": "db5a8e93db4550f4c5e895a17debd69a7ade721bcfcdbffb451d9030b2913c1f",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "wolf-upright": {
+      "runtimeSha256": "f47c09c7ff084523b80ffb76804127ab1486fc0fdffeb50345afd8b850e2dd37",
+      "sourceSemanticSha256": "16ad4ffc8cfc939b8eea910b75da407309f42da72ad07359adf6f7536434c366",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "unicorn-race": {
+      "runtimeSha256": "35848488f8fd15208172c56c6bea464d732fe3ddedff0ffb150038915b580142",
+      "sourceSemanticSha256": "b15c2aa54bba99d247fd3689f16372784915709084a19e9f2b037199fa85c689",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "unicorn-upright": {
+      "runtimeSha256": "478179f3ab5b03d34b0c3fc09097d9a5b627da8cf64c4c486cbd7ab8a1d27dcb",
+      "sourceSemanticSha256": "43d10cbde0635bc7a0e3d43d22b6f4ae428787e31343d88a809f86400325d005",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    }
+  },
+  "scope": "Fresh isolated six-file recipe execution; byte-identical GLB and exact source mesh/topology/weights/colors/UV/morphs/rig/actions semantic comparison. Volatile Blender serialization metadata is not treated as deterministic."
+}

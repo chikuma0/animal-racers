@@ -1,0 +1,2122 @@
+{
+  "auditedCommit": "cb2ebdc4357f74f7445b0b9ab1ff8b7c2583f33d",
+  "expectedBehavior": "Revision2 actual callback gameplay/rematch convergence, canonical presentation monotonicity, stale-input expiry, bounded cosmetic feedback; visual prediction corrections measured separately. No counterfactual callbacks.",
+  "harnessSha256": "92bf9d1260d6b028c5807a7c9672eb850e11a0e9a6a5d5a366b07134c9393f05",
+  "classification": "OFFLINE SYNTHETIC SCHEDULES. Injected delay/jitter/loss are not internet measurements. Fixed 60Hz app callbacks; model-to-render timings exclude browser input dispatch, rendering, GPU, display and CPU stalls.",
+  "sources": {
+    "src/components/Championship.tsx": "ee3d5ed8ebcbe5477749238379064c43510984692cef9843bfb84c12a80d1467",
+    "src/championship/network.ts": "64ef2859e865dadf7d6487e127f1654ddce6fbcbae6bd15e2f3d6833eca85da1",
+    "src/championship/input-buffer.ts": "f398210a6e70200863bc0ae401c9f57a63d7594558678a1198fa886efe310292",
+    "src/championship/presentation.ts": "024b97cba26ddeab858cc64e8b655e0e0521efc81b3f1ea30419cba6f5655346",
+    "src/championship/prediction.ts": "3662ed065497032431282b094ecd3c8a7c1451608cf7e3960e2909aed242f2e0",
+    "src/championship/simulation.ts": "6bc06e431c55221e748cdfefd1f50d95dfdac23d4186f5cd0413bdd54333125a",
+    "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+    "src/championship/measurements.ts": "b237c2c42d87e1455167405ae3cbcaabab54ce44cc053fa59f2c78e970675f23",
+    "src/championship/work-measurements.ts": "f73e2fd2180027ed0d5cc1b8f016b4b192ea3b3171e58429dd9fa7d5099e97f5",
+    "src/championship/controls.ts": "7debbdff2bd1d97a07102975a2953ef779f6b748badaa0bef13dfa94f9596bf3"
+  },
+  "extractedCallbacks": {
+    "begin": {
+      "line": 171,
+      "sha256": "65c7a0b016aa261ca40380c62eeb3a1a39f3eb50192f1b451ba13e0220f2f6b5",
+      "source": "(characters: [CharacterId, CharacterId], newEpoch: string) => {\n      match.current = createMatch(characters, 6827);\n      epoch.current = newEpoch;\n      prediction.current.reset(newEpoch);\n      playTrace.current = { lastId: 0, events: [] };\n      latestTick.current = -1;\n      presentation.current.clear();\n      remoteSeq.current = -1;\n      inputSender.current.reset();\n      controls.current.clear();\n      localReceiver.current.reset();\n      remoteReceiver.current.reset();\n      rematchPending.current = false;\n      peerRematch.current = false;\n      setRematchWaiting(false);\n      setInterrupted(false);\n      setStatus(\"\");\n      input.current = neutralInput();\n      remoteInput.current = neutralInput();\n      lastSnapshot.current = performance.now();\n      lastInput.current = performance.now();\n      audio.current?.reset();\n      setView(structuredClone(match.current));\n      setPage(\"play\");\n    }"
+    },
+    "animate": {
+      "line": 247,
+      "sha256": "0443897e81765e021f1bb160dd313b5006a48b56fbbb211ca4489e6a73152965",
+      "source": "(now: number) => {\n      if (!alive) return;\n      const callbackStart = performance.now();\n      const realDt = (now - previous) / 1000;\n      previous = now;\n      const dt = Math.min(realDt, 0.1);\n      accumulator = Math.min(accumulator + dt, 0.15);\n      const m = match.current,\n        net = network.current;\n      const solo = modeRef.current === \"solo\",\n        host = modeRef.current === \"host\";\n      if (m && screenRef.current === \"play\" && m.phase !== \"results\") {\n        if (\n          !solo &&\n          connected.current &&\n          ((host && now - lastInput.current > 8000) ||\n            (!host && now - lastSnapshot.current > 8000))\n        ) {\n          setStatus(\n            \"Connection interrupted. This match has no verified result.\",\n          );\n          setInterrupted(true);\n          connected.current = false;\n        }\n        while (accumulator >= 1 / 60) {\n          localReceiver.current.accept(inputSender.current.packet(m.tick), m.tick);\n          const local = localReceiver.current.tick(m.tick);\n          if (m.phase === \"race\") local.move *= -1;\n          if (solo) stepMatch(m, [local, cpuInput(m, 1)], 1 / 60);\n          else if (host && connected.current) {\n            remoteInput.current =\n              now - lastInput.current > 500\n                ? neutralInput()\n                : remoteReceiver.current.tick(m.tick);\n            const remote = { ...remoteInput.current };\n            if (m.phase === \"race\") remote.move *= -1;\n            stepMatch(m, [local, remote], 1 / 60);\n          }\n          accumulator -= 1 / 60;\n        }\n      } else accumulator = 0;\n      if (m) {\n        for (const event of m.events) {\n          if (event.id <= playTrace.current.lastId) continue;\n          playTrace.current.lastId = event.id;\n          playTrace.current.events.push({ tick: m.tick, phase: m.phase, phaseTime: m.phaseTime,\n            type: event.type, slot: event.slot, x: event.x, z: event.z });\n        }\n        if (playTrace.current.events.length > 256) playTrace.current.events.splice(0, playTrace.current.events.length - 256);\n      }\n      const simulationEnd = performance.now();\n      if (\n        net &&\n        connected.current &&\n        now - lastSend >= 1000 / (net.sendHz ?? 10)\n      ) {\n        lastSend = now;\n        if (screenRef.current === \"lobby\") {\n          net.send(\"lobby\", {\n            character: selectedRef.current,\n            ready: readyRef.current,\n            name: host ? \"Trailblazer\" : \"Challenger\",\n          });\n          if (host && readyRef.current && peerRef.current?.ready) {\n            begin(\n              [selectedRef.current, peerRef.current.character],\n              crypto.randomUUID(),\n            );\n          }\n        }\n        if (match.current && screenRef.current === \"play\") {\n          if (host) {\n            net.send(\"snapshot\", {\n              epoch: epoch.current,\n              match: match.current,\n              input: input.current,\n              rematch: rematchPending.current,\n            });\n            if (\n              match.current.phase === \"results\" &&\n              rematchPending.current &&\n              peerRematch.current\n            )\n              begin(\n                [\n                  match.current.players[0].character,\n                  match.current.players[1].character,\n                ],\n                crypto.randomUUID(),\n              );\n          } else\n            net.send(\"input\", {\n              epoch: epoch.current,\n              seq: ++localSeq.current,\n              packet: inputSender.current.packet(match.current.tick),\n              rematch: rematchPending.current,\n            });\n        }\n      }\n      const networkEnd = performance.now();\n      let displayedMatch = modeRef.current === \"guest\"\n          ? (presentation.current.sample(\n              now,\n              network.current?.transport === \"webrtc\" ? 50 : 120,\n            ) ?? match.current)\n          : match.current;\n      if (modeRef.current === \"guest\") {\n        if (connected.current && displayedMatch) {\n          const visualInput = { ...input.current };\n          if (displayedMatch.phase === \"race\") visualInput.move *= -1;\n          const predictionNow = performance.now();\n          prediction.current.updateInput(visualInput, predictionNow);\n          displayedMatch = prediction.current.sample(displayedMatch, predictionNow);\n        } else prediction.current.disconnect();\n      }\n      const presentationEnd = performance.now();\n      renderer.current?.render(\n        displayedMatch,\n        modeRef.current === \"guest\" ? 1 : 0,\n        dt,\n        now / 1000,\n        realDt * 1000,\n      );\n      const renderEnd = performance.now();\n      audio.current?.update(\n        m?.phase ?? \"select\",\n        m?.players[modeRef.current === \"guest\" ? 1 : 0].speed ?? 0,\n        m?.events ?? [],\n        now / 1000,\n        m?.players.map((p) => p.character),\n      );\n      if (now - lastUI > 50) {\n        lastUI = now;\n        if (match.current) setView(structuredClone(match.current));\n        setReport(renderer.current?.report() ?? null);\n      }\n      frame = requestAnimationFrame(animate);\n      const callbackEnd = performance.now();\n      workMeasurements.current.add(match.current?.phase ?? \"select\", document.hidden, {\n        simulation: simulationEnd - callbackStart,\n        networkSend: networkEnd - simulationEnd,\n        presentation: presentationEnd - networkEnd,\n        renderCall: renderEnd - presentationEnd,\n        audioAndUi: callbackEnd - renderEnd,\n        callback: callbackEnd - callbackStart,\n        ...(previousCallbackEnd > 0 ? { betweenCallbacks: callbackStart - previousCallbackEnd } : {}),\n      });\n      previousCallbackEnd = performance.now();\n    }"
+    },
+    "receive": {
+      "line": 529,
+      "sha256": "8819ca95ee070d863f48d0356e25ddf52deeebfed2772e870c04cbb7c6e5b36e",
+      "source": "(message) => {\n      const data = message.data as Record<string, unknown>;\n      if (!data || typeof data !== \"object\") return;\n      if (\n        message.type === \"lobby\" &&\n        validCharacter(data.character) &&\n        typeof data.ready === \"boolean\"\n      ) {\n        const p = {\n          character: data.character,\n          ready: data.ready,\n          name: asHost ? \"Challenger\" : \"Trailblazer\",\n        };\n        peerRef.current = p;\n        setPeer(p);\n        setRival(p.character);\n      }\n      if (\n        message.type === \"snapshot\" &&\n        !asHost &&\n        typeof data.epoch === \"string\" &&\n        isSnapshot(data.match) &&\n        validInput(data.input)\n      ) {\n        if (\n          screenRef.current === \"lobby\" ||\n          // All countdown packets may be lost. The admitted host's next valid\n          // epoch can already be racing when our requested rematch arrives.\n          (data.epoch !== epoch.current && rematchPending.current)\n        ) {\n          epoch.current = data.epoch;\n          prediction.current.reset(data.epoch);\n          playTrace.current = { lastId: 0, events: [] };\n          latestTick.current = -1;\n          presentation.current.clear();\n          inputSender.current.reset();\n          controls.current.clear();\n          input.current = neutralInput();\n          remoteReceiver.current.reset();\n          localReceiver.current.reset();\n          rematchPending.current = false;\n          peerRematch.current = false;\n          setRematchWaiting(false);\n          setStatus(\"\");\n          setPage(\"play\");\n          audio.current?.reset();\n        }\n        if (\n          data.epoch !== epoch.current ||\n          data.match.tick < latestTick.current\n        )\n          return;\n        peerRematch.current = data.rematch === true;\n        latestTick.current = data.match.tick;\n        match.current = structuredClone(data.match);\n        presentation.current.push(data.match, performance.now());\n        prediction.current.observe(data.epoch, data.match, performance.now());\n        remoteInput.current = data.input;\n        lastSnapshot.current = performance.now();\n        setView(structuredClone(data.match));\n      }\n      if (\n        message.type === \"input\" &&\n        asHost &&\n        data.epoch === epoch.current &&\n        Number.isSafeInteger(data.seq) &&\n        (data.seq as number) > remoteSeq.current &&\n        isInputPacket(data.packet)\n      ) {\n        remoteSeq.current = data.seq as number;\n        remoteReceiver.current.accept(data.packet, match.current?.tick ?? 0);\n        peerRematch.current = data.rematch === true;\n        lastInput.current = performance.now();\n      }\n      if (message.type === \"away\") {\n        connected.current = false;\n        if (match.current?.phase === \"results\") return;\n        setInterrupted(true);\n        setStatus(\n          \"Your rival left the game. This match has no verified result.\",\n        );\n      }\n    }"
+    },
+    "rematch": {
+      "line": 633,
+      "sha256": "ec7eee18658860ef6fca9779126cbaabb6ae9154d04cf597c09880bd89bfa1fa",
+      "source": "() => {\n    if (mode === \"solo\") {\n      begin([selected, rival], crypto.randomUUID());\n    } else {\n      rematchPending.current = true;\n      setRematchWaiting(true);\n    }\n  }"
+    },
+    "publishControls": {
+      "line": 139,
+      "sha256": "afb3779417f44a57da0c9d935ee0d0ef9a129457ad254f8c13a8fc3c85536374",
+      "source": "() => {\n    input.current = controls.current.value();\n    inputSender.current.update(input.current, match.current?.tick ?? 0);\n    if (modeRef.current === \"guest\") {\n      const visualInput = { ...input.current };\n      if (match.current?.phase === \"race\") visualInput.move *= -1;\n      prediction.current.updateInput(visualInput, performance.now());\n    }\n  }"
+    }
+  },
+  "extractedSupportingSource": {
+    "frameDeclaration": "let frame = 0,\n      previous = performance.now(),\n      accumulator = 0,\n      lastUI = 0,\n      lastSend = 0,\n      previousCallbackEnd = 0;",
+    "validators": "const validCharacter = ((v) => typeof v === \"string\" && CHARACTER_IDS.includes(v));\nconst validInput = ((v) => {\n    if (!v || typeof v !== \"object\")\n        return false;\n    const a = v;\n    return (Number.isFinite(a.move) &&\n        Math.abs(a.move) <= 1 &&\n        [\"jump\", \"attack\", \"special\", \"guard\"].every((k) => typeof a[k] === \"boolean\"));\n});function isSnapshot(value) {\n    if (!value || typeof value !== \"object\")\n        return false;\n    const m = value;\n    return (Number.isSafeInteger(m.tick) &&\n        m.tick >= 0 &&\n        [\"countdown\", \"race\", \"transition\", \"fight\", \"results\"].includes(m.phase) &&\n        Number.isFinite(m.phaseTime) &&\n        Array.isArray(m.players) &&\n        m.players.length === 2 &&\n        m.players.every((p) => validCharacter(p.character) &&\n            [p.x, p.y, p.z, p.hp, p.speed, p.draft, p.dodgeCooldown, p.counterWindow, p.strikeWindup].every(Number.isFinite) &&\n            p.strikeWindup > 0 && typeof p.drafting === \"boolean\" && typeof p.action === \"string\") &&\n        Array.isArray(m.events) &&\n        m.events.length < 128);\n}\n"
+  },
+  "boundaries": [
+    "Actual exported network, input-buffer, presentation, prediction, controls, course and simulation code.",
+    "Actual AST-extracted app begin, animate, message-handler, control publisher and rematch callbacks; only sockets, WebRTC primitive, clock, React refs/setters and renderer sink are modeled.",
+    "Canonical presentation metrics are captured before prediction; immediate local feedback is separately measured without requiring a host event. Cosmetic clock corrections do not imply canonical replay.",
+    "Current audit uses only actual callbacks; historical baseline/counterfactual findings are in separate immutable reports. Canonical files remain unchanged during each audit.",
+    "Near-zero values are synthetic. Slow fallback values are inspired by the historical small smoke sample, not a reconstruction or forecast."
+  ],
+  "edgeBurst": {
+    "attemptedEdges": 1000,
+    "pendingMaximum": 2,
+    "emitted": 2,
+    "duplicateReplay": false
+  },
+  "results": [
+    {
+      "profile": "near-zero-direct",
+      "injected": {
+        "id": "near-zero-direct",
+        "direct": true,
+        "delays": [
+          1
+        ]
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": false,
+      "virtualDurationMs": 255941.67,
+      "eventOperations": 43469,
+      "packetCounts": {
+        "total": 12495,
+        "dropped": 0,
+        "deliveredOutOfOrder": 0,
+        "droppedTypes": {},
+        "sentTypes": {
+          "rtc_signal": 2,
+          "lobby": 1,
+          "snapshot": 5992,
+          "input": 5992,
+          "transport_ping": 254,
+          "transport_pong": 254
+        }
+      },
+      "cadenceHz": [
+        30,
+        30
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 68985.33333333052,
+          "authorityAt": 69018.66666666386,
+          "eventId": 71,
+          "hostVisibleAt": 69018.66666666386,
+          "guestVisibleAt": 69026.9999999972,
+          "guestFeedbackAt": 68993.66666666386,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 70985.3333333311,
+          "authorityAt": 71018.66666666445,
+          "eventId": 73,
+          "hostVisibleAt": 71018.66666666445,
+          "guestVisibleAt": 71026.99999999779,
+          "guestFeedbackAt": 70993.66666666445,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71011.33333333112,
+            "authorityTick": 4257,
+            "sourceTick": 4254,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 72985.33333333168,
+          "authorityAt": 73018.66666666503,
+          "eventId": 74,
+          "hostVisibleAt": 73018.66666666503,
+          "guestVisibleAt": 73026.99999999837,
+          "guestFeedbackAt": 72993.66666666503,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73011.3333333317,
+            "authorityTick": 4377,
+            "sourceTick": 4374,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 74985.33333333227,
+          "authorityAt": 74985.33333333227,
+          "eventId": 75,
+          "hostVisibleAt": 74985.33333333227,
+          "guestVisibleAt": 74993.66666666561,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 8.33,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 76985.33333333285,
+          "authorityAt": 77018.66666666619,
+          "eventId": 76,
+          "hostVisibleAt": 77018.66666666619,
+          "guestVisibleAt": 77026.99999999953,
+          "guestFeedbackAt": 76993.66666666619,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77011.33333333286,
+            "authorityTick": 4617,
+            "sourceTick": 4614,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 78968.66666666676,
+          "authorityAt": 78985.33333333343,
+          "eventId": 77,
+          "hostVisibleAt": 78985.33333333343,
+          "guestVisibleAt": 78993.66666666677,
+          "guestFeedbackAt": 78977.0000000001,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 78978.0000000001,
+            "authorityTick": 4736,
+            "sourceTick": 4735,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 5,
+          "p50": 33.33,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "guestToGuestVisible": {
+          "count": 5,
+          "p50": 41.67,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15353,
+          "p50": 16.67,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "snapshotAgeMs": {
+          "count": 15353,
+          "p50": 25,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "actionClockLagMs": {
+          "count": 425,
+          "p50": 42.67,
+          "p95": 42.67,
+          "max": 42.67
+        },
+        "phaseMismatchFrames": 8,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 60,
+        "peakRateWindow": 32,
+        "peakScheduledEvents": 7,
+        "peakEnvelopeBytes": 6149,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 5,
+        "maxLocalActionClockCorrectionMs": 67.67,
+        "maxXOffsetM": 0.16,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 834
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 127960.33333334769,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 8.333333333343035
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 255943.66666660924,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 24.999999999970896
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 127960.33333334769,
+        "secondBeginAt": 127985.33333334769,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    },
+    {
+      "profile": "direct-jitter-loss-reorder",
+      "injected": {
+        "id": "direct-jitter-loss-reorder",
+        "direct": true,
+        "delays": [
+          2,
+          70,
+          4,
+          120,
+          3,
+          8
+        ],
+        "lossEvery": 13
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": false,
+      "virtualDurationMs": 256025,
+      "eventOperations": 42206,
+      "packetCounts": {
+        "total": 12143,
+        "dropped": 923,
+        "deliveredOutOfOrder": 1767,
+        "droppedTypes": {
+          "input": 461,
+          "snapshot": 462
+        },
+        "sentTypes": {
+          "rtc_signal": 2,
+          "lobby": 1,
+          "snapshot": 5995,
+          "input": 5993,
+          "transport_ping": 82,
+          "transport_pong": 70
+        }
+      },
+      "cadenceHz": [
+        30,
+        30
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 69023.9999999972,
+          "authorityAt": 69040.66666666388,
+          "eventId": 71,
+          "hostVisibleAt": 69040.66666666388,
+          "guestVisibleAt": 69048.9999999972,
+          "guestFeedbackAt": 69032.33333333053,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69040.33333333053,
+            "authorityTick": 4136,
+            "sourceTick": 4135,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 71023.99999999779,
+          "authorityAt": 71040.66666666446,
+          "eventId": 73,
+          "hostVisibleAt": 71040.66666666446,
+          "guestVisibleAt": 71048.99999999779,
+          "guestFeedbackAt": 71032.33333333112,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71040.33333333112,
+            "authorityTick": 4256,
+            "sourceTick": 4255,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 73023.99999999837,
+          "authorityAt": 73040.66666666504,
+          "eventId": 74,
+          "hostVisibleAt": 73040.66666666504,
+          "guestVisibleAt": 73048.99999999837,
+          "guestFeedbackAt": 73032.3333333317,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73040.3333333317,
+            "authorityTick": 4376,
+            "sourceTick": 4375,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 75023.99999999895,
+          "authorityAt": 75023.99999999895,
+          "eventId": 75,
+          "hostVisibleAt": 75023.99999999895,
+          "guestVisibleAt": 75048.99999999895,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69040.33333333053,
+            "authorityTick": 4136,
+            "sourceTick": 4135,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 77023.99999999953,
+          "authorityAt": 77073.99999999955,
+          "eventId": 76,
+          "hostVisibleAt": 77073.99999999955,
+          "guestVisibleAt": 77082.33333333288,
+          "guestFeedbackAt": 77032.33333333286,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77073.6666666662,
+            "authorityTick": 4618,
+            "sourceTick": 4615,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 50,
+          "inputToHostVisibleMs": 50,
+          "inputToGuestVisibleMs": 58.33,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 79007.33333333344,
+          "authorityAt": 79040.66666666679,
+          "eventId": 77,
+          "hostVisibleAt": 79040.66666666679,
+          "guestVisibleAt": 79049.00000000012,
+          "guestFeedbackAt": 79015.66666666677,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 79040.33333333344,
+            "authorityTick": 4737,
+            "sourceTick": 4734,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 5,
+          "p50": 16.67,
+          "p95": 50,
+          "max": 50
+        },
+        "guestToGuestVisible": {
+          "count": 5,
+          "p50": 25,
+          "p95": 58.33,
+          "max": 58.33
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15360,
+          "p50": 16.67,
+          "p95": 100,
+          "max": 200
+        },
+        "snapshotAgeMs": {
+          "count": 15360,
+          "p50": 25,
+          "p95": 108.33,
+          "max": 208.33
+        },
+        "actionClockLagMs": {
+          "count": 424,
+          "p50": 44.67,
+          "p95": 45.67,
+          "max": 45.67
+        },
+        "phaseMismatchFrames": 16,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 16,
+        "peakRateWindow": 32,
+        "peakScheduledEvents": 9,
+        "peakEnvelopeBytes": 6153,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 3,
+        "maxLocalActionClockCorrectionMs": 68.67,
+        "maxXOffsetM": 0.21,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 834
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 128015.66666668103,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 25
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 256098.9999999425,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 58.33333333331393
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 128015.66666668103,
+        "secondBeginAt": 128107.33333334773,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    },
+    {
+      "profile": "direct-delay-step",
+      "injected": {
+        "id": "direct-delay-step",
+        "direct": true,
+        "delays": [
+          1
+        ],
+        "stepJitter": true
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": false,
+      "virtualDurationMs": 255941.67,
+      "eventOperations": 43469,
+      "packetCounts": {
+        "total": 12495,
+        "dropped": 0,
+        "deliveredOutOfOrder": 8,
+        "droppedTypes": {},
+        "sentTypes": {
+          "rtc_signal": 2,
+          "lobby": 1,
+          "snapshot": 5992,
+          "input": 5992,
+          "transport_ping": 254,
+          "transport_pong": 254
+        }
+      },
+      "cadenceHz": [
+        30,
+        30
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 68985.33333333052,
+          "authorityAt": 69018.66666666386,
+          "eventId": 71,
+          "hostVisibleAt": 69018.66666666386,
+          "guestVisibleAt": 69026.9999999972,
+          "guestFeedbackAt": 68993.66666666386,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 70985.3333333311,
+          "authorityAt": 71018.66666666445,
+          "eventId": 73,
+          "hostVisibleAt": 71018.66666666445,
+          "guestVisibleAt": 71026.99999999779,
+          "guestFeedbackAt": 70993.66666666445,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71011.33333333112,
+            "authorityTick": 4257,
+            "sourceTick": 4254,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 72985.33333333168,
+          "authorityAt": 73018.66666666503,
+          "eventId": 74,
+          "hostVisibleAt": 73018.66666666503,
+          "guestVisibleAt": 73026.99999999837,
+          "guestFeedbackAt": 72993.66666666503,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73011.3333333317,
+            "authorityTick": 4377,
+            "sourceTick": 4374,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 74985.33333333227,
+          "authorityAt": 74985.33333333227,
+          "eventId": 75,
+          "hostVisibleAt": 74985.33333333227,
+          "guestVisibleAt": 74993.66666666561,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 8.33,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 76985.33333333285,
+          "authorityAt": 77018.66666666619,
+          "eventId": 76,
+          "hostVisibleAt": 77018.66666666619,
+          "guestVisibleAt": 77026.99999999953,
+          "guestFeedbackAt": 76993.66666666619,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77011.33333333286,
+            "authorityTick": 4617,
+            "sourceTick": 4614,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 78968.66666666676,
+          "authorityAt": 78985.33333333343,
+          "eventId": 77,
+          "hostVisibleAt": 78985.33333333343,
+          "guestVisibleAt": 78993.66666666677,
+          "guestFeedbackAt": 78977.0000000001,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 78978.0000000001,
+            "authorityTick": 4736,
+            "sourceTick": 4735,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 5,
+          "p50": 33.33,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "guestToGuestVisible": {
+          "count": 5,
+          "p50": 41.67,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15353,
+          "p50": 16.67,
+          "p95": 33.33,
+          "max": 150
+        },
+        "snapshotAgeMs": {
+          "count": 15353,
+          "p50": 25,
+          "p95": 41.67,
+          "max": 158.33
+        },
+        "actionClockLagMs": {
+          "count": 425,
+          "p50": 42.67,
+          "p95": 42.67,
+          "max": 42.67
+        },
+        "phaseMismatchFrames": 8,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 60,
+        "peakRateWindow": 32,
+        "peakScheduledEvents": 14,
+        "peakEnvelopeBytes": 6149,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 5,
+        "maxLocalActionClockCorrectionMs": 67.67,
+        "maxXOffsetM": 0.16,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 834
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 127960.33333334769,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 8.333333333343035
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 255943.66666660924,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 24.999999999970896
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 127960.33333334769,
+        "secondBeginAt": 127985.33333334769,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    },
+    {
+      "profile": "slow-broadcast-injected",
+      "injected": {
+        "id": "slow-broadcast-injected",
+        "direct": false,
+        "delays": [
+          82,
+          88,
+          120,
+          250,
+          90,
+          150
+        ],
+        "lossEvery": 17
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": false,
+      "virtualDurationMs": 256500,
+      "eventOperations": 35548,
+      "packetCounts": {
+        "total": 4783,
+        "dropped": 278,
+        "deliveredOutOfOrder": 101,
+        "droppedTypes": {
+          "input": 138,
+          "snapshot": 140
+        },
+        "sentTypes": {
+          "lobby": 2,
+          "snapshot": 2323,
+          "input": 2322,
+          "transport_ping": 82,
+          "transport_pong": 54
+        }
+      },
+      "cadenceHz": [
+        10,
+        10
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 69049.9999999972,
+          "authorityAt": 69283.3333333306,
+          "eventId": 71,
+          "hostVisibleAt": 69283.3333333306,
+          "guestVisibleAt": 69441.666666664,
+          "guestFeedbackAt": 69058.33333333055,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69274.99999999724,
+            "authorityTick": 4149,
+            "sourceTick": 4128,
+            "ageTicks": 21
+          },
+          "inputToAuthorityMs": 233.33,
+          "inputToHostVisibleMs": 233.33,
+          "inputToGuestVisibleMs": 391.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 71049.99999999779,
+          "authorityAt": 71216.6666666645,
+          "eventId": 73,
+          "hostVisibleAt": 71216.6666666645,
+          "guestVisibleAt": 71308.3333333312,
+          "guestFeedbackAt": 71058.33333333113,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71206.99999999782,
+            "authorityTick": 4265,
+            "sourceTick": 4248,
+            "ageTicks": 17
+          },
+          "inputToAuthorityMs": 166.67,
+          "inputToHostVisibleMs": 166.67,
+          "inputToGuestVisibleMs": 258.33,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 73049.99999999837,
+          "authorityAt": 73283.33333333177,
+          "eventId": 74,
+          "hostVisibleAt": 73283.33333333177,
+          "guestVisibleAt": 73441.66666666516,
+          "guestFeedbackAt": 73058.33333333171,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73274.9999999984,
+            "authorityTick": 4389,
+            "sourceTick": 4368,
+            "ageTicks": 21
+          },
+          "inputToAuthorityMs": 233.33,
+          "inputToHostVisibleMs": 233.33,
+          "inputToGuestVisibleMs": 391.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 75049.99999999895,
+          "authorityAt": 75049.99999999895,
+          "eventId": 75,
+          "hostVisibleAt": 75049.99999999895,
+          "guestVisibleAt": 75241.66666666568,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69274.99999999724,
+            "authorityTick": 4149,
+            "sourceTick": 4128,
+            "ageTicks": 21
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 191.67,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 77049.99999999953,
+          "authorityAt": 77216.66666666625,
+          "eventId": 76,
+          "hostVisibleAt": 77216.66666666625,
+          "guestVisibleAt": 77341.6666666663,
+          "guestFeedbackAt": 77058.33333333288,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77212.99999999956,
+            "authorityTick": 4625,
+            "sourceTick": 4608,
+            "ageTicks": 17
+          },
+          "inputToAuthorityMs": 166.67,
+          "inputToHostVisibleMs": 166.67,
+          "inputToGuestVisibleMs": 291.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 79033.33333333344,
+          "authorityAt": 79283.33333333352,
+          "eventId": 77,
+          "hostVisibleAt": 79283.33333333352,
+          "guestVisibleAt": 79441.6666666669,
+          "guestFeedbackAt": 79041.66666666679,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 79275.00000000015,
+            "authorityTick": 4750,
+            "sourceTick": 4729,
+            "ageTicks": 21
+          },
+          "inputToAuthorityMs": 250,
+          "inputToHostVisibleMs": 250,
+          "inputToGuestVisibleMs": 408.33,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 5,
+          "p50": 233.33,
+          "p95": 250,
+          "max": 250
+        },
+        "guestToGuestVisible": {
+          "count": 5,
+          "p50": 391.67,
+          "p95": 408.33,
+          "max": 408.33
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15366,
+          "p50": 150,
+          "p95": 300,
+          "max": 600
+        },
+        "snapshotAgeMs": {
+          "count": 15366,
+          "p50": 158.33,
+          "p95": 308.33,
+          "max": 608.33
+        },
+        "actionClockLagMs": {
+          "count": 364,
+          "p50": 199.67,
+          "p95": 231.67,
+          "max": 266.67
+        },
+        "phaseMismatchFrames": 79,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 15,
+        "peakRateWindow": 12,
+        "peakScheduledEvents": 10,
+        "peakEnvelopeBytes": 6149,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 1,
+        "maxLocalActionClockCorrectionMs": 180,
+        "maxXOffsetM": 0.62,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 818
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 128166.66666668108,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 150.00000000004366
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 256499.99999994226,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 149.9999999999127
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 128166.66666668108,
+        "secondBeginAt": 128416.66666668115,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    },
+    {
+      "profile": "guest-input-loss-burst",
+      "injected": {
+        "id": "guest-input-loss-burst",
+        "direct": true,
+        "delays": [
+          1
+        ],
+        "inputBlackoutMs": 1000
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": false,
+      "virtualDurationMs": 255941.67,
+      "eventOperations": 43439,
+      "packetCounts": {
+        "total": 12495,
+        "dropped": 30,
+        "deliveredOutOfOrder": 0,
+        "droppedTypes": {
+          "input": 30
+        },
+        "sentTypes": {
+          "rtc_signal": 2,
+          "lobby": 1,
+          "snapshot": 5992,
+          "input": 5992,
+          "transport_ping": 254,
+          "transport_pong": 254
+        }
+      },
+      "cadenceHz": [
+        30,
+        30
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 68985.33333333052,
+          "authorityAt": null,
+          "eventId": null,
+          "hostVisibleAt": null,
+          "guestVisibleAt": null,
+          "guestFeedbackAt": 68993.66666666386,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 70011.33333333083,
+            "authorityTick": 4197,
+            "sourceTick": 4134,
+            "ageTicks": 63
+          },
+          "inputToAuthorityMs": null,
+          "inputToHostVisibleMs": null,
+          "inputToGuestVisibleMs": null,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "expired-before-receiver"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 70985.3333333311,
+          "authorityAt": 71018.66666666445,
+          "eventId": 71,
+          "hostVisibleAt": 71018.66666666445,
+          "guestVisibleAt": 71026.99999999779,
+          "guestFeedbackAt": 70993.66666666445,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71011.33333333112,
+            "authorityTick": 4257,
+            "sourceTick": 4254,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 72985.33333333168,
+          "authorityAt": 73018.66666666503,
+          "eventId": 73,
+          "hostVisibleAt": 73018.66666666503,
+          "guestVisibleAt": 73026.99999999837,
+          "guestFeedbackAt": 72993.66666666503,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73011.3333333317,
+            "authorityTick": 4377,
+            "sourceTick": 4374,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 74985.33333333227,
+          "authorityAt": 74985.33333333227,
+          "eventId": 74,
+          "hostVisibleAt": 74985.33333333227,
+          "guestVisibleAt": 74993.66666666561,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 70011.33333333083,
+            "authorityTick": 4197,
+            "sourceTick": 4134,
+            "ageTicks": 63
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 8.33,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 76985.33333333285,
+          "authorityAt": 77018.66666666619,
+          "eventId": 75,
+          "hostVisibleAt": 77018.66666666619,
+          "guestVisibleAt": 77026.99999999953,
+          "guestFeedbackAt": 76993.66666666619,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77011.33333333286,
+            "authorityTick": 4617,
+            "sourceTick": 4614,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 78968.66666666676,
+          "authorityAt": 78985.33333333343,
+          "eventId": 76,
+          "hostVisibleAt": 78985.33333333343,
+          "guestVisibleAt": 78993.66666666677,
+          "guestFeedbackAt": 78977.0000000001,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 78978.0000000001,
+            "authorityTick": 4736,
+            "sourceTick": 4735,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 4,
+          "p50": 33.33,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "guestToGuestVisible": {
+          "count": 4,
+          "p50": 41.67,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15353,
+          "p50": 16.67,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "snapshotAgeMs": {
+          "count": 15353,
+          "p50": 25,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "actionClockLagMs": {
+          "count": 335,
+          "p50": 42.67,
+          "p95": 42.67,
+          "max": 42.67
+        },
+        "phaseMismatchFrames": 8,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 60,
+        "peakRateWindow": 32,
+        "peakScheduledEvents": 7,
+        "peakEnvelopeBytes": 6149,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 4,
+        "maxLocalActionClockCorrectionMs": 67.67,
+        "maxXOffsetM": 0.16,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 834
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 127960.33333334769,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 8.333333333343035
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 255943.66666660924,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 24.999999999970896
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 127960.33333334769,
+        "secondBeginAt": 127985.33333334769,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    },
+    {
+      "profile": "near-zero-direct",
+      "injected": {
+        "id": "near-zero-direct",
+        "direct": true,
+        "delays": [
+          1
+        ]
+      },
+      "counterfactual": false,
+      "blackoutAllRematchCountdownSnapshots": true,
+      "virtualDurationMs": 255941.67,
+      "eventOperations": 43380,
+      "packetCounts": {
+        "total": 12495,
+        "dropped": 89,
+        "deliveredOutOfOrder": 0,
+        "droppedTypes": {
+          "snapshot": 89
+        },
+        "sentTypes": {
+          "rtc_signal": 2,
+          "lobby": 1,
+          "snapshot": 5992,
+          "input": 5992,
+          "transport_ping": 254,
+          "transport_pong": 254
+        }
+      },
+      "cadenceHz": [
+        30,
+        30
+      ],
+      "response": [
+        {
+          "fightAt": 1,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 68985.33333333052,
+          "authorityAt": 69018.66666666386,
+          "eventId": 71,
+          "hostVisibleAt": 69018.66666666386,
+          "guestVisibleAt": 69026.9999999972,
+          "guestFeedbackAt": 68993.66666666386,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 3,
+          "slot": 1,
+          "key": "special",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 70985.3333333311,
+          "authorityAt": 71018.66666666445,
+          "eventId": 73,
+          "hostVisibleAt": 71018.66666666445,
+          "guestVisibleAt": 71026.99999999779,
+          "guestFeedbackAt": 70993.66666666445,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "special",
+            "id": 1,
+            "at": 71011.33333333112,
+            "authorityTick": 4257,
+            "sourceTick": 4254,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 5,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 72985.33333333168,
+          "authorityAt": 73018.66666666503,
+          "eventId": 74,
+          "hostVisibleAt": 73018.66666666503,
+          "guestVisibleAt": 73026.99999999837,
+          "guestFeedbackAt": 72993.66666666503,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 1,
+            "at": 73011.3333333317,
+            "authorityTick": 4377,
+            "sourceTick": 4374,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 7,
+          "slot": 0,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 74985.33333333227,
+          "authorityAt": 74985.33333333227,
+          "eventId": 75,
+          "hostVisibleAt": 74985.33333333227,
+          "guestVisibleAt": 74993.66666666561,
+          "guestFeedbackAt": null,
+          "pressId": 1,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 1,
+            "at": 69011.33333333053,
+            "authorityTick": 4137,
+            "sourceTick": 4134,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 0,
+          "inputToHostVisibleMs": 0,
+          "inputToGuestVisibleMs": 8.33,
+          "inputToGuestFeedbackMs": null,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 9,
+          "slot": 1,
+          "key": "attack",
+          "action": "attack",
+          "epoch": "epoch-1",
+          "pressedAt": 76985.33333333285,
+          "authorityAt": 77018.66666666619,
+          "eventId": 76,
+          "hostVisibleAt": 77018.66666666619,
+          "guestVisibleAt": 77026.99999999953,
+          "guestFeedbackAt": 76993.66666666619,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "attack",
+            "id": 2,
+            "at": 77011.33333333286,
+            "authorityTick": 4617,
+            "sourceTick": 4614,
+            "ageTicks": 3
+          },
+          "inputToAuthorityMs": 33.33,
+          "inputToHostVisibleMs": 33.33,
+          "inputToGuestVisibleMs": 41.67,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        },
+        {
+          "fightAt": 11,
+          "slot": 1,
+          "key": "jump",
+          "action": "evade",
+          "epoch": "epoch-1",
+          "pressedAt": 78968.66666666676,
+          "authorityAt": 78985.33333333343,
+          "eventId": 77,
+          "hostVisibleAt": 78985.33333333343,
+          "guestVisibleAt": 78993.66666666677,
+          "guestFeedbackAt": 78977.0000000001,
+          "pressId": 2,
+          "firstReceived": {
+            "epoch": "epoch-1",
+            "key": "jump",
+            "id": 2,
+            "at": 78978.0000000001,
+            "authorityTick": 4736,
+            "sourceTick": 4735,
+            "ageTicks": 1
+          },
+          "inputToAuthorityMs": 16.67,
+          "inputToHostVisibleMs": 16.67,
+          "inputToGuestVisibleMs": 25,
+          "inputToGuestFeedbackMs": 8.33,
+          "intentOutcome": "executed"
+        }
+      ],
+      "responseMs": {
+        "guestToAuthority": {
+          "count": 5,
+          "p50": 33.33,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "guestToGuestVisible": {
+          "count": 5,
+          "p50": 41.67,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "guestToLocalFeedback": {
+          "count": 5,
+          "p50": 8.33,
+          "p95": 8.33,
+          "max": 8.33
+        },
+        "hostToHostVisible": {
+          "count": 1,
+          "p50": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "freshness": {
+        "hostTickLagMs": {
+          "count": 15175,
+          "p50": 16.67,
+          "p95": 33.33,
+          "max": 33.33
+        },
+        "snapshotAgeMs": {
+          "count": 15175,
+          "p50": 25,
+          "p95": 41.67,
+          "max": 41.67
+        },
+        "actionClockLagMs": {
+          "count": 425,
+          "p50": 42.67,
+          "p95": 42.67,
+          "max": 42.67
+        },
+        "phaseMismatchFrames": 8,
+        "raceBacktrackFrames": 0,
+        "maxBackwardZM": 0,
+        "actionRewindFrames": 0,
+        "maxActionRewindMs": 0,
+        "actionRewindExamples": []
+      },
+      "bounds": {
+        "peakPresentationFrames": 8,
+        "peakPendingEdgesPerButton": 1,
+        "peakRoundTripSamples": 60,
+        "peakRateWindow": 32,
+        "peakScheduledEvents": 7,
+        "peakEnvelopeBytes": 6149,
+        "canonicalMutations": 0
+      },
+      "prediction": {
+        "gameplayMutations": 0,
+        "localActionClockCorrections": 5,
+        "maxLocalActionClockCorrectionMs": 67.67,
+        "maxXOffsetM": 0.16,
+        "maxYOffsetM": 0,
+        "peakStateBytes": 834
+      },
+      "convergence": {
+        "results": [
+          {
+            "epoch": "epoch-1",
+            "at": 127960.33333334769,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                20.5,
+                29.5
+              ],
+              "total": [
+                45.5,
+                54.5
+              ],
+              "winner": 1,
+              "reason": "Combined race + fight points · fight timeout"
+            },
+            "finalHealth": [
+              82,
+              100
+            ],
+            "guestDelayMs": 8.333333333343035
+          },
+          {
+            "epoch": "epoch-2",
+            "at": 255943.66666660924,
+            "result": {
+              "race": [
+                25,
+                25
+              ],
+              "fight": [
+                25,
+                25
+              ],
+              "total": [
+                50,
+                50
+              ],
+              "winner": null,
+              "reason": "Championship tied · shared honours · fight timeout"
+            },
+            "finalHealth": [
+              100,
+              100
+            ],
+            "guestDelayMs": 24.999999999970896
+          }
+        ],
+        "sameFinalResult": true,
+        "rematchInputResets": [
+          0,
+          1
+        ],
+        "rematchAt": 127960.33333334769,
+        "secondBeginAt": 127985.33333334769,
+        "hostEpoch": "epoch-2",
+        "guestEpoch": "epoch-2",
+        "hostPhase": "results",
+        "guestPhase": "results",
+        "hostInterrupted": false,
+        "guestInterrupted": false,
+        "guestIgnoredNewEpochSnapshots": 0
+      }
+    }
+  ],
+  "wallRuntimeMs": 21732.92
+}

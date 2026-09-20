@@ -1,0 +1,21 @@
+{
+  "kind": "local-pose-inspection-not-gameplay",
+  "settings": {
+    "left": "unicorn",
+    "right": "lion",
+    "action": "attack",
+    "rival": "fight_idle",
+    "gap": 1.9,
+    "elapsed": 0.18
+  },
+  "hashes": {
+    "src/championship/renderer.ts": "5c3866640a485aaf958b56a3e3e9e86251aa67e708dc36f2be9a74f36b8a0db5",
+    "src/championship/simulation.ts": "3b016d1978db2a2e7dd6a61002ae7078d8f4413aaa5035b62a6c679329d54306",
+    "src/championship/framing.ts": "e400d7ce6757c8c9c03af960bab2e2315c12085b4cecd386239a73fe29a09717",
+    "scripts/qa/contact-preview.ts": "1df29abc1ad305a04098a22b6e4286ff834fac1063af23596cc73a561abda59a",
+    "assets/source/western/contact-v2/v2b/candidate/lion-upright.glb": "9d56a26125fdae942bfe471633ed2afc9c6d0a85c0b9142d0098c8594dff25f3",
+    "assets/source/western/contact-v2/v2b/candidate/wolf-upright.glb": "01bb159631ade33f6eaec07f37cd2c0fc7d021bb2095f31d8acbfedf9ccb1f01",
+    "assets/source/western/contact-v2/v2b/candidate/unicorn-upright.glb": "fe97d0c5db45e58debaa8e7cb4fb16e985a8995a7f405f3cfc44490e70654ceb"
+  },
+  "pngSha256": "59f8c3af58a2074539f0340af23239b1cfb41d5533583e10ba4fcbb323be9862"
+}

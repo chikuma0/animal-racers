@@ -1,0 +1,15 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: lion transform: geometry bounds {"min":[-0.8428331100168927,-4642354312001087000,-1.5215026898838677],"max":[5022582943213666000,2.63047677967421,1704023209277293000]}
+    at file:///Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/verify-upright.mjs:50:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

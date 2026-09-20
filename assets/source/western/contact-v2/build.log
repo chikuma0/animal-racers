@@ -1,0 +1,31 @@
+Info: Saved as "lion-upright.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+20:09:54 | INFO: Starting glTF 2.0 export
+20:09:54 | INFO: Extracting primitive: Designed upright joint-loop topology
+20:09:55 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+20:09:55 | INFO: Primitives created: 12
+20:09:59 | INFO: Finished glTF 2.0 export in 4.432063817977905 s
+
+UPRIGHT_EXPORTED lion 1859936
+Info: Saved as "wolf-upright.blend"
+20:10:08 | INFO: Starting glTF 2.0 export
+20:10:08 | INFO: Extracting primitive: Designed upright joint-loop topology
+20:10:08 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+20:10:08 | INFO: Primitives created: 12
+20:10:11 | INFO: Finished glTF 2.0 export in 2.7989299297332764 s
+
+UPRIGHT_EXPORTED wolf 1453892
+Info: Saved as "unicorn-upright.blend"
+20:10:20 | INFO: Starting glTF 2.0 export
+20:10:20 | INFO: Extracting primitive: Designed upright joint-loop topology
+20:10:20 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+20:10:20 | INFO: Primitives created: 19
+20:10:23 | INFO: Finished glTF 2.0 export in 2.7581558227539062 s
+
+UPRIGHT_EXPORTED unicorn 1372948
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/inputs/unicorn.blend"
+
+Blender quit

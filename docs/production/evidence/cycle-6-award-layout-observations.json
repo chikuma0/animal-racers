@@ -1,0 +1,69 @@
+{
+  "buildFingerprint": "9a1ae530075b6b499e739b6185d1269f05aa0954167431c5a732bc1b5fbfe34e",
+  "method": "Read-only DOM getBoundingClientRect plus live CUA screenshots after a normal solo championship; same results screen resized. No state injection. Screenshots inspected inline, not persisted in this artifact.",
+  "result": {
+    "characters": [
+      "unicorn",
+      "lion"
+    ],
+    "raceSeconds": [
+      68.34,
+      59.68
+    ],
+    "finalHealth": [
+      0,
+      100
+    ],
+    "totals": [
+      11.5,
+      88.5
+    ]
+  },
+  "layouts": [
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "card": {
+        "left": 396.703125,
+        "top": 40.34515380859375,
+        "width": 405.109375,
+        "height": 350.578125
+      },
+      "observation": "Complete Lion/cup visible left of card. Border reaches390.923px, roughly1px clipped; controls/content visible."
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "card": {
+        "left": 19.5,
+        "top": 412.421875,
+        "width": 351,
+        "height": 386.578125
+      },
+      "observation": "Complete Lion/cup above card; rematch/back and scores visible."
+    },
+    {
+      "viewport": [
+        1082,
+        874
+      ],
+      "card": {
+        "left": 517.90625,
+        "top": 239.4781188964844,
+        "width": 510,
+        "height": 438.9375305175781
+      },
+      "observation": "Complete Lion/cup visible left of card."
+    }
+  ],
+  "limits": [
+    "Desktop viewport simulation; physical safe areas/browser chrome unverified",
+    "Single Lion winner inspected live; shared winners covered by projection regression only",
+    "Idle duel in this layout run; not active combat evidence",
+    "No performance comparison; concurrent Blender work possible"
+  ]
+}

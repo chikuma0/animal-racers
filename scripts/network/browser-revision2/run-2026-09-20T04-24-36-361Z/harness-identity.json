@@ -1,0 +1,21 @@
+{
+  "harnessSha256": "19f3b457e61f0d37e00ddc51ee3502171d664bf0c2b1d04b212447f7f260e513",
+  "mediaHelperSha256": "f19246a75f220d231e2f6e39cb3f3d58568253b74c6dc7b1bf4e4c90e794fad0",
+  "arguments": [
+    "--url",
+    "http://127.0.0.1:3013",
+    "--manifest",
+    "docs/production/evidence/revision2-release/build-manifest.json",
+    "--revision",
+    "revision2-de401d12cd83",
+    "--pairs",
+    "wolf:unicorn",
+    "--rematch",
+    "none",
+    "--viewport",
+    "844x390",
+    "--record",
+    "host"
+  ],
+  "note": "Source snapshots of executed automation; not browser/app state."
+}

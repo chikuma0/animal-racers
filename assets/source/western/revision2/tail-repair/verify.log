@@ -1,0 +1,21 @@
+TAIL_SOURCE_GEOMETRY_OK lion-race
+TAIL_SOURCE_GEOMETRY_OK lion-upright
+TAIL_SOURCE_GEOMETRY_OK wolf-race
+TAIL_SOURCE_GEOMETRY_OK wolf-upright
+TAIL_SOURCE_GEOMETRY_OK unicorn-race
+TAIL_SOURCE_GEOMETRY_OK unicorn-upright
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/lion-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/lion-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/wolf-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/wolf-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/unicorn-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/unicorn-upright.blend"
+
+Blender quit

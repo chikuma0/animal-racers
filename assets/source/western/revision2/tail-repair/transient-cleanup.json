@@ -1,0 +1,36 @@
+{
+  "removed": [
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/lion/race/frames",
+      "files": 66,
+      "bytes": 11086831
+    },
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/lion/upright/frames",
+      "files": 222,
+      "bytes": 37527658
+    },
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/wolf/race/frames",
+      "files": 66,
+      "bytes": 10897771
+    },
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/wolf/upright/frames",
+      "files": 218,
+      "bytes": 35504446
+    },
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/unicorn/race/frames",
+      "files": 66,
+      "bytes": 11178763
+    },
+    {
+      "path": "assets/source/western/revision2/tail-repair/qa/unicorn/upright/frames",
+      "files": 220,
+      "bytes": 37180140
+    }
+  ],
+  "retained": "All final stills, movies, every-frame sheets and rejected diagnostic evidence",
+  "regenerate": "Run repair_tails.py motion, then review_frames.py"
+}

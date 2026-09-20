@@ -1,0 +1,39 @@
+{
+  "version": "revision2-tail-repair-1",
+  "baselineCommit": "f600be2",
+  "recipe": "scripts/assets/rebuild_roster_v2.py",
+  "recipeSha256": "6bbd90284e454861e28ea93a3e6a3387abe105e1e9c45f8643ffce6894680800",
+  "quality": "Bounded tail attachment and evade repair approved; integrated gameplay, cinematic and owner acceptance remain separate",
+  "files": {
+    "public/assets/western/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+    "assets/source/western/lion.blend": "be6f1a3cec5c4c99d2519cf390cd5b0caa0243110e5b0056f9e852b16784d471",
+    "public/assets/western/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+    "assets/source/western/lion-upright.blend": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+    "public/assets/western/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+    "assets/source/western/wolf.blend": "12228fc5ca053e806bd5a47f5489dbdcb5317b9fcaff1da5f5cc2fa7362e7ec2",
+    "public/assets/western/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+    "assets/source/western/wolf-upright.blend": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+    "public/assets/western/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+    "assets/source/western/unicorn.blend": "c07a5dbc07974cf5d8b2f627189cda2fbec6b8d0f3d15c85ed8b43cd29377e65",
+    "public/assets/western/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+    "assets/source/western/unicorn-upright.blend": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99"
+  },
+  "repair": {
+    "recipe": "scripts/assets/repair_tails.py",
+    "recipeSha256": "8f482567da48757d8ae2aba5b443f7365448673855a2cdd285cb2062d1d5ee3f",
+    "inputCommit": "54ecd6e",
+    "previousReceipt": {
+      "path": "assets/source/western/revision2/canonical-integration.json",
+      "sha256": "1f72e68cbd234655c034243e9e147a8f1a378d123f27d010dd3607a5c22941ee"
+    },
+    "manifest": {
+      "path": "assets/source/western/revision2/tail-repair/manifest.json",
+      "sha256": "28c48b99e4026e41926f4023fed6620c0a6d9c9aacb7914d6c4eec8a55eab72f"
+    },
+    "review": {
+      "path": "docs/production/evidence/revision2-tail-runtime/2026-09-20T03-50-31-404Z/parent-review.json",
+      "sha256": "22575b77621763e8c2c8ab3b4015c62fb2fda4b86839e094f926e6477d556bb5"
+    }
+  },
+  "promotionReceipt": "assets/source/western/revision2/tail-integration/promotion.json"
+}

@@ -1,0 +1,42 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: lion: exact required clips
++ actual - expected
+
+  [
+-   'attack',
+    'celebrate',
+    'defeat',
+    'evade',
+    'fight_idle',
+    'fight_move',
+
+    at file:///Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/verify-assets.mjs:36:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'celebrate',  'defeat',
+    'evade',      'fight_idle',
+    'fight_move', 'guard',
+    'hit',        'jump',
+    'land',       'race_idle',
+    'run',        'special',
+    'stumble',    'transform'
+  ],
+  expected: [
+    'attack',     'celebrate',
+    'defeat',     'evade',
+    'fight_idle', 'fight_move',
+    'guard',      'hit',
+    'jump',       'land',
+    'race_idle',  'run',
+    'special',    'stumble',
+    'transform'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

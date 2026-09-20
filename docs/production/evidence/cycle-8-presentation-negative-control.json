@@ -1,0 +1,13 @@
+{
+  "baselineCommit": "2316db7",
+  "before": [
+    0.03333333333333333,
+    0.007333333333326663
+  ],
+  "after": [
+    0.03333333333333333,
+    0.03333333333333333
+  ],
+  "units": "seconds",
+  "result": "original same-instance rewind reproduced; repaired clock holds"
+}

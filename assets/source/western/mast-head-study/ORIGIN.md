@@ -1,0 +1,7 @@
+# Origin and scope
+
+[Mast by Djsedj](https://opengameart.org/content/mast-blender-425) is offered by the publisher under [CC0](https://creativecommons.org/publicdomain/zero/1.0/). Its stated UV antecedent, [Aedan by the same author](https://opengameart.org/content/aedan-blend), is also listed as CC0. The two primary HTML records, unchanged archive and complete original Blender source are retained under `inputs/`, with SHA-256 and canonical freeze records in `provenance.json`. This records publisher declarations; it does not imply that the source is production-ready.
+
+The full source remains untouched. Blender auto-execution is disabled, and the embedded `$Mudançalenha` text is inventoried by hash without execution. The isolated derivative removes embedded text, unrelated anatomy and unsupported source constraints. The original contains no authored animation actions. A newly authored facial probe is inspection evidence, not a supplied game clip.
+
+The actual imported shader appears pink and strongly patterned in the two CPU source views. The imported mane has rolled ends and a long curtain silhouette; it is rejected for this target. The bounded candidate therefore uses the connected authored face, ears and oral anatomy with a deliberate gold/cream/amber palette. The existing canonical Lion ruff remains a provisional control, not an accepted mane redesign. Canonical source/runtime files stay frozen, and there is no runtime promotion or phone-performance claim.

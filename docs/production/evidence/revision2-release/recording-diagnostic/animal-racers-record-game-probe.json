@@ -1,0 +1,47 @@
+{
+  "classification": "Diagnostic with passive MediaRecorder event listeners; UI toggles only; not normal gameplay acceptance.",
+  "logs": [
+    "REC_DIAG {\"id\":1,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":24047,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":274757,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":173556,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":113156,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":352471,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":264550,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":91827,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":162078,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":290758,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":159699,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":258589,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":312124,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":527113,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":92723,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":303436,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":179658,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":140540,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":404428,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":241307,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":248191,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":251161,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":25916,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}"
+  ],
+  "outputs": [
+    {
+      "i": 1,
+      "bytes": 1202537
+    },
+    {
+      "i": 2,
+      "bytes": 1802188
+    },
+    {
+      "i": 3,
+      "bytes": 1887360
+    }
+  ]
+}

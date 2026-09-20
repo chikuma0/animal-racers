@@ -1,0 +1,15 @@
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/tail-repair/candidate/lion.blend"
+Traceback (most recent call last):
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/repair_tails.py", line 319, in <module>
+    if __name__=='__main__':globals()[sys.argv[sys.argv.index('--')+1]]()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/repair_tails.py", line 264, in verify
+    assert maxstretch<3.5,(key,name,'tail mesh stretched',maxstretch,worst);assert minradius>.001,(key,name,'tail section collapsed',minradius)
+           ^^^^^^^^^^^^^^
+AssertionError: ('lion-race', 'defeat', 'tail mesh stretched', 10.962398928302948, {'frame': 39, 'rings': [1, 2], 'restLength': 0.027302442642906405, 'posedLength': 0.2993002679686499})
+
+Error: script failed, file: 'scripts/assets/repair_tails.py', exiting.
+
+Blender quit

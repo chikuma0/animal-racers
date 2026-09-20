@@ -1,0 +1,37 @@
+{
+  "classification": "Diagnostic with passive MediaRecorder event listeners; UI toggles only; not normal gameplay acceptance.",
+  "logs": [
+    "REC_DIAG {\"id\":1,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":153038,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":190487,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":158912,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"dataavailable\",\"bytes\":143099,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":1,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":143980,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":190396,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":176536,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"dataavailable\",\"bytes\":151887,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":2,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"start\",\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":140822,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":192877,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":170964,\"state\":\"recording\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"dataavailable\",\"bytes\":159434,\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}",
+    "REC_DIAG {\"id\":3,\"event\":\"stop\",\"state\":\"inactive\",\"tracks\":[{\"kind\":\"audio\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true},{\"kind\":\"video\",\"readyState\":\"live\",\"muted\":false,\"enabled\":true}]}"
+  ],
+  "outputs": [
+    {
+      "i": 1,
+      "bytes": 645536
+    },
+    {
+      "i": 2,
+      "bytes": 662799
+    },
+    {
+      "i": 3,
+      "bytes": 664097
+    }
+  ]
+}

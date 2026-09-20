@@ -1,0 +1,82 @@
+{
+  "result": {
+    "race": [
+      30.9,
+      19.1
+    ],
+    "fight": [
+      30.5,
+      19.5
+    ],
+    "total": [
+      61.4,
+      38.6
+    ],
+    "winner": 0,
+    "reason": "Combined race + fight points · final health"
+  },
+  "players": [
+    {
+      "character": "lion",
+      "hp": 22,
+      "finishTime": 60.40990298611176,
+      "raceStatus": "finished"
+    },
+    {
+      "character": "lion",
+      "hp": 0,
+      "finishTime": 61.35551104798183,
+      "raceStatus": "finished"
+    }
+  ],
+  "actions": [
+    {
+      "slot": 0,
+      "leaps": 4,
+      "strikes": 5,
+      "evades": 1,
+      "successes": 1,
+      "counters": 1,
+      "damageReceived": 78
+    },
+    {
+      "slot": 1,
+      "leaps": 4,
+      "strikes": 4,
+      "evades": 1,
+      "successes": 1,
+      "counters": 1,
+      "damageReceived": 100
+    }
+  ],
+  "network": [
+    {
+      "transport": "webrtc",
+      "roundTripMs": 18.59999990463257,
+      "sent": 2203,
+      "received": 2229,
+      "roundTrip": {
+        "sampleCount": 47,
+        "p50Ms": 1.1999999284744263,
+        "p95Ms": 11.899999976158142,
+        "maxMs": 18.59999990463257,
+        "timeoutCount": 0,
+        "windowMs": 120000
+      }
+    },
+    {
+      "transport": "webrtc",
+      "roundTripMs": 3.700000047683716,
+      "sent": 2231,
+      "received": 2177,
+      "roundTrip": {
+        "sampleCount": 47,
+        "p50Ms": 2.5,
+        "p95Ms": 4.700000047683716,
+        "maxMs": 5.400000095367432,
+        "timeoutCount": 0,
+        "windowMs": 120000
+      }
+    }
+  ]
+}

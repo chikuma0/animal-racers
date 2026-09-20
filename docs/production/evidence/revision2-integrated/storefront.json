@@ -1,0 +1,90 @@
+{
+  "rendererSha256": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+  "courseSha256": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+  "method": "Actual buildBuilding method and mesh helpers extracted with TypeScript AST; sign substitutes identical PlaneGeometry dimensions and omits only canvas text. Placements/curve checked against current500m buildRace constants. Full vertex transforms plus conservative continuous-curve deviation bound.",
+  "variants": [
+    {
+      "label": "DUST & GLORY",
+      "triangles": 1738,
+      "bounds": {
+        "min": [
+          -4.625,
+          0.019999999701976773,
+          -3.1363599707725465
+        ],
+        "max": [
+          4.625,
+          6.664999997615814,
+          6.624999994039536
+        ]
+      }
+    },
+    {
+      "label": "CANYON SUPPLY",
+      "triangles": 1834,
+      "bounds": {
+        "min": [
+          -4.625,
+          0.019999999701976773,
+          -3.1363599707725465
+        ],
+        "max": [
+          4.625,
+          6.264999997615814,
+          6.624999994039536
+        ]
+      }
+    },
+    {
+      "label": "COLD CREEK",
+      "triangles": 1834,
+      "bounds": {
+        "min": [
+          -4.625,
+          0.019999999701976773,
+          -3.1363599707725465
+        ],
+        "max": [
+          4.625,
+          6.014999997615814,
+          6.624999994039536
+        ]
+      }
+    },
+    {
+      "label": "SILVER SPUR",
+      "triangles": 1834,
+      "bounds": {
+        "min": [
+          -4.625,
+          0.019999999701976773,
+          -3.1363599707725465
+        ],
+        "max": [
+          4.625,
+          6.264999997615814,
+          6.624999994039536
+        ]
+      }
+    }
+  ],
+  "placements": 16,
+  "roadHalfWidth": 5.5,
+  "minimumVertexClearance": 1.7013818230270221,
+  "betweenVertexBound": 0.15345634375,
+  "conservativeClearance": 1.547925479277022,
+  "nearest": {
+    "buildingZ": 7.5,
+    "side": -1,
+    "vertex": [
+      -5.518225902553961,
+      3.2550000020861627,
+      2.8750000000000018
+    ]
+  },
+  "limits": [
+    "Decorative scenery geometry only; not a simulation collision test",
+    "No GPU or physical-device performance measurement",
+    "Static placement formula must be reviewed if buildRace changes"
+  ]
+}

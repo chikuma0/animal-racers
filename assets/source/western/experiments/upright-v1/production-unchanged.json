@@ -1,0 +1,14 @@
+{
+  "lion": {
+    "sourceSha256": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+    "runtimeSha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf"
+  },
+  "wolf": {
+    "sourceSha256": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+    "runtimeSha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c"
+  },
+  "unicorn": {
+    "sourceSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+    "runtimeSha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3"
+  }
+}

@@ -1,0 +1,1 @@
+Self review failed: restored broad Lion ruff and ears, but rear wall reads as a flat extruded plate and equally spaced surface ribs look stamped. Actual matched front/side/three-quarter images are retained against this exact source/export. No motion rendered.

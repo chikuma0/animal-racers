@@ -1,0 +1,22 @@
+{
+  "scriptSha256": "a6e77369b53a7a4a8e9dc0377315fc771aeae948e838aa60123426fced06ed74",
+  "candidateUnchanged": {
+    "wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+    "unicorn-upright.blend": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99",
+    "unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+    "wolf-upright.blend": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+    "unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+    "lion.blend": "be6f1a3cec5c4c99d2519cf390cd5b0caa0243110e5b0056f9e852b16784d471",
+    "wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+    "wolf.blend": "12228fc5ca053e806bd5a47f5489dbdcb5317b9fcaff1da5f5cc2fa7362e7ec2",
+    "unicorn.blend": "c07a5dbc07974cf5d8b2f627189cda2fbec6b8d0f3d15c85ed8b43cd29377e65",
+    "lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+    "lion-upright.blend": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+    "lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1"
+  },
+  "changes": [
+    "Lion race orthographic scale3.9m retains full tail tip at all phases",
+    "Evade stationary ground ticks made readable in exact side view"
+  ],
+  "geometryChanged": false
+}

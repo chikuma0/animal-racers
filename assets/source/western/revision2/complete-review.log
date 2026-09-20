@@ -1,0 +1,1938 @@
+REVISION2_SOURCE_OK lion race
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/control-front.png'
+Time: 00:00.16 (Saving: 00:00.02)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/control-side.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/control-three-quarter.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/control-face.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+REVISION2_PREVIEW lion race control
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/candidate-front.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/candidate-side.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/candidate-three-quarter.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/candidate-face.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+REVISION2_PREVIEW lion race candidate
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Fra:1 Mem:36.54M (Peak 36.54M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Body • continuous sculpted skin
+Fra:1 Mem:37.04M (Peak 37.04M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe
+Fra:1 Mem:37.06M (Peak 37.06M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw
+Fra:1 Mem:37.06M (Peak 37.06M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.001
+Fra:1 Mem:37.08M (Peak 37.08M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.001
+Fra:1 Mem:37.09M (Peak 37.09M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.002
+Fra:1 Mem:37.11M (Peak 37.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox.002
+Fra:1 Mem:37.11M (Peak 37.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.002
+Fra:1 Mem:37.11M (Peak 37.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox.001
+Fra:1 Mem:37.11M (Peak 37.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox
+Fra:1 Mem:37.11M (Peak 37.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Raised elemental crest
+Fra:1 Mem:37.13M (Peak 37.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.003
+Fra:1 Mem:37.13M (Peak 37.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Brass crest clasp
+Fra:1 Mem:37.13M (Peak 37.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.004
+Fra:1 Mem:37.18M (Peak 37.18M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.004
+Fra:1 Mem:37.18M (Peak 37.18M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Neckerchief folded point
+Fra:1 Mem:37.18M (Peak 37.18M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.005
+Fra:1 Mem:37.18M (Peak 37.18M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Leather neckerchief roll
+Fra:1 Mem:37.21M (Peak 37.21M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.005
+Fra:1 Mem:37.21M (Peak 37.21M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.006
+Fra:1 Mem:37.21M (Peak 37.21M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.006
+Fra:1 Mem:37.23M (Peak 37.23M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.005
+Fra:1 Mem:37.24M (Peak 37.24M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.006
+Fra:1 Mem:37.24M (Peak 37.24M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.004
+Fra:1 Mem:37.26M (Peak 37.26M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.007
+Fra:1 Mem:37.25M (Peak 37.26M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.003
+Fra:1 Mem:37.27M (Peak 37.27M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.007
+Fra:1 Mem:37.27M (Peak 37.27M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.002
+Fra:1 Mem:37.27M (Peak 37.27M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.008
+Fra:1 Mem:37.28M (Peak 37.28M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft.001
+Fra:1 Mem:37.30M (Peak 37.30M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.008
+Fra:1 Mem:37.30M (Peak 37.30M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Flame tail tuft
+Fra:1 Mem:37.30M (Peak 37.30M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.009
+Fra:1 Mem:37.31M (Peak 37.31M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Articulated tail
+Fra:1 Mem:37.34M (Peak 37.34M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.009
+Fra:1 Mem:37.35M (Peak 37.35M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.010
+Fra:1 Mem:37.35M (Peak 37.35M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.011
+Fra:1 Mem:37.38M (Peak 37.38M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.010
+Fra:1 Mem:37.38M (Peak 37.38M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.010
+Fra:1 Mem:37.38M (Peak 37.38M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.011
+Fra:1 Mem:37.40M (Peak 37.40M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.009
+Fra:1 Mem:37.41M (Peak 37.41M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.011
+Fra:1 Mem:37.41M (Peak 37.41M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.011
+Fra:1 Mem:37.43M (Peak 37.43M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Head • species sculpt
+Fra:1 Mem:37.45M (Peak 37.45M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.010
+Fra:1 Mem:37.50M (Peak 37.50M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.009
+Fra:1 Mem:37.60M (Peak 37.60M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.008
+Fra:1 Mem:37.60M (Peak 37.60M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.007
+Fra:1 Mem:37.63M (Peak 37.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.006
+Fra:1 Mem:37.63M (Peak 37.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.008
+Fra:1 Mem:37.63M (Peak 37.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.007
+Fra:1 Mem:37.64M (Peak 37.64M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.006
+Fra:1 Mem:37.64M (Peak 37.64M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.005
+Fra:1 Mem:37.65M (Peak 37.65M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.004
+Fra:1 Mem:37.65M (Peak 37.65M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.003
+Fra:1 Mem:37.66M (Peak 37.66M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.005
+Fra:1 Mem:37.66M (Peak 37.66M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.004
+Fra:1 Mem:37.70M (Peak 37.70M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.003
+Fra:1 Mem:37.77M (Peak 37.77M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.002
+Fra:1 Mem:37.77M (Peak 37.77M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Cream muzzle pad
+Fra:1 Mem:37.78M (Peak 37.78M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur.001
+Fra:1 Mem:37.81M (Peak 37.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wrist fur
+Fra:1 Mem:37.83M (Peak 37.83M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Cream muzzle pad.001
+Fra:1 Mem:37.83M (Peak 37.83M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.002
+Fra:1 Mem:37.86M (Peak 37.86M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur.001
+Fra:1 Mem:37.88M (Peak 37.88M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Heart shaped nose
+Fra:1 Mem:37.89M (Peak 37.89M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered shoulder fur
+Fra:1 Mem:37.89M (Peak 37.89M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Eye socket
+Fra:1 Mem:37.92M (Peak 37.92M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.050
+Fra:1 Mem:37.94M (Peak 37.94M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory eye
+Fra:1 Mem:37.97M (Peak 37.97M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.049
+Fra:1 Mem:37.99M (Peak 37.99M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.048
+Fra:1 Mem:37.99M (Peak 37.99M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Iris
+Fra:1 Mem:38.01M (Peak 38.01M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.047
+Fra:1 Mem:38.03M (Peak 38.03M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.046
+Fra:1 Mem:38.04M (Peak 38.04M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Pupil
+Fra:1 Mem:38.05M (Peak 38.05M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.045
+Fra:1 Mem:38.07M (Peak 38.07M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.044
+Fra:1 Mem:38.07M (Peak 38.07M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Eye glint
+Fra:1 Mem:38.08M (Peak 38.08M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.043
+Fra:1 Mem:38.10M (Peak 38.10M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Expressive brow
+Fra:1 Mem:38.10M (Peak 38.10M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.042
+Fra:1 Mem:38.11M (Peak 38.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Smiling mouth
+Fra:1 Mem:38.11M (Peak 38.11M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.041
+Fra:1 Mem:38.13M (Peak 38.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore
+Fra:1 Mem:38.12M (Peak 38.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.040
+Fra:1 Mem:38.13M (Peak 38.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore.001
+Fra:1 Mem:38.13M (Peak 38.13M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.039
+Fra:1 Mem:38.14M (Peak 38.14M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore.002
+Fra:1 Mem:38.15M (Peak 38.15M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.038
+Fra:1 Mem:38.16M (Peak 38.15M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Eye socket.001
+Fra:1 Mem:38.15M (Peak 38.15M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.037
+Fra:1 Mem:38.19M (Peak 38.19M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.036
+Fra:1 Mem:38.21M (Peak 38.21M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory eye.001
+Fra:1 Mem:38.22M (Peak 38.22M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.035
+Fra:1 Mem:38.25M (Peak 38.25M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.034
+Fra:1 Mem:38.26M (Peak 38.26M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Iris.001
+Fra:1 Mem:38.26M (Peak 38.26M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.033
+Fra:1 Mem:38.30M (Peak 38.30M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.032
+Fra:1 Mem:38.31M (Peak 38.31M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Pupil.001
+Fra:1 Mem:38.31M (Peak 38.31M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.031
+Fra:1 Mem:38.34M (Peak 38.34M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.030
+Fra:1 Mem:38.34M (Peak 38.34M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Eye glint.001
+Fra:1 Mem:38.36M (Peak 38.36M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.029
+Fra:1 Mem:38.37M (Peak 38.37M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Expressive brow.001
+Fra:1 Mem:38.37M (Peak 38.37M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.028
+Fra:1 Mem:38.37M (Peak 38.37M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Smiling mouth.001
+Fra:1 Mem:38.39M (Peak 38.39M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.027
+Fra:1 Mem:38.38M (Peak 38.39M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore.003
+Fra:1 Mem:38.39M (Peak 38.39M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.026
+Fra:1 Mem:38.39M (Peak 38.39M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore.004
+Fra:1 Mem:38.40M (Peak 38.40M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.025
+Fra:1 Mem:38.41M (Peak 38.41M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Whisker pore.005
+Fra:1 Mem:38.41M (Peak 38.41M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.024
+Fra:1 Mem:38.42M (Peak 38.42M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Lower jaw
+Fra:1 Mem:38.42M (Peak 38.42M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.023
+Fra:1 Mem:38.46M (Peak 38.46M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.022
+Fra:1 Mem:38.48M (Peak 38.48M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Mouth cavity
+Fra:1 Mem:38.48M (Peak 38.48M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.021
+Fra:1 Mem:38.51M (Peak 38.51M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.020
+Fra:1 Mem:38.51M (Peak 38.51M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Lower canine
+Fra:1 Mem:38.52M (Peak 38.52M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.019
+Fra:1 Mem:38.52M (Peak 38.52M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Lower canine.001
+Fra:1 Mem:38.53M (Peak 38.53M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.018
+Fra:1 Mem:38.53M (Peak 38.53M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Rounded lion ear
+Fra:1 Mem:38.56M (Peak 38.56M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.017
+Fra:1 Mem:38.57M (Peak 38.57M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.016
+Fra:1 Mem:38.59M (Peak 38.59M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Inner lion ear
+Fra:1 Mem:38.59M (Peak 38.59M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.015
+Fra:1 Mem:38.62M (Peak 38.62M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.014
+Fra:1 Mem:38.63M (Peak 38.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Rounded lion ear.001
+Fra:1 Mem:38.63M (Peak 38.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.013
+Fra:1 Mem:38.67M (Peak 38.67M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.012
+Fra:1 Mem:38.69M (Peak 38.69M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Inner lion ear.001
+Fra:1 Mem:38.69M (Peak 38.69M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.011
+Fra:1 Mem:38.72M (Peak 38.72M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.010
+Fra:1 Mem:38.74M (Peak 38.74M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Closed sculpted rear mane cap
+Fra:1 Mem:38.75M (Peak 38.75M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.009
+Fra:1 Mem:38.76M (Peak 38.76M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.008
+Fra:1 Mem:38.78M (Peak 38.78M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock
+Fra:1 Mem:38.78M (Peak 38.78M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.007
+Fra:1 Mem:38.79M (Peak 38.79M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.001
+Fra:1 Mem:38.79M (Peak 38.79M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.006
+Fra:1 Mem:38.80M (Peak 38.80M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.002
+Fra:1 Mem:38.80M (Peak 38.80M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.005
+Fra:1 Mem:38.81M (Peak 38.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.003
+Fra:1 Mem:38.81M (Peak 38.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.004
+Fra:1 Mem:38.82M (Peak 38.82M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.004
+Fra:1 Mem:38.83M (Peak 38.83M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.003
+Fra:1 Mem:38.83M (Peak 38.83M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.005
+Fra:1 Mem:38.84M (Peak 38.84M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.002
+Fra:1 Mem:38.84M (Peak 38.84M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.006
+Fra:1 Mem:38.85M (Peak 38.85M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock.001
+Fra:1 Mem:38.86M (Peak 38.86M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.007
+Fra:1 Mem:38.86M (Peak 38.86M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Sculpted mane lock
+Fra:1 Mem:38.88M (Peak 38.88M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.008
+Fra:1 Mem:38.88M (Peak 38.88M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.022
+Fra:1 Mem:38.88M (Peak 38.88M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.009
+Fra:1 Mem:38.89M (Peak 38.89M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.021
+Fra:1 Mem:38.89M (Peak 38.89M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.010
+Fra:1 Mem:38.90M (Peak 38.90M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.020
+Fra:1 Mem:38.91M (Peak 38.91M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.011
+Fra:1 Mem:38.91M (Peak 38.91M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.019
+Fra:1 Mem:38.92M (Peak 38.92M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.012
+Fra:1 Mem:38.92M (Peak 38.92M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.018
+Fra:1 Mem:38.93M (Peak 38.93M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.013
+Fra:1 Mem:38.94M (Peak 38.94M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.017
+Fra:1 Mem:38.94M (Peak 38.94M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.014
+Fra:1 Mem:38.95M (Peak 38.95M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.016
+Fra:1 Mem:38.95M (Peak 38.95M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Layered rear mane lock.015
+Fra:1 Mem:38.96M (Peak 38.96M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:36.49M (Peak 38.96M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Images | Loading Authored short-fur normal
+Fra:1 Mem:30.81M (Peak 38.96M) | Time:00:00.01 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:30.81M (Peak 38.96M) | Time:00:00.01 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:30.81M (Peak 38.96M) | Time:00:00.01 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:30.81M (Peak 38.96M) | Time:00:00.01 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:30.90M (Peak 38.96M) | Time:00:00.02 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:30.94M (Peak 38.96M) | Time:00:00.02 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:30.94M (Peak 38.96M) | Time:00:00.02 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:30.94M (Peak 38.96M) | Time:00:00.02 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:32.06M (Peak 38.96M) | Time:00:00.02 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:32.06M (Peak 38.96M) | Time:00:00.02 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:33.64M (Peak 38.96M) | Time:00:00.02 | Mem:0.32M, Peak:0.32M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:33.61M (Peak 38.96M) | Time:00:00.02 | Mem:1.84M, Peak:1.84M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:33.61M (Peak 38.96M) | Time:00:00.02 | Mem:1.84M, Peak:1.84M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:33.61M (Peak 38.96M) | Time:00:00.02 | Mem:2.59M, Peak:2.59M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:33.61M (Peak 38.96M) | Time:00:00.03 | Mem:3.40M, Peak:4.14M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:33.61M (Peak 38.96M) | Time:00:00.03 | Mem:3.40M, Peak:4.14M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:3.40M, Peak:4.14M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.06M, Peak:4.14M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.06M, Peak:4.14M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.06M, Peak:4.14M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.06M, Peak:4.14M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.06M, Peak:4.14M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.14M, Peak:4.14M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.14M, Peak:4.14M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:34.28M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:34.29M (Peak 38.96M) | Time:00:00.03 | Mem:4.07M, Peak:4.15M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:34.29M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:34.29M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:34.29M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:34.29M (Peak 38.96M) | Time:00:00.03 | Mem:4.15M, Peak:4.15M | Scene, ViewLayer | Sample 0/20
+Fra:1 Mem:53.31M (Peak 53.31M) | Time:00:00.09 | Remaining:00:01.12 | Mem:23.16M, Peak:23.16M | Scene, ViewLayer | Sample 1/20
+Fra:1 Mem:61.32M (Peak 73.32M) | Time:00:02.18 | Mem:23.16M, Peak:23.16M | Scene, ViewLayer | Sample 20/20
+Fra:1 Mem:61.32M (Peak 73.32M) | Time:00:02.18 | Mem:23.16M, Peak:23.16M | Scene, ViewLayer | Finished
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/control-material.png'
+Time: 00:02.25 (Saving: 00:00.06)
+
+REVISION2_MATERIAL_PROOF lion race control
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Fra:1 Mem:32.30M (Peak 32.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Body • continuous sculpted skin
+Fra:1 Mem:32.78M (Peak 32.78M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe
+Fra:1 Mem:32.81M (Peak 32.81M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw
+Fra:1 Mem:32.81M (Peak 32.81M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.001
+Fra:1 Mem:32.82M (Peak 32.82M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox.002
+Fra:1 Mem:32.83M (Peak 32.83M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.001
+Fra:1 Mem:32.85M (Peak 32.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox.001
+Fra:1 Mem:32.83M (Peak 32.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.002
+Fra:1 Mem:32.83M (Peak 32.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Matched softbox
+Fra:1 Mem:32.83M (Peak 32.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.006
+Fra:1 Mem:32.87M (Peak 32.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.002
+Fra:1 Mem:32.87M (Peak 32.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.005
+Fra:1 Mem:32.87M (Peak 32.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.003
+Fra:1 Mem:32.90M (Peak 32.90M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.004
+Fra:1 Mem:32.91M (Peak 32.91M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.003
+Fra:1 Mem:32.93M (Peak 32.93M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.003
+Fra:1 Mem:32.94M (Peak 32.94M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.004
+Fra:1 Mem:32.95M (Peak 32.95M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.002
+Fra:1 Mem:32.99M (Peak 32.99M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.004
+Fra:1 Mem:32.99M (Peak 32.99M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur.001
+Fra:1 Mem:33.00M (Peak 33.00M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.005
+Fra:1 Mem:33.02M (Peak 33.02M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 tapered flame tail fur
+Fra:1 Mem:33.04M (Peak 33.04M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.005
+Fra:1 Mem:33.05M (Peak 33.05M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 connected breast ruff
+Fra:1 Mem:33.09M (Peak 33.09M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.006
+Fra:1 Mem:33.12M (Peak 33.12M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.006
+Fra:1 Mem:33.16M (Peak 33.16M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 continuous chest ruff flow.003
+Fra:1 Mem:33.17M (Peak 33.17M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.007
+Fra:1 Mem:33.19M (Peak 33.19M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 continuous chest ruff flow.002
+Fra:1 Mem:33.21M (Peak 33.21M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.007
+Fra:1 Mem:33.22M (Peak 33.22M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.009
+Fra:1 Mem:33.24M (Peak 33.24M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.008
+Fra:1 Mem:33.26M (Peak 33.26M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.008
+Fra:1 Mem:33.28M (Peak 33.28M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.008
+Fra:1 Mem:33.29M (Peak 33.29M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.007
+Fra:1 Mem:33.30M (Peak 33.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.009
+Fra:1 Mem:33.32M (Peak 33.32M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.006
+Fra:1 Mem:33.34M (Peak 33.34M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.009
+Fra:1 Mem:33.36M (Peak 33.36M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.005
+Fra:1 Mem:33.37M (Peak 33.37M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.010
+Fra:1 Mem:33.38M (Peak 33.38M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.015
+Fra:1 Mem:33.41M (Peak 33.41M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.010
+Fra:1 Mem:33.42M (Peak 33.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.014
+Fra:1 Mem:33.43M (Peak 33.43M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Paw toe.011
+Fra:1 Mem:33.46M (Peak 33.46M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade.005
+Fra:1 Mem:33.47M (Peak 33.47M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ivory claw.011
+Fra:1 Mem:33.49M (Peak 33.49M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Articulated tail
+Fra:1 Mem:33.50M (Peak 33.50M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.013
+Fra:1 Mem:33.53M (Peak 33.53M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Leather neckerchief roll
+Fra:1 Mem:33.56M (Peak 33.56M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.012
+Fra:1 Mem:33.58M (Peak 33.58M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Neckerchief folded point
+Fra:1 Mem:33.59M (Peak 33.59M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Brass crest clasp
+Fra:1 Mem:33.60M (Peak 33.60M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.011
+Fra:1 Mem:33.63M (Peak 33.63M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Raised elemental crest
+Fra:1 Mem:33.64M (Peak 33.64M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade.004
+Fra:1 Mem:33.64M (Peak 33.64M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 connected orbital skull and species muzzle
+Fra:1 Mem:33.70M (Peak 33.70M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.010
+Fra:1 Mem:33.90M (Peak 33.90M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.009
+Fra:1 Mem:33.92M (Peak 33.92M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade.003
+Fra:1 Mem:33.95M (Peak 33.95M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.008
+Fra:1 Mem:33.97M (Peak 33.97M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 continuous chest ruff flow.001
+Fra:1 Mem:34.00M (Peak 34.00M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 continuous chest ruff flow
+Fra:1 Mem:34.02M (Peak 34.02M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.004
+Fra:1 Mem:34.11M (Peak 34.11M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.003
+Fra:1 Mem:34.30M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.002
+Fra:1 Mem:34.22M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 inset almond sclera
+Fra:1 Mem:34.25M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer.001
+Fra:1 Mem:34.27M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 iris
+Fra:1 Mem:34.28M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 dorsal swept layer
+Fra:1 Mem:34.28M (Peak 34.30M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 pupil
+Fra:1 Mem:34.31M (Peak 34.31M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 catchlight
+Fra:1 Mem:34.31M (Peak 34.31M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.007
+Fra:1 Mem:34.32M (Peak 34.32M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 shaded upper eyelid margin
+Fra:1 Mem:34.33M (Peak 34.33M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.006
+Fra:1 Mem:34.34M (Peak 34.34M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 integrated brow ridge
+Fra:1 Mem:34.37M (Peak 34.37M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade.002
+Fra:1 Mem:34.38M (Peak 34.38M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 inset almond sclera.001
+Fra:1 Mem:34.41M (Peak 34.41M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.005
+Fra:1 Mem:34.42M (Peak 34.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 iris.001
+Fra:1 Mem:34.44M (Peak 34.44M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.004
+Fra:1 Mem:34.44M (Peak 34.44M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 pupil.001
+Fra:1 Mem:34.47M (Peak 34.47M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.003
+Fra:1 Mem:34.47M (Peak 34.47M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 catchlight.001
+Fra:1 Mem:34.49M (Peak 34.49M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade.001
+Fra:1 Mem:34.51M (Peak 34.51M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 shaded upper eyelid margin.001
+Fra:1 Mem:34.51M (Peak 34.51M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.002
+Fra:1 Mem:34.53M (Peak 34.53M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 integrated brow ridge.001
+Fra:1 Mem:34.55M (Peak 34.55M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary.001
+Fra:1 Mem:34.57M (Peak 34.57M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 broad wet nose
+Fra:1 Mem:34.58M (Peak 34.58M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 secondary fur blade
+Fra:1 Mem:34.60M (Peak 34.60M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle
+Fra:1 Mem:34.60M (Peak 34.60M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 flowing cheek and nape primary
+Fra:1 Mem:34.61M (Peak 34.61M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.001
+Fra:1 Mem:34.62M (Peak 34.62M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.002
+Fra:1 Mem:34.63M (Peak 34.63M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 swept crown primary.004
+Fra:1 Mem:34.63M (Peak 34.63M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.003
+Fra:1 Mem:34.66M (Peak 34.66M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.004
+Fra:1 Mem:34.66M (Peak 34.66M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 swept crown primary.003
+Fra:1 Mem:34.66M (Peak 34.66M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.005
+Fra:1 Mem:34.68M (Peak 34.68M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.006
+Fra:1 Mem:34.68M (Peak 34.68M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 swept crown primary.002
+Fra:1 Mem:34.70M (Peak 34.70M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.007
+Fra:1 Mem:34.71M (Peak 34.71M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 swept crown primary.001
+Fra:1 Mem:34.73M (Peak 34.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.008
+Fra:1 Mem:34.73M (Peak 34.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 swept crown primary
+Fra:1 Mem:34.75M (Peak 34.75M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.009
+Fra:1 Mem:34.76M (Peak 34.76M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.010
+Fra:1 Mem:34.76M (Peak 34.76M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 connected occipital mane volume
+Fra:1 Mem:34.79M (Peak 34.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.011
+Fra:1 Mem:34.80M (Peak 34.80M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.012
+Fra:1 Mem:34.81M (Peak 34.81M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.013
+Fra:1 Mem:34.83M (Peak 34.83M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 cupped species ear.001
+Fra:1 Mem:34.84M (Peak 34.84M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.014
+Fra:1 Mem:34.85M (Peak 34.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 cupped species ear
+Fra:1 Mem:34.85M (Peak 34.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.015
+Fra:1 Mem:34.87M (Peak 34.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.016
+Fra:1 Mem:34.87M (Peak 34.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 articulated oral lining
+Fra:1 Mem:34.87M (Peak 34.87M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 whisker follicle.017
+Fra:1 Mem:34.88M (Peak 34.88M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | R2 anatomical mandible
+Fra:1 Mem:34.90M (Peak 34.90M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:32.88M (Peak 34.90M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Images | Loading Authored short-fur normal
+Fra:1 Mem:28.67M (Peak 34.90M) | Time:00:00.00 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:28.67M (Peak 34.90M) | Time:00:00.00 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:28.67M (Peak 34.90M) | Time:00:00.00 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:28.67M (Peak 34.90M) | Time:00:00.00 | Mem:0.25M, Peak:0.25M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:28.76M (Peak 34.90M) | Time:00:00.00 | Mem:0.26M, Peak:0.26M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:28.79M (Peak 34.90M) | Time:00:00.00 | Mem:0.28M, Peak:0.28M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:28.79M (Peak 34.90M) | Time:00:00.00 | Mem:0.28M, Peak:0.28M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:28.79M (Peak 34.90M) | Time:00:00.00 | Mem:0.28M, Peak:0.28M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:30.08M (Peak 34.90M) | Time:00:00.01 | Mem:0.28M, Peak:0.28M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:30.08M (Peak 34.90M) | Time:00:00.01 | Mem:0.28M, Peak:0.28M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:32.00M (Peak 34.90M) | Time:00:00.01 | Mem:0.30M, Peak:0.30M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:31.96M (Peak 34.90M) | Time:00:00.01 | Mem:2.17M, Peak:2.17M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:31.97M (Peak 34.90M) | Time:00:00.01 | Mem:2.17M, Peak:2.17M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:31.97M (Peak 34.90M) | Time:00:00.01 | Mem:2.91M, Peak:2.91M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:31.97M (Peak 34.90M) | Time:00:00.01 | Mem:3.72M, Peak:4.46M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:31.97M (Peak 34.90M) | Time:00:00.01 | Mem:3.72M, Peak:4.46M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:3.72M, Peak:4.46M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.46M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.46M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.46M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.46M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.46M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:32.63M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:32.64M (Peak 34.90M) | Time:00:00.01 | Mem:4.39M, Peak:4.47M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:32.64M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:32.64M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:32.64M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:32.64M (Peak 34.90M) | Time:00:00.01 | Mem:4.47M, Peak:4.47M | Scene, ViewLayer | Sample 0/20
+Fra:1 Mem:51.66M (Peak 51.66M) | Time:00:00.07 | Remaining:00:01.05 | Mem:23.49M, Peak:23.49M | Scene, ViewLayer | Sample 1/20
+Fra:1 Mem:59.67M (Peak 71.67M) | Time:00:01.90 | Mem:23.49M, Peak:23.49M | Scene, ViewLayer | Sample 20/20
+Fra:1 Mem:59.67M (Peak 71.67M) | Time:00:01.90 | Mem:23.49M, Peak:23.49M | Scene, ViewLayer | Finished
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/candidate-material.png'
+Time: 00:01.92 (Saving: 00:00.01)
+
+REVISION2_MATERIAL_PROOF lion race candidate
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0000.png'
+Time: 00:00.05 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0015.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0016.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0017.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0020.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0017.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race attack 26
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0007.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0011.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0014.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0016.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0026.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0027.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0028.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0029.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/celebrate/0030.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0022.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0026.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0027.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0028.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0029.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/celebrate/0030.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race celebrate 31
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0000.png'
+Time: 00:00.05 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0009.png'
+Time: 00:00.05 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0011.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0014.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0015.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0016.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0017.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0018.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0019.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/defeat/0020.png'
+Time: 00:00.05 (Saving: 00:00.01)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/defeat/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race defeat 21
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0004.png'
+Time: 00:00.05 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/evade/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/evade/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race evade 7
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0007.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0011.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0014.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0015.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0016.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0017.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0018.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0019.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0020.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0021.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0022.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0023.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0024.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0025.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0026.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0027.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0028.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0029.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_idle/0030.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0026.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0027.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0028.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0029.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_idle/0030.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race fight_idle 31
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/fight_move/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/fight_move/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race fight_move 7
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0000.png'
+Time: 00:00.05 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/guard/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/guard/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race guard 10
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/hit/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/hit/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race hit 7
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0007.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0011.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/jump/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/jump/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race jump 13
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/land/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/land/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race land 6
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0026.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0027.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0028.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0029.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/race_idle/0030.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0017.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0019.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0020.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0021.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0022.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0023.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0024.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0025.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0026.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0027.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0028.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0029.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/race_idle/0030.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race race_idle 31
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0007.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/run/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/run/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race run 9
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0007.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0010.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0011.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/special/0014.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/special/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race special 15
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/stumble/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0003.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/stumble/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race stumble 11
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0000.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0001.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0002.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0004.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0005.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0006.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0008.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0009.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0012.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0013.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/transform/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0000.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0001.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0002.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0003.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0004.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0005.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0006.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0007.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0008.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0009.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0010.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0011.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0012.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0013.png'
+Time: 00:00.04 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0014.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0016.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0017.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/transform/0018.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+REVISION2_MOTION lion race transform 19
+[AVFilterGraph @ 0xc38c2c000] No such filter: 'drawtext'
+Error : Filter not found
+Traceback (most recent call last):
+  File "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/run_review.py", line 13, in <module>
+    recipe.package(species,form)
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/rebuild_roster_v2.py", line 627, in package
+    ff(['-framerate','15','-i',str(control/'%04d.png'),'-framerate','15','-i',str(candidate/'%04d.png'),'-filter_complex','hstack=inputs=2,'+label,'-threads','1','-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(movie)])
+  File "/Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/rebuild_roster_v2.py", line 621, in ff
+    def ff(args):subprocess.run(['ffmpeg','-v','error','-y','-filter_threads','1','-filter_complex_threads','1']+args,check=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/python/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-y', '-filter_threads', '1', '-filter_complex_threads', '1', '-framerate', '15', '-i', '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/control/attack/%04d.png', '-framerate', '15', '-i', '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/motion/candidate/attack/%04d.png', '-filter_complex', "hstack=inputs=2,drawtext=fontfile=/System/Library/Fonts/Supplemental/Arial.ttf:text='f600be2 control | Revision2 - attack':x=10:y=9:fontsize=16:fontcolor=white:shadowcolor=black:shadowx=1:shadowy=1", '-threads', '1', '-c:v', 'libx264', '-crf', '20', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/qa/lion/race/attack-matched.mp4']' returned non-zero exit status 8.
+
+Error: script failed, file: 'assets/source/western/revision2/run_review.py', exiting.
+
+Blender quit

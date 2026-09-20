@@ -35,3 +35,16 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env.local
+
+# Retain portable compressed evidence; local raw canvas recordings are redundant.
+/docs/production/evidence/*.webm
+
+# Blender authoring Python caches
+__pycache__/
+
+# Ephemeral isolated QA browser profiles and redundant original recordings.
+/scripts/network/browser-revision2/**/profile-*/
+/docs/production/evidence/revision2-solo/**/*.webm
+/scripts/network/browser-revision2/**/*.webm
+
+/docs/production/evidence/revision2-tail-runtime/**/*.webm

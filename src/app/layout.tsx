@@ -16,7 +16,7 @@ const monoFont = localFont({
 
 export const metadata: Metadata = {
   title: 'Animal Racers',
-  description: 'Race feral champions through jungle tracks and arena brawls.',
+  description: 'Run the canyon. Duel in the saloon. Win the Dust & Glory championship with three elemental animal rivals.',
 };
 
 export const viewport: Viewport = {

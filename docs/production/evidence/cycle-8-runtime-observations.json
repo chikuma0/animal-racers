@@ -1,0 +1,163 @@
+{
+  "buildFingerprint": "6a37c77d0598af8c13a7a7c1dd13fa35e8b8aae26768b1b7f2f868971eb09d18",
+  "environment": "M3 MacBook Air, two Codex in-app Chromium tabs on same machine; normal keyboard actions; guest canvas+audio capture; physical iPhone/internet acceptance not established",
+  "matchAgreement": {
+    "tick": 8044,
+    "phaseTime": 0,
+    "raceTime": 67.06666666666666,
+    "fightTime": 60,
+    "result": {
+      "race": [
+        26.1,
+        23.9
+      ],
+      "fight": [
+        42.5,
+        7.5
+      ],
+      "total": [
+        68.6,
+        31.4
+      ],
+      "winner": 0,
+      "reason": "Combined race + fight points \u00b7 fight timeout"
+    },
+    "players": [
+      {
+        "character": "lion",
+        "hp": 76,
+        "finishTime": 66.35539236111306,
+        "raceStatus": "finished"
+      },
+      {
+        "character": "unicorn",
+        "hp": 6,
+        "finishTime": 67.06394444444628,
+        "raceStatus": "finished"
+      }
+    ]
+  },
+  "uiObserved": {
+    "host": "The cup is yours. Fire Lion takes the championship",
+    "guest": "A worthy rival. Fire Lion takes the championship",
+    "rematch": "Both reset to countdown and reached race12%/13%,9.9/10.3s in sequential UI observations; normal jump keys delivered",
+    "departure": "Guest returned to selection; host interrupted at26%/18.1s with no verified result"
+  },
+  "inputs": {
+    "race": "28 paired Space taps in three blocks with650ms pacing, plus9 paired K taps; final block crossed into duel",
+    "duel": "10 paired J taps,4 paired K taps, then1 paired J; no state injection, CPU absent",
+    "caveat": "UI automation and inspection introduce gaps and load; this is functional integration, not skilled play/fun evaluation"
+  },
+  "knownLimitations": [
+    "Both render loops have poor distributions under two clients plus recording/automation and host load; no60fps claim.",
+    "Guest console warned about multiple Supabase GoTrueClient instances on reconnect despite persistence disabled; no observed game state inconsistency.",
+    "First host tab disappeared mid-race for undiagnosed reason; interrupted evidence retained.",
+    "Guest DPR reports0.9 and host1 at1082x874; root did not change browser zoom. Actual DOM result buttons fit within viewport; screenshot image scaling differed from CSS bounds."
+  ],
+  "artifacts": {
+    "animal-racers-performance-1789565493846.json": {
+      "bytes": 3099,
+      "sha256": "a23ec805453276bbb3abb87bb56f7c8c5e2757cfb0c810ef92d40ded7535cd08",
+      "retainedInGit": true
+    },
+    "animal-racers-performance-1789565494424.json": {
+      "bytes": 3342,
+      "sha256": "6f7f1864d7c8decd8001450ba8aa5322e0872ef6abd830091f59aecf2529ad61",
+      "retainedInGit": true
+    },
+    "animal-racers-results-1789565495460.png": {
+      "bytes": 922544,
+      "sha256": "9c4ad0e1a93a9c76ff33b463e6bbd8b7e3195c2aa4a4661e63a0afe9e062463c",
+      "retainedInGit": true
+    },
+    "animal-racers-results-1789565495665.png": {
+      "bytes": 922195,
+      "sha256": "987a3324f8553a0b9c2864d239d735ef4b67d9cec19a8a8a3ab1e0c66f08fbba",
+      "retainedInGit": true
+    },
+    "animal-racers-performance-1789565167776.json": {
+      "bytes": 2296,
+      "sha256": "d7aaa085d8c858889245f7af6a4bbb9351c81bd0fe07075546d994430c75d4f1",
+      "retainedInGit": true
+    },
+    "animal-racers-race-1789565168046.png": {
+      "bytes": 1113451,
+      "sha256": "8ab3c2720cebf6e4bf0fbe0603318e70ad02ac9ee3d46161fa38b11693436be5",
+      "retainedInGit": true
+    },
+    "animal-racers-play-1789565528689.webm": {
+      "bytes": 33494873,
+      "sha256": "acb87a8725c1218e77b64c8bdcc347dd040d4b4c05f01ce5573ceed4b0d57712",
+      "retainedInGit": false
+    },
+    "animal-racers-play-1789565159829.webm": {
+      "bytes": 19580718,
+      "sha256": "93bccbc5e7485ef6d3736724372d33ff16a5ac01270a96d220cf12fee426b985",
+      "retainedInGit": false
+    },
+    "cycle-8-local-multiplayer.mp4": {
+      "bytes": 30868765,
+      "sha256": "5b0f1d0ae9e79764a81ed4f9a1ad92d6dee1ca10e4a4821f1d0a28da83f3857b",
+      "retainedInGit": true,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1082,
+            "height": 874,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "207.205000"
+        }
+      }
+    },
+    "cycle-8-interrupted-attempt.mp4": {
+      "bytes": 9008843,
+      "sha256": "c3709d9b4a29b42deefcad46b19185414d468d510bf501f355cd4fbaaf645a0a",
+      "retainedInGit": true,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "93.320000"
+        }
+      }
+    },
+    "cycle-8-replay-contact-sheet.jpg": {
+      "bytes": 117245,
+      "sha256": "a6cf1c5c0f7c4e348d2777f611e1b2d5809f95aba7b61447149a0478f0e60c38",
+      "retainedInGit": true
+    },
+    "cycle-8-duel-36-frames.jpg": {
+      "bytes": 194384,
+      "sha256": "8bf00385e2411e13b7a02f809d37c9035c2d62e0b6a45b7561104d2989b54b47",
+      "retainedInGit": true
+    }
+  },
+  "review": {
+    "fullDecode": "Both H264/AAC derivatives decode completely without FFmpeg errors.",
+    "replayContactSheet": "15-second interval grid inspected: race, duel, cup, rematch progression visible; not a full-motion quality certificate.",
+    "duelSheet": "36 consecutive15fps frames starting124s inspected as a bounded2.4s action window; full original30fps replay retained.",
+    "deliveryFrameRate": "30fps encoding is a media format, not achieved runtime frame rate."
+  }
+}

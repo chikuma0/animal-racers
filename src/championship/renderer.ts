@@ -2,6 +2,8 @@ import * as THREE from "three";
 import { FrameMeasurements } from "./measurements";
 import { WorkMeasurements } from "./work-measurements";
 import { ContactEffects } from "./impacts";
+import { RivalryEffects } from "./rivalry-effects";
+import { courseCenter as curve } from "./course";
 import { combatFraming, resultsFraming, sceneForPhase, type ScreenRect } from "./framing";
 import {
   trailMaterial,
@@ -18,14 +20,15 @@ import {
   COURSE_LENGTH,
   OBSTACLES,
   RUN_SPEED,
+  RACE,
   ATTACKS,
+  DODGE,
   createMatch,
   type Match,
   type CharacterId,
 } from "./simulation";
 
 const PALETTE = { lion: 0xff7735, wolf: 0x67c9e8, unicorn: 0xdba2ef };
-const curve = (z: number) => Math.sin(z * 0.01) * 9 + Math.sin(z * 0.022) * 2;
 const materials = new Map<string, THREE.MeshStandardMaterial>();
 function mat(color: number, roughness = 0.8, metalness = 0) {
   const key = `${color}-${roughness}-${metalness}`;
@@ -279,6 +282,7 @@ export class ChampionshipRenderer {
   private trophy = createTrophy();
   private sparks: THREE.Points;
   private contacts = new ContactEffects(dustTexture());
+  private rivalry = new RivalryEffects();
   private particlePositions = new Float32Array(90 * 3);
   private frameTimes: number[] = [];
   private measurements = new FrameMeasurements();
@@ -336,6 +340,7 @@ export class ChampionshipRenderer {
     this.sun.shadow.bias = -0.001;
     this.sun.shadow.normalBias = 0.04;
     this.scene.add(
+      this.rivalry.group,
       this.sun,
       this.sun.target,
       this.race,
@@ -546,86 +551,30 @@ export class ChampionshipRenderer {
   private makeElement(id: CharacterId) {
     const group = new THREE.Group();
     group.name = "element";
-    const color = PALETTE[id];
-    const m = new THREE.MeshBasicMaterial({
-      color,
-      transparent: true,
-      opacity: 0.55,
-      depthWrite: false,
-      side: THREE.DoubleSide,
-    });
-    if (id === "lion") {
-      for (let i = 0; i < 7; i++) {
-        const flame = mesh(
-          new THREE.ConeGeometry(0.14, 0.7 + (i % 3) * 0.12, 5),
-          m,
-          Math.sin(i * 9) * 0.4,
-          0.7 + Math.cos(i * 3) * 0.4,
-          0.3 + i * 0.18,
-        );
-        flame.rotation.x = Math.PI / 2;
-        flame.name = "flame";
-        group.add(flame);
-      }
-    } else if (id === "wolf") {
-      for (let i = 0; i < 3; i++) {
-        const ring = mesh(
-          new THREE.TorusGeometry(0.42 + i * 0.12, 0.026, 5, 24),
-          m,
-          0,
-          1.55,
-          0.6 + i * 0.5,
-        );
-        ring.name = "wave";
-        group.add(ring);
-      }
-    } else {
+    // Element follows the physical strike. It never suggests a ranged hit.
+    for (let i = 0; i < 3; i++) {
+      const arc = mesh(
+        new THREE.TorusGeometry(.34 + i * .075, .018, 4, 20, Math.PI * 1.3),
+        new THREE.MeshBasicMaterial({ color: PALETTE[id], transparent: true,
+          opacity: .6, depthWrite: false, blending: THREE.AdditiveBlending }),
+        (i - 1) * .08, 1.45, 1.05,
+      );
+      arc.rotation.set(.15, .35, -.7 + i * .22);
+      arc.name = "strike";
+      group.add(arc);
+    }
+    if (id === "unicorn") {
       const ward = new THREE.Group();
       ward.name = "ward";
-      const shell = mesh(new THREE.CircleGeometry(0.9, 6), m, 0, 1.3, 0.65);
-      ward.add(shell);
-      const rim = mesh(
-        new THREE.TorusGeometry(0.91, 0.045, 4, 6),
-        new THREE.MeshBasicMaterial({ color: 0xffdf9e, transparent: true, depthWrite: false }),
-        0,
-        1.3,
-        0.66,
-      );
-      ward.add(rim);
+      ward.add(mesh(new THREE.CircleGeometry(.8, 6),
+        new THREE.MeshBasicMaterial({ color: 0xc7e4ed, transparent: true,
+          opacity: .12, depthWrite: false, side: THREE.DoubleSide }), 0, 1.3, .6));
+      ward.add(mesh(new THREE.TorusGeometry(.81, .026, 4, 6),
+        new THREE.MeshBasicMaterial({ color: 0xe8c3ff, transparent: true,
+          opacity: .7, depthWrite: false }), 0, 1.3, .61));
       group.add(ward);
-
-      // The braced hooves launch an elemental pulse; they do not pretend to
-      // physically reach the far edge of the special's contact volume.
-      const pulse = new THREE.Group();
-      pulse.name = "prism-pulse";
-      pulse.position.set(0, 1.4, 0.65);
-      const flare = new THREE.CylinderGeometry(0.72, 0.3, 1, 24, 1, true);
-      flare.rotateX(Math.PI / 2); flare.translate(0, 0, 0.5);
-      const colors = new Float32Array(flare.attributes.position.count * 3);
-      const hue = new THREE.Color();
-      for (let i = 0; i < flare.attributes.position.count; i++) {
-        const angle = Math.atan2(flare.attributes.position.getY(i), flare.attributes.position.getX(i));
-        hue.setHSL((angle / (2 * Math.PI) + 1) % 1, 0.65, 0.7);
-        hue.toArray(colors, i * 3);
-      }
-      flare.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-      pulse.add(mesh(flare, new THREE.MeshBasicMaterial({
-        vertexColors: true, transparent: true, opacity: 0.3,
-        blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide,
-      })));
-      pulse.add(mesh(new THREE.TorusGeometry(0.72, 0.035, 5, 24), new THREE.MeshBasicMaterial({
-        color: 0xe6bcff, transparent: true, opacity: 0.8, depthWrite: false,
-        blending: THREE.AdditiveBlending,
-      }), 0, 0, 1));
-      pulse.visible = false;
-      group.add(pulse);
     }
-    group.traverse((object) => {
-      if (object instanceof THREE.Mesh) {
-        object.castShadow = false;
-        object.receiveShadow = false;
-      }
-    });
+    group.traverse(o => { if (o instanceof THREE.Mesh) { o.castShadow = false; o.receiveShadow = false; } });
     group.visible = false;
     return group;
   }
@@ -642,6 +591,7 @@ export class ChampionshipRenderer {
         : (Array.from(a.clips.keys())[0] ?? "");
     const oneShot = [
       "jump",
+      "evade",
       "land",
       "stumble",
       "transform",
@@ -741,24 +691,31 @@ export class ChampionshipRenderer {
       tower.position.set(curve(z) + side * 18, 0, z);
       this.race.add(tower);
     }
-    const points: number[] = [],
-      uv: number[] = [],
-      idx: number[] = [];
+    const points: number[] = [], uv: number[] = [], idx: number[] = [], colors: number[] = [];
+    const shoulder = RACE.shoulderStart;
+    const columns = [-5.5, -shoulder, -shoulder + .12, shoulder - .12, shoulder, 5.5];
     for (let k = 0; k <= 550; k++) {
       const z = k * 2 * (COURSE_LENGTH / 1000);
-      points.push(curve(z) - 5.5, 0.01, z, curve(z) + 5.5, 0.01, z);
-      uv.push(0, k / 6, 1, k / 6);
-      if (k < 550) {
-        const a = k * 2;
-        idx.push(a, a + 2, a + 1, a + 1, a + 2, a + 3);
+      for (let j = 0; j < columns.length; j++) {
+        const x = columns[j], rough = Math.abs(x) >= shoulder;
+        points.push(curve(z) + x, .01, z);
+        uv.push((x + 5.5) / 11, k / 6);
+        colors.push(...(rough ? [.64, .56, .45] : [1, 1, 1]));
+        if (k < 550 && j < columns.length - 1) {
+          const a = k * columns.length + j;
+          idx.push(a, a + columns.length, a + 1, a + 1, a + columns.length, a + columns.length + 1);
+        }
       }
     }
     const geom = new THREE.BufferGeometry();
     geom.setAttribute("position", new THREE.Float32BufferAttribute(points, 3));
     geom.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+    geom.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
     geom.setIndex(idx);
     geom.computeVertexNormals();
-    this.race.add(mesh(geom, trailMaterial()));
+    const roadMaterial = trailMaterial();
+    roadMaterial.vertexColors = true;
+    this.race.add(mesh(geom, roadMaterial));
     const random = rng(3729),
       rockMats = [
         new THREE.MeshStandardMaterial({
@@ -836,7 +793,7 @@ export class ChampionshipRenderer {
               : "SILVER SPUR",
           z === (15 * COURSE_LENGTH) / 1000,
         );
-        b.position.set(curve(z) + side * 13, 0, z);
+        b.position.set(curve(z) + side * 16, 0, z);
         b.rotation.y = side > 0 ? -Math.PI / 2 : Math.PI / 2;
         this.race.add(b);
       }
@@ -856,16 +813,26 @@ export class ChampionshipRenderer {
             box(0.16, 0.92, 0.25, mat(0x47342a), (side * o.width) / 2, 0.46),
           );
       } else {
-        g.add(
-          box(o.width, 1.8, 0.55, mat(0x9a6439), 0, 0.9),
-          box(o.width, 0.25, 0.6, mat(0x563c2b), 0, 1.9),
-          box(0.3, 2.2, 0.6, mat(0x754b2c), -o.width / 2, 1.1),
-          box(0.3, 2.2, 0.6, mat(0x754b2c), o.width / 2, 1.1),
-        );
-        const s = sign("← PASS →", o.width * 0.85, 0.5);
-        s.position.set(0, 1.4, -0.31);
-        s.rotation.y = Math.PI;
-        g.add(s);
+        // A loaded frontier wagon: its high silhouette clearly asks for a pass.
+        const wood = mat(0x93643d), iron = mat(0x34302a, .7, .25);
+        g.add(box(o.width, .18, 1.1, wood, 0, .66));
+        g.add(box(o.width * .88, .62, 1, wood, 0, 1.06));
+        for (const side of [-1, 1]) {
+          g.add(box(.12, .95, 1.1, mat(0x553d2b), side * o.width * .44, 1.12));
+          for (const z of [-.34, .34]) {
+            const wheel = mesh(new THREE.TorusGeometry(.39, .055, 5, 16), iron, side * o.width / 2, .42, z);
+            wheel.rotation.y = Math.PI / 2;
+            g.add(wheel);
+            for (let spoke = 0; spoke < 4; spoke++) {
+              const beam = box(.075, .75, .065, wood, side * o.width / 2, .42, z);
+              beam.rotation.x = spoke * Math.PI / 4;
+              g.add(beam);
+            }
+          }
+        }
+        const bale = box(o.width * .68, .55, .78, mat(0xc3a16b), -.06, 1.63);
+        bale.rotation.z = -.05;
+        g.add(bale, box(.06, .59, .81, mat(0x654a2f), -.06, 1.63));
       }
       g.position.set(curve(o.z) + o.x, 0, o.z);
       this.race.add(g);
@@ -1196,7 +1163,12 @@ export class ChampionshipRenderer {
         );
       } else if (isFight && p) {
         const lateralSpeed = delta > 0 ? (p.x - a.group.position.x) / delta : 0;
-        a.group.position.set(p.x, p.y, 0);
+        // A landed hit carries the body across the floor over several frames.
+        // Authority has already resolved contact; the protected recovery window
+        // is longer than this brief visual recoil.
+        const shownX = p.action === "hit" && !sceneCut
+          ? THREE.MathUtils.lerp(a.group.position.x, p.x, 1 - Math.exp(-delta * 24)) : p.x;
+        a.group.position.set(shownX, p.y, 0);
         a.group.rotation.set(0, (p.facing * Math.PI) / 2, 0);
         let action = p.action;
         if (phase === "transition") action = "transform";
@@ -1211,7 +1183,12 @@ export class ChampionshipRenderer {
           action === "fight_move"
             ? Math.max(-1.5, Math.min(1.5, (lateralSpeed * p.facing) / 3.6))
             : 1,
-          phase === "transition" ? match!.phaseTime : p.actionTime,
+          phase === "transition" ? match!.phaseTime
+            : action === "attack"
+              ? p.actionTime < p.strikeWindup
+                ? p.actionTime * ATTACKS[p.character].windup / p.strikeWindup
+                : ATTACKS[p.character].windup + p.actionTime - p.strikeWindup
+              : p.actionTime,
         );
       } else {
         const winner = match?.result?.winner;
@@ -1257,43 +1234,21 @@ export class ChampionshipRenderer {
       }
       const element = a.group.getObjectByName("element");
       if (element) {
-        const special = p?.action === "special",
-          timing = ATTACKS[a.character];
-        element.visible =
-          Boolean(p) &&
-          ((isRace && p!.boost > 0) ||
-            (isFight &&
-              special &&
-              p!.actionTime < timing.windup + timing.active + 0.2));
-        if (element.visible) {
-          const power = isRace ? 1 : Math.min(1, p!.actionTime / timing.windup);
-          element.scale.setScalar(0.6 + power * 0.4);
-          element.rotation.z =
-            a.character === "unicorn" ? Math.sin(time * 2) * 0.1 : 0;
-          element.children.forEach((part, j) => {
-            if (part.name === "wave") {
-              // The howl occupies its full adjudicated reach on the active
-              // frame. The small muzzle rings beforehand read as anticipation.
-              const active = isRace || p!.actionTime + 1e-8 >= timing.windup;
-              part.position.z = active
-                ? 0.7 + (timing.reach - 0.7) * (j / 2)
-                : 0.45 + j * 0.12;
-              part.scale.setScalar(active ? 0.7 + j * 0.22 : 0.35 + power * 0.25);
-            } else if (part.name === "flame") {
-              part.scale.y = 0.7 + Math.sin(time * 35 + j) * 0.3;
-            } else if (part.name === "prism-pulse") {
-              part.visible = isFight && p!.actionTime + 1e-8 >= timing.windup && p!.actionTime < timing.windup + timing.active;
-              part.scale.z = timing.reach - 1;
-            } else if (part.name === "ward") {
-              const elapsed = p!.actionTime;
-              // .08–.52 s is the simulation's frontal protection window.
-              const strength = isRace ? 1 : elapsed < 0.08 ? 0.2 : elapsed <= 0.52 ? 1 : Math.max(0, 1 - (elapsed - 0.52) / 0.12);
-              part.children.forEach((piece, index) => {
-                if (piece instanceof THREE.Mesh) (piece.material as THREE.MeshBasicMaterial).opacity = strength * (index === 0 ? 0.28 : 0.85);
-              });
-            }
-          });
-        }
+        const striking = p?.action === "attack";
+        const timing = ATTACKS[a.character], dodge = DODGE[a.character];
+        const strikeAge = p ? p.actionTime - p.strikeWindup : -1;
+        const showStrike = isFight && striking && strikeAge >= -.06 && strikeAge < timing.active + .12;
+        const showWard = isFight && a.character === "unicorn" && p?.action === "evade"
+          && p.actionTime >= dodge.invulnerableStart && p.actionTime <= dodge.invulnerableEnd;
+        element.visible = Boolean(showStrike || showWard);
+        element.children.forEach((part, j) => {
+          part.visible = part.name === "ward" ? Boolean(showWard) : Boolean(showStrike);
+          if (part.name === "strike") {
+            part.rotation.z = -.8 + j * .22 + Math.max(0, strikeAge) * 8;
+            const material = (part as THREE.Mesh).material as THREE.MeshBasicMaterial;
+            material.opacity = Math.max(0, .7 * (1 - Math.max(0, strikeAge) / (timing.active + .12)));
+          }
+        });
       }
       const mark = a.group.getObjectByName("marker");
       if (mark) {
@@ -1307,7 +1262,7 @@ export class ChampionshipRenderer {
         z = p.z;
       this.cameraTarget.set(curve(z) + p.x * 0.35, 3.6, z - 7.3);
       this.target.set(curve(z + 16) + p.x * 0.15, 1.2, z + 16);
-      this.camera.fov = 51 + (p.boost > 0 ? 3 : 0);
+      this.camera.fov = 51 + Math.min(3, Math.max(0, p.speed - RUN_SPEED) * 1.65);
       this.sun.position.set(curve(z) - 17, 28, z + 10);
       this.sun.target.position.set(curve(z), 0, z + 5);
     } else if (isFight && match) {
@@ -1364,6 +1319,7 @@ export class ChampionshipRenderer {
     }
     this.impact = Math.max(0, this.impact - delta);
     this.contacts.update(delta);
+    this.rivalry.update(match, curve, time);
     if (this.impact > 0 && !this.reduced)
       this.camera.position.x += Math.sin(time * 90) * this.impact * 0.11;
     const anchor =

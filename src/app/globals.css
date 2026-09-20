@@ -1572,3 +1572,34 @@ kbd {
     bottom: max(58px, calc(env(safe-area-inset-bottom) + 16px));
   }
 }
+
+/* Two deliberate duel actions, with room for the stage on a phone. */
+.control.strike, .control.leap {
+  width: 84px; height: 84px;
+  background: #76512cd9; border-color: #f1cd8b;
+}
+.control.evade { width: 74px; height: 74px; }
+.rival-gap { display: block; margin-top: 4px; font: 10px var(--font-mono); color: #ffe5ad; }
+.race-distance > div { position: relative; }
+.rival-progress { position: absolute; top: -4px; height: 12px; width: 2px; background: #c4efff; }
+.draft-meter { display: block; width: 110px; height: 3px; background: #dac49c40; margin: 6px auto 0; }
+.draft-meter > i { display: block; height: 100%; background: #b3eced; transition: width .1s linear; }
+.match-hint { pointer-events: none; max-width: min(300px, 36vw); }
+.duel-cue {
+  position: absolute; top: 28%; left: 50%; transform: translateX(-50%);
+  pointer-events: none; font: 600 11px var(--font-mono); letter-spacing: 1.4px;
+  padding: 7px 14px; color: #fff1d7; background: #302016a8;
+  border-top: 1px solid #e9b96999; text-align: center;
+}
+.duel-cue.opening { color: #c6f4ed; border-color: #86dbcd; }
+@media (max-height: 500px) {
+  .control.strike, .control.leap { width: 67px; height: 67px; }
+  .control.evade { width: 60px; height: 60px; }
+  .match-hint { bottom: 30px; font-size: 9px; max-width: 31vw; padding: 7px; }
+  .duel-cue { top: 29%; font-size: 9px; }
+}
+@media (max-width: 749px) and (orientation: portrait) {
+  .match-hint { bottom: 155px; max-width: 80vw; width: max-content; }
+}
+
+.transition-card > div small { display: block; margin-top: 5px; color: #e2bd77; font: 10px var(--font-mono); }

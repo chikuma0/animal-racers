@@ -1,0 +1,64 @@
+Info: Saved as "lion.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+11:39:41 | INFO: Starting glTF 2.0 export
+11:39:41 | INFO: Extracting primitive: ribcage
+11:39:41 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:41 | INFO: Primitives created: 7
+11:39:41 | INFO: Finished glTF 2.0 export in 0.7781057357788086 s
+
+REVISION2_EXPORTED lion race 1620884
+Info: Saved as "lion-upright.blend"
+11:39:42 | INFO: Starting glTF 2.0 export
+11:39:42 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:39:42 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:42 | INFO: Primitives created: 7
+11:39:43 | INFO: Finished glTF 2.0 export in 0.5366339683532715 s
+
+REVISION2_EXPORTED lion upright 1690132
+Info: Saved as "wolf.blend"
+11:39:43 | INFO: Starting glTF 2.0 export
+11:39:43 | INFO: Extracting primitive: ribcage
+11:39:43 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:43 | INFO: Primitives created: 8
+11:39:44 | INFO: Finished glTF 2.0 export in 0.6851468086242676 s
+
+REVISION2_EXPORTED wolf race 1361220
+Info: Saved as "wolf-upright.blend"
+11:39:44 | INFO: Starting glTF 2.0 export
+11:39:44 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:39:45 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:45 | INFO: Primitives created: 8
+11:39:45 | INFO: Finished glTF 2.0 export in 0.554652214050293 s
+
+REVISION2_EXPORTED wolf upright 1422932
+Info: Saved as "unicorn.blend"
+11:39:46 | INFO: Starting glTF 2.0 export
+11:39:46 | INFO: Extracting primitive: ribcage
+11:39:46 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:46 | INFO: Primitives created: 8
+11:39:46 | INFO: Finished glTF 2.0 export in 0.6783308982849121 s
+
+REVISION2_EXPORTED unicorn race 1359136
+Info: Saved as "unicorn-upright.blend"
+11:39:47 | INFO: Starting glTF 2.0 export
+11:39:47 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:39:47 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:39:47 | INFO: Primitives created: 8
+11:39:47 | INFO: Finished glTF 2.0 export in 0.5209078788757324 s
+
+REVISION2_EXPORTED unicorn upright 1347872
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/lion-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/wolf-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/inputs/unicorn-upright.blend"
+
+Blender quit

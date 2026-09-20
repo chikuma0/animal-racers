@@ -167,18 +167,28 @@ export class ChampionshipAudio {
       else if (e.type === "special") {
         const species = characters[e.slot ?? 0];
         if (species === "lion") {
-          this.noise(0.48, 0.5, 740);
-          this.tone(90, 0.4, "sawtooth", 0.15, 0.45);
+          this.noise(0.30, 0.22, 740);
+          this.tone(90, 0.30, "sawtooth", 0.08, 0.7);
         } else if (species === "wolf") {
-          this.noise(0.4, 0.14, 3400);
-          this.tone(250, 0.6, "sine", 0.26, 1.65);
-          this.tone(500, 0.5, "sine", 0.08, 1.65);
+          this.noise(0.24, 0.12, 3400);
+          this.tone(250, 0.25, "sine", 0.10, 1.3);
+          this.tone(500, 0.20, "sine", 0.04, 1.3);
         } else {
           [440, 660, 880].forEach((f, i) =>
             this.tone(f, 0.4, "sine", 0.14, 1, i * 0.04),
           );
         }
-      } else if (e.type === "boost") {
+      } else if (e.type === "evade") {
+        this.noise(.16, .12, 2700);
+      } else if (e.type === "evade-success") {
+        this.tone(590, .1, "sine", .19, 1.2);
+        this.tone(880, .14, "sine", .14, 1, .05);
+      } else if (e.type === "pass") {
+        this.pluck(293.66, .28);
+        this.pluck(440, .22, .08);
+      } else if (e.type === "draft-start") {
+        this.noise(.22, .1, 1700);
+      } else if (e.type === "draft-ready" || e.type === "boost") {
         this.noise(0.28, 0.16, 1100);
         this.tone(120, 0.28, "sine", 0.12, 1.8);
       } else if (e.type === "block")

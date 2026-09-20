@@ -18,7 +18,7 @@ export function ChampionshipGuide({
           />
           <path d="M40 29H76 M46 23L40 29L46 35 M70 23L76 29L70 35" />
           <text x="142" y="72">
-            JUMP THE HURDLE
+            CHASE · LEAP · PASS
           </text>
         </>
       ) : event === "fight" ? (
@@ -26,10 +26,10 @@ export function ChampionshipGuide({
           <circle cx="63" cy="21" r="8" />
           <circle cx="171" cy="21" r="8" />
           <path d="M63 29V49L48 64 M63 49L78 64 M63 35L91 31 M171 29V49L156 64 M171 49L186 64 M171 35L153 31" />
-          <path d="M137 20L151 25V39Q150 48 137 54Q124 48 123 39V25Z" />
+          <path d="M146 16Q124 18 127 46 M127 46L120 38 M127 46L137 41" strokeDasharray="3 3" />
           <path d="M94 35H111 M103 29L111 35L103 41" />
           <text x="121" y="73">
-            READ · GUARD · REPLY
+            READ · EVADE · REPLY
           </text>
         </>
       ) : (

@@ -1,3 +1,6 @@
+import { courseCurvature } from './course';
+export { courseCenter, courseSlope, courseCurvature, COURSE_MAX_SECOND_DERIVATIVE } from './course';
+
 /** Deterministic, serializable championship authority. All times are seconds. */
 export type CharacterId = 'lion' | 'wolf' | 'unicorn';
 export type Phase = 'countdown' | 'race' | 'transition' | 'fight' | 'results';
@@ -13,6 +16,8 @@ export interface Racer {
   finishTime: number | null; hp: number; facing: 1 | -1; action: string;
   actionTime: number; stun: number; invulnerable: number; cooldown: number;
   guard: number; energy: number; boost: number;
+  draft: number; drafting: boolean; dodgeCooldown: number; dodgeDirection: 1 | -1;
+  counterWindow: number; strikeWindup: number; strikeCounter: boolean; strikeId: number;
   vy: number; connected: boolean; raceStatus: 'running' | 'finished' | 'dnf'; raceProgress: number;
   hitObstacles: number[]; attackConnected: boolean; previous: Input;
   buffer: { jump: number; attack: number; special: number };
@@ -33,42 +38,60 @@ export const COUNTDOWN_DURATION = 3;
 export const TRANSITION_DURATION = 4;
 /** Nominal ground speed shared with the renderer's authored-run cadence. */
 export const RUN_SPEED = 8;
-export const RACE_GAP_FOR_FULL_POOL = 16;
+export const RACE_GAP_FOR_FULL_POOL = 4;
 export const CHARACTERS = {
-  lion: { name: 'Fire Lion', special: 'Ember rush', description: 'A short, committed fire lunge. Guard or step out of its path.' },
-  wolf: { name: 'Water Wolf', special: 'Frost howl', description: 'Longer reach with a readable windup. Close in during recovery.' },
-  unicorn: { name: 'Rainbow Unicorn', special: 'Prism ward', description: 'Brief frontal protection followed by a short prism pulse. Bait it from outside its reach.' },
+  lion: { name: 'Fire Lion', special: 'Sunset Strike', description: 'A powerful committed strike. Evade the windup, then answer.' },
+  wolf: { name: 'Water Wolf', special: 'Creek Slash', description: 'Quick footwork and a lighter strike. Find the opening after an evade.' },
+  unicorn: { name: 'Rainbow Unicorn', special: 'Prism Strike', description: 'A protective shimmer extends the evade. Answer with a clear hoof strike.' },
 } as const;
 
 export interface Obstacle { id: number; z: number; x: number; width: number; kind: 'hurdle' | 'barrel' | 'arch' }
-/** Authored rhythm: introduction, alternating lanes, canyon slalom, final sprint. */
+/** Six readable moments, with long drafting/passing sections between them. */
 export const OBSTACLES: readonly Obstacle[] = [
-  { id: 0, z: 45, x: 0, width: 2.0, kind: 'hurdle' },
-  { id: 1, z: 76, x: -2.6, width: 1.5, kind: 'barrel' },
-  { id: 2, z: 107, x: 2.6, width: 1.5, kind: 'barrel' },
-  { id: 3, z: 138, x: 0, width: 2.4, kind: 'arch' },
-  { id: 4, z: 171, x: -2.5, width: 2.2, kind: 'hurdle' },
-  { id: 5, z: 171, x: 2.5, width: 2.2, kind: 'hurdle' },
-  { id: 6, z: 204.5, x: 0, width: 1.6, kind: 'barrel' },
-  { id: 7, z: 234, x: -2.6, width: 2.4, kind: 'arch' },
-  { id: 8, z: 262, x: 2.6, width: 2.4, kind: 'arch' },
-  { id: 9, z: 291, x: 0, width: 2.2, kind: 'hurdle' },
-  { id: 10, z: 323, x: -2.6, width: 1.5, kind: 'barrel' },
-  { id: 11, z: 323, x: 0, width: 1.5, kind: 'barrel' },
-  { id: 12, z: 355, x: 2.3, width: 3.8, kind: 'arch' },
-  { id: 13, z: 387, x: -2.3, width: 3.8, kind: 'arch' },
-  { id: 14, z: 418, x: 0, width: 2.4, kind: 'hurdle' },
-  { id: 15, z: 449, x: -2.6, width: 1.4, kind: 'barrel' },
-  { id: 16, z: 449, x: 2.6, width: 1.4, kind: 'barrel' },
+  { id: 0, z: 82, x: 0, width: 4.4, kind: 'hurdle' },
+  { id: 1, z: 156, x: -2.6, width: 1.6, kind: 'barrel' },
+  { id: 2, z: 156, x: 2.6, width: 1.6, kind: 'barrel' },
+  { id: 3, z: 235, x: -2.1, width: 4.4, kind: 'arch' },
+  { id: 4, z: 309, x: 0, width: 8.6, kind: 'hurdle' },
+  { id: 5, z: 382, x: 2.1, width: 4.4, kind: 'arch' },
+  { id: 6, z: 444, x: 0, width: 2.2, kind: 'barrel' },
 ];
-
-interface Attack { windup: number; active: number; recovery: number; reach: number; damage: number; stun: number; knockback: number }
+export const RACE = { lateralSpeed: 5.2, acceleration: 6.5, leapVelocity: 7.6, gravity: 20,
+  stumbleDuration: .32, stumbleSpeed: 5.6, turnDrift: 1.25, maxTurnDrift: .85, bodyGap: 3, bodyWidth: 1.5,
+  shoulderStart: 3.6, shoulderSpeed: .88,
+  draftMinGap: .4, draftMaxGap: 12, draftWidth: 1.7, draftCharge: .9, draftDecay: .25, draftSpeed: 1.8 } as const;
+/** Rear-quarter entry stays reachable outside shoulder clearance; the far trail narrows. */
+export function draftWidthAtGap(gap: number): number {
+  return RACE.draftWidth - .45 * Math.max(0, Math.min(1, (gap - RACE.bodyGap) / (RACE.draftMaxGap - RACE.bodyGap)));
+}
+export interface Attack { windup: number; active: number; recovery: number; reach: number; damage: number; stun: number; knockback: number }
+const LION_STRIKE: Attack = { windup: .68, active: .14, recovery: .82, reach: 1.85, damage: 26, stun: .22, knockback: 1.10 };
+/** `attack` is a legacy timing fallback. Gameplay always uses the species entry. */
 export const ATTACKS: Readonly<Record<'attack' | CharacterId, Attack>> = {
-  attack: { windup: .18, active: .10, recovery: .29, reach: 1.85, damage: 11, stun: .20, knockback: .32 },
-  lion: { windup: .32, active: .14, recovery: .48, reach: 2.1, damage: 18, stun: .24, knockback: .70 },
-  wolf: { windup: .43, active: .16, recovery: .55, reach: 2.75, damage: 14, stun: .27, knockback: .40 },
-  unicorn: { windup: .40, active: .12, recovery: .43, reach: 1.95, damage: 13, stun: .21, knockback: .55 },
+  attack: LION_STRIKE, lion: LION_STRIKE,
+  wolf: { windup: .55, active: .12, recovery: .82, reach: 1.85, damage: 18, stun: .18, knockback: .75 },
+  unicorn: { windup: .60, active: .14, recovery: .76, reach: 1.85, damage: 22, stun: .20, knockback: .90 },
 };
+export const FIGHT_SPEED: Readonly<Record<CharacterId, number>> = { lion: 3.4, wolf: 4.2, unicorn: 3.6 };
+export const FIGHT_BODY_GAP = 1.75;
+export const FIGHT_BOUND = 4.4;
+export const COUNTER_WINDOW = .95;
+export const COUNTER_WINDUP = .24;
+export interface Dodge { duration: number; invulnerableStart: number; invulnerableEnd: number; speed: number; cooldown: number }
+export const DODGE: Readonly<Record<CharacterId, Dodge>> = {
+  lion: { duration: .40, invulnerableStart: .06, invulnerableEnd: .30, speed: 2.8, cooldown: 1.25 },
+  wolf: { duration: .38, invulnerableStart: .05, invulnerableEnd: .29, speed: 3.6, cooldown: 1.10 },
+  unicorn: { duration: .42, invulnerableStart: .04, invulnerableEnd: .36, speed: 2.2, cooldown: 1.35 },
+};
+export function strikeTiming(player: Racer): Attack {
+  const base = ATTACKS[player.character];
+  return player.action === 'attack' ? { ...base, windup: player.strikeWindup } : base;
+}
+export function strikePhase(player: Racer): 'none' | 'windup' | 'active' | 'recovery' {
+  if (player.action !== 'attack') return 'none';
+  if (player.actionTime + 1e-8 < player.strikeWindup) return 'windup';
+  return player.actionTime < player.strikeWindup + ATTACKS[player.character].active ? 'active' : 'recovery';
+}
 const EPSILON = 1e-8;
 const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
 const tenth = (n: number) => Math.round(n * 10) / 10;
@@ -82,6 +105,8 @@ function newRacer(character: CharacterId, slot: Slot): Racer {
   return { character, x: slot === 0 ? -1.25 : 1.25, z: 0, y: 0, speed: 0, finishTime: null,
     hp: 100, facing: slot === 0 ? 1 : -1, action: 'race_idle', actionTime: 0, stun: 0,
     invulnerable: 0, cooldown: 0, guard: 100, energy: 100, boost: 0, vy: 0,
+    draft: 0, drafting: false, dodgeCooldown: 0, dodgeDirection: slot === 0 ? -1 : 1,
+    counterWindow: 0, strikeWindup: ATTACKS[character].windup, strikeCounter: false, strikeId: 0,
     connected: true, raceStatus: 'running', raceProgress: 0, hitObstacles: [], attackConnected: false,
     previous: neutralInput(), buffer: { jump: 0, attack: 0, special: 0 }, guardRecovery: 0, guardBroken: false, ai: { nextTick: 0, nextAttackTick: 0, input: neutralInput() } };
 }
@@ -92,9 +117,9 @@ export function createMatch(characters: [CharacterId, CharacterId], seed = 1): M
     raceTime: 0, fightTime: 0, result: null, events: [], eventSequence: 0,
     phaseTick: 0, raceTicks: 0, fightTicks: 0, fightEnd: 'pending' };
 }
-function event(match: Match, type: string, slot: number) {
+function event(match: Match, type: string, slot: number, position?: { x: number; z: number }) {
   const player = match.players[slot === 1 ? 1 : 0];
-  match.events.push({ id: ++match.eventSequence, type, slot, x: player.x, z: player.z });
+  match.events.push({ id: ++match.eventSequence, type, slot, x: position?.x ?? player.x, z: position?.z ?? player.z });
   if (match.events.length > 48) match.events.splice(0, match.events.length - 48);
 }
 function action(player: Racer, name: string) {
@@ -107,7 +132,7 @@ function phase(match: Match, name: Phase) {
 }
 function timers(player: Racer) {
   player.actionTime += FIXED_DT;
-  for (const key of ['stun', 'invulnerable', 'cooldown', 'boost', 'guardRecovery'] as const) {
+  for (const key of ['stun', 'invulnerable', 'cooldown', 'boost', 'guardRecovery', 'dodgeCooldown', 'counterWindow'] as const) {
     player[key] = Math.max(0, player[key] - FIXED_DT);
   }
   player.energy = Math.min(100, player.energy + FIXED_DT * 10);
@@ -124,53 +149,85 @@ function gravity(match: Match, player: Racer, slot: Slot, acceleration: number):
 }
 function stepRace(match: Match, inputs: [Input, Input]) {
   match.raceTicks++; match.raceTime = match.raceTicks * FIXED_DT;
+  const before = match.players.map(player => ({ x: player.x, z: player.z, y: player.y, status: player.raceStatus }));
   match.players.forEach((player, index) => {
-    const slot = index as Slot, input = inputs[slot];
+    const slot = index as Slot, other = slot === 0 ? 1 : 0, input = inputs[slot];
     timers(player);
     if (player.raceStatus !== 'running') {
-      // Finishing locks time/progress, but must not freeze an airborne runner.
-      player.speed = 0;
-      const landed = gravity(match, player, slot, 20);
-      if (player.y > 0) action(player, 'jump');
-      else if (landed) action(player, 'land');
+      player.speed = 0; player.drafting = false;
+      const landed = gravity(match, player, slot, RACE.gravity);
+      if (player.y > 0) action(player, 'jump'); else if (landed) action(player, 'land');
       else if (player.action !== 'land' || player.actionTime >= .16) action(player, 'race_idle');
       return;
     }
-    const oldZ = player.z, oldY = player.y;
-    player.x = clamp(player.x + input.move * 5.2 * FIXED_DT * (player.stun > 0 ? .45 : 1), -4.3, 4.3);
-    if (input.jump && !player.previous.jump && player.y === 0 && player.stun === 0) jump(match, player, slot, 7.6);
-    if (input.special && !player.previous.special && player.cooldown === 0 && player.energy >= 35 && player.stun === 0) {
-      player.energy -= 35; player.boost = 1.1; player.cooldown = 3; event(match, 'boost', slot);
-    }
-    const landed = gravity(match, player, slot, 20);
-    const targetSpeed = player.stun > 0 ? 3.5 : RUN_SPEED * (player.boost > 0 ? 1.24 : 1);
+    const gap = before[other].z - before[slot].z;
+    const drafting = before[other].status === 'running' && gap >= RACE.draftMinGap && gap <= RACE.draftMaxGap
+      && Math.abs(before[other].x - before[slot].x) <= draftWidthAtGap(gap) && player.stun === 0;
+    if (drafting && !player.drafting) event(match, 'draft-start', slot);
+    const oldDraft = player.draft;
+    player.drafting = drafting;
+    player.draft = clamp(player.draft + FIXED_DT * (drafting ? 1 / RACE.draftCharge : -RACE.draftDecay), 0, 1);
+    if (oldDraft < 1 && player.draft === 1) event(match, 'draft-ready', slot);
+    const drift = clamp(-courseCurvature(player.z) * player.speed * player.speed * RACE.turnDrift, -RACE.maxTurnDrift, RACE.maxTurnDrift);
+    player.x = clamp(player.x + (input.move * RACE.lateralSpeed * (player.stun > 0 ? .7 : 1) + drift) * FIXED_DT, -4.3, 4.3);
+    if (input.jump && !player.previous.jump && player.y === 0 && player.stun === 0) jump(match, player, slot, RACE.leapVelocity);
+    const landed = gravity(match, player, slot, RACE.gravity);
+    const shoulder = Math.abs(player.x) > RACE.shoulderStart ? RACE.shoulderSpeed : 1;
+    const targetSpeed = player.stun > 0 ? RACE.stumbleSpeed : (RUN_SPEED + RACE.draftSpeed * player.draft) * shoulder;
     const priorSpeed = player.speed;
-    player.speed = approach(player.speed, targetSpeed, FIXED_DT * (player.stun > 0 ? 16 : 3.5));
+    player.speed = approach(player.speed, targetSpeed, RACE.acceleration * FIXED_DT);
     player.z += (priorSpeed + player.speed) * .5 * FIXED_DT;
+    if (player.stun > 0) action(player, 'stumble'); else if (player.y > 0) action(player, 'jump');
+    else if (landed) action(player, 'land'); else if (player.action !== 'land' || player.actionTime >= .16) action(player, 'run');
+  });
+  const [first, second] = match.players;
+  if (first.raceStatus === 'running' && second.raceStatus === 'running'
+      && Math.abs(first.z - second.z) < RACE.bodyGap && Math.abs(first.x - second.x) < RACE.bodyWidth) {
+    const oldGap = before[1].z - before[0].z;
+    if (Math.abs(oldGap) >= RACE.bodyGap - EPSILON) {
+      const follower = oldGap > 0 ? first : second, leader = oldGap > 0 ? second : first;
+      follower.z = Math.max(before[oldGap > 0 ? 0 : 1].z, leader.z - RACE.bodyGap);
+      follower.speed = Math.min(follower.speed, leader.speed);
+    } else {
+      const order = Math.sign(before[1].x - before[0].x) || 1;
+      const center = clamp((first.x + second.x) / 2, -4.3 + RACE.bodyWidth / 2, 4.3 - RACE.bodyWidth / 2);
+      first.x = center - order * RACE.bodyWidth / 2; second.x = center + order * RACE.bodyWidth / 2;
+    }
+  }
+  const oldGap = before[1].z - before[0].z, newGap = second.z - first.z;
+  if (before.every(player => player.status === 'running') && oldGap * newGap < 0) {
+    const crossing = oldGap / (oldGap - newGap);
+    const crossingZ = before[0].z + (first.z - before[0].z) * crossing;
+    // Projected finish overshoot can reverse order after the race has ended.
+    if (crossingZ < COURSE_LENGTH - EPSILON) {
+      const slot: Slot = newGap < 0 ? 0 : 1;
+      event(match, 'pass', slot, { x: before[slot].x + (match.players[slot].x - before[slot].x) * crossing, z: crossingZ });
+    }
+  }
+  match.players.forEach((player, index) => {
+    if (player.raceStatus !== 'running') return;
     for (const obstacle of OBSTACLES) {
-      if (obstacle.z < oldZ || obstacle.z > player.z || player.hitObstacles.includes(obstacle.id)) continue;
-      const crossing = clamp((obstacle.z - oldZ) / Math.max(EPSILON, player.z - oldZ), 0, 1);
-      const crossingY = oldY + (player.y - oldY) * crossing;
+      if (obstacle.z < before[index].z || obstacle.z > player.z || player.hitObstacles.includes(obstacle.id)) continue;
+      const crossing = clamp((obstacle.z - before[index].z) / Math.max(EPSILON, player.z - before[index].z), 0, 1);
+      const crossingX = before[index].x + (player.x - before[index].x) * crossing;
+      const crossingY = before[index].y + (player.y - before[index].y) * crossing;
       const clears = obstacle.kind !== 'arch' && crossingY > (obstacle.kind === 'hurdle' ? .65 : .8);
-      if (Math.abs(player.x - obstacle.x) < obstacle.width / 2 + .32 && !clears) {
-        player.hitObstacles.push(obstacle.id); player.stun = .55; player.speed = Math.min(player.speed, 3.5);
-        player.boost = 0; action(player, 'stumble'); event(match, 'obstacle', slot); break;
+      if (Math.abs(crossingX - obstacle.x) < obstacle.width / 2 + .32 && !clears) {
+        player.hitObstacles.push(obstacle.id); player.stun = RACE.stumbleDuration; player.speed = Math.min(player.speed, RACE.stumbleSpeed);
+        player.draft *= .5; player.drafting = false; action(player, 'stumble'); event(match, 'obstacle', index); break;
       }
     }
     if (player.z >= COURSE_LENGTH) {
-      player.finishTime = (match.raceTicks - 1 + clamp((COURSE_LENGTH - oldZ) / (player.z - oldZ), 0, 1)) * FIXED_DT;
-      player.z = COURSE_LENGTH; player.speed = 0; player.raceStatus = 'finished';
-      action(player, 'race_idle'); event(match, 'finish', slot);
-    } else if (player.stun > 0) action(player, 'stumble');
-    else if (player.y > 0) action(player, 'jump');
-    else if (landed) action(player, 'land');
-    else if (player.action !== 'land' || player.actionTime >= .16) action(player, 'run');
+      player.finishTime = (match.raceTicks - 1 + clamp((COURSE_LENGTH - before[index].z) / Math.max(EPSILON, player.z - before[index].z), 0, 1)) * FIXED_DT;
+      player.z = COURSE_LENGTH; player.speed = 0; player.raceStatus = 'finished'; player.drafting = false;
+      if (player.y === 0) action(player, 'race_idle'); event(match, 'finish', index);
+    }
     player.raceProgress = player.z;
   });
   if (match.raceTime >= RACE_DURATION || match.players.every(player => player.raceStatus !== 'running')) {
     for (const player of match.players) {
       if (player.raceStatus === 'running') player.raceStatus = 'dnf';
-      player.speed = 0; player.y = 0; player.vy = 0; action(player, 'transform');
+      player.speed = 0; player.y = 0; player.vy = 0; player.drafting = false; action(player, 'transform');
     }
     phase(match, 'transition');
   }
@@ -180,102 +237,78 @@ function startFight(match: Match) {
     player.x = index === 0 ? -1.75 : 1.75; player.z = 0; player.y = 0; player.vy = 0;
     player.facing = index === 0 ? 1 : -1; player.hp = 100; player.energy = 100; player.guard = 100;
     player.stun = 0; player.invulnerable = 0; player.cooldown = 0; player.boost = 0;
+    player.draft = 0; player.drafting = false; player.dodgeCooldown = 0; player.counterWindow = 0;
+    player.strikeWindup = ATTACKS[player.character].windup; player.strikeCounter = false; player.strikeId = 0;
     player.guardRecovery = 0; player.guardBroken = false; player.attackConnected = false; action(player, 'fight_idle');
     player.buffer = { jump: 0, attack: 0, special: 0 };
   });
   phase(match, 'fight');
 }
-function attackFor(player: Racer): Attack | null {
-  return player.action === 'attack' ? ATTACKS.attack : player.action === 'special' ? ATTACKS[player.character] : null;
-}
-function isWarded(player: Racer): boolean {
-  return player.character === 'unicorn' && player.action === 'special' && player.actionTime >= .08 && player.actionTime <= .52;
-}
 function stepFight(match: Match, inputs: [Input, Input]) {
   match.fightTicks++; match.fightTime = match.fightTicks * FIXED_DT;
-  // Both choices see the same beginning-of-step positions. A lunge processed
-  // first must not turn the other slot's newly committed airborne strike.
   const initialPositions = match.players.map(player => player.x);
-  // Exact-X cross-ups retain opposing orientation. If both face the same way,
-  // use the higher fighter's orientation/side; swapping slots keeps that choice.
-  const [first, second] = match.players;
-  const priorSide = first.facing !== second.facing || first.y >= second.y ? first.facing : -first.facing;
-  const initialOrder = Math.sign(initialPositions[1] - initialPositions[0]) || priorSide;
+  const initialOrder = Math.sign(initialPositions[1] - initialPositions[0]) || match.players[0].facing;
   match.players.forEach((player, index) => {
-    const slot = index as Slot, input = inputs[slot];
-    timers(player);
-    // A short press survives the end of recovery/hitstun; holding does not repeat.
-    for (const key of ['jump', 'attack', 'special'] as const) {
-      player.buffer[key] = input[key] && !player.previous[key] ? .14 : Math.max(0, player.buffer[key] - FIXED_DT);
-    }
-    gravity(match, player, slot, 18);
-    const attacking = attackFor(player);
-    if (attacking && player.actionTime + EPSILON >= attacking.windup + attacking.active + attacking.recovery) {
-      action(player, 'fight_idle'); player.attackConnected = false;
-    }
+    const slot = index as Slot, input = inputs[slot], spec = ATTACKS[player.character], dodge = DODGE[player.character];
+    timers(player); player.y = 0; player.vy = 0;
+    const strikePressed = (input.attack || input.special) && !(player.previous.attack || player.previous.special);
+    const evadePressed = (input.jump || input.guard) && !(player.previous.jump || player.previous.guard);
+    player.buffer.attack = strikePressed ? .14 : Math.max(0, player.buffer.attack - FIXED_DT);
+    player.buffer.jump = evadePressed ? .14 : Math.max(0, player.buffer.jump - FIXED_DT);
+    if ((player.action === 'attack' && player.actionTime + EPSILON >= player.strikeWindup + spec.active + spec.recovery)
+      || (player.action === 'evade' && player.actionTime + EPSILON >= dodge.duration)) action(player, 'fight_idle');
     if (player.stun > 0) { action(player, 'hit'); return; }
-    if (!attackFor(player)) {
+    if (player.action !== 'attack' && player.action !== 'evade') {
       const rivalOffset = initialPositions[slot === 0 ? 1 : 0] - initialPositions[slot];
       if (rivalOffset !== 0) player.facing = rivalOffset > 0 ? 1 : -1;
-      if (player.buffer.jump > 0 && player.y === 0) { jump(match, player, slot, 6.8); player.buffer.jump = 0; }
-      if (player.buffer.special > 0 && player.cooldown === 0 && player.energy >= 40) {
-        player.buffer.special = 0;
-        player.energy -= 40; player.cooldown = 3.2; action(player, 'special');
-        player.attackConnected = false; event(match, 'special', slot);
-      } else if (player.buffer.attack > 0 && !input.guard) {
-        player.buffer.attack = 0;
-        action(player, 'attack'); player.attackConnected = false; event(match, 'attack', slot);
+      if (player.buffer.jump > 0 && player.dodgeCooldown === 0) {
+        player.buffer.jump = 0; player.dodgeCooldown = dodge.cooldown;
+        player.dodgeDirection = Math.abs(input.move) > .2 ? (input.move > 0 ? 1 : -1) : player.facing === 1 ? -1 : 1;
+        action(player, 'evade'); event(match, 'evade', slot);
+      } else if (player.buffer.attack > 0) {
+        player.buffer.attack = 0; player.strikeCounter = player.counterWindow > 0;
+        player.strikeWindup = player.strikeCounter ? COUNTER_WINDUP : spec.windup;
+        player.counterWindow = 0; player.strikeId++; player.attackConnected = false;
+        action(player, 'attack'); event(match, player.strikeCounter ? 'counter' : 'attack', slot);
       } else {
-        action(player, input.guard && player.y === 0 && player.guard > 0 && !player.guardBroken ? 'guard' : player.y > 0 ? 'jump' : Math.abs(input.move) > .05 ? 'fight_move' : 'fight_idle');
-        const movementSpeed = player.action === 'guard' ? 1.45 : player.y > 0 ? 2.6 : 3.6;
-        player.x = clamp(player.x + input.move * movementSpeed * FIXED_DT, -4.4, 4.4);
+        action(player, Math.abs(input.move) > .05 ? 'fight_move' : 'fight_idle');
+        player.x = clamp(player.x + input.move * FIGHT_SPEED[player.character] * FIXED_DT, -FIGHT_BOUND, FIGHT_BOUND);
       }
     }
-    if (player.action === 'special' && player.character === 'lion' && player.actionTime >= ATTACKS.lion.windup && player.actionTime < ATTACKS.lion.windup + ATTACKS.lion.active) {
-      player.x = clamp(player.x + player.facing * 7 * FIXED_DT, -4.4, 4.4);
-    }
-    if (player.action !== 'guard' && player.guardRecovery === 0) {
-      player.guard = Math.min(100, player.guard + 18 * FIXED_DT);
-      // A broken guard must rebuild a useful reserve. Holding can re-arm it,
-      // but a fractional regen tick cannot buy another full block/protection.
-      if (player.guardBroken && player.guard >= 25) player.guardBroken = false;
-    }
+    if (player.action === 'evade') player.x = clamp(player.x + player.dodgeDirection * dodge.speed * FIXED_DT, -FIGHT_BOUND, FIGHT_BOUND);
   });
-  // Resolve bodies before contact. Grounded fighters cannot pass through each other.
-  if (Math.abs(match.players[0].y - match.players[1].y) < .7 && (match.players[1].x - match.players[0].x) * initialOrder < 1.75) {
-    const center = clamp((match.players[0].x + match.players[1].x) / 2, -3.525, 3.525);
-    match.players[0].x = center - .875 * initialOrder; match.players[1].x = center + .875 * initialOrder;
+  if ((match.players[1].x - match.players[0].x) * initialOrder < FIGHT_BODY_GAP) {
+    const center = clamp((match.players[0].x + match.players[1].x) / 2, -FIGHT_BOUND + FIGHT_BODY_GAP / 2, FIGHT_BOUND - FIGHT_BODY_GAP / 2);
+    match.players[0].x = center - FIGHT_BODY_GAP / 2 * initialOrder; match.players[1].x = center + FIGHT_BODY_GAP / 2 * initialOrder;
   }
-  const impacts: { attacker: Slot; defender: Slot; attack: Attack; defended: boolean; warded: boolean; facing: 1 | -1 }[] = [];
+  const impacts: { attacker: Slot; defender: Slot; attack: Attack; facing: 1 | -1 }[] = [];
   match.players.forEach((player, index) => {
     const slot = index as Slot, other = (slot === 0 ? 1 : 0) as Slot, defender = match.players[other];
-    const attack = attackFor(player);
-    if (!attack || player.stun > 0 || player.attackConnected || player.actionTime + EPSILON < attack.windup || player.actionTime >= attack.windup + attack.active) return;
-    const forwardDistance = (defender.x - player.x) * player.facing;
-    if (forwardDistance < 0 || forwardDistance > attack.reach || Math.abs(player.y - defender.y) > .9) return;
+    if (strikePhase(player) !== 'active' || player.stun > 0 || player.attackConnected) return;
+    const spec = ATTACKS[player.character], distance = (defender.x - player.x) * player.facing, dodge = DODGE[defender.character];
+    if (distance < 0) return;
+    const evading = defender.action === 'evade' && defender.actionTime + EPSILON >= dodge.invulnerableStart;
+    const protectedEvade = evading && defender.actionTime <= dodge.invulnerableEnd + EPSILON;
+    const steppedClear = evading && distance > spec.reach;
+    if ((protectedEvade || steppedClear) && distance <= spec.reach + dodge.speed * dodge.duration + .25) {
+      player.attackConnected = true; defender.counterWindow = COUNTER_WINDOW; event(match, 'evade-success', other); return;
+    }
+    if (distance > spec.reach) return;
     player.attackConnected = true;
     if (defender.invulnerable > 0) return;
-    const frontal = (player.x - defender.x) * defender.facing >= 0;
-    impacts.push({ attacker: slot, defender: other, attack, defended: frontal && defender.action === 'guard', warded: frontal && isWarded(defender), facing: player.facing });
+    impacts.push({ attacker: slot, defender: other, attack: spec, facing: player.facing });
   });
-  // Gather first, apply second: an earlier array slot can never cancel a same-tick hit.
+  // Decide all contacts before applying any: committed same-tick strikes trade.
   for (const impact of impacts) {
-    const defender = match.players[impact.defender];
-    if (impact.warded) { event(match, 'ward', impact.defender); continue; }
-    if (impact.defended) {
-      defender.guard = Math.max(0, defender.guard - impact.attack.damage * 2.2);
-      defender.guardRecovery = .6; defender.hp = Math.max(0, defender.hp - 1);
-      defender.x = clamp(defender.x + impact.facing * .14, -4.4, 4.4);
-      if (defender.guard === 0) {
-        defender.guardBroken = true;
-        defender.stun = .38; defender.invulnerable = .62; action(defender, 'hit'); event(match, 'guard-break', impact.defender);
-      } else event(match, 'block', impact.defender);
-    } else {
-      defender.hp = Math.max(0, defender.hp - impact.attack.damage);
-      defender.stun = impact.attack.stun; defender.invulnerable = .52;
-      defender.x = clamp(defender.x + impact.facing * impact.attack.knockback, -4.4, 4.4);
-      action(defender, 'hit'); event(match, 'hit', impact.defender);
-    }
+    const defender = match.players[impact.defender], attacker = match.players[impact.attacker];
+    defender.hp = Math.max(0, defender.hp - impact.attack.damage);
+    defender.stun = impact.attack.stun; defender.invulnerable = .65; defender.counterWindow = 0;
+    const before = defender.x;
+    defender.x = clamp(defender.x + impact.facing * impact.attack.knockback, -FIGHT_BOUND, FIGHT_BOUND);
+    // At a wall the attacker supplies the missing separation by recoiling.
+    const remaining = impact.attack.knockback - Math.abs(defender.x - before);
+    if (remaining > 0) attacker.x = clamp(attacker.x - impact.facing * remaining, -FIGHT_BOUND, FIGHT_BOUND);
+    action(defender, 'hit'); event(match, 'hit', impact.defender);
   }
   if (match.players.some(player => player.hp <= 0) || match.fightTime >= FIGHT_DURATION) {
     match.fightEnd = match.players.every(player => player.hp <= 0) ? 'double-knockout' : match.players.some(player => player.hp <= 0) ? 'knockout' : 'timeout';
@@ -341,46 +374,43 @@ function noise(seed: number, decision: number, slot: Slot): number {
   n = Math.imul(n ^ (n >>> 16), 0x45d9f3b); n = Math.imul(n ^ (n >>> 16), 0x45d9f3b);
   return ((n ^ (n >>> 16)) >>> 0) / 4294967296;
 }
-/** Open CPU rules: 200ms decisions, visible hazards, identical stats/inputs. */
+/** Open beginner behavior: 200ms decisions, delayed imperfect reads, ordinary inputs. */
 export function cpuInput(match: Match, slot: Slot): Input {
   const player = match.players[slot], rival = match.players[slot === 0 ? 1 : 0];
   if (match.tick < player.ai.nextTick) return { ...player.ai.input };
   player.ai.nextTick = match.tick + 12;
   const decision = Math.floor(match.tick / 12), roll = noise(match.seed, decision, slot), input = neutralInput();
   if (match.phase === 'race' && player.raceStatus === 'running') {
-    const upcoming = OBSTACLES.filter(obstacle => obstacle.z > player.z && obstacle.z - player.z < 14);
+    const gap = rival.z - player.z;
+    let target = gap > RACE.draftMinGap && gap < 14 ? rival.x : slot === 0 ? -1.3 : 1.3;
+    if (player.draft > .8 && gap > 0 && gap < 4.2) target = clamp(rival.x + (rival.x > 0 ? -1 : 1) * 2.0, -3.5, 3.5);
+    const upcoming = OBSTACLES.filter(obstacle => obstacle.z > player.z && obstacle.z - player.z < 16);
     const nearest = upcoming[0];
     if (nearest) {
       const row = upcoming.filter(obstacle => obstacle.z === nearest.z);
-      const inPath = row.find(obstacle => Math.abs(player.x - obstacle.x) < obstacle.width / 2 + .45);
-      if (inPath && inPath.kind !== 'arch') input.jump = inPath.z - player.z < 5 && inPath.z - player.z > 1;
+      const inPath = row.find(obstacle => Math.abs(player.x - obstacle.x) < obstacle.width / 2 + .5);
+      if (inPath && inPath.kind !== 'arch') input.jump = inPath.z - player.z < player.speed * .43 && inPath.z - player.z > player.speed * .16;
       else if (inPath) {
-        const lanes = [-2.8, 0, 2.8].filter(x => row.every(obstacle => Math.abs(x - obstacle.x) > obstacle.width / 2 + .55));
-        const target = lanes.sort((a, b) => Math.abs(a - player.x) - Math.abs(b - player.x))[0] ?? -Math.sign(inPath.x || 1) * 3.6;
-        input.move = clamp((target - player.x) * 1.5, -1, 1);
+        const lanes = [-3, 0, 3].filter(x => row.every(obstacle => Math.abs(x - obstacle.x) > obstacle.width / 2 + .55));
+        target = lanes.sort((a, b) => Math.abs(a - player.x) - Math.abs(b - player.x))[0] ?? -Math.sign(inPath.x || 1) * 3.3;
       }
-    } else {
-      const desired = (slot === 0 ? -1 : 1) * 1.3;
-      input.move = clamp((desired - player.x) * .6, -1, 1);
-      input.special = roll > .65 && player.energy >= 45 && player.cooldown === 0;
     }
+    input.move = clamp((target - player.x) * 1.6, -1, 1);
   } else if (match.phase === 'fight') {
-    const distance = Math.abs(rival.x - player.x), toward = Math.sign(rival.x - player.x);
-    const rivalAttack = attackFor(rival);
-    const threat = rivalAttack && rival.actionTime < rivalAttack.windup + rivalAttack.active && distance < rivalAttack.reach + .5;
-    if (threat && roll < .67 && player.guard > 18 && !player.guardBroken && !attackFor(player)) {
-      input.guard = true; input.move = -toward * .35;
-    } else {
-      input.move = distance > 1.8 ? toward : distance < .95 ? -toward * .4 : 0;
-      // Open beginner pacing: 1.5s to orient, attacks at least 1.2s apart.
-      // Retry a blocked opportunity next decision rather than phase-locking
-      // every opportunity to a rival's repeated strike cadence.
-      if (match.fightTime >= 1.5 && match.tick >= (player.ai.nextAttackTick ?? 0) && !attackFor(player) && player.stun === 0) {
-        input.special = player.energy >= 40 && player.cooldown === 0 && distance <= ATTACKS[player.character].reach + (player.character === 'lion' ? .6 : 0) && roll > .45;
-        input.attack = !input.special && distance <= 1.82;
-        input.jump = !input.attack && !input.special && distance > 2 && roll < .08;
-        if (input.attack || input.special) player.ai.nextAttackTick = match.tick + 72;
-      }
+    const distance = Math.abs(rival.x - player.x), toward = Math.sign(rival.x - player.x), spec = ATTACKS[player.character];
+    const rivalPhase = strikePhase(rival), reaction = .26 + noise(match.seed, rival.strikeId, slot) * .14;
+    const threat = rivalPhase === 'windup' && rival.actionTime >= reaction && distance < ATTACKS[rival.character].reach + .7;
+    const free = player.stun === 0 && player.action !== 'attack' && player.action !== 'evade';
+    if (free && threat && player.dodgeCooldown === 0 && roll < .60) {
+      input.jump = true; input.move = -toward;
+    } else if (free) {
+      // Approach in short, readable steps; do not instantly erase knockback.
+      const ready = match.tick >= player.ai.nextAttackTick;
+      input.move = distance > spec.reach - .04 && (ready || rivalPhase === 'recovery') ? toward * .78 : 0;
+      if (player.counterWindow > 0) input.move = distance > spec.reach - .03 ? toward : 0;
+      if (match.fightTime >= 1.8 && distance <= spec.reach - .02 && (ready || player.counterWindow > 0)) {
+        input.attack = true; player.ai.nextAttackTick = match.tick + 120 + Math.floor(roll * 30);
+      } else if (threat && roll < .35) input.move = -toward * .7;
     }
   }
   player.ai.input = input; return { ...input };

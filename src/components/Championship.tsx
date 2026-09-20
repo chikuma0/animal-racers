@@ -1,5 +1,6 @@
 "use client";
 import { PresentationBuffer } from "@/championship/presentation";
+import { GuestPrediction } from "@/championship/prediction";
 import { WorkMeasurements } from "@/championship/work-measurements";
 import { InputControls } from "@/championship/controls";
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -18,10 +19,13 @@ import { ROSTER, CHARACTER_IDS } from "@/championship/content";
 import {
   createMatch,
   stepMatch,
+  scoreMatch,
   cpuInput,
   neutralInput,
   COURSE_LENGTH,
   FIGHT_DURATION,
+  ATTACKS,
+  RACE,
   type CharacterId,
   type Match,
   type Input,
@@ -60,7 +64,8 @@ function isSnapshot(value: unknown): value is Match {
     m.players.every(
       (p) =>
         validCharacter(p.character) &&
-        [p.x, p.y, p.z, p.hp, p.speed].every(Number.isFinite),
+        [p.x, p.y, p.z, p.hp, p.speed, p.draft, p.dodgeCooldown, p.counterWindow, p.strikeWindup].every(Number.isFinite) &&
+        p.strikeWindup > 0 && typeof p.drafting === "boolean" && typeof p.action === "string",
     ) &&
     Array.isArray(m.events) &&
     m.events.length < 128
@@ -71,8 +76,10 @@ const formatTime = (s: number | null) =>
 
 export default function Championship() {
   const presentation = useRef(new PresentationBuffer());
+  const prediction = useRef(new GuestPrediction(1));
   const workMeasurements = useRef(new WorkMeasurements());
   const controls = useRef(new InputControls());
+  const playTrace = useRef<{ lastId: number; events: { tick: number; phase: string; phaseTime: number; type: string; slot: number; x: number; z: number }[] }>({ lastId: 0, events: [] });
   const inputSender = useRef(new InputSender()),
     localReceiver = useRef(new InputReceiver()),
     remoteReceiver = useRef(new InputReceiver()),
@@ -130,8 +137,21 @@ export default function Championship() {
   }, []);
   const localSlot = mode === "guest" ? 1 : 0;
   const publishControls = useCallback(() => {
+    const previousInput = input.current;
     input.current = controls.current.value();
     inputSender.current.update(input.current, match.current?.tick ?? 0);
+    if (modeRef.current === "guest") {
+      const visualInput = { ...input.current };
+      if (match.current?.phase === "race") visualInput.move *= -1;
+      prediction.current.updateInput(visualInput, performance.now());
+      const changed = (Object.keys(input.current) as (keyof Input)[]).some(key => input.current[key] !== previousInput[key]);
+      if (changed && connected.current && screenRef.current === "play" && match.current) {
+        network.current?.send("input", {
+          epoch: epoch.current, seq: ++localSeq.current,
+          packet: inputSender.current.packet(match.current.tick), rematch: rematchPending.current,
+        });
+      }
+    }
   }, []);
   useEffect(() => {
     const panel = resultsPanel.current, surface = canvas.current;
@@ -159,6 +179,8 @@ export default function Championship() {
     (characters: [CharacterId, CharacterId], newEpoch: string) => {
       match.current = createMatch(characters, 6827);
       epoch.current = newEpoch;
+      prediction.current.reset(newEpoch);
+      playTrace.current = { lastId: 0, events: [] };
       latestTick.current = -1;
       presentation.current.clear();
       remoteSeq.current = -1;
@@ -193,6 +215,7 @@ export default function Championship() {
     setPeer(null);
     input.current = neutralInput();
     controls.current.clear();
+    prediction.current.disconnect();
     setPage("select");
     setStatus("");
     setError("");
@@ -228,6 +251,8 @@ export default function Championship() {
       accumulator = 0,
       lastUI = 0,
       lastSend = 0,
+      lastUrgentEvent = 0,
+      sentEpoch = "",
       previousCallbackEnd = 0;
     const animate = (now: number) => {
       if (!alive) return;
@@ -270,11 +295,23 @@ export default function Championship() {
           accumulator -= 1 / 60;
         }
       } else accumulator = 0;
+      if (m) {
+        for (const event of m.events) {
+          if (event.id <= playTrace.current.lastId) continue;
+          playTrace.current.lastId = event.id;
+          playTrace.current.events.push({ tick: m.tick, phase: m.phase, phaseTime: m.phaseTime,
+            type: event.type, slot: event.slot, x: event.x, z: event.z });
+        }
+        if (playTrace.current.events.length > 256) playTrace.current.events.splice(0, playTrace.current.events.length - 256);
+      }
       const simulationEnd = performance.now();
+      if (sentEpoch !== epoch.current) { sentEpoch = epoch.current; lastUrgentEvent = 0; }
+      const urgentSnapshot = host && Boolean(m?.events.some(event => event.id > lastUrgentEvent
+        && ["attack", "counter", "evade", "hit", "fight", "transition", "results"].includes(event.type)));
       if (
         net &&
         connected.current &&
-        now - lastSend >= 1000 / (net.sendHz ?? 10)
+        (urgentSnapshot || now - lastSend >= 1000 / (net.sendHz ?? 10))
       ) {
         lastSend = now;
         if (screenRef.current === "lobby") {
@@ -292,6 +329,7 @@ export default function Championship() {
         }
         if (match.current && screenRef.current === "play") {
           if (host) {
+            lastUrgentEvent = match.current.eventSequence;
             net.send("snapshot", {
               epoch: epoch.current,
               match: match.current,
@@ -320,12 +358,21 @@ export default function Championship() {
         }
       }
       const networkEnd = performance.now();
-      const displayedMatch = modeRef.current === "guest"
+      let displayedMatch = modeRef.current === "guest"
           ? (presentation.current.sample(
               now,
               network.current?.transport === "webrtc" ? 50 : 120,
             ) ?? match.current)
           : match.current;
+      if (modeRef.current === "guest") {
+        if (connected.current && displayedMatch) {
+          const visualInput = { ...input.current };
+          if (displayedMatch.phase === "race") visualInput.move *= -1;
+          const predictionNow = performance.now();
+          prediction.current.updateInput(visualInput, predictionNow);
+          displayedMatch = prediction.current.sample(displayedMatch, predictionNow);
+        } else prediction.current.disconnect();
+      }
       const presentationEnd = performance.now();
       renderer.current?.render(
         displayedMatch,
@@ -342,7 +389,7 @@ export default function Championship() {
         now / 1000,
         m?.players.map((p) => p.character),
       );
-      if (now - lastUI > 100) {
+      if (now - lastUI > 50) {
         lastUI = now;
         if (match.current) setView(structuredClone(match.current));
         setReport(renderer.current?.report() ?? null);
@@ -524,6 +571,8 @@ export default function Championship() {
           (data.epoch !== epoch.current && rematchPending.current)
         ) {
           epoch.current = data.epoch;
+          prediction.current.reset(data.epoch);
+          playTrace.current = { lastId: 0, events: [] };
           latestTick.current = -1;
           presentation.current.clear();
           inputSender.current.reset();
@@ -547,6 +596,7 @@ export default function Championship() {
         latestTick.current = data.match.tick;
         match.current = structuredClone(data.match);
         presentation.current.push(data.match, performance.now());
+        prediction.current.observe(data.epoch, data.match, performance.now());
         remoteInput.current = data.input;
         lastSnapshot.current = performance.now();
         setView(structuredClone(data.match));
@@ -627,6 +677,7 @@ export default function Championship() {
   const p = view?.players[localSlot],
     op = view?.players[localSlot === 0 ? 1 : 0],
     character = ROSTER[selected];
+  const racePoints = view && ["transition", "fight", "results"].includes(view.phase) ? scoreMatch(view).race : null;
   const share = async () => {
     try {
       await navigator.clipboard.writeText(
@@ -670,6 +721,7 @@ export default function Championship() {
           }
         : null,
       recording,
+      playTrace: { note: "Bounded observed authoritative events; tick is observation time, not a claim of exact event timestamp. No predicted contacts.", events: playTrace.current.events },
       frames: report,
       session: renderer.current?.sessionMeasurements(),
       work: workMeasurements.current.report(),
@@ -917,11 +969,11 @@ export default function Championship() {
                 <h3>Run the canyon</h3>
                 <ChampionshipGuide event="race" />
                 <p>
-                  You run automatically. Steer around timber barriers. Jump
-                  barrels and hurdles. Spend your burst on a clear stretch.
+                  You run automatically. Follow your rival’s trail to gather speed,
+                  then swing out and pass. Leap the low timber; steer around wagons.
                 </p>
                 <div className="key-line">
-                  ← → steer <kbd>Space</kbd> jump <kbd>K</kbd> burst
+                  ← → steer <kbd>Space</kbd> leap
                 </div>
               </article>
               <article>
@@ -929,12 +981,12 @@ export default function Championship() {
                 <h3>Settle it in the saloon</h3>
                 <ChampionshipGuide event="fight" />
                 <p>
-                  Move into reach, strike, then recover. Hold guard to defend.
-                  Read the rival’s wind-up before using your element. A broken
-                  guard needs time to recover, so move out of reach.
+                  Watch your rival wind up. Evade the strike, then step in and
+                  answer while they recover. Every animal has its own rhythm;
+                  the same two buttons are all you need.
                 </p>
                 <div className="key-line">
-                  <kbd>J</kbd> strike <kbd>K</kbd> element <kbd>L</kbd> guard
+                  ← → move <kbd>J</kbd> strike <kbd>Space</kbd> evade
                 </div>
               </article>
               <article>
@@ -962,7 +1014,7 @@ export default function Championship() {
                 ))}
               </select>
               <span>
-                Same stats. CPU gives you a moment to find your stance.
+                Same rules, same speed. Read the rival, find your moment.
               </span>
             </div>
             <p className="touch-note">
@@ -1014,7 +1066,7 @@ export default function Championship() {
               </div>
             </div>
             <p className="touch-note">
-              Steer ← → · jump Space · strike J · element K · guard L<br />
+              Move ← → · leap / evade Space · strike J<br />
               Touch controls appear in the match. Keep both screens open.
             </p>
             <button
@@ -1045,6 +1097,9 @@ export default function Championship() {
                   {p!.z >= op!.z ? "1ST" : "2ND"}
                   <small> / 2</small>
                 </strong>
+                <span className="rival-gap">
+                  {Math.abs(p!.z - op!.z) < 1 ? "NECK AND NECK" : `${Math.abs(p!.z - op!.z).toFixed(0)}m ${p!.z > op!.z ? "AHEAD" : "TO YOUR RIVAL"}`}
+                </span>
               </div>
               <div className="race-distance">
                 <span>
@@ -1056,6 +1111,7 @@ export default function Championship() {
                       width: `${Math.min(100, (p!.z / COURSE_LENGTH) * 100)}%`,
                     }}
                   />
+                  <span className="rival-progress" style={{ left: `${Math.min(100, (op!.z / COURSE_LENGTH) * 100)}%` }} />
                 </div>
                 <small>
                   {view.raceTime.toFixed(1)}s <b>◆ YOU</b> ◇ RIVAL
@@ -1074,7 +1130,7 @@ export default function Championship() {
                 <div>
                   <i style={{ width: `${view.players[0].hp}%` }} />
                 </div>
-                <small>{Math.ceil(view.players[0].hp)} HP</small>
+                <small>{Math.ceil(view.players[0].hp)} HP · {racePoints?.[0].toFixed(1)} RACE PTS</small>
               </div>
               <div className="fight-clock">
                 <span>THE DUEL</span>
@@ -1087,15 +1143,24 @@ export default function Championship() {
                 <div>
                   <i style={{ width: `${view.players[1].hp}%` }} />
                 </div>
-                <small>{Math.ceil(view.players[1].hp)} HP</small>
+                <small>{Math.ceil(view.players[1].hp)} HP · {racePoints?.[1].toFixed(1)} RACE PTS</small>
               </div>
+            </div>
+          )}
+          {isFight && op!.action === "attack" && (
+            <div className={`duel-cue ${op!.actionTime >= op!.strikeWindup + ATTACKS[op!.character].active ? "opening" : ""}`}>
+              {op!.actionTime < op!.strikeWindup
+                ? "WATCH THE WIND-UP"
+                : op!.actionTime >= op!.strikeWindup + ATTACKS[op!.character].active
+                  ? "THEY’RE RECOVERING"
+                  : "INCOMING"}
             </div>
           )}
           {view.phase === "countdown" && (
             <div className="countdown">
               <span>THE CANYON IS CALLING</span>
               <strong>{Math.max(1, Math.ceil(3 - view.phaseTime))}</strong>
-              <p>Steer · Jump · Burst</p>
+              <p>Follow their trail. Find your pass.</p>
             </div>
           )}
           {view.phase === "transition" && (
@@ -1107,30 +1172,43 @@ export default function Championship() {
                   <span key={i}>
                     {ROSTER[r.character].name}
                     <b>{formatTime(r.finishTime)}</b>
+                    <small>{racePoints?.[i].toFixed(1)} race points</small>
                   </span>
                 ))}
               </div>
-              <p>Same rivals. A different kind of speed.</p>
+              <p>Race points banked. Both rivals enter at full strength.</p>
+              <small>Read the wind-up. Evade. Answer the miss.</small>
             </div>
           )}
           {(isRace || isFight) && (
             <>
               <div className="match-hint">
                 {p!.stun > 0
-                  ? "Recovering…"
+                  ? isRace ? "Shake it off. The chase is still on." : "Hit — find your feet"
                   : isRace
                     ? p!.finishTime !== null
                       ? "Finished — waiting for your rival"
-                      : p!.boost > 0
-                        ? "BURST!"
-                        : "Read the road. Find your line."
-                    : p!.guardBroken
-                      ? "Guard broken — make some space"
-                      : p!.action === "guard"
-                        ? "GUARD"
-                        : p!.cooldown > 0
-                          ? `Element ready in ${p!.cooldown.toFixed(1)}s`
-                          : `${ROSTER[p!.character].special} ready`}
+                      : Math.abs(p!.x) > RACE.shoulderStart
+                        ? "Rough shoulder — steer onto the firm trail"
+                      : p!.draft >= .8
+                        ? "SLIPSTREAM — swing out and pass!"
+                        : p!.drafting
+                          ? "Hold their trail. Build your speed."
+                          : p!.z < op!.z
+                            ? "Follow your rival’s trail to catch up"
+                            : "Keep your line. They’re coming for you."
+                    : p!.counterWindow > 0
+                      ? "YOUR OPENING — strike!"
+                      : p!.action === "attack"
+                        ? "Committed — recover, then move"
+                        : p!.action === "evade"
+                          ? "EVADE"
+                          : "Read the wind-up. Make them miss."}
+                {isRace && p!.finishTime === null && (
+                  <span className="draft-meter" aria-label={`Slipstream ${Math.round(p!.draft * 100)} percent`}>
+                    <i style={{ width: `${p!.draft * 100}%` }} />
+                  </span>
+                )}
               </div>
               <div className="touch-controls">
                 <div className="movement">
@@ -1144,40 +1222,22 @@ export default function Championship() {
                 <div className="action-controls">
                   {isFight && (
                     <button
-                      className={`control guard ${p!.guardBroken ? "cooling" : ""}`}
+                      className={`control evade ${p!.dodgeCooldown > 0 ? "cooling" : ""}`}
                       {...press("jump", true)}
-                      aria-label="Jump"
+                      aria-label="Evade"
                     >
-                      <b>↑</b>
-                      <span>JUMP</span>
-                    </button>
-                  )}
-                  {isFight && (
-                    <button
-                      className="control guard"
-                      {...press("guard", true)}
-                      aria-label="Guard"
-                    >
-                      <b>◇</b>
-                      <span>{p!.guardBroken ? "RECOVER" : "GUARD"}</span>
+                      <b>↶</b>
+                      <span>EVADE</span>
+                      {p!.dodgeCooldown > 0 && <small>{p!.dodgeCooldown.toFixed(1)}</small>}
                     </button>
                   )}
                   <button
-                    className="control"
+                    className={`control ${isFight ? "strike" : "leap"}`}
                     {...press(isRace ? "jump" : "attack", true)}
-                    aria-label={isRace ? "Jump" : "Strike"}
+                    aria-label={isRace ? "Leap" : "Strike"}
                   >
-                    <b>{isRace ? "↑" : "✦"}</b>
-                    <span>{isRace ? "JUMP" : "STRIKE"}</span>
-                  </button>
-                  <button
-                    className={`control element ${p!.cooldown > 0 ? "cooling" : ""}`}
-                    {...press("special", true)}
-                    aria-label={isRace ? "Burst" : "Element"}
-                  >
-                    <b>{ROSTER[p!.character].symbol}</b>
-                    <span>{isRace ? "BURST" : "ELEMENT"}</span>
-                    {p!.cooldown > 0 && <small>{Math.ceil(p!.cooldown)}</small>}
+                    <b>{isRace ? "↑" : ROSTER[p!.character].symbol}</b>
+                    <span>{isRace ? "LEAP" : "STRIKE"}</span>
                   </button>
                 </div>
               </div>

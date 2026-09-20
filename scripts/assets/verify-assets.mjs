@@ -9,11 +9,15 @@ import { AnimationMixer, Box3, Vector3, LoopOnce } from 'three';
 // ImageBitmap is a geometry-check-only stub. Actual maps are inspected in Blender/browser renders.
 globalThis.self=globalThis;globalThis.createImageBitmap=async()=>({width:256,height:256,close(){}});
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const candidate=process.argv.includes('--candidate');
+const revision2=candidate || await fs.stat(path.join(root,'public/assets/western/roster-v2.json')).then(()=>true,()=>false);
 const clips=['race_idle','run','jump','land','stumble','transform','fight_idle','fight_move','attack','special','guard','hit','defeat','celebrate'];
+if(revision2)clips.push('evade');
 const results=[];
 for(const species of ['lion','wolf','unicorn']) {
- const file=path.join(root,'public/assets/western',species+'.glb');
+ const file=path.join(root,candidate?'assets/source/western/revision2/candidate':'public/assets/western',species+'.glb');
  const bytes=await fs.readFile(file);
+ if(revision2){const manifest=JSON.parse(await fs.readFile(path.join(root,'assets/source/western/revision2',`${species}-race-manifest.json`),'utf8'));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),manifest.runtimeSha256);}
  assert(bytes.readUInt32LE(0)===0x46546c67 && bytes.readUInt32LE(4)===2,'GLB 2 header');
  const json=JSON.parse(bytes.subarray(20,20+bytes.readUInt32LE(12)).toString());
  if(process.argv.includes('--negative-control'))json.animations=json.animations.filter(a=>a.name!=='attack');
@@ -67,6 +71,6 @@ for(const species of ['lion','wolf','unicorn']) {
  assert(Math.abs(raisedPawPivot[1]-2.5)<.001,`${species}: raised cup handle pivot at 2.50 m`);raised.stop();
  results.push({species,raisedPawPivot,fightStanceVelocity:fightStanceVelocity.toArray().map(x=>+x.toFixed(6)),stanceVelocity:stanceVelocity.toArray().map(x=>+x.toFixed(6)),contactPivot,bytes:bytes.length,triangles,primitives,bones:json.skins[0].joints.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),restBounds,motions});
 }
-await fs.writeFile(path.join(root,'assets/source/western/qa/structure-report.json'),JSON.stringify({generated:new Date().toISOString(),tool:'Three.js GLTFLoader + skinned vertices; 25 evaluations per clip',results},null,2)+'\n');
-console.log(results.map(r=>`${r.species}: ${r.triangles} triangles, ${r.primitives} primitives, ${r.bytes} bytes, 14 animated clips`).join('\n'));
+await fs.writeFile(path.join(root,revision2?'assets/source/western/revision2/race-runtime-inspection.json':'assets/source/western/qa/structure-report.json'),JSON.stringify({generated:new Date().toISOString(),tool:'Three.js GLTFLoader + skinned vertices; 25 evaluations per clip',results},null,2)+'\n');
+console.log(results.map(r=>`${r.species}: ${r.triangles} triangles, ${r.primitives} primitives, ${r.bytes} bytes, ${clips.length} animated clips`).join('\n'));
 console.log('ASSET_STRUCTURE_OK');

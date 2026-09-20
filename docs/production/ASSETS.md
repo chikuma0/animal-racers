@@ -1,5 +1,66 @@
 # Character asset production
 
+## Revision2 roster — canonical integration for gameplay review
+
+Six coordinated, editable animated animals now have rebuilt orbital/skull/muzzle surfaces, recessed almond eyes, species ears, revised coat regions, shaped mane/cheek/tail fur and fitted western collars. The continuous body skins and proven articulated rigs are retained with species mass corrections. Lion has a broader feline whisker field and overlapping tapered crown/cheek/chest fur; Wolf has a longer muzzle, pointed triangular ears and a connected cheek-fur field; Unicorn has a continuous long equine muzzle, surface-following nostrils/lip seam and a spiral horn. The upright ready stance, committed species strike and evade are newly authored.
+
+**This is a material improvement over the immutable f600be2 control, not cinematic or owner acceptance.** The mane/coat still have a simplified sculpted appearance, brows/eyes have limited facial performance, and raised shoulders remain stylized. Parent reviewed all six current material proofs and all nine ordered runtime strike pairings at both1.75m and1.85m, and approved exact-byte canonical promotion for integrated gameplay review. Physical iPhone verification and full cinematic acceptance remain required. Reviewed files are retained under `assets/source/western/revision2/candidate/`; `public/assets/western/roster-v2.json` and `revision2/canonical-integration.json` record the twelve promoted source/export hashes.
+
+| Character | Race triangles | Upright triangles | Material primitives | Race / upright GLB bytes |
+|---|---:|---:|---:|---:|
+| Fire Lion | 24,351 | 28,871 | 7 / 7 | 1,620,884 / 1,690,132 |
+| Water Wolf | 17,551 | 22,066 | 8 / 8 | 1,361,220 / 1,422,932 |
+| Rainbow Unicorn | 17,783 | 20,641 | 8 / 8 | 1,359,136 / 1,347,872 |
+
+The six canonical paths retain the existing names: `assets/source/western/{lion,wolf,unicorn}.blend`, `{lion,wolf,unicorn}-upright.blend`, and matching `public/assets/western/*.glb`. Each source contains named editable meshes, source colors/UVs, embedded authored short-fur normal data, the deformation skeleton, and real actions/NLA tracks. The head is a separate editable skinned surface over the continuous neck; this is not a claim of one welded whole-animal topology. Each runtime file is one batched skinned mesh. Race uses 22 bones and two corrective morphs; upright uses the existing 25-bone fixed-length hierarchy. No rig or deformation budget was increased.
+
+### Current recipe and verification
+
+Use Blender4.5.9 with Python execution disabled for loaded files. The current recipe is `scripts/assets/rebuild_roster_v2.py`; older generators below are historical recipes and do not reproduce Revision2.
+
+```sh
+blender --background --factory-startup --disable-autoexec --python-exit-code 1 -t 2 --python scripts/assets/rebuild_roster_v2.py -- build all all
+node scripts/assets/verify-assets.mjs --candidate
+node scripts/assets/verify-upright.mjs --candidate
+blender --background --factory-startup --disable-autoexec --python-exit-code 1 -t 2 --python scripts/assets/rebuild_roster_v2.py -- reproduce
+blender --background --factory-startup --disable-autoexec --python-exit-code 1 -t 2 --python scripts/assets/rebuild_roster_v2.py -- inspect all all
+node scripts/assets/verify-roster-v2.mjs --source-only
+```
+
+`build` writes the isolated candidate folder. `reproduce` performs a fresh isolated six-file construction and compares exact GLB bytes plus editable mesh/topology/weights/colors/UV/morph/rig/action semantics; it does not replace reviewed source files. Blender binary serialization metadata itself is not deterministic. The explicit local `promote` command copies the reviewed sources/GLBs to canonical paths and records their hashes; it performs no network publication. After integration, run both production asset oracles and `node scripts/assets/verify-roster-v2.mjs --canonical`.
+
+The baseline is copied from commit `f600be2`, with all12 source/export hashes in `revision2/baseline.json`. Original textures, geometry and actions were authored for this commission. No downloaded Wolf/Mast/LazyGraph/Sketchfab geometry, source-study head, motion pack, or third-party texture is included in these six outputs. The owner may retain, edit and distribute them with the game; this adds no repository-wide public license. Historical licensed studies retain their own original source/license records and remain unintegrated.
+
+### Revision2 animation contract
+
+Metres, glTF+Y up/+Z forward, in-place motion. Runtime supplies world movement, evade displacement, jump height and facing. The race gallop remains native8m/s; the upright shuffle remains native3.6m/s, so use `abs(worldSpeed)/3.6` for species speeds3.4/4.2/3.6 and reverse for backward motion. Cup paw pivots remain `(±.37,2.50,.43)` with the existing .35s smoothstep lift; runtime cup attachment/platform offset remain separate.
+
+| Species | Attack windup / active / recovery | Gameplay total | Evade gameplay duration |
+|---|---|---:|---:|
+| Lion | .68 / .14 / .82s | 1.64s | .40s |
+| Wolf | .55 / .12 / .82s | 1.49s | .38s |
+| Unicorn | .60 / .14 / .76s | 1.50s | .42s |
+
+Clip names are `attack` and `evade`. The strike visibly withdraws the paw/hoof, coils the torso and shoulders, extends into contact and recovers; the native sampled clip reaches extension by the active boundary. Successful-evade counter windup is .24s, and the renderer must retime only the authored startup segment; active/recovery semantics stay fixed. Sources sample at30fps, so clip endpoints differ slightly from gameplay durations. Use exported durations and the authoritative timing segments. The `evade` has a smooth crouch with planted feet and no root translation; simulation owns its travel and invulnerability.
+
+The race files contain15 named clips (all14 legacy names plus `evade`); upright files contain12 (`transform`, `fight_idle`, `fight_move`, `attack`, `special`, `guard`, `hit`, `defeat`, `celebrate`, `jump`, `land`, `evade`). Runtime uses the quadruped form for countdown/race, and the dedicated upright form for menu/transition/fight/results. `special`, `guard`, and upright jump/land remain compatibility clips even though Revision2 fighting exposes only Strike/Evade. **The quadruped file's unused transform/combat corrective poses retain the older torso crease and are compatibility/bounds coverage, not accepted upright artwork.** The separate upright assets are required for the production scene cut.
+
+Measured conservative torso-skin bounds across the entire gallop: widths Lion1.396m, Wolf1.101m, Unicorn1.189m; forward span1.761m. These exclude face and tail and support the current3.0m longitudinal/1.5m lateral queue spacing. Current active upright face/nose/jaw forward maxima are recorded independently in `*-source-inspection.json`; do not derive combat collision from total fur/tail bounds.
+
+### Current visual and source evidence
+
+`revision2/candidate-handoff.json` gives exact source/GLB hashes and uniquely named current material images under `revision2/qa/final-review/`. The six `qa/{species}/{race,upright}/` directories contain matched front/side/three-quarter/full-body views, actual CPU Cycles material proofs,81 complete matched animation movies and1,311 paired15fps frames in contact sheets. Each clip has an MP4 and an every-frame JPG; `complete-matched-cycles.mp4` contains the complete ordered sequence, and `index.html` labels the clips.
+
+Motion compares immutable baseline on the left with candidate on the right. Baseline clips are uniformly time-normalized to each candidate duration for geometry comparison, with original duration retained in the sample record. Because the baseline had no evade, its `hit` pose is explicitly labeled as a different geometric control. Workbench motion does not certify material appearance; the matched CPU Cycles stills use the real material graphs. None of these are normal-control gameplay recordings.
+
+`revision2/REVIEW.md` records the four implementation/review passes, concrete repaired defects and remaining limitations. After decoded-frame/hash verification, transient motion PNG directories were removed; all complete compressed movies and every-frame comparison sheets remain. Regenerate transient frames with `motion all all` before rerunning `package all all`.
+
+The current oracles independently evaluate actual exported skinned geometry, exact clip sets, budgets, normalized weights, fixed upright limb lengths, planted feet, native gait speeds, cup lift and measurable strike anticipation. Negative controls remove the required attack name and distort a real arm bone, and both must fail. `verify-roster-v2.mjs` additionally verifies immutable controls, fresh reconstruction, current source/evidence hashes and decoded movie frame counts. Structural validity is never used to pass the cinematic gate.
+
+Historical oracle receipts below certify their recorded commits/inputs only. They must not be read as proof that today's promoted canonical files still equal earlier frozen production hashes. `revision2/inputs/` preserves the f600be2 control bytes; previous study inputs and QA remain intact.
+
+## Historical pipeline and review record (before Revision2)
+
 **Current state: authored production study and integration candidate; visual acceptance remains open.** The three characters are actual rigged, deforming 3D assets. Structural tests and studio renders do not establish the requested premium cinematic gameplay quality, phone performance, or owner acceptance.
 
 ## Retained deliverables

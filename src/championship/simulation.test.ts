@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ATTACKS, COURSE_LENGTH, COUNTDOWN_DURATION, FIGHT_DURATION, FIXED_DT, OBSTACLES,
+  ATTACKS, DODGE, RACE, FIGHT_SPEED, FIGHT_BODY_GAP, COUNTER_WINDUP, COURSE_LENGTH, COUNTDOWN_DURATION, FIGHT_DURATION, FIXED_DT, OBSTACLES,
+  courseCenter, courseSlope, courseCurvature, COURSE_MAX_SECOND_DERIVATIVE, strikePhase, strikeTiming,
   RACE_DURATION, RUN_SPEED, TRANSITION_DURATION, createMatch, cpuInput, forfeitMatch, neutralInput,
   scoreMatch, stepMatch, type CharacterId, type Input, type Match, type Slot,
 } from './simulation';
@@ -38,20 +39,21 @@ function fullCpu(characters: [CharacterId, CharacterId], seed: number) {
 
 describe('bounded, normalized championship scoring', () => {
   it('lets a narrow race winner lose the championship after a decisive fight', () => {
-    const result = scoreMatch(scored([69, 70], [0, 80]));
-    expect(result.race).toEqual([26.6, 23.4]);
+    const result = scoreMatch(scored([69.85, 70], [0, 80]));
+    expect(result.race).toEqual([25.9, 24.1]);
     expect(result.fight).toEqual([5, 45]);
-    expect(result.total).toEqual([31.6, 68.4]);
+    expect(result.total).toEqual([30.9, 69.1]);
     expect(result.winner).toBe(1);
   });
   it('preserves a strong race win against a close fight loss', () => {
-    const result = scoreMatch(scored([64, 76], [0, 10]));
-    expect(result.race).toEqual([43.8, 6.2]);
-    expect(result.fight).toEqual([22.5, 27.5]);
+    const result = scoreMatch(scored([69, 70.5], [0, 26]));
+    expect(result.race).toEqual([34.4, 15.6]);
+    expect(result.fight).toEqual([18.5, 31.5]);
+    expect(result.total).toEqual([52.9, 47.1]);
     expect(result.winner).toBe(0);
   });
   it('has an exact tie when equal normalized split wins cancel', () => {
-    const result = scoreMatch(scored([68, 76], [0, 50]));
+    const result = scoreMatch(scored([68, 70], [0, 50]));
     expect(result.total).toEqual([50, 50]); expect(result.winner).toBeNull();
   });
   it('gives equal fight points for double knockout, preserving the race result', () => {
@@ -75,7 +77,7 @@ describe('bounded, normalized championship scoring', () => {
     const near = scored([94.9, null], [100, 100], [0, 499]);
     expect(scoreMatch(near).race[0]).toBeGreaterThan(25);
     near.players[1].z = 0;
-    expect(scoreMatch(near).race[0]).toBeLessThan(26);
+    expect(scoreMatch(near).race[0]).toBeLessThan(27);
   });
   it('never rewards worsening your finish time, progress or final health', () => {
     let previous = -Infinity;
@@ -120,357 +122,333 @@ describe('bounded, normalized championship scoring', () => {
   });
 });
 
-describe('race and phase rules', () => {
-  it('uses exact fixed ticks, seconds and a bounded countdown', () => {
-    const match = createMatch(['lion', 'unicorn']);
-    ticks(match, 179); expect(match.phaseTime).toBeCloseTo(179 / 60); expect(match.phase).toBe('countdown');
-    ticks(match, 1); expect(match.phase).toBe('race'); expect(match.phaseTime).toBe(0);
-    for (const invalid of [0, -1, 1 / 30, NaN, Infinity]) expect(() => stepMatch(match, idle(), invalid)).toThrow('1/60');
-    ticks(match, 60); expect(match.raceTime).toBe(1);
-    expect(match.players[0].z).toBeCloseTo(1.75, 8); expect(match.players[0].speed).toBeCloseTo(3.5, 8);
-  });
-  it('requires genuine obstacle clearance and only hits each crossed obstacle once', () => {
-    for (const [y, hit] of [[0, true], [1.1, false]] as const) {
-      const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-      Object.assign(match.players[0], { z: 44, x: 0, speed: RUN_SPEED, y });
-      ticks(match, 10);
-      expect(match.players[0].hitObstacles.includes(0)).toBe(hit);
-      expect(match.events.filter(e => e.type === 'obstacle' && e.slot === 0)).toHaveLength(hit ? 1 : 0);
+const species: CharacterId[] = ['lion', 'wolf', 'unicorn'];
+function race(z = 0): Match {
+  const match = createMatch(['lion', 'wolf']); match.phase = 'race';
+  match.players.forEach((p, i) => { p.z = z; p.x = i === 0 ? 0 : 3.6; p.speed = RUN_SPEED; p.action = 'run'; });
+  return match;
+}
+function steer(target: number, x: number): number { return Math.max(-1, Math.min(1, (target - x) * 2)); }
+function punish(first: CharacterId, second: CharacterId, attacker: Slot, reaction: number, gap: number) {
+  const match = fight([first, second]), defender: Slot = attacker === 0 ? 1 : 0;
+  match.players[0].x = -gap / 2; match.players[1].x = gap / 2;
+  let dodged = false, struck = false, last = 0, hitDuringRecovery = false, firstHitTime = 0;
+  for (let frame = 0; frame < 240; frame++) {
+    const input = idle(), a = match.players[attacker], d = match.players[defender];
+    if (frame === 0) input[attacker].attack = true;
+    if (!dodged && match.fightTime >= reaction) { input[defender].jump = true; dodged = true; }
+    if (dodged && !input[defender].jump && d.action !== 'evade') {
+      if (Math.abs(a.x - d.x) > 1.82) input[defender].move = Math.sign(a.x - d.x);
+      else if (!struck) { input[defender].attack = true; struck = true; }
     }
-    const arch = createMatch(['lion', 'wolf']); arch.phase = 'race';
-    Object.assign(arch.players[0], { z: 137, x: 0, speed: RUN_SPEED, y: 2 }); ticks(arch, 8);
-    expect(arch.players[0].hitObstacles).toContain(3);
+    const oldPhase = strikePhase(a);
+    stepMatch(match, input, FIXED_DT);
+    for (const e of match.events.filter(e => e.id > last)) {
+      if (e.type === 'hit' && e.slot === attacker) { hitDuringRecovery = oldPhase === 'recovery'; firstHitTime = match.fightTime; }
+      last = e.id;
+    }
+    if (a.hp < 100) break;
+  }
+  return { match, hitDuringRecovery, firstHitTime, attacker, defender };
+}
+function repeatedPressure(first: CharacterId, second: CharacterId, attacker: Slot, reaction: number, gap: number, wall: boolean) {
+  const match = fight([first, second]), defender: Slot = attacker === 0 ? 1 : 0;
+  match.players[0].x = -gap / 2; match.players[1].x = gap / 2;
+  if (wall) {
+    match.players[defender].x = attacker === 0 ? 4.4 : -4.4;
+    match.players[attacker].x = match.players[defender].x + (attacker === 0 ? -gap : gap);
+  }
+  let seenStrike = 0, successes = 0, lastEvent = 0;
+  for (let frame = 0; frame < 1800 && match.phase === 'fight'; frame++) {
+    const input = idle(), a = match.players[attacker], d = match.players[defender];
+    const distance = Math.abs(a.x - d.x), toward = Math.sign(d.x - a.x);
+    if (a.action !== 'attack' && a.action !== 'evade' && a.stun === 0) {
+      input[attacker].move = distance > 1.81 ? toward : 0;
+      input[attacker].attack = distance <= 1.83;
+    }
+    if (d.action !== 'attack' && d.action !== 'evade' && d.stun === 0) {
+      if (a.strikeId !== seenStrike && strikePhase(a) === 'windup' && a.actionTime >= reaction && d.dodgeCooldown === 0) {
+        input[defender].jump = true; seenStrike = a.strikeId;
+      } else if (d.counterWindow > 0) {
+        input[defender].move = distance > 1.81 ? -toward : 0; input[defender].attack = distance <= 1.83;
+      }
+    }
+    stepMatch(match, input, FIXED_DT);
+    expect(match.players.every(p => Math.abs(p.x) <= 4.4)).toBe(true);
+    expect(Math.abs(a.x - d.x)).toBeGreaterThanOrEqual(FIGHT_BODY_GAP - 1e-8);
+    for (const e of match.events.filter(e => e.id > lastEvent)) {
+      if (e.type === 'evade-success' && e.slot === defender) successes++;
+      lastEvent = e.id;
+    }
+  }
+  return { match, defender, successes };
+}
+
+describe('steer, leap and visible race rivalry', () => {
+  it('keeps fixed seconds, bounded phases and rejects other timesteps', () => {
+    const m = createMatch(['lion', 'unicorn']); ticks(m, 179); expect(m.phase).toBe('countdown');
+    ticks(m, 1); expect(m.phase).toBe('race'); expect(m.phaseTime).toBe(0);
+    for (const dt of [0, -1, 1 / 30, NaN, Infinity]) expect(() => stepMatch(m, idle(), dt)).toThrow('1/60');
+    ticks(m, 60); expect(m.raceTime).toBe(1); expect(m.players[0].speed).toBeCloseTo(6.5, 8);
+    expect(m.players[0].z).toBeCloseTo(3.25, 8);
   });
-  it('recovers from hazards and prevents held-jump auto-hopping', () => {
-    const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-    Object.assign(match.players[0], { z: 44, x: 0, speed: RUN_SPEED }); ticks(match, 8);
-    expect(match.players[0].stun).toBeGreaterThan(0);
-    match.players[0].x = 4.3; ticks(match, 180);
-    expect(match.players[0].speed).toBeCloseTo(RUN_SPEED); expect(match.players[0].stun).toBe(0);
-    const input = idle(); input[0].jump = true; ticks(match, 150, input);
-    expect(match.events.filter(e => e.type === 'jump' && e.slot === 0)).toHaveLength(1);
-    expect(match.players[0].y).toBe(0);
+  it('uses one differentiable course for scenery and actual outward steering influence', () => {
+    for (const z of [30, 100, 210, 350, 460]) {
+      expect((courseCenter(z + .01) - courseCenter(z - .01)) / .02).toBeCloseTo(courseSlope(z), 7);
+      expect(Math.abs((courseSlope(z + .01) - courseSlope(z - .01)) / .02)).toBeLessThanOrEqual(COURSE_MAX_SECOND_DERIVATIVE);
+    }
+    const m = race(100), x = m.players[0].x; ticks(m, 1);
+    expect(Math.sign(m.players[0].x - x)).toBe(-Math.sign(courseCurvature(100)));
   });
-  it('interpolates finish time and enters combat with equal fresh stats', () => {
-    const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-    match.players.forEach(player => Object.assign(player, { z: COURSE_LENGTH - .1, speed: RUN_SPEED, hp: 40, energy: 0 }));
-    ticks(match, 1); expect(match.phase).toBe('transition');
-    expect(match.players[0].finishTime).toBeGreaterThan(0); expect(match.players[0].finishTime).toBeLessThan(FIXED_DT);
-    ticks(match, TRANSITION_DURATION * 60); expect(match.phase).toBe('fight');
-    for (const player of match.players) {
-      expect(player.hp).toBe(100); expect(player.energy).toBe(100); expect(player.guard).toBe(100); expect(player.z).toBe(0);
+  it('rewards a clean line over coasting or wall-riding, and promptly recovers from the rough shoulder', () => {
+    const outcomes = ['line', 'neutral', 'edge'].map(policy => {
+      const m = race(25); Object.assign(m.players[1], { raceStatus: 'finished', finishTime: 0, z: COURSE_LENGTH });
+      for (let frame = 0; frame < 480; frame++) {
+        const input = idle(), p = m.players[0];
+        input[0].move = policy === 'line' ? steer(0, p.x) : policy === 'edge' ? 1 : 0;
+        input[0].jump = p.z > 78.5 && p.z < 79;
+        stepMatch(m, input, FIXED_DT);
+      }
+      expect(m.players[0].hitObstacles).toEqual([]); return m;
+    });
+    expect(outcomes[0].players[0].z - outcomes[1].players[0].z).toBeGreaterThan(3);
+    expect(outcomes[0].players[0].z - outcomes[2].players[0].z).toBeGreaterThan(6);
+    expect(outcomes[2].players[0].speed).toBeCloseTo(RUN_SPEED * RACE.shoulderSpeed, 8);
+    const edge = outcomes[2], input = idle(); input[0].move = -1; ticks(edge, 20, input);
+    expect(edge.players[0].x).toBeLessThan(RACE.shoulderStart); expect(edge.players[0].speed).toBe(RUN_SPEED);
+    expect(edge.players[0].stun).toBe(0);
+  });
+  it('recovers a missed obstacle within .8s and loses under1.6m against a legal leap', () => {
+    const missed = race(78), cleared = race(78); let hitAt = -1, recoveredAt = -1;
+    for (let frame = 0; frame < 180; frame++) {
+      const a = idle(), b = idle(); a[0].move = steer(0, missed.players[0].x); b[0].move = steer(0, cleared.players[0].x);
+      b[0].jump = frame === 0; stepMatch(missed, a, FIXED_DT); stepMatch(cleared, b, FIXED_DT);
+      if (hitAt < 0 && missed.players[0].hitObstacles.length) hitAt = frame;
+      if (hitAt >= 0 && recoveredAt < 0 && missed.players[0].speed >= RUN_SPEED - 1e-8) recoveredAt = frame;
+    }
+    expect(missed.players[0].hitObstacles).toEqual([0]); expect(cleared.players[0].hitObstacles).toEqual([]);
+    expect((recoveredAt - hitAt) / 60).toBeLessThan(.8);
+    expect(cleared.players[0].z - missed.players[0].z).toBeGreaterThan(.5);
+    expect(cleared.players[0].z - missed.players[0].z).toBeLessThan(1.6);
+  });
+  it('never adjudicates a projected obstacle crossing that queued-body correction removes', () => {
+    const m = race(81.845); Object.assign(m.players[0], { x: 0, speed: 9.8, draft: 1 });
+    Object.assign(m.players[1], { x: 0, z: 84.845, speed: 8 });
+    ticks(m, 1); expect(m.players[0].z).toBeLessThan(82); expect(m.players[0].hitObstacles).toEqual([]);
+    ticks(m, 1); expect(m.players[0].hitObstacles).toEqual([0]);
+  });
+  it('uses interpolated lateral position at a hazard crossing', () => {
+    const m = race(81.995); m.players[0].x = 2.50; m.players[1].z += 20;
+    const input = idle(); input[0].move = 1; ticks(m, 1, input);
+    expect(m.players[0].x).toBeGreaterThan(2.52); expect(m.players[0].hitObstacles).toEqual([0]);
+  });
+  it('charges behind a rival, queues without passing through, then passes by steering out in either role', () => {
+    for (const slot of [0, 1] as const) {
+      const m = race(100), rival: Slot = slot === 0 ? 1 : 0;
+      Object.assign(m.players[slot], { x: 0, z: 100 }); Object.assign(m.players[rival], { x: 0, z: 107 });
+      let swing = false, ready = false, passed = false;
+      for (let frame = 0; frame < 390; frame++) {
+        const p = m.players[slot], o = m.players[rival], input = idle();
+        if (p.draft >= .99) ready = true;
+        if (ready && o.z - p.z < 3.6) swing = true;
+        input[slot].move = steer(swing ? 2 : 0, p.x); input[rival].move = steer(0, o.x);
+        stepMatch(m, input, FIXED_DT);
+        expect(p.speed).toBeLessThanOrEqual(RUN_SPEED + RACE.draftSpeed + 1e-9);
+        if (Math.abs(p.x - o.x) < RACE.bodyWidth - 1e-9) expect(Math.abs(p.z - o.z)).toBeGreaterThanOrEqual(RACE.bodyGap - 1e-8);
+        if (p.z > o.z) { passed = true; break; }
+      }
+      expect(ready).toBe(true); expect(swing).toBe(true); expect(passed).toBe(true);
+      expect(m.events.some(e => e.type === 'pass' && e.slot === slot)).toBe(true);
     }
   });
-  it('forces race DNF at the deadline and preserves progress through arena reset', () => {
-    const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-    match.raceTicks = RACE_DURATION * 60 - 1;
-    Object.assign(match.players[0], { z: 400, speed: RUN_SPEED }); Object.assign(match.players[1], { z: 200, speed: RUN_SPEED });
-    ticks(match, 1); expect(match.phase).toBe('transition');
-    const result = scoreMatch(match); ticks(match, TRANSITION_DURATION * 60);
-    expect(match.players.map(p => p.raceStatus)).toEqual(['dnf', 'dnf']);
-    expect(scoreMatch(match).race).toEqual(result.race);
+  it('has no hidden draft bonus out of position and ignores the retired burst button', () => {
+    const a = race(100), b = structuredClone(a);
+    Object.assign(a.players[1], { z: 107 }); Object.assign(b.players[1], { z: 107 });
+    for (let frame = 0; frame < 120; frame++) { const input = idle(); input[0].special = true; stepMatch(a, input, FIXED_DT); ticks(b, 1); }
+    expect(a.players[0].draft).toBe(0); expect(a.players[0].speed).toBe(RUN_SPEED);
+    expect(a.players[0].z).toBe(b.players[0].z); expect(a.players[0].energy).toBe(100);
   });
-  it('lets an early airborne finisher land without changing recorded time or progress', () => {
-    const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-    Object.assign(match.players[0], { z: COURSE_LENGTH - .1, speed: RUN_SPEED, y: 1.1, vy: 1 });
-    ticks(match, 1);
-    const player = match.players[0], finishedAt = player.finishTime;
-    expect(player.raceStatus).toBe('finished'); expect(player.y).toBeGreaterThan(0);
-    ticks(match, 90);
-    expect(match.phase).toBe('race'); expect(player.y).toBe(0); expect(player.vy).toBe(0);
-    expect(player.action).toBe('race_idle'); expect(player.finishTime).toBe(finishedAt);
-    expect(player.z).toBe(COURSE_LENGTH); expect(player.raceProgress).toBe(COURSE_LENGTH);
+  it('never announces a pass over a finished rival or a projected overtake beyond the finish, in either role', () => {
+    for (const slot of [0, 1] as const) for (const finished of [false, true]) {
+      const m = race(499.93), other: Slot = slot === 0 ? 1 : 0;
+      Object.assign(m.players[slot], { x: -2, speed: 9.8, draft: 1 });
+      Object.assign(m.players[other], { x: 2, z: finished ? COURSE_LENGTH : 499.95, speed: finished ? 0 : RUN_SPEED,
+        raceStatus: finished ? 'finished' : 'running', finishTime: finished ? 59 : null });
+      m.raceTicks = 60 * 60; ticks(m, 1);
+      expect(m.players.every(p => p.raceStatus === 'finished')).toBe(true);
+      expect(m.events.some(e => e.type === 'pass')).toBe(false);
+      expect(m.players[slot].finishTime).toBeGreaterThan(m.players[other].finishTime ?? Infinity);
+      expect(m.players.map(p => p.z)).toEqual([COURSE_LENGTH, COURSE_LENGTH]);
+    }
   });
-  it('bounds lateral motion and sanitizes hostile numerical input', () => {
-    const match = createMatch(['wolf', 'unicorn']); match.phase = 'race';
-    const input = idle(); input[0].move = 10000; input[1].move = NaN; ticks(match, 180, input);
-    expect(match.players[0].x).toBe(4.3); expect(Number.isFinite(match.players[1].x)).toBe(true);
-    expect(OBSTACLES.every(o => o.z > 30 && o.z < COURSE_LENGTH)).toBe(true);
+  it('preserves real overtakes before the line, including a tick where both racers finish, in either role', () => {
+    for (const slot of [0, 1] as const) for (const z of [100, 499.89]) {
+      const m = race(z), other: Slot = slot === 0 ? 1 : 0;
+      Object.assign(m.players[slot], { x: -2, speed: 9.8, draft: 1 });
+      Object.assign(m.players[other], { x: 2, z: z + .01, speed: RUN_SPEED });
+      ticks(m, 1);
+      const passes = m.events.filter(e => e.type === 'pass');
+      expect(passes).toHaveLength(1); expect(passes[0].slot).toBe(slot);
+      expect(passes[0].z).toBeGreaterThan(z + .01); expect(passes[0].z).toBeLessThan(COURSE_LENGTH);
+      if (z > 499) {
+        expect(m.players.every(p => p.raceStatus === 'finished')).toBe(true);
+        expect(m.players[slot].finishTime).toBeLessThan(m.players[other].finishTime ?? -Infinity);
+      } else expect(m.players[slot].z).toBeGreaterThan(m.players[other].z);
+      ticks(m, 1); expect(m.events.filter(e => e.type === 'pass')).toHaveLength(1);
+    }
   });
-  it('requires steering at both course edges while retaining the intended race duration', () => {
-    const match = createMatch(['lion', 'wolf']); match.phase = 'race';
-    const input = idle(); input[0].move = -1; input[1].move = 1;
-    for (let i = 0; i < RACE_DURATION * 60 && match.phase === 'race'; i++) ticks(match, 1, input);
-    expect(match.players[0].hitObstacles).toContain(13);
-    expect(match.players[1].hitObstacles).toContain(12);
-    expect(match.players.every(p => p.raceStatus === 'finished')).toBe(true);
-    expect(match.raceTime).toBeGreaterThan(60); expect(match.raceTime).toBeLessThan(80);
+  it('lets a single-mistake shallow gap enter the rear-quarter trail and pass without body overlap', () => {
+    for (const slot of [0, 1] as const) {
+      const m = race(100), other: Slot = slot === 0 ? 1 : 0;
+      Object.assign(m.players[slot], { x: -2.5, z: 100 }); Object.assign(m.players[other], { x: 0, z: 101 });
+      let entered = false, passed = false;
+      for (let frame = 0; frame < 240; frame++) {
+        const p = m.players[slot], o = m.players[other], input = idle();
+        input[slot].move = steer(-1.6, p.x); input[other].move = steer(0, o.x); stepMatch(m, input, FIXED_DT);
+        entered ||= p.drafting;
+        if (Math.abs(p.z - o.z) < RACE.bodyGap) expect(Math.abs(p.x - o.x)).toBeGreaterThanOrEqual(RACE.bodyWidth - 1e-9);
+        if (p.z > o.z) { passed = true; break; }
+      }
+      expect(entered).toBe(true); expect(passed).toBe(true);
+    }
+  });
+  it('requires steering around wagons and leaping over the full-width timber moment', () => {
+    const wagon = race(234), leap = race(305), input = idle();
+    wagon.players[0].x = -2; input[0].jump = true; ticks(wagon, 12, input);
+    expect(wagon.players[0].hitObstacles).toContain(3);
+    ticks(leap, 35, input); expect(leap.players[0].hitObstacles).not.toContain(4);
+    const missed = race(308); ticks(missed, 15); expect(missed.players[0].hitObstacles).toContain(4);
+    expect(new Set(OBSTACLES.map(o => o.z)).size).toBe(6);
+  });
+  it('settles an airborne finisher, preserves DNF progress and bounds a passive championship', () => {
+    const m = race(499.95); Object.assign(m.players[0], { y: .8, vy: -1 }); m.players[1].z = 460;
+    ticks(m, 1); expect(m.players[0].raceStatus).toBe('finished'); const finish = m.players[0].finishTime;
+    ticks(m, 40); expect(m.players[0].y).toBe(0); expect(m.players[0].finishTime).toBe(finish);
+    const dnf = race(100); dnf.raceTicks = RACE_DURATION * 60 - 1; ticks(dnf, 1);
+    expect(dnf.phase).toBe('transition'); expect(dnf.players[0].raceStatus).toBe('dnf'); const progress = dnf.players[0].raceProgress;
+    ticks(dnf, TRANSITION_DURATION * 60); expect(dnf.players[0].raceProgress).toBe(progress); expect(dnf.players[0].z).toBe(0);
+    ticks(dnf, FIGHT_DURATION * 60); expect(dnf.phase).toBe('results'); const final = JSON.stringify(dnf); ticks(dnf, 60); expect(JSON.stringify(dnf)).toBe(final);
   });
 });
 
-describe('combat contact, defense and recovery', () => {
-  it('telegraphs attacks before contact and cannot hit a distant opponent', () => {
-    const match = fight(); const input = idle(); input[0].attack = true;
-    ticks(match, 10, input); expect(match.players[1].hp).toBe(100);
-    ticks(match, 3, input); expect(match.players[1].hp).toBe(89);
-    ticks(match, 60, input); expect(match.players[1].hp).toBe(89);
-    const far = fight(); far.players[1].x = 4; ticks(far, 60, input);
-    expect(far.players[1].hp).toBe(100);
+describe('move, committed strike and evade', () => {
+  it('shows the whole species windup before damage and holds direction through recovery', () => {
+    for (const character of species) {
+      const m = fight([character, 'lion']), input = idle(); input[0].attack = true;
+      ticks(m, Math.floor(ATTACKS[character].windup * 60), input); expect(m.players[1].hp).toBe(100);
+      ticks(m, 2, input); expect(m.players[1].hp).toBe(100 - ATTACKS[character].damage);
+      expect(m.players[0].facing).toBe(1); expect(strikeTiming(m.players[0]).windup).toBe(ATTACKS[character].windup);
+      expect(ATTACKS[character].windup).toBeGreaterThanOrEqual(.55);
+    }
   });
-  it('resolves simultaneous contact symmetrically, including double knockout', () => {
-    const match = fight(); match.players.forEach(player => { player.hp = 11; });
-    const input = idle(); input.forEach(p => { p.attack = true; }); ticks(match, 14, input);
-    expect(match.players.map(p => p.hp)).toEqual([0, 0]); expect(match.fightEnd).toBe('double-knockout');
-    expect(match.result?.winner).toBeNull(); expect(match.result?.fight).toEqual([25, 25]);
+  it('supports default-away evade, approach and recovery punish in all nine matchups and both roles', () => {
+    for (const first of species) for (const second of species) for (const slot of [0, 1] as const) for (const reaction of [.40, .45, .50]) for (const gap of [1.75, 1.83]) {
+      const r = punish(first, second, slot, reaction, gap), label = `${first}/${second}/${slot}/${reaction}/${gap}`;
+      expect(r.match.players[r.defender].hp, label).toBe(100);
+      expect(r.match.players[r.attacker].hp, label).toBe(100 - ATTACKS[r.match.players[r.defender].character].damage);
+      expect(r.hitDuringRecovery, label).toBe(true);
+      expect(r.match.players[r.defender].strikeWindup).toBe(COUNTER_WINDUP);
+      expect(r.match.players[r.defender].strikeCounter).toBe(true);
+    }
   });
-  it('requires forward and vertical hit volumes', () => {
-    const match = fight(); const player = match.players[0];
-    Object.assign(player, { action: 'attack', actionTime: ATTACKS.attack.windup, facing: -1 }); ticks(match, 1);
-    expect(match.players[1].hp).toBe(100);
-    player.actionTime = ATTACKS.attack.windup; player.facing = 1;
-    Object.assign(match.players[1], { y: 1.5, vy: 0 }); ticks(match, 1);
-    expect(match.players[1].hp).toBe(100);
+  it('never grants a counter for an evade far outside the incoming threat', () => {
+    const m = fight(['lion', 'unicorn']); m.players[0].x = -4; m.players[1].x = 4;
+    const a = idle(); a[0].attack = true; ticks(m, 15, a); a[0].attack = false; a[1].jump = true; ticks(m, 30, a);
+    expect(m.players[1].counterWindow).toBe(0); expect(m.events.some(e => e.type === 'evade-success')).toBe(false);
   });
-  it('uses the approved strike and special reach boundaries in every ordered matchup and role', () => {
-    for (const first of ['lion', 'wolf', 'unicorn'] as const) {
-      for (const second of ['lion', 'wolf', 'unicorn'] as const) {
-        for (const slot of [0, 1] as const) for (const move of ['attack', 'special'] as const) for (const offset of [-.001, .001]) {
-          const match = fight([first, second]), attacker = match.players[slot], defender = match.players[slot === 0 ? 1 : 0];
-          const expectedReach = move === 'attack' ? 1.85 : attacker.character === 'lion' ? 2.10 : attacker.character === 'wolf' ? 2.75 : 1.95;
-          // Lion's existing active lunge advances before the contact check.
-          const gap = expectedReach + offset + (move === 'special' && attacker.character === 'lion' ? 7 * FIXED_DT : 0);
-          match.players[0].x = -gap / 2; match.players[1].x = gap / 2;
-          const attack = move === 'attack' ? ATTACKS.attack : ATTACKS[attacker.character];
-          attacker.action = move; attacker.actionTime = attack.windup;
-          ticks(match, 1);
-          expect(defender.hp, `${first}/${second}/${slot}/${move}/${offset}`).toBe(offset < 0 ? 100 - attack.damage : 100);
-        }
+  it('answers fastest-available repeated strikes with delayed evades and punishes across species, roles, gaps and walls', () => {
+    for (const first of species) for (const second of species) for (const slot of [0, 1] as const)
+      for (const reaction of [.40, .45]) for (const gap of [1.75, 1.83, 2.8]) for (const wall of [false, true]) {
+        const r = repeatedPressure(first, second, slot, reaction, gap, wall), label = `${first}/${second}/${slot}/${reaction}/${gap}/${wall}`;
+        expect(r.match.players[slot].hp, label).toBe(0); expect(r.match.players[r.defender].hp, label).toBeGreaterThan(0);
+        expect(r.successes, label).toBeGreaterThanOrEqual(2);
       }
-    }
   });
-  it('keeps widened bodies inside both arena edges under legal all-matchup pressure', () => {
-    for (const first of ['lion', 'wolf', 'unicorn'] as const) for (const second of ['lion', 'wolf', 'unicorn'] as const) {
-      for (const center of [-3.525, 0, 3.525]) for (const attacker of [0, 1] as const) {
-        const match = fight([first, second]); match.players[0].x += center; match.players[1].x += center;
-        for (let frame = 0; frame < 360 && match.phase === 'fight'; frame++) {
-          const input = idle(), defender = attacker === 0 ? 1 : 0;
-          input[attacker].move = Math.sign(match.players[defender].x - match.players[attacker].x);
-          input[attacker].attack = frame % 42 === 0; input[attacker].special = frame % 211 === 0;
-          input[defender].move = input[attacker].move; input[defender].guard = true;
-          stepMatch(match, input, FIXED_DT);
-          for (const player of match.players) expect(Math.abs(player.x)).toBeLessThanOrEqual(4.4 + 1e-9);
-          expect(Math.abs(match.players[1].x - match.players[0].x)).toBeGreaterThanOrEqual(1.75 - 1e-9);
-        }
+  it('holding evade or the old guard button cannot create permanent defense', () => {
+    for (const key of ['jump', 'guard'] as const) {
+      const m = fight(['lion', 'unicorn']); let last = 0, evades = 0;
+      for (let frame = 0; frame < 900 && m.phase === 'fight'; frame++) {
+        const input = idle(), p = m.players[0], d = m.players[1]; input[1][key] = true;
+        input[0].move = Math.sign(d.x - p.x); input[0].attack = frame % 108 === 0;
+        stepMatch(m, input, FIXED_DT);
+        for (const e of m.events.filter(e => e.id > last)) { if (e.slot === 1 && e.type === 'evade') evades++; last = e.id; }
       }
+      expect(evades).toBe(1); expect(m.players[1].hp).toBeLessThan(50);
     }
   });
-  it('guard reduces damage, consumes a finite meter and can break', () => {
-    const match = fight(); match.players[1].guard = 15;
-    const input = idle(); input[0].attack = true; input[1].guard = true; ticks(match, 14, input);
-    expect(match.players[1].hp).toBe(99); expect(match.players[1].guard).toBe(0);
-    expect(match.events.some(e => e.type === 'guard-break')).toBe(true);
-    expect(match.players[1].stun).toBeLessThanOrEqual(.38);
-    ticks(match, 75); expect(match.players[1].guard).toBeGreaterThan(0);
+  it('maps legacy buttons to the same actions and prevents alias alternation from bypassing held-input edges', () => {
+    const a = fight(), b = fight(), input = idle(), alias = idle(); input[0].attack = true; alias[0].special = true;
+    ticks(a, 40, input); ticks(b, 40, alias); expect(a.players.map(p => p.hp)).toEqual(b.players.map(p => p.hp));
+    expect(a.players[0].strikeId).toBe(b.players[0].strikeId);
+    input[0].special = true; ticks(a, 120, input); expect(a.players[0].strikeId).toBe(1);
+    const dodge = fight(); const held = idle(); held[0].guard = true; ticks(dodge, 1, held); held[0].jump = true; ticks(dodge, 150, held);
+    expect(dodge.events.filter(e => e.type === 'evade')).toHaveLength(1); expect(dodge.players[0].y).toBe(0);
   });
-  it('a broken held guard takes full pressure damage before recovering, then re-arms without another press', () => {
-    const match = fight(); match.players[1].guard = 15;
-    const pressure = idle(); pressure[0].attack = true; pressure[1].guard = true;
-    ticks(match, 14, pressure);
-    const defender = match.players[1];
-    expect(defender.hp).toBe(99); expect(defender.guardBroken).toBe(true);
-    pressure[0].attack = false; pressure[0].move = 1; ticks(match, 28, pressure);
-    pressure[0].attack = true; ticks(match, 14, pressure);
-    expect(defender.hp).toBe(88);
-    expect(defender.guardBroken).toBe(true); expect(defender.action).not.toBe('guard');
-    pressure[0].attack = false; ticks(match, 120, pressure);
-    expect(defender.guardBroken).toBe(false); expect(defender.guard).toBeGreaterThanOrEqual(25);
-    expect(defender.action).toBe('guard');
+  it('gives a missed strike full recovery and buffers only a late deliberate follow-up', () => {
+    const m = fight(['wolf', 'lion']); m.players[0].x = -3; m.players[1].x = 3;
+    const input = idle(); input[0].attack = true; ticks(m, 1, input); input[0].attack = false;
+    const total = ATTACKS.wolf.windup + ATTACKS.wolf.active + ATTACKS.wolf.recovery;
+    ticks(m, Math.floor((total - .1) * 60), input); expect(strikePhase(m.players[0])).toBe('recovery');
+    input[0].attack = true; ticks(m, 12, input); expect(m.players[0].strikeId).toBe(2); expect(strikePhase(m.players[0])).toBe('windup');
+    expect(m.players[1].hp).toBe(100);
   });
-  it('sustained legal strikes cannot farm fractional guard into permanent one-damage blocks', () => {
-    const match = fight();
-    let breaks = 0, fullHits = 0, lastSequence = 0;
-    for (let frame = 0; frame < 600 && match.phase === 'fight'; frame++) {
-      const pressure = idle();
-      pressure[0].move = Math.sign(match.players[1].x - match.players[0].x);
-      pressure[0].attack = frame % 36 === 0 && Math.abs(match.players[1].x - match.players[0].x) <= 1.82;
-      pressure[1].guard = true;
-      stepMatch(match, pressure, FIXED_DT);
-      for (const event of match.events.filter(event => event.id > lastSequence)) {
-        if (event.type === 'guard-break' && event.slot === 1) breaks++;
-        if (event.type === 'hit' && event.slot === 1) fullHits++;
-        lastSequence = event.id;
-      }
-    }
-    expect(breaks).toBeGreaterThan(0); expect(fullHits).toBeGreaterThanOrEqual(3);
-    expect(match.players[1].hp).toBeLessThan(60);
-  });
-  it('allows action after hitstun while protected against immediate repeat hits', () => {
-    const match = fight(); const input = idle(); input[0].attack = true; ticks(match, 13, input);
-    const defender = match.players[1]; expect(defender.hp).toBe(89);
-    ticks(match, 14); expect(defender.stun).toBe(0); expect(defender.invulnerable).toBeGreaterThan(0);
-    const position = defender.x; const escape = idle(); escape[1].move = 1; ticks(match, 2, escape);
-    expect(defender.x).toBeGreaterThan(position);
-    Object.assign(match.players[0], { x: defender.x - 1, action: 'attack', actionTime: ATTACKS.attack.windup, attackConnected: false });
-    ticks(match, 1); expect(defender.hp).toBe(89);
-  });
-  it('buffers a deliberate press through the final 140ms of recovery without repeating held attacks', () => {
-    const match = fight();
-    Object.assign(match.players[0], { action: 'attack', actionTime: .47, attackConnected: true });
-    const input = idle(); input[0].attack = true; ticks(match, 8, input);
-    expect(match.players[0].action).toBe('attack'); expect(match.players[0].actionTime).toBeLessThan(.1);
-    expect(match.events.filter(e => e.type === 'attack' && e.slot === 0)).toHaveLength(1);
-    ticks(match, 100, input);
-    expect(match.events.filter(e => e.type === 'attack' && e.slot === 0)).toHaveLength(1);
-  });
-  it('expires an early buffered press rather than firing an unexpected delayed attack', () => {
-    const match = fight(); Object.assign(match.players[0], { action: 'special', actionTime: .1 });
-    const input = idle(); input[0].attack = true; ticks(match, 1, input); ticks(match, 80);
-    expect(match.events.filter(e => e.type === 'attack' && e.slot === 0)).toHaveLength(0);
-  });
-  it('has three distinct specials with shared cost and no hidden character health buffs', () => {
-    for (const character of ['lion', 'wolf', 'unicorn'] as const) {
-      const match = fight([character, 'wolf']); const input = idle(); input[0].special = true;
-      ticks(match, 1, input); expect(match.players[0].energy).toBe(60); expect(match.players[0].cooldown).toBe(3.2);
-      ticks(match, 35, input); expect(match.players[1].hp).toBe(100 - ATTACKS[character].damage);
-    }
-    expect(ATTACKS.wolf.reach).toBeGreaterThan(ATTACKS.lion.reach);
-    const ward = fight(['lion', 'unicorn']); const input = idle(); input[0].attack = true; input[1].special = true;
-    ticks(ward, 14, input); expect(ward.players[1].hp).toBe(100);
-    expect(ward.events.some(e => e.type === 'ward')).toBe(true);
-  });
-  it('punishes a missed special during its recovery', () => {
-    const match = fight(['wolf', 'lion']);
-    Object.assign(match.players[0], { action: 'special', actionTime: .68, cooldown: 2, attackConnected: false });
-    const input = idle(); input[1].attack = true; ticks(match, 14, input);
-    expect(match.players[0].hp).toBe(89); expect(match.players[0].action).toBe('hit');
-  });
-  it('mirrors a legal jump/lunge cross-up without slot order changing committed attack facing', () => {
-    const left = fight(['lion', 'lion']), right = fight(['lion', 'lion']);
-    for (const match of [left, right]) {
-      match.players[0].x = -1.1; match.players[1].x = 1.1;
-    }
-    // A 100ms jump-pressure/mixed-policy trace: the lunge crosses the airborne
-    // jumper on the very tick that the jumper commits a descending strike.
-    for (let frame = 0; frame < 66; frame++) {
-      const jumper = neutralInput(), lunging = neutralInput();
-      jumper.move = frame < 30 ? 1 : 0; jumper.jump = frame < 6;
-      jumper.attack = frame >= 30 && frame < 36;
-      lunging.move = frame >= 3 && frame < 27 ? -1 : 0;
-      lunging.special = frame >= 3 && frame < 9;
-      lunging.guard = frame >= 33 && frame < 51;
-      lunging.attack = frame >= 63;
-      stepMatch(left, [jumper, lunging], FIXED_DT);
-      stepMatch(right, [{ ...lunging, move: -lunging.move }, { ...jumper, move: -jumper.move }], FIXED_DT);
-      for (const slot of [0, 1] as const) {
-        const player = left.players[slot], mirror = right.players[slot === 0 ? 1 : 0];
-        expect(player.x, `frame ${frame}, slot ${slot}`).toBeCloseTo(-mirror.x, 10);
-        expect(player.y).toBeCloseTo(mirror.y, 10);
-        expect(player.facing).toBe(-mirror.facing);
-        expect(player.action).toBe(mirror.action); expect(player.hp).toBe(mirror.hp);
-      }
-      if (frame === 30 || frame === 40) {
-        expect(left.players[0].action).toBe('attack');
-        expect(left.players[0].facing).toBe(1); // Startup direction stays committed after crossing.
-        expect(left.players[0].x).toBeGreaterThan(left.players[1].x);
-      }
-    }
-    expect(left.players[0].facing).toBe(-1); // Idle auto-facing resumes on the new side.
-  });
-  it('preserves prior facing when airborne fighters begin attacks at exactly the same X', () => {
-    const match = fight(['lion', 'lion']);
-    Object.assign(match.players[0], { x: 0, y: 1.2, facing: 1 });
-    Object.assign(match.players[1], { x: 0, facing: -1 });
-    const input = idle(); input[0].attack = true; input[1].attack = true;
-    ticks(match, 1, input);
-    expect(match.players.map(player => player.action)).toEqual(['attack', 'attack']);
-    expect(match.players.map(player => player.facing)).toEqual([1, -1]);
-  });
-  it('uses prior orientation to separate a same-X landing without slot or side priority', () => {
-    for (const facings of [[1, -1], [1, 1], [-1, -1]] as const) {
-      const original = fight(['wolf', 'lion']);
-      // Legal cross-up boundary: vertical separation initially allows shared X,
-      // then gravity brings the airborne fighter inside the exclusion band.
-      Object.assign(original.players[0], { x: 0, y: .7, vy: -1, facing: facings[0] });
-      Object.assign(original.players[1], { x: 0, facing: facings[1] });
-      const reflected = structuredClone(original), swapped = structuredClone(original);
-      reflected.players.forEach(player => { player.x = -player.x; player.facing = player.facing === 1 ? -1 : 1; });
-      swapped.players = [swapped.players[1], swapped.players[0]];
-      for (const match of [original, reflected, swapped]) ticks(match, 1);
-      expect(original.players[0].y).toBeLessThan(.7);
-      expect(Math.abs(original.players[1].x - original.players[0].x)).toBeCloseTo(1.75, 10);
-      for (const slot of [0, 1] as const) {
-        expect(reflected.players[slot].x).toBeCloseTo(-original.players[slot].x, 10);
-        expect(swapped.players[slot === 0 ? 1 : 0].x).toBeCloseTo(original.players[slot].x, 10);
-      }
+  it('creates breathing space at either wall and a protected actionable hit-recovery interval', () => {
+    for (const slot of [0, 1] as const) {
+      const m = fight(['lion', 'lion']), defender: Slot = slot === 0 ? 1 : 0, input = idle();
+      m.players[defender].x = slot === 0 ? 4.4 : -4.4; m.players[slot].x = m.players[defender].x + (slot === 0 ? -1.75 : 1.75);
+      input[slot].attack = true; ticks(m, 43, input);
+      expect(Math.abs(m.players[0].x - m.players[1].x)).toBeGreaterThanOrEqual(2.8);
+      ticks(m, 16); expect(m.players[defender].stun).toBe(0); expect(m.players[defender].invulnerable).toBeGreaterThan(0);
+      expect(m.players.every(p => Math.abs(p.x) <= 4.4)).toBe(true);
     }
   });
-  it('always bounds passive combat and preserves the final result', () => {
-    const match = fight(); ticks(match, FIGHT_DURATION * 60);
-    expect(match.phase).toBe('results'); expect(match.fightTime).toBe(FIGHT_DURATION);
-    expect(match.fightEnd).toBe('timeout'); expect(match.result?.total).toEqual([50, 50]);
-    const terminal = JSON.stringify(match); ticks(match, 300); expect(JSON.stringify(match)).toBe(terminal);
+  it('gathers simultaneous contacts before damage, including double knockout', () => {
+    const m = fight(['lion', 'wolf']);
+    m.players.forEach(p => { p.hp = ATTACKS[p.character === 'lion' ? 'wolf' : 'lion'].damage; p.action = 'attack'; p.actionTime = p.strikeWindup = ATTACKS[p.character].windup; });
+    ticks(m, 1); expect(m.players.map(p => p.hp)).toEqual([0, 0]); expect(m.fightEnd).toBe('double-knockout'); expect(m.result?.winner).toBeNull();
+  });
+  it('has mirrored outcomes for every species pairing and both evade/punish roles', () => {
+    for (const first of species) for (const second of species) {
+      const a = punish(first, second, 0, .30, 1.8), b = punish(second, first, 1, .30, 1.8);
+      expect(a.match.players.map(p => p.hp)).toEqual(b.match.players.map(p => p.hp).reverse());
+      expect(a.firstHitTime).toBe(b.firstHitTime);
+      expect(a.match.players[0].x).toBeCloseTo(-b.match.players[1].x, 9);
+    }
   });
 });
 
-describe('determinism, CPU and replay', () => {
-  it('gives the first-time player an opening before ordinary CPU pressure and reproduces the idle KO fixture', () => {
-    const match = createMatch(['unicorn', 'lion'], 6827);
-    let firstCpuAttack: number | null = null;
-    const cpuStarts: number[] = []; let lastEvent = 0;
-    for (let tick = 0; tick < 10000 && match.phase !== 'results'; tick++) {
-      stepMatch(match, [neutralInput(), cpuInput(match, 1)], FIXED_DT);
-      if (match.phase === 'fight' && firstCpuAttack === null && ['attack', 'special'].includes(match.players[1].action)) firstCpuAttack = match.fightTime;
-      for (const event of match.events.filter(event => event.id > lastEvent)) {
-        if (event.slot === 1 && ['attack', 'special'].includes(event.type)) cpuStarts.push(match.fightTime);
-        lastEvent = event.id;
-      }
-    }
-    if (firstCpuAttack === null) throw new Error('The CPU never began an attack');
-    expect(firstCpuAttack).toBeGreaterThanOrEqual(1.5);
-    expect(cpuStarts.length).toBeGreaterThan(1);
-    for (let index = 1; index < cpuStarts.length; index++) expect(cpuStarts[index] - cpuStarts[index - 1]).toBeGreaterThanOrEqual(1.2 - FIXED_DT / 2);
-    expect(match.phase).toBe('results'); expect(match.fightTime).toBeCloseTo(10.2, 6);
-    expect(match.players.map(player => player.hp)).toEqual([0, 100]);
-  });
-  it('allows ordinary repeated strikes to punish the beginner CPU without any player stat assist', () => {
-    const match = createMatch(['unicorn', 'lion'], 6827);
-    for (let tick = 0; tick < 10000 && match.phase !== 'results'; tick++) {
-      const player = neutralInput();
-      if (match.phase === 'fight') player.attack = match.fightTicks % 36 === 0;
-      stepMatch(match, [player, cpuInput(match, 1)], FIXED_DT);
-    }
-    expect(match.phase).toBe('results'); expect(match.fightEnd).toBe('knockout');
-    expect(match.players[0].hp).toBeGreaterThan(0); expect(match.players[1].hp).toBe(0);
-    expect(match.players[0].hp).toBeLessThan(100);
-    expect(match.events.some(event => event.slot === 1 && ['attack', 'special'].includes(event.type))).toBe(true);
-    expect(match.fightTime).toBeLessThan(15);
-  });
-  it('completes every ordered character matchup across three seeds with visible combat and no DNFs', () => {
-    for (const first of ['lion', 'wolf', 'unicorn'] as const) {
-      for (const second of ['lion', 'wolf', 'unicorn'] as const) {
-        for (const seed of [1, 47, 2026]) {
-          const match = fullCpu([first, second], seed);
-          expect(match.phase, `${first}/${second}/${seed}`).toBe('results');
-          expect(match.players.every(p => p.raceStatus === 'finished')).toBe(true);
-          expect(match.raceTime).toBeLessThan(80);
-          expect(match.players.some(p => p.hp < 100)).toBe(true);
-          expect(match.events.length).toBeLessThanOrEqual(48);
-          if (match.result === null) throw new Error(`Missing championship result for ${first}/${second}/${seed}`);
-          expect(match.result.total[0] + match.result.total[1]).toBe(100);
-        }
-      }
+describe('fair CPU, replay and bounded state', () => {
+  it('completes all nine championships across three seeds with the shared physics and no DNF', () => {
+    for (const a of species) for (const b of species) for (const seed of [1, 47, 2026]) {
+      const m = fullCpu([a, b], seed); expect(m.phase, `${a}/${b}/${seed}`).toBe('results');
+      expect(m.players.every(p => p.raceStatus === 'finished')).toBe(true); expect(m.raceTime).toBeLessThan(80);
+      expect(m.players.some(p => p.hp < 100)).toBe(true); expect(m.events.length).toBeLessThanOrEqual(48);
+      if (!m.result) throw new Error("Missing championship result");
+      expect(m.result.total[0] + m.result.total[1]).toBe(100);
     }
   });
-  it('reproduces an entire CPU championship exactly from the same seed', () => {
-    expect(fullCpu(['unicorn', 'wolf'], 817)).toEqual(fullCpu(['unicorn', 'wolf'], 817));
-  });
-  it('resumes from a plain JSON snapshot without changing decisions or results', () => {
-    const original = createMatch(['wolf', 'lion'], 892);
-    for (let i = 0; i < 4300; i++) stepMatch(original, [cpuInput(original, 0), cpuInput(original, 1)], FIXED_DT);
-    const restored: Match = JSON.parse(JSON.stringify(original));
-    for (let i = 0; i < 5000 && original.phase !== 'results'; i++) {
-      for (const match of [original, restored]) stepMatch(match, [cpuInput(match, 0), cpuInput(match, 1)], FIXED_DT);
+  it('keeps a readable CPU opening and only evades after observing sufficient windup', () => {
+    const m = fight(['lion', 'wolf']); m.players[0].x = -1.75; m.players[1].x = 1.75; m.seed = 47;
+    let firstAttack = Infinity;
+    for (let frame = 0; frame < 1200 && m.phase === 'fight'; frame++) {
+      const input = idle(); input[1] = cpuInput(m, 1);
+      if (input[1].attack) firstAttack = Math.min(firstAttack, m.fightTime);
+      expect(Math.abs(input[1].move)).toBeLessThanOrEqual(1); stepMatch(m, input, FIXED_DT);
     }
-    expect(original.phase).toBe('results'); expect(restored).toEqual(original);
+    expect(firstAttack).toBeGreaterThanOrEqual(1.8); expect(firstAttack).toBeLessThan(5);
+    const seen = fight(['lion', 'wolf']); const input = idle(); input[0].attack = true;
+    for (let frame = 0; frame < 15; frame++) { input[1] = cpuInput(seen, 1); expect(input[1].jump).toBe(false); stepMatch(seen, input, FIXED_DT); }
   });
-  it('makes CPU decisions at 200ms intervals through ordinary legal inputs', () => {
-    const match = fight(); const first = cpuInput(match, 0);
-    match.players[1].x = 4;
-    for (let i = 1; i < 12; i++) { match.tick = i; expect(cpuInput(match, 0)).toEqual(first); }
-    match.tick = 12; const next = cpuInput(match, 0); expect(next.move).toBe(1);
-    for (const slot of [0, 1] as Slot[]) {
-      const input = cpuInput(match, slot); expect(Math.abs(input.move)).toBeLessThanOrEqual(1);
-      expect(match.players[slot].hp).toBe(100); expect(match.players[slot].energy).toBe(100);
+  it('replays new serializable drafting, evade and counter state exactly after JSON transfer', () => {
+    let m = createMatch(['wolf', 'unicorn'], 2026); ticks(m, 200);
+    const copy: Match = JSON.parse(JSON.stringify(m));
+    for (let frame = 0; frame < 7000 && m.phase !== 'results'; frame++) {
+      stepMatch(m, [cpuInput(m, 0), cpuInput(m, 1)], FIXED_DT); stepMatch(copy, [cpuInput(copy, 0), cpuInput(copy, 1)], FIXED_DT);
     }
+    expect(copy).toEqual(m); expect(m.phase).toBe('results');
+    m = fight(); const input = idle(); input[0].move = NaN; input[1].move = 1000; ticks(m, 120, input);
+    expect(m.players.every(p => Number.isFinite(p.x) && Math.abs(p.x) <= 4.4)).toBe(true);
+    expect(FIGHT_SPEED.wolf).toBeGreaterThan(FIGHT_SPEED.lion); expect(DODGE.unicorn.invulnerableEnd).toBeGreaterThan(DODGE.lion.invulnerableEnd);
+    expect(Math.abs(m.players[0].x - m.players[1].x)).toBeGreaterThanOrEqual(FIGHT_BODY_GAP - 1e-9);
   });
 });

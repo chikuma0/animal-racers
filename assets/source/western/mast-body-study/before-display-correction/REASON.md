@@ -1,0 +1,1 @@
+Initial source display retained the original pink render-color attribute despite a new gold active attribute. The sole corrective pass selects the intended render color layer. Geometry, skin weights, native anatomy and constraints are unchanged.

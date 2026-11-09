@@ -1,0 +1,77 @@
+Info: Saved as "lion.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+11:55:45 | INFO: Starting glTF 2.0 export
+11:55:45 | INFO: Extracting primitive: ribcage
+11:55:45 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:45 | INFO: Primitives created: 7
+11:55:46 | INFO: Finished glTF 2.0 export in 0.7444710731506348 s
+
+REVISION2_EXPORTED lion race 1620884
+Info: Saved as "lion-upright.blend"
+11:55:47 | INFO: Starting glTF 2.0 export
+11:55:47 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:55:47 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:47 | INFO: Primitives created: 7
+11:55:48 | INFO: Finished glTF 2.0 export in 0.5311579704284668 s
+
+REVISION2_EXPORTED lion upright 1690132
+Info: Saved as "wolf.blend"
+11:55:49 | INFO: Starting glTF 2.0 export
+11:55:49 | INFO: Extracting primitive: ribcage
+11:55:49 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:49 | INFO: Primitives created: 8
+11:55:50 | INFO: Finished glTF 2.0 export in 0.673227071762085 s
+
+REVISION2_EXPORTED wolf race 1361220
+Info: Saved as "wolf-upright.blend"
+11:55:51 | INFO: Starting glTF 2.0 export
+11:55:51 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:55:51 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:51 | INFO: Primitives created: 8
+11:55:52 | INFO: Finished glTF 2.0 export in 0.5034770965576172 s
+
+REVISION2_EXPORTED wolf upright 1422932
+Info: Saved as "unicorn.blend"
+11:55:53 | INFO: Starting glTF 2.0 export
+11:55:53 | INFO: Extracting primitive: ribcage
+11:55:53 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:53 | INFO: Primitives created: 8
+11:55:53 | INFO: Finished glTF 2.0 export in 0.6835472583770752 s
+
+REVISION2_EXPORTED unicorn race 1359136
+Info: Saved as "unicorn-upright.blend"
+11:55:55 | INFO: Starting glTF 2.0 export
+11:55:55 | INFO: Extracting primitive: Designed upright joint-loop topology
+11:55:55 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+11:55:55 | INFO: Primitives created: 8
+11:55:55 | INFO: Finished glTF 2.0 export in 0.48648905754089355 s
+
+REVISION2_EXPORTED unicorn upright 1347872
+REVISION2_REPRODUCED
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/lion-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/lion-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/wolf-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/wolf-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/wolf-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/inputs/unicorn-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/unicorn-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-roster-v2-reproduce-abuplsi_/candidate/unicorn-upright.blend"
+
+Blender quit

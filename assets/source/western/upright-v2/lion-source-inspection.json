@@ -1,0 +1,131 @@
+{
+  "sourceSha256": "43616c2625780ca6702c780f88b5e28992f5323ef7455ee986cf891014070405",
+  "runtimeSha256": "9d56a26125fdae942bfe471633ed2afc9c6d0a85c0b9142d0098c8594dff25f3",
+  "topology": {
+    "components": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "surfaceVertices": 4318,
+    "surfaceFaces": 4316,
+    "controlVertices": 1095,
+    "controlFaces": 1065
+  },
+  "boneParents": {
+    "root": null,
+    "pelvis": "root",
+    "spine": "pelvis",
+    "chest": "spine",
+    "neck": "chest",
+    "head": "neck",
+    "jaw": "head",
+    "scapula_L": "chest",
+    "front_upper_L": "scapula_L",
+    "front_lower_L": "front_upper_L",
+    "front_paw_L": "front_lower_L",
+    "scapula_R": "chest",
+    "front_upper_R": "scapula_R",
+    "front_lower_R": "front_upper_R",
+    "front_paw_R": "front_lower_R",
+    "rear_upper_L": "pelvis",
+    "rear_lower_L": "rear_upper_L",
+    "rear_paw_L": "rear_lower_L",
+    "rear_upper_R": "pelvis",
+    "rear_lower_R": "rear_upper_R",
+    "rear_paw_R": "rear_lower_R",
+    "tail_0": "pelvis",
+    "tail_1": "tail_0",
+    "tail_2": "tail_1",
+    "tail_3": "tail_2"
+  },
+  "clips": {
+    "transform": {
+      "sampledFrames": 37,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9914721692521304,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.008572752548656163,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0004633920296570899,
+      "minimumEvaluatedFaceArea": 9.021791811392177e-06
+    },
+    "fight_idle": {
+      "sampledFrames": 61,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9995198596576257,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.0,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 2.4868480977602303e-05
+    },
+    "fight_move": {
+      "sampledFrames": 13,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.991145109957975,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.001737720111214087,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 8.659465493110474e-06
+    },
+    "attack": {
+      "sampledFrames": 18,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9957210949405717,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.0057924003707136235,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.00011584800741427248,
+      "minimumEvaluatedFaceArea": 4.992426511307713e-06
+    },
+    "special": {
+      "sampledFrames": 29,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9999996785654927,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.004865616311399444,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 9.266539564123377e-06
+    },
+    "guard": {
+      "sampledFrames": 19,
+      "maximumBoneScaleError": 1.0728836059570312e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9915563615567463,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.007645968489341983,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 1.2160516234871466e-05
+    },
+    "hit": {
+      "sampledFrames": 13,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9934865535358737,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.0,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 8.540662747691385e-06
+    },
+    "defeat": {
+      "sampledFrames": 40,
+      "maximumBoneScaleError": 1.5497207641601562e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9829084130309018,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.019230769230769232,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0030120481927710845,
+      "minimumEvaluatedFaceArea": 8.903624802769627e-06
+    },
+    "celebrate": {
+      "sampledFrames": 61,
+      "maximumBoneScaleError": 9.5367431640625e-07,
+      "minimumBodySignedVolumeRatioToIdle": 0.991250138381794,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.017608897126969416,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 3.0095106922090054e-06
+    },
+    "jump": {
+      "sampledFrames": 25,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9760278370242051,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.008804448563484708,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 1.0106230547535233e-05
+    },
+    "land": {
+      "sampledFrames": 10,
+      "maximumBoneScaleError": 1.3113021850585938e-06,
+      "minimumBodySignedVolumeRatioToIdle": 0.9916238422744746,
+      "maximumFractionEdgesOverTwiceIdleLength": 0.0016218721037998146,
+      "maximumFractionEdgesUnder20PercentIdleLength": 0.0,
+      "minimumEvaluatedFaceArea": 1.7901176761370152e-05
+    }
+  },
+  "limitations": "Finite geometry, connected topology, unit bone scale and edge/volume diagnostics are structural evidence only. They do not prove anatomy or lack of intersections. Compare cinematic target and actual runtime separately."
+}

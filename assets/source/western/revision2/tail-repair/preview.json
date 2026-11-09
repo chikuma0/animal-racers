@@ -1,0 +1,130 @@
+[
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/race/inputs-side.png",
+    "sha256": "fd7459d6df7a3355e96afda2d5fe4363ebfe9f7f67ef5afb887651bcd6330741",
+    "sourceSha256": "7ac6cf00dbb2f32794d0d19f43c714819f4a76083e4e89b382c4187ecc6d1fcd",
+    "clip": "run",
+    "time": 0.2,
+    "qaFraming": "Tail tip margin; orthographic scale3.9m"
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/race/candidate-side.png",
+    "sha256": "972a457b9c8dc409e6eb7fa45c4c6635f9ecc19b8ade690bfa48b81302a60d67",
+    "sourceSha256": "be6f1a3cec5c4c99d2519cf390cd5b0caa0243110e5b0056f9e852b16784d471",
+    "clip": "run",
+    "time": 0.2,
+    "qaFraming": "Tail tip margin; orthographic scale3.9m"
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/upright/inputs-side.png",
+    "sha256": "df08a3831c06b0f889142c0462e20a8e797d77b1d79d265b8b9c7158b4838bc4",
+    "sourceSha256": "7f6239d21a672b90f3019b9a80883086895fb8b9c015adfb3069f8eaeb8d2a41",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/upright/inputs-root.png",
+    "sha256": "986c53f7c21f98866e5d1f1dbb166d84b634cd93e0c88f9fe6d817b01aae479c",
+    "sourceSha256": "7f6239d21a672b90f3019b9a80883086895fb8b9c015adfb3069f8eaeb8d2a41",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/upright/candidate-side.png",
+    "sha256": "43e8c873c6f56a8cf5022dc6c911cba79458e16379bdbc0fc8cb0b1c655abbb1",
+    "sourceSha256": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/lion/upright/candidate-root.png",
+    "sha256": "dc79fca57aae1199f4021aa04f5bed0a5ff083343230b99797b4deed2be4a0ad",
+    "sourceSha256": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/race/inputs-side.png",
+    "sha256": "279c51fa34c4e135de832f6d9d60e9b9e700e55b6ab1a086c4f565a484dc2c25",
+    "sourceSha256": "8f5158de433c32ab31c5e1cf102558b7b0b46746d3a18fecff5f385061945920",
+    "clip": "run",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/race/candidate-side.png",
+    "sha256": "9be3b99e30ae0dccd035604bc3aa387d8b1502945a1a27b32d5b18f1ad4c82bc",
+    "sourceSha256": "12228fc5ca053e806bd5a47f5489dbdcb5317b9fcaff1da5f5cc2fa7362e7ec2",
+    "clip": "run",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/upright/inputs-side.png",
+    "sha256": "b7b440eed2398d79b7845438788e9f8420829de77498e95da8e98439123bf11f",
+    "sourceSha256": "5ace1085b392eaa7d58b58d7ddd69a3d02c8416f4301344b97220b526812175c",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/upright/inputs-root.png",
+    "sha256": "f144fb8549df03c2e8a65dd67a25e633464e55615816938374d383d98f3c62e2",
+    "sourceSha256": "5ace1085b392eaa7d58b58d7ddd69a3d02c8416f4301344b97220b526812175c",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/upright/candidate-side.png",
+    "sha256": "dc2313287ffd39a9a3395d9b03fc533ebc5e9795985108b0539ee5977a123c56",
+    "sourceSha256": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/wolf/upright/candidate-root.png",
+    "sha256": "7fa22655a0c7ba70faccbd76265643ed37c6dec20f07af2cca35b9b2908dd554",
+    "sourceSha256": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/race/inputs-side.png",
+    "sha256": "30b4307ecafd908469d89b7ba66fb5349af060b4498ce841d9bd0442c064f37f",
+    "sourceSha256": "6452414c94aa4c43fe5f4338ddf0fa81561ba40d20f21e3d975dc8773e2bd553",
+    "clip": "run",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/race/candidate-side.png",
+    "sha256": "935938afca58372c4c75e5fe77ad292e46caaeb0ec95a024cfb73452e7e287be",
+    "sourceSha256": "c07a5dbc07974cf5d8b2f627189cda2fbec6b8d0f3d15c85ed8b43cd29377e65",
+    "clip": "run",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/upright/inputs-side.png",
+    "sha256": "1b328a7b65225c8d6eb97c3ef56d9964dd2a1b464bc18f7fc6767eebe523bd0e",
+    "sourceSha256": "31b6d6d1815e41ba154df30748a6626c6395170eb364a31a4391c1174f817311",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/upright/inputs-root.png",
+    "sha256": "5945529ca9a687af9f9094a7c7972b6e1023a01882451df541550cf6fa7d3aa3",
+    "sourceSha256": "31b6d6d1815e41ba154df30748a6626c6395170eb364a31a4391c1174f817311",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/upright/candidate-side.png",
+    "sha256": "70d5c327b12f94c63e1412ae10fccb9c372966637cd90dad54a97de7828b96c8",
+    "sourceSha256": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99",
+    "clip": "hit",
+    "time": 0.2
+  },
+  {
+    "path": "assets/source/western/revision2/tail-repair/qa/unicorn/upright/candidate-root.png",
+    "sha256": "3209ff2a13bef40a34d6efa639d62f2f6f4be6174f1b50840aa1758c449a58c1",
+    "sourceSha256": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99",
+    "clip": "hit",
+    "time": 0.2
+  }
+]

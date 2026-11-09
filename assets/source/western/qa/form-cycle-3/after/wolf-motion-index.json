@@ -1,0 +1,145 @@
+{
+  "runtimeSha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c",
+  "sourceSha256": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+  "reviewMovie": "wolf-selected-cycles.mp4",
+  "scope": "Source deformation inspection; studio Workbench shading, not gameplay",
+  "sampleRate": 15,
+  "timeline": [
+    {
+      "clip": "run",
+      "start": 0.0,
+      "end": 0.6,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        16
+      ]
+    },
+    {
+      "clip": "transform",
+      "start": 0.6,
+      "end": 1.8666666666666667,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37
+      ]
+    },
+    {
+      "clip": "fight_move",
+      "start": 1.8666666666666667,
+      "end": 2.3333333333333335,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "clip": "attack",
+      "start": 2.3333333333333335,
+      "end": 3.0,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        18
+      ]
+    },
+    {
+      "clip": "special",
+      "start": 3.0,
+      "end": 4.2,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35
+      ]
+    },
+    {
+      "clip": "celebrate",
+      "start": 4.2,
+      "end": 6.2666666666666675,
+      "sourceFrames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61
+      ]
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "classification": "Independent read of downloaded normal-control reports; not physical touch, human acceptance or a performance test.",
+  "fingerprint": "dab6cd037a2abcb0cb3758f7b66c2643ea0bcebbcb7bb6982a92e1b37aac967e",
+  "results": [
+    {
+      "pair": [
+        "lion",
+        "lion"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.3,
+          35.7
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.3,
+          35.7
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 4,
+        "counter": 4
+      },
+      "sha256": "d4c5a23d236be1dca09aac5bf0eae585c839ce1c2bf68643096bb8acabdebe10"
+    },
+    {
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 4,
+        "counter": 4
+      },
+      "sha256": "22debd0b676d0ac2204c07dc2c05b678c192ea600db9f0ecbaf6b76fae0f9955"
+    },
+    {
+      "pair": [
+        "lion",
+        "unicorn"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 4,
+        "counter": 4
+      },
+      "sha256": "1d94a571d431b57e5adb58750a73345b48e6f7c16b30101968a9a79a0237846a"
+    },
+    {
+      "pair": [
+        "wolf",
+        "lion"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 6,
+        "counter": 6
+      },
+      "sha256": "c773ae7e7e1aa242f39cf645b323f0069c79e9fcc0ba4672d6f8a90b4400b378"
+    },
+    {
+      "pair": [
+        "wolf",
+        "wolf"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 6,
+        "counter": 6
+      },
+      "sha256": "9c521ed3ce64be286a6f71aa5492f7a464d792f97150bdef5529c8b315f3e15c"
+    },
+    {
+      "pair": [
+        "wolf",
+        "unicorn"
+      ],
+      "health": [
+        78,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          44.5,
+          5.5
+        ],
+        "total": [
+          58.7,
+          41.3
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 6,
+        "counter": 6
+      },
+      "sha256": "e7884a67fed0eec1e52dace178f90d1c5d65e4ade196df1bcfe8e3a212c0a882"
+    },
+    {
+      "pair": [
+        "unicorn",
+        "lion"
+      ],
+      "health": [
+        48,
+        0
+      ],
+      "result": {
+        "race": [
+          12.7,
+          37.3
+        ],
+        "fight": [
+          37,
+          13
+        ],
+        "total": [
+          49.7,
+          50.3
+        ],
+        "winner": 1,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 3,
+        "draft-start": 1,
+        "draft-ready": 1,
+        "pass": 1,
+        "evade-success": 5,
+        "counter": 5
+      },
+      "sha256": "20b46ee94d0e0c14f9ed814237bc39636428f9fca36f38d54494b638839d5069"
+    },
+    {
+      "pair": [
+        "unicorn",
+        "wolf"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          14.2,
+          35.8
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          64.2,
+          35.8
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 1,
+        "draft-start": 1,
+        "draft-ready": 0,
+        "pass": 1,
+        "evade-success": 5,
+        "counter": 5
+      },
+      "sha256": "7eaa3d23d21adfb649553c2ce56b4e58091107826bc2ecd87238259a065085a9"
+    },
+    {
+      "pair": [
+        "unicorn",
+        "unicorn"
+      ],
+      "health": [
+        100,
+        0
+      ],
+      "result": {
+        "race": [
+          11.7,
+          38.3
+        ],
+        "fight": [
+          50,
+          0
+        ],
+        "total": [
+          61.7,
+          38.3
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "events": {
+        "obstacle": 4,
+        "draft-start": 2,
+        "draft-ready": 1,
+        "pass": 2,
+        "evade-success": 5,
+        "counter": 5
+      },
+      "sha256": "8e571a614f52a0c1534b80a316a6b78c372e68da93ac0d1c3a3aeb57c1e828b0"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+REVISION2_SOURCE_OK lion race
+REVISION2_PACKAGE_OK lion race
+REVISION2_SOURCE_OK lion upright
+REVISION2_PACKAGE_OK lion upright
+REVISION2_SOURCE_OK wolf race
+REVISION2_PACKAGE_OK wolf race
+REVISION2_SOURCE_OK wolf upright
+REVISION2_PACKAGE_OK wolf upright
+REVISION2_SOURCE_OK unicorn race
+REVISION2_PACKAGE_OK unicorn race
+REVISION2_SOURCE_OK unicorn upright
+REVISION2_PACKAGE_OK unicorn upright
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/lion-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/wolf.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/wolf-upright.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/unicorn.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/revision2/candidate/unicorn-upright.blend"
+
+Blender quit

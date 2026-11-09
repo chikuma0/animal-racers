@@ -1,0 +1,21 @@
+Info: Saved as "native-body-study.blend"
+MAST_NATIVE_BODY_BUILT
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/inputs/Mast.blend"
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/native-body-study.blend"
+Fra:1 Mem:26.71M (Peak 32.34M) | Time:00:00.19 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-front.png'
+Time: 00:00.30 (Saving: 00:00.09)
+
+Fra:1 Mem:25.79M (Peak 25.79M) | Time:00:00.06 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-side.png'
+Time: 00:00.13 (Saving: 00:00.05)
+
+Fra:1 Mem:25.80M (Peak 25.80M) | Time:00:00.04 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-body-study/qa/body-three-quarter.png'
+Time: 00:00.11 (Saving: 00:00.06)
+
+MAST_NATIVE_FULL_VIEWS_DONE
+
+Blender quit
+Error: Not freed memory blocks: 3, total unfreed memory 0.000298 MB

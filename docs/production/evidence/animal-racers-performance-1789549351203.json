@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-09-16T09:02:31.202Z",
+  "revision": "local-working-tree",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "dpr": 1
+  },
+  "mode": "host",
+  "phase": "race",
+  "frames": {
+    "samples": 1800,
+    "p50": 19.8,
+    "p95": 60.3,
+    "p99": 108.8,
+    "over33": 323,
+    "drawCalls": 104,
+    "triangles": 64662,
+    "pixelRatio": 0.8999999761581421,
+    "loaded": true
+  },
+  "network": {
+    "transport": "webrtc",
+    "roundTripMs": 27.100000023841858,
+    "sent": 1622,
+    "received": 1632
+  },
+  "note": "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification."
+}

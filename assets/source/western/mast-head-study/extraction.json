@@ -1,0 +1,398 @@
+{
+  "sourceSha256": "e3c29d87557d29ca70b700b1861149bf6111711f065c5d5c2379427630441838",
+  "neckCutWorldZ": 1.5,
+  "neckCutEdges": 28,
+  "retainedBones": [
+    "Ear1.L",
+    "Tongue4",
+    "Venta.L",
+    "EyebrowFront.L",
+    "JawCrnr.R",
+    "Head",
+    "EyebrowBack.R",
+    "Ear2.L",
+    "Cheek.L",
+    "EyelidUpper.L",
+    "Throat",
+    "JawBei\u00e7oBttm.R",
+    "Tongue3",
+    "Head.Gengiva",
+    "EyelidBottom.R",
+    "Cheek.R",
+    "Tongue1",
+    "JawBei\u00e7oBttm",
+    "JawBei\u00e7oUppr.R",
+    "Tongue2",
+    "Venta.R",
+    "JawBei\u00e7oUppr",
+    "Eyebrow.R",
+    "Olho.R",
+    "EyelidUpper.R",
+    "JawCrnr.L",
+    "Jaw",
+    "JawBei\u00e7oBttm.L",
+    "Jaw.Gengiva",
+    "Ear2.R",
+    "EyebrowBack.L",
+    "Tongue6",
+    "Olho.L",
+    "EyelidBottom.L",
+    "Tongue5",
+    "Eyebrow.L",
+    "JawBei\u00e7oUppr.L",
+    "Ear1.R",
+    "EyebrowFront.R"
+  ],
+  "collapsedManeAncestorWeights": true,
+  "embeddedTextRemoved": true,
+  "meshes": [
+    {
+      "name": "Mast authored head and oral anatomy",
+      "cage": {
+        "vertices": 2059,
+        "polygons": 1916,
+        "triangles": 3816,
+        "components": [
+          1143,
+          74,
+          74,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          28,
+          28,
+          28,
+          28,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25
+        ],
+        "boundaryEdges": 252,
+        "nonmanifoldEdgesOverTwoFaces": 16
+      },
+      "evaluated": {
+        "vertices": 7917,
+        "polygons": 7648,
+        "triangles": 15296,
+        "components": [
+          4513,
+          306,
+          306,
+          117,
+          117,
+          117,
+          117,
+          117,
+          117,
+          117,
+          117,
+          103,
+          103,
+          103,
+          103,
+          94,
+          94,
+          94,
+          94,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89
+        ],
+        "boundaryEdges": 504,
+        "nonmanifoldEdgesOverTwoFaces": 32,
+        "bounds": {
+          "min": [
+            -0.13446885347366333,
+            -0.1445302814245224,
+            1.5000001192092896
+          ],
+          "max": [
+            0.13446885347366333,
+            0.17111077904701233,
+            1.7297146320343018
+          ]
+        }
+      },
+      "colorRanges": {
+        "ColVal": [
+          0.10224174708127975,
+          1.0
+        ],
+        "ColSaturday": [
+          1.0,
+          1.0
+        ],
+        "ColHue": [
+          0.6724433302879333,
+          1.0
+        ],
+        "ColColor": [
+          0.10224174708127975,
+          1.0
+        ],
+        "ColGloss": [
+          0.011612244881689548,
+          1.0
+        ],
+        "ColBody": [
+          0.0,
+          1.0
+        ],
+        "ColFres": [
+          0.33716365694999695,
+          1.0
+        ],
+        "ColCornea": [
+          0.0,
+          1.0
+        ]
+      },
+      "levels": {
+        "0": {
+          "vertices": 2059,
+          "polygons": 1916,
+          "triangles": 3816,
+          "components": [
+            1143,
+            74,
+            74,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            28,
+            28,
+            28,
+            28,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          "boundaryEdges": 252,
+          "nonmanifoldEdgesOverTwoFaces": 16,
+          "bounds": {
+            "min": [
+              -0.1456674486398697,
+              -0.14565162360668182,
+              1.4999998807907104
+            ],
+            "max": [
+              0.1456674486398697,
+              0.1713506579399109,
+              1.732797622680664
+            ]
+          }
+        },
+        "1": {
+          "vertices": 7917,
+          "polygons": 7648,
+          "triangles": 15296,
+          "components": [
+            4513,
+            306,
+            306,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            103,
+            103,
+            103,
+            103,
+            94,
+            94,
+            94,
+            94,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89
+          ],
+          "boundaryEdges": 504,
+          "nonmanifoldEdgesOverTwoFaces": 32,
+          "bounds": {
+            "min": [
+              -0.13446885347366333,
+              -0.1445302814245224,
+              1.5000001192092896
+            ],
+            "max": [
+              0.13446885347366333,
+              0.17111077904701233,
+              1.7297146320343018
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Mast.Juba",
+      "cage": {
+        "vertices": 1437,
+        "polygons": 1008,
+        "triangles": 2006,
+        "components": [
+          1437
+        ],
+        "boundaryEdges": 868,
+        "nonmanifoldEdgesOverTwoFaces": 0
+      },
+      "evaluated": {
+        "vertices": 2874,
+        "polygons": 2884,
+        "triangles": 5748,
+        "components": [
+          2874
+        ],
+        "boundaryEdges": 0,
+        "nonmanifoldEdgesOverTwoFaces": 0,
+        "bounds": {
+          "min": [
+            -0.2663377523422241,
+            -0.22746190428733826,
+            1.2243366241455078
+          ],
+          "max": [
+            0.2663377523422241,
+            0.31938812136650085,
+            1.7847918272018433
+          ]
+        }
+      },
+      "colorRanges": {
+        "ColVal": [
+          1.0,
+          1.0
+        ],
+        "ColSaturday": [
+          1.0,
+          1.0
+        ],
+        "ColHue": [
+          0.9215819239616394,
+          0.9215819239616394
+        ],
+        "ColColor": [
+          0.10224174708127975,
+          1.0
+        ],
+        "ColGloss": [
+          0.5840786099433899,
+          0.5840786099433899
+        ],
+        "ColBody": [
+          1.0,
+          1.0
+        ],
+        "ColFres": [
+          0.33716365694999695,
+          0.33716365694999695
+        ]
+      },
+      "levels": {
+        "0": {
+          "vertices": 2874,
+          "polygons": 2884,
+          "triangles": 5748,
+          "components": [
+            2874
+          ],
+          "boundaryEdges": 0,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "bounds": {
+            "min": [
+              -0.2663377523422241,
+              -0.22746190428733826,
+              1.2243366241455078
+            ],
+            "max": [
+              0.2663377523422241,
+              0.31938812136650085,
+              1.7847918272018433
+            ]
+          }
+        },
+        "1": {
+          "vertices": 11516,
+          "polygons": 11516,
+          "triangles": 23032,
+          "components": [
+            11516
+          ],
+          "boundaryEdges": 0,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "bounds": {
+            "min": [
+              -0.26091936230659485,
+              -0.22385910153388977,
+              1.2279220819473267
+            ],
+            "max": [
+              0.26091936230659485,
+              0.30975571274757385,
+              1.7726091146469116
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "recipeSha256": "fe2163b758efee4226dad60a955fe3c7f80f3f427b4ddba91dbf97a75af55aa5",
+  "extractedSha256": "94f13aa45ed3124452fdbd4d1e8f072fb679aa6a3070b05f7d1579dd17c7e6e7"
+}

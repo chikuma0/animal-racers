@@ -1,0 +1,21 @@
+lion: idle head/chest/paw 0.562/0.372/0.774; contact 0.647/0.430/1.294; guard 0.597/0.396/0.894
+wolf: idle head/chest/paw 0.670/0.318/0.774; contact 0.769/0.376/1.344; guard 0.710/0.342/0.894
+unicorn: idle head/chest/paw 0.730/0.339/0.729; contact 0.811/0.398/1.249; guard 0.763/0.363/0.849
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: unicorn: retained contact paw reach 1.225765405307497
+
+1 !== 0
+
+    at file:///Users/chikumatsuboi/Code/animal-racers-western/scripts/assets/verify-contact.mjs:54:8 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

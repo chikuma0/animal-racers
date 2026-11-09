@@ -1,0 +1,58 @@
+{
+  "classification": "Actual AST-extracted app callbacks with fake DOM events and real InputControls/InputSender; not browser dispatch or physical multitouch acceptance.",
+  "baselineCommit": "62ae5e3c2183c764433a797600259a017f612c53",
+  "baseline": {
+    "sourceSha256": "6e104a01122b85501945a4f441d7f007ff00958894a6bdb3236d4c869ca32bed",
+    "observed": {
+      "rebound": {
+        "move": 0,
+        "jump": true,
+        "attack": false,
+        "special": false,
+        "guard": false
+      },
+      "bothDirections": 1,
+      "remainingDirection": 0,
+      "remainingGuard": false,
+      "mixedGuard": false,
+      "cancelledJump": true
+    },
+    "actualCallbacks": {
+      "update": "() => {\n      input.current.move =\n        (keys.has(\"ArrowRight\") || keys.has(\"d\") ? 1 : 0) -\n        (keys.has(\"ArrowLeft\") || keys.has(\"a\") ? 1 : 0);\n      input.current.jump =\n        keys.has(\" \") || keys.has(\"w\") || keys.has(\"ArrowUp\");\n      input.current.attack = keys.has(\"j\");\n      input.current.special = keys.has(\"k\");\n      input.current.guard = keys.has(\"l\") || keys.has(\"Shift\");\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    }",
+      "press": "(key: keyof Input, value: number | boolean) => ({\n    onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {\n      e.preventDefault();\n      e.currentTarget.setPointerCapture(e.pointerId);\n      (input.current[key] as number | boolean) = value;\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    },\n    onPointerUp: () => {\n      (input.current[key] as number | boolean) = key === \"move\" ? 0 : false;\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    },\n    onPointerCancel: () => {\n      (input.current[key] as number | boolean) = key === \"move\" ? 0 : false;\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    },\n    onLostPointerCapture: () => {\n      (input.current[key] as number | boolean) = key === \"move\" ? 0 : false;\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    },\n  })",
+      "keydown": "(e: KeyboardEvent) => {\n      if ((e.target as HTMLElement).matches(\"input,textarea\")) return;\n      if ([\"ArrowRight\", \"ArrowLeft\", \"ArrowUp\", \" \"].includes(e.key))\n        e.preventDefault();\n      keys.add(e.key);\n      update();\n    }",
+      "keyup": "(e: KeyboardEvent) => {\n      keys.delete(e.key);\n      update();\n    }",
+      "clear": "() => {\n      keys.clear();\n      input.current = neutralInput();\n      inputSender.current.update(input.current, match.current?.tick ?? 0);\n    }"
+    }
+  },
+  "current": {
+    "sourceSha256": "56cbe55c78108cbda82f44f4b816bbd37a4f85fb171d1a08000f2bfa3bd9dfad",
+    "observed": {
+      "rebound": {
+        "move": 0,
+        "jump": false,
+        "attack": false,
+        "special": false,
+        "guard": false
+      },
+      "bothDirections": 0,
+      "remainingDirection": 1,
+      "remainingGuard": true,
+      "mixedGuard": true,
+      "cancelledJump": false
+    },
+    "actualCallbacks": {
+      "publishControls": "() => {\n    input.current = controls.current.value();\n    inputSender.current.update(input.current, match.current?.tick ?? 0);\n  }",
+      "press": "(key: keyof Input, value: number | boolean) => ({\n    onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {\n      e.preventDefault();\n      e.currentTarget.setPointerCapture(e.pointerId);\n      controls.current.pointerDown(e.pointerId, key, value);\n      publishControls();\n    },\n    onPointerUp: (e: React.PointerEvent<HTMLButtonElement>) => {\n      controls.current.pointerUp(e.pointerId);\n      publishControls();\n    },\n    onPointerCancel: (e: React.PointerEvent<HTMLButtonElement>) => {\n      controls.current.pointerUp(e.pointerId);\n      publishControls();\n    },\n    onLostPointerCapture: (e: React.PointerEvent<HTMLButtonElement>) => {\n      controls.current.pointerUp(e.pointerId);\n      publishControls();\n    },\n  })",
+      "keydown": "(e: KeyboardEvent) => {\n      if (e.isComposing || (e.target as HTMLElement).matches(\"input,textarea,select,[contenteditable=true]\")) return;\n      if ([\"ArrowRight\", \"ArrowLeft\", \"ArrowUp\", \" \"].includes(e.key))\n        e.preventDefault();\n      controls.current.keyDown(e.key);\n      publishControls();\n    }",
+      "keyup": "(e: KeyboardEvent) => {\n      controls.current.keyUp(e.key);\n      publishControls();\n    }",
+      "clear": "() => {\n      controls.current.clear();\n      publishControls();\n    }",
+      "releasePointer": "(e: PointerEvent) => {\n      controls.current.pointerUp(e.pointerId);\n      publishControls();\n    }"
+    }
+  },
+  "sources": {
+    "src/components/Championship.tsx": "56cbe55c78108cbda82f44f4b816bbd37a4f85fb171d1a08000f2bfa3bd9dfad",
+    "src/championship/controls.ts": "7debbdff2bd1d97a07102975a2953ef779f6b748badaa0bef13dfa94f9596bf3"
+  },
+  "harnessSha256": "b73fb6fa434ef61f5014bbef13820588e384958409e69e7fc1d19233d5198081"
+}

@@ -1,0 +1,5 @@
+# Intermittent recording export
+
+Two recordings after complete solo matches exported zero bytes in 04-10-46 while the first movie decoded. Their reports and screenshots remain valid but these two recordings are not evidence. A fresh diagnostic attached passive MediaRecorder event listeners, then used the normal recording buttons. Three consecutive menu recordings and three consecutive recordings across character/rival changes and race starts all produced nonempty outputs; no recorder error event was observed. No app implementation changed. The initiating cause remains unconfirmed; machine contention is not established as the cause. This capture limitation remains open, separate from successful play. Subsequent accepted multiplayer recordings undergo complete decode checks.
+
+A further three short race-start recordings with Sound off also produced nonempty movies without recorder errors. Muting alone did not reproduce the empty-export issue. Nine short diagnostic recordings were successful in total; this does not erase the two failed full-match exports.

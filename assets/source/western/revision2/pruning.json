@@ -1,0 +1,35 @@
+{
+  "scope": "Only regenerated PNG motion intermediates; complete movies, every-frame sheets and still proofs retained",
+  "directories": [
+    {
+      "path": "assets/source/western/revision2/qa/lion/race/motion",
+      "pngs": 488,
+      "bytes": 88342938
+    },
+    {
+      "path": "assets/source/western/revision2/qa/lion/upright/motion",
+      "pngs": 386,
+      "bytes": 70943739
+    },
+    {
+      "path": "assets/source/western/revision2/qa/wolf/race/motion",
+      "pngs": 490,
+      "bytes": 83772134
+    },
+    {
+      "path": "assets/source/western/revision2/qa/wolf/upright/motion",
+      "pngs": 388,
+      "bytes": 67003967
+    },
+    {
+      "path": "assets/source/western/revision2/qa/unicorn/race/motion",
+      "pngs": 486,
+      "bytes": 84222793
+    },
+    {
+      "path": "assets/source/western/revision2/qa/unicorn/upright/motion",
+      "pngs": 384,
+      "bytes": 67222174
+    }
+  ]
+}

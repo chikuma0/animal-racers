@@ -1,0 +1,8 @@
+{
+  "session": "97161",
+  "exitCode": 143,
+  "terminatedBy": "Exact owned-command TERM",
+  "completedView": "qa/rest-front.png",
+  "reason": "Cycles GPU kernel/frame stalled while parent was ready for browser verification; preserve completed image and release GPU. No supplied animation was lost.",
+  "remaining": "Side and three-quarter rest views plus 37-frame direct FK probe"
+}

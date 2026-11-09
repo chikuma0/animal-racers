@@ -1,0 +1,225 @@
+{
+  "species": "unicorn",
+  "order": "Left Cycle5 control; right isolated Cycle6 candidate.",
+  "render": "Matched Workbench shape/deformation review, material swatches only. No Cycles or runtime acceptance claim.",
+  "hashes": {
+    "sourceSha256": "83778bb31675db2f75a171c7433f79d92e4b05e8dd6e4ece6671c23a5aabd7c3",
+    "runtimeSha256": "df283dac4bab34ad495c10342795fa64bba0f54f90a455d3b13409ed7021ad2b",
+    "controlSourceSha256": "d297897ba90607469b218e62983da49d0307f0ade34d1a77c41887f1ca818ac1",
+    "controlRuntimeSha256": "3c8764d1160df011d8e4fab363b1ed067b0d9932e03da8c60b68f4afdfa212cb"
+  },
+  "views": {
+    "front": {
+      "movie": "front-paired-cycles.mp4",
+      "duration": 4.8,
+      "clips": [
+        {
+          "clip": "attack",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            18
+          ],
+          "start": 0.0,
+          "end": 0.6666666666666666
+        },
+        {
+          "clip": "guard",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ],
+          "start": 0.6666666666666666,
+          "end": 1.3333333333333333
+        },
+        {
+          "clip": "defeat",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            40
+          ],
+          "start": 1.3333333333333333,
+          "end": 2.7333333333333334
+        },
+        {
+          "clip": "celebrate",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 2.7333333333333334,
+          "end": 4.800000000000001
+        }
+      ]
+    },
+    "side": {
+      "movie": "side-paired-cycles.mp4",
+      "duration": 4.8,
+      "clips": [
+        {
+          "clip": "attack",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            18
+          ],
+          "start": 0.0,
+          "end": 0.6666666666666666
+        },
+        {
+          "clip": "guard",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ],
+          "start": 0.6666666666666666,
+          "end": 1.3333333333333333
+        },
+        {
+          "clip": "defeat",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            40
+          ],
+          "start": 1.3333333333333333,
+          "end": 2.7333333333333334
+        },
+        {
+          "clip": "celebrate",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 2.7333333333333334,
+          "end": 4.800000000000001
+        }
+      ]
+    }
+  }
+}

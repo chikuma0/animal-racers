@@ -1,0 +1,8 @@
+{
+  "revision": "d8067d2cb70a3e7a5a629c974270e9d9ab01cb03",
+  "classification": "Immutable historical negative control, excluded from application build",
+  "files": {
+    "simulation-d8067d2.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+    "course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7"
+  }
+}

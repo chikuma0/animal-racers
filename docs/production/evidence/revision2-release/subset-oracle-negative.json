@@ -1,0 +1,6 @@
+{
+  "missingRequiredPair": "lion:lion",
+  "exit": 1,
+  "expectedFailureObserved": true,
+  "failure": "all explicitly requested affected pairings required"
+}

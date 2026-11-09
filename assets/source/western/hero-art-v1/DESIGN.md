@@ -1,0 +1,13 @@
+# Lion form diagnosis and concrete repair target
+
+The concept has compact almond eye apertures under substantial lids/orbital planes, a long continuous feline nasal bridge flowing into flattened whisker pads, a tapered jaw, and mane locks that sweep in coherent broad directional groups before dividing into fine tips. The current game head instead stacks socket/white/iris/pupil ellipsoids in front of a fused round skull. Multiple layers add depth outward rather than recessing into an orbit. Separate cream balls and swollen cheeks obscure the nasal bridge. Repeated short, almost equal-thickness radial mane lobes make a braided ring rather than swept fur.
+
+The candidate replaces the full head/mane geometry, not the body or pose recipe. Two mirrored annular quad patches are joined at the nose/forehead/philtrum seam. The patches include real almond orbital openings, shaped orbital shelves and lower lids; a connected back shell closes the cranium. Muzzle/cheek planes are part of that same surface, with regional vertex color instead of separate spherical pads. Shallow curved amber eye inserts sit behind the lid edges. A separately articulated custom mandible and graded mouth sleeve retain the existing jaw performance. Directional cubic-curve mane clumps have long asymmetric taper, flattened fluted cross-sections and coherent crown/temple/beard flow over a continuous backing. A few subtle grooves/pore marks supply detail without replacing form with noise.
+
+Both stances receive exactly this authored design through each existing head/jaw rest matrix. The source keeps named meshes and custom quad/control geometry. No body, gait, contact, trophy or clip edits are planned. Initial budget remains 32,000 triangles, 24 material primitives and 2,000,000 bytes per upright GLB; actual measured cost decides whether any revision is needed. The current .68 m active-contact head envelope is a hard acceptance condition.
+
+This is an isolated Lion experiment. The broad body, other species, lighting and owner art acceptance remain separate open work. No image-generation output substitutes for geometry.
+
+## Reassessment after visual rejection
+
+The separate curve-strip mane remained a sparse hair curtain, and replacing its backing with a fluted ellipsoid merely made an orange helmet. Both failed the concept despite valid budgets. The next silhouette study uses a connected radial annulus around cheeks/jaw with burnt-sienna inner masses, short swept crown, visible ears, irregular ruff tips, and a downward chest taper. It retains the continuous muzzle and orbital apertures, removes decorative floating lip curves, and keeps all pose/contact inputs frozen. Parent requested only small matched views before any motion batch.

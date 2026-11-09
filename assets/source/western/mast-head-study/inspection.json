@@ -1,0 +1,4055 @@
+{
+  "sourceSha256": "e3c29d87557d29ca70b700b1861149bf6111711f065c5d5c2379427630441838",
+  "recipeSha256": "bbdc22028c1cc6ee386232eb24123bf8022af9a413daf31e48e70f5c6c397104",
+  "autoExecutionDisabled": true,
+  "driversMuted": [],
+  "textBlocks": [
+    {
+      "name": "$Mudan\u00e7alenha",
+      "sha256": "4e5de536a285435c78782bbe4dc8bd6af25f4e7358ac24cc6a3dd517e2f65245"
+    }
+  ],
+  "libraries": [],
+  "actions": [],
+  "images": [
+    {
+      "name": "Render Result",
+      "size": [
+        0,
+        0
+      ],
+      "path": ""
+    }
+  ],
+  "bones": [
+    {
+      "name": "Spine01",
+      "parent": "Root",
+      "head": [
+        0.0,
+        0.06509210914373398,
+        0.7876560091972351
+      ],
+      "tail": [
+        0.0,
+        0.06238202378153801,
+        0.9797360897064209
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Spine02",
+      "parent": "Spine01",
+      "head": [
+        0.0,
+        0.06238202378153801,
+        0.9797360897064209
+      ],
+      "tail": [
+        0.0,
+        0.07000977545976639,
+        1.190345287322998
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Spine01"
+        }
+      ]
+    },
+    {
+      "name": "Spine03",
+      "parent": "Spine02",
+      "head": [
+        0.0,
+        0.07000977545976639,
+        1.190345287322998
+      ],
+      "tail": [
+        0.0,
+        0.06737210601568222,
+        1.386170506477356
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Spine02"
+        }
+      ]
+    },
+    {
+      "name": "Spine04",
+      "parent": "Spine03",
+      "head": [
+        0.0,
+        0.06737210601568222,
+        1.386170506477356
+      ],
+      "tail": [
+        0.0,
+        0.06509210914373398,
+        1.4768518209457397
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Spine05",
+      "parent": "Spine04",
+      "head": [
+        0.0,
+        0.06509210914373398,
+        1.4768518209457397
+      ],
+      "tail": [
+        0.0,
+        0.06509210914373398,
+        1.5388814210891724
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Head",
+      "parent": "Spine05",
+      "head": [
+        0.0,
+        0.06509210914373398,
+        1.5388814210891724
+      ],
+      "tail": [
+        0.0,
+        0.0269569493830204,
+        1.716959834098816
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Eyebrow.L",
+      "parent": "Head",
+      "head": [
+        0.038254253566265106,
+        -0.0648045539855957,
+        1.668770432472229
+      ],
+      "tail": [
+        0.038254253566265106,
+        -0.0648045539855957,
+        1.7240160703659058
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyebrowFront.L",
+      "parent": "Eyebrow.L",
+      "head": [
+        0.019124513491988182,
+        -0.06972873955965042,
+        1.6619497537612915
+      ],
+      "tail": [
+        0.019124513491988182,
+        -0.06972873955965042,
+        1.6945909261703491
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyebrowBack.L",
+      "parent": "Eyebrow.L",
+      "head": [
+        0.05899513512849808,
+        -0.05797369405627251,
+        1.6616792678833008
+      ],
+      "tail": [
+        0.05899513512849808,
+        -0.05797369405627251,
+        1.6943204402923584
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Eyebrow.R",
+      "parent": "Head",
+      "head": [
+        -0.038254253566265106,
+        -0.0648045539855957,
+        1.668770432472229
+      ],
+      "tail": [
+        -0.038254253566265106,
+        -0.0648045539855957,
+        1.7240160703659058
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyebrowFront.R",
+      "parent": "Eyebrow.R",
+      "head": [
+        -0.019124513491988182,
+        -0.06972873955965042,
+        1.6619497537612915
+      ],
+      "tail": [
+        -0.019124513491988182,
+        -0.06972873955965042,
+        1.6945909261703491
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyebrowBack.R",
+      "parent": "Eyebrow.R",
+      "head": [
+        -0.05899513512849808,
+        -0.05797369405627251,
+        1.6616792678833008
+      ],
+      "tail": [
+        -0.05899513512849808,
+        -0.05797369405627251,
+        1.6943204402923584
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Jaw",
+      "parent": "Head",
+      "head": [
+        0.0,
+        0.033016275614500046,
+        1.5874773263931274
+      ],
+      "tail": [
+        0.0,
+        -0.10105425119400024,
+        1.5507960319519043
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawCrnr.R",
+      "parent": "Jaw",
+      "head": [
+        -0.056545987725257874,
+        -0.06661026179790497,
+        1.556311845779419
+      ],
+      "tail": [
+        -0.056545987725257874,
+        -0.13068078458309174,
+        1.556311845779419
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawCrnr.L",
+      "parent": "Jaw",
+      "head": [
+        0.056545987725257874,
+        -0.06661026179790497,
+        1.556311845779419
+      ],
+      "tail": [
+        0.056545987725257874,
+        -0.13068078458309174,
+        1.556311845779419
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawBei\u00e7oBttm.L",
+      "parent": "Jaw",
+      "head": [
+        0.03227835148572922,
+        -0.09668637812137604,
+        1.5363138914108276
+      ],
+      "tail": [
+        0.03227835148572922,
+        -0.14668652415275574,
+        1.5363138914108276
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawBei\u00e7oBttm.R",
+      "parent": "Jaw",
+      "head": [
+        -0.03227835148572922,
+        -0.09668637812137604,
+        1.5363138914108276
+      ],
+      "tail": [
+        -0.03227835148572922,
+        -0.14668652415275574,
+        1.5363138914108276
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaA01",
+      "parent": "Jaw",
+      "head": [
+        0.0,
+        -0.1050972044467926,
+        1.5088474750518799
+      ],
+      "tail": [
+        -2.7755578924351364e-17,
+        -0.10444686561822891,
+        1.4849154949188232
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaA02",
+      "parent": "JubaA01",
+      "head": [
+        -2.7755578924351364e-17,
+        -0.10444686561822891,
+        1.4849154949188232
+      ],
+      "tail": [
+        0.0,
+        -0.12222801148891449,
+        1.4072833061218262
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaA03",
+      "parent": "JubaA02",
+      "head": [
+        0.0,
+        -0.12222801148891449,
+        1.4072833061218262
+      ],
+      "tail": [
+        0.0,
+        -0.15076763927936554,
+        1.3480275869369507
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaA02"
+        }
+      ]
+    },
+    {
+      "name": "JubaA04",
+      "parent": "JubaA03",
+      "head": [
+        0.0,
+        -0.15076763927936554,
+        1.3480275869369507
+      ],
+      "tail": [
+        -3.725290298461914e-09,
+        -0.19416043162345886,
+        1.2579327821731567
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaA03"
+        }
+      ]
+    },
+    {
+      "name": "JubaB01.R",
+      "parent": "Jaw",
+      "head": [
+        -0.027157189324498177,
+        -0.09302758425474167,
+        1.5166256427764893
+      ],
+      "tail": [
+        -0.027157189324498177,
+        -0.09237724542617798,
+        1.4926936626434326
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaB02.R",
+      "parent": "JubaB01.R",
+      "head": [
+        -0.027157189324498177,
+        -0.09237724542617798,
+        1.4926936626434326
+      ],
+      "tail": [
+        -0.03782839700579643,
+        -0.11600925028324127,
+        1.4200323820114136
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB01.R"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaB03.R",
+      "parent": "JubaB02.R",
+      "head": [
+        -0.03782839700579643,
+        -0.11600925028324127,
+        1.4200323820114136
+      ],
+      "tail": [
+        -0.05907096341252327,
+        -0.13401134312152863,
+        1.369172215461731
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaB04.R",
+      "parent": "JubaB03.R",
+      "head": [
+        -0.05907096341252327,
+        -0.13401134312152863,
+        1.369172215461731
+      ],
+      "tail": [
+        -0.09387224167585373,
+        -0.20947828888893127,
+        1.3019810914993286
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaB01.L",
+      "parent": "Jaw",
+      "head": [
+        0.027157189324498177,
+        -0.09302758425474167,
+        1.5166256427764893
+      ],
+      "tail": [
+        0.027157189324498177,
+        -0.09237724542617798,
+        1.4926936626434326
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaB02.L",
+      "parent": "JubaB01.L",
+      "head": [
+        0.027157189324498177,
+        -0.09237724542617798,
+        1.4926936626434326
+      ],
+      "tail": [
+        0.03782839700579643,
+        -0.11600925028324127,
+        1.4200323820114136
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB01.L"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaB03.L",
+      "parent": "JubaB02.L",
+      "head": [
+        0.03782839700579643,
+        -0.11600925028324127,
+        1.4200323820114136
+      ],
+      "tail": [
+        0.05907096341252327,
+        -0.13401134312152863,
+        1.369172215461731
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaB04.L",
+      "parent": "JubaB03.L",
+      "head": [
+        0.05907096341252327,
+        -0.13401134312152863,
+        1.369172215461731
+      ],
+      "tail": [
+        0.09387224167585373,
+        -0.20947828888893127,
+        1.3019810914993286
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaB03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaC01.R",
+      "parent": "Jaw",
+      "head": [
+        -0.04292026162147522,
+        -0.06816110014915466,
+        1.5128318071365356
+      ],
+      "tail": [
+        -0.04292026162147522,
+        -0.06751076132059097,
+        1.488899827003479
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaC02.R",
+      "parent": "JubaC01.R",
+      "head": [
+        -0.04292026162147522,
+        -0.06751076132059097,
+        1.488899827003479
+      ],
+      "tail": [
+        -0.07880628108978271,
+        -0.08244094252586365,
+        1.4200128316879272
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC01.R"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaC03.R",
+      "parent": "JubaC02.R",
+      "head": [
+        -0.07880628108978271,
+        -0.08244094252586365,
+        1.4200128316879272
+      ],
+      "tail": [
+        -0.09950053691864014,
+        -0.11812251806259155,
+        1.3900768756866455
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaC04.R",
+      "parent": "JubaC03.R",
+      "head": [
+        -0.09950053691864014,
+        -0.11812251806259155,
+        1.3900768756866455
+      ],
+      "tail": [
+        -0.17096611857414246,
+        -0.16836510598659515,
+        1.3580269813537598
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaC01.L",
+      "parent": "Jaw",
+      "head": [
+        0.04292026162147522,
+        -0.06816110014915466,
+        1.5128318071365356
+      ],
+      "tail": [
+        0.04292026162147522,
+        -0.06751076132059097,
+        1.488899827003479
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaC02.L",
+      "parent": "JubaC01.L",
+      "head": [
+        0.04292026162147522,
+        -0.06751076132059097,
+        1.488899827003479
+      ],
+      "tail": [
+        0.07880628108978271,
+        -0.08244094252586365,
+        1.4200128316879272
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC01.L"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaC03.L",
+      "parent": "JubaC02.L",
+      "head": [
+        0.07880628108978271,
+        -0.08244094252586365,
+        1.4200128316879272
+      ],
+      "tail": [
+        0.09950053691864014,
+        -0.11812251806259155,
+        1.3900768756866455
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaC04.L",
+      "parent": "JubaC03.L",
+      "head": [
+        0.09950053691864014,
+        -0.11812251806259155,
+        1.3900768756866455
+      ],
+      "tail": [
+        0.17096611857414246,
+        -0.16836510598659515,
+        1.3580269813537598
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaC03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaD01.R",
+      "parent": "Jaw",
+      "head": [
+        -0.06649797409772873,
+        -0.04058975726366043,
+        1.5414825677871704
+      ],
+      "tail": [
+        -0.06649797409772873,
+        -0.03993941843509674,
+        1.5175505876541138
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaD02.R",
+      "parent": "JubaD01.R",
+      "head": [
+        -0.06649797409772873,
+        -0.03993941843509674,
+        1.5175505876541138
+      ],
+      "tail": [
+        -0.09946271032094955,
+        -0.03923213481903076,
+        1.4645229578018188
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD01.R"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaD03.R",
+      "parent": "JubaD02.R",
+      "head": [
+        -0.09946271032094955,
+        -0.03923213481903076,
+        1.4645229578018188
+      ],
+      "tail": [
+        -0.1376929134130478,
+        -0.08143797516822815,
+        1.4540692567825317
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaD04.R",
+      "parent": "JubaD03.R",
+      "head": [
+        -0.1376929134130478,
+        -0.08143797516822815,
+        1.4540692567825317
+      ],
+      "tail": [
+        -0.21763011813163757,
+        -0.12023165822029114,
+        1.415917992591858
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaD01.L",
+      "parent": "Jaw",
+      "head": [
+        0.06649797409772873,
+        -0.04058975726366043,
+        1.5414825677871704
+      ],
+      "tail": [
+        0.06649797409772873,
+        -0.03993941843509674,
+        1.5175505876541138
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaD02.L",
+      "parent": "JubaD01.L",
+      "head": [
+        0.06649797409772873,
+        -0.03993941843509674,
+        1.5175505876541138
+      ],
+      "tail": [
+        0.09946271032094955,
+        -0.03923213481903076,
+        1.4645229578018188
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD01.L"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaD03.L",
+      "parent": "JubaD02.L",
+      "head": [
+        0.09946271032094955,
+        -0.03923213481903076,
+        1.4645229578018188
+      ],
+      "tail": [
+        0.1376929134130478,
+        -0.08143797516822815,
+        1.4540692567825317
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaD04.L",
+      "parent": "JubaD03.L",
+      "head": [
+        0.1376929134130478,
+        -0.08143797516822815,
+        1.4540692567825317
+      ],
+      "tail": [
+        0.21763011813163757,
+        -0.12023165822029114,
+        1.415917992591858
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaD03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaE01.R",
+      "parent": "Jaw",
+      "head": [
+        -0.07500150054693222,
+        0.005994983017444611,
+        1.5791863203048706
+      ],
+      "tail": [
+        -0.07500150054693222,
+        0.006645321846008301,
+        1.555254340171814
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaE02.R",
+      "parent": "JubaE01.R",
+      "head": [
+        -0.07500150054693222,
+        0.006645321846008301,
+        1.555254340171814
+      ],
+      "tail": [
+        -0.10282759368419647,
+        0.017569661140441895,
+        1.515397071838379
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE01.R"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03a1.R",
+      "parent": "JubaE02.R",
+      "head": [
+        -0.13259930908679962,
+        -0.0025634542107582092,
+        1.4965176582336426
+      ],
+      "tail": [
+        -0.16389045119285583,
+        -0.013768615201115608,
+        1.4902666807174683
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03a2.R",
+      "parent": "JubaE03a1.R",
+      "head": [
+        -0.16389045119285583,
+        -0.013768615201115608,
+        1.4902666807174683
+      ],
+      "tail": [
+        -0.25473499298095703,
+        -0.048346247524023056,
+        1.4667938947677612
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE03a1.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03b1.R",
+      "parent": "JubaE02.R",
+      "head": [
+        -0.11657409369945526,
+        0.0556073933839798,
+        1.5128488540649414
+      ],
+      "tail": [
+        -0.18198928236961365,
+        0.05076535791158676,
+        1.49942946434021
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03b2.R",
+      "parent": "JubaE03b1.R",
+      "head": [
+        -0.18198928236961365,
+        0.05076535791158676,
+        1.49942946434021
+      ],
+      "tail": [
+        -0.27969276905059814,
+        0.04353334382176399,
+        1.479386329650879
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE03b1.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaE01.L",
+      "parent": "Jaw",
+      "head": [
+        0.07500150054693222,
+        0.005994983017444611,
+        1.5791863203048706
+      ],
+      "tail": [
+        0.07500150054693222,
+        0.006645321846008301,
+        1.555254340171814
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaE02.L",
+      "parent": "JubaE01.L",
+      "head": [
+        0.07500150054693222,
+        0.006645321846008301,
+        1.555254340171814
+      ],
+      "tail": [
+        0.10282759368419647,
+        0.017569661140441895,
+        1.515397071838379
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE01.L"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03a1.L",
+      "parent": "JubaE02.L",
+      "head": [
+        0.13259930908679962,
+        -0.0025634542107582092,
+        1.4965176582336426
+      ],
+      "tail": [
+        0.16389045119285583,
+        -0.013768615201115608,
+        1.4902666807174683
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03a2.L",
+      "parent": "JubaE03a1.L",
+      "head": [
+        0.16389045119285583,
+        -0.013768615201115608,
+        1.4902666807174683
+      ],
+      "tail": [
+        0.25473499298095703,
+        -0.048346247524023056,
+        1.4667938947677612
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE03a1.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03b1.L",
+      "parent": "JubaE02.L",
+      "head": [
+        0.11657409369945526,
+        0.0556073933839798,
+        1.5128488540649414
+      ],
+      "tail": [
+        0.18198928236961365,
+        0.05076535791158676,
+        1.49942946434021
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaE03b2.L",
+      "parent": "JubaE03b1.L",
+      "head": [
+        0.18198928236961365,
+        0.05076535791158676,
+        1.49942946434021
+      ],
+      "tail": [
+        0.27969276905059814,
+        0.04353334382176399,
+        1.479386329650879
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaE03b1.L"
+        }
+      ]
+    },
+    {
+      "name": "JawBei\u00e7oBttm",
+      "parent": "Jaw",
+      "head": [
+        0.0,
+        -0.11350353062152863,
+        1.5404547452926636
+      ],
+      "tail": [
+        1.811057137590666e-10,
+        -0.16274391114711761,
+        1.5317723751068115
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Jaw.Gengiva",
+      "parent": "Jaw",
+      "head": [
+        0.00036890985211357474,
+        0.013759669847786427,
+        1.5741896629333496
+      ],
+      "tail": [
+        0.000368900946341455,
+        -0.05186358094215393,
+        1.5507973432540894
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawBei\u00e7oUppr",
+      "parent": "Head",
+      "head": [
+        0.0,
+        -0.12250760197639465,
+        1.5545819997787476
+      ],
+      "tail": [
+        1.1168982405607153e-09,
+        -0.16782298684120178,
+        1.5334510803222656
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaF01.R",
+      "parent": "Head",
+      "head": [
+        -0.07777749001979828,
+        0.020753193646669388,
+        1.6056568622589111
+      ],
+      "tail": [
+        -0.10258255898952484,
+        0.01002215314656496,
+        1.5856331586837769
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaF02.R",
+      "parent": "JubaF01.R",
+      "head": [
+        -0.10258255898952484,
+        0.01002215314656496,
+        1.5856331586837769
+      ],
+      "tail": [
+        -0.13062310218811035,
+        -0.004578269086778164,
+        1.572861671447754
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaF01.L",
+      "parent": "Head",
+      "head": [
+        0.07777749001979828,
+        0.020753193646669388,
+        1.6056568622589111
+      ],
+      "tail": [
+        0.10258255898952484,
+        0.01002215314656496,
+        1.5856331586837769
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaF02.L",
+      "parent": "JubaF01.L",
+      "head": [
+        0.10258255898952484,
+        0.01002215314656496,
+        1.5856331586837769
+      ],
+      "tail": [
+        0.13062310218811035,
+        -0.004578269086778164,
+        1.572861671447754
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue1",
+      "parent": "Head",
+      "head": [
+        0.00036890985211357474,
+        0.013759669847786427,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.0020788870751857758,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue2",
+      "parent": "Tongue1",
+      "head": [
+        0.00036890985211357474,
+        -0.0020788870751857758,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.017917446792125702,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue3",
+      "parent": "Tongue2",
+      "head": [
+        0.00036890985211357474,
+        -0.017917446792125702,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.033756010234355927,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue4",
+      "parent": "Tongue3",
+      "head": [
+        0.00036890985211357474,
+        -0.033756010234355927,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.04959457740187645,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue5",
+      "parent": "Tongue4",
+      "head": [
+        0.00036890985211357474,
+        -0.04959457740187645,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.06543312966823578,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Tongue6",
+      "parent": "Tongue5",
+      "head": [
+        0.00036890985211357474,
+        -0.06543312966823578,
+        1.554407000541687
+      ],
+      "tail": [
+        0.00036890985211357474,
+        -0.0812717080116272,
+        1.554407000541687
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyelidUpper.R",
+      "parent": "Head",
+      "head": [
+        -0.03906369209289551,
+        -0.04882296174764633,
+        1.6526151895523071
+      ],
+      "tail": [
+        -0.03906369209289551,
+        -0.10582298040390015,
+        1.6526151895523071
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyelidUpper.L",
+      "parent": "Head",
+      "head": [
+        0.03906369209289551,
+        -0.04882296174764633,
+        1.6526151895523071
+      ],
+      "tail": [
+        0.03906369209289551,
+        -0.10582298040390015,
+        1.6526151895523071
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyelidBottom.R",
+      "parent": "Head",
+      "head": [
+        -0.03906369209289551,
+        -0.04882296174764633,
+        1.6307964324951172
+      ],
+      "tail": [
+        -0.03906369209289551,
+        -0.10582298040390015,
+        1.6307964324951172
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "EyelidBottom.L",
+      "parent": "Head",
+      "head": [
+        0.03906369209289551,
+        -0.04882296174764633,
+        1.6307964324951172
+      ],
+      "tail": [
+        0.03906369209289551,
+        -0.10582298040390015,
+        1.6307964324951172
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Eye.Follow",
+      "parent": "Head",
+      "head": [
+        0.0,
+        -0.27787962555885315,
+        1.655685305595398
+      ],
+      "tail": [
+        0.0,
+        -0.27787962555885315,
+        1.7897558212280273
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawBei\u00e7oUppr.L",
+      "parent": "Head",
+      "head": [
+        0.032637447118759155,
+        -0.09400701522827148,
+        1.5505036115646362
+      ],
+      "tail": [
+        0.032637447118759155,
+        -0.14400716125965118,
+        1.5505036115646362
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JawBei\u00e7oUppr.R",
+      "parent": "Head",
+      "head": [
+        -0.032637447118759155,
+        -0.09400701522827148,
+        1.5505036115646362
+      ],
+      "tail": [
+        -0.032637447118759155,
+        -0.14400716125965118,
+        1.5505036115646362
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Olho.R",
+      "parent": "Head",
+      "head": [
+        -0.031544461846351624,
+        -0.053649283945560455,
+        1.6406211853027344
+      ],
+      "tail": [
+        -0.03154444694519043,
+        -0.16764932870864868,
+        1.6406211853027344
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "TRACK_TO",
+          "target": "ArmatureMast",
+          "subtarget": "Eye.Follow"
+        },
+        {
+          "type": "LIMIT_ROTATION",
+          "target": null,
+          "subtarget": null
+        }
+      ]
+    },
+    {
+      "name": "Olho.L",
+      "parent": "Head",
+      "head": [
+        0.031544461846351624,
+        -0.053649283945560455,
+        1.6406211853027344
+      ],
+      "tail": [
+        0.03154444694519043,
+        -0.16764932870864868,
+        1.6406211853027344
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "TRACK_TO",
+          "target": "ArmatureMast",
+          "subtarget": "Eye.Follow"
+        },
+        {
+          "type": "LIMIT_ROTATION",
+          "target": null,
+          "subtarget": null
+        }
+      ]
+    },
+    {
+      "name": "JubaG01.R",
+      "parent": "Head",
+      "head": [
+        -0.09212405234575272,
+        0.05294198915362358,
+        1.6564409732818604
+      ],
+      "tail": [
+        -0.09212405234575272,
+        0.05294198915362358,
+        1.603243112564087
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaG02.R",
+      "parent": "JubaG01.R",
+      "head": [
+        -0.09212405234575272,
+        0.05294198915362358,
+        1.603243112564087
+      ],
+      "tail": [
+        -0.13584306836128235,
+        0.053602881729602814,
+        1.564361810684204
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaG01.R"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaG03.R",
+      "parent": "JubaG02.R",
+      "head": [
+        -0.13584306836128235,
+        0.053602881729602814,
+        1.564361810684204
+      ],
+      "tail": [
+        -0.17616049945354462,
+        0.051961079239845276,
+        1.5210434198379517
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaG01.L",
+      "parent": "Head",
+      "head": [
+        0.09212405234575272,
+        0.05294198915362358,
+        1.6564409732818604
+      ],
+      "tail": [
+        0.09212405234575272,
+        0.05294198915362358,
+        1.603243112564087
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaG02.L",
+      "parent": "JubaG01.L",
+      "head": [
+        0.09212405234575272,
+        0.05294198915362358,
+        1.603243112564087
+      ],
+      "tail": [
+        0.13584306836128235,
+        0.053602881729602814,
+        1.564361810684204
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaG01.L"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Jaw"
+        },
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "Head"
+        }
+      ]
+    },
+    {
+      "name": "JubaG03.L",
+      "parent": "JubaG02.L",
+      "head": [
+        0.13584306836128235,
+        0.053602881729602814,
+        1.564361810684204
+      ],
+      "tail": [
+        0.17616049945354462,
+        0.051961079239845276,
+        1.5210434198379517
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaH01.R",
+      "parent": "Head",
+      "head": [
+        -0.14713938534259796,
+        0.05852660536766052,
+        1.687901496887207
+      ],
+      "tail": [
+        -0.14713938534259796,
+        0.05852660536766052,
+        1.6395244598388672
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaH02.R",
+      "parent": "JubaH01.R",
+      "head": [
+        -0.14713938534259796,
+        0.05852660536766052,
+        1.6395244598388672
+      ],
+      "tail": [
+        -0.16080468893051147,
+        0.06314384192228317,
+        1.5962287187576294
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH01.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaH03.R",
+      "parent": "JubaH02.R",
+      "head": [
+        -0.16080468893051147,
+        0.06314384192228317,
+        1.5962287187576294
+      ],
+      "tail": [
+        -0.18865102529525757,
+        0.08488954603672028,
+        1.5593096017837524
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaH04.R",
+      "parent": "JubaH03.R",
+      "head": [
+        -0.18865102529525757,
+        0.08488954603672028,
+        1.5593096017837524
+      ],
+      "tail": [
+        -0.20638792216777802,
+        0.12301511317491531,
+        1.5314886569976807
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaH05.R",
+      "parent": "JubaH04.R",
+      "head": [
+        -0.20638792216777802,
+        0.12301511317491531,
+        1.5314886569976807
+      ],
+      "tail": [
+        -0.25125551223754883,
+        0.14847463369369507,
+        1.4851653575897217
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH04.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaH01.L",
+      "parent": "Head",
+      "head": [
+        0.14713938534259796,
+        0.05852660536766052,
+        1.687901496887207
+      ],
+      "tail": [
+        0.14713938534259796,
+        0.05852660536766052,
+        1.6395244598388672
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaH02.L",
+      "parent": "JubaH01.L",
+      "head": [
+        0.14713938534259796,
+        0.05852660536766052,
+        1.6395244598388672
+      ],
+      "tail": [
+        0.16080468893051147,
+        0.06314384192228317,
+        1.5962287187576294
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH01.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaH03.L",
+      "parent": "JubaH02.L",
+      "head": [
+        0.16080468893051147,
+        0.06314384192228317,
+        1.5962287187576294
+      ],
+      "tail": [
+        0.18865102529525757,
+        0.08488954603672028,
+        1.5593096017837524
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaH04.L",
+      "parent": "JubaH03.L",
+      "head": [
+        0.18865102529525757,
+        0.08488954603672028,
+        1.5593096017837524
+      ],
+      "tail": [
+        0.20638792216777802,
+        0.12301511317491531,
+        1.5314886569976807
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaH05.L",
+      "parent": "JubaH04.L",
+      "head": [
+        0.20638792216777802,
+        0.12301511317491531,
+        1.5314886569976807
+      ],
+      "tail": [
+        0.25125551223754883,
+        0.14847463369369507,
+        1.4851653575897217
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaH04.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaI01.R",
+      "parent": "Head",
+      "head": [
+        -0.13849873840808868,
+        0.13563190400600433,
+        1.683409571647644
+      ],
+      "tail": [
+        -0.15438613295555115,
+        0.15044713020324707,
+        1.6350325345993042
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaI02.R",
+      "parent": "JubaI01.R",
+      "head": [
+        -0.15438613295555115,
+        0.15044713020324707,
+        1.6350325345993042
+      ],
+      "tail": [
+        -0.16777381300926208,
+        0.1578255593776703,
+        1.5852952003479004
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI01.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaI03.R",
+      "parent": "JubaI02.R",
+      "head": [
+        -0.16777381300926208,
+        0.1578255593776703,
+        1.5852952003479004
+      ],
+      "tail": [
+        -0.1705169826745987,
+        0.16875259578227997,
+        1.5388003587722778
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaI04.R",
+      "parent": "JubaI03.R",
+      "head": [
+        -0.1705169826745987,
+        0.16875259578227997,
+        1.5388003587722778
+      ],
+      "tail": [
+        -0.1686161756515503,
+        0.19007281959056854,
+        1.493982195854187
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaI05.R",
+      "parent": "JubaI04.R",
+      "head": [
+        -0.1686161756515503,
+        0.19007281959056854,
+        1.493982195854187
+      ],
+      "tail": [
+        -0.16499069333076477,
+        0.2122829109430313,
+        1.463234305381775
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI04.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaI06.R",
+      "parent": "JubaI05.R",
+      "head": [
+        -0.16499069333076477,
+        0.2122829109430313,
+        1.463234305381775
+      ],
+      "tail": [
+        -0.1776840090751648,
+        0.2516045868396759,
+        1.4165130853652954
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI05.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaI01.L",
+      "parent": "Head",
+      "head": [
+        0.13849873840808868,
+        0.13563190400600433,
+        1.683409571647644
+      ],
+      "tail": [
+        0.15438613295555115,
+        0.15044713020324707,
+        1.6350325345993042
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaI02.L",
+      "parent": "JubaI01.L",
+      "head": [
+        0.15438613295555115,
+        0.15044713020324707,
+        1.6350325345993042
+      ],
+      "tail": [
+        0.16777381300926208,
+        0.1578255593776703,
+        1.5852952003479004
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI01.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaI03.L",
+      "parent": "JubaI02.L",
+      "head": [
+        0.16777381300926208,
+        0.1578255593776703,
+        1.5852952003479004
+      ],
+      "tail": [
+        0.1705169826745987,
+        0.16875259578227997,
+        1.5388003587722778
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaI04.L",
+      "parent": "JubaI03.L",
+      "head": [
+        0.1705169826745987,
+        0.16875259578227997,
+        1.5388003587722778
+      ],
+      "tail": [
+        0.1686161756515503,
+        0.19007281959056854,
+        1.493982195854187
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaI05.L",
+      "parent": "JubaI04.L",
+      "head": [
+        0.1686161756515503,
+        0.19007281959056854,
+        1.493982195854187
+      ],
+      "tail": [
+        0.16499069333076477,
+        0.2122829109430313,
+        1.463234305381775
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI04.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaI06.L",
+      "parent": "JubaI05.L",
+      "head": [
+        0.16499069333076477,
+        0.2122829109430313,
+        1.463234305381775
+      ],
+      "tail": [
+        0.1776840090751648,
+        0.2516045868396759,
+        1.4165130853652954
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaI05.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ01.R",
+      "parent": "Head",
+      "head": [
+        -0.07452511042356491,
+        0.1792958527803421,
+        1.685099482536316
+      ],
+      "tail": [
+        -0.09613552689552307,
+        0.21071045100688934,
+        1.639562964439392
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaJ02.R",
+      "parent": "JubaJ01.R",
+      "head": [
+        -0.09613552689552307,
+        0.21071045100688934,
+        1.639562964439392
+      ],
+      "tail": [
+        -0.10471197217702866,
+        0.2205888032913208,
+        1.5825663805007935
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ01.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ03.R",
+      "parent": "JubaJ02.R",
+      "head": [
+        -0.10471197217702866,
+        0.2205888032913208,
+        1.5825663805007935
+      ],
+      "tail": [
+        -0.10439623147249222,
+        0.20731990039348602,
+        1.5198343992233276
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ04.R",
+      "parent": "JubaJ03.R",
+      "head": [
+        -0.10439623147249222,
+        0.20731990039348602,
+        1.5198343992233276
+      ],
+      "tail": [
+        -0.10220122337341309,
+        0.2046552300453186,
+        1.4496346712112427
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ05.R",
+      "parent": "JubaJ04.R",
+      "head": [
+        -0.10220122337341309,
+        0.2046552300453186,
+        1.4496346712112427
+      ],
+      "tail": [
+        -0.10391049832105637,
+        0.23613891005516052,
+        1.393829584121704
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ04.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ06.R",
+      "parent": "JubaJ05.R",
+      "head": [
+        -0.10391049832105637,
+        0.23613891005516052,
+        1.393829584121704
+      ],
+      "tail": [
+        -0.11429055035114288,
+        0.2912164330482483,
+        1.3392994403839111
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ05.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ01.L",
+      "parent": "Head",
+      "head": [
+        0.07452511042356491,
+        0.1792958527803421,
+        1.685099482536316
+      ],
+      "tail": [
+        0.09613552689552307,
+        0.21071045100688934,
+        1.639562964439392
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaJ02.L",
+      "parent": "JubaJ01.L",
+      "head": [
+        0.09613552689552307,
+        0.21071045100688934,
+        1.639562964439392
+      ],
+      "tail": [
+        0.10471197217702866,
+        0.2205888032913208,
+        1.5825663805007935
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ01.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ03.L",
+      "parent": "JubaJ02.L",
+      "head": [
+        0.10471197217702866,
+        0.2205888032913208,
+        1.5825663805007935
+      ],
+      "tail": [
+        0.10439623147249222,
+        0.20731990039348602,
+        1.5198343992233276
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ04.L",
+      "parent": "JubaJ03.L",
+      "head": [
+        0.10439623147249222,
+        0.20731990039348602,
+        1.5198343992233276
+      ],
+      "tail": [
+        0.10220122337341309,
+        0.2046552300453186,
+        1.4496346712112427
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ05.L",
+      "parent": "JubaJ04.L",
+      "head": [
+        0.10220122337341309,
+        0.2046552300453186,
+        1.4496346712112427
+      ],
+      "tail": [
+        0.10391049832105637,
+        0.23613891005516052,
+        1.393829584121704
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ04.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaJ06.L",
+      "parent": "JubaJ05.L",
+      "head": [
+        0.10391049832105637,
+        0.23613891005516052,
+        1.393829584121704
+      ],
+      "tail": [
+        0.11429055035114288,
+        0.2912164330482483,
+        1.3392994403839111
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaJ05.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK01.R",
+      "parent": "Head",
+      "head": [
+        -0.027855124324560165,
+        0.19822221994400024,
+        1.685099482536316
+      ],
+      "tail": [
+        -0.029010476544499397,
+        0.23016200959682465,
+        1.638624906539917
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaK02.R",
+      "parent": "JubaK01.R",
+      "head": [
+        -0.029010476544499397,
+        0.23016200959682465,
+        1.638624906539917
+      ],
+      "tail": [
+        -0.03277527540922165,
+        0.23719647526741028,
+        1.5795488357543945
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK01.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK03.R",
+      "parent": "JubaK02.R",
+      "head": [
+        -0.03277527540922165,
+        0.23719647526741028,
+        1.5795488357543945
+      ],
+      "tail": [
+        -0.03825197368860245,
+        0.22240827977657318,
+        1.520808458328247
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK02.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK04.R",
+      "parent": "JubaK03.R",
+      "head": [
+        -0.03825197368860245,
+        0.22240827977657318,
+        1.520808458328247
+      ],
+      "tail": [
+        -0.045898452401161194,
+        0.21406295895576477,
+        1.454688549041748
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK03.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK05.R",
+      "parent": "JubaK04.R",
+      "head": [
+        -0.045898452401161194,
+        0.21406295895576477,
+        1.454688549041748
+      ],
+      "tail": [
+        -0.04715965315699577,
+        0.22774995863437653,
+        1.382764458656311
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK04.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK06.R",
+      "parent": "JubaK05.R",
+      "head": [
+        -0.04715965315699577,
+        0.22774995863437653,
+        1.382764458656311
+      ],
+      "tail": [
+        -0.04742074012756348,
+        0.2459583580493927,
+        1.320278286933899
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK05.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK07.R",
+      "parent": "JubaK06.R",
+      "head": [
+        -0.04742074012756348,
+        0.2459583580493927,
+        1.320278286933899
+      ],
+      "tail": [
+        -0.05458231270313263,
+        0.2923557162284851,
+        1.256529450416565
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK06.R"
+        }
+      ]
+    },
+    {
+      "name": "JubaK01.L",
+      "parent": "Head",
+      "head": [
+        0.027855124324560165,
+        0.19822221994400024,
+        1.685099482536316
+      ],
+      "tail": [
+        0.029010476544499397,
+        0.23016200959682465,
+        1.638624906539917
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "JubaK02.L",
+      "parent": "JubaK01.L",
+      "head": [
+        0.029010476544499397,
+        0.23016200959682465,
+        1.638624906539917
+      ],
+      "tail": [
+        0.03277527540922165,
+        0.23719647526741028,
+        1.5795488357543945
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK01.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK03.L",
+      "parent": "JubaK02.L",
+      "head": [
+        0.03277527540922165,
+        0.23719647526741028,
+        1.5795488357543945
+      ],
+      "tail": [
+        0.03825197368860245,
+        0.22240827977657318,
+        1.520808458328247
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK02.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK04.L",
+      "parent": "JubaK03.L",
+      "head": [
+        0.03825197368860245,
+        0.22240827977657318,
+        1.520808458328247
+      ],
+      "tail": [
+        0.045898452401161194,
+        0.21406295895576477,
+        1.454688549041748
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK03.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK05.L",
+      "parent": "JubaK04.L",
+      "head": [
+        0.045898452401161194,
+        0.21406295895576477,
+        1.454688549041748
+      ],
+      "tail": [
+        0.04715965315699577,
+        0.22774995863437653,
+        1.382764458656311
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK04.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK06.L",
+      "parent": "JubaK05.L",
+      "head": [
+        0.04715965315699577,
+        0.22774995863437653,
+        1.382764458656311
+      ],
+      "tail": [
+        0.04742074012756348,
+        0.2459583580493927,
+        1.320278286933899
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK05.L"
+        }
+      ]
+    },
+    {
+      "name": "JubaK07.L",
+      "parent": "JubaK06.L",
+      "head": [
+        0.04742074012756348,
+        0.2459583580493927,
+        1.320278286933899
+      ],
+      "tail": [
+        0.05458231270313263,
+        0.2923557162284851,
+        1.256529450416565
+      ],
+      "deform": true,
+      "constraints": [
+        {
+          "type": "COPY_ROTATION",
+          "target": "ArmatureMast",
+          "subtarget": "JubaK06.L"
+        }
+      ]
+    },
+    {
+      "name": "Ear1.L",
+      "parent": "Head",
+      "head": [
+        0.06828475743532181,
+        0.005902027245610952,
+        1.6739931106567383
+      ],
+      "tail": [
+        0.08346018195152283,
+        0.00590202771127224,
+        1.6970739364624023
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Ear2.L",
+      "parent": "Ear1.L",
+      "head": [
+        0.08346018195152283,
+        0.00590202771127224,
+        1.6970739364624023
+      ],
+      "tail": [
+        0.09863561391830444,
+        0.005902028642594814,
+        1.720154881477356
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Ear1.R",
+      "parent": "Head",
+      "head": [
+        -0.06828475743532181,
+        0.005902027245610952,
+        1.6739931106567383
+      ],
+      "tail": [
+        -0.08346018195152283,
+        0.00590202771127224,
+        1.6970739364624023
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Ear2.R",
+      "parent": "Ear1.R",
+      "head": [
+        -0.08346018195152283,
+        0.00590202771127224,
+        1.6970739364624023
+      ],
+      "tail": [
+        -0.09863561391830444,
+        0.005902028642594814,
+        1.720154881477356
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Venta.R",
+      "parent": "Head",
+      "head": [
+        -0.025759123265743256,
+        -0.12712711095809937,
+        1.5867503881454468
+      ],
+      "tail": [
+        -0.025759123265743256,
+        -0.12712711095809937,
+        1.6167503595352173
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Venta.L",
+      "parent": "Head",
+      "head": [
+        0.025759123265743256,
+        -0.12712711095809937,
+        1.5867503881454468
+      ],
+      "tail": [
+        0.025759123265743256,
+        -0.12712711095809937,
+        1.6167503595352173
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Throat",
+      "parent": "Head",
+      "head": [
+        0.0,
+        0.033016275614500046,
+        1.5624773502349854
+      ],
+      "tail": [
+        -2.9786250666297087e-18,
+        0.08000084012746811,
+        1.5795782804489136
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Cheek.L",
+      "parent": "Head",
+      "head": [
+        0.05063686519861221,
+        -0.08103196322917938,
+        1.6002718210220337
+      ],
+      "tail": [
+        0.05063686519861221,
+        -0.08103196322917938,
+        1.650272011756897
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Cheek.R",
+      "parent": "Head",
+      "head": [
+        -0.05063686519861221,
+        -0.08103196322917938,
+        1.6002718210220337
+      ],
+      "tail": [
+        -0.05063686519861221,
+        -0.08103196322917938,
+        1.650272011756897
+      ],
+      "deform": true,
+      "constraints": []
+    },
+    {
+      "name": "Head.Gengiva",
+      "parent": "Head",
+      "head": [
+        0.00036890985211357474,
+        0.013759669847786427,
+        1.5933923721313477
+      ],
+      "tail": [
+        0.000368900946341455,
+        -0.05186358094215393,
+        1.5700000524520874
+      ],
+      "deform": true,
+      "constraints": []
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Mast2024-11",
+      "vertices": 4379,
+      "polygons": 4238,
+      "triangles": 8456,
+      "components": [
+        3463,
+        74,
+        74,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        28,
+        28,
+        28,
+        28,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "boundaryEdges": 252,
+      "nonmanifoldEdgesOverTwoFaces": 16,
+      "bounds": {
+        "min": [
+          -0.9044129848480225,
+          -0.1819206178188324,
+          -0.009210851043462753
+        ],
+        "max": [
+          0.9044129848480225,
+          0.2490755319595337,
+          1.732797622680664
+        ]
+      },
+      "colorAttributes": [
+        {
+          "name": "ColVal",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColSaturday",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColHue",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColColor",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColGloss",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColBody",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColFres",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        },
+        {
+          "name": "ColCornea",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 16932
+        }
+      ],
+      "uvLayers": [
+        "UVMap"
+      ],
+      "weightCounts": {
+        "EyelidUpper.L": 20,
+        "Head": 519,
+        "EyelidBottom.L": 20,
+        "Eyebrow.L": 6,
+        "EyebrowFront.L": 3,
+        "EyebrowBack.L": 6,
+        "Cheek.L": 9,
+        "JawBei\u00e7oUppr": 21,
+        "zzFace": 1423,
+        "EyelidUpper.R": 20,
+        "EyelidBottom.R": 20,
+        "Eyebrow.R": 6,
+        "EyebrowFront.R": 3,
+        "EyebrowBack.R": 6,
+        "JawBei\u00e7oBttm": 25,
+        "JawBei\u00e7oUppr.L": 54,
+        "JawCrnr.L": 35,
+        "Jaw": 152,
+        "JawBei\u00e7oBttm.L": 16,
+        "Cheek.R": 9,
+        "Venta.L": 10,
+        "Spine05": 132,
+        "Ear1.L": 20,
+        "Ear2.L": 22,
+        "JawBei\u00e7oUppr.R": 54,
+        "JawCrnr.R": 35,
+        "JawBei\u00e7oBttm.R": 16,
+        "Venta.R": 10,
+        "Jaw.Gengiva": 450,
+        "Tongue1": 18,
+        "zzzTongue": 42,
+        "Ear1.R": 20,
+        "Ear2.R": 22,
+        "Throat": 12,
+        "Head.Gengiva": 438,
+        "zzzTeefBottom": 384,
+        "zzzTeefUpper": 384,
+        "Tongue5": 12,
+        "Tongue2": 12,
+        "Tongue3": 12,
+        "Tongue4": 12,
+        "Bra\u00e7o01.L": 150,
+        "Ombro.L": 85,
+        "Spine04": 135,
+        "Spine03": 233,
+        "Bra\u00e7o02.L": 117,
+        "Spine02": 253,
+        "Bra\u00e7o01.R": 150,
+        "Ombro.R": 85,
+        "Bra\u00e7o02.R": 117,
+        "Spine01": 217,
+        "JunkBone": 12,
+        "Butt.Hind": 7,
+        "Leg01.L": 125,
+        "ButtNE.L": 3,
+        "Bunda.L": 4,
+        "ButtSE.L": 1,
+        "Butt.L": 3,
+        "Leg02.L": 113,
+        "Foot.L": 182,
+        "FingerA02.L": 20,
+        "FingerA.L": 29,
+        "FingerA01.L": 12,
+        "FingerB02.L": 20,
+        "Finger.L": 104,
+        "FingerC02.L": 20,
+        "FingerD02.L": 20,
+        "FingerE02.L": 20,
+        "FingerB01.L": 12,
+        "FingerC01.L": 12,
+        "FingerD01.L": 11,
+        "FingerE01.L": 12,
+        "PhingerA03.L": 17,
+        "PhingerA01.L": 15,
+        "PhingerA02.L": 12,
+        "Pulso.L": 94,
+        "PhingerB03.L": 18,
+        "PhingerC03.L": 18,
+        "PhingerD03.L": 18,
+        "PhingerE03.L": 18,
+        "PhingerE01.L": 18,
+        "PhingerD01.L": 18,
+        "PhingerC01.L": 18,
+        "PhingerB01.L": 18,
+        "PhingerE02.L": 18,
+        "PhingerD02.L": 18,
+        "Leg01.R": 125,
+        "ButtNE.R": 3,
+        "Bunda.R": 4,
+        "ButtSE.R": 1,
+        "Butt.R": 3,
+        "PhingerC02.L": 18,
+        "PhingerB02.L": 18,
+        "Leg02.R": 113,
+        "Foot.R": 182,
+        "FingerA02.R": 20,
+        "FingerA.R": 29,
+        "FingerA01.R": 12,
+        "FingerB02.R": 20,
+        "Finger.R": 104,
+        "FingerC02.R": 20,
+        "FingerD02.R": 20,
+        "FingerE02.R": 20,
+        "FingerB01.R": 12,
+        "FingerC01.R": 12,
+        "FingerD01.R": 11,
+        "FingerE01.R": 12,
+        "PhingerA03.R": 17,
+        "PhingerA01.R": 15,
+        "PhingerA02.R": 12,
+        "Pulso.R": 94,
+        "PhingerB03.R": 18,
+        "PhingerC03.R": 18,
+        "PhingerD03.R": 18,
+        "PhingerE03.R": 18,
+        "PhingerE01.R": 18,
+        "PhingerD01.R": 18,
+        "PhingerC01.R": 18,
+        "PhingerB01.R": 18,
+        "PhingerE02.R": 18,
+        "PhingerD02.R": 18,
+        "PhingerC02.R": 18,
+        "PhingerB02.R": 18,
+        "Butt.Front": 1,
+        "Butt": 1,
+        "Olho.L": 74,
+        "Olho.R": 74
+      },
+      "headCandidateBounds": {
+        "min": [
+          -0.11874907463788986,
+          -0.14565159380435944,
+          1.5074583292007446
+        ],
+        "max": [
+          0.11874907463788986,
+          0.1280306577682495,
+          1.732797622680664
+        ]
+      },
+      "levels": {
+        "0": {
+          "vertices": 4379,
+          "polygons": 4238,
+          "triangles": 8456,
+          "components": [
+            3463,
+            74,
+            74,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            28,
+            28,
+            28,
+            28,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          "boundaryEdges": 252,
+          "nonmanifoldEdgesOverTwoFaces": 16,
+          "bounds": {
+            "min": [
+              -0.9044177532196045,
+              -0.18192067742347717,
+              -0.009210705757141113
+            ],
+            "max": [
+              0.9044179916381836,
+              0.2490754872560501,
+              1.7327972650527954
+            ]
+          }
+        },
+        "1": {
+          "vertices": 17201,
+          "polygons": 16932,
+          "triangles": 33864,
+          "components": [
+            13797,
+            306,
+            306,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            117,
+            103,
+            103,
+            103,
+            103,
+            94,
+            94,
+            94,
+            94,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89,
+            89
+          ],
+          "boundaryEdges": 504,
+          "nonmanifoldEdgesOverTwoFaces": 32,
+          "bounds": {
+            "min": [
+              -0.9012205600738525,
+              -0.17708873748779297,
+              -0.008942830376327038
+            ],
+            "max": [
+              0.9012207984924316,
+              0.2436506152153015,
+              1.7297143936157227
+            ]
+          }
+        }
+      },
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE",
+          "show": true,
+          "group": "",
+          "invert": false
+        },
+        {
+          "name": "Subdivision",
+          "type": "SUBSURF",
+          "show": true,
+          "group": null,
+          "invert": null
+        },
+        {
+          "name": "Mask",
+          "type": "MASK",
+          "show": false,
+          "group": "zzzTongue",
+          "invert": false
+        }
+      ],
+      "headCandidateVertices": 1952
+    },
+    {
+      "name": "Mast.Juba",
+      "vertices": 1437,
+      "polygons": 1008,
+      "triangles": 2006,
+      "components": [
+        1437
+      ],
+      "boundaryEdges": 868,
+      "nonmanifoldEdgesOverTwoFaces": 0,
+      "bounds": {
+        "min": [
+          -0.2641158998012543,
+          -0.22523950040340424,
+          1.2263562679290771
+        ],
+        "max": [
+          0.2641158998012543,
+          0.3172662854194641,
+          1.778135895729065
+        ]
+      },
+      "colorAttributes": [
+        {
+          "name": "ColVal",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColSaturday",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColHue",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColColor",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColGloss",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColBody",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        },
+        {
+          "name": "ColFres",
+          "domain": "CORNER",
+          "type": "BYTE_COLOR",
+          "count": 4022
+        }
+      ],
+      "uvLayers": [],
+      "weightCounts": {
+        "zzzManeThickness": 1437,
+        "Jaw": 191,
+        "Head": 284,
+        "JubaA01": 5,
+        "JubaA02": 10,
+        "JubaC01.L": 5,
+        "JubaC02.L": 10,
+        "JubaD02.L": 11,
+        "JubaD01.L": 6,
+        "JubaB02.L": 8,
+        "JubaB01.L": 4,
+        "JubaE01.L": 9,
+        "JubaE02.L": 15,
+        "JubaC01.R": 5,
+        "JubaC02.R": 10,
+        "JubaD02.R": 11,
+        "JubaD01.R": 6,
+        "JubaB02.R": 8,
+        "JubaB01.R": 4,
+        "JubaE01.R": 9,
+        "JubaE02.R": 15,
+        "JubaK01.L": 6,
+        "JubaK01.R": 6,
+        "JubaK04.L": 6,
+        "JubaK04.R": 6,
+        "JubaK05.L": 6,
+        "JubaK05.R": 6,
+        "JubaA03": 10,
+        "JubaI01.L": 6,
+        "JubaJ01.L": 6,
+        "JubaI02.L": 6,
+        "JubaI03.L": 6,
+        "JubaJ02.L": 6,
+        "JubaJ03.L": 6,
+        "JubaJ04.L": 6,
+        "JubaJ05.L": 6,
+        "JubaH01.L": 6,
+        "JubaI04.L": 6,
+        "JubaI05.L": 6,
+        "JubaH02.L": 6,
+        "JubaH03.L": 6,
+        "JubaH05.L": 30,
+        "JubaB03.L": 8,
+        "JubaC03.L": 10,
+        "JubaD03.L": 10,
+        "JubaG01.L": 4,
+        "JubaF01.L": 10,
+        "JubaA04": 50,
+        "JubaE03a1.L": 6,
+        "JubaE03b1.L": 8,
+        "zzMask": 56,
+        "JubaG03.L": 16,
+        "JubaB04.L": 40,
+        "JubaC04.L": 45,
+        "JubaK02.L": 6,
+        "JubaK02.R": 6,
+        "JubaK03.L": 6,
+        "JubaK03.R": 6,
+        "JubaD04.L": 45,
+        "JubaE03a2.L": 27,
+        "JubaE03b2.L": 36,
+        "JubaH04.L": 6,
+        "zzzManeTips": 71,
+        "JubaI01.R": 6,
+        "JubaF01.R.014": 6,
+        "JubaJ01.R": 6,
+        "JubaI02.R": 6,
+        "JubaI03.R": 6,
+        "JubaF01.R.015": 6,
+        "JubaF01.R.016": 6,
+        "JubaJ02.R": 6,
+        "JubaJ03.R": 6,
+        "JubaF01.R.017": 6,
+        "JubaF01.R.018": 6,
+        "JubaJ04.R": 6,
+        "JubaJ05.R": 6,
+        "JubaH01.R": 6,
+        "JubaI04.R": 6,
+        "JubaI05.R": 6,
+        "JubaH02.R": 6,
+        "JubaH03.R": 6,
+        "JubaH05.R": 30,
+        "JubaG02.L": 4,
+        "JubaF02.L": 40,
+        "JubaB03.R": 8,
+        "JubaC03.R": 10,
+        "JubaD03.R": 10,
+        "JubaG01.R": 4,
+        "JubaF01.R": 10,
+        "JubaE03a1.R": 6,
+        "JubaE03b1.R": 8,
+        "JubaG03.R": 16,
+        "JubaB04.R": 40,
+        "JubaC04.R": 45,
+        "JubaD04.R": 45,
+        "JubaE03a2.R": 27,
+        "JubaE03b2.R": 36,
+        "JubaH04.R": 6,
+        "JubaK07.L": 27,
+        "JubaG02.R": 4,
+        "JubaF02.R": 40,
+        "JubaJ06.L": 27,
+        "JubaI06.L": 27,
+        "JubaK06.L": 6,
+        "JubaK07.R": 27,
+        "JubaF01.R.019": 27,
+        "JubaJ06.R": 27,
+        "JubaI06.R": 27,
+        "JubaK06.R": 6
+      },
+      "headCandidateBounds": {
+        "min": [
+          -0.2641158998012543,
+          -0.22523950040340424,
+          1.2263562679290771
+        ],
+        "max": [
+          0.2641158998012543,
+          0.3172662854194641,
+          1.778135895729065
+        ]
+      },
+      "levels": {
+        "0": {
+          "vertices": 2874,
+          "polygons": 2884,
+          "triangles": 5748,
+          "components": [
+            2874
+          ],
+          "boundaryEdges": 0,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "bounds": {
+            "min": [
+              -0.2663377821445465,
+              -0.22746197879314423,
+              1.224336862564087
+            ],
+            "max": [
+              0.2663377821445465,
+              0.31938818097114563,
+              1.784792184829712
+            ]
+          }
+        },
+        "1": {
+          "vertices": 11516,
+          "polygons": 11516,
+          "triangles": 23032,
+          "components": [
+            11516
+          ],
+          "boundaryEdges": 0,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "bounds": {
+            "min": [
+              -0.2609194219112396,
+              -0.22385919094085693,
+              1.2279223203659058
+            ],
+            "max": [
+              0.26091939210891724,
+              0.30975577235221863,
+              1.7726094722747803
+            ]
+          }
+        }
+      },
+      "modifiers": [
+        {
+          "name": "Armature",
+          "type": "ARMATURE",
+          "show": true,
+          "group": "",
+          "invert": false
+        },
+        {
+          "name": "Solidify",
+          "type": "SOLIDIFY",
+          "show": true,
+          "group": "zzzManeThickness",
+          "invert": false
+        },
+        {
+          "name": "Subdivision",
+          "type": "SUBSURF",
+          "show": true,
+          "group": null,
+          "invert": null
+        },
+        {
+          "name": "Mask",
+          "type": "MASK",
+          "show": false,
+          "group": "zzMask",
+          "invert": true
+        }
+      ],
+      "headCandidateVertices": 1437
+    }
+  ],
+  "materials": [
+    {
+      "name": "zzRegretMat",
+      "nodes": [
+        {
+          "type": "FRAME",
+          "name": "Frame",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "FRAME",
+          "name": "Frame.002",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "FRAME",
+          "name": "Frame.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "TEX_COORD",
+          "name": "Texture Coordinate.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.010",
+          "attribute": "ColSaturday",
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.009",
+          "attribute": "ColVal",
+          "layer": null
+        },
+        {
+          "type": "MAPPING",
+          "name": "Mapping",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "BSDF_DIFFUSE",
+          "name": "Diffuse BSDF.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "BSDF_TRANSPARENT",
+          "name": "Transparent BSDF",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX_SHADER",
+          "name": "Mix Shader.002",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.001",
+          "attribute": "ColCornea",
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.008",
+          "attribute": "ColHue",
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.005",
+          "attribute": "ColIris",
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.009",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.008",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX",
+          "name": "Mix",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "TEX_NOISE",
+          "name": "Noise Texture.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "BSDF_GLOSSY",
+          "name": "Glossy BSDF",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.003",
+          "attribute": "ColGloss",
+          "layer": null
+        },
+        {
+          "type": "LAYER_WEIGHT",
+          "name": "Layer Weight",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "TEX_NOISE",
+          "name": "Musgrave Texture",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.002",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX_SHADER",
+          "name": "Mix Shader.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.004",
+          "attribute": "ColBody",
+          "layer": null
+        },
+        {
+          "type": "CURVE_RGB",
+          "name": "RGB Curves",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "LAYER_WEIGHT",
+          "name": "Layer Weight.002",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX",
+          "name": "Mix.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX",
+          "name": "Mix.003",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.011",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "HUE_SAT",
+          "name": "Hue Saturation Value",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.006",
+          "attribute": "ColColor",
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.007",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "MIX",
+          "name": "Mix.002",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "TEX_NOISE",
+          "name": "Noise Texture",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "HUE_SAT",
+          "name": "Hue Saturation Value.001",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "VALTORGB",
+          "name": "ColorRamp.010",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "ATTRIBUTE",
+          "name": "Attribute.002",
+          "attribute": "ColFres",
+          "layer": null
+        },
+        {
+          "type": "MATH",
+          "name": "Math",
+          "attribute": null,
+          "layer": null
+        },
+        {
+          "type": "INVERT",
+          "name": "Invert Color",
+          "attribute": null,
+          "layer": null
+        }
+      ],
+      "links": [
+        {
+          "from": "ColorRamp:Color",
+          "to": "Mix:Factor"
+        },
+        {
+          "from": "Glossy BSDF:BSDF",
+          "to": "Mix Shader.001:Shader"
+        },
+        {
+          "from": "Mix Shader.002:Shader",
+          "to": "Mix Shader.001:Shader"
+        },
+        {
+          "from": "Mix Shader.001:Shader",
+          "to": "Material Output:Surface"
+        },
+        {
+          "from": "Attribute.003:Fac",
+          "to": "Glossy BSDF:Roughness"
+        },
+        {
+          "from": "Noise Texture:Fac",
+          "to": "ColorRamp.001:Fac"
+        },
+        {
+          "from": "Attribute.006:Fac",
+          "to": "ColorRamp.007:Fac"
+        },
+        {
+          "from": "ColorRamp.007:Color",
+          "to": "Mix.002:B"
+        },
+        {
+          "from": "ColorRamp.008:Color",
+          "to": "Mix:A"
+        },
+        {
+          "from": "ColorRamp.009:Color",
+          "to": "Mix:B"
+        },
+        {
+          "from": "Attribute.005:Fac",
+          "to": "ColorRamp:Fac"
+        },
+        {
+          "from": "Noise Texture.001:Fac",
+          "to": "ColorRamp.008:Fac"
+        },
+        {
+          "from": "Noise Texture.001:Fac",
+          "to": "ColorRamp.009:Fac"
+        },
+        {
+          "from": "Texture Coordinate.001:Generated",
+          "to": "Mapping:Vector"
+        },
+        {
+          "from": "Mapping:Vector",
+          "to": "Noise Texture:Vector"
+        },
+        {
+          "from": "ColorRamp.010:Color",
+          "to": "Mix.002:A"
+        },
+        {
+          "from": "Attribute.006:Fac",
+          "to": "ColorRamp.010:Fac"
+        },
+        {
+          "from": "ColorRamp.001:Color",
+          "to": "Mix.002:Factor"
+        },
+        {
+          "from": "Texture Coordinate.001:Normal",
+          "to": "Noise Texture.001:Vector"
+        },
+        {
+          "from": "Attribute.008:Fac",
+          "to": "Hue Saturation Value:Hue"
+        },
+        {
+          "from": "Attribute.009:Fac",
+          "to": "Hue Saturation Value:Value"
+        },
+        {
+          "from": "Attribute.010:Fac",
+          "to": "Hue Saturation Value:Saturation"
+        },
+        {
+          "from": "Mapping:Vector",
+          "to": "Musgrave Texture:Vector"
+        },
+        {
+          "from": "ColorRamp.002:Color",
+          "to": "Glossy BSDF:Color"
+        },
+        {
+          "from": "Transparent BSDF:BSDF",
+          "to": "Mix Shader.002:Shader"
+        },
+        {
+          "from": "Diffuse BSDF.001:BSDF",
+          "to": "Mix Shader.002:Shader"
+        },
+        {
+          "from": "Attribute.004:Fac",
+          "to": "Mix.001:Factor"
+        },
+        {
+          "from": "Attribute.001:Fac",
+          "to": "Mix Shader.002:Fac"
+        },
+        {
+          "from": "Mix.001:Result",
+          "to": "Hue Saturation Value:Color"
+        },
+        {
+          "from": "Mix:Result",
+          "to": "Mix.001:A"
+        },
+        {
+          "from": "Musgrave Texture:Fac",
+          "to": "ColorRamp.002:Fac"
+        },
+        {
+          "from": "Attribute.006:Fac",
+          "to": "ColorRamp.011:Fac"
+        },
+        {
+          "from": "Layer Weight.002:Facing",
+          "to": "RGB Curves:Color"
+        },
+        {
+          "from": "Mix.002:Result",
+          "to": "Mix.001:B"
+        },
+        {
+          "from": "Mix.003:Result",
+          "to": "Diffuse BSDF.001:Color"
+        },
+        {
+          "from": "Hue Saturation Value:Color",
+          "to": "Mix.003:A"
+        },
+        {
+          "from": "ColorRamp.011:Color",
+          "to": "Hue Saturation Value.001:Color"
+        },
+        {
+          "from": "Hue Saturation Value.001:Color",
+          "to": "Mix.003:B"
+        },
+        {
+          "from": "Attribute.008:Fac",
+          "to": "Hue Saturation Value.001:Hue"
+        },
+        {
+          "from": "Attribute.009:Fac",
+          "to": "Hue Saturation Value.001:Value"
+        },
+        {
+          "from": "RGB Curves:Color",
+          "to": "Mix.003:Factor"
+        },
+        {
+          "from": "Math:Value",
+          "to": "Layer Weight.002:Blend"
+        },
+        {
+          "from": "Invert Color:Color",
+          "to": "Math:Value"
+        },
+        {
+          "from": "Attribute.002:Color",
+          "to": "Invert Color:Color"
+        }
+      ]
+    }
+  ]
+}

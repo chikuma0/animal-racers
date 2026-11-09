@@ -1,0 +1,6 @@
+LICENSED_WOLF_SOURCE_INSPECTED {"meshes": [["dog2", 2923, 5358]], "rigs": [["Armature", 36]], "actions": 0, "textures": [{"file": "dog2Color.png", "sha256": "a04c1da566be5c50a42f62b66199f97c13ad3f5ce2dde0f84ed75a61b0e292cb", "bytes": 289490, "width": 1024, "height": 1024, "rgba8BaseBytes": 4194304, "rgba8FullMipBytesEstimate": 5592406}, {"file": "dog2Normal.png", "sha256": "6d536f2279b816aca1556e9eee72f472e2d091c14127f988991d87e78d083347", "bytes": 675541, "width": 1024, "height": 1024, "rgba8BaseBytes": 4194304, "rgba8FullMipBytesEstimate": 5592406}, {"file": "dog2Roughness.png", "sha256": "600a8c9f99c14b70cc744ced86c85bd50f025c18d6d885ab9fd007ac1e6d1630", "bytes": 235872, "width": 1024, "height": 1024, "rgba8BaseBytes": 4194304, "rgba8FullMipBytesEstimate": 5592406}, {"file": "dog2specular.png", "sha256": "bd375199e6732cda8e7deb3e799962c4f5e3f1461a83963b2916c4fa11c18c12", "bytes": 142491, "width": 1024, "height": 1024, "rgba8BaseBytes": 4194304, "rgba8FullMipBytesEstimate": 5592406}]}
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/licensed-wolf-review/source/dog2.blend"
+Warning: region type 4 missing in space type "Info" (id: 7) - removing region
+
+Blender quit

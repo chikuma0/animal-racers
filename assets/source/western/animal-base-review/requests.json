@@ -1,0 +1,72 @@
+[
+  {
+    "name": "doizy-metadata",
+    "url": "https://api.sketchfab.com/v3/models/79d5e1173bba4f2b80661620a2eca9bc",
+    "finalUrl": "https://api.sketchfab.com/v3/models/79d5e1173bba4f2b80661620a2eca9bc",
+    "status": 200,
+    "contentType": "application/json",
+    "path": "primary/doizy-metadata.json",
+    "bytes": 5359,
+    "sha256": "056b348416ca0eb5452be31cd56b167e80d489ef1004c93b2d930031dbc468e6"
+  },
+  {
+    "name": "zee-metadata",
+    "url": "https://api.sketchfab.com/v3/models/d30f4862f2464284b157e377e6540d6c",
+    "finalUrl": "https://api.sketchfab.com/v3/models/d30f4862f2464284b157e377e6540d6c",
+    "status": 200,
+    "contentType": "application/json",
+    "path": "primary/zee-metadata.json",
+    "bytes": 5073,
+    "sha256": "af2bcdbbfec450425106fd6bb14aa8c06f620ba4aeb119a58279b7ea9580d4ae"
+  },
+  {
+    "name": "lazygraph-page",
+    "url": "https://blendswap.com/blend/27158",
+    "finalUrl": "https://blendswap.com/blend/27158",
+    "status": 403,
+    "contentType": "text/plain; charset=UTF-8",
+    "path": "primary/lazygraph-page.html",
+    "bytes": 17,
+    "sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c"
+  },
+  {
+    "name": "lazygraph-download",
+    "url": "https://blendswap.com/blend/27158/download",
+    "finalUrl": "https://blendswap.com/blend/27158/download",
+    "status": 403,
+    "contentType": "text/plain; charset=UTF-8",
+    "path": "primary/lazygraph-download.html",
+    "bytes": 17,
+    "sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c"
+  },
+  {
+    "name": "doizy-download-boundary",
+    "url": "https://api.sketchfab.com/v3/models/79d5e1173bba4f2b80661620a2eca9bc/download",
+    "finalUrl": "https://api.sketchfab.com/v3/models/79d5e1173bba4f2b80661620a2eca9bc/download",
+    "status": 401,
+    "contentType": "application/json",
+    "path": "primary/doizy-download-boundary.json",
+    "bytes": 58,
+    "sha256": "dbff0849bc109eee7f9b7b1fe12e40fc8add21823b2f1fb600b37f620cbd7862"
+  },
+  {
+    "name": "zee-download-boundary",
+    "url": "https://api.sketchfab.com/v3/models/d30f4862f2464284b157e377e6540d6c/download",
+    "finalUrl": "https://api.sketchfab.com/v3/models/d30f4862f2464284b157e377e6540d6c/download",
+    "status": 401,
+    "contentType": "application/json",
+    "path": "primary/zee-download-boundary.json",
+    "bytes": 58,
+    "sha256": "dbff0849bc109eee7f9b7b1fe12e40fc8add21823b2f1fb600b37f620cbd7862"
+  },
+  {
+    "name": "sketchfab-download-docs",
+    "url": "https://sketchfab.com/developers/download-api/downloading-models",
+    "finalUrl": "https://sketchfab.com/developers/download-api/downloading-models",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "path": "primary/sketchfab-download-docs.html",
+    "bytes": 68634,
+    "sha256": "b41790dae7fe071a801ae88e74316cdf9874fcc88d26f8134b1d8cfd97417004"
+  }
+]

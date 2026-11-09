@@ -1,0 +1,2024 @@
+{
+  "species": "wolf",
+  "sourceSha256": "a527a10e14d8d041d407b2ee5e7bdd2d9b32527a0575940d743e3c401a7da30a",
+  "runtimeSha256": "994aa94bd104a1c4f13581daa754d129c4d83e85e25432c8dd81000a9e611fd4",
+  "scope": "Source renders; representative Cycles stills show appearance, remaining extreme stills and complete 15 fps Workbench cycles show deformation. Per-still engine is recorded explicitly. Not gameplay or premium acceptance. Sheets rows follow clip order in this file; each row has eight evenly spaced samples.",
+  "stills": {
+    "side-attack.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "8eccf20440140570c836c1380bc221d49968e2627b9b77aff47af4a85a53af52"
+    },
+    "side-celebrate.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "2ee31301e73372e5bfd7f6fbe55d172df4ebf7a2f1ba2695309818a7e3e64c14"
+    },
+    "side-defeat.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "3ea40e466a469a1bf0674ad21215144f5f869ff7efbcfbee2f85548193f1daaf"
+    },
+    "side-special.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "fe61726819649fa6d94ffd6c2cc053a33c6cf095a1c2e1434fdaeea41bc31d3d"
+    },
+    "three-quarter-attack.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "eb7541b8ac2b07a513b62c7f8c26f3f5527c06ee4528ad02f20469258afd6630"
+    },
+    "three-quarter-celebrate.png": {
+      "engine": "CYCLES",
+      "width": 512,
+      "height": 512,
+      "sha256": "53c69e544fb13d8fa591dd55e4e2083b9496a5b9b8bbda7288c3c12dcaeaef34"
+    },
+    "three-quarter-defeat.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "c493f283547b503bed66c2e9a1311e8ae946adea2b43e31fd7eba3b1e2552bcd"
+    },
+    "three-quarter-fight_idle.png": {
+      "engine": "CYCLES",
+      "width": 512,
+      "height": 512,
+      "sha256": "43919673c79c935f2b80da0894895e188355fc33c64ebd53629703645671289b"
+    },
+    "three-quarter-fight_move.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "c44a92ff7d5b9f243120b2b05144120fffa60c7a5d6bd0735cf03531e1fd1d25"
+    },
+    "three-quarter-guard.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "d6d5a60318abe065689a9e2d009ad63a09a1ea84db54dc4b45fb470edf0c89c4"
+    },
+    "three-quarter-jump.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "0008959b88cabb95d8e3483dc1deeb001fab5e474c2d62d63e7884686541a222"
+    },
+    "three-quarter-land.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "e90faabc29c21d6a89828e6e39d9a91f2f5adc3eea9abf4768ec4b8581abfded"
+    },
+    "three-quarter-special.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "f4909202c24d2f31afe586dcd00d16668af5f3f49f7745ffd4b5f02714c9ae2f"
+    },
+    "three-quarter-transform.png": {
+      "engine": "BLENDER_WORKBENCH",
+      "width": 512,
+      "height": 512,
+      "sha256": "f217f1b437f66166b93acf3d7be5d6cab2b3d94eb03806f821d715eeb050c582"
+    }
+  },
+  "views": {
+    "three-quarter": {
+      "movie": "three-quarter-all-clips.mp4",
+      "duration": 11.533333,
+      "clips": [
+        {
+          "clip": "transform",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37
+          ],
+          "start": 0.0,
+          "end": 1.2666666666666666
+        },
+        {
+          "clip": "fight_idle",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 1.2666666666666666,
+          "end": 3.3333333333333335
+        },
+        {
+          "clip": "fight_move",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "start": 3.3333333333333335,
+          "end": 3.8000000000000003
+        },
+        {
+          "clip": "attack",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            18
+          ],
+          "start": 3.8000000000000003,
+          "end": 4.466666666666667
+        },
+        {
+          "clip": "special",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35
+          ],
+          "start": 4.466666666666667,
+          "end": 5.666666666666667
+        },
+        {
+          "clip": "guard",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ],
+          "start": 5.666666666666667,
+          "end": 6.333333333333334
+        },
+        {
+          "clip": "hit",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "start": 6.333333333333334,
+          "end": 6.800000000000001
+        },
+        {
+          "clip": "defeat",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            40
+          ],
+          "start": 6.800000000000001,
+          "end": 8.200000000000001
+        },
+        {
+          "clip": "celebrate",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 8.200000000000001,
+          "end": 10.266666666666667
+        },
+        {
+          "clip": "jump",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25
+          ],
+          "start": 10.266666666666667,
+          "end": 11.133333333333335
+        },
+        {
+          "clip": "land",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            10
+          ],
+          "start": 11.133333333333335,
+          "end": 11.533333333333335
+        }
+      ],
+      "fullFramePages": [
+        {
+          "file": "three-quarter-full-cycle-page-1.png",
+          "frames": [
+            {
+              "clip": "transform",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 41
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 43
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 45
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 47
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 49
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 51
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 53
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 55
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 57
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 59
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 61
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 5
+            }
+          ]
+        },
+        {
+          "file": "three-quarter-full-cycle-page-2.png",
+          "frames": [
+            {
+              "clip": "attack",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 18
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 35
+            }
+          ]
+        },
+        {
+          "file": "three-quarter-full-cycle-page-3.png",
+          "frames": [
+            {
+              "clip": "defeat",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 40
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 41
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 43
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 45
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 47
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 49
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 51
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 53
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 55
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 57
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 59
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 61
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 10
+            }
+          ]
+        }
+      ]
+    },
+    "side": {
+      "movie": "side-all-clips.mp4",
+      "duration": 11.533333,
+      "clips": [
+        {
+          "clip": "transform",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37
+          ],
+          "start": 0.0,
+          "end": 1.2666666666666666
+        },
+        {
+          "clip": "fight_idle",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 1.2666666666666666,
+          "end": 3.3333333333333335
+        },
+        {
+          "clip": "fight_move",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "start": 3.3333333333333335,
+          "end": 3.8000000000000003
+        },
+        {
+          "clip": "attack",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            18
+          ],
+          "start": 3.8000000000000003,
+          "end": 4.466666666666667
+        },
+        {
+          "clip": "special",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35
+          ],
+          "start": 4.466666666666667,
+          "end": 5.666666666666667
+        },
+        {
+          "clip": "guard",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ],
+          "start": 5.666666666666667,
+          "end": 6.333333333333334
+        },
+        {
+          "clip": "hit",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "start": 6.333333333333334,
+          "end": 6.800000000000001
+        },
+        {
+          "clip": "defeat",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            40
+          ],
+          "start": 6.800000000000001,
+          "end": 8.200000000000001
+        },
+        {
+          "clip": "celebrate",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61
+          ],
+          "start": 8.200000000000001,
+          "end": 10.266666666666667
+        },
+        {
+          "clip": "jump",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25
+          ],
+          "start": 10.266666666666667,
+          "end": 11.133333333333335
+        },
+        {
+          "clip": "land",
+          "sourceFrames": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            10
+          ],
+          "start": 11.133333333333335,
+          "end": 11.533333333333335
+        }
+      ],
+      "fullFramePages": [
+        {
+          "file": "side-full-cycle-page-1.png",
+          "frames": [
+            {
+              "clip": "transform",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "transform",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 41
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 43
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 45
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 47
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 49
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 51
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 53
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 55
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 57
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 59
+            },
+            {
+              "clip": "fight_idle",
+              "sourceFrame": 61
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "fight_move",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 5
+            }
+          ]
+        },
+        {
+          "file": "side-full-cycle-page-2.png",
+          "frames": [
+            {
+              "clip": "attack",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "attack",
+              "sourceFrame": 18
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "special",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "guard",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "hit",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 35
+            }
+          ]
+        },
+        {
+          "file": "side-full-cycle-page-3.png",
+          "frames": [
+            {
+              "clip": "defeat",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "defeat",
+              "sourceFrame": 40
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 27
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 29
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 31
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 33
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 35
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 37
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 39
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 41
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 43
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 45
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 47
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 49
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 51
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 53
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 55
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 57
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 59
+            },
+            {
+              "clip": "celebrate",
+              "sourceFrame": 61
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 11
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 13
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 15
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 17
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 19
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 21
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 23
+            },
+            {
+              "clip": "jump",
+              "sourceFrame": 25
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 1
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 3
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 5
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 7
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 9
+            },
+            {
+              "clip": "land",
+              "sourceFrame": 10
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

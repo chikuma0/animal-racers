@@ -1,0 +1,38 @@
+{
+  "scripts/assets/build_upright.py": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/build_upright.py",
+    "sha256": "9f0fbd933a5798d211eff00dfca4b114a1da7fcd7781ae0a112a69cbf51f3958"
+  },
+  "scripts/assets/review_upright.py": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/review_upright.py",
+    "sha256": "8a6ddd1c64c782aef58498658512c63e06b37eeed75646237d4f33f6a5a9f1e3"
+  },
+  "scripts/assets/verify-upright.mjs": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/verify-upright.mjs",
+    "sha256": "4125ad6bab88020f55331c55b73e6458c545afaa0e51974e60bd7201ae7c498e"
+  },
+  "scripts/assets/experiment_contact.py": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/experiment_contact.py",
+    "sha256": "f5ab527e94938354403fb44dcabe8e19b8cdab3e2f48aba53a37129d16eec54f"
+  },
+  "scripts/assets/verify-contact.mjs": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/verify-contact.mjs",
+    "sha256": "03947a2fcaac1c0c4046b94c82b1e23e5217573abb9d5f4c7544763a6285617d"
+  },
+  "scripts/assets/verify-contact-evidence.mjs": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/scripts/assets/verify-contact-evidence.mjs",
+    "sha256": "45adb4376cf2f6216a71bea6facccbe529370f0dcffff2707e301a1d27803644"
+  },
+  "assets/source/western/contact-v2/v2b/GATES.md": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/assets/source/western/contact-v2/v2b/GATES.md",
+    "sha256": "aeda4a3b7afbfb6a879687172efceecfb82f1b07fca6c9f369ef09719ab8fa4c"
+  },
+  "assets/source/western/contact-v2/v2b/README.md": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/assets/source/western/contact-v2/v2b/README.md",
+    "sha256": "11f0c86fb87f96bc6568b5e74d1e4896aa53715f663ba5e17b8ea115b2354edc"
+  },
+  "assets/source/western/contact-v2/README.md": {
+    "preserved": "assets/source/western/upright-v2/inputs/pre-promotion/assets/source/western/contact-v2/README.md",
+    "sha256": "3d0b3cc2603b72b8f3326b4c60f0506176e575b057e9eddd772790d71b95c5de"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "Final provisional assets structurally verified; all three end poses and affected-cycle sheets reviewed. A2 visual acceptance remains open; runtime/owner review next.",
+  "before": {
+    "lion": {
+      "sourceSha256": "6377d37219eda98a67cc581f1ce8210fa11cd750438fbdfd67565bdba391a750",
+      "runtimeSha256": "f8d211455d69c5b9903f5c9fef2d58d49418103d30d13d5e22fb39199e0e252a"
+    },
+    "wolf": {
+      "sourceSha256": "a60cf4bdde77aa7443c31c5390603fd69f4b5073832c478f2592ede00934da2c",
+      "runtimeSha256": "d8a676d06dee683c5455f294bdc50b282a3e7c3a232a350d0b522a664ae77517"
+    },
+    "unicorn": {
+      "sourceSha256": "ff4762b9c97bc660318163d458c1149c72803ebc9f7a938ba9ff4db933036ea7",
+      "runtimeSha256": "6bb974abccb254fd3245684057a857443e58c51585e76156995860fc5e016c59"
+    }
+  },
+  "after": {
+    "lion": {
+      "sourceSha256": "b2cdaf71fe1fffaad8d662f130ee5a79c22720f52fa0f4db35754c389e779659",
+      "runtimeSha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf"
+    },
+    "wolf": {
+      "sourceSha256": "96ed51c674510379e54909449d32aafc71f50b13308dc7284efa717f9da0b1b2",
+      "runtimeSha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c"
+    },
+    "unicorn": {
+      "sourceSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+      "runtimeSha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3"
+    }
+  },
+  "scope": "Continuous forequarter reshape; forelimb weight region; 2.50 m raised paw pivot with independent raised-arm corrective. Timings, gait contact, meshes and material counts preserved.",
+  "selectedCurrentClips": [
+    "run",
+    "transform",
+    "fight_move",
+    "attack",
+    "special",
+    "celebrate"
+  ],
+  "beforeImageNote": "Wolf before body views predate the mouth repair; torso-only comparison. Lion before images include cycle-2 mane repair.",
+  "rejectedAttempts": [
+    "Wider chest exposed long flank fold; narrowed forelimb skin region.",
+    "First 2.50 m trophy lift stretched shoulder; added pose-specific corrective.",
+    "Unbounded inverse-skin corrective overshot during Wolf interpolation; source-space displacement now capped at 0.35 m."
+  ],
+  "reviewedCurrentStills": "All three quadruped, upright, profile, rear, special-peak, and raised cup poses.",
+  "limitations": [
+    "Simplified anatomy and visibly geometric mane/fur remain below cinematic concept.",
+    "Raised shoulder silhouette remains somewhat sheet-like; integrated trophy grip and face clearance need runtime review.",
+    "Workbench cycle views inspect deformation, not final material rendering."
+  ],
+  "snapshot": "Frozen for root normal-control preview and owner device testing. No further exports or GPU work during that capture."
+}

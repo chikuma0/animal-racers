@@ -1,0 +1,115 @@
+{
+  "revision": "f600be234ec7f52527c0a4335c611d236ad39ea3",
+  "sourceFingerprint": "bdbf3736f1bd4aa452750665aa500885c864546b4402df74fb06ef3595fbd94a",
+  "deploymentId": "dpl_DNsgJWVs8sn9dtobz6hDsCSoWDv8",
+  "url": "https://animal-racers-4png9iy68-dera-ai.vercel.app",
+  "checkedAt": "2026-09-16T15:28:58.851017+00:00",
+  "assets": {
+    "public/assets/environment/weathered-timber-v1.webp": {
+      "sha256": "c2469c1b8c978606a77483efaf1307ce13a0a12114c48b2a50c7f551b8f1ffbd",
+      "bytes": 1965682
+    },
+    "public/assets/western/lion-upright.glb": {
+      "sha256": "9d56a26125fdae942bfe471633ed2afc9c6d0a85c0b9142d0098c8594dff25f3",
+      "bytes": 1859936
+    },
+    "public/assets/western/lion.glb": {
+      "sha256": "4dbb917c6ba4dd54a72ff4189f5713cd0b02de47089bf6140f928702b8ff14bf",
+      "bytes": 1968344
+    },
+    "public/assets/western/unicorn-upright.glb": {
+      "sha256": "fe97d0c5db45e58debaa8e7cb4fb16e985a8995a7f405f3cfc44490e70654ceb",
+      "bytes": 1372948
+    },
+    "public/assets/western/unicorn.glb": {
+      "sha256": "1d929f29ca280f88b7eb07c6a741c598e53d20ef9a05e604b0b1818c381a99f3",
+      "bytes": 1560636
+    },
+    "public/assets/western/wolf-upright.glb": {
+      "sha256": "01bb159631ade33f6eaec07f37cd2c0fc7d021bb2095f31d8acbfedf9ccb1f01",
+      "bytes": 1453892
+    },
+    "public/assets/western/wolf.glb": {
+      "sha256": "cdd482f4199c680b791ee02573d54e451d3c84b4ec1a270e6c08159c9d7c020c",
+      "bytes": 1521352
+    }
+  },
+  "bundles": {
+    "/_next/static/immutable/chunks/0u2ip4gbixuzd.js": {
+      "sha256": "453ab601507fa4b536085ecb6f6957cc9b27b4db5f1f9dca43b8e1c91dcea46f",
+      "bytes": 178147
+    },
+    "/_next/static/immutable/chunks/1k1gjprwx149a.js": {
+      "sha256": "058986b89f27c1ae54d06b3d0aa29de9a7d6c240ab07083cbd03f017145d0d97",
+      "bytes": 229458
+    },
+    "/_next/static/immutable/chunks/turbopack-2sgvlje8_2o0d.js": {
+      "sha256": "3b976f51355b687156539ef903dfcc91f88053f58adee527eae7cbbd2a817d20",
+      "bytes": 9718
+    },
+    "/_next/static/immutable/chunks/2corl6wyj4669.js": {
+      "sha256": "34ed6abf4c6d0d1bb3dc56d3f133d2a5dbc3a3c89c791deab314e27143ac14ce",
+      "bytes": 14377
+    },
+    "/_next/static/immutable/chunks/29v75p4ls2mzw.js": {
+      "sha256": "881223dad5b6a8e2fcd8dd57d485413d43467a2a75485bc26b50a1c303b2b4f0",
+      "bytes": 4770
+    },
+    "/_next/static/immutable/chunks/0c0hxoamwjsbw.js": {
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "bytes": 112594
+    },
+    "/_next/static/immutable/chunks/3uvkm2qcookvl.js": {
+      "sha256": "0c0ac1c9b21679c19c85517c95d6884039413d8bcfd3498d364ef02a0c20add4",
+      "bytes": 21781
+    },
+    "/_next/static/immutable/chunks/0urlralktduk6.js": {
+      "sha256": "a15a79bc71b02ed4b4e8d0f4ed09f32c1d3bf9c6ee1379c0bbdf10ba97864ddf",
+      "bytes": 225
+    },
+    "/_next/static/immutable/chunks/0daxp88bil5aw.js": {
+      "sha256": "05674d6e1b0e612c6ea37feca2159ae5936ef0c0a64f534b5060f8a0e161e1d0",
+      "bytes": 718568
+    },
+    "/_next/static/immutable/chunks/13xx9x7emmr1t.js": {
+      "sha256": "d312b9fd0ad499bc23a54720a43d0494a5fd935c7814396030bd48f198cf597f",
+      "bytes": 193274
+    }
+  },
+  "revisionInBundle": true,
+  "localCaptureSinkAbsent": true,
+  "oldAliasAfterDeployment": {
+    "alias": "animal-racers-git-codex-western-championship-dera-ai.vercel.app",
+    "deploymentId": "dpl_5BkcfrPnxh7nvBK2q6ricSnY4dt5",
+    "revision": "4ed5042179707330058784675f3a7f1caf2cbfbe",
+    "unchanged": true
+  },
+  "cleanExport": {
+    "trackedFiles": 80,
+    "bytes": 12864298,
+    "gitMetadata": false,
+    "privateEnvFiles": false
+  },
+  "access": {
+    "scope": "this deployment only",
+    "ttlSeconds": 604800,
+    "expiresUnix": 1790176948,
+    "privateTokenInRepository": false,
+    "anonymousCookieSessionHttpStatus": 200
+  },
+  "browserCheck": {
+    "allThreeMenuCharactersObserved": true,
+    "loaded": true,
+    "menuDrawCalls": 24,
+    "menuTriangles": 31116,
+    "lobbyCreated": true,
+    "lobbyLeftNormally": true,
+    "consoleWarningsOrErrors": [],
+    "viewportChangedDuringInspection": true,
+    "viewportNote": "Initial 1280x720/DPR1; later1082x874/DPR0.9. Later screenshot was cropped by capture scaling; no responsive-layout or performance acceptance inferred."
+  },
+  "ownerInstructionsDelivered": true,
+  "physicalTest": "pending",
+  "internetSeparateDevices": "pending",
+  "releaseCandidate": false
+}

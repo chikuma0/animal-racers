@@ -1,0 +1,21 @@
+{
+  "version": "revision2",
+  "baselineCommit": "f600be2",
+  "recipe": "scripts/assets/rebuild_roster_v2.py",
+  "recipeSha256": "6bbd90284e454861e28ea93a3e6a3387abe105e1e9c45f8643ffce6894680800",
+  "quality": "Materially improved roster; full cinematic and owner acceptance remain open",
+  "files": {
+    "assets/source/western/lion.blend": "7ac6cf00dbb2f32794d0d19f43c714819f4a76083e4e89b382c4187ecc6d1fcd",
+    "public/assets/western/lion.glb": "3b407a4ee8d4bada0711160bc0425fa66b7214418c3b56d556ca0ff4811f0d92",
+    "assets/source/western/lion-upright.blend": "7f6239d21a672b90f3019b9a80883086895fb8b9c015adfb3069f8eaeb8d2a41",
+    "public/assets/western/lion-upright.glb": "c1af4a1a02dc6047c300b9ccfaa877c43c3ae806037cc1fa3001655cf7e807f6",
+    "assets/source/western/wolf.blend": "8f5158de433c32ab31c5e1cf102558b7b0b46746d3a18fecff5f385061945920",
+    "public/assets/western/wolf.glb": "e85c6200a526cbe1b4c41c1d43a71da59a8bd5d26f76a9bec2f3d2c2fed59e42",
+    "assets/source/western/wolf-upright.blend": "5ace1085b392eaa7d58b58d7ddd69a3d02c8416f4301344b97220b526812175c",
+    "public/assets/western/wolf-upright.glb": "f47c09c7ff084523b80ffb76804127ab1486fc0fdffeb50345afd8b850e2dd37",
+    "assets/source/western/unicorn.blend": "6452414c94aa4c43fe5f4338ddf0fa81561ba40d20f21e3d975dc8773e2bd553",
+    "public/assets/western/unicorn.glb": "35848488f8fd15208172c56c6bea464d732fe3ddedff0ffb150038915b580142",
+    "assets/source/western/unicorn-upright.blend": "31b6d6d1815e41ba154df30748a6626c6395170eb364a31a4391c1174f817311",
+    "public/assets/western/unicorn-upright.glb": "478179f3ab5b03d34b0c3fc09097d9a5b627da8cf64c4c486cbd7ab8a1d27dcb"
+  }
+}

@@ -1,0 +1,525 @@
+{
+  "reason": "Complete 31-frame movies, every-frame sheets and frame hashes retained; five full-resolution checkpoints kept per probe. No source/control/render result changed.",
+  "removed": [
+    {
+      "path": "qa/race-probe-frames/0001.png",
+      "sha256": "b42333eb41f4b3f16d015553caf4b8cd36770803a834f41e3edab3cc5b0f392d",
+      "bytes": 199005
+    },
+    {
+      "path": "qa/race-probe-frames/0002.png",
+      "sha256": "67da808b5d141b5c1b03cc6e8ce7d96baa094e41098356ee3b0e62a535282a19",
+      "bytes": 199387
+    },
+    {
+      "path": "qa/race-probe-frames/0003.png",
+      "sha256": "cb4e4623359e305169a90683e1ff01f19f899e14b9cdd9e141b814f0e2da6ba6",
+      "bytes": 199316
+    },
+    {
+      "path": "qa/race-probe-frames/0004.png",
+      "sha256": "eb2ae461910ff3809347c88032d42b6ec140d925d28eef778cda8ca061684815",
+      "bytes": 199463
+    },
+    {
+      "path": "qa/race-probe-frames/0005.png",
+      "sha256": "606d5e5f29fe685866a75c96871594a80352891498a8ed135f4edd34c5558f1c",
+      "bytes": 199507
+    },
+    {
+      "path": "qa/race-probe-frames/0006.png",
+      "sha256": "8157d8abe52617f9451936c122d34296bede706298044a3f215322b5d2fcafec",
+      "bytes": 199446
+    },
+    {
+      "path": "qa/race-probe-frames/0007.png",
+      "sha256": "a7c629eb19f3d847775345772ba3f8e102d675c16c7bc81c9f47afe02b13284f",
+      "bytes": 199550
+    },
+    {
+      "path": "qa/race-probe-frames/0009.png",
+      "sha256": "894e2706c2d5c2b4f13f637465ce9a0bc7ee1061230d72ef1d4c8c32327acd8c",
+      "bytes": 199306
+    },
+    {
+      "path": "qa/race-probe-frames/0010.png",
+      "sha256": "e234b8b34ac35985c9763d617bb4ee596089fa5856da8c70a319e4659b3e9b88",
+      "bytes": 199488
+    },
+    {
+      "path": "qa/race-probe-frames/0011.png",
+      "sha256": "bde0acca1995cf5b0c6304736ed58d1bc14c7f92d5fc4994a221b686444a6f37",
+      "bytes": 199254
+    },
+    {
+      "path": "qa/race-probe-frames/0012.png",
+      "sha256": "a68e0951fa81608822f48e78022314051537a0aa41206aa78dbda05ccd0de870",
+      "bytes": 199258
+    },
+    {
+      "path": "qa/race-probe-frames/0013.png",
+      "sha256": "cec1ec44f36c5fd33cf41b4189f5a27419006b0d0786ee43a237bd2f05e83691",
+      "bytes": 199227
+    },
+    {
+      "path": "qa/race-probe-frames/0014.png",
+      "sha256": "422b3169c1c5bf8aebe62c7caec37d1d50b5fc49f53a88d9fb63f91936c3819d",
+      "bytes": 199045
+    },
+    {
+      "path": "qa/race-probe-frames/0016.png",
+      "sha256": "c4f5ce7ece3dd51d780633859d00aeacb5d7f7ac2c23cb1351405de07c12673f",
+      "bytes": 198751
+    },
+    {
+      "path": "qa/race-probe-frames/0017.png",
+      "sha256": "090c8c86459d84e917caee714a571ed6559a34807926b91b3c9d6347032c0ea2",
+      "bytes": 198781
+    },
+    {
+      "path": "qa/race-probe-frames/0018.png",
+      "sha256": "af251ac69cf4592cf2574e85b8ae85418cdb4c510d1417ba2f27a63319812f1f",
+      "bytes": 198360
+    },
+    {
+      "path": "qa/race-probe-frames/0019.png",
+      "sha256": "851bea7659fe9b3c8b70d666dd39b3d2620abfcfbb241d0fcce212e11ab8d894",
+      "bytes": 198481
+    },
+    {
+      "path": "qa/race-probe-frames/0020.png",
+      "sha256": "9fbdb5bbcd0a6d9155502565e91bfac6411046221974b96f3574e25908393e1b",
+      "bytes": 198464
+    },
+    {
+      "path": "qa/race-probe-frames/0021.png",
+      "sha256": "d3a5e96cc5748127e672592d5b48f34de7d7141544f1e6cf9e16bf640f1d3c1f",
+      "bytes": 198326
+    },
+    {
+      "path": "qa/race-probe-frames/0022.png",
+      "sha256": "d4a58e806a5b897e74eb45e6ac44714363ab5b4932fa66492c1f0b9812f0ac2f",
+      "bytes": 198444
+    },
+    {
+      "path": "qa/race-probe-frames/0024.png",
+      "sha256": "f3a65e9bb9a761154400b0a228511edd1f66713f79acee48ca7f0bd7fa16615b",
+      "bytes": 198686
+    },
+    {
+      "path": "qa/race-probe-frames/0025.png",
+      "sha256": "71f0179c5985a101a4909cbddba9339f6ae3411613c90bb71dab5a1aa596157f",
+      "bytes": 198922
+    },
+    {
+      "path": "qa/race-probe-frames/0026.png",
+      "sha256": "eeb51de898deddd019d3f5f2f1b54e08b19e90bc074ae10fa99db4d2f20b3883",
+      "bytes": 199003
+    },
+    {
+      "path": "qa/race-probe-frames/0027.png",
+      "sha256": "2b838f80c4416fb4193e996104901b827c97f867a577d386a78b9caa97b62c19",
+      "bytes": 198873
+    },
+    {
+      "path": "qa/race-probe-frames/0028.png",
+      "sha256": "f60477f3f441a810240d9f5ccdae70bbea8a090bd744b100bdb24d487bdb9d95",
+      "bytes": 198742
+    },
+    {
+      "path": "qa/race-probe-frames/0029.png",
+      "sha256": "0246a4e1957d4e714f62bbbd4ac3d5063f99336b388c6a2fa292d9fdf9f7e9d6",
+      "bytes": 198801
+    },
+    {
+      "path": "qa/upright-probe-frames/0001.png",
+      "sha256": "f4374101316de9b40a375a43f41dc386cd2e21e119e2f3a76fa8ea4f8de08d30",
+      "bytes": 211069
+    },
+    {
+      "path": "qa/upright-probe-frames/0002.png",
+      "sha256": "7e56975ee07bfad7f808e635a426e66eeca6058fdf2cb1182f76960da9699537",
+      "bytes": 211445
+    },
+    {
+      "path": "qa/upright-probe-frames/0003.png",
+      "sha256": "3e2364162767158f6f74b2ce69fcfd0809e80cacfa466a090cc5333922c82c3c",
+      "bytes": 211652
+    },
+    {
+      "path": "qa/upright-probe-frames/0004.png",
+      "sha256": "b95c7faf669ce5fa0113bb719e08f6b811b2780a0b8470edb8e25412377020ae",
+      "bytes": 211860
+    },
+    {
+      "path": "qa/upright-probe-frames/0005.png",
+      "sha256": "afa94808235fabdc218bc8626ad3d885adfa0ec68f4e61103322d3723db969c5",
+      "bytes": 211701
+    },
+    {
+      "path": "qa/upright-probe-frames/0006.png",
+      "sha256": "bd92adaf87236ba093774c7b28ddb250df5724b4d642d95c2c82085bf5cf0189",
+      "bytes": 211925
+    },
+    {
+      "path": "qa/upright-probe-frames/0007.png",
+      "sha256": "91904f55286b4d7541d3b7c381e4f94eec5ceba64b234b1bce1cdc3f82841e98",
+      "bytes": 211661
+    },
+    {
+      "path": "qa/upright-probe-frames/0009.png",
+      "sha256": "964389f90defb8dc23749ddbc454b13521bf8f1dcdba4a90deb034bd3b883b84",
+      "bytes": 211099
+    },
+    {
+      "path": "qa/upright-probe-frames/0010.png",
+      "sha256": "832f888fc6d0aba0689fdeb10d469f2793067f2aab931f1eaf7f48b766453244",
+      "bytes": 211038
+    },
+    {
+      "path": "qa/upright-probe-frames/0011.png",
+      "sha256": "5a0828761ce3aab8f279733d058901bc8d84b060205387ed682f914eab5707cd",
+      "bytes": 211031
+    },
+    {
+      "path": "qa/upright-probe-frames/0012.png",
+      "sha256": "830ab338ec44ef96e6a8c1b1e85b2e895f0a377694c73bb5344b8a68cd2bd7b2",
+      "bytes": 210883
+    },
+    {
+      "path": "qa/upright-probe-frames/0013.png",
+      "sha256": "b6d0621f36eaf7e91b3b3e3ab49baef71c6ed0b4b33eb9fc918e90d1371b58e3",
+      "bytes": 211129
+    },
+    {
+      "path": "qa/upright-probe-frames/0014.png",
+      "sha256": "3b940cc5f17dfbe9348cc06e242cf283f99e988420e7dd0655d3098c6394c52c",
+      "bytes": 210602
+    },
+    {
+      "path": "qa/upright-probe-frames/0016.png",
+      "sha256": "d59b4a1bb4ddd4306b47a2b39c1afca845e07570e6818cf431a5c13147119782",
+      "bytes": 210491
+    },
+    {
+      "path": "qa/upright-probe-frames/0017.png",
+      "sha256": "51db12899b67dcf697c5ff4a8f550d22cc87cf978d3c250cfedd0acb0263388b",
+      "bytes": 210237
+    },
+    {
+      "path": "qa/upright-probe-frames/0018.png",
+      "sha256": "9035b6e42121912a8dd072327a9c9d50ee7603ebffeebca0db3cc0513604340d",
+      "bytes": 210211
+    },
+    {
+      "path": "qa/upright-probe-frames/0019.png",
+      "sha256": "47b4eb385b70fc9c14e1e9f138b92d6898a99c917941f851b0a321d729346c93",
+      "bytes": 210380
+    },
+    {
+      "path": "qa/upright-probe-frames/0020.png",
+      "sha256": "371e881095a4060b52e61a41bd978834ad7baa09c1014d6645ad42e4b0712fb9",
+      "bytes": 210148
+    },
+    {
+      "path": "qa/upright-probe-frames/0021.png",
+      "sha256": "75368bef769fd9895c6ab00acafec39ad6bd4473757a98323b595de991e9a659",
+      "bytes": 210288
+    },
+    {
+      "path": "qa/upright-probe-frames/0022.png",
+      "sha256": "420813ed0f0cb2657ce3188ac788d5e8762a5f7b463ce14b94b6ce1e4926c569",
+      "bytes": 210080
+    },
+    {
+      "path": "qa/upright-probe-frames/0024.png",
+      "sha256": "8de1a8d3c14104c72b76fc7e1af3035ee02650e741c5cedd7fbef474a8f99aa0",
+      "bytes": 210132
+    },
+    {
+      "path": "qa/upright-probe-frames/0025.png",
+      "sha256": "29938216960b81a1f49369058a813444a844a5705f91232fd24a5823d6385064",
+      "bytes": 210141
+    },
+    {
+      "path": "qa/upright-probe-frames/0026.png",
+      "sha256": "a80f0c0bd7ad87d61296084e677c046c7f952782dce778d8afd056e3e92d3c97",
+      "bytes": 210042
+    },
+    {
+      "path": "qa/upright-probe-frames/0027.png",
+      "sha256": "fcc031d5c521d7d4199b24ee7f32a85542923cf4831466f5bc635041b83b27f5",
+      "bytes": 209934
+    },
+    {
+      "path": "qa/upright-probe-frames/0028.png",
+      "sha256": "41228fce36fd6a970ab0fe56176c2065175fcc6de0518332dacb880211a61e50",
+      "bytes": 210221
+    },
+    {
+      "path": "qa/upright-probe-frames/0029.png",
+      "sha256": "cc0d57fdde5233f2f85aaad0b2961b90734185551ccff5cce228ed4135ef8914",
+      "bytes": 210229
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0001.png",
+      "sha256": "4e69c6dbd6bdfe1e032235a643f720d3de5c2362bd5ea4484b0fbbae6a3e3b9d",
+      "bytes": 199340
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0002.png",
+      "sha256": "dd2bdc15bc95f2d90b8e63a0deb0a6b0852dbac86fa39e62645b4730690c39db",
+      "bytes": 199661
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0003.png",
+      "sha256": "107da3bde0434f111dc10efa85710105947fe6cf4b08d16df1ddb13b5241f471",
+      "bytes": 199698
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0004.png",
+      "sha256": "071f995f052f8a5c2c061c5bdd25b5a8f24dfac04b3b289da0b45c05552fa66b",
+      "bytes": 199903
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0005.png",
+      "sha256": "1f750a3914782dde9dff67edd4227cecf890e4beee72c19550f511fd10a61780",
+      "bytes": 199866
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0006.png",
+      "sha256": "787e50cad687d618bfb6b7320bc7798523351c931c532a2f217be05e6af7ffcf",
+      "bytes": 199797
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0007.png",
+      "sha256": "d96ab413325872b6e606d0a9229703012b3d22381402dee0589dc3c4143eb981",
+      "bytes": 199865
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0009.png",
+      "sha256": "3e32f1c98a2d1408da430c7b6a80a1cfee706ecbf40f0a00a2073d402285c40a",
+      "bytes": 199518
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0010.png",
+      "sha256": "7b944c746adfe78ed62738a9a589ab3378c1231495b0568426980d4213cbaf57",
+      "bytes": 199759
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0011.png",
+      "sha256": "b501fcdc0ceb959694c6d8f66e4deabe46b627767865d84c3577544b8bb0a7a1",
+      "bytes": 199488
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0012.png",
+      "sha256": "83b5131ee3772532c78136ce4842210385cb6f61edea1d900c6a06c72a7bef72",
+      "bytes": 199570
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0013.png",
+      "sha256": "e1a4c2fe85824a693909cc654adff78bf6f09f2247732332c00cc4dda3ef81f6",
+      "bytes": 199636
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0014.png",
+      "sha256": "8ac844b6e2742b421353c3f4ba5be47dcc66faf9ec6bc872675500b93c2a54f1",
+      "bytes": 199372
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0016.png",
+      "sha256": "0e99977a3386b82e4c3f8e4813bd2ebb643e78fd00145c142c0c66a3f8807db0",
+      "bytes": 199068
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0017.png",
+      "sha256": "32c834d304a960dbd60b723cf2ac5e993d604e15a83156667468058bd9d5083d",
+      "bytes": 199100
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0018.png",
+      "sha256": "e84f955055af4bd219001f68e7fd880e789c9041c5969e032a783b0cc1baf760",
+      "bytes": 198909
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0019.png",
+      "sha256": "019ce3922b27871ece4e96d10da0a085e5c340558a1b4947fb4101560040350b",
+      "bytes": 198928
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0020.png",
+      "sha256": "5921889fad56e882ae0558d95d642ca9e864ce0da8f3c38b294be1a7fac7320f",
+      "bytes": 198977
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0021.png",
+      "sha256": "d09b251c2c222f6a96dcc41327bc901a193203639e6902a29a1b0aacc40d1a07",
+      "bytes": 198967
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0022.png",
+      "sha256": "316b0a740ba99faad19f5702dd9c90fa27c4bda21a4c4c0c88c62442ff5fbbed",
+      "bytes": 199046
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0024.png",
+      "sha256": "3ec15a003b0b30c91ffda787481afcfcd61387b76e5265728146594a42e7be93",
+      "bytes": 199208
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0025.png",
+      "sha256": "fe42433709a1f281552c6f1d86669973ea7148859b198d0bd6c2500992543391",
+      "bytes": 199444
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0026.png",
+      "sha256": "b007cf118c5e7d49e4fe644012798afe1d3a93f0e72c67f671141a02f8512bc9",
+      "bytes": 199505
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0027.png",
+      "sha256": "43019742966af0b3df44069b1d58230c3b41682ad18821ce49f1de2dedfea141",
+      "bytes": 199504
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0028.png",
+      "sha256": "5ac08093fbba8c179183d3c08c4422fc1e641e0d21261e48cc9421c857230b96",
+      "bytes": 199278
+    },
+    {
+      "path": "before-correction-2/qa/race-probe-frames/0029.png",
+      "sha256": "bce552071862e36ab6047f9a8aacebea45056c9eeeb448d8cb383a1ea9a98874",
+      "bytes": 199234
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0001.png",
+      "sha256": "4a9064c97dc8bd73dcb5f4fbbf8c936313445ba848b256cca43027a65a6ba404",
+      "bytes": 210492
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0002.png",
+      "sha256": "d5c660456f50d9b898afe8e2152d72f1fe0d5583a08999f2110a4070437fefdb",
+      "bytes": 210853
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0003.png",
+      "sha256": "1a4b59d1ca768504e7d7f3bd4d6ae2edb3de5f6377599e84547a5a31ded9611a",
+      "bytes": 211091
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0004.png",
+      "sha256": "9a0755ba933c5d1bc2ce6734a4be35cb618beab76fe6501bcf33dd9d61adf2e7",
+      "bytes": 210952
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0005.png",
+      "sha256": "06607642dfa331db2fe9a62fcbb09186e2c07918b089823a1d3fc59e3c434679",
+      "bytes": 210864
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0006.png",
+      "sha256": "9f792d66e2bc26d047c8bc68a085b0eb42a3c611e63ac14d30bf2f963fce05d0",
+      "bytes": 210444
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0007.png",
+      "sha256": "0f453af154ce9608702c85f29e94ad9cda3e7c95ad4a191b70d86b9cd5b24cc1",
+      "bytes": 210224
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0009.png",
+      "sha256": "c2c2060caa0af282614c51d930bbe608f2454a03583b7e440451fa145228e7be",
+      "bytes": 210393
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0010.png",
+      "sha256": "20221d9a651c431cf5175cbfa9ff8eb8e150a28347e1cb46715865033de8a076",
+      "bytes": 210946
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0011.png",
+      "sha256": "ee563ae76cc9cad8399df935041af22e24d6efc4727edc369389454a563f36c8",
+      "bytes": 210811
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0012.png",
+      "sha256": "b88093c45016129c8b041761b43ebfabc574c8c8f7b73578763e729b73a948e2",
+      "bytes": 210981
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0013.png",
+      "sha256": "41429e978da210a10319f3d6e3c05683d7b1f9bdefad6af1d7574d9a5281473a",
+      "bytes": 210860
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0014.png",
+      "sha256": "12dd083a1b2c5f060e632102ce8cacf539f994f0c11ca8d52844ed5fdc9cbf2c",
+      "bytes": 210823
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0016.png",
+      "sha256": "ad55314796955dff552dd87556fb78e4a02201609ea5b7425d246ec8cfb2af9b",
+      "bytes": 210216
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0017.png",
+      "sha256": "041f2203a47cafadc19e47f932a328a54ce19057ed27e1f158480e48c562e85c",
+      "bytes": 210392
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0018.png",
+      "sha256": "4f6b3152670bf8b5b3ba0051a8d6e0cedf63b262e7025146865ac9c0fc0f8d74",
+      "bytes": 210393
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0019.png",
+      "sha256": "907070e348f92bbdf9ddfcd6d61fe50b4d35511bebe5dcf755f52e00ecf35558",
+      "bytes": 210241
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0020.png",
+      "sha256": "cbcf26aded1590ddf635d729bc0d0b05b4ca1e61143d24f066ada5888739fd43",
+      "bytes": 210186
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0021.png",
+      "sha256": "1fbd0be76370c1018886ae36c7b806c7eef5efbc278801edc0f02f044dc28e72",
+      "bytes": 210163
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0022.png",
+      "sha256": "b185164894429160a73a9fbf6dbfd3e205db55289bb1e4a4116d4c066a352ce1",
+      "bytes": 210385
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0024.png",
+      "sha256": "c9b02dc9a27a86d038e37887e576d7291ad4597fcc2627acfe331a757b7e62d6",
+      "bytes": 210439
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0025.png",
+      "sha256": "4028d774a6f4967a36d9d38c06004b812d05dd6cd5ba73f0475c62812a660c5b",
+      "bytes": 210627
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0026.png",
+      "sha256": "95c5ad958e1d70d26fc48f3e5b95413db1ef1d66f0fcca556276693453cae260",
+      "bytes": 210609
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0027.png",
+      "sha256": "5c9031c79cbbb2a2b0c726b39b6b6337fd1df1b4079a52191f0c5a8423fbfe15",
+      "bytes": 210796
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0028.png",
+      "sha256": "0d3565719d9794567c587da54c4c884973e174b7afb97f55f6301099005e7de4",
+      "bytes": 210611
+    },
+    {
+      "path": "before-correction-2/qa/upright-probe-frames/0029.png",
+      "sha256": "77273661723b056b2d16e00c4f3649fad3e65affb51d2821f3e5c21074eaf01b",
+      "bytes": 210337
+    }
+  ]
+}

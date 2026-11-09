@@ -15,8 +15,8 @@ const monoFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Animal Racers',
-  description: 'Race feral champions through jungle tracks and arena brawls.',
+  title: 'アニマルレーサー',
+  description: 'すきな動物で、はしって、たたかって、トロフィーをめざそう。',
 };
 
 export const viewport: Viewport = {
@@ -33,8 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
+        <link rel="preload" as="image" href="/assets/previews/lion-menu.webp" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-capable" content="yes" />

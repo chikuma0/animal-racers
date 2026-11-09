@@ -1,0 +1,4467 @@
+{
+  "classification": "SAME-MACHINE ONLINE SERVICE SMOKE. Not separate-network, human, physical-phone, native-touch or fairness acceptance.",
+  "launch": "Two isolated installed Chrome profiles; channel:chrome, headless:true; no patched clocks, state injection, routing, game imports or test hooks.",
+  "coverage": "Nine ordered host/guest species pairings, and one full agreed rematch of the first pairing.",
+  "controls": "Visible selection/lobby/buttons and ordinary keyboard presses. Public DOM phase/progress/health/windup/opening cues only.",
+  "actions": "Both roles steer and leap in the race, react 330ms after observed windup, evade, step in and reply, then exchange actual strikes to finish.",
+  "evidence": "UI canvas recordings, public report downloads, screenshots, input/cue timeline, served JS/asset hashes, frozen source manifest and visible results.",
+  "boundary": "Requires parent-authorized frozen URL/manifest before execution. Browser recording and dual rendering add machine load. Report event ticks are observation ticks, not exact event timestamps.",
+  "startedAt": "2026-09-20T04:16:30.408Z",
+  "completedAt": "2026-09-20T04:23:19.931Z",
+  "url": "http://127.0.0.1:3013",
+  "sourceFingerprint": "de401d12cd83b9736d534c3a46b3288f98fcf8ef5e28d95de7760775a1e35960",
+  "buildId": "ll50-qCB-qzVISVvh1Q60",
+  "expectedReportRevision": "revision2-de401d12cd83",
+  "requestedPairs": [
+    [
+      "lion",
+      "wolf"
+    ],
+    [
+      "wolf",
+      "unicorn"
+    ],
+    [
+      "unicorn",
+      "lion"
+    ]
+  ],
+  "rematchFirst": true,
+  "viewport": [
+    844,
+    390
+  ],
+  "recordingRoles": "host",
+  "results": [
+    {
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "passed": true,
+      "rounds": [
+        {
+          "result": {
+            "race": [
+              31,
+              19
+            ],
+            "fight": [
+              36.5,
+              13.5
+            ],
+            "total": [
+              67.5,
+              32.5
+            ],
+            "winner": 0,
+            "reason": "Combined race + fight points · final health"
+          },
+          "players": [
+            {
+              "character": "lion",
+              "hp": 46,
+              "finishTime": 61.78107569444541,
+              "raceStatus": "finished"
+            },
+            {
+              "character": "wolf",
+              "hp": 0,
+              "finishTime": 62.74863375947221,
+              "raceStatus": "finished"
+            }
+          ],
+          "actions": [
+            {
+              "slot": 0,
+              "leaps": 4,
+              "strikes": 5,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 54
+            },
+            {
+              "slot": 1,
+              "leaps": 4,
+              "strikes": 4,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 100
+            }
+          ],
+          "network": [
+            {
+              "transport": "webrtc",
+              "roundTripMs": 0.9000000953674316,
+              "sent": 2211,
+              "received": 2229,
+              "roundTrip": {
+                "sampleCount": 48,
+                "p50Ms": 1,
+                "p95Ms": 1.600000023841858,
+                "maxMs": 6.799999952316284,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            },
+            {
+              "transport": "webrtc",
+              "roundTripMs": 0.7999999523162842,
+              "sent": 2231,
+              "received": 2193,
+              "roundTrip": {
+                "sampleCount": 47,
+                "p50Ms": 1.100000023841858,
+                "p95Ms": 3,
+                "maxMs": 85,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            }
+          ]
+        },
+        {
+          "result": {
+            "race": [
+              32.6,
+              17.4
+            ],
+            "fight": [
+              36.5,
+              13.5
+            ],
+            "total": [
+              69.1,
+              30.9
+            ],
+            "winner": 0,
+            "reason": "Combined race + fight points · final health"
+          },
+          "players": [
+            {
+              "character": "lion",
+              "hp": 46,
+              "finishTime": 61.64871027777893,
+              "raceStatus": "finished"
+            },
+            {
+              "character": "wolf",
+              "hp": 0,
+              "finishTime": 62.861343513261126,
+              "raceStatus": "finished"
+            }
+          ],
+          "actions": [
+            {
+              "slot": 0,
+              "leaps": 4,
+              "strikes": 5,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 54
+            },
+            {
+              "slot": 1,
+              "leaps": 4,
+              "strikes": 4,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 100
+            }
+          ],
+          "network": [
+            {
+              "transport": "webrtc",
+              "roundTripMs": 0.6999999284744263,
+              "sent": 4409,
+              "received": 4468,
+              "roundTrip": {
+                "sampleCount": 60,
+                "p50Ms": 0.8000000715255737,
+                "p95Ms": 1.2999999523162842,
+                "maxMs": 50.699999928474426,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            },
+            {
+              "transport": "webrtc",
+              "roundTripMs": 0.7000000476837158,
+              "sent": 4470,
+              "received": 4391,
+              "roundTrip": {
+                "sampleCount": 60,
+                "p50Ms": 1.2999999523162842,
+                "p95Ms": 5.099999904632568,
+                "maxMs": 9.5,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": [
+        "wolf",
+        "unicorn"
+      ],
+      "passed": false,
+      "error": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Leap', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Leap\" class=\"control leap\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n"
+    },
+    {
+      "pair": [
+        "unicorn",
+        "lion"
+      ],
+      "passed": true,
+      "rounds": [
+        {
+          "result": {
+            "race": [
+              31.8,
+              18.2
+            ],
+            "fight": [
+              22,
+              28
+            ],
+            "total": [
+              53.8,
+              46.2
+            ],
+            "winner": 0,
+            "reason": "Combined race + fight points · final health"
+          },
+          "players": [
+            {
+              "character": "unicorn",
+              "hp": 0,
+              "finishTime": 60.68074645833405,
+              "raceStatus": "finished"
+            },
+            {
+              "character": "lion",
+              "hp": 12,
+              "finishTime": 61.76390277778024,
+              "raceStatus": "finished"
+            }
+          ],
+          "actions": [
+            {
+              "slot": 0,
+              "leaps": 4,
+              "strikes": 5,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 100
+            },
+            {
+              "slot": 1,
+              "leaps": 4,
+              "strikes": 5,
+              "evades": 1,
+              "successes": 1,
+              "counters": 1,
+              "damageReceived": 88
+            }
+          ],
+          "network": [
+            {
+              "transport": "webrtc",
+              "roundTripMs": 1,
+              "sent": 2245,
+              "received": 2265,
+              "roundTrip": {
+                "sampleCount": 47,
+                "p50Ms": 0.8000000715255737,
+                "p95Ms": 1.1999999284744263,
+                "maxMs": 3,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            },
+            {
+              "transport": "webrtc",
+              "roundTripMs": 1.4000000953674316,
+              "sent": 2267,
+              "received": 2224,
+              "roundTrip": {
+                "sampleCount": 47,
+                "p50Ms": 1,
+                "p95Ms": 1.600000023841858,
+                "maxMs": 3.200000047683716,
+                "timeoutCount": 0,
+                "windowMs": 120000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "served": {
+    "/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff": {
+      "sha256": "e8b65928f551b17e3d67c3f709721b952c39842d14b00701f9232057fde73608",
+      "bytes": 67864
+    },
+    "/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff": {
+      "sha256": "296fafafd41304f7c992079054b8af914dbbd865f32de97c66d0f613b55755d6",
+      "bytes": 66268
+    },
+    "/_next/static/chunks/41o2vmrgx35l8.css": {
+      "sha256": "94ab4983de2d70438376654f07d2213064d6daa80988c91efbd5a888ff67748f",
+      "bytes": 37171
+    },
+    "/_next/static/chunks/09lgyggnhjlha.js": {
+      "sha256": "b218706af8a3ba93b0ed0e54da588c0357e5e8430d8fa563ec5a1f232ca42f1e",
+      "bytes": 21753
+    },
+    "/_next/static/chunks/turbopack-2yfy0ahrtlf2i.js": {
+      "sha256": "9b98e0743755dceb842fbdbb3566048c2f891454febc0a17909f0949330a551e",
+      "bytes": 9688
+    },
+    "/_next/static/chunks/3fntmmi971322.js": {
+      "sha256": "34ed6abf4c6d0d1bb3dc56d3f133d2a5dbc3a3c89c791deab314e27143ac14ce",
+      "bytes": 14377
+    },
+    "/_next/static/chunks/29yu9nw4hp2y6.js": {
+      "sha256": "116e4ef459e8172c65e2c529e2d0786b4aa817e811dd26fe157294aa38c6da81",
+      "bytes": 4750
+    },
+    "/_next/static/chunks/2l_y_qqi24r7y.js": {
+      "sha256": "453ab601507fa4b536085ecb6f6957cc9b27b4db5f1f9dca43b8e1c91dcea46f",
+      "bytes": 178147
+    },
+    "/_next/static/chunks/27t_qfc-3_lzs.js": {
+      "sha256": "f71552684e86daa3e94faad9002fb69d4e8d308a997ca88fdde74e54b5191870",
+      "bytes": 229156
+    },
+    "/_next/static/chunks/053ko-nu_doni.js": {
+      "sha256": "93209d98205566e06147e7ce0d07d7e094f565c864bc2a03fb242badd00ab7e5",
+      "bytes": 215
+    },
+    "/_next/static/chunks/30ndca3ju7hnt.js": {
+      "sha256": "44ce4438554ba4518c3c75259f45febf2c36d5bdb0bf81ff230b51e448a92761",
+      "bytes": 731029
+    },
+    "/assets/western/wolf-upright.glb": {
+      "sha256": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+      "bytes": 1359276
+    },
+    "/assets/western/unicorn-upright.glb": {
+      "sha256": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+      "bytes": 1295244
+    },
+    "/assets/western/wolf.glb": {
+      "sha256": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+      "bytes": 1390540
+    },
+    "/assets/western/unicorn.glb": {
+      "sha256": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+      "bytes": 1388616
+    },
+    "/assets/western/lion-upright.glb": {
+      "sha256": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+      "bytes": 1590332
+    },
+    "/assets/environment/weathered-timber-v1.webp": {
+      "sha256": "c2469c1b8c978606a77483efaf1307ce13a0a12114c48b2a50c7f551b8f1ffbd",
+      "bytes": 1965682
+    },
+    "/assets/western/lion.glb": {
+      "sha256": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+      "bytes": 1647536
+    },
+    "/_next/static/chunks/2mdho-b0k-dak.js": {
+      "sha256": "d312b9fd0ad499bc23a54720a43d0494a5fd935c7814396030bd48f198cf597f",
+      "bytes": 193274
+    }
+  },
+  "servedValidationErrors": [],
+  "media": [
+    {
+      "rawFile": "01-lion-wolf-round1-host-recording.webm",
+      "rawSha256": "213991d2a72a57d73cb11a813dafb80cf28054ca36e1f3f53626a18451f5aedb",
+      "rawBytes": 32179782,
+      "rawDecode": "complete; no errors with passthrough microsecond output timebase",
+      "rawProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.30.08",
+            "width": 844,
+            "height": 390,
+            "coded_width": 844,
+            "coded_height": 390,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "alpha_mode": "1"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "opus",
+            "codec_long_name": "Opus (Opus Interactive Audio Codec)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "opus",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 20,
+            "start_time": "0.020000",
+            "extradata_size": 19,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/01-lion-wolf-round1-host-recording.webm",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "size": "32179782",
+          "probe_score": 100,
+          "tags": {
+            "encoder": "Chrome"
+          }
+        }
+      },
+      "file": "01-lion-wolf-round1-host-recording-review.mp4",
+      "sha256": "990f6a484326bf0bce4c3ebbfd0bf791bf9af9de8a8dd2ddbe92224a2b609547",
+      "bytes": 9232676,
+      "outputDecode": "complete; no errors",
+      "outputProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 960,
+            "height": 444,
+            "coded_width": 960,
+            "coded_height": 444,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "7807:7800",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuvj420p",
+            "level": 31,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1450496,
+            "duration": "94.433333",
+            "bit_rate": "676480",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "2833",
+            "extradata_size": 52,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 64,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 4531152,
+            "duration": "94.399000",
+            "bit_rate": "95336",
+            "nb_frames": "4426",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/01-lion-wolf-round1-host-recording-review.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "94.433333",
+          "size": "9232676",
+          "bit_rate": "782153",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "encoding": "H264 CRF25,960px wide,30fps,AAC96k;2 threads. Constant-rate review copy, not original frame cadence or controlled performance evidence."
+    },
+    {
+      "rawFile": "01-lion-wolf-round2-host-recording.webm",
+      "rawSha256": "436c2103f3262fe39c8c9b6e571f3ae56e3e174326121d22560c24f89b50a94c",
+      "rawBytes": 32362682,
+      "rawDecode": "complete; no errors with passthrough microsecond output timebase",
+      "rawProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.30.08",
+            "width": 844,
+            "height": 390,
+            "coded_width": 844,
+            "coded_height": 390,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "alpha_mode": "1"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "opus",
+            "codec_long_name": "Opus (Opus Interactive Audio Codec)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "opus",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 24,
+            "start_time": "0.024000",
+            "extradata_size": 19,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/01-lion-wolf-round2-host-recording.webm",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "size": "32362682",
+          "probe_score": 100,
+          "tags": {
+            "encoder": "Chrome"
+          }
+        }
+      },
+      "file": "01-lion-wolf-round2-host-recording-review.mp4",
+      "sha256": "5b24ca2d892982a78a974ebc47888ae11de77fc89b7e200064e01dff705769cd",
+      "bytes": 9242605,
+      "outputDecode": "complete; no errors",
+      "outputProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 960,
+            "height": 444,
+            "coded_width": 960,
+            "coded_height": 444,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "7807:7800",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuvj420p",
+            "level": 31,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1448448,
+            "duration": "94.300000",
+            "bit_rate": "678655",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "2829",
+            "extradata_size": 52,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 128,
+            "start_time": "0.002667",
+            "duration_ts": 4527520,
+            "duration": "94.323333",
+            "bit_rate": "95012",
+            "nb_frames": "4420",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/01-lion-wolf-round2-host-recording-review.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "94.326000",
+          "size": "9242605",
+          "bit_rate": "783886",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "encoding": "H264 CRF25,960px wide,30fps,AAC96k;2 threads. Constant-rate review copy, not original frame cadence or controlled performance evidence."
+    },
+    {
+      "rawFile": "02-wolf-unicorn-host-failure-recording.webm",
+      "rawSha256": "5605439f612beac84450f797e5d3c8cb30eb5875b75dd23b04e23ee8c4799788",
+      "rawBytes": 13451569,
+      "rawDecode": "complete; no errors with passthrough microsecond output timebase",
+      "rawProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.30.08",
+            "width": 844,
+            "height": 390,
+            "coded_width": 844,
+            "coded_height": 390,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "60000/1001",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "alpha_mode": "1"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "opus",
+            "codec_long_name": "Opus (Opus Interactive Audio Codec)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "opus",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 28,
+            "start_time": "0.028000",
+            "extradata_size": 19,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/02-wolf-unicorn-host-failure-recording.webm",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "size": "13451569",
+          "probe_score": 100,
+          "tags": {
+            "encoder": "Chrome"
+          }
+        }
+      },
+      "file": "02-wolf-unicorn-host-failure-recording-review.mp4",
+      "sha256": "6680f1edde6dc7401c132fbe6c74bc77bb824730e2cfc989d5080d10cbd35fb0",
+      "bytes": 5185698,
+      "outputDecode": "complete; no errors",
+      "outputProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 960,
+            "height": 444,
+            "coded_width": 960,
+            "coded_height": 444,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "7807:7800",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuvj420p",
+            "level": 31,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 720896,
+            "duration": "46.933333",
+            "bit_rate": "777924",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1408",
+            "extradata_size": 52,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 320,
+            "start_time": "0.006667",
+            "duration_ts": 2253136,
+            "duration": "46.940333",
+            "bit_rate": "95508",
+            "nb_frames": "2201",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/02-wolf-unicorn-host-failure-recording-review.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "46.947000",
+          "size": "5185698",
+          "bit_rate": "883668",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "encoding": "H264 CRF25,960px wide,30fps,AAC96k;2 threads. Constant-rate review copy, not original frame cadence or controlled performance evidence."
+    },
+    {
+      "rawFile": "03-unicorn-lion-round1-host-recording.webm",
+      "rawSha256": "f2ed8a4149698f11fb5b5b940dacd4b8147b5f37a9bc41318069c26204234c12",
+      "rawBytes": 33112961,
+      "rawDecode": "complete; no errors with passthrough microsecond output timebase",
+      "rawProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.30.08",
+            "width": 844,
+            "height": 390,
+            "coded_width": 844,
+            "coded_height": 390,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "alpha_mode": "1"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "opus",
+            "codec_long_name": "Opus (Opus Interactive Audio Codec)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "opus",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 30,
+            "start_time": "0.030000",
+            "extradata_size": 19,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/03-unicorn-lion-round1-host-recording.webm",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "size": "33112961",
+          "probe_score": 100,
+          "tags": {
+            "encoder": "Chrome"
+          }
+        }
+      },
+      "file": "03-unicorn-lion-round1-host-recording-review.mp4",
+      "sha256": "7eb23d24ed7d09c76335908be8dbae873c26981333e88c7201fd205cf83bd513",
+      "bytes": 9372244,
+      "outputDecode": "complete; no errors",
+      "outputProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 960,
+            "height": 444,
+            "coded_width": 960,
+            "coded_height": 444,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "7807:7800",
+            "display_aspect_ratio": "422:195",
+            "pix_fmt": "yuvj420p",
+            "level": 31,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1467904,
+            "duration": "95.566667",
+            "bit_rate": "678908",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "2867",
+            "extradata_size": 52,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 416,
+            "start_time": "0.008667",
+            "duration_ts": 4589344,
+            "duration": "95.611333",
+            "bit_rate": "95253",
+            "nb_frames": "4482",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/chikumatsuboi/Code/animal-racers-western/scripts/network/browser-revision2/run-2026-09-20T04-16-30-396Z/03-unicorn-lion-round1-host-recording-review.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "95.620000",
+          "size": "9372244",
+          "bit_rate": "784124",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "encoding": "H264 CRF25,960px wide,30fps,AAC96k;2 threads. Constant-rate review copy, not original frame cadence or controlled performance evidence."
+    }
+  ],
+  "timeline": [
+    {
+      "id": 1,
+      "atMs": 0,
+      "kind": "pair-start",
+      "pair": [
+        "lion",
+        "wolf"
+      ]
+    },
+    {
+      "id": 2,
+      "atMs": 1792,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-host-initial-report.json"
+    },
+    {
+      "id": 3,
+      "atMs": 4068,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-guest-initial-report.json"
+    },
+    {
+      "id": 4,
+      "atMs": 12634,
+      "kind": "phase",
+      "role": "host",
+      "phase": "race"
+    },
+    {
+      "id": 5,
+      "atMs": 12653,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "race"
+    },
+    {
+      "id": 6,
+      "atMs": 19545,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 7,
+      "atMs": 19702,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 8,
+      "atMs": 19733,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 9,
+      "atMs": 19966,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 10,
+      "atMs": 23244,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 11,
+      "atMs": 23305,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 12,
+      "atMs": 23402,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 13,
+      "atMs": 23439,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 14,
+      "atMs": 25818,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 15,
+      "atMs": 25840,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 16,
+      "atMs": 26025,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 17,
+      "atMs": 26084,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 18,
+      "atMs": 35009,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 19,
+      "atMs": 35122,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 20,
+      "atMs": 35273,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 21,
+      "atMs": 35305,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 22,
+      "atMs": 38038,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 23,
+      "atMs": 38040,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 24,
+      "atMs": 38078,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 25,
+      "atMs": 38151,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 26,
+      "atMs": 41173,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 27,
+      "atMs": 41177,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 28,
+      "atMs": 41360,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 29,
+      "atMs": 41446,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 30,
+      "atMs": 49206,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 31,
+      "atMs": 49206,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 32,
+      "atMs": 49388,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 33,
+      "atMs": 49469,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 34,
+      "atMs": 51025,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 35,
+      "atMs": 51052,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 36,
+      "atMs": 51106,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 37,
+      "atMs": 51134,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 38,
+      "atMs": 57887,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 39,
+      "atMs": 57974,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 40,
+      "atMs": 58151,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 41,
+      "atMs": 58156,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 42,
+      "atMs": 65190,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 43,
+      "atMs": 65192,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 44,
+      "atMs": 65374,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 45,
+      "atMs": 65456,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 46,
+      "atMs": 67024,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 47,
+      "atMs": 67069,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 48,
+      "atMs": 67091,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 49,
+      "atMs": 67134,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 50,
+      "atMs": 75391,
+      "kind": "phase",
+      "role": "host",
+      "phase": "transition"
+    },
+    {
+      "id": 51,
+      "atMs": 75503,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "transition"
+    },
+    {
+      "id": 52,
+      "atMs": 75582,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round1-guest-race-report.json"
+    },
+    {
+      "id": 53,
+      "atMs": 75582,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round1-host-race-report.json"
+    },
+    {
+      "id": 54,
+      "atMs": 79400,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 55,
+      "atMs": 79400,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 56,
+      "atMs": 79953,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 57,
+      "atMs": 79968,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 58,
+      "atMs": 80137,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 59,
+      "atMs": 80166,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 60,
+      "atMs": 80201,
+      "kind": "received-windup",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 61,
+      "atMs": 80532,
+      "kind": "button",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 62,
+      "atMs": 80568,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 63,
+      "atMs": 80568,
+      "kind": "reaction",
+      "role": "guest",
+      "afterObservedCueMs": 367
+    },
+    {
+      "id": 64,
+      "atMs": 80901,
+      "kind": "visible-opening",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 65,
+      "atMs": 81069,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 360
+    },
+    {
+      "id": 66,
+      "atMs": 81433,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 67,
+      "atMs": 81433,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 68,
+      "atMs": 81469,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 69,
+      "atMs": 81751,
+      "kind": "reply-damage",
+      "role": "guest",
+      "before": [
+        100,
+        100
+      ],
+      "after": [
+        82,
+        100
+      ]
+    },
+    {
+      "id": 70,
+      "atMs": 83166,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 71,
+      "atMs": 83166,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 72,
+      "atMs": 83720,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 73,
+      "atMs": 83720,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 74,
+      "atMs": 83874,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 75,
+      "atMs": 83901,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 76,
+      "atMs": 83968,
+      "kind": "received-windup",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 77,
+      "atMs": 84298,
+      "kind": "button",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 78,
+      "atMs": 84334,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 79,
+      "atMs": 84334,
+      "kind": "reaction",
+      "role": "host",
+      "afterObservedCueMs": 366
+    },
+    {
+      "id": 80,
+      "atMs": 84472,
+      "kind": "visible-opening",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 81,
+      "atMs": 84835,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 360
+    },
+    {
+      "id": 82,
+      "atMs": 85199,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 83,
+      "atMs": 85199,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 84,
+      "atMs": 85233,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 85,
+      "atMs": 85517,
+      "kind": "reply-damage",
+      "role": "host",
+      "before": [
+        82,
+        100
+      ],
+      "after": [
+        82,
+        74
+      ]
+    },
+    {
+      "id": 86,
+      "atMs": 86940,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 87,
+      "atMs": 86940,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 88,
+      "atMs": 87543,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 89,
+      "atMs": 87543,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 90,
+      "atMs": 87549,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 91,
+      "atMs": 87583,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 92,
+      "atMs": 89395,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 93,
+      "atMs": 89395,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 94,
+      "atMs": 89999,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 95,
+      "atMs": 89999,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 96,
+      "atMs": 90002,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 97,
+      "atMs": 90036,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 98,
+      "atMs": 91689,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 99,
+      "atMs": 91689,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 100,
+      "atMs": 92293,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 101,
+      "atMs": 92294,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 102,
+      "atMs": 92299,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 103,
+      "atMs": 92334,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 104,
+      "atMs": 94154,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 105,
+      "atMs": 94154,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 106,
+      "atMs": 94756,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 107,
+      "atMs": 94756,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 108,
+      "atMs": 94759,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 109,
+      "atMs": 94800,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 110,
+      "atMs": 96526,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 111,
+      "atMs": 96526,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 112,
+      "atMs": 97130,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 113,
+      "atMs": 97131,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 114,
+      "atMs": 97133,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 115,
+      "atMs": 97166,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 116,
+      "atMs": 103675,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round1-host-final-report.json"
+    },
+    {
+      "id": 117,
+      "atMs": 103676,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round1-guest-final-report.json"
+    },
+    {
+      "id": 118,
+      "atMs": 103833,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round1-host-recording.webm"
+    },
+    {
+      "id": 119,
+      "atMs": 103834,
+      "kind": "round-verified",
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          31,
+          19
+        ],
+        "fight": [
+          36.5,
+          13.5
+        ],
+        "total": [
+          67.5,
+          32.5
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      }
+    },
+    {
+      "id": 120,
+      "atMs": 107081,
+      "kind": "phase",
+      "role": "host",
+      "phase": "race"
+    },
+    {
+      "id": 121,
+      "atMs": 107083,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "race"
+    },
+    {
+      "id": 122,
+      "atMs": 114133,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 123,
+      "atMs": 114133,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 124,
+      "atMs": 114316,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 125,
+      "atMs": 114397,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 126,
+      "atMs": 117738,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 127,
+      "atMs": 117772,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 128,
+      "atMs": 117968,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 129,
+      "atMs": 118000,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 130,
+      "atMs": 120255,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 131,
+      "atMs": 120332,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 132,
+      "atMs": 120437,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 133,
+      "atMs": 120592,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 134,
+      "atMs": 128567,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 135,
+      "atMs": 128722,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 136,
+      "atMs": 128750,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 137,
+      "atMs": 128985,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 138,
+      "atMs": 131702,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 139,
+      "atMs": 131733,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 140,
+      "atMs": 131790,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 141,
+      "atMs": 131819,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 142,
+      "atMs": 134773,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 143,
+      "atMs": 134838,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 144,
+      "atMs": 135021,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 145,
+      "atMs": 135036,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 146,
+      "atMs": 142580,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 147,
+      "atMs": 142615,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 148,
+      "atMs": 142763,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 149,
+      "atMs": 142877,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 150,
+      "atMs": 144371,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 151,
+      "atMs": 144399,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 152,
+      "atMs": 144422,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 153,
+      "atMs": 144450,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 154,
+      "atMs": 151231,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 155,
+      "atMs": 151257,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 156,
+      "atMs": 151414,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 157,
+      "atMs": 151519,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 158,
+      "atMs": 159373,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 159,
+      "atMs": 159417,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 160,
+      "atMs": 159599,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 161,
+      "atMs": 159635,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 162,
+      "atMs": 161296,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 163,
+      "atMs": 161329,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 164,
+      "atMs": 161485,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 165,
+      "atMs": 161514,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 166,
+      "atMs": 169953,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "transition"
+    },
+    {
+      "id": 167,
+      "atMs": 170082,
+      "kind": "phase",
+      "role": "host",
+      "phase": "transition"
+    },
+    {
+      "id": 168,
+      "atMs": 170154,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round2-host-race-report.json"
+    },
+    {
+      "id": 169,
+      "atMs": 170155,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round2-guest-race-report.json"
+    },
+    {
+      "id": 170,
+      "atMs": 173988,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 171,
+      "atMs": 173988,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 172,
+      "atMs": 174541,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 173,
+      "atMs": 174541,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 174,
+      "atMs": 174695,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 175,
+      "atMs": 174729,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 176,
+      "atMs": 174763,
+      "kind": "received-windup",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 177,
+      "atMs": 175094,
+      "kind": "button",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 178,
+      "atMs": 175130,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 179,
+      "atMs": 175130,
+      "kind": "reaction",
+      "role": "guest",
+      "afterObservedCueMs": 367
+    },
+    {
+      "id": 180,
+      "atMs": 175430,
+      "kind": "visible-opening",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 181,
+      "atMs": 175631,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 360
+    },
+    {
+      "id": 182,
+      "atMs": 175995,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 183,
+      "atMs": 175995,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 184,
+      "atMs": 176031,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 185,
+      "atMs": 176352,
+      "kind": "reply-damage",
+      "role": "guest",
+      "before": [
+        100,
+        100
+      ],
+      "after": [
+        82,
+        100
+      ]
+    },
+    {
+      "id": 186,
+      "atMs": 177736,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 187,
+      "atMs": 177736,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 188,
+      "atMs": 178288,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 189,
+      "atMs": 178288,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 190,
+      "atMs": 178441,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 191,
+      "atMs": 178481,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 192,
+      "atMs": 178547,
+      "kind": "received-windup",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 193,
+      "atMs": 178878,
+      "kind": "button",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 194,
+      "atMs": 178913,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 195,
+      "atMs": 178913,
+      "kind": "reaction",
+      "role": "host",
+      "afterObservedCueMs": 366
+    },
+    {
+      "id": 196,
+      "atMs": 179078,
+      "kind": "visible-opening",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 197,
+      "atMs": 179414,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 360
+    },
+    {
+      "id": 198,
+      "atMs": 179777,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 199,
+      "atMs": 179777,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 200,
+      "atMs": 179812,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 201,
+      "atMs": 180137,
+      "kind": "reply-damage",
+      "role": "host",
+      "before": [
+        82,
+        100
+      ],
+      "after": [
+        82,
+        74
+      ]
+    },
+    {
+      "id": 202,
+      "atMs": 181515,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 203,
+      "atMs": 181516,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 204,
+      "atMs": 182117,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 205,
+      "atMs": 182117,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 206,
+      "atMs": 182119,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 207,
+      "atMs": 182146,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 208,
+      "atMs": 183951,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 209,
+      "atMs": 183951,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 210,
+      "atMs": 184553,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 211,
+      "atMs": 184553,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 212,
+      "atMs": 184555,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 213,
+      "atMs": 184580,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 214,
+      "atMs": 186225,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 215,
+      "atMs": 186225,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 216,
+      "atMs": 186832,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 217,
+      "atMs": 186832,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 218,
+      "atMs": 186835,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 219,
+      "atMs": 186868,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 220,
+      "atMs": 188719,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 221,
+      "atMs": 188719,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 222,
+      "atMs": 189324,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 223,
+      "atMs": 189324,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 224,
+      "atMs": 189332,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 225,
+      "atMs": 189368,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 226,
+      "atMs": 191032,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 227,
+      "atMs": 191032,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 228,
+      "atMs": 191636,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 229,
+      "atMs": 191636,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 230,
+      "atMs": 191640,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 231,
+      "atMs": 191685,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 232,
+      "atMs": 198189,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round2-guest-final-report.json"
+    },
+    {
+      "id": 233,
+      "atMs": 198190,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round2-host-final-report.json"
+    },
+    {
+      "id": 234,
+      "atMs": 198346,
+      "kind": "ui-download",
+      "file": "01-lion-wolf-round2-host-recording.webm"
+    },
+    {
+      "id": 235,
+      "atMs": 198347,
+      "kind": "round-verified",
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "round": 2,
+      "result": {
+        "race": [
+          32.6,
+          17.4
+        ],
+        "fight": [
+          36.5,
+          13.5
+        ],
+        "total": [
+          69.1,
+          30.9
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      }
+    },
+    {
+      "id": 236,
+      "atMs": 199125,
+      "kind": "media-processing-start",
+      "raw": "01-lion-wolf-round1-host-recording.webm"
+    },
+    {
+      "id": 237,
+      "atMs": 211034,
+      "kind": "media-processing-end",
+      "file": "01-lion-wolf-round1-host-recording-review.mp4",
+      "rawBytes": 32179782,
+      "bytes": 9232676
+    },
+    {
+      "id": 238,
+      "atMs": 211034,
+      "kind": "media-processing-start",
+      "raw": "01-lion-wolf-round2-host-recording.webm"
+    },
+    {
+      "id": 239,
+      "atMs": 223719,
+      "kind": "media-processing-end",
+      "file": "01-lion-wolf-round2-host-recording-review.mp4",
+      "rawBytes": 32362682,
+      "bytes": 9242605
+    },
+    {
+      "id": 240,
+      "atMs": 223745,
+      "kind": "pair-start",
+      "pair": [
+        "wolf",
+        "unicorn"
+      ]
+    },
+    {
+      "id": 241,
+      "atMs": 225873,
+      "kind": "ui-download",
+      "file": "02-wolf-unicorn-host-initial-report.json"
+    },
+    {
+      "id": 242,
+      "atMs": 228486,
+      "kind": "ui-download",
+      "file": "02-wolf-unicorn-guest-initial-report.json"
+    },
+    {
+      "id": 243,
+      "atMs": 237779,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "race"
+    },
+    {
+      "id": 244,
+      "atMs": 237814,
+      "kind": "phase",
+      "role": "host",
+      "phase": "race"
+    },
+    {
+      "id": 245,
+      "atMs": 245074,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 246,
+      "atMs": 245097,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 247,
+      "atMs": 245291,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 248,
+      "atMs": 245389,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 249,
+      "atMs": 248326,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 250,
+      "atMs": 248363,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 251,
+      "atMs": 248442,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 252,
+      "atMs": 248495,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 253,
+      "atMs": 250947,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 254,
+      "atMs": 250948,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 255,
+      "atMs": 251139,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 256,
+      "atMs": 251222,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 257,
+      "atMs": 259917,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 258,
+      "atMs": 260048,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 259,
+      "atMs": 260419,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 260,
+      "atMs": 260574,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 261,
+      "atMs": 262330,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 262,
+      "atMs": 262406,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 263,
+      "atMs": 263763,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 264,
+      "atMs": 263773,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 265,
+      "atMs": 266486,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 266,
+      "atMs": 266636,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 267,
+      "atMs": 267585,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 268,
+      "atMs": 267664,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 269,
+      "atMs": 275760,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 270,
+      "atMs": 276166,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 271,
+      "atMs": 279473,
+      "kind": "pair-failed",
+      "pair": [
+        "wolf",
+        "unicorn"
+      ],
+      "error": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Leap', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Leap\" class=\"control leap\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n"
+    },
+    {
+      "id": 272,
+      "atMs": 281058,
+      "kind": "ui-download",
+      "file": "02-wolf-unicorn-host-failure-report.json"
+    },
+    {
+      "id": 273,
+      "atMs": 281105,
+      "kind": "ui-download",
+      "file": "02-wolf-unicorn-guest-failure-report.json"
+    },
+    {
+      "id": 274,
+      "atMs": 281512,
+      "kind": "ui-download",
+      "file": "02-wolf-unicorn-host-failure-recording.webm"
+    },
+    {
+      "id": 275,
+      "atMs": 282690,
+      "kind": "media-processing-start",
+      "raw": "02-wolf-unicorn-host-failure-recording.webm"
+    },
+    {
+      "id": 276,
+      "atMs": 288839,
+      "kind": "media-processing-end",
+      "file": "02-wolf-unicorn-host-failure-recording-review.mp4",
+      "rawBytes": 13451569,
+      "bytes": 5185698
+    },
+    {
+      "id": 277,
+      "atMs": 288885,
+      "kind": "pair-start",
+      "pair": [
+        "unicorn",
+        "lion"
+      ]
+    },
+    {
+      "id": 278,
+      "atMs": 290917,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-host-initial-report.json"
+    },
+    {
+      "id": 279,
+      "atMs": 293213,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-guest-initial-report.json"
+    },
+    {
+      "id": 280,
+      "atMs": 302457,
+      "kind": "phase",
+      "role": "host",
+      "phase": "race"
+    },
+    {
+      "id": 281,
+      "atMs": 302463,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "race"
+    },
+    {
+      "id": 282,
+      "atMs": 309318,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 283,
+      "atMs": 309474,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 284,
+      "atMs": 309502,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 285,
+      "atMs": 309741,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 286,
+      "atMs": 313122,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 287,
+      "atMs": 313187,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 288,
+      "atMs": 313191,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 289,
+      "atMs": 313250,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 290,
+      "atMs": 315530,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 291,
+      "atMs": 315642,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 292,
+      "atMs": 315711,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 293,
+      "atMs": 315906,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 294,
+      "atMs": 324691,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 295,
+      "atMs": 324697,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 296,
+      "atMs": 324880,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 297,
+      "atMs": 324963,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 298,
+      "atMs": 327377,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 299,
+      "atMs": 327410,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 300,
+      "atMs": 327607,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 301,
+      "atMs": 327646,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 302,
+      "atMs": 330503,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 303,
+      "atMs": 330587,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 304,
+      "atMs": 330684,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 305,
+      "atMs": 330850,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 306,
+      "atMs": 337963,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 307,
+      "atMs": 338118,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 308,
+      "atMs": 338228,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 309,
+      "atMs": 338301,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 310,
+      "atMs": 339765,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 311,
+      "atMs": 339796,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 312,
+      "atMs": 339995,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 313,
+      "atMs": 340026,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 314,
+      "atMs": 346604,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowRight",
+      "durationMs": 260
+    },
+    {
+      "id": 315,
+      "atMs": 346669,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 180
+    },
+    {
+      "id": 316,
+      "atMs": 346851,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 317,
+      "atMs": 346866,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 318,
+      "atMs": 353814,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 260
+    },
+    {
+      "id": 319,
+      "atMs": 353967,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowLeft",
+      "durationMs": 180
+    },
+    {
+      "id": 320,
+      "atMs": 354077,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 321,
+      "atMs": 354150,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 322,
+      "atMs": 355687,
+      "kind": "button",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 323,
+      "atMs": 355726,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Leap"
+    },
+    {
+      "id": 324,
+      "atMs": 355773,
+      "kind": "button",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 325,
+      "atMs": 355812,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Leap"
+    },
+    {
+      "id": 326,
+      "atMs": 364247,
+      "kind": "phase",
+      "role": "guest",
+      "phase": "transition"
+    },
+    {
+      "id": 327,
+      "atMs": 364321,
+      "kind": "phase",
+      "role": "host",
+      "phase": "transition"
+    },
+    {
+      "id": 328,
+      "atMs": 364415,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-round1-host-race-report.json"
+    },
+    {
+      "id": 329,
+      "atMs": 364415,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-round1-guest-race-report.json"
+    },
+    {
+      "id": 330,
+      "atMs": 368245,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 331,
+      "atMs": 368245,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 332,
+      "atMs": 368797,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 333,
+      "atMs": 368797,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 334,
+      "atMs": 368962,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 335,
+      "atMs": 368994,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 336,
+      "atMs": 369028,
+      "kind": "received-windup",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 337,
+      "atMs": 369359,
+      "kind": "button",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 338,
+      "atMs": 369395,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Evade"
+    },
+    {
+      "id": 339,
+      "atMs": 369395,
+      "kind": "reaction",
+      "role": "guest",
+      "afterObservedCueMs": 367
+    },
+    {
+      "id": 340,
+      "atMs": 369662,
+      "kind": "visible-opening",
+      "role": "guest",
+      "attempt": 1
+    },
+    {
+      "id": 341,
+      "atMs": 369895,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 360
+    },
+    {
+      "id": 342,
+      "atMs": 370257,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 343,
+      "atMs": 370257,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 344,
+      "atMs": 370294,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 345,
+      "atMs": 370561,
+      "kind": "reply-damage",
+      "role": "guest",
+      "before": [
+        100,
+        100
+      ],
+      "after": [
+        74,
+        100
+      ]
+    },
+    {
+      "id": 346,
+      "atMs": 371947,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 550
+    },
+    {
+      "id": 347,
+      "atMs": 371947,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 550
+    },
+    {
+      "id": 348,
+      "atMs": 372499,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 349,
+      "atMs": 372499,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 350,
+      "atMs": 372651,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 351,
+      "atMs": 372678,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 352,
+      "atMs": 372712,
+      "kind": "received-windup",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 353,
+      "atMs": 373043,
+      "kind": "button",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 354,
+      "atMs": 373076,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Evade"
+    },
+    {
+      "id": 355,
+      "atMs": 373076,
+      "kind": "reaction",
+      "role": "host",
+      "afterObservedCueMs": 364
+    },
+    {
+      "id": 356,
+      "atMs": 373444,
+      "kind": "visible-opening",
+      "role": "host",
+      "attempt": 1
+    },
+    {
+      "id": 357,
+      "atMs": 373577,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 360
+    },
+    {
+      "id": 358,
+      "atMs": 373940,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 359,
+      "atMs": 373940,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 360,
+      "atMs": 373978,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 361,
+      "atMs": 374250,
+      "kind": "reply-damage",
+      "role": "host",
+      "before": [
+        74,
+        100
+      ],
+      "after": [
+        74,
+        78
+      ]
+    },
+    {
+      "id": 362,
+      "atMs": 375632,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 363,
+      "atMs": 375632,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 364,
+      "atMs": 376235,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 365,
+      "atMs": 376235,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 366,
+      "atMs": 376237,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 367,
+      "atMs": 376275,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 368,
+      "atMs": 377999,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 369,
+      "atMs": 377999,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 370,
+      "atMs": 378602,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 371,
+      "atMs": 378602,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 372,
+      "atMs": 378603,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 373,
+      "atMs": 378628,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 374,
+      "atMs": 380434,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 375,
+      "atMs": 380434,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 376,
+      "atMs": 381037,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 377,
+      "atMs": 381037,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 378,
+      "atMs": 381040,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 379,
+      "atMs": 381073,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 380,
+      "atMs": 382796,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 381,
+      "atMs": 382796,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 382,
+      "atMs": 383399,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 383,
+      "atMs": 383399,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 384,
+      "atMs": 383400,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 385,
+      "atMs": 383427,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 386,
+      "atMs": 385250,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 387,
+      "atMs": 385250,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 388,
+      "atMs": 385853,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 389,
+      "atMs": 385853,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 390,
+      "atMs": 385856,
+      "kind": "button",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 391,
+      "atMs": 385892,
+      "kind": "button-complete",
+      "role": "host",
+      "name": "Strike"
+    },
+    {
+      "id": 392,
+      "atMs": 387619,
+      "kind": "key-down",
+      "role": "host",
+      "key": "ArrowRight",
+      "durationMs": 600
+    },
+    {
+      "id": 393,
+      "atMs": 387619,
+      "kind": "key-down",
+      "role": "guest",
+      "key": "ArrowLeft",
+      "durationMs": 600
+    },
+    {
+      "id": 394,
+      "atMs": 388223,
+      "kind": "key-up",
+      "role": "host",
+      "key": "ArrowRight"
+    },
+    {
+      "id": 395,
+      "atMs": 388223,
+      "kind": "key-up",
+      "role": "guest",
+      "key": "ArrowLeft"
+    },
+    {
+      "id": 396,
+      "atMs": 388226,
+      "kind": "button",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 397,
+      "atMs": 388263,
+      "kind": "button-complete",
+      "role": "guest",
+      "name": "Strike"
+    },
+    {
+      "id": 398,
+      "atMs": 394732,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-round1-guest-final-report.json"
+    },
+    {
+      "id": 399,
+      "atMs": 394748,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-round1-host-final-report.json"
+    },
+    {
+      "id": 400,
+      "atMs": 394927,
+      "kind": "ui-download",
+      "file": "03-unicorn-lion-round1-host-recording.webm"
+    },
+    {
+      "id": 401,
+      "atMs": 394928,
+      "kind": "round-verified",
+      "pair": [
+        "unicorn",
+        "lion"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          31.8,
+          18.2
+        ],
+        "fight": [
+          22,
+          28
+        ],
+        "total": [
+          53.8,
+          46.2
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      }
+    },
+    {
+      "id": 402,
+      "atMs": 395645,
+      "kind": "media-processing-start",
+      "raw": "03-unicorn-lion-round1-host-recording.webm"
+    },
+    {
+      "id": 403,
+      "atMs": 409487,
+      "kind": "media-processing-end",
+      "file": "03-unicorn-lion-round1-host-recording-review.mp4",
+      "rawBytes": 33112961,
+      "bytes": 9372244
+    }
+  ],
+  "fatalFailure": null,
+  "matrixPassed": false
+}

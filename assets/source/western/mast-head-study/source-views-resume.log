@@ -1,0 +1,109 @@
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-head-study/inputs/Mast.blend"
+Fra:1 Mem:18.72M (Peak 18.72M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Mast.Juba
+Fra:1 Mem:27.12M (Peak 27.12M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Mast2024-11
+Fra:1 Mem:27.50M (Peak 27.50M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area.002
+Fra:1 Mem:28.58M (Peak 28.58M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area.001
+Fra:1 Mem:28.58M (Peak 28.58M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area
+Fra:1 Mem:32.79M (Peak 33.05M) | Time:00:00.26 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Initializing
+Fra:1 Mem:20.69M (Peak 33.05M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Waiting for render to start
+Fra:1 Mem:20.69M (Peak 33.05M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Updating Scene
+Fra:1 Mem:20.69M (Peak 33.05M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Updating Shaders
+Fra:1 Mem:20.69M (Peak 33.05M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Procedurals
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Background
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Camera
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Meshes Flags
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Particle Systems
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Meshes
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:20.81M (Peak 33.05M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.28 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.28 | Mem:5.31M, Peak:5.31M | Scene, RenderLayer | Updating Scene BVH | Building
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.28 | Mem:5.31M, Peak:5.31M | Scene, RenderLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.29 | Mem:7.05M, Peak:7.05M | Scene, RenderLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.59 | Mem:8.32M, Peak:8.32M | Scene, RenderLayer | Updating Scene BVH | Building BVH 34%
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.60 | Mem:8.32M, Peak:8.32M | Scene, RenderLayer | Updating Scene BVH | Building BVH 35%
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.62 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:26.09M (Peak 33.05M) | Time:00:00.62 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Mesh | Computing normals
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.62 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.62 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Objects Flags
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.62 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Primitive Offsets
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.62 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Images
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Camera Volume
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Lookup Tables
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Lights
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Lights | Computing tree
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Integrator
+Fra:1 Mem:27.61M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Film
+Fra:1 Mem:27.62M (Peak 33.05M) | Time:00:00.63 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Lookup Tables
+Fra:1 Mem:27.62M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Baking
+Fra:1 Mem:27.62M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Device | Writing constant memory
+Fra:1 Mem:27.62M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:27.62M (Peak 33.05M) | Time:00:00.63 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Sample 0/8
+Fra:1 Mem:47.64M (Peak 47.64M) | Time:00:11.24 | Remaining:01:14.28 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 1/8
+Fra:1 Mem:47.64M (Peak 47.64M) | Time:00:41.55 | Remaining:01:08.21 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 3/8
+Fra:1 Mem:47.64M (Peak 47.64M) | Time:01:01.30 | Remaining:00:36.40 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 5/8
+Fra:1 Mem:47.64M (Peak 47.64M) | Time:01:06.21 | Remaining:00:09.36 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 7/8
+Fra:1 Mem:56.65M (Peak 69.65M) | Time:02:06.81 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 8/8
+Fra:1 Mem:56.65M (Peak 69.65M) | Time:02:06.82 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Finished
+Fra:1 Mem:22.46M (Peak 69.65M) | Time:02:06.88 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-head-study/qa/source-front.png'
+Time: 02:11.95 (Saving: 00:04.71)
+
+Fra:1 Mem:20.73M (Peak 20.73M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Mast.Juba
+Fra:1 Mem:29.13M (Peak 29.13M) | Time:00:00.18 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Mast2024-11
+Fra:1 Mem:29.52M (Peak 29.52M) | Time:00:00.18 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area.002
+Fra:1 Mem:29.52M (Peak 29.52M) | Time:00:00.18 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area.001
+Fra:1 Mem:29.52M (Peak 29.52M) | Time:00:00.18 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Synchronizing object | Study area
+Fra:1 Mem:34.80M (Peak 35.06M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Initializing
+Fra:1 Mem:22.71M (Peak 35.06M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Waiting for render to start
+Fra:1 Mem:22.71M (Peak 35.06M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Updating Scene
+Fra:1 Mem:22.71M (Peak 35.06M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Updating Shaders
+Fra:1 Mem:22.71M (Peak 35.06M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, RenderLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Procedurals
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Background
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Camera
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Meshes Flags
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Particle Systems
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Meshes
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:22.83M (Peak 35.06M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.33 | Mem:0.04M, Peak:0.04M | Scene, RenderLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.34 | Mem:5.31M, Peak:5.31M | Scene, RenderLayer | Updating Scene BVH | Building
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.34 | Mem:5.31M, Peak:5.31M | Scene, RenderLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.34 | Mem:7.05M, Peak:7.05M | Scene, RenderLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.48 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:28.10M (Peak 35.06M) | Time:00:00.48 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Mesh | Computing normals
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:8.94M, Peak:10.68M | Scene, RenderLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Objects Flags
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Primitive Offsets
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Images
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Camera Volume
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Lookup Tables
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Lights
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Lights | Computing tree
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Integrator
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Film
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.47M, Peak:10.68M | Scene, RenderLayer | Updating Lookup Tables
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Baking
+Fra:1 Mem:29.63M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Updating Device | Writing constant memory
+Fra:1 Mem:29.64M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:29.64M (Peak 35.06M) | Time:00:00.49 | Mem:10.55M, Peak:10.68M | Scene, RenderLayer | Sample 0/8
+Fra:1 Mem:49.66M (Peak 49.66M) | Time:00:08.51 | Remaining:00:56.11 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 1/8
+Fra:1 Mem:49.66M (Peak 49.66M) | Time:01:00.71 | Remaining:00:36.09 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 5/8
+Fra:1 Mem:58.66M (Peak 71.67M) | Time:03:25.21 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Sample 8/8
+Fra:1 Mem:58.66M (Peak 71.67M) | Time:03:25.23 | Mem:30.55M, Peak:30.55M | Scene, RenderLayer | Finished
+Fra:1 Mem:24.48M (Peak 71.67M) | Time:03:25.32 | Compositing
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/mast-head-study/qa/source-three-quarter.png'
+Time: 03:41.91 (Saving: 00:15.67)
+
+MAST_SOURCE_VIEWS_DONE
+
+Blender quit

@@ -1,0 +1,565 @@
+{
+  "sourceSha256": "43616c2625780ca6702c780f88b5e28992f5323ef7455ee986cf891014070405",
+  "runtimeSha256": "9d56a26125fdae942bfe471633ed2afc9c6d0a85c0b9142d0098c8594dff25f3",
+  "unchangedV2ActionsSha256": "0bca1bb219e3fec48123109d354781d14989e2f216ce3bb0220131fb30fd8d6b",
+  "unchangedV2ConnectedBody": true,
+  "faceIdentity": {
+    "Head \u2022 species sculpt": {
+      "vertices": 1418,
+      "maximumDeviationFromRigidTranslationMetres": 2.6656007498500226e-07
+    },
+    "Cream muzzle pad": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 2.6656007498500226e-07
+    },
+    "Cream muzzle pad.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 2.6656007498500226e-07
+    },
+    "Heart shaped nose": {
+      "vertices": 5,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Eye socket": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Ivory eye": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Iris": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Pupil": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Eye glint": {
+      "vertices": 108,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Expressive brow": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Smiling mouth": {
+      "vertices": 18,
+      "maximumDeviationFromRigidTranslationMetres": 1.4901161193847656e-07
+    },
+    "Whisker pore": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.001": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.002": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Eye socket.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Ivory eye.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 7.450580596923828e-08
+    },
+    "Iris.001": {
+      "vertices": 260,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Pupil.001": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Eye glint.001": {
+      "vertices": 108,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Expressive brow.001": {
+      "vertices": 24,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Smiling mouth.001": {
+      "vertices": 18,
+      "maximumDeviationFromRigidTranslationMetres": 1.4901161193847656e-07
+    },
+    "Whisker pore.003": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.004": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Whisker pore.005": {
+      "vertices": 40,
+      "maximumDeviationFromRigidTranslationMetres": 8.940696716308594e-08
+    },
+    "Lower jaw": {
+      "vertices": 220,
+      "maximumDeviationFromRigidTranslationMetres": 2.1490760299348766e-07
+    },
+    "Mouth cavity": {
+      "vertices": 198,
+      "maximumDeviationFromRigidTranslationMetres": 1.4901161193847656e-07
+    },
+    "Lower canine": {
+      "vertices": 21,
+      "maximumDeviationFromRigidTranslationMetres": 1.9082797281243946e-07
+    },
+    "Lower canine.001": {
+      "vertices": 21,
+      "maximumDeviationFromRigidTranslationMetres": 1.4901161193847656e-07
+    },
+    "Rounded lion ear": {
+      "vertices": 234,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Inner lion ear": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 2.2351741790771484e-08
+    },
+    "Rounded lion ear.001": {
+      "vertices": 234,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Inner lion ear.001": {
+      "vertices": 176,
+      "maximumDeviationFromRigidTranslationMetres": 2.2351741790771484e-08
+    },
+    "Closed sculpted rear mane cap": {
+      "vertices": 168,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Layered rear mane lock": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.001": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.002": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.003": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.004": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.005": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.006": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.007": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.008": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.009": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.010": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.011": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.012": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.013": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.014": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.015": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Layered rear mane lock.016": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.017": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.018": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.019": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Layered rear mane lock.020": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Layered rear mane lock.021": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Layered rear mane lock.022": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Sculpted mane lock": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539065e-08
+    },
+    "Sculpted mane lock.001": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.002": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.003": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.004": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.005": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.006": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.007": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.008": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.009": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.010": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 4.470348358154297e-08
+    },
+    "Sculpted mane lock.011": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.012": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.013": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.384185791015625e-07
+    },
+    "Sculpted mane lock.014": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.015": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Sculpted mane lock.016": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.9802322387695312e-08
+    },
+    "Sculpted mane lock.017": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.018": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Sculpted mane lock.019": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Sculpted mane lock.020": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 5.960464477539063e-08
+    },
+    "Sculpted mane lock.021": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.022": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.023": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.024": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.025": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.026": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Sculpted mane lock.027": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.028": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.029": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.030": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.031": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.032": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.033": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.034": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.035": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.036": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.037": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.038": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.4027400458748785e-07
+    },
+    "Sculpted mane lock.039": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.040": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Sculpted mane lock.041": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.042": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.228781230931777e-07
+    },
+    "Sculpted mane lock.043": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.1920928955078125e-07
+    },
+    "Sculpted mane lock.044": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.045": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 1.3328003749250113e-07
+    },
+    "Sculpted mane lock.046": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.384185791015625e-07
+    },
+    "Sculpted mane lock.047": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.048": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.049": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    },
+    "Sculpted mane lock.050": {
+      "vertices": 32,
+      "maximumDeviationFromRigidTranslationMetres": 2.457562461863554e-07
+    }
+  },
+  "attachments": {
+    "Leather neckerchief roll": {
+      "vertices": 40,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Neckerchief folded point": {
+      "vertices": 5,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Brass crest clasp": {
+      "vertices": 176,
+      "maximumRestPlacementError": 1.4901161193847656e-08,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    },
+    "Raised elemental crest": {
+      "vertices": 20,
+      "maximumRestPlacementError": 0.0,
+      "upperRootVerticesBoundToHead": 0,
+      "recipe": "control shape + rigid .30m backward placement, neck bound"
+    }
+  },
+  "bodyTopology": {
+    "components": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "vertices": 4318,
+    "faces": 4316
+  },
+  "headNeckRestEndpoints": {
+    "neck": {
+      "head": [
+        0.0,
+        -0.054999999701976776,
+        1.7000000476837158
+      ],
+      "tail": [
+        0.0,
+        0.11999999731779099,
+        1.9900000095367432
+      ]
+    },
+    "head": {
+      "head": [
+        0.0,
+        0.11999999731779099,
+        1.9900000095367432
+      ],
+      "tail": [
+        0.0,
+        -0.20999999344348907,
+        2.0
+      ]
+    },
+    "jaw": {
+      "head": [
+        0.0,
+        -0.07000000029802322,
+        1.8300000429153442
+      ],
+      "tail": [
+        0.0,
+        -0.3799999952316284,
+        1.809999942779541
+      ]
+    }
+  },
+  "clips": {
+    "transform": {
+      "frames": 37,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "fight_idle": {
+      "frames": 61,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "fight_move": {
+      "frames": 13,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "attack": {
+      "frames": 18,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "special": {
+      "frames": 29,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "guard": {
+      "frames": 19,
+      "maximumBoneScaleError": 1.0728836059570312e-06,
+      "finiteBodyVertices": true
+    },
+    "hit": {
+      "frames": 13,
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "finiteBodyVertices": true
+    },
+    "defeat": {
+      "frames": 40,
+      "maximumBoneScaleError": 1.5497207641601562e-06,
+      "finiteBodyVertices": true
+    },
+    "celebrate": {
+      "frames": 61,
+      "maximumBoneScaleError": 9.5367431640625e-07,
+      "finiteBodyVertices": true
+    },
+    "jump": {
+      "frames": 25,
+      "maximumBoneScaleError": 1.430511474609375e-06,
+      "finiteBodyVertices": true
+    },
+    "land": {
+      "frames": 10,
+      "maximumBoneScaleError": 1.3113021850585938e-06,
+      "finiteBodyVertices": true
+    }
+  },
+  "limits": "Exact rigid translation is verified for every mesh wholly weighted to head/jaw, including head, eyes, brows, mouth and facial attachments. Neck accessories are reshaped/reweighted explicitly; upper mane follows head, lower mane neck. Topology/unit scales and correct root placement do not prove lack of intersection; matched visual review is required."
+}

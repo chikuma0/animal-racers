@@ -1,0 +1,71 @@
+Info: Saved as "lion.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+13:17:28 | INFO: Starting glTF 2.0 export
+13:17:28 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:28 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:28 | INFO: Primitives created: 7
+13:17:29 | INFO: Finished glTF 2.0 export in 1.237529993057251 s
+
+TAIL_CANDIDATE_EXPORTED lion race
+Info: Saved as "lion-upright.blend"
+13:17:32 | INFO: Starting glTF 2.0 export
+13:17:32 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:32 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:32 | INFO: Primitives created: 7
+13:17:33 | INFO: Finished glTF 2.0 export in 0.8698389530181885 s
+
+TAIL_CANDIDATE_EXPORTED lion upright
+Info: Saved as "wolf.blend"
+13:17:35 | INFO: Starting glTF 2.0 export
+13:17:35 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:35 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:35 | INFO: Primitives created: 7
+13:17:37 | INFO: Finished glTF 2.0 export in 1.4577553272247314 s
+
+TAIL_CANDIDATE_EXPORTED wolf race
+Info: Saved as "wolf-upright.blend"
+13:17:39 | INFO: Starting glTF 2.0 export
+13:17:39 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:39 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:39 | INFO: Primitives created: 7
+13:17:40 | INFO: Finished glTF 2.0 export in 0.7701108455657959 s
+
+TAIL_CANDIDATE_EXPORTED wolf upright
+Info: Saved as "unicorn.blend"
+13:17:42 | INFO: Starting glTF 2.0 export
+13:17:42 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:42 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:42 | INFO: Primitives created: 7
+13:17:43 | INFO: Finished glTF 2.0 export in 1.0517830848693848 s
+
+TAIL_CANDIDATE_EXPORTED unicorn race
+Info: Saved as "unicorn-upright.blend"
+13:17:45 | INFO: Starting glTF 2.0 export
+13:17:45 | INFO: Extracting primitive: Tail repair • welded rump and complete tail
+13:17:45 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+13:17:45 | INFO: Primitives created: 7
+13:17:46 | INFO: Finished glTF 2.0 export in 0.9391419887542725 s
+
+TAIL_CANDIDATE_EXPORTED unicorn upright
+TAIL_REPAIR_REPRODUCED
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/lion-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/wolf-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/inputs/unicorn-upright.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/lion.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/lion.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/lion-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/lion-upright.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/wolf.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/wolf.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/wolf-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/wolf-upright.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/unicorn.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/unicorn.blend"
+Read blend: "/private/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/animal-tail-history-df7LYq/assets/source/western/revision2/tail-repair/candidate/unicorn-upright.blend"
+Read blend: "/var/folders/xq/czcg84wd2vj7dwvsg8rbbtnc0000gn/T/tail-repair-reproduce-sj6p2k1h/candidate/unicorn-upright.blend"
+
+Blender quit

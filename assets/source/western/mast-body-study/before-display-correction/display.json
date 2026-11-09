@@ -1,0 +1,67 @@
+{
+  "sourceSha256": "e3c29d87557d29ca70b700b1861149bf6111711f065c5d5c2379427630441838",
+  "recipeSha256": "497c850b5c7c40af7e251919c3e932682a5f6c245c81be9e2806eaff6be74633",
+  "bodyGeometryWeightsBefore": "42d44cb65f948bb9a74350f158255ca646893b580f084138f441792cc3259ccf",
+  "bodyGeometryWeightsAfter": "42d44cb65f948bb9a74350f158255ca646893b580f084138f441792cc3259ccf",
+  "bodyDisplayCost": {
+    "vertices": 17201,
+    "polygons": 16932,
+    "triangles": 33864,
+    "components": [
+      13797,
+      306,
+      306,
+      117,
+      117,
+      117,
+      117,
+      117,
+      117,
+      117,
+      117,
+      103,
+      103,
+      103,
+      103,
+      94,
+      94,
+      94,
+      94,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89,
+      89
+    ],
+    "boundaryEdges": 504,
+    "nonmanifoldEdgesOverTwoFaces": 32,
+    "bounds": {
+      "min": [
+        -0.9012205600738525,
+        -0.17708873748779297,
+        -0.008942830376327038
+      ],
+      "max": [
+        0.9012207984924316,
+        0.2436506152153015,
+        1.7297143936157227
+      ]
+    }
+  },
+  "selectedSubdivision": 1,
+  "maneHiddenAndRejected": true,
+  "nativeRigConstraintsRetained": true,
+  "boneCount": 210,
+  "embeddedTextsRemoved": true,
+  "driversMuted": [],
+  "suppliedActions": [],
+  "displayOnlyPalette": "Neutral gold vertex colors; no final fur or PBR acceptance",
+  "editableSha256": "c33ec5cff148434117a56305e0632407e0438b33344a41c68d9dfb7635c2a7c8"
+}

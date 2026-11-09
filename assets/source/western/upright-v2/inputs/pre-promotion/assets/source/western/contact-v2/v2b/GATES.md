@@ -1,0 +1,15 @@
+# Cycle6 v2b attachment repair of isolated contact anatomy experiment
+OWNS: assets/source/western/contact-v2/**, scripts/assets/experiment_contact.py, scripts/assets/verify-contact.mjs, scripts/assets/verify-contact-evidence.mjs
+BASE: Cycle5 f5cd5e683a848a40b45ab522c11099bd1fc38cb5
+- [x] C1: All three isolated exports preserve the eleven-clip, fixed-limb, planted-foot, 3.6 m/s shuffle, 2.50 m cup and structural budget contracts without changing any production source/export or Cycle5 evidence.
+  CHECK: node scripts/assets/verify-contact-evidence.mjs && node assets/source/western/contact-v2/v2b/verify-runtime.mjs
+  EXPECT: UPRIGHT_ROSTER_STRUCTURE_OK
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/chikumatsuboi/Code/animal-racers-western; path=4be47b90834f/25 entries; EXPECT=matched; output-sha256=dfee757a07439079a63639beaeea6febed79f9f0bf73e87d2364a7563615405b; output-bytes=395
+- [x] C2: Measured head/jaw forward extent stays at or below .82 m throughout normal contact; striking paw/hoof reach remains approximately 1.25–1.34 m; idle/contact/guard head, chest and forelimb bounds are reported to simulation.
+  CHECK: node scripts/assets/verify-contact.mjs
+  EXPECT: CONTACT_VARIANT_BOUNDS_OK
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/chikumatsuboi/Code/animal-racers-western; path=4be47b90834f/25 entries; EXPECT=matched; output-sha256=02355076ff9cf1842ad9097da1085b81d61c22d116cd1e1a1c5cf81fe2c64fda; output-bytes=317
+- [x] C3: Face identity/scale and connected source neck topology are preserved, with no worse visible neck/mane attachment, guard or cup clearance in matched front/side views and complete affected cycles.
+  EVIDENCE: v2b source inspection passed all three species: exact head/jaw rigid translation, one closed manifold body, unchanged v2 body vertices and action channels, explicit accessory root/weight checks. Inspected 26 complete front/side motion pages, 468 paired frames plus idle/contact/guard/cup/howl stills. Unicorn upper mane remains joined behind ear; Wolf collar restored below jaw. No new visible attachment tear or guard/cup clearance regression in this review. Lower scarf fold is partly occluded; angular mane, limited expression and simplified anatomy remain below cinematic target. Rejected v2 preserved; C3 is a bounded repair review, not A2 acceptance.
+- [x] C4: Editable isolated variants, exact authoring recipe, hash-paired compact QA, measurements and limitations are retained; root receives an integration recommendation with no silent production mutation.
+  EVIDENCE: README retains exact recipe, hashes, measured bounds, inspection limits and scoped integration recommendation. Six editable/export pairs are preserved across rejected v2 and repaired v2b; production/Cycle5 hash checks and rejected diagnostic snapshot pass. All six v2b movies and 26 full-frame pages are hash-paired to current sources; only transient/duplicate v2b frames removed after verification. Root received candidate paths, unchanged bounds and visual limitations; no production mutation or premium acceptance claim.

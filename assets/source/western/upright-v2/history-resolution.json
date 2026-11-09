@@ -1,0 +1,13 @@
+{
+  "status": "Explicit historical resolution after authorized canonical promotion; this does not assert current canonical files still equal Cycle5.",
+  "cycle5Commit": "f5cd5e683a848a40b45ab522c11099bd1fc38cb5",
+  "aliases": {
+    "assets/source/western/lion-upright.blend": "assets/source/western/contact-v2/control/lion-upright.blend",
+    "public/assets/western/lion-upright.glb": "assets/source/western/contact-v2/control/lion-upright.glb",
+    "assets/source/western/wolf-upright.blend": "assets/source/western/contact-v2/control/wolf-upright.blend",
+    "public/assets/western/wolf-upright.glb": "assets/source/western/contact-v2/control/wolf-upright.glb",
+    "assets/source/western/unicorn-upright.blend": "assets/source/western/contact-v2/control/unicorn-upright.blend",
+    "public/assets/western/unicorn-upright.glb": "assets/source/western/contact-v2/control/unicorn-upright.glb",
+    "scripts/assets/build_upright.py": "assets/source/western/contact-v2/inputs/build_upright.py"
+  }
+}

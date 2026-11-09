@@ -1,0 +1,5 @@
+# Isolated Cycle6 contact experiment
+
+The current reviewed candidate and completed experiment gates are in [v2b/README.md](v2b/README.md) and [v2b/GATES.md](v2b/GATES.md). Root independently inspected the actual v2b runtime renderer at 1.75 m body separation for all nine normal-strike species pairings at .21 seconds. Heads remained separated and strikes reached the rival's lowered forelimbs. This supports a separate coordinated integration step, not cinematic A2 acceptance.
+
+This directory's original `candidate/`, `qa/`, manifests and `GATES.md` are the preserved rejected v2 diagnostic snapshot. Numerical bounds were promising, but the remapped neck rotated the Unicorn mane out of attachment and the collar onto the cheek. The initial uncompleted ledger is historical; its outcome is superseded by the versioned v2b repair review, not relabeled as a successful first attempt. `diagnostic-v2-snapshot.json` protects those before files. `frozen-cycle5.json` protects production and all Cycle5 evidence. Canonical assets remain unchanged until root's separate integration wave.

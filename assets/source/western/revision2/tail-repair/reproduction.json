@@ -1,0 +1,41 @@
+{
+  "recipeSha256": "8f482567da48757d8ae2aba5b443f7365448673855a2cdd285cb2062d1d5ee3f",
+  "records": {
+    "lion-race": {
+      "runtimeSha256": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+      "sourceSemanticSha256": "b71bf0c46d3d38b83a37b0b98a35dc25ca017d4ef3ed22179e29ac02b39a78ed",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "lion-upright": {
+      "runtimeSha256": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+      "sourceSemanticSha256": "5d34dcb0bb83591f93ead552427e451be4ea3d31bbf6ece72de6dc8be981bef2",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "wolf-race": {
+      "runtimeSha256": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+      "sourceSemanticSha256": "2f7d915bffa26b31ef89d7e95be916b00e9989a41a71adc5dfa5858e48e4318b",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "wolf-upright": {
+      "runtimeSha256": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+      "sourceSemanticSha256": "00410c20c69d7a5b017367603f14d856937a6bef32212ac30dcb182976b5c462",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "unicorn-race": {
+      "runtimeSha256": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+      "sourceSemanticSha256": "e0a55c4a56475a8799f24fc1c342cb8bc549043107d528d5353af13b4ebe7ffe",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    },
+    "unicorn-upright": {
+      "runtimeSha256": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+      "sourceSemanticSha256": "bea5c013cd450f62066fe9b16b6abaf61a45cca4e9ef3975d7819d7d9e3b59c4",
+      "runtimeByteIdentical": true,
+      "sourceSemanticallyIdentical": true
+    }
+  }
+}

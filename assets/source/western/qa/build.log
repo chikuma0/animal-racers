@@ -1,0 +1,28 @@
+Info: Saved as "lion.blend"
+INFO Draco mesh compression is available, use library at /Users/chikumatsuboi/Applications/Blender-4.5.9.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+17:48:40 | INFO: Starting glTF 2.0 export
+17:48:40 | INFO: Extracting primitive: ribcage
+17:48:40 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+17:48:41 | INFO: Primitives created: 12
+17:48:42 | INFO: Finished glTF 2.0 export in 1.4839978218078613 s
+
+ASSET_EXPORTED lion
+Info: Saved as "wolf.blend"
+17:48:44 | INFO: Starting glTF 2.0 export
+17:48:44 | INFO: Extracting primitive: ribcage.001
+17:48:44 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+17:48:44 | INFO: Primitives created: 12
+17:48:45 | INFO: Finished glTF 2.0 export in 1.367913007736206 s
+
+ASSET_EXPORTED wolf
+Info: Saved as "unicorn.blend"
+17:48:47 | INFO: Starting glTF 2.0 export
+17:48:47 | INFO: Extracting primitive: ribcage.002
+17:48:48 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+17:48:48 | INFO: Primitives created: 19
+17:48:49 | INFO: Finished glTF 2.0 export in 1.8142950534820557 s
+
+ASSET_EXPORTED unicorn
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+
+Blender quit

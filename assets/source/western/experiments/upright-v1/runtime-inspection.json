@@ -1,0 +1,97 @@
+{
+  "sha256": "116f872c64168b63474796321171fdc460a64fc7918a4278f3a37b2c217c9154",
+  "bytes": 1404392,
+  "triangles": 19916,
+  "primitives": 19,
+  "bones": 25,
+  "checkedSkinVertices": 14006,
+  "restLengths": {
+    "front_upper_L": 0.47843496314736245,
+    "front_lower_L": 0.45398248248230755,
+    "rear_upper_L": 0.46421987700835576,
+    "rear_lower_L": 0.4086565992495578
+  },
+  "cupPivot": [
+    0.370000192318681,
+    2.500000010521681,
+    0.43000030324432814
+  ],
+  "clips": {
+    "fight_idle": {
+      "duration": 2,
+      "min": [
+        -0.8154474258975709,
+        0.03500006580737671,
+        -1.1833380783108862
+      ],
+      "max": [
+        0.815447456484995,
+        2.879999795381567,
+        1.0299999956213006
+      ],
+      "maximumLimbLengthError": 3.394789139243848e-7,
+      "maximumRearPawPivotDrift": 0
+    },
+    "attack": {
+      "duration": 0.5666666626930237,
+      "min": [
+        -0.7913838099459872,
+        0.0349784565181561,
+        -1.1833381247927175
+      ],
+      "max": [
+        0.7127123790892077,
+        2.879999795381567,
+        1.2485135400468574
+      ],
+      "maximumLimbLengthError": 4.509660954665762e-7,
+      "maximumRearPawPivotDrift": 0.00008093330128032012
+    },
+    "guard": {
+      "duration": 0.6000000238418579,
+      "min": [
+        -0.8154474258975709,
+        0.03499959419999479,
+        -1.1833380783108862
+      ],
+      "max": [
+        0.815447456484995,
+        2.879999795381567,
+        1.0629671092262782
+      ],
+      "maximumLimbLengthError": 4.4076708677343035e-7,
+      "maximumRearPawPivotDrift": 0.000002624113351956866
+    },
+    "defeat": {
+      "duration": 1.2999999523162842,
+      "min": [
+        -0.8210169973911161,
+        0.005284447662224828,
+        -1.183338106081837
+      ],
+      "max": [
+        0.8210170292080046,
+        2.879999795381567,
+        1.2271796317603072
+      ],
+      "maximumLimbLengthError": 4.7452856888341444e-7,
+      "maximumRearPawPivotDrift": 0.00005953024123726158
+    },
+    "celebrate": {
+      "duration": 2,
+      "min": [
+        -0.8301399036491592,
+        0.03500006580737671,
+        -1.1833380783108862
+      ],
+      "max": [
+        0.8301399040559181,
+        2.879999795381567,
+        1.0299999956213006
+      ],
+      "maximumLimbLengthError": 3.394789139243848e-7,
+      "maximumRearPawPivotDrift": 0
+    }
+  },
+  "limits": "Geometry-only texture stub; 41 actual skinned-bound evaluations per clip. These checks do not establish visual anatomy or absence of local self-intersection."
+}

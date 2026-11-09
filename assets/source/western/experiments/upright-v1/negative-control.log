@@ -1,0 +1,15 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: fight_idle: finite bounded geometry, limited floor penetration
+    at file:///Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/experiments/upright-v1/verify-runtime.mjs:41:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

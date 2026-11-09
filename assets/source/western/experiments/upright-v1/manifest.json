@@ -1,0 +1,22 @@
+{
+  "scope": "Dedicated upright topology feasibility; not production replacement or cinematic acceptance",
+  "controlInputSha256": "74abe2ffe469ed0f41b377be5c2538cc5cfc3b7aabf5882d7a2ee87752c456fc",
+  "sourceSha256": "5a9aa193bcc3b34643b7a877edfb7edd87ac58de7296888b94ebac7730cb029c",
+  "runtimeSha256": "116f872c64168b63474796321171fdc460a64fc7918a4278f3a37b2c217c9154",
+  "maximumRequestedHandReachResidualMetres": {
+    "fight_idle": 0.0,
+    "attack": 0.0,
+    "guard": 0.0,
+    "defeat": 0.0,
+    "celebrate": 0.0
+  },
+  "clips": {
+    "fight_idle": 2.0,
+    "attack": 0.57,
+    "guard": 0.6,
+    "defeat": 1.3,
+    "celebrate": 2.0
+  },
+  "bodyMethod": "Connected ring/branch topology; authored control mesh retained; subdivided once and normalized to four influences identically in Blender and glTF; no voxel remesh",
+  "rigMethod": "Articulated parent hierarchy; fixed-length two-link solves; no pose-space smoothing morphs"
+}

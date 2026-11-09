@@ -1,0 +1,3039 @@
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:30:46)
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/control/lion-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-fight_idle.png'
+Time: 00:00.12 (Saving: 00:00.05)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-attack/0018.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-guard/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0041.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0043.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0045.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0049.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0051.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/front-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-attack/0018.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0025.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0045.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0053.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0055.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0059.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/control/side-celebrate/0061.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED lion control
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/candidate/lion-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-guard/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0009.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0041.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0053.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0057.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/front-celebrate/0061.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0043.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0051.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0057.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/lion/candidate/side-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED lion candidate
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/control/wolf-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-attack/0018.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-guard/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-defeat/0040.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0041.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0043.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0045.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0049.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0051.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0053.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0055.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0057.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0059.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-celebrate/0061.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/front-special/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-attack/0018.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-guard/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/control/side-special/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED wolf control
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/candidate/wolf-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-fight_idle.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-attack/0018.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0033.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0035.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0039.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0043.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0045.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0047.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0049.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0051.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0055.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0057.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0059.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-celebrate/0061.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/front-special/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-fight_idle.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0025.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0053.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0057.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0021.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0027.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0029.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0031.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/wolf/candidate/side-special/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED wolf candidate
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/control/unicorn-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-fight_idle.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-special.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-attack/0018.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0001.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0009.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0015.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0005.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0007.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0011.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0023.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0037.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-defeat/0040.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0003.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0013.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0017.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/front-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-fight_idle.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0015.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0013.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0017.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0021.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0023.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/control/side-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED unicorn control
+Read blend: "/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/candidate/unicorn-upright.blend"
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-fight_idle.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack.png'
+Time: 00:00.04 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.02)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat.png'
+Time: 00:00.03 (Saving: 00:00.02)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-defeat/0040.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0001.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0019.png'
+Time: 00:00.01 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0029.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0033.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0035.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0037.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0039.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0041.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0043.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0047.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0051.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0055.png'
+Time: 00:00.03 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/front-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-fight_idle.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate.png'
+Time: 00:00.03 (Saving: 00:00.02)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-special.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-attack/0018.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0007.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0009.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0011.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-guard/0019.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0001.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0003.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0005.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0007.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0011.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0013.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0015.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0017.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0019.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0021.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0023.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0025.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0027.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0029.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0031.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0033.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0035.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0037.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0039.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-defeat/0040.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0001.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0003.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0005.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0007.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0009.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0011.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0013.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0015.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0017.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0019.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0021.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0023.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0025.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0027.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0029.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0031.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0033.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0035.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0037.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0039.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0041.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0043.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0045.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0047.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0049.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0051.png'
+Time: 00:00.03 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0053.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0055.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0057.png'
+Time: 00:00.02 (Saving: 00:00.01)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0059.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+Saved: '/Users/chikumatsuboi/Code/animal-racers-western/assets/source/western/contact-v2/v2b/qa/unicorn/candidate/side-celebrate/0061.png'
+Time: 00:00.02 (Saving: 00:00.00)
+
+CONTACT_MATCHED_RENDERED unicorn candidate
+
+Blender quit

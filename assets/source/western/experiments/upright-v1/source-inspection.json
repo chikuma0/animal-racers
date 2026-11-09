@@ -1,0 +1,118 @@
+{
+  "sourceSha256": "5a9aa193bcc3b34643b7a877edfb7edd87ac58de7296888b94ebac7730cb029c",
+  "runtimeSha256": "116f872c64168b63474796321171fdc460a64fc7918a4278f3a37b2c217c9154",
+  "topology": {
+    "components": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "surfaceVertices": 3486,
+    "surfaceFaces": 3484,
+    "controlVertices": 887,
+    "controlFaces": 857
+  },
+  "boneParents": {
+    "root": null,
+    "pelvis": "root",
+    "spine": "pelvis",
+    "chest": "spine",
+    "neck": "chest",
+    "head": "neck",
+    "jaw": "head",
+    "scapula_L": "chest",
+    "front_upper_L": "scapula_L",
+    "front_lower_L": "front_upper_L",
+    "front_paw_L": "front_lower_L",
+    "scapula_R": "chest",
+    "front_upper_R": "scapula_R",
+    "front_lower_R": "front_upper_R",
+    "front_paw_R": "front_lower_R",
+    "rear_upper_L": "pelvis",
+    "rear_lower_L": "rear_upper_L",
+    "rear_paw_L": "rear_lower_L",
+    "rear_upper_R": "pelvis",
+    "rear_lower_R": "rear_upper_R",
+    "rear_paw_R": "rear_lower_R",
+    "tail_0": "pelvis",
+    "tail_1": "tail_0",
+    "tail_2": "tail_1",
+    "tail_3": "tail_2"
+  },
+  "clips": {
+    "fight_idle": {
+      "bodyMin": [
+        -0.8154476284980774,
+        -0.5108346343040466,
+        0.15884479880332947
+      ],
+      "bodyMax": [
+        0.8154476881027222,
+        0.26103654503822327,
+        1.9875099658966064
+      ],
+      "maximumBoneScaleError": 9.5367431640625e-07,
+      "minimumEvaluatedFaceArea": 3.6560049920808524e-05,
+      "sampledFrames": 61
+    },
+    "attack": {
+      "bodyMin": [
+        -0.7913838028907776,
+        -1.030085802078247,
+        0.15884467959403992
+      ],
+      "bodyMax": [
+        0.7127179503440857,
+        0.26103654503822327,
+        1.9875099658966064
+      ],
+      "maximumBoneScaleError": 1.1920928955078125e-06,
+      "minimumEvaluatedFaceArea": 1.3201192814449314e-05,
+      "sampledFrames": 18
+    },
+    "guard": {
+      "bodyMin": [
+        -0.8154476284980774,
+        -0.6361697316169739,
+        0.1588447242975235
+      ],
+      "bodyMax": [
+        0.8154476881027222,
+        0.26103654503822327,
+        1.9901132583618164
+      ],
+      "maximumBoneScaleError": 1.0728836059570312e-06,
+      "minimumEvaluatedFaceArea": 1.7270846001338214e-05,
+      "sampledFrames": 19
+    },
+    "defeat": {
+      "bodyMin": [
+        -0.8210335969924927,
+        -0.5864329934120178,
+        0.1230725347995758
+      ],
+      "bodyMax": [
+        0.8210334777832031,
+        0.26103654503822327,
+        1.9875099658966064
+      ],
+      "maximumBoneScaleError": 1.5497207641601562e-06,
+      "minimumEvaluatedFaceArea": 3.553892611307674e-06,
+      "sampledFrames": 40
+    },
+    "celebrate": {
+      "bodyMin": [
+        -0.8291200399398804,
+        -0.5119237899780273,
+        0.15884479880332947
+      ],
+      "bodyMax": [
+        0.8291199803352356,
+        0.26103654503822327,
+        2.5496621131896973
+      ],
+      "maximumBoneScaleError": 9.5367431640625e-07,
+      "minimumEvaluatedFaceArea": 1.4100523003435228e-05,
+      "sampledFrames": 61
+    }
+  },
+  "limitations": "Topology/finite values/unit scale do not prove good anatomy, lack of self-intersections, or cinematic quality."
+}

@@ -1,0 +1,177 @@
+{
+  "authoringRecipeSha256": "df2a886c9802ac7b8cc3159aedf96b33f5ee8934e35dfa438c7281b89ddf2b3b",
+  "forms": [
+    {
+      "form": "race",
+      "sourceSha256": "8023c83c71947bde46ffccab5c14814e47e85d8a5f956353be9a179ead744a96",
+      "bodyGeometryWeightsMorphsSha256": "990f60901c41074289496cffea6f0db11dad3344926c86d16d9c65c72c098d38",
+      "originalActionsSha256": "9f13d1021f4131c0fa30eb926ee20d53405f1968f272ef889469e9b19c7e0dba",
+      "sourceProbeAction": {
+        "name": "Mast head probe",
+        "range": [
+          1.0,
+          61.0
+        ],
+        "curves": 60
+      },
+      "facialBones": 40,
+      "gameBones": 22,
+      "meshes": [
+        {
+          "name": "Mast authored head and oral anatomy",
+          "vertices": 1143,
+          "polygons": 1112,
+          "triangles": 2240,
+          "components": [
+            1143
+          ],
+          "boundaryEdges": 52,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "maxInfluences": 3,
+          "influenceHistogram": {
+            "1": 819,
+            "2": 291,
+            "3": 33
+          },
+          "weightSumErrorMax": 2.9802322387695312e-08,
+          "materialSlots": 1
+        },
+        {
+          "name": "Mast oral and eye details",
+          "vertices": 916,
+          "polygons": 804,
+          "triangles": 1576,
+          "components": [
+            74,
+            74,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            28,
+            28,
+            28,
+            28,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          "boundaryEdges": 200,
+          "nonmanifoldEdgesOverTwoFaces": 16,
+          "maxInfluences": 1,
+          "influenceHistogram": {
+            "1": 916
+          },
+          "weightSumErrorMax": 0.0,
+          "materialSlots": 1
+        }
+      ],
+      "embeddedTexts": 0,
+      "linkedLibraries": 0,
+      "faceConstraints": 0
+    },
+    {
+      "form": "upright",
+      "sourceSha256": "eb537869eac0562c9c006dc5a9d4ed5dbdf431259f476475fa8e45450c8d6c55",
+      "bodyGeometryWeightsMorphsSha256": "dd3638062e7ce5dcf48f523f9a9d77937f14419c13e2f6c212c16550725637f1",
+      "originalActionsSha256": "0bca1bb219e3fec48123109d354781d14989e2f216ce3bb0220131fb30fd8d6b",
+      "sourceProbeAction": {
+        "name": "Mast head probe",
+        "range": [
+          1.0,
+          61.0
+        ],
+        "curves": 60
+      },
+      "facialBones": 40,
+      "gameBones": 25,
+      "meshes": [
+        {
+          "name": "Mast authored head and oral anatomy",
+          "vertices": 1143,
+          "polygons": 1112,
+          "triangles": 2240,
+          "components": [
+            1143
+          ],
+          "boundaryEdges": 52,
+          "nonmanifoldEdgesOverTwoFaces": 0,
+          "maxInfluences": 3,
+          "influenceHistogram": {
+            "1": 819,
+            "2": 291,
+            "3": 33
+          },
+          "weightSumErrorMax": 2.9802322387695312e-08,
+          "materialSlots": 1
+        },
+        {
+          "name": "Mast oral and eye details",
+          "vertices": 916,
+          "polygons": 804,
+          "triangles": 1576,
+          "components": [
+            74,
+            74,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            28,
+            28,
+            28,
+            28,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          "boundaryEdges": 200,
+          "nonmanifoldEdgesOverTwoFaces": 16,
+          "maxInfluences": 1,
+          "influenceHistogram": {
+            "1": 916
+          },
+          "weightSumErrorMax": 0.0,
+          "materialSlots": 1
+        }
+      ],
+      "embeddedTexts": 0,
+      "linkedLibraries": 0,
+      "faceConstraints": 0
+    }
+  ]
+}

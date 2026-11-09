@@ -1,0 +1,25 @@
+{
+  "version": "revision3-owner-feedback-1",
+  "baselineCommit": "d8067d2",
+  "recipe": "scripts/assets/build_roster_v3.py",
+  "recipeSha256": "ef7e7ec3e93efcff85dbdef639ee217dfa404b7bc571c5b73e03018bc1e4663b",
+  "quality": "Parent reviewed bounded chest, tail and duel acting repair; cinematic styling and owner/device acceptance remain open.",
+  "files": {
+    "assets/source/western/lion-upright.blend": "1a1dce92e095d5cfeb6a2d8972c02108041d6d6985197fd6525d4a126d694fb4",
+    "public/assets/western/lion-upright.glb": "587a37a66a2472fb66aba1c245386855a8a0b0ec05eee6ccf38855d5aee45afb",
+    "assets/source/western/lion.blend": "57f3c6348d1c57cdbe053955a69a0d7bb2f1e4478c8be56dbd5c53cb85cfef9c",
+    "public/assets/western/lion.glb": "e77cdb1be12725adc925ede6f1b6e7f9e7cc1ee9619c5a53c6337b62acf2a18c",
+    "assets/source/western/unicorn-upright.blend": "216d74a51a0ec52a682a4338ee0ed0c9e728dedb05ae188b11f52bc368a05eba",
+    "public/assets/western/unicorn-upright.glb": "35c9854bee9bf495f816dff1319f5251ef44f0c6bdd8f7728413bb8215e18e98",
+    "assets/source/western/unicorn.blend": "31120ff04210cb9d2361b121d314d9649220f564fb75c5368d163cf031d16682",
+    "public/assets/western/unicorn.glb": "f89863d09eda4d3984de2ab87a351845f0bb2b9d4c7049d2946c8d0e018af2ac",
+    "assets/source/western/wolf-upright.blend": "64c7d4a1d5285b5f242837fdd28986fd04df5e692ca0aef89ed56511b731508f",
+    "public/assets/western/wolf-upright.glb": "150df87e2f2a1a08d263872ba61b02074a80fc7dafd89f33710ca8f510c63764",
+    "assets/source/western/wolf.blend": "f742f2f03a5f15f52f6aff24b75dc98cadc076a4f0815067d07ef994529fd9a2",
+    "public/assets/western/wolf.glb": "7d63fb169418fa7c4ea4377a6d425ceb6d1e6706cbdb72a68e88cff5a82b314c"
+  },
+  "previousRoster": "assets/source/western/revision3/inputs/roster-v2.json",
+  "previousRosterSha256": "c80bb29c61292676a235efb8a45760b60cd9687b5cec39e307de93e40a5d294c",
+  "candidateFreezeSha256": "f894a17bb479551c38e638200f8dc395c126d195f80444bf0d599d138591cd5d",
+  "promotionReceipt": "assets/source/western/revision3/promotion.json"
+}

@@ -4,7 +4,7 @@ A two-competitor western championship: choose Fire Lion, Water Wolf or Rainbow U
 
 **Production status:** playable internal alpha, not an accepted release candidate. See [quality ledger](docs/production/QUALITY-LEDGER.md) and [current QA report](docs/production/QA-REPORT.md). Character polish, physical internet play, iPhone performance and owner acceptance remain open.
 
-Current gameplay revision2 review: [immutable preview](https://animal-racers-eg9gw1za9-dera-ai.vercel.app), report label `revision2-de401d12cd83`. Open the full private access link supplied directly to the owner first. [How to play and invite a friend](docs/production/PLAY-THIS-BUILD.md).
+Current revision3 [immutable preview](https://animal-racers-26nxovh2m-dera-ai.vercel.app), report label `revision3-ecb5169e9917`. Open the complete private access link supplied directly to the owner first. The owner requested this review checkpoint; implementation is paused for feedback. See the current QA report for exact evidence and remaining gaps. The [revision2 preview](https://animal-racers-eg9gw1za9-dera-ai.vercel.app) is retained only as the owner-rejected comparison. [How to play and invite a friend](docs/production/PLAY-THIS-BUILD.md).
 
 ## Run
 
@@ -27,15 +27,19 @@ npm run build
 npm run start
 ```
 
-## Play
+## 遊び方
 
-Landscape touch controls appear along the bottom. The race runs automatically: **steer and leap**. Follow close behind to build a visible slipstream, then pull alongside to overtake. Choose a line through bends, leap low hurdles and go around loaded wagons. An obstacle costs speed briefly; drafting gives a trailing racer a way back into the contest.
+日本語を使う3歳くらいからの子どもを想定した作業版です。動物をえらび、**あそぶ**→短い絵の案内→**スタート！**で始まります。相手と難易度は案内画面の「⚙ あいて・つよさ」で変えられます。実際の子どもの操作・楽しさは未検証です。
 
-The saloon duel uses **move, strike and evade**. Watch the opponent commit, evade the blow, then step in with a faster reply during the counter opening. Every attack has anticipation, contact and recovery. Lion hits harder, Wolf moves faster, and Unicorn has a longer protected evade. Their elemental effects follow these same actions. Keyboard: arrows/A/D move, Space/W leaps in the race and evades in combat, J strikes. [Approved gameplay brief](docs/production/GAMEPLAY-DESIGN.md).
+レースは自動で走ります。**←・→**でよけ、**ジャンプ**で低い障害物を越えます。キーボードは矢印/A/Dで左右、Space/Wでジャンプです。
 
-Each event distributes50 points between the competitors. Race-time advantage is capped at4 seconds; combat uses remaining HP advantage, capped at100 HP. A close race loss can be recovered by a strong fight. No race buffs, attack-count points or hidden human handicaps. Exact examples and edge cases: [simulation specification](docs/production/SIMULATION.md).
+バトルは**←・→・たたく**の3ボタンです。たたく（キーボードJ）を1回押すと、最大2.6秒だけ相手へ近づき、届く距離で1回パンチします。相手が守っている時は既存の強いパンチを使います。左右を押すと自動の接近は止まり、左右を押しながらでも新しいパンチを出せます。押しっぱなしでは連続攻撃しません。**バトルだけ あそぶ**ではレースを省いて練習できます。[詳しい遊び方](docs/production/PLAY-THIS-BUILD.md)。
 
-For online play, both players open the same deployed version. One selects **Invite a friend** and shares its link or10-character code; the other selects a character and joins. Both ready up. Keep both screens open through the race, duel and result. Both must choose **Ride again** for a rematch. Leaving or losing connectivity during active play interrupts the match without a verified result. A completed score remains valid if a rival then leaves.
+結果画面は4秒間と、すべての指・キーを離して600ms経つまで次の操作を受け付けません。その後、**もういちど**か**どうぶつを えらぶ**を新しく押して離します。連打でトロフィーを飛ばさないための動作です。
+
+レースとバトルは各50点を分け合い、合計で勝者が決まります。レースの差は4秒、バトルの差は残り体力100を上限とします。攻撃の威力、CPU難易度、得点、オンラインの勝敗判定は従来と同じです。[シミュレーション仕様](docs/production/SIMULATION.md)。
+
+オンラインでは2人が同じ版を開き、**ともだちと あそぶ**でリンクか10文字のコードを渡します。2人とも準備を終えると開始し、再戦も2人の操作で始まります。試合中の切断は結果未確定となります。完了した結果は相手が離れても残ります。
 
 ## Architecture and assets
 
@@ -53,7 +57,7 @@ The legacy Canvas implementation is retained in source history and unused compon
 
 ## Test and publish
 
-[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. The earlier comparison build is [f600be2](https://animal-racers-4png9iy68-dera-ai.vercel.app); its scoped access link is shared privately. Both players must first open the full private link, then exchange an invitation code. That September17 build predates the approved gameplay redesign and rebuilt characters. The current revision2 preview above includes the approved gameplay redesign, rebuilt characters and connected-tail/evade repair. QA-REPORT.md identifies its exact evidence and remaining device/owner gates. Later task-branch previews may change; the immutable comparison URL remains fixed.
+[Phone/internet test protocol](docs/production/DEVICE-TEST.md) describes the outstanding acceptance session. Both players use the same immutable review build and open its complete owner-supplied access link before exchanging an invitation code. Do not test the new mechanics on an older preview. QA-REPORT.md identifies exact evidence and remaining device/owner gates; task-branch aliases can advance.
 
 Use the in-game **⋯** panel for rolling frame intervals, fresh measurement, session JSON, canvas frames and recordings. Recording itself adds load; use a separate run for performance. Reports do not infer hardware identity or certify60fps.
 

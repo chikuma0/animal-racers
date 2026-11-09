@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import { ATTACKS, RACE, draftWidthAtGap, type Match } from "./simulation";
+import { strikeTiming, RACE, draftWidthAtGap, type Match } from "./simulation";
 
-/** World-space signals for the two decisions: follow a trail, read a wind-up. */
+/** Subtle pursuit ribbons and a floor tell for committed powers. */
 export class RivalryEffects {
   readonly group = new THREE.Group();
   private trails: THREE.Mesh<THREE.BufferGeometry, THREE.MeshBasicMaterial>[] = [];
@@ -64,8 +64,8 @@ export class RivalryEffects {
         const linedUp = Math.abs(p.x - follower.x) <= draftWidthAtGap(gap);
         trail.material.opacity = linedUp ? .42 : .17;
       }
-      const strike = p.action === "attack" || p.action === "special";
-      const timing = ATTACKS[p.character];
+      const strike = p.action === "attack" && p.strikeKind === "power";
+      const timing = strikeTiming(p);
       const winding = strike && p.actionTime < p.strikeWindup;
       const active = strike && p.actionTime >= p.strikeWindup && p.actionTime < p.strikeWindup + timing.active;
       tell.visible = match.phase === "fight" && (winding || active || p.action === "evade");

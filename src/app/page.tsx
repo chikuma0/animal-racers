@@ -14,9 +14,9 @@ const Championship = dynamic(() => import("@/components/Championship"), {
       }}
     >
       <div>
-        ANIMAL RACERS
+        アニマルレーサー
         <br />
-        <small>Preparing the frontier…</small>
+        <small>どうぶつを よんでいるよ…</small>
       </div>
     </main>
   ),

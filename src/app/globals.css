@@ -1573,7 +1573,7 @@ kbd {
   }
 }
 
-/* Two deliberate duel actions, with room for the stage on a phone. */
+/* Four clear thumb actions, with the exchange visible between the controls. */
 .control.strike, .control.leap {
   width: 84px; height: 84px;
   background: #76512cd9; border-color: #f1cd8b;
@@ -1603,3 +1603,146 @@ kbd {
 }
 
 .transition-card > div small { display: block; margin-top: 5px; color: #e2bd77; font: 10px var(--font-mono); }
+
+/* A stable two-by-two action pad: defense inside, offense at the right thumb. */
+.duel-controls .action-controls { display: grid; grid-template-columns: 72px 80px; gap: 8px 12px; align-items: center; }
+.duel-controls .control { width: 72px; height: 72px; gap: 2px; }
+.duel-controls .movement { gap: 10px; }
+.duel-controls .movement button { width: 72px; height: 68px; }
+.duel-controls .control span { font-size: 9px; }
+.duel-controls .control.strike { width: 80px; height: 80px; background: #a06b32e8; }
+.duel-controls .control.power { width: 76px; height: 76px; color: #fff0da; background: #673c24db; border: 2px solid #e1a265; }
+.duel-controls .control.guard { border-color: #abd8df; color: #cceef0; }
+.duel-controls .control small { position: static; font: 8px var(--font-mono); opacity: .8; }
+.duel-controls .control.engaged, .duel-controls .control.link-ready { border-color: #fff3cd; box-shadow: 0 0 0 3px #f7d69c40, inset 0 0 14px #ffdc8c35; }
+.health-block > .guard-meter { height: 4px; margin: 5px 0 0; background: #bddde526; border: 0; transform: none; }
+.health-block > .guard-meter > i { background: #b0dce2; transition: width .08s linear; }
+.health-block > .guard-meter.broken > i { background: #e99365; }
+.duel-cue { top: auto; bottom: 58px; border: 0; background: #211910aa; padding: 5px 10px; font-size: 10px; }
+@media (max-height: 500px) {
+ .duel-controls { bottom: max(18px, calc(env(safe-area-inset-bottom) + 8px)); }
+ .duel-controls .action-controls { gap: 6px 12px; }
+ .duel-controls .control b { font-size: 23px; }
+ .duel-cue { bottom: 49px; font-size: 9px; }
+}
+@media (max-width: 359px) {
+ .duel-controls .movement { gap: 6px; }
+ .duel-controls .movement button { width: 60px; height: 68px; }
+}
+
+.practice-button { width: 100%; margin-top: 9px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.practice-button span { font: 9px var(--font-mono); opacity: .7; }
+.duel-intro .lesson-grid { grid-template-columns: 1fr; }
+.duel-intro .lesson-picture { max-width: 320px; margin: auto; }
+.duel-intro .lesson-number { display: none; }
+.duel-intro .key-line { flex-wrap: wrap; }
+@media (max-height: 500px) and (min-width: 600px) {
+ .duel-intro { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 8px 24px; padding: 18px 22px; }
+ .duel-intro > .eyebrow, .duel-intro > h2 { grid-column: 1 / -1; margin: 0; }
+ .duel-intro > h2 { font-size: 26px; margin-bottom: 4px; }
+ .duel-intro > .lesson-grid { grid-column: 1; grid-row: 3 / 6; gap: 0; }
+ .duel-intro .lesson-grid article { padding-top: 8px; }
+ .duel-intro .lesson-grid h3 { margin: 0 0 5px; font-size: 15px; }
+ .duel-intro .lesson-picture { width: 145px; height: 47px; margin: 0 auto 4px; }
+ .duel-intro .lesson-grid p { font-size: 12px; line-height: 1.45; margin-bottom: 5px; }
+ .duel-intro .key-line { font-size: 8px; line-height: 1.6; }
+ .duel-intro > .cpu-pick { grid-column: 2; grid-row: 3; display: grid; gap: 5px; margin: 0; }
+ .duel-intro .cpu-pick > span { display: none; }
+ .duel-intro > .touch-note { grid-column: 2; grid-row: 4; margin: 0; font-size: 11px; line-height: 1.5; }
+ .duel-intro > .primary-button { grid-column: 2; grid-row: 5; align-self: end; margin: 0; min-height: 48px; padding: 12px 14px; }
+}
+
+/* CPU choices apply to both the championship and saloon practice. */
+.cpu-options { flex-wrap: wrap; }
+.cpu-difficulty { border: 0; padding: 0; margin: 0; min-width: 0; }
+.cpu-difficulty legend { margin-bottom: 6px; }
+.cpu-difficulty > div { display: flex; gap: 5px; }
+.cpu-difficulty label { display: flex; align-items: center; gap: 4px; min-height: 42px; padding: 6px 9px; border: 1px solid #947047; border-radius: 5px; cursor: pointer; }
+.cpu-difficulty label.selected { background: #c6974c33; border-color: #efc67e; color: #fff0ce; }
+.cpu-difficulty input { accent-color: #edb761; }
+.difficulty-note { flex-basis: 100%; margin: 0; color: #e9d5b3; font-size: 11px; line-height: 1.5; }
+@media (max-height: 500px) and (min-width: 600px) {
+  .duel-intro .cpu-difficulty label { padding: 5px; font-size: 10px; }
+  .duel-intro .difficulty-note { font-size: 10px; }
+}
+
+/* Japanese child-first flow: one short instruction and one obvious next action. */
+.championship { font-family: var(--font-display), "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }
+.loading-preview { position: absolute; inset: 0; object-fit: cover; pointer-events: none; }
+.selection-copy h1 { font-size: clamp(30px, 4.6vw, 66px); line-height: 1.35; letter-spacing: 0; }
+.roster-card .animal-sigil { font-size: 30px; }
+.roster-card:disabled { opacity: .75; }
+.kids-intro { display: flex; flex-direction: column; max-height: 100%; padding: 22px; gap: 14px; }
+.kids-intro > h2 { font-size: 28px; margin: 0; }
+.kids-intro .lesson-grid { gap: 18px; min-height: 0; }
+.kids-intro .lesson-grid h3 { font: 700 17px/1.4 sans-serif; margin: 0 0 6px; }
+.kids-intro .lesson-grid p { font-size: 14px; color: #fff0d6; margin: 0; }
+.kids-intro .lesson-picture { height: 70px; width: 100%; }
+.kids-intro > .primary-button { flex-shrink: 0; min-height: 52px; margin: 0; font-size: 19px; }
+.game-settings { overflow: auto; min-height: 40px; font-size: 13px; }
+.game-settings summary { cursor: pointer; padding: 10px; background: #ffffff0b; border-radius: 6px; }
+.game-settings .cpu-options { margin-top: 8px; }
+.kids-intro.duel-intro .lesson-grid { display: block; }
+.duel-controls .action-controls { display: flex; }
+.duel-controls .control.strike { width: 108px; height: 108px; border: 3px solid #ffe2a2; background: #a5632ef0; }
+.duel-controls .control.strike b { font-size: 38px; }
+.duel-controls .control.strike span { font-size: 20px; font-weight: 800; }
+.duel-controls .movement button { width: 72px; height: 72px; }
+.control.leap span { font-size: 14px; }
+.result-actions { flex-direction: column; }
+.result-actions [aria-disabled="true"] { opacity: .45; }
+.result-actions > .primary-button { min-height: 52px; }
+.match-hint { font-size: 15px; letter-spacing: 0; }
+@media (max-height: 500px) {
+ .kids-intro, .kids-intro.duel-intro { display: flex; padding: 10px 16px; gap: 7px; }
+ .kids-intro > h2 { font-size: 21px; }
+ .kids-intro .lesson-grid { gap: 12px; }
+ .kids-intro .lesson-grid h3 { font-size: 14px; margin: 0; }
+ .kids-intro .lesson-picture { height: 40px; }
+ .kids-intro .lesson-grid p { font-size: 12px; }
+ .kids-intro > .primary-button { min-height: 46px; padding: 10px; }
+ .game-settings summary { padding: 7px; }
+ .game-settings { min-height: 32px; }
+ .duel-controls .control.strike { width: 94px; height: 94px; }
+ .match-hint { bottom: 119px; font-size: 13px; }
+}
+@media (max-width: 599px) and (orientation: portrait) {
+ .kids-intro .lesson-grid { display: flex; flex-direction: column; gap: 10px; }
+ .kids-intro .lesson-grid article { display: grid; grid-template-columns: 100px 1fr; align-items: center; padding-top: 6px; }
+ .kids-intro .lesson-grid h3 { grid-column: 1 / -1; }
+ .kids-intro .lesson-picture { height: 48px; }
+ .kids-intro .lesson-grid p { font-size: 13px; }
+ .duel-controls .control.strike { width: 100px; height: 100px; }
+}
+.wordmark span { white-space: nowrap; max-width: none; }
+.kids-intro .lesson-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kids-intro .lesson-grid article { padding-left: 0; }
+
+/* Repeated play taps should not select labels or invoke the iOS callout.
+   Keep ordinary panning/pinch zoom; only game controls consume all gestures. */
+.championship {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+.championship input,
+.championship textarea,
+.championship [contenteditable="true"],
+.championship .invite-code {
+  user-select: text;
+  -webkit-user-select: text;
+  -webkit-touch-callout: default;
+}
+.championship select { user-select: auto; -webkit-user-select: auto; }
+.result-actions button { touch-action: none; }
+.result-notice { min-height: 3.2em; }
+@media (min-width: 600px) and (max-height: 500px) {
+  .results-panel { top: 50%; transform: translateY(-50%); padding: 10px 16px; }
+  .results-panel h2 { font-size: 24px; margin-bottom: 6px; }
+  .results-panel table { margin-top: 8px; }
+  .results-panel th, .results-panel td { padding: 5px 4px; }
+  .results-panel .score-explanation { margin: 6px 0; }
+  .result-actions > .primary-button { min-height: 44px; padding: 10px; }
+  .result-actions > .secondary-button { padding: 9px; }
+}

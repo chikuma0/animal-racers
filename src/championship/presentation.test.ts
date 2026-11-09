@@ -39,4 +39,12 @@ describe('authoritative presentation',()=>{
   p.clear();const next=createMatch(['lion','wolf']);next.phase='fight';next.tick=2;next.players[0].action='attack';next.players[0].actionTime=.01;p.push(next,1600);
   expect(p.sample(1600,50)!.players[0].actionTime).toBe(.01);
  });
+ it('holds the exact contact pose through hit pause, without advancing on missing packets',()=>{
+  const p=new PresentationBuffer(), before=createMatch(['lion','wolf']);
+  before.phase='fight';before.tick=60;before.players[0].action='attack';before.players[0].actionTime=.16;before.players[0].x=0;p.push(before,1000);
+  const contact=structuredClone(before);contact.tick=62;contact.hitPause=2;contact.players[0].actionTime=.18;contact.players[0].x=.2;contact.players[1].hp=88;p.push(contact,1033);
+  for(const now of [1033,1066,1500]) { const shown=p.sample(now,65)!;expect(shown.players[0].actionTime).toBe(.18);expect(shown.players[0].x).toBe(.2);expect(shown.players[1].hp).toBe(88); }
+  const resumed=structuredClone(contact);resumed.tick=65;resumed.hitPause=0;resumed.players[0].actionTime=.18+1/60;p.push(resumed,1083);
+  expect(p.sample(1083,65)!.players[0].actionTime).toBeGreaterThanOrEqual(.18);
+ });
 });

@@ -23,14 +23,14 @@ export class ContactEffects {
     this.points.visible = false;
   }
 
-  emit(type: string, x: number, y: number, facing: number, seed: number) {
-    const count = type === "guard-break" ? 12 : type === "hit" ? 8 : 5;
+  emit(type: string, x: number, y: number, facing: number, seed: number, power = false) {
+    const count = type === "guard-break" ? 12 : type === "hit" ? power ? 12 : 7 : 5;
     const lifetime = type === "guard-break" ? 0.28 : 0.18;
-    const color = new THREE.Color(type === "guard-break" ? 0xffb24d : type === "hit" ? 0xffe1a2 : type === "ward" ? 0xcceee7 : 0xe1ecff);
+    const color = new THREE.Color(type === "guard-break" ? 0xffb24d : type === "hit" ? 0xffe1a2 : type === "ward-block" ? 0xcceee7 : 0xe1ecff);
     for (let j = 0; j < count; j++) {
       const i = this.cursor++ % this.capacity;
       const angle = j / count * Math.PI * 2 + seed * 0.63;
-      const speed = 1.2 + (j % 3) * 0.35;
+      const speed = (power ? 1.65 : 1.1) + (j % 3) * .35;
       this.positions.set([x, y, 0.38], i * 3);
       this.velocities.set([Math.cos(angle) * speed - facing * 0.45, Math.sin(angle) * speed, (j % 2 ? 1 : -1) * 0.25], i * 3);
       this.colors.set([color.r, color.g, color.b, 1], i * 4);

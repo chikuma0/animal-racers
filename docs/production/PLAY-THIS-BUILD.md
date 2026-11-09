@@ -1,23 +1,32 @@
-# Animal Racers — gameplay revision 2
+# Animal Racers — gameplay revision 3
 
-The race is about following a rival, choosing when to pull out, clearing obstacles and recovering quickly enough to fight for the lead again. The saloon duel is about seeing a committed strike, evading it and replying during recovery. Both events contribute equally to the cup.
+A short western championship: race to the saloon, then settle it in a duel. The race and duel each contribute half the trophy score. Winning the race helps; it does not decide the entire match.
 
-## First match
+## はじめる
 
-Open the current immutable review link supplied with the delivery. Both players must use that same link/build; older previews have different rules. Select Fire Lion, Water Wolf or Rainbow Unicorn. Choose **RIDE AGAINST CPU** for solo, select a rival and follow the short introduction.
+動物をえらび、**あそぶ**→**スタート！**を押します。案内は絵と短い日本語で、スクロールせず開始できます。「⚙ あいて・つよさ」を開くと、相手と「やさしい・ふつう・つよい」を変えられます。初期設定は「やさしい」です。
 
-Race: the animal runs automatically. Steer with the two direction controls and tap Leap for hurdles. Follow the rival’s trail to charge the visible draft meter, then swing alongside to pass. A collision costs momentum, but the short recovery and drafting give a route back into contention.
+## バトルだけ遊ぶ
 
-Duel: use direction controls to manage distance. Watch the wind-up, tap Evade, then step in and Strike while the opponent recovers. A successful evade opens a faster reply. Lion hits harder; Wolf moves and evades faster; Unicorn has a longer protective evade window. Repeated strikes leave readable recovery openings.
+**バトルだけ あそぶ**→**たたかう！**で、体力いっぱいのバトルを始めます。レースの点数や大会のトロフィーは出ません。
 
-Keyboard: left/right arrows or A/D steer and move; Space leaps in the race and evades in the duel; J strikes. Touch has the same rules and visible buttons.
+- **←・→（矢印/A/D）**：左右に動きます。
+- **たたく（J）**：1回押すと、最大2.6秒だけ相手に近づき、届く距離でパンチします。守っている相手には既存の強いパンチを使います。押しっぱなしでは繰り返しません。
+- 左右を押すと自動の接近は止まります。左右を押しながら「たたく」も使えます。遠ければ空振りします。
+- 新しくもう一度押すと、次のパンチを予約できます。画面を離れたり、試合が終わったりすると予約は消えます。
 
-The result card reveals race and duel contributions before the winner lifts the gold cup. Select rematch to play again, or return to choose another animal.
+自分のパンチが当たると音・動き・光と「あたった！」、自分が当てられた時は「だいじょうぶ！」で伝えます。攻撃の威力・射程・得点のルールは変えていません。
 
-## Two players
+## レースから遊ぶ
 
-Both players open the full review access link in their browser first. Player A creates an invitation; player B enters the invitation code. Choose characters, ready up and play the race and duel. Compare the final score, then both select rematch. For the acceptance session use separate devices and networks, and exchange host/guest roles. A same-computer test is already recorded but does not replace this test.
+自動で走るので、**←・→**で障害物をよけ、**ジャンプ（Space/W）**で低い障害物を越えます。レース開始から自分の動物を画面内に表示します。
 
-## Review status
+レースの後はバトルへ進み、2つの点数を合わせて勝者を決めます。結果画面は4秒間と、すべての指・キーを離して600ms経つまで待ちます。その後、**もういちど**か**どうぶつを えらぶ**を新しく押して離すと進みます。
 
-This is a candidate for hands-on review. The physical iPhone13Pro sustained60fps/touch session, separate-device internet session and owner judgment of fun and visual quality are still required. The paired phone needs unlocking before its automation session can start. The detailed evidence and remaining limitations are in QA-REPORT.md and DEVICE-TEST.md.
+## ともだちと遊ぶ
+
+2人が同じ版を開き、**ともだちと あそぶ**でリンクか10文字のコードを渡します。2人とも**じゅんびOK！**を押すと始まります。再戦には2人とも**もういちど**を押します。バトルだけの練習は1人用です。
+
+## Review boundary
+
+This revision addresses the owner’s rejected duel/control/character pass. The previous review remains a comparison, not visual acceptance. Physical iPhone touch, sustained performance, separate-device internet play and the owner’s judgment of fun and reference quality remain required. See QA-REPORT.md and DEVICE-TEST.md for the exact build and evidence.

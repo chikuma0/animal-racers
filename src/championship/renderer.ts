@@ -4,7 +4,7 @@ import { WorkMeasurements } from "./work-measurements";
 import { ContactEffects } from "./impacts";
 import { RivalryEffects } from "./rivalry-effects";
 import { courseCenter as curve } from "./course";
-import { combatFraming, resultsFraming, sceneForPhase, type ScreenRect } from "./framing";
+import { raceFraming, combatFraming, resultsFraming, sceneForPhase, saloonPose, type ScreenRect } from "./framing";
 import {
   trailMaterial,
   cliffGeometry,
@@ -21,14 +21,13 @@ import {
   OBSTACLES,
   RUN_SPEED,
   RACE,
-  ATTACKS,
-  DODGE,
+  strikeTiming,
+  ATTACKS, QUICK_ATTACKS, COMBO_ATTACKS,
   createMatch,
   type Match,
   type CharacterId,
 } from "./simulation";
 
-const PALETTE = { lion: 0xff7735, wolf: 0x67c9e8, unicorn: 0xdba2ef };
 const materials = new Map<string, THREE.MeshStandardMaterial>();
 function mat(color: number, roughness = 0.8, metalness = 0) {
   const key = `${color}-${roughness}-${metalness}`;
@@ -277,6 +276,7 @@ export class ChampionshipRenderer {
   private preparing = true;
   private assetRequest = 0;
   private sun = new THREE.DirectionalLight(0xffe2ae, 3.2);
+  private skyLight = new THREE.HemisphereLight(0xffeac7, 0x685743, 1.25);
   private target = new THREE.Vector3();
   private cameraTarget = new THREE.Vector3();
   private trophy = createTrophy();
@@ -318,7 +318,7 @@ export class ChampionshipRenderer {
     this.renderer.toneMappingExposure = 1.12;
     this.scene.background = new THREE.Color(0xe9bc86);
     this.scene.fog = new THREE.FogExp2(0xe9bc86, 0.01);
-    this.scene.add(new THREE.HemisphereLight(0xffeac7, 0x685743, 1.25));
+    this.scene.add(this.skyLight);
     const environment = new RoomEnvironment();
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     this.environmentTarget = pmrem.fromScene(environment, 0.04);
@@ -386,7 +386,8 @@ export class ChampionshipRenderer {
   setResultsPanel(bounds: ScreenRect | null) {
     this.resultsPanel = bounds;
   }
-  async load() {
+  async load(onProgress?: (label: string) => void) {
+    onProgress?.("どうぶつを よんでいるよ…");
     const timber = new THREE.TextureLoader().loadAsync("/assets/environment/weathered-timber-v1.webp").then((texture) => {
       if (this.disposed) { texture.dispose(); return; }
       texture.colorSpace = THREE.SRGBColorSpace;
@@ -419,6 +420,7 @@ export class ChampionshipRenderer {
       });
     }
     for (const indoors of [false, true]) {
+      onProgress?.(indoors ? "バトルを じゅんびしているよ…" : "コースを じゅんびしているよ…");
       this.saloon.visible = indoors;
       await this.renderer.compileAsync(this.scene, this.camera);
       for (const [key, gltf] of this.cache) {
@@ -431,6 +433,7 @@ export class ChampionshipRenderer {
     // compileAsync prepares programs, but geometry/texture uploads and shadow
     // draws still happen on first use. Pay representative first-draw costs
     // before enabling play. Keep these timings separate from active gameplay.
+    onProgress?.("もうすぐ あそべるよ…");
     const visibility = this.canvas.style.visibility;
     this.canvas.style.visibility = "hidden";
     const preparationStart = performance.now();
@@ -468,6 +471,7 @@ export class ChampionshipRenderer {
       this.preparation.frames.push({ phase: "select", z: 0, submissionMs: performance.now() - menuStart });
       this.framesSeen = 0;
       this.preparing = false;
+      performance.mark("animal-play-ready");
     } finally {
       this.preparation.elapsedMs = performance.now() - preparationStart;
       this.canvas.style.visibility = visibility;
@@ -483,15 +487,22 @@ export class ChampionshipRenderer {
       if (object instanceof THREE.SkinnedMesh) skeletons.add(object.skeleton);
     });
     skeletons.forEach((skeleton) => skeleton.dispose());
+    const effectTextures = new Set<THREE.Texture>();
     for (const child of avatar.group.children) {
       if (child === avatar.model) continue;
       child.traverse((object) => {
-        if (!(object instanceof THREE.Mesh)) return;
-        object.geometry.dispose();
+        if (!(object instanceof THREE.Mesh || object instanceof THREE.Sprite)) return;
+        // Sprite geometry is shared by Three; its material and this avatar's
+        // flame texture belong to the instance and must be released on rematch.
+        if (object instanceof THREE.Mesh) object.geometry.dispose();
         const materials = Array.isArray(object.material) ? object.material : [object.material];
-        materials.forEach((material) => material.dispose());
+        materials.forEach((material) => {
+          if (material instanceof THREE.SpriteMaterial && material.map) effectTextures.add(material.map);
+          material.dispose();
+        });
       });
     }
+    effectTextures.forEach((texture) => texture.dispose());
     this.actors.remove(avatar.group);
   }
   async setCharacters(ids: [CharacterId, CharacterId], form: CharacterForm = "upright") {
@@ -551,17 +562,38 @@ export class ChampionshipRenderer {
   private makeElement(id: CharacterId) {
     const group = new THREE.Group();
     group.name = "element";
-    // Element follows the physical strike. It never suggests a ranged hit.
-    for (let i = 0; i < 3; i++) {
-      const arc = mesh(
-        new THREE.TorusGeometry(.34 + i * .075, .018, 4, 20, Math.PI * 1.3),
-        new THREE.MeshBasicMaterial({ color: PALETTE[id], transparent: true,
-          opacity: .6, depthWrite: false, blending: THREE.AdditiveBlending }),
-        (i - 1) * .08, 1.45, 1.05,
-      );
-      arc.rotation.set(.15, .35, -.7 + i * .22);
-      arc.name = "strike";
-      group.add(arc);
+    // Species powers hug the authored limb/contact; none imply a ranged hit.
+    const glow = (color: number, opacity = .7) => new THREE.MeshBasicMaterial({
+      color, transparent: true, opacity, depthWrite: false,
+      blending: THREE.AdditiveBlending, side: THREE.DoubleSide, toneMapped: false,
+    });
+    if (id === "lion") {
+      const smoke = dustTexture();
+      for (let i = 0; i < 6; i++) {
+        const flame = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: smoke, color: i % 2 ? 0xffa240 : 0xf35c26, transparent: true,
+          opacity: .55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false,
+        }));
+        flame.position.set((i % 3 - 1) * .085, 1.38 + Math.floor(i / 3) * .12, 1.08 - i * .045);
+        flame.scale.set(.18, .32 + (i % 3) * .035, 1);
+        flame.name = "strike"; group.add(flame);
+      }
+    } else if (id === "wolf") {
+      for (let row = 0; row < 2; row++) {
+        const points: number[] = [], indices: number[] = [];
+        for (let j = 0; j <= 20; j++) {
+          const angle = -.95 + j / 20 * 1.9;
+          for (const radius of [.60, .66]) points.push(Math.sin(angle) * radius, .94 + row * .16 + Math.sin(j / 20 * Math.PI) * .08, .62 + Math.cos(angle) * radius);
+          if (j < 20) indices.push(j * 2, j * 2 + 1, j * 2 + 2, j * 2 + 1, j * 2 + 3, j * 2 + 2);
+        }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(points, 3)); g.setIndex(indices);
+        const sweep = mesh(g, glow(row ? 0xe0f7ff : 0x6dcfe9)); sweep.name = "strike"; group.add(sweep);
+      }
+    } else {
+      for (let i = 0; i < 2; i++) {
+        const prism = mesh(new THREE.TorusGeometry(.22 + i * .055, .018, 4, 6), glow(i ? 0xd49bed : 0x9ce4db), 0, 1.62, 1.10);
+        prism.name = "strike"; group.add(prism);
+      }
     }
     if (id === "unicorn") {
       const ward = new THREE.Group();
@@ -596,6 +628,7 @@ export class ChampionshipRenderer {
       "stumble",
       "transform",
       "attack",
+      "attack_2",
       "special",
       "guard",
       "hit",
@@ -605,15 +638,17 @@ export class ChampionshipRenderer {
     if (name !== a.active) {
       const old = a.clips.get(a.active),
         action = a.clips.get(name);
+      const blend = name === "hit" ? .025 : name === "attack" || name === "attack_2" ? .04
+        : name === "evade" || name === "guard" ? .06 : name === "special" ? .07 : .10;
       if (action) {
-        action.reset().setEffectiveTimeScale(speed).fadeIn(0.1).play();
+        action.reset().setEffectiveTimeScale(speed).fadeIn(blend).play();
         action.setLoop(
           oneShot ? THREE.LoopOnce : THREE.LoopRepeat,
           oneShot ? 1 : Infinity,
         );
         action.clampWhenFinished = oneShot;
       }
-      old?.fadeOut(0.1);
+      old?.fadeOut(blend);
       a.active = name;
     }
     const action = a.clips.get(name);
@@ -968,7 +1003,7 @@ export class ChampionshipRenderer {
     const wood = new THREE.MeshStandardMaterial({
       map: this.timberMap,
       roughness: 0.92,
-      color: 0xd9c3a9,
+      color: 0xa78e75,
     });
     this.timberMaterials.add(wood);
     const floor = timberBox(24, 0.2, 18, wood, 0, -0.12);
@@ -987,11 +1022,29 @@ export class ChampionshipRenderer {
       box(17, 1.4, 1.5, mat(0x573421), 0, 0.7, -4),
       box(17.3, 0.18, 1.8, mat(0xa57448), 0, 1.45, -4),
     );
+    const trim = mat(0x42251b), inset = mat(0x6b4430), brass = mat(0xa67c43, .42, .6);
+    for (let x = -7.5; x <= 7.5; x += 2.5) {
+      this.saloon.add(box(2.1, .9, .055, inset, x, .75, -3.22),
+        box(.07, 1.2, .13, trim, x - 1.13, .73, -3.16),
+        box(2.2, .06, .10, brass, x, .30, -3.15));
+    }
+    this.saloon.add(box(17.2, .09, .15, trim, 0, .14, -3.15),
+      box(17.2, .08, .15, trim, 0, 1.29, -3.14));
+    const rail = cylinder(.045, .045, 16, brass, 0, .28, -2.94, 10);
+    rail.rotation.z = Math.PI / 2; this.saloon.add(rail);
+    for (const x of [-6, -2, 2, 6]) this.saloon.add(box(.06, .24, .35, brass, x, .15, -3.08));
+    const mirror = new THREE.MeshStandardMaterial({ color: 0x52616a, roughness: .33, metalness: .38 });
+    this.saloon.add(box(5.6, 2.65, .18, trim, 0, 3.2, -5.55),
+      box(5.28, 2.36, .05, mirror, 0, 3.2, -5.43));
+    for (const x of [-2.7, 2.7]) this.saloon.add(box(.07, 2.6, .08, brass, x, 3.2, -5.38));
+    for (const y of [1.94, 4.46]) this.saloon.add(box(5.4, .07, .08, brass, 0, y, -5.38));
     const welcome = sign("THE LAST CHANCE", 8, 1.1);
     welcome.position.set(0, 5.3, -5.75);
     this.saloon.add(welcome);
     for (const x of [-8, -5, 5, 8]) {
-      const shelf = box(2.6, 2.4, 0.2, mat(0x392921), x, 3.2, -5.72);
+      const shelf = box(2.6, 2.4, 0.2, mat(0x30231e), x, 3.2, -5.72);
+      for (const y of [2.08, 2.43, 3.25, 4.35]) this.saloon.add(box(2.7, .09, .42, trim, x, y, -5.48));
+      for (const side of [-1, 1]) this.saloon.add(box(.12, 2.4, .42, trim, x + side * 1.3, 3.2, -5.48));
       this.saloon.add(shelf);
       for (let j = 0; j < 4; j++) {
         this.saloon.add(
@@ -1016,10 +1069,14 @@ export class ChampionshipRenderer {
         );
       }
     }
-    const rug = box(11, 0.014, 3.7, mat(0x734831), 0, 0.01, 0);
+    const rug = box(11, 0.014, 3.7, mat(0x603f38), 0, 0.01, 0);
     this.saloon.add(rug);
     for (const z of [-1.8, 1.8])
       this.saloon.add(box(11, 0.02, 0.08, mat(0xe1b971), 0, 0.03, z));
+    for (let x = -4.8; x <= 4.8; x += .6) for (const z of [-1.58, 1.58]) {
+      const diamond = box(.15, .015, .15, mat(0xb58a61), x, .032, z);
+      diamond.rotation.y = Math.PI / 4; this.saloon.add(diamond);
+    }
     for (const x of [-8, 8]) {
       this.saloon.add(
         cylinder(1.1, 1.1, 0.16, mat(0x664328), x, 1.3, 1.5),
@@ -1121,14 +1178,17 @@ export class ChampionshipRenderer {
     this.saloon.visible = isFight;
     this.awards.visible = !isRace && !isFight;
     this.trophy.visible =
-      phase === "results" &&
+      phase === "results" && match?.format !== "duel" &&
       this.phaseAge > 2.5 &&
       Boolean(match?.players.some((p) => p.connected));
     this.scene.background = new THREE.Color(isFight ? 0x211c19 : 0xe9bc86);
     (this.scene.fog as THREE.FogExp2).color.set(isFight ? 0x32271f : 0xe9bc86);
     (this.scene.fog as THREE.FogExp2).density = isFight ? 0.019 : 0.008;
-    this.sun.intensity = isFight ? 1.5 : 3.2;
-    this.renderer.toneMappingExposure = isFight ? 1.2 : 1.05;
+    this.sun.intensity = isFight ? 2.1 : 3.2;
+    this.skyLight.intensity = isFight ? .68 : 1.25;
+    this.skyLight.color.set(isFight ? 0xc7dbea : 0xffeac7);
+    this.scene.environmentIntensity = isFight ? .42 : .36;
+    this.renderer.toneMappingExposure = isFight ? 1.08 : 1.05;
     if (match)
       void this.setCharacters(
         [match.players[0].character, match.players[1].character],
@@ -1162,33 +1222,35 @@ export class ChampionshipRenderer {
           p.actionTime,
         );
       } else if (isFight && p) {
-        const lateralSpeed = delta > 0 ? (p.x - a.group.position.x) / delta : 0;
+        const pose = saloonPose(p, i, phase);
+        const lateralSpeed = delta > 0 ? (pose.x - a.group.position.x) / delta : 0;
         // A landed hit carries the body across the floor over several frames.
         // Authority has already resolved contact; the protected recovery window
         // is longer than this brief visual recoil.
-        const shownX = p.action === "hit" && !sceneCut
-          ? THREE.MathUtils.lerp(a.group.position.x, p.x, 1 - Math.exp(-delta * 24)) : p.x;
-        a.group.position.set(shownX, p.y, 0);
-        a.group.rotation.set(0, (p.facing * Math.PI) / 2, 0);
+        const shownX = match!.hitPause > 0 && !sceneCut ? a.group.position.x : p.action === "hit" && !sceneCut
+          ? THREE.MathUtils.lerp(a.group.position.x, pose.x, 1 - Math.exp(-delta * 24)) : pose.x;
+        a.group.position.set(shownX, pose.y, 0);
+        a.group.rotation.set(0, pose.facing * (Math.PI / 2 - .12), 0);
         let action = p.action;
+        if (action === "attack") action = p.strikeKind === "power" ? "special" : p.comboStep === 1 ? "attack_2" : "attack";
         if (phase === "transition") action = "transform";
         else if (p.hp <= 0) action = "defeat";
         else if (p.stun > 0) action = "hit";
         else if (action === "idle") action = "fight_idle";
         else if (action === "move") action = "fight_move";
+        else if (action === "guard" && Math.abs(lateralSpeed) > .06) action = "guard_move";
+        const authored = p.strikeKind === "power" ? ATTACKS[p.character] : p.comboStep === 1 ? COMBO_ATTACKS[p.character] : QUICK_ATTACKS[p.character];
+        const clipTime = p.action === "attack"
+          ? p.actionTime < p.strikeWindup ? p.actionTime * authored.windup / p.strikeWindup : authored.windup + p.actionTime - p.strikeWindup
+          : p.actionTime;
         this.clip(
           a,
           action,
-          delta,
-          action === "fight_move"
+          match!.hitPause > 0 ? 0 : delta,
+          (action === "fight_move" || action === "guard_move")
             ? Math.max(-1.5, Math.min(1.5, (lateralSpeed * p.facing) / 3.6))
             : 1,
-          phase === "transition" ? match!.phaseTime
-            : action === "attack"
-              ? p.actionTime < p.strikeWindup
-                ? p.actionTime * ATTACKS[p.character].windup / p.strikeWindup
-                : ATTACKS[p.character].windup + p.actionTime - p.strikeWindup
-              : p.actionTime,
+          phase === "transition" ? match!.phaseTime : clipTime,
         );
       } else {
         const winner = match?.result?.winner;
@@ -1217,7 +1279,7 @@ export class ChampionshipRenderer {
         this.clip(
           a,
           win
-            ? this.phaseAge > 2.5
+            ? this.phaseAge > 2.5 && match?.format !== "duel"
               ? "celebrate"
               : "fight_idle"
             : phase === "results"
@@ -1234,18 +1296,26 @@ export class ChampionshipRenderer {
       }
       const element = a.group.getObjectByName("element");
       if (element) {
-        const striking = p?.action === "attack";
-        const timing = ATTACKS[a.character], dodge = DODGE[a.character];
+        const striking = p?.action === "attack" && p.strikeKind === "power";
+        const timing = p ? strikeTiming(p) : { active: .14 };
         const strikeAge = p ? p.actionTime - p.strikeWindup : -1;
         const showStrike = isFight && striking && strikeAge >= -.06 && strikeAge < timing.active + .12;
-        const showWard = isFight && a.character === "unicorn" && p?.action === "evade"
-          && p.actionTime >= dodge.invulnerableStart && p.actionTime <= dodge.invulnerableEnd;
+        const showWard = isFight && p?.ward === true;
         element.visible = Boolean(showStrike || showWard);
         element.children.forEach((part, j) => {
           part.visible = part.name === "ward" ? Boolean(showWard) : Boolean(showStrike);
+          // A perfectly forward-facing disc is edge-on to the duel camera and
+          // looked like a white tear through the wrist. Keep the prism readable.
+          if (a.character === "unicorn") part.rotation.y = (p?.facing ?? 1) * .55;
           if (part.name === "strike") {
-            part.rotation.z = -.8 + j * .22 + Math.max(0, strikeAge) * 8;
-            const material = (part as THREE.Mesh).material as THREE.MeshBasicMaterial;
+            const progress = Math.max(0, strikeAge) / (timing.active + .12);
+            if (a.character === "lion") {
+              part.scale.set(.18 * (1 - progress * .3), (.32 + j % 3 * .035) * (1 + progress * .5), 1);
+              part.position.y = 1.38 + Math.floor(j / 3) * .12 + progress * .18;
+            }
+            else if (a.character === "wolf") part.rotation.y = -.35 + progress * .70;
+            else { part.rotation.z = j * .4 + progress * .5; part.position.z = 1.10 + progress * .14; }
+            const material = (part as THREE.Mesh | THREE.Sprite).material as THREE.MeshBasicMaterial | THREE.SpriteMaterial;
             material.opacity = Math.max(0, .7 * (1 - Math.max(0, strikeAge) / (timing.active + .12)));
           }
         });
@@ -1253,20 +1323,21 @@ export class ChampionshipRenderer {
       const mark = a.group.getObjectByName("marker");
       if (mark) {
         mark.visible = Boolean(match) && phase !== "results";
-        mark.position.y = isRace ? 2.15 : 3;
+        mark.position.y = isRace ? 2.15 : 2.95;
         mark.rotation.y = time * 0.6;
       }
     });
     if (isRace && match) {
       const p = match.players[local],
         z = p.z;
-      this.cameraTarget.set(curve(z) + p.x * 0.35, 3.6, z - 7.3);
-      this.target.set(curve(z + 16) + p.x * 0.15, 1.2, z + 16);
-      this.camera.fov = 51 + Math.min(3, Math.max(0, p.speed - RUN_SPEED) * 1.65);
+      const frame = raceFraming(p, this.camera.aspect);
+      this.cameraTarget.set(frame.position.x, frame.position.y, frame.position.z);
+      this.target.set(frame.target.x, frame.target.y, frame.target.z);
+      this.camera.fov = frame.fov;
       this.sun.position.set(curve(z) - 17, 28, z + 10);
       this.sun.target.position.set(curve(z), 0, z + 5);
     } else if (isFight && match) {
-      const frame = combatFraming(match.players[0], match.players[1], this.camera.aspect);
+      const frame = combatFraming(saloonPose(match.players[0], 0, phase), saloonPose(match.players[1], 1, phase), this.camera.aspect);
       this.cameraTarget.set(frame.x, frame.y, frame.z);
       this.target.set(frame.x, frame.lookY, 0);
       this.camera.fov = frame.fov;
@@ -1303,16 +1374,16 @@ export class ChampionshipRenderer {
     this.camera.position.lerp(this.cameraTarget, 1 - Math.exp(-delta * 5));
     // These stages occupy separate worlds. Easing from the finish line at500m
     // showed empty space before the saloon; only movement within a stage eases.
-    if (!this.framesSeen || sceneCut) this.camera.position.copy(this.cameraTarget);
+    if (!this.framesSeen || sceneCut || isRace) this.camera.position.copy(this.cameraTarget);
     this.camera.lookAt(this.target);
     this.camera.updateProjectionMatrix();
     const events = match?.events ?? [];
     for (const e of events) {
       if (e.id > this.lastEvent) {
-        if (phase === "fight" && ["hit", "block", "guard-break", "ward"].includes(e.type)) {
+        if (phase === "fight" && ["hit", "block", "guard-break", "ward-block"].includes(e.type)) {
           const defender = match!.players[e.slot === 1 ? 1 : 0];
-          this.contacts.emit(e.type, e.x + defender.facing * 0.35, 1.45 + defender.y, defender.facing, e.id);
-          if (e.type === "hit" || e.type === "guard-break") this.impact = 0.18;
+          this.contacts.emit(e.type, e.x + defender.facing * 0.35, 1.45 + defender.y, defender.facing, e.id, e.strikeKind === "power");
+          if (e.type === "hit" || e.type === "guard-break") this.impact = e.strikeKind === "power" ? .24 : .12;
         }
         this.lastEvent = e.id;
       }

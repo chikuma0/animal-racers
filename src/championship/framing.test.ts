@@ -1,8 +1,27 @@
 import { describe, expect, it } from "vitest";
 import { PerspectiveCamera, Vector3 } from "three";
-import { combatFraming, resultsFraming, sceneForPhase } from "./framing";
+import { raceFraming, combatFraming, resultsFraming, sceneForPhase, saloonPose } from "./framing";
+import { createDuelMatch, neutralInput, stepMatch, FIXED_DT } from "./simulation";
 
 describe("combat camera framing", () => {
+  it("separates same-lane finishers during the saloon introduction and meets the real fight opening without a position jump", () => {
+    const match = createDuelMatch(["unicorn", "unicorn"]);
+    const finishers = [0, 1].map(() => ({ x: 3.8, y: .6, facing: 1 }));
+    const unchanged = structuredClone(finishers);
+    // The observed old renderer used these overlapping race positions.
+    expect(Math.abs(finishers[0].x - finishers[1].x)).toBe(0);
+    const staged = finishers.map((p, slot) => saloonPose(p, slot, "transition"));
+    expect(staged[1].x - staged[0].x).toBeGreaterThan(2.4);
+    expect(staged[0].facing).toBe(1); expect(staged[1].facing).toBe(-1);
+    expect(staged.every(p => p.y === 0)).toBe(true);
+    expect(finishers).toEqual(unchanged);
+    for (let tick = 0; tick < 241 && match.phase === "transition"; tick++) stepMatch(match, [neutralInput(), neutralInput()], FIXED_DT);
+    expect(match.phase).toBe("fight");
+    expect(staged).toEqual(match.players.map((p, slot) => saloonPose(p, slot, "fight")));
+    const camera = combatFraming(staged[0], staged[1], 844 / 390);
+    expect(camera.x).toBe(0);
+    expect(saloonPose({ x: -3, y: .4, facing: -1 }, 0, "fight")).toEqual({ x: -3, y: .4, facing: -1 });
+  });
   it("keeps both silhouettes within the view at arena edges, wide separation and jump height", () => {
     for (const aspect of [844 / 390, 1082 / 874, 390 / 844]) {
       for (const [left, right] of [[-4.4, -2.65], [2.65, 4.4], [-4.4, 4.4], [-0.875, 0.875]]) {
@@ -67,4 +86,19 @@ describe('cup ceremony composition', () => {
       }
     }
   });
+});
+
+
+describe('race camera safe composition', () => {
+ it('keeps the local silhouette visible from countdown through all bends and both lanes', () => {
+  for(const aspect of [1280/720,844/390,667/375,390/844]) for(const z of [0,5,30,80,160,250,400,500]) for(const x of [-3.8,-1.25,1.25,3.8]) {
+    const frame=raceFraming({x,z,speed:14},aspect); const camera=new PerspectiveCamera(frame.fov,aspect,.1,250);
+    camera.position.set(frame.position.x,frame.position.y,frame.position.z); camera.lookAt(frame.target.x,frame.target.y,frame.target.z);camera.updateMatrixWorld(true);
+    const center=Math.sin(z*.018)*22+Math.sin(z*.038)*5+x;
+    for(const dx of [-1.1,1.1]) for(const y of [0,2.7]) for(const dz of [-1.3,1.3]) {
+      const point=new Vector3(center+dx,y,z+dz).project(camera);
+      expect(Math.abs(point.x)).toBeLessThan(.72);expect(point.y).toBeGreaterThan(-.60);expect(point.y).toBeLessThan(.72);
+    }
+  }
+ });
 });

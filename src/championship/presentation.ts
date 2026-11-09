@@ -22,6 +22,13 @@ export class PresentationBuffer {
   sample(now: number, delayMs = 65): Match | null {
     const latest = this.frames.at(-1);
     if (!latest) return null;
+    // Contact is authoritative. Holding the exact contact pose also prevents a
+    // delayed position blend or a local clock from sliding through the impact.
+    if (latest.state.hitPause > 0) {
+      this.cursor = { phase: latest.state.phase, tick: latest.state.tick };
+      this.actionClocks = [null, null];
+      return structuredClone(latest.state);
+    }
     const sinceArrival = now - latest.arrival;
     const desiredTick = latest.state.tick
       + Math.min(100, Math.max(0, sinceArrival - delayMs)) * 0.06
@@ -60,6 +67,7 @@ export class PresentationBuffer {
       const live = latest.state.players[slot];
       const sameActionInstance = (player: Racer, tick: number) =>
         player.action === live.action
+        && player.strikeId === live.strikeId
         && Math.abs((latest.state.tick - tick) / 60 - (live.actionTime - player.actionTime)) < 1 / 120;
       if (canBlend && sameActionInstance(a, first.state.tick) && sameActionInstance(b, second.state.tick)) {
         p.actionTime = a.actionTime + (b.actionTime - a.actionTime) * t;

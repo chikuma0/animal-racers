@@ -44,6 +44,17 @@ describe("physical input ownership", () => {
     const c = new InputControls();
     for (let i = 0; i < 1000; i++) { c.keyDown(`unknown-${i}`); c.pointerDown(i, "guard", true); }
     for (let i = 0; i < 16; i++) c.pointerUp(i);
-    expect(c.value()).toEqual({ move: 0, jump: false, attack: false, special: false, guard: false });
+    expect(c.value()).toEqual({ move: 0, jump: false, attack: false, special: false, guard: false, cancelAttack: false });
+  });
+  it("cancels queued combat only on actual cancellation, preserving other owners", () => {
+    const c = new InputControls();
+    c.pointerDown(1, "attack", true); c.pointerDown(2, "attack", true);
+    c.pointerCancel(1); expect(c.value()).toMatchObject({ attack: true, cancelAttack: false });
+    c.pointerUp(2); c.pointerCancel(2);
+    expect(c.value()).toMatchObject({ attack: false, cancelAttack: false });
+    c.pointerDown(3, "special", true); c.pointerCancel(3);
+    expect(c.value()).toMatchObject({ special: false, cancelAttack: true });
+    c.keyDown("j"); expect(c.value()).toMatchObject({ attack: true, cancelAttack: false });
+    c.clear(); expect(c.value()).toMatchObject({ attack: false, guard: false, cancelAttack: true });
   });
 });

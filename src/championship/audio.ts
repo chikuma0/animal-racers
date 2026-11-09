@@ -116,7 +116,7 @@ export class ChampionshipAudio {
   update(
     phase: string,
     speed: number,
-    events: { id: number; type: string; slot?: number }[],
+    events: { id: number; type: string; slot?: number; strikeKind?: "quick" | "power" }[],
     time: number,
     characters: readonly string[] = [],
   ) {
@@ -161,10 +161,12 @@ export class ChampionshipAudio {
       if (e.id <= this.lastEvent) continue;
       this.lastEvent = e.id;
       if (e.type === "hit") {
-        this.noise(0.13, 0.8, 1300);
-        this.tone(125, 0.12, "triangle", 0.6, 0.45);
+        const power = e.strikeKind === "power";
+        this.noise(power ? .16 : .085, power ? .8 : .5, power ? 1100 : 1700);
+        this.tone(power ? 110 : 165, power ? .16 : .09, "triangle", power ? .6 : .4, .45);
+        if (power) this.tone(62, .18, "sine", .4, .6);
       } else if (e.type === "jump") this.tone(190, 0.13, "sine", 0.15, 1.8);
-      else if (e.type === "special") {
+      else if (e.type === "power" || e.type === "special") {
         const species = characters[e.slot ?? 0];
         if (species === "lion") {
           this.noise(0.30, 0.22, 740);
@@ -178,6 +180,10 @@ export class ChampionshipAudio {
             this.tone(f, 0.4, "sine", 0.14, 1, i * 0.04),
           );
         }
+      } else if (e.type === "attack" || e.type === "combo" || e.type === "counter") {
+        this.noise(.09, .16, e.type === "combo" ? 2200 : 1500);
+      } else if (e.type === "ward-block") {
+        this.tone(740, .17, "sine", .22, 1.4);
       } else if (e.type === "evade") {
         this.noise(.16, .12, 2700);
       } else if (e.type === "evade-success") {
@@ -191,8 +197,10 @@ export class ChampionshipAudio {
       } else if (e.type === "draft-ready" || e.type === "boost") {
         this.noise(0.28, 0.16, 1100);
         this.tone(120, 0.28, "sine", 0.12, 1.8);
-      } else if (e.type === "block")
-        this.tone(430, 0.12, "triangle", 0.25, 0.8);
+      } else if (e.type === "block") {
+        this.noise(.065, .23, 650);
+        this.tone(e.strikeKind === "power" ? 220 : 330, .09, "triangle", .25, .65);
+      }
       else if (e.type === "land") {
         this.noise(0.08, 0.15, 550);
         this.tone(65, 0.09, "sine", 0.2, 0.65);

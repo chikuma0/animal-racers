@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { GuestPrediction, PREDICTION_LIMITS } from "./prediction";
-import { ATTACKS, COUNTER_WINDUP, FIGHT_BODY_GAP, createMatch, neutralInput, type Input, type Match } from "./simulation";
+import { ATTACKS, QUICK_ATTACKS, COUNTER_WINDUP, GUARD, FIGHT_BODY_GAP, createMatch, neutralInput, type Input, type Match } from "./simulation";
 
 const input = (patch: Partial<Input> = {}): Input => ({ ...neutralInput(), ...patch });
 function fixture(phase: Match["phase"] = "fight") {
@@ -14,8 +14,8 @@ function fixture(phase: Match["phase"] = "fight") {
 function next(match: Match, ticks = 6) { const n = structuredClone(match); n.tick += ticks; return n; }
 function unchangedGameplay(before: Match, rendered: Match, slot = 1) {
   const copy = structuredClone(rendered);
-  for (const field of ["x", "y", "action", "actionTime"] as const) {
-    // These are the only four fields visual prediction is allowed to replace.
+  for (const field of ["x", "y", "action", "actionTime", "strikeKind", "strikeWindup", "strikeCounter", "comboStep"] as const) {
+    // Render-only pose metadata is copied; health/resources/contact/history are not.
     Object.assign(copy.players[slot], { [field]: before.players[slot][field] });
   }
   expect(copy).toEqual(before);
@@ -33,7 +33,7 @@ describe("bounded guest visual prediction", () => {
     expect(view.events).toBe(match.events);
     unchangedGameplay(match, view);
     expect(match).toEqual(before);
-    expect(p.sample(match, 200).players[1].actionTime).toBeLessThan(ATTACKS.wolf.windup);
+    expect(p.sample(match, 200).players[1].actionTime).toBeLessThan(QUICK_ATTACKS.wolf.windup);
   });
 
   it("previews a counter without extending into its shorter active window", () => {
@@ -98,16 +98,21 @@ describe("bounded guest visual prediction", () => {
     expect(p.sample(fresh, 301).players[1].action).toBe("attack");
   });
 
-  it("treats legacy aliases as a single held group, matching authority", () => {
+  it("keeps Power independent from a held Quick and previews its own timing without a ward or damage", () => {
     const { p, match } = fixture();
     p.updateInput(input({ attack: true }), 1);
     const fresh = next(match); p.observe("match-a", fresh, 240); p.sample(fresh, 260);
     p.updateInput(input({ attack: true, special: true }), 270);
-    expect(p.sample(fresh, 270).players[1].action).toBe("fight_idle");
+    const power = p.sample(fresh, 270);
+    expect(power.players[1].action).toBe("attack");
+    expect(power.players[1].strikeKind).toBe("power");
+    expect(power.players[1].strikeWindup).toBe(ATTACKS.wolf.windup);
+    expect(power.players[1].ward).toBe(false);
+    unchangedGameplay(fresh, power);
     p.updateInput(input({ special: true }), 280);
-    expect(p.sample(fresh, 280).players[1].action).toBe("fight_idle");
-    p.updateInput(input(), 290); p.updateInput(input({ special: true }), 300);
-    expect(p.sample(fresh, 300).players[1].action).toBe("attack");
+    expect(p.sample(fresh, 280).players[1].strikeKind).toBe("power");
+    p.updateInput(input({ special: true }), 520);
+    expect(p.sample(fresh, 520).players[1].action).toBe("fight_idle");
   });
 
   it("drops an unconfirmed pose at the horizon even with fresh idle packets", () => {
@@ -136,11 +141,11 @@ describe("bounded guest visual prediction", () => {
   });
 
   it("does not replay a finished evade identified by its new authority cooldown", () => {
-    const { p, match } = fixture(); p.updateInput(input({ guard: true }), 1);
+    const { p, match } = fixture(); p.updateInput(input({ jump: true }), 1);
     const finished = next(match, 30); finished.players[1].dodgeCooldown = 0.7;
     p.observe("match-a", finished, 200);
     expect(p.sample(finished, 200).players[1].action).toBe("fight_idle");
-    p.updateInput(input({ guard: true, jump: true }), 210);
+    p.updateInput(input({ jump: true }), 210);
     expect(p.sample(finished, 210).players[1].action).toBe("fight_idle");
   });
 
@@ -246,4 +251,85 @@ describe("bounded guest visual prediction", () => {
     expect(Number.isFinite(view.players[1].x)).toBe(true);
     expect(p.sample(match, 100_000).players[1].x).toBe(match.players[1].x);
   });
+
+  it("raises and releases held Guard without evading or consuming guard resources", () => {
+    const { p, match } = fixture(); p.updateInput(input({ guard: true }), 1);
+    const raised = p.sample(match, 10); expect(raised.players[1].action).toBe("guard");
+    unchangedGameplay(match, raised);
+    p.updateInput(input(), 11); expect(p.sample(match, 12).players[1].action).toBe("fight_idle");
+    const confirmed = next(match); confirmed.players[1].action = "guard";
+    p.observe("match-a", confirmed, 20); p.updateInput(input({ guard: true }), 21); p.updateInput(input(), 22);
+    const released = p.sample(confirmed, 23); expect(released.players[1].action).toBe("fight_idle");
+    unchangedGameplay(confirmed, released);
+  });
+
+  it("does not preview broken Guard and applies the shared guarded movement factor", () => {
+    const broken = fixture(); const snap = next(broken.match); snap.players[1].guardBroken = true; snap.players[1].guard = 0;
+    broken.p.observe("match-a", snap, 1); broken.p.updateInput(input({ guard: true }), 2);
+    expect(broken.p.sample(snap, 10).players[1].action).toBe("fight_idle");
+    const normal = fixture(), guarding = fixture();
+    normal.p.updateInput(input({ move: 1 }), 1); guarding.p.updateInput(input({ move: 1, guard: true }), 1);
+    const dx = normal.p.sample(normal.match, 31).players[1].x - normal.match.players[1].x;
+    const guardedDx = guarding.p.sample(guarding.match, 31).players[1].x - guarding.match.players[1].x;
+    expect(guardedDx).toBeCloseTo(dx * GUARD.moveFactor, 8);
+  });
+
+  it("explicit cancellation consumes an unconfirmed attack but never cancels a committed authority strike", () => {
+    const { p, match } = fixture(); p.updateInput(input({ special: true }), 1);
+    p.updateInput(input({ special: true, cancelAttack: true }), 2);
+    expect(p.sample(match, 3)).toBe(match);
+    p.updateInput(input({ special: true }), 4); expect(p.sample(match, 5)).toBe(match);
+    const committed = next(match); Object.assign(committed.players[1], { action: "attack", strikeKind: "power", strikeId: 1, actionTime: .2 });
+    p.observe("match-a", committed, 6); p.updateInput(input({ cancelAttack: true }), 7);
+    expect(p.sample(committed, 8)).toBe(committed);
+  });
+
+  it("freezes existing cosmetic action and motion during observed hit pause without extending the horizon", () => {
+    const { p, match } = fixture(); p.updateInput(input({ attack: true }), 1);
+    p.sample(match, 11);
+    const paused = next(match); paused.hitPause = 4; p.observe("match-a", paused, 21);
+    for (const now of [30, 60, 100, 140]) expect(p.sample(paused, now)).toBe(paused);
+    const resumed = next(paused); resumed.hitPause = 0; p.observe("match-a", resumed, 150);
+    const pose = p.sample(resumed, 151);
+    expect(pose.players[1].actionTime).toBeCloseTo(.021, 6); // 20ms before known pause +1ms after.
+    unchangedGameplay(resumed, pose);
+    expect(p.sample(resumed, 251).players[1].action).toBe("fight_idle");
+    const moving = fixture(); moving.p.updateInput(input({ move: 1 }), 1);
+    const stopped = next(moving.match); stopped.hitPause = 2; moving.p.observe("match-a", stopped, 10);
+    expect(moving.p.sample(stopped, 100)).toBe(stopped);
+  });
+
+  it("does not invent a new action or a linked hit while authority is paused or busy", () => {
+    const { p, match } = fixture(); const paused = next(match); paused.hitPause = 4;
+    p.observe("match-a", paused, 1); p.updateInput(input({ attack: true, move: 1 }), 2);
+    expect(p.sample(paused, 40)).toBe(paused);
+    const resumed = next(paused); resumed.hitPause = 0; p.observe("match-a", resumed, 50);
+    p.updateInput(input({ attack: true, move: 1 }), 51);
+    expect(p.sample(resumed, 52).players[1].action).toBe("fight_idle");
+    const busy = next(resumed); Object.assign(busy.players[1], { action: "attack", actionTime: .3, comboWindow: .4, attackConnected: true });
+    p.observe("match-a", busy, 60); p.updateInput(input(), 61); p.updateInput(input({ attack: true }), 62);
+    const view = p.sample(busy, 70);
+    expect(view.players[1].actionTime).toBe(.3); expect(view.players[1].comboPending).toBe(false);
+    unchangedGameplay(busy, view);
+  });
+  it("preserves solo duel format and authoritative power-contact metadata in the render copy", () => {
+    const { p, match } = fixture(); const duel = next(match); duel.format = "duel";
+    duel.events.push({ id: 1, type: "ward-block", slot: 0, x: 0, z: 0, strikeKind: "power" });
+    p.observe("match-a", duel, 1); p.updateInput(input({ special: true }), 2);
+    const view = p.sample(duel, 10);
+    expect(view.players[1].strikeKind).toBe("power");
+    expect(view.format).toBe("duel"); expect(view.events[0].strikeKind).toBe("power");
+    unchangedGameplay(duel, view);
+  });
+
+  it("cancellation clears an expired leap's remaining visual correction without replay", () => {
+    const { p, match } = fixture("race"); p.updateInput(input({ jump: true }), 1);
+    const fresh = next(match); p.observe("match-a", fresh, 240);
+    expect(p.sample(fresh, 260).players[1].y).toBeGreaterThan(0);
+    p.updateInput(input({ cancelAttack: true }), 261);
+    expect(p.sample(fresh, 262).players[1].y).toBe(0);
+    p.updateInput(input(), 263); expect(p.sample(fresh, 264).players[1].action).toBe("run");
+    unchangedGameplay(fresh, p.sample(fresh, 265));
+  });
+
 });

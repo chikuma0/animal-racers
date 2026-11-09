@@ -18,7 +18,7 @@ export function ChampionshipGuide({
           />
           <path d="M40 29H76 M46 23L40 29L46 35 M70 23L76 29L70 35" />
           <text x="142" y="72">
-            CHASE · LEAP · PASS
+            ← →　↑
           </text>
         </>
       ) : event === "fight" ? (
@@ -29,7 +29,7 @@ export function ChampionshipGuide({
           <path d="M146 16Q124 18 127 46 M127 46L120 38 M127 46L137 41" strokeDasharray="3 3" />
           <path d="M94 35H111 M103 29L111 35L103 41" />
           <text x="121" y="73">
-            READ · EVADE · REPLY
+            🥊
           </text>
         </>
       ) : (
@@ -42,10 +42,10 @@ export function ChampionshipGuide({
             50
           </text>
           <text x="46" y="52">
-            RACE
+            はしる
           </text>
           <text x="195" y="52">
-            DUEL
+            たたかう
           </text>
           <path d="M74 33H91 M149 33H166" strokeDasharray="3 3" />
         </>

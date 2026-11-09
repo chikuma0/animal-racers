@@ -1,0 +1,55 @@
+{
+  "url": "https://animal-racers-eg9gw1za9-dera-ai.vercel.app",
+  "deploymentId": "dpl_HUVojfWgAeevAfcMxQqaPQxMMWgk",
+  "sourceFingerprint": "de401d12cd83b9736d534c3a46b3288f98fcf8ef5e28d95de7760775a1e35960",
+  "revision": "revision2-de401d12cd83",
+  "checkedAt": "2026-09-20T04:17:14.611Z",
+  "assets": {
+    "public/assets/environment/weathered-timber-v1.webp": {
+      "sha256": "c2469c1b8c978606a77483efaf1307ce13a0a12114c48b2a50c7f551b8f1ffbd",
+      "bytes": 1965682
+    },
+    "public/assets/western/lion-upright.glb": {
+      "sha256": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+      "bytes": 1590332
+    },
+    "public/assets/western/lion.glb": {
+      "sha256": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+      "bytes": 1647536
+    },
+    "public/assets/western/roster-v2.json": {
+      "sha256": "c80bb29c61292676a235efb8a45760b60cd9687b5cec39e307de93e40a5d294c",
+      "bytes": 2569
+    },
+    "public/assets/western/unicorn-upright.glb": {
+      "sha256": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+      "bytes": 1295244
+    },
+    "public/assets/western/unicorn.glb": {
+      "sha256": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+      "bytes": 1388616
+    },
+    "public/assets/western/wolf-upright.glb": {
+      "sha256": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+      "bytes": 1359276
+    },
+    "public/assets/western/wolf.glb": {
+      "sha256": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+      "bytes": 1390540
+    }
+  },
+  "anonymousCookieSessionHttpStatus": 200,
+  "rosterCards": 3,
+  "lobbyCreated": true,
+  "lobbyLeftNormally": true,
+  "errors": [],
+  "access": {
+    "scope": "this deployment only",
+    "expiresUnix": 1790482413,
+    "privateTokenInRepository": false
+  },
+  "earlierAttempt": "Asset/revision/lobby checks passed but harness attempted results-only Back to the trail in lobby; corrected to Return to character selection then scoped to lobby-panel after the header also matched; no product failure, final whole check rerun.",
+  "physicalTest": "pending",
+  "internetSeparateDevices": "pending",
+  "releaseCandidate": false
+}

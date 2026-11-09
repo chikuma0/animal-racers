@@ -1,0 +1,34 @@
+{
+  "classification": "Device access diagnosis only; no gameplay or performance session",
+  "device": "paired physical iPhone13Pro",
+  "iOS": "26.6.2",
+  "Xcode": "27.0 27A266a",
+  "developerMode": "enabled",
+  "hostDDI": "27A266a, reported usable by CoreDevice",
+  "transport": "localNetwork",
+  "result": "The actual underlying mount failure is device locked, CoreDeviceError10003. Owner must unlock before automation can proceed; whether Safari remote automation is enabled remains unverified.",
+  "errors": [
+    {
+      "domain": "com.apple.dt.CoreDeviceError",
+      "code": 12040,
+      "description": "The developer disk image could not be mounted on this device.",
+      "recovery": null
+    },
+    {
+      "domain": "com.apple.dt.CoreDeviceError",
+      "code": 12040,
+      "description": "The developer disk image could not be mounted on this device.",
+      "recovery": null
+    },
+    {
+      "domain": "com.apple.dt.CoreDeviceError",
+      "code": 10003,
+      "description": "The operation failed because the device was still locked.",
+      "recovery": "Unlock the device and try again."
+    }
+  ],
+  "retry": {
+    "dateUTC": "2026-09-20",
+    "result": "A second bounded20second automatic developer-image mount attempt returned the same CoreDeviceError10003 locked-device error. No game session started."
+  }
+}

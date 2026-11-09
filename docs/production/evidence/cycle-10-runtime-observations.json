@@ -1,0 +1,222 @@
+{
+  "sourceFingerprint": "bdbf3736f1bd4aa452750665aa500885c864546b4402df74fb06ef3595fbd94a",
+  "classification": "Actual normal browser input on localhost production build; desktop regression only. No physical multitouch, WAN or enjoyment acceptance.",
+  "environment": {
+    "machine": "MacBook Air M3 / 24GB",
+    "browser": "Chromium152 / in-app tab20",
+    "viewport": [
+      1280,
+      720
+    ],
+    "devicePixelRatio": 1,
+    "rendererPixelRatio": 1,
+    "recording": "canvas recording during both matches; export after stopping",
+    "blenderDuringPlay": false,
+    "auditArtifactCompletedUtc": "2026-09-16T14:53:05.651747+00:00",
+    "lastRecordedHostLoadBeforeBrowser": [
+      35.35,
+      30.03,
+      35.23
+    ],
+    "limitations": [
+      "Host load varies; no controlled performance comparison",
+      "Video is canvas only; DOM controls/results inspected separately",
+      "Tool/inspection gaps do not model a human reaction time",
+      "No production/app-state injection"
+    ]
+  },
+  "attempts": [
+    {
+      "report": "animal-racers-performance-1789570623873.json",
+      "video": "cycle-10-first-attempt.mp4",
+      "inputs": {
+        "JumpButton": 1,
+        "BurstButton": 1,
+        "LeftKey": 1,
+        "SpaceKey": 20,
+        "KKey": 5
+      },
+      "combatAttempt": "First Element/Strike/Guard request found no node after duel had already ended; no combat input credited.",
+      "loop": "Solo Wolf versus Lion completed; rematch requested successfully.",
+      "observedMatch": {
+        "tick": 5062,
+        "phaseTime": 0,
+        "raceTime": 67.01666666666667,
+        "fightTime": 10.35,
+        "result": {
+          "race": [
+            13.6,
+            36.4
+          ],
+          "fight": [
+            0,
+            50
+          ],
+          "total": [
+            13.6,
+            86.4
+          ],
+          "winner": 1,
+          "reason": "Combined race + fight points \u00b7 final health"
+        },
+        "players": [
+          {
+            "character": "wolf",
+            "hp": 0,
+            "finishTime": 67.0056222284259,
+            "raceStatus": "finished"
+          },
+          {
+            "character": "lion",
+            "hp": 100,
+            "finishTime": 59.68286458333524,
+            "raceStatus": "finished"
+          }
+        ]
+      }
+    },
+    {
+      "report": "animal-racers-performance-1789570755553.json",
+      "video": "cycle-10-active-rematch.mp4",
+      "inputs": {
+        "SpaceKey": 35,
+        "KKey": 10,
+        "ElementButton": 1,
+        "StrikeButton": 1,
+        "GuardButton": 1
+      },
+      "combatAttempt": "Visible-role locators dispatched Element, Strike, Guard before result; remaining loop stopped on visible rematch button. Last Space was after combat controls disappeared.",
+      "loop": "Same Wolf/Lion rematch completed; Back to the trail returned to selected Water Wolf.",
+      "observedMatch": {
+        "tick": 5025,
+        "phaseTime": 0,
+        "raceTime": 65.35,
+        "fightTime": 11.4,
+        "result": {
+          "race": [
+            16.1,
+            33.9
+          ],
+          "fight": [
+            3,
+            47
+          ],
+          "total": [
+            19.1,
+            80.9
+          ],
+          "winner": 1,
+          "reason": "Combined race + fight points \u00b7 final health"
+        },
+        "players": [
+          {
+            "character": "wolf",
+            "hp": 0,
+            "finishTime": 65.3476458333349,
+            "raceStatus": "finished"
+          },
+          {
+            "character": "lion",
+            "hp": 88,
+            "finishTime": 59.68286458333524,
+            "raceStatus": "finished"
+          }
+        ]
+      }
+    }
+  ],
+  "browserConsoleErrorsOrWarnings": [],
+  "files": {
+    "animal-racers-play-1789570612201.webm": {
+      "bytes": 23006640,
+      "sha256": "e6ca4d01dad02d503de98ee5437ce7ef9e5e18164384c7d82fe7a04f5069bda1"
+    },
+    "animal-racers-play-1789570734529.webm": {
+      "bytes": 20586084,
+      "sha256": "683906ec71b9d6e2d3691c4d0d9165e9205c2f20251192cf971f302a253b2049"
+    },
+    "animal-racers-performance-1789570623873.json": {
+      "bytes": 22218,
+      "sha256": "c1c7a0f594e60875793af816fe5426ad011ffd88f925a236ea53cacada76d314"
+    },
+    "animal-racers-performance-1789570755553.json": {
+      "bytes": 19375,
+      "sha256": "6c202af4bd1084efea4419b8eb7ddc9c90ab6bf37b9d6cda9cf6486829dc1988"
+    },
+    "animal-racers-results-1789570624142.png": {
+      "bytes": 918574,
+      "sha256": "87d7b2fa584b8ce5b66fc088b7b354b1982780ae8db0c4434ff5ea1aa95b4047"
+    },
+    "animal-racers-results-1789570758505.png": {
+      "bytes": 918660,
+      "sha256": "c0c2444407a1d3a12495f7045f2a19383a7c978d6c88cef10d66c75acd3395de"
+    },
+    "cycle-10-first-attempt.mp4": {
+      "bytes": 17782869,
+      "sha256": "5ea66aeacf2a31722c2ce729e703ddf863ab2a24607d5f2d2a355fd1f9a1bf3c",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "avg_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "141.184000",
+          "size": "17782869"
+        }
+      }
+    },
+    "cycle-10-active-rematch.mp4": {
+      "bytes": 16834702,
+      "sha256": "867557f2a9e012331b118d6a87e1f3407c7d21893d3d60bc179e1c9d9a70ba75",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "avg_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "110.467000",
+          "size": "16834702"
+        }
+      }
+    },
+    "cycle-10-first-sheet.jpg": {
+      "bytes": 107894,
+      "sha256": "b1cc9653ade8616517fd77ee213e1ac323c5ca7ab4f467065adbbf382565b9bf"
+    },
+    "cycle-10-active-sheet.jpg": {
+      "bytes": 106492,
+      "sha256": "e92dfe37297f6cefbbdd3cb5027b88c9af03a1d991a3297e5fd0affc0302db9c"
+    },
+    "cycle-10-duel-sheet.jpg": {
+      "bytes": 340653,
+      "sha256": "424e3db5cc90bb38c23746e78cc5beef671a4c647fe41151feee9ecce03cd198"
+    }
+  },
+  "verification": {
+    "fullVideoDecode": "Both complete H264/AAC files decoded with ffmpeg -v error -xerror, exit0",
+    "codeGateOutputSha256": "6f9906031e5efcfc66ca35c37a834f3df770cd3f5e216def9494c239beb3ade3",
+    "tests": 110,
+    "networkArtifactSha256": "de06c3586f62115fec83822b65f69015b53a582278e581e614f33ad86cd7609c",
+    "inputOracleSha256": "806bbd17b3797b71c499cf33f8a97563d270b3b9e9a4101633d305471cc0e238"
+  }
+}

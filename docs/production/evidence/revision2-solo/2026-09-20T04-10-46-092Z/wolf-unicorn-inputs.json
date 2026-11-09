@@ -1,0 +1,98 @@
+[
+  {
+    "atMs": 13895,
+    "phase": "race",
+    "progress": 16,
+    "action": "leap"
+  },
+  {
+    "atMs": 22669,
+    "phase": "race",
+    "progress": 30,
+    "action": "leap"
+  },
+  {
+    "atMs": 31418,
+    "phase": "race",
+    "progress": 44,
+    "action": "left"
+  },
+  {
+    "atMs": 42486,
+    "phase": "race",
+    "progress": 61,
+    "action": "leap"
+  },
+  {
+    "atMs": 51057,
+    "phase": "race",
+    "progress": 73,
+    "action": "right"
+  },
+  {
+    "atMs": 60644,
+    "phase": "race",
+    "progress": 88,
+    "action": "leap"
+  },
+  {
+    "atMs": 75160,
+    "phase": "fight",
+    "attempt": 1,
+    "observedAtMs": 73936,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "100 HP · 35.8 RACE PTS"
+    ]
+  },
+  {
+    "atMs": 77462,
+    "phase": "fight",
+    "attempt": 2,
+    "observedAtMs": 76237,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "82 HP · 35.8 RACE PTS"
+    ]
+  },
+  {
+    "atMs": 79600,
+    "phase": "fight",
+    "attempt": 3,
+    "observedAtMs": 78378,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "64 HP · 35.8 RACE PTS"
+    ]
+  },
+  {
+    "atMs": 81809,
+    "phase": "fight",
+    "attempt": 4,
+    "observedAtMs": 80586,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "46 HP · 35.8 RACE PTS"
+    ]
+  },
+  {
+    "atMs": 84005,
+    "phase": "fight",
+    "attempt": 5,
+    "observedAtMs": 82781,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "28 HP · 35.8 RACE PTS"
+    ]
+  },
+  {
+    "atMs": 86208,
+    "phase": "fight",
+    "attempt": 6,
+    "observedAtMs": 84982,
+    "health": [
+      "100 HP · 14.2 RACE PTS",
+      "10 HP · 35.8 RACE PTS"
+    ]
+  }
+]

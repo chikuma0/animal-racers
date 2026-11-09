@@ -1,0 +1,15 @@
+{
+  "harnessSha256": "3843f0e22bd05eba63fbc5a58acb694253c2b85a1ed2c1f97325176471ffe2dc",
+  "mediaHelperSha256": "f19246a75f220d231e2f6e39cb3f3d58568253b74c6dc7b1bf4e4c90e794fad0",
+  "arguments": [
+    "--url",
+    "http://127.0.0.1:3013",
+    "--manifest",
+    "/Users/chikumatsuboi/Code/animal-racers-western/docs/production/evidence/revision2-integrated/build-manifest.json",
+    "--revision",
+    "revision2-dab6cd037a2a",
+    "--pairs",
+    "lion:wolf"
+  ],
+  "note": "Source snapshots of executed automation; not browser/app state."
+}

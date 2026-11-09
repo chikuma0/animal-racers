@@ -1,0 +1,275 @@
+{
+  "capturedAt": "2026-09-20T04:24:39.846Z",
+  "revision": "revision2-de401d12cd83",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 844,
+    "height": 390,
+    "dpr": 1
+  },
+  "mode": "solo",
+  "phase": "select",
+  "match": null,
+  "recording": false,
+  "playTrace": {
+    "note": "Bounded observed authoritative events; tick is observation time, not a claim of exact event timestamp. No predicted contacts.",
+    "events": []
+  },
+  "frames": {
+    "samples": 6,
+    "p50": 16.7,
+    "p95": 16.7,
+    "p99": 16.7,
+    "over33": 0,
+    "drawCalls": 19,
+    "triangles": 31995,
+    "pixelRatio": 1,
+    "loaded": true
+  },
+  "session": {
+    "startedAt": "2026-09-20T04:24:39.023Z",
+    "quantileResolutionMs": 0.25,
+    "overflowAtMs": 1000,
+    "phases": {
+      "select": {
+        "samples": 8,
+        "elapsedMs": 133,
+        "p50Ms": 16.75,
+        "p95Ms": 16.75,
+        "p99Ms": 16.75,
+        "maxMs": 16.7,
+        "over16_67": 5,
+        "over33_34": 0,
+        "over50": 0
+      }
+    }
+  },
+  "work": {
+    "clock": "performance.now wall-clock milliseconds",
+    "note": "Zero-duration calls are retained. Render and draw submission include synchronous driver work but exclude asynchronous GPU completion. Between-callback time includes refresh pacing and other unmeasured browser/OS work; it does not identify a cause. React work scheduled after the callback is outside audioAndUi. Hidden samples are separate. Stage quantiles cannot be added.",
+    "stages": {
+      "simulation": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 0,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.1,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "networkSend": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 0,
+            "p50Ms": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maxMs": 0,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "presentation": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 0,
+            "p50Ms": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maxMs": 0,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "renderCall": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 6,
+            "p50Ms": 0,
+            "p95Ms": 1,
+            "p99Ms": 1,
+            "maxMs": 0.8,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "audioAndUi": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 1,
+            "p50Ms": 0,
+            "p95Ms": 0.25,
+            "p99Ms": 0.25,
+            "maxMs": 0.2,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "callback": {
+        "startedAt": "2026-09-20T04:24:39.233Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 33,
+            "elapsedMs": 7,
+            "p50Ms": 0,
+            "p95Ms": 1,
+            "p99Ms": 1,
+            "maxMs": 0.9,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "betweenCallbacks": {
+        "startedAt": "2026-09-20T04:24:39.238Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 32,
+            "elapsedMs": 603,
+            "p50Ms": 16.5,
+            "p95Ms": 51.5,
+            "p99Ms": 92.25,
+            "maxMs": 92.2,
+            "over16_67": 13,
+            "over33_34": 4,
+            "over50": 2
+          }
+        }
+      }
+    }
+  },
+  "rendererWork": {
+    "clock": "performance.now wall-clock milliseconds",
+    "note": "Zero-duration calls are retained. Render and draw submission include synchronous driver work but exclude asynchronous GPU completion. Between-callback time includes refresh pacing and other unmeasured browser/OS work; it does not identify a cause. React work scheduled after the callback is outside audioAndUi. Hidden samples are separate. Stage quantiles cannot be added.",
+    "stages": {
+      "sceneUpdate": {
+        "startedAt": "2026-09-20T04:24:39.724Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 8,
+            "elapsedMs": 1,
+            "p50Ms": 0.25,
+            "p95Ms": 0.5,
+            "p99Ms": 0.5,
+            "maxMs": 0.3,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      },
+      "drawSubmission": {
+        "startedAt": "2026-09-20T04:24:39.724Z",
+        "quantileResolutionMs": 0.25,
+        "overflowAtMs": 1000,
+        "phases": {
+          "select/visible": {
+            "samples": 8,
+            "elapsedMs": 4,
+            "p50Ms": 0.5,
+            "p95Ms": 0.75,
+            "p99Ms": 0.75,
+            "maxMs": 0.6,
+            "over16_67": 0,
+            "over33_34": 0,
+            "over50": 0
+          }
+        }
+      }
+    },
+    "preparation": {
+      "elapsedMs": 186.70000004768372,
+      "frames": [
+        {
+          "phase": "countdown",
+          "z": 0,
+          "submissionMs": 73.20000004768372
+        },
+        {
+          "phase": "countdown",
+          "z": 250,
+          "submissionMs": 8.600000023841858
+        },
+        {
+          "phase": "countdown",
+          "z": 480,
+          "submissionMs": 1.5
+        },
+        {
+          "phase": "fight",
+          "z": 0,
+          "submissionMs": 15.300000071525574
+        },
+        {
+          "phase": "results",
+          "z": 0,
+          "submissionMs": 6.200000047683716
+        },
+        {
+          "phase": "countdown",
+          "z": 0,
+          "submissionMs": 10.899999976158142
+        },
+        {
+          "phase": "fight",
+          "z": 0,
+          "submissionMs": 6.300000071525574
+        },
+        {
+          "phase": "results",
+          "z": 0,
+          "submissionMs": 1.1999999284744263
+        },
+        {
+          "phase": "select",
+          "z": 0,
+          "submissionMs": 2.299999952316284
+        }
+      ]
+    }
+  },
+  "network": {
+    "status": ""
+  },
+  "note": "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification."
+}

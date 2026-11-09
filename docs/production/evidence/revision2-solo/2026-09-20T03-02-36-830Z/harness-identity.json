@@ -1,0 +1,6 @@
+{
+  "path": "scripts/qa/solo-playthrough.mjs",
+  "sha256": "b9a31f1d9a06633f953137eed2823ac6d43326cf369ced6fe9c31616d4cc5cf0",
+  "recordedAfterRun": true,
+  "note": "The running script was unchanged from matrix start through completion; copied after its successful9-pair return. UI controls/report downloads only."
+}

@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-09-16T08:32:45.455Z",
+  "experiment": "Two isolated Chromium contexts on one computer; real Supabase signaling and native WebRTC data channel",
+  "acceptance": "Local direct-path response experiment only. Not separate-network, full-match, iPhone, NAT/TURN or gameplay acceptance.",
+  "budget": {
+    "maximumActiveMs": 10000,
+    "maximumApplicationMessages": 24,
+    "pingPayloadPaddingBytes": 4096
+  },
+  "status": "failed-direct-connect-or-response",
+  "connectedAtMs": 8664,
+  "paths": [
+    {
+      "transport": "broadcast",
+      "paired": true
+    },
+    {
+      "transport": "broadcast",
+      "paired": true
+    }
+  ],
+  "reason": "Direct transport or all application responses did not complete within the bounded probe.",
+  "statuses": [
+    [
+      {
+        "status": "connecting",
+        "at": 1789547658101
+      },
+      {
+        "status": "waiting",
+        "at": 1789547658822
+      },
+      {
+        "status": "connected",
+        "at": 1789547659350
+      },
+      {
+        "status": "webrtc-connecting",
+        "at": 1789547665452
+      },
+      {
+        "status": "webrtc-connected",
+        "at": 1789547666595
+      }
+    ],
+    [
+      {
+        "status": "connecting",
+        "at": 1789547658101
+      },
+      {
+        "status": "waiting",
+        "at": 1789547658822
+      },
+      {
+        "status": "connected",
+        "at": 1789547662182
+      },
+      {
+        "status": "webrtc-connecting",
+        "at": 1789547665908
+      },
+      {
+        "status": "webrtc-connected",
+        "at": 1789547666605
+      }
+    ]
+  ],
+  "elapsedMs": 9803
+}

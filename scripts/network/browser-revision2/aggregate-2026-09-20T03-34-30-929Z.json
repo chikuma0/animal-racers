@@ -1,0 +1,1145 @@
+{
+  "verifiedAt": "2026-09-20T03:34:30.928Z",
+  "classification": "Loaded same-machine normal-control installed Chrome integration only; not physical-phone, separate-network, human feel, controlled performance or visual-art acceptance.",
+  "sourceFingerprint": "dab6cd037a2abcb0cb3758f7b66c2643ea0bcebbcb7bb6982a92e1b37aac967e",
+  "revision": "revision2-dab6cd037a2a",
+  "buildId": "BN3ibehu1TSIsjBQeIjl0",
+  "runs": [
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "summarySha256": "0613b22c84ab69936d7aeec418071980f0e7d301ac76e37bb7a927ceb41cbd1d",
+      "viewport": [
+        844,
+        390
+      ],
+      "recordingRoles": "host",
+      "harness": "19f3b457e61f0d37e00ddc51ee3502171d664bf0c2b1d04b212447f7f260e513"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "summarySha256": "647e31cd9c55eaf2afa2056bf8ecb0e9bcaba3a543c62817032dbcb8b60876a5",
+      "viewport": [
+        844,
+        390
+      ],
+      "recordingRoles": "host",
+      "harness": "ec47bc903230f10cd7e374b933fdebfb88c5869436e2d90ac4edc3bb65f31f72"
+    }
+  ],
+  "pairCount": 9,
+  "roundCount": 10,
+  "rounds": [
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "name": "01-lion-wolf-round1",
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          30.9,
+          19.1
+        ],
+        "fight": [
+          36.5,
+          13.5
+        ],
+        "total": [
+          67.4,
+          32.6
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "lion",
+          "hp": 46,
+          "finishTime": 61.05114763888984,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 62.00016721906812,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 54
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 4,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.6000000238418579,
+          "sent": 2195,
+          "received": 2212,
+          "roundTrip": {
+            "sampleCount": 47,
+            "p50Ms": 1,
+            "p95Ms": 1.5,
+            "maxMs": 8.300000071525574,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.9000000953674316,
+          "sent": 2215,
+          "received": 2169,
+          "roundTrip": {
+            "sampleCount": 47,
+            "p50Ms": 1.5,
+            "p95Ms": 4.5,
+            "maxMs": 11.5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "b2ad54950cb6c2cfc28ccc57cf4292ee9a57afb60e130452ca00ffc3d21a750d",
+        "da868a0067628fdc65238d51a85866907cb8e1fe6877aab60e6f7a582a25d06a"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "name": "01-lion-wolf-round2",
+      "pair": [
+        "lion",
+        "wolf"
+      ],
+      "round": 2,
+      "result": {
+        "race": [
+          31,
+          19
+        ],
+        "fight": [
+          36.5,
+          13.5
+        ],
+        "total": [
+          67.5,
+          32.5
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "lion",
+          "hp": 46,
+          "finishTime": 60.32432909722286,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 61.28475923295675,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 54
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 4,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.7000000476837158,
+          "sent": 4353,
+          "received": 4406,
+          "roundTrip": {
+            "sampleCount": 60,
+            "p50Ms": 1,
+            "p95Ms": 3.399999976158142,
+            "maxMs": 8.300000071525574,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.7999999523162842,
+          "sent": 4409,
+          "received": 4328,
+          "roundTrip": {
+            "sampleCount": 60,
+            "p50Ms": 1.100000023841858,
+            "p95Ms": 3.5999999046325684,
+            "maxMs": 5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "7ec0300cc20817ff384cb98154f10d444ddf7ab41e352e0057b114eff2dd5fbc",
+        "e59837ab3b5a3a368fa87d2957bf9a7feaacacfb51e619a824507ca03f129137"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "01-lion-lion-round1",
+      "pair": [
+        "lion",
+        "lion"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          30.9,
+          19.1
+        ],
+        "fight": [
+          30.5,
+          19.5
+        ],
+        "total": [
+          61.4,
+          38.6
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "lion",
+          "hp": 22,
+          "finishTime": 60.40990298611176,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "lion",
+          "hp": 0,
+          "finishTime": 61.35551104798183,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 78
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 4,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 18.59999990463257,
+          "sent": 2203,
+          "received": 2229,
+          "roundTrip": {
+            "sampleCount": 47,
+            "p50Ms": 1.1999999284744263,
+            "p95Ms": 11.899999976158142,
+            "maxMs": 18.59999990463257,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 3.700000047683716,
+          "sent": 2231,
+          "received": 2177,
+          "roundTrip": {
+            "sampleCount": 47,
+            "p50Ms": 2.5,
+            "p95Ms": 4.700000047683716,
+            "maxMs": 5.400000095367432,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "1f449eb21d51502445a9bc2b566a7d59c2b262e6f7dee5bfe6aca45dab7c0aa1",
+        "7658087f7bd30e590e70565dfe08cc702630f99f514ae65f797006abb3270b43"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "02-lion-unicorn-round1",
+      "pair": [
+        "lion",
+        "unicorn"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          32.5,
+          17.5
+        ],
+        "fight": [
+          33.5,
+          16.5
+        ],
+        "total": [
+          66,
+          34
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "lion",
+          "hp": 34,
+          "finishTime": 61.85060583333454,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "unicorn",
+          "hp": 0,
+          "finishTime": 63.046244791670134,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 66
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 4,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.6999999284744263,
+          "sent": 2219,
+          "received": 2238,
+          "roundTrip": {
+            "sampleCount": 48,
+            "p50Ms": 1.2000000476837158,
+            "p95Ms": 5.199999928474426,
+            "maxMs": 116.09999990463257,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 3.5,
+          "sent": 2241,
+          "received": 2187,
+          "roundTrip": {
+            "sampleCount": 47,
+            "p50Ms": 2.100000023841858,
+            "p95Ms": 7.5,
+            "maxMs": 13.600000023841858,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "41ec427b3da6a117231a2fa34a22e7304121c3fe0b553bacd39f321083c7dd4a",
+        "e425b110f00c44e4d2622419934f5db4d26153d1959b4dacaae45b8d09050d39"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "03-wolf-lion-round1",
+      "pair": [
+        "wolf",
+        "lion"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          32.9,
+          17.1
+        ],
+        "fight": [
+          18,
+          32
+        ],
+        "total": [
+          50.9,
+          49.1
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 61.283143680556485,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "lion",
+          "hp": 28,
+          "finishTime": 62.54238975694782,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 72
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.8000000715255737,
+          "sent": 2259,
+          "received": 2284,
+          "roundTrip": {
+            "sampleCount": 48,
+            "p50Ms": 3.8000000715255737,
+            "p95Ms": 16.5,
+            "maxMs": 17.799999952316284,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.7999999523162842,
+          "sent": 2286,
+          "received": 2239,
+          "roundTrip": {
+            "sampleCount": 48,
+            "p50Ms": 1.600000023841858,
+            "p95Ms": 6.600000023841858,
+            "maxMs": 15.5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "c2db427455e027d5be65f26b75b3eacb9453d22c214d11134934d7be40acfe4d",
+        "f55b690eb4bfd6d675a3d78b26269f4d6adb1b5e9cd976c2f451115f2c34cf4f"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "04-wolf-wolf-round1",
+      "pair": [
+        "wolf",
+        "wolf"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          32.8,
+          17.2
+        ],
+        "fight": [
+          27.5,
+          22.5
+        ],
+        "total": [
+          60.3,
+          39.7
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "wolf",
+          "hp": 10,
+          "finishTime": 61.16314840277889,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 62.40427635732649,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 7,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 90
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 6,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.8000000715255737,
+          "sent": 2385,
+          "received": 2424,
+          "roundTrip": {
+            "sampleCount": 51,
+            "p50Ms": 1.1999999284744263,
+            "p95Ms": 7.699999928474426,
+            "maxMs": 33.5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.7999999523162842,
+          "sent": 2428,
+          "received": 2381,
+          "roundTrip": {
+            "sampleCount": 51,
+            "p50Ms": 1,
+            "p95Ms": 9.899999976158142,
+            "maxMs": 21.899999976158142,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "9a6d2acedbf791626cbc484b49f89b80d52e1ff9ee2289a16a2c6dc6200ea20c",
+        "9644b52770d960ca4374e708a3896ffd43ac86fcba8586af6ff74d2f02cf5b36"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "05-wolf-unicorn-round1",
+      "pair": [
+        "wolf",
+        "unicorn"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          31,
+          19
+        ],
+        "fight": [
+          22.5,
+          27.5
+        ],
+        "total": [
+          53.5,
+          46.5
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 61.65738611111214,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "unicorn",
+          "hp": 10,
+          "finishTime": 62.61175299874006,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 6,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 6,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 90
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 2.100000023841858,
+          "sent": 2334,
+          "received": 2378,
+          "roundTrip": {
+            "sampleCount": 49,
+            "p50Ms": 1.5999999046325684,
+            "p95Ms": 7.199999928474426,
+            "maxMs": 9.200000047683716,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 1.0999999046325684,
+          "sent": 2381,
+          "received": 2324,
+          "roundTrip": {
+            "sampleCount": 50,
+            "p50Ms": 1.0999999046325684,
+            "p95Ms": 3.200000047683716,
+            "maxMs": 14.5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "d43dd4e0c18985f603d9ddeab53b1971a8c05e314ab1b6135491c1ed1587dc6b",
+        "8b5155c8edefee35c62b72d9a0a1d4530450f393a4a967d42d2ff6953ec25eb2"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "06-unicorn-lion-round1",
+      "pair": [
+        "unicorn",
+        "lion"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          33.8,
+          16.2
+        ],
+        "fight": [
+          22,
+          28
+        ],
+        "total": [
+          55.8,
+          44.2
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "unicorn",
+          "hp": 0,
+          "finishTime": 60.65877562500051,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "lion",
+          "hp": 12,
+          "finishTime": 62.06611624053288,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 88
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 1.100000023841858,
+          "sent": 2259,
+          "received": 2285,
+          "roundTrip": {
+            "sampleCount": 48,
+            "p50Ms": 0.9000000953674316,
+            "p95Ms": 1.3000000715255737,
+            "maxMs": 1.5,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 1,
+          "sent": 2289,
+          "received": 2243,
+          "roundTrip": {
+            "sampleCount": 48,
+            "p50Ms": 0.8999999761581421,
+            "p95Ms": 1.399999976158142,
+            "maxMs": 10.600000023841858,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "2e21657aaf103ed933db16b14e1b6a705a41fcebbef73cfe0fdd678ede4d1879",
+        "7fedd4064839382bdafd17c6ec2f8608dc4938fed6535dfa3250a6be51e613aa"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "07-unicorn-wolf-round1",
+      "pair": [
+        "unicorn",
+        "wolf"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          27.1,
+          22.9
+        ],
+        "fight": [
+          32,
+          18
+        ],
+        "total": [
+          59.1,
+          40.9
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "unicorn",
+          "hp": 28,
+          "finishTime": 65.62979861111393,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "wolf",
+          "hp": 0,
+          "finishTime": 65.96287424288434,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 6,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 72
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 2.5,
+          "sent": 2387,
+          "received": 2405,
+          "roundTrip": {
+            "sampleCount": 51,
+            "p50Ms": 4.200000047683716,
+            "p95Ms": 11.300000071525574,
+            "maxMs": 45.10000002384186,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 1.899999976158142,
+          "sent": 2408,
+          "received": 2363,
+          "roundTrip": {
+            "sampleCount": 51,
+            "p50Ms": 4.200000047683716,
+            "p95Ms": 14.399999976158142,
+            "maxMs": 214.09999990463257,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "98a5a3fb639df437deb5f845f6f421866d3969b000116e1f9f7df6c464659e66",
+        "5dddd852d0deaf6ec4a0a07c1ce62839c374c1dccc9a3569a3e700b8dd981dc2"
+      ]
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "name": "08-unicorn-unicorn-round1",
+      "pair": [
+        "unicorn",
+        "unicorn"
+      ],
+      "round": 1,
+      "result": {
+        "race": [
+          31.1,
+          18.9
+        ],
+        "fight": [
+          28,
+          22
+        ],
+        "total": [
+          59.1,
+          40.9
+        ],
+        "winner": 0,
+        "reason": "Combined race + fight points · final health"
+      },
+      "players": [
+        {
+          "character": "unicorn",
+          "hp": 12,
+          "finishTime": 61.431353125000825,
+          "raceStatus": "finished"
+        },
+        {
+          "character": "unicorn",
+          "hp": 0,
+          "finishTime": 62.41238952020437,
+          "raceStatus": "finished"
+        }
+      ],
+      "actions": [
+        {
+          "slot": 0,
+          "leaps": 4,
+          "strikes": 6,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 88
+        },
+        {
+          "slot": 1,
+          "leaps": 4,
+          "strikes": 5,
+          "evades": 1,
+          "successfulEvades": 1,
+          "counters": 1,
+          "damageReceived": 100
+        }
+      ],
+      "network": [
+        {
+          "transport": "webrtc",
+          "roundTripMs": 0.7000000476837158,
+          "sent": 2290,
+          "received": 2334,
+          "roundTrip": {
+            "sampleCount": 49,
+            "p50Ms": 1.600000023841858,
+            "p95Ms": 4.5,
+            "maxMs": 12.399999976158142,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        },
+        {
+          "transport": "webrtc",
+          "roundTripMs": 1.100000023841858,
+          "sent": 2336,
+          "received": 2284,
+          "roundTrip": {
+            "sampleCount": 49,
+            "p50Ms": 1.1999999284744263,
+            "p95Ms": 4.199999928474426,
+            "maxMs": 9.600000023841858,
+            "timeoutCount": 0,
+            "windowMs": 120000
+          }
+        }
+      ],
+      "reportHashes": [
+        "d968c9cf7f0168bc635882888e927ba5fa0b104d0ac99052e07a90e9ff2b2041",
+        "c4eefc5e97f1e6eeb1065b0111cf083c85650d71115d5216f75d466ee2df02a0"
+      ]
+    }
+  ],
+  "failures": [],
+  "reactions": [
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 362
+    },
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 357
+    },
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 357
+    },
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 357
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 445
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 378
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 372
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 366
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 384
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 367
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 371
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 360
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 369
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 362
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 363
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 363
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 383
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 375
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "guest",
+      "observedCueToCompletedClickMs": 373
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "role": "host",
+      "observedCueToCompletedClickMs": 370
+    }
+  ],
+  "media": [
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "file": "01-lion-wolf-round1-host-recording-review.mp4",
+      "bytes": 9285818,
+      "duration": 93.642,
+      "sha256": "b5b1cb389e4b04333087564b1810577e44a39aeaaecfae18a5912a7a9e6e04ea"
+    },
+    {
+      "directory": "run-2026-09-20T03-29-25-720Z",
+      "file": "01-lion-wolf-round2-host-recording-review.mp4",
+      "bytes": 9216561,
+      "duration": 92.702,
+      "sha256": "93b649fde69f38ae4f554c6a3381b6ea6ca50d583fef398e0e240d8bece3e8b4"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "01-lion-lion-round1-host-recording-review.mp4",
+      "bytes": 9133366,
+      "duration": 94.966667,
+      "sha256": "f015d156435ffe42ebb634d65b56ee5927164b2ad03dc2807f2e65fb59f2335f"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "02-lion-unicorn-round1-host-recording-review.mp4",
+      "bytes": 9391398,
+      "duration": 95.066,
+      "sha256": "17a61fe2a1aca5a18059924aa52f3b516fbd7e16e6d471211581934962259b56"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "03-wolf-lion-round1-host-recording-review.mp4",
+      "bytes": 9368609,
+      "duration": 96.7,
+      "sha256": "4f4688ddf81b60fa24da3c2f10b8620b6ed4b59b76fa19ae77594f1e0be37287"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "04-wolf-wolf-round1-host-recording-review.mp4",
+      "bytes": 9645271,
+      "duration": 103.066667,
+      "sha256": "e90058012496cc68d10d7b38e6908cef802f0334d6479a074c3926c10ea420f1"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "05-wolf-unicorn-round1-host-recording-review.mp4",
+      "bytes": 9836916,
+      "duration": 101.033333,
+      "sha256": "efa8146b8802a8a19bc1197779041b8a33fc465832aaec5c456f3ada1b8269bd"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "06-unicorn-lion-round1-host-recording-review.mp4",
+      "bytes": 9447698,
+      "duration": 96.6,
+      "sha256": "f26539e79ad2d756f0c9bfcf320ed18187b91b2bccee3dd64e17e97748bb0ee4"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "07-unicorn-wolf-round1-host-recording-review.mp4",
+      "bytes": 9779081,
+      "duration": 102.633333,
+      "sha256": "f6092f292cdb5cf4ec7fcd80f3b13b14146248bfc5a8671d3f8996669529f7ad"
+    },
+    {
+      "directory": "run-2026-09-20T03-10-27-135Z",
+      "file": "08-unicorn-unicorn-round1-host-recording-review.mp4",
+      "bytes": 9794560,
+      "duration": 98.8,
+      "sha256": "c5f0fd228ad26e9e245befb830451e2a3169cc9ebda0bb8a6e179a3223416480"
+    }
+  ],
+  "limitations": [
+    "Shared machine/network and recording/rendering contention.",
+    "Canvas recordings omit DOM; screenshots and public reports supply HUD evidence.",
+    "Observed cue-to-click includes automation overhead and is not human reaction latency.",
+    "Frozen Lion tail base, Wolf distal tuft and Unicorn rainbow tail detach during combat: art acceptance remains OPEN.",
+    "Media hashes rechecked here; full clean raw/output decodes were performed by each run media helper."
+  ]
+}

@@ -1,0 +1,5349 @@
+{
+  "classification": "Local actual-renderer pose/cycle inspection. UI pose settings and public-canvas MediaRecorder only; no simulation stepping, collision or normal-gameplay claim.",
+  "records": [
+    {
+      "kind": "pose-cycle",
+      "file": "lion-strike.webm",
+      "sha256": "6cfde1820900eb3d27528bf6d7d73b2a3bb2cff3600e179b9590bf728e2a0ded",
+      "requestedSeconds": 1.6400000000000001
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-strike-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876163404.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.7100000000000001,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "lion-counter.webm",
+      "sha256": "16d3773d634d57b9095ffae41c9e9b86b87016a9783c0fb071f75840357f14e5",
+      "requestedSeconds": 1.2
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-counter-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876163404.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.7100000000000001,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "lion-evade.webm",
+      "sha256": "7b166a29fe0d74e49bec1d9cb1cfb27ca4590b40ee1a7a2bac611586df463daa",
+      "requestedSeconds": 0.4
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-evade-mid",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876165979.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.27,
+        "rivalTime": 1,
+        "counter": true,
+        "strikeWindup": 0.24,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-evade-land",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876167749.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 2.41,
+        "elapsed": 0.2,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -1.4849999999999999,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-hit",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876168353.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 2.9699999999999998,
+        "elapsed": 0.4,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -2.045,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "lion-run",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876168967.json",
+      "settings": {
+        "stage": "fight",
+        "left": "lion",
+        "right": "wolf",
+        "action": "hit",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.2,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "wolf-strike.webm",
+      "sha256": "596176aa2c05a69c7eddd496f367dbf345aa7539636ad5d0d1bcbcc8e054b3a6",
+      "requestedSeconds": 1.49
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-strike-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876169564.json",
+      "settings": {
+        "stage": "race",
+        "left": "lion",
+        "right": "wolf",
+        "action": "run",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.25,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.68,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "wolf-counter.webm",
+      "sha256": "58c0d4f24db60595e5e2cba7f26dca560b3caad683b03cac4d64eaf28bd6d878",
+      "requestedSeconds": 1.18
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-counter-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876172432.json",
+      "settings": {
+        "stage": "fight",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.5800000000000001,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.55,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "wolf-evade.webm",
+      "sha256": "4996a203668e2bfe420086c18a5ad6bebb73b151041c4d4121d90a2174697135",
+      "requestedSeconds": 0.38
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-evade-mid",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876174932.json",
+      "settings": {
+        "stage": "fight",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.27,
+        "rivalTime": 1,
+        "counter": true,
+        "strikeWindup": 0.24,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-evade-land",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876176665.json",
+      "settings": {
+        "stage": "fight",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 2.534,
+        "elapsed": 0.19,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.55,
+        "evadeDisplacement": true,
+        "positions": [
+          -1.609,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-hit",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876177264.json",
+      "settings": {
+        "stage": "fight",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 3.218,
+        "elapsed": 0.38,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.55,
+        "evadeDisplacement": true,
+        "positions": [
+          -2.293,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "wolf-run",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876177866.json",
+      "settings": {
+        "stage": "fight",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "hit",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.2,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.55,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "unicorn-strike.webm",
+      "sha256": "f84357a96aec651822b4ecbfa9e2949041cd52d0c5fb7e087d7d302d9da6dd2d",
+      "requestedSeconds": 1.5
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-strike-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876178504.json",
+      "settings": {
+        "stage": "race",
+        "left": "wolf",
+        "right": "unicorn",
+        "action": "run",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.25,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.55,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "unicorn-counter.webm",
+      "sha256": "3269bade516b18c4207c7873db4852bbd9e9b0a57328227a4e36ccf70a12c814",
+      "requestedSeconds": 1.1400000000000001
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-counter-active",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876181361.json",
+      "settings": {
+        "stage": "fight",
+        "left": "unicorn",
+        "right": "lion",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.63,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.6,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-cycle",
+      "file": "unicorn-evade.webm",
+      "sha256": "354971b637e43b847e285eb823ed0b90179668aabad4950a9ccc1f8999ac8ef5",
+      "requestedSeconds": 0.42
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-evade-mid",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876183833.json",
+      "settings": {
+        "stage": "fight",
+        "left": "unicorn",
+        "right": "lion",
+        "action": "attack",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.27,
+        "rivalTime": 1,
+        "counter": true,
+        "strikeWindup": 0.24,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-evade-land",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876185575.json",
+      "settings": {
+        "stage": "fight",
+        "left": "unicorn",
+        "right": "lion",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 2.3120000000000003,
+        "elapsed": 0.21,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.6,
+        "evadeDisplacement": true,
+        "positions": [
+          -1.387,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-hit",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876186182.json",
+      "settings": {
+        "stage": "fight",
+        "left": "unicorn",
+        "right": "lion",
+        "action": "evade",
+        "rival": "fight_idle",
+        "gap": 2.774,
+        "elapsed": 0.42,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.6,
+        "evadeDisplacement": true,
+        "positions": [
+          -1.8490000000000002,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    },
+    {
+      "kind": "pose-still",
+      "name": "unicorn-run",
+      "receipt": "docs/production/evidence/contact-inspection/contact-1789876186780.json",
+      "settings": {
+        "stage": "fight",
+        "left": "unicorn",
+        "right": "lion",
+        "action": "hit",
+        "rival": "fight_idle",
+        "gap": 1.85,
+        "elapsed": 0.2,
+        "rivalTime": 1,
+        "counter": false,
+        "strikeWindup": 0.6,
+        "evadeDisplacement": true,
+        "positions": [
+          -0.925,
+          0.925
+        ]
+      },
+      "hashes": {
+        "src/championship/renderer.ts": "a065ca6a9570c6efca6c473527e760d660ab0a72cf60dde2b3181a6c7ff5db79",
+        "src/championship/simulation.ts": "ed96a791128e7dc74e0ca39de20034a247b6baccfff167fea9c2bfac7e083537",
+        "src/championship/course.ts": "ac632814a1222cb2b44374d173bddb0a2d2054b50d03006e29b77737a74ffef7",
+        "src/championship/rivalry-effects.ts": "25a9379f18b2d45f6a255d788f724ac019411ff7b98921298270ab77cdfc4235",
+        "src/championship/environment.ts": "27bad2c3fe13c8393b9f84e5e105401825c13d48ee4a371be03eb89db4274c92",
+        "src/championship/framing.ts": "df74835751d11352140ea0ce53c0b047d8535a9b0dd490c538256d0ae7935d81",
+        "scripts/qa/contact-preview.ts": "865edf0de9cb252e289305696eb57a60ad432e39528695bc44b2ada7564f3da1",
+        "assets/source/western/revision2/tail-repair/candidate/lion.glb": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "assets/source/western/revision2/tail-repair/candidate/lion-upright.glb": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "assets/source/western/revision2/tail-repair/candidate/wolf.glb": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "assets/source/western/revision2/tail-repair/candidate/wolf-upright.glb": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn.glb": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "assets/source/western/revision2/tail-repair/candidate/unicorn-upright.glb": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e"
+      }
+    }
+  ],
+  "errors": [],
+  "handoff": {
+    "status": "Isolated candidate for final runtime review; canonical assets frozen",
+    "allowlist": [
+      "Rump patch topology and tail meshes/skin weights",
+      "tail_0..tail_3 location channels in all retained clips",
+      "tail_0..tail_3 rotations in upright attack/evade/fight_idle/fight_move only",
+      "Upright evade hop, preserving authoritative duration/world movement"
+    ],
+    "records": {
+      "lion-race": {
+        "runtimeSha256": "97e7f373e7e08c143c04d44023517c77ceefef3815e4b67a7af437d6b2f7e284",
+        "sourceSha256": "be6f1a3cec5c4c99d2519cf390cd5b0caa0243110e5b0056f9e852b16784d471",
+        "sourceFrames": 470,
+        "maxTailEdgeStretch": 2.3260411494108095,
+        "maxTailJointGap": 2.980232238769531e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "attack_corrective": [],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "celebrate_corrective": [],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat_corrective": [],
+          "evade": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "evade_corrective": [],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle_corrective": [],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_move_corrective": [],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "guard_corrective": [],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit_corrective": [],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump_corrective": [],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land_corrective": [],
+          "race_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "race_idle_corrective": [],
+          "run": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "run_corrective": [],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special_corrective": [],
+          "stumble": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "stumble_corrective": [],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform_corrective": []
+        },
+        "runtimeCosts": {
+          "triangles": 24969,
+          "primitives": 7,
+          "bytes": 1647536
+        }
+      },
+      "lion-upright": {
+        "runtimeSha256": "b8f717ff313c5efcb38a1304fffbff117d58d85ac99caac8c1c9b9899f9c48d1",
+        "sourceSha256": "1e0d8b885736bc5bcc784cb681fd811e01f6dde73ec82b504bddbdd352ce3f41",
+        "sourceFrames": 371,
+        "maxTailEdgeStretch": 2.1178498468517137,
+        "maxTailJointGap": 2.9804650603189484e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ]
+        },
+        "runtimeCosts": {
+          "triangles": 29617,
+          "primitives": 7,
+          "bytes": 1590332
+        }
+      },
+      "wolf-race": {
+        "runtimeSha256": "7f1398c8286a5b20342850a3cdc24f3fffe5a7357f8f8ee522935503abc14b2d",
+        "sourceSha256": "12228fc5ca053e806bd5a47f5489dbdcb5317b9fcaff1da5f5cc2fa7362e7ec2",
+        "sourceFrames": 471,
+        "maxTailEdgeStretch": 2.3378375803992095,
+        "maxTailJointGap": 2.6656007498500226e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "attack_corrective": [],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "celebrate_corrective": [],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat_corrective": [],
+          "evade": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "evade_corrective": [],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle_corrective": [],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_move_corrective": [],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "guard_corrective": [],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit_corrective": [],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump_corrective": [],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land_corrective": [],
+          "race_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "race_idle_corrective": [],
+          "run": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "run_corrective": [],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special_corrective": [],
+          "stumble": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "stumble_corrective": [],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform_corrective": []
+        },
+        "runtimeCosts": {
+          "triangles": 18355,
+          "primitives": 7,
+          "bytes": 1390540
+        }
+      },
+      "wolf-upright": {
+        "runtimeSha256": "2f6af8232b444a936f4439cf41588f4a4d2afdc7aa0dc2eb0a0c9bd8abe58b80",
+        "sourceSha256": "3e8c3c395c722ee79009fbfde56f35126c5d9cf918a501823c589b229bfe9c15",
+        "sourceFrames": 373,
+        "maxTailEdgeStretch": 2.0441977629728427,
+        "maxTailJointGap": 2.4586915969848633e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ]
+        },
+        "runtimeCosts": {
+          "triangles": 23190,
+          "primitives": 7,
+          "bytes": 1359276
+        }
+      },
+      "unicorn-race": {
+        "runtimeSha256": "e7fb1dce0af4c2c20eb56e4a6ad5fc3d5e757dc7dea7676603c548e142af72bb",
+        "sourceSha256": "c07a5dbc07974cf5d8b2f627189cda2fbec6b8d0f3d15c85ed8b43cd29377e65",
+        "sourceFrames": 466,
+        "maxTailEdgeStretch": 2.3351462635143174,
+        "maxTailJointGap": 2.5288109106536417e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "attack_corrective": [],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "celebrate_corrective": [],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat_corrective": [],
+          "evade": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "evade_corrective": [],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle_corrective": [],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_move_corrective": [],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "guard_corrective": [],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit_corrective": [],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump_corrective": [],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land_corrective": [],
+          "race_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "race_idle_corrective": [],
+          "run": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "run_corrective": [],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special_corrective": [],
+          "stumble": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "stumble_corrective": [],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform_corrective": []
+        },
+        "runtimeCosts": {
+          "triangles": 18587,
+          "primitives": 7,
+          "bytes": 1388616
+        }
+      },
+      "unicorn-upright": {
+        "runtimeSha256": "dc37c1b8ad9bd938a44eba37d59057c03af6df0e6c5977a94b1882de69ae8a5e",
+        "sourceSha256": "af94c2efcc13abbd7fd7b549ae9e1c9a7692220bfd58dc9ede0c65e9f0d2be99",
+        "sourceFrames": 368,
+        "maxTailEdgeStretch": 2.091307157189024,
+        "maxTailJointGap": 2.9804650603189484e-7,
+        "maxFurRootGap": 0,
+        "channelDifferences": {
+          "attack": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "celebrate": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "defeat": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "fight_idle": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "fight_move": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_0\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].rotation_quaternion",
+              3
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].rotation_quaternion",
+              3
+            ]
+          ],
+          "guard": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "hit": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "jump": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "land": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "special": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ],
+          "transform": [
+            [
+              "pose.bones[\"tail_0\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_0\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_1\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_2\"].location",
+              2
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              0
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              1
+            ],
+            [
+              "pose.bones[\"tail_3\"].location",
+              2
+            ]
+          ]
+        },
+        "runtimeCosts": {
+          "triangles": 21769,
+          "primitives": 7,
+          "bytes": 1295244
+        }
+      }
+    }
+  },
+  "toolSha256": "a1e05a8bf026cfb148a548eb36431e3c034c68dc6e6cc4d8df16a6597d8424b0"
+}

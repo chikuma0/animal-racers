@@ -1,0 +1,137 @@
+{
+  "capturedAt": "2026-09-16T09:39:35.531Z",
+  "revision": "",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "dpr": 1
+  },
+  "mode": "solo",
+  "phase": "results",
+  "match": {
+    "tick": 4917,
+    "phaseTime": 0,
+    "raceTime": 68.35,
+    "fightTime": 6.6,
+    "result": {
+      "race": [
+        11.5,
+        38.5
+      ],
+      "fight": [
+        0,
+        50
+      ],
+      "total": [
+        11.5,
+        88.5
+      ],
+      "winner": 1,
+      "reason": "Combined race + fight points · final health"
+    },
+    "players": [
+      {
+        "character": "unicorn",
+        "hp": 0,
+        "finishTime": 68.33979166666843,
+        "raceStatus": "finished"
+      },
+      {
+        "character": "lion",
+        "hp": 100,
+        "finishTime": 59.68286458333524,
+        "raceStatus": "finished"
+      }
+    ]
+  },
+  "recording": false,
+  "frames": {
+    "samples": 1800,
+    "p50": 10,
+    "p95": 20,
+    "p99": 31.2,
+    "over33": 14,
+    "drawCalls": 53,
+    "triangles": 44158,
+    "pixelRatio": 1,
+    "loaded": true
+  },
+  "session": {
+    "startedAt": "2026-09-16T09:37:55.997Z",
+    "quantileResolutionMs": 0.25,
+    "overflowAtMs": 1000,
+    "phases": {
+      "select": {
+        "samples": 32,
+        "elapsedMs": 322,
+        "p50Ms": 10,
+        "p95Ms": 12,
+        "p99Ms": 12,
+        "maxMs": 11.9,
+        "over16_67": 0,
+        "over33_34": 0,
+        "over50": 0
+      },
+      "countdown": {
+        "samples": 265,
+        "elapsedMs": 4361,
+        "p50Ms": 10,
+        "p95Ms": 20,
+        "p99Ms": 40,
+        "maxMs": 1470.3,
+        "over16_67": 17,
+        "over33_34": 3,
+        "over50": 1
+      },
+      "race": {
+        "samples": 5230,
+        "elapsedMs": 69522,
+        "p50Ms": 10,
+        "p95Ms": 30,
+        "p99Ms": 50,
+        "maxMs": 400,
+        "over16_67": 927,
+        "over33_34": 134,
+        "over50": 50
+      },
+      "transition": {
+        "samples": 372,
+        "elapsedMs": 6011,
+        "p50Ms": 10,
+        "p95Ms": 12,
+        "p99Ms": 30,
+        "maxMs": 1420.3,
+        "over16_67": 9,
+        "over33_34": 3,
+        "over50": 2
+      },
+      "fight": {
+        "samples": 464,
+        "elapsedMs": 6649,
+        "p50Ms": 10.25,
+        "p95Ms": 30.25,
+        "p99Ms": 40,
+        "maxMs": 130.5,
+        "over16_67": 124,
+        "over33_34": 11,
+        "over50": 4
+      },
+      "results": {
+        "samples": 1244,
+        "elapsedMs": 12672,
+        "p50Ms": 10,
+        "p95Ms": 12,
+        "p99Ms": 12.25,
+        "maxMs": 100,
+        "over16_67": 7,
+        "over33_34": 3,
+        "over50": 2
+      }
+    }
+  },
+  "network": {
+    "status": ""
+  },
+  "note": "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification."
+}

@@ -1,0 +1,68 @@
+{
+  "classification": "NORMAL-CONTROL DESKTOP SOLO PLAY. Scripted ordinary keys and visible UI only; recorded under shared-machine load. Not physical touch, controlled performance or human enjoyment acceptance.",
+  "url": "http://127.0.0.1:3013",
+  "sourceFingerprint": "dab6cd037a2abcb0cb3758f7b66c2643ea0bcebbcb7bb6982a92e1b37aac967e",
+  "revision": "revision2-dab6cd037a2a",
+  "buildId": "BN3ibehu1TSIsjBQeIjl0",
+  "requestedPairs": [
+    [
+      "lion",
+      "wolf"
+    ],
+    [
+      "wolf",
+      "unicorn"
+    ],
+    [
+      "unicorn",
+      "lion"
+    ],
+    [
+      "lion",
+      "lion"
+    ],
+    [
+      "lion",
+      "unicorn"
+    ],
+    [
+      "wolf",
+      "lion"
+    ],
+    [
+      "wolf",
+      "wolf"
+    ],
+    [
+      "unicorn",
+      "wolf"
+    ],
+    [
+      "unicorn",
+      "unicorn"
+    ]
+  ],
+  "results": [],
+  "errors": [],
+  "failure": "Error: keyboard.up: Target page, context or browser has been closed",
+  "served": {
+    "/_next/static/chunks/41o2vmrgx35l8.css": "94ab4983de2d70438376654f07d2213064d6daa80988c91efbd5a888ff67748f",
+    "/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff": "e8b65928f551b17e3d67c3f709721b952c39842d14b00701f9232057fde73608",
+    "/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff": "296fafafd41304f7c992079054b8af914dbbd865f32de97c66d0f613b55755d6",
+    "/_next/static/chunks/09lgyggnhjlha.js": "b218706af8a3ba93b0ed0e54da588c0357e5e8430d8fa563ec5a1f232ca42f1e",
+    "/_next/static/chunks/turbopack-2yfy0ahrtlf2i.js": "9b98e0743755dceb842fbdbb3566048c2f891454febc0a17909f0949330a551e",
+    "/_next/static/chunks/25f5udftriu_2.js": "f0bc73d0c956f9f694f44a387c31421d97c089d39a4997cab031591d8a03e9eb",
+    "/_next/static/chunks/3fntmmi971322.js": "34ed6abf4c6d0d1bb3dc56d3f133d2a5dbc3a3c89c791deab314e27143ac14ce",
+    "/_next/static/chunks/2l_y_qqi24r7y.js": "453ab601507fa4b536085ecb6f6957cc9b27b4db5f1f9dca43b8e1c91dcea46f",
+    "/_next/static/chunks/27t_qfc-3_lzs.js": "f71552684e86daa3e94faad9002fb69d4e8d308a997ca88fdde74e54b5191870",
+    "/_next/static/chunks/053ko-nu_doni.js": "93209d98205566e06147e7ce0d07d7e094f565c864bc2a03fb242badd00ab7e5",
+    "/_next/static/chunks/2ebe4uvoz7gyp.js": "32fc7a9992cdfb40026b76f4a6805ba0f9d84b3cb333d3c4da0a2e2d4412e6dd",
+    "/assets/western/unicorn.glb": "35848488f8fd15208172c56c6bea464d732fe3ddedff0ffb150038915b580142",
+    "/assets/western/unicorn-upright.glb": "478179f3ab5b03d34b0c3fc09097d9a5b627da8cf64c4c486cbd7ab8a1d27dcb",
+    "/assets/environment/weathered-timber-v1.webp": "c2469c1b8c978606a77483efaf1307ce13a0a12114c48b2a50c7f551b8f1ffbd",
+    "/assets/western/wolf.glb": "e85c6200a526cbe1b4c41c1d43a71da59a8bd5d26f76a9bec2f3d2c2fed59e42",
+    "/assets/western/lion.glb": "3b407a4ee8d4bada0711160bc0425fa66b7214418c3b56d556ca0ff4811f0d92",
+    "/assets/western/wolf-upright.glb": "f47c09c7ff084523b80ffb76804127ab1486fc0fdffeb50345afd8b850e2dd37",
+    "/assets/western/lion-upright.glb": "c1af4a1a02dc6047c300b9ccfaa877c43c3ae806037cc1fa3001655cf7e807f6"
+  }
+}

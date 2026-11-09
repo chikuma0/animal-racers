@@ -1,0 +1,60 @@
+{
+  "classification": "Nine complete solo canvas recordings; full original/output decode verified. Portable30fps copies do not preserve original frame cadence; use raw report intervals for measurements.",
+  "files": [
+    {
+      "file": "lion-lion-recording-review.mp4",
+      "bytes": 10886104,
+      "duration": 87.366667,
+      "sha256": "231edc69df2473e5d136945ba27307f0109de2f47bc256647b6a8468875e1be6"
+    },
+    {
+      "file": "lion-unicorn-recording-review.mp4",
+      "bytes": 11102132,
+      "duration": 86.755,
+      "sha256": "0d8ca3c24c9239be4fbd70abb4ca655f40a6a4c28f3dd1dabe3b7b284f9aa3c7"
+    },
+    {
+      "file": "lion-wolf-recording-review.mp4",
+      "bytes": 10929651,
+      "duration": 86.633333,
+      "sha256": "2b31af462487127025d6ad1030da267c4e5efb612b368d74d5b3efe1040b3845"
+    },
+    {
+      "file": "unicorn-lion-recording-review.mp4",
+      "bytes": 10721744,
+      "duration": 97.238,
+      "sha256": "f14e537f898b87cdd94acba9b57c4bffda51ef2577a4e644b4cf25a95158c286"
+    },
+    {
+      "file": "unicorn-unicorn-recording-review.mp4",
+      "bytes": 11488631,
+      "duration": 89.333333,
+      "sha256": "40b66b3850f7ac0d4699463140324cd4e9d90f44501184577851b7ab05366d29"
+    },
+    {
+      "file": "unicorn-wolf-recording-review.mp4",
+      "bytes": 11454033,
+      "duration": 89.121,
+      "sha256": "470237018c25ff75562eb324066705e6dfaf059526dddae20f1fb49bdf7484b0"
+    },
+    {
+      "file": "wolf-lion-recording-review.mp4",
+      "bytes": 11520997,
+      "duration": 92.066667,
+      "sha256": "82c7875058d3697b17f47c243305ddfc3df44d195fb39cfcb36b7529bff06bdb"
+    },
+    {
+      "file": "wolf-unicorn-recording-review.mp4",
+      "bytes": 12056323,
+      "duration": 95.878,
+      "sha256": "2922f74138cc055f1276d2438186210c294a3370069bcb7107addb1d309a8fe3"
+    },
+    {
+      "file": "wolf-wolf-recording-review.mp4",
+      "bytes": 11458299,
+      "duration": 91.533,
+      "sha256": "aa236605706bf48a85dc39854fbb6169d060c23d3e073c4f207d27b0ecb45b45"
+    }
+  ],
+  "totalBytes": 101617914
+}

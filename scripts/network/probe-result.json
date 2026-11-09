@@ -1,0 +1,79 @@
+{
+  "recordedAt": "2026-09-16T08:26:40.444Z",
+  "experiment": "Two independent clients on one computer, public Supabase Broadcast, one random isolated room",
+  "acceptance": "Transport smoke experiment only. Does not establish physical-device, separate-network, full-match or gameplay latency acceptance.",
+  "budget": {
+    "maximumActiveMs": 10000,
+    "maximumApplicationMessages": 24,
+    "pingPayloadPaddingBytes": 4096
+  },
+  "status": "completed",
+  "statuses": {
+    "host": [
+      {
+        "status": "connecting",
+        "atMs": 35
+      },
+      {
+        "status": "waiting",
+        "atMs": 1353
+      },
+      {
+        "status": "connected",
+        "atMs": 1384
+      },
+      {
+        "status": "disconnected",
+        "atMs": 3913
+      }
+    ],
+    "guest": [
+      {
+        "status": "connecting",
+        "atMs": 47
+      },
+      {
+        "status": "waiting",
+        "atMs": 1386
+      },
+      {
+        "status": "connected",
+        "atMs": 1463
+      },
+      {
+        "status": "disconnected",
+        "atMs": 3914
+      }
+    ]
+  },
+  "pairedAtMs": 1465,
+  "delivery": {
+    "hostPingsAttempted": 12,
+    "hostPingsReceived": 12,
+    "guestPongsReceived": 12,
+    "roundTripsCompleted": 12,
+    "pingLossFraction": 0,
+    "roundTripLossFraction": 0
+  },
+  "timingMs": {
+    "hostToGuest": {
+      "count": 12,
+      "p50": 88.49,
+      "p95": 254.21,
+      "max": 254.21
+    },
+    "guestToHost": {
+      "count": 12,
+      "p50": 82.35,
+      "p95": 250.31,
+      "max": 250.31
+    },
+    "roundTrip": {
+      "count": 12,
+      "p50": 216.57,
+      "p95": 463.24,
+      "max": 463.24
+    }
+  },
+  "elapsedMs": 3915
+}

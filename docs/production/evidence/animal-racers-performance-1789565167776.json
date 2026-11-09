@@ -1,0 +1,100 @@
+{
+  "capturedAt": "2026-09-16T13:26:07.775Z",
+  "revision": "local-working-tree",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1082,
+    "height": 874,
+    "dpr": 0.8999999761581421
+  },
+  "mode": "guest",
+  "phase": "race",
+  "match": {
+    "tick": 2301,
+    "phaseTime": 35.35,
+    "raceTime": 35.35,
+    "fightTime": 0,
+    "result": null,
+    "players": [
+      {
+        "character": "lion",
+        "hp": 100,
+        "finishTime": null,
+        "raceStatus": "running"
+      },
+      {
+        "character": "unicorn",
+        "hp": 100,
+        "finishTime": null,
+        "raceStatus": "running"
+      }
+    ]
+  },
+  "recording": false,
+  "frames": {
+    "samples": 1800,
+    "p50": 10,
+    "p95": 20,
+    "p99": 21,
+    "over33": 2,
+    "drawCalls": 115,
+    "triangles": 183832,
+    "pixelRatio": 1,
+    "loaded": true
+  },
+  "session": {
+    "startedAt": "2026-09-16T13:24:25.717Z",
+    "quantileResolutionMs": 0.25,
+    "overflowAtMs": 1000,
+    "phases": {
+      "select": {
+        "samples": 368,
+        "elapsedMs": 6431,
+        "p50Ms": 10.5,
+        "p95Ms": 40,
+        "p99Ms": 79.5,
+        "maxMs": 200.1,
+        "over16_67": 140,
+        "over33_34": 24,
+        "over50": 10
+      },
+      "countdown": {
+        "samples": 140,
+        "elapsedMs": 3591,
+        "p50Ms": 20,
+        "p95Ms": 39.25,
+        "p99Ms": 90.25,
+        "maxMs": 809.2,
+        "over16_67": 96,
+        "over33_34": 8,
+        "over50": 5
+      },
+      "race": {
+        "samples": 4957,
+        "elapsedMs": 92035,
+        "p50Ms": 10.75,
+        "p95Ms": 50,
+        "p99Ms": 109.25,
+        "maxMs": 319.1,
+        "over16_67": 1985,
+        "over33_34": 434,
+        "over50": 219
+      }
+    }
+  },
+  "network": {
+    "transport": "broadcast",
+    "roundTripMs": null,
+    "sent": 2444,
+    "received": 2481,
+    "roundTrip": {
+      "sampleCount": 0,
+      "p50Ms": null,
+      "p95Ms": null,
+      "maxMs": null,
+      "timeoutCount": 0,
+      "windowMs": 120000
+    }
+  },
+  "note": "Render-loop intervals from this browser only. Device model, OS, sustained-session duration and thermal conditions require tester annotation. No inferred iPhone certification."
+}

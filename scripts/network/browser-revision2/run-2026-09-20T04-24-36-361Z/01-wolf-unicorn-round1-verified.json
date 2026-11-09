@@ -1,0 +1,82 @@
+{
+  "result": {
+    "race": [
+      31,
+      19
+    ],
+    "fight": [
+      22.5,
+      27.5
+    ],
+    "total": [
+      53.5,
+      46.5
+    ],
+    "winner": 0,
+    "reason": "Combined race + fight points · final health"
+  },
+  "players": [
+    {
+      "character": "wolf",
+      "hp": 0,
+      "finishTime": 61.57550243055656,
+      "raceStatus": "finished"
+    },
+    {
+      "character": "unicorn",
+      "hp": 10,
+      "finishTime": 62.53238983586106,
+      "raceStatus": "finished"
+    }
+  ],
+  "actions": [
+    {
+      "slot": 0,
+      "leaps": 4,
+      "strikes": 6,
+      "evades": 1,
+      "successes": 1,
+      "counters": 1,
+      "damageReceived": 100
+    },
+    {
+      "slot": 1,
+      "leaps": 4,
+      "strikes": 6,
+      "evades": 1,
+      "successes": 1,
+      "counters": 1,
+      "damageReceived": 90
+    }
+  ],
+  "network": [
+    {
+      "transport": "webrtc",
+      "roundTripMs": 0.7999999523162842,
+      "sent": 2332,
+      "received": 2370,
+      "roundTrip": {
+        "sampleCount": 50,
+        "p50Ms": 0.9000000953674316,
+        "p95Ms": 2.5,
+        "maxMs": 2.9000000953674316,
+        "timeoutCount": 0,
+        "windowMs": 120000
+      }
+    },
+    {
+      "transport": "webrtc",
+      "roundTripMs": 0.7999999523162842,
+      "sent": 2373,
+      "received": 2329,
+      "roundTrip": {
+        "sampleCount": 50,
+        "p50Ms": 0.7000000476837158,
+        "p95Ms": 2.299999952316284,
+        "maxMs": 8.800000071525574,
+        "timeoutCount": 0,
+        "windowMs": 120000
+      }
+    }
+  ]
+}
